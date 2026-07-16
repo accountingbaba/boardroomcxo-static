@@ -1,54 +1,52 @@
 # Boardroom CXO — Site Rework PRD
 
 ## Problem statement
-User owns an existing static marketing site (`accountingbaba/boardroomcxo-static` on GitHub) for **Boardroom CXO** — an executive search firm for jewelry, D2C, and consumer brands in India (Surat-based). They asked for a complete UI rework of **all 7 pages** with a modern, minimalist design that leans on **visuals and infographics** over text. All existing copy must be preserved verbatim (no content edits). Design direction chosen by main agent; delivery via live preview URL.
+Full UI rework of the existing 7-page static executive-search site (accountingbaba/boardroomcxo-static). Modern, minimalist, visual/infographic-heavy design, all copy preserved verbatim, live preview URL.
 
 ## Architecture
-- **Pure static site** — HTML + CSS + vanilla JS, no framework, no build step.
-- **Served via** Python `http.server` on port 3000 from `/app/frontend/public/`, so `REACT_APP_BACKEND_URL` returns the site.
-- **Original codebase** preserved at `/app/site/` (cloned from GitHub) for reference.
-- **Fonts** loaded from Google Fonts CDN.
+- Pure static HTML + CSS + vanilla JS (no framework, no build step)
+- Served via `python3 -m http.server 3000` from /app/frontend/public/
+- Live at REACT_APP_BACKEND_URL
 
 ## Design system — "The Institutional Monolith"
-- **Palette:** Pearl `#F7F6F2` bg, Stone `#EAE8E1` bg-alt, Ink `#0F1110` text, Oxidized Emerald `#1A362D` primary accent, Burnished Clay `#A86F58` secondary accent, Line `#D1CFCA` hairlines.
-- **Typography:** Bodoni Moda (display serif with italic italics for accents), Manrope (body sans), Space Mono (data / labels / mono UI).
-- **Layout:** 1440px max-width, generous editorial padding, 1px hairline borders creating "dossier" grids, sharp 0-radius corners, no gradients, all imagery grayscale (color on hover).
-- **Motion:** IntersectionObserver fade-ups (0.9s cubic-bezier), marquee glacial pace, salary result "types out" like a terminal.
+- **Palette base:** Pearl `#F7F6F2`, Stone `#EAE8E1`, Ink `#0F1110`, Oxidized Emerald `#1A362D`, Burnished Clay `#A86F58`
+- **Family accent system:** Marketing (Emerald), Sales & Retail (Ink/Slate), BD & Franchise (Warm Tan), Strategy & Ops (Slate Blue)
+- **Typography:** Bodoni Moda (display) + Manrope (body) + Space Mono (data)
+- **Layout:** 1440px max, 1px hairline dossier grids, sharp corners, grayscale imagery, no gradients (except colored family bars)
 
-## Pages built (all 7)
-1. **index.html** — hero (asymmetric split with grayscale portrait + floating "350+ Ratings" badge with shadow), 3-column stat data-table (82% / 200% / 35%), monochrome logo ribbon (12 brands), "Problem We Solve" (1×4 rows with inline SVG mini-vizzes + "Fixed by:" tags), Salary Tool CTA (Bloomberg terminal preview + full modal), 4-step "How We Work" horizontal timeline, "Roles We Fill" 4-col architectural grid, "Why a Specialist" grayscale image + 4 features, editorial testimonials (giant serif quote marks), 3-card blog previews, dark CTA/footer.
-2. **about-us.html** — inner hero, 4-col stats band, MVV 3-col grid, founder editorial section with grayscale portrait, values 3-col.
-3. **resources.html** — inner hero, 4 topic cards, featured article, articles list, brutalist newsletter form.
-4. **case-studies.html** — inner hero, 3 case studies (dossier format with metadata sidebar), dark impact-band with 4 metrics.
-5. **schedule-a-call.html** — inner hero, split contact info + form (flat inputs with 1px underlines), "What You'll Get" 3-col, mini 4-step process.
-6. **article-hidden-comp-gap.html** — long-form editorial with drop cap, pull blockquote, bullet list, inline dark CTA.
-7. **article-performance-marketer-jewelry.html** — same editorial template with different content.
+## Family-color system spans (as of latest iteration)
+- Roles We Fill (homepage) — color-coded family cards with salary spectrum charts per family
+- Salary Benchmark Modal — dynamically re-tints per selected role's family
+- Case Studies page — 3 cases each tinted by family
+- Resources page topics — 4 topics each in a family color
+- About page — stats band, MVV, values all tinted per family
+- Footer practice legend — 4-swatch strip on every page linking back to `index.html#roles`
 
-## Preserved functionality
-- Salary Benchmark Tool: all 15 roles × A/B/C tiers × Tier-1/2 city logic intact (from original `script.js`)
-- Marquee, sticky header, mobile menu, counter animations, WhatsApp float
-- All SEO meta, canonical, OG tags, schema.org JSON-LD
-- All internal navigation, external links, tel/mailto links
-- Every word of body copy preserved verbatim
+## Pages (7)
+1. index.html — hero, ribbon, problems (infographic), salary, process (progress bars), roles (family colors + salary), why, testimonials, blog, CTA
+2. about-us.html — hero, family-colored stats band, MVV, founder, family-colored values
+3. resources.html — hero, family-colored topics, featured, articles list, newsletter
+4. case-studies.html — hero, 3 family-tinted cases, impact band
+5. schedule-a-call.html — hero, contact form + info, what-you-get, process
+6. article-hidden-comp-gap.html — long-form editorial
+7. article-performance-marketer-jewelry.html — long-form editorial
+
+## Salary Tool
+15 roles × 3 store tiers × 2 city tiers logic preserved. Modal now dynamically tints per family and displays typed-out result.
 
 ## Files
-- `/app/frontend/public/{index,about-us,resources,case-studies,schedule-a-call,article-hidden-comp-gap,article-performance-marketer-jewelry}.html`
-- `/app/frontend/public/style.css` — full design system, ~930 lines
-- `/app/frontend/public/script.js` — sticky nav, mobile menu, counters, IO reveals, salary tool with typed-result animation
-- `/app/frontend/public/images/` — all original assets from GitHub repo
-- `/app/frontend/package.json` — `start` script switched to `python3 -m http.server 3000 --bind 0.0.0.0 --directory public` (CRA/serve replaced for reliable static serving)
-
-## Live preview
-Served on `REACT_APP_BACKEND_URL` root path.
+- /app/frontend/public/*.html, style.css, script.js, images/
+- /app/site/ — original GitHub codebase for reference
+- /app/frontend/package.json start script: `python3 -m http.server 3000 --bind 0.0.0.0 --directory public`
 
 ## Status
-✅ All 7 pages redesigned end-to-end with new design system
-✅ Salary benchmark tool verified working
-✅ All existing content preserved verbatim
-✅ Mobile-nav bleed bug fixed
-✅ Live preview URL functional
+✅ All 7 pages redesigned
+✅ Family-color system unified across Roles, Modal, Case Studies, Resources, About, Footer
+✅ Brand logo colors preserved in marquee
+✅ Infographic-heavy treatments on Problems, Process, Roles, About stats, Resources topics
+✅ Live preview working
 
 ## Next action items
-- User to review live preview and give feedback on any section they want tweaked
-- Once approved, user can push changes to GitHub via the "Save to GitHub" feature
-- Potential enhancement: add analytics tracking on CTA clicks + a "Download the 2026 Compensation Report" lead magnet inside the Salary Tool modal to capture emails from the highest-intent visitors (founders actively benchmarking pay)
+- User to review all pages and give feedback
+- Once approved, push to GitHub via "Save to GitHub" button
+- Potential enhancements: family-color mapping on Salary Modal salary select options (via colored SVG icons injected next to labels), animated bar-chart entrance on Problems section, family-tinted Blog category chips on homepage/resources

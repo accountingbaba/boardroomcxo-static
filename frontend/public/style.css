@@ -870,6 +870,44 @@ ul  { list-style: none; }
 .cta-btns { display: flex; gap: 16px; flex-wrap: wrap; }
 
 .footer { background: var(--ink); color: var(--bg); padding: 80px 0 32px; border-top: 1px solid rgba(255,255,255,0.12); }
+
+/* Practice legend strip */
+.footer-practice {
+  padding-bottom: 40px; margin-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 40px; align-items: center;
+}
+.fp-label {
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.24em;
+  text-transform: uppercase; color: var(--clay);
+}
+.fp-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+}
+.fp-item {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: rgba(255,255,255,0.7);
+  padding-bottom: 6px; border-bottom: 1px solid transparent;
+  transition: color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.fp-item:hover { border-bottom-color: currentColor; }
+.fp-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+.fp-item--marketing .fp-dot { background: #6DBF9C; }
+.fp-item--sales    .fp-dot { background: #C7C7C0; }
+.fp-item--bd       .fp-dot { background: #E0B899; }
+.fp-item--strategy .fp-dot { background: #9CB4CB; }
+.fp-item--marketing:hover { color: #6DBF9C; }
+.fp-item--sales:hover     { color: #E5E4DE; }
+.fp-item--bd:hover        { color: #E0B899; }
+.fp-item--strategy:hover  { color: #9CB4CB; }
+@media (max-width: 800px) {
+  .footer-practice { grid-template-columns: 1fr; gap: 20px; }
+  .fp-strip { grid-template-columns: 1fr 1fr; gap: 14px; }
+}
 .footer-grid {
   display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 48px;
   padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.12);
@@ -957,6 +995,23 @@ ul  { list-style: none; }
   font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.22em;
   text-transform: uppercase; color: var(--ink-2); line-height: 1.4; max-width: 22ch;
 }
+
+/* Family tint — stats band */
+.stats-band-item[data-family="marketing"] .stats-band-num { color: #2C5A48; }
+.stats-band-item[data-family="sales"] .stats-band-num     { color: #2A2C2A; }
+.stats-band-item[data-family="bd"] .stats-band-num        { color: #8A5642; }
+.stats-band-item[data-family="strategy"] .stats-band-num  { color: #556B7E; }
+.stats-band-item[data-family="marketing"] .stats-band-num em,
+.stats-band-item[data-family="strategy"] .stats-band-num em { color: var(--clay); }
+.stats-band-item[data-family] { position: relative; }
+.stats-band-item[data-family]::after {
+  content: ''; position: absolute; left: 32px; top: 20px;
+  width: 20px; height: 2px; background: currentColor; opacity: 0.9;
+}
+.stats-band-item[data-family="marketing"]::after { background: #2C5A48; }
+.stats-band-item[data-family="sales"]::after     { background: #2A2C2A; }
+.stats-band-item[data-family="bd"]::after        { background: #8A5642; }
+.stats-band-item[data-family="strategy"]::after  { background: #556B7E; }
 @media (max-width: 900px) {
   .stats-band { grid-template-columns: 1fr 1fr; }
   .stats-band-item:nth-child(2) { border-right: none; }
@@ -973,6 +1028,48 @@ ul  { list-style: none; }
 .mvv-num { font-family: var(--font-display); font-size: 48px; font-weight: 400; font-style: italic; color: var(--clay); line-height: 1; }
 .mvv-item h3 { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: -0.02em; line-height: 1.2; font-weight: 500; }
 .mvv-item p { font-size: 14.5px; color: var(--ink-2); line-height: 1.65; }
+
+/* Family tint — MVV */
+.mvv-item[data-family] { position: relative; }
+.mvv-item[data-family]::before {
+  content: ''; position: absolute; left: 0; top: 0;
+  width: 40px; height: 3px;
+}
+.mvv-item[data-family="marketing"]::before,
+.mvv-item[data-family="marketing"] .mvv-num { color: #2C5A48; background: #2C5A48; }
+.mvv-item[data-family="marketing"] .mvv-num { background: transparent; }
+.mvv-item[data-family="bd"]::before        { background: #8A5642; }
+.mvv-item[data-family="bd"] .mvv-num       { color: #8A5642; }
+.mvv-item[data-family="strategy"]::before  { background: #556B7E; }
+.mvv-item[data-family="strategy"] .mvv-num { color: #556B7E; }
+
+/* Family tint — Values */
+.values-item[data-family="marketing"] .values-symbol { color: #2C5A48; }
+.values-item[data-family="bd"] .values-symbol       { color: #8A5642; }
+.values-item[data-family="strategy"] .values-symbol { color: #556B7E; }
+.values-item[data-family] { position: relative; }
+.values-item[data-family]::before {
+  content: ''; position: absolute; left: 32px; top: 60px;
+  width: 3px; height: 40px;
+}
+.values-item[data-family="marketing"]::before { background: #2C5A48; }
+.values-item[data-family="bd"]::before        { background: #8A5642; }
+.values-item[data-family="strategy"]::before  { background: #556B7E; }
+
+/* Family tint — Resources topics */
+.topic-item[data-family] { position: relative; }
+.topic-item[data-family]::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.topic-item[data-family="marketing"]::before,
+.topic-item[data-family="marketing"] .topic-count { color: #2C5A48; background: transparent; }
+.topic-item[data-family="marketing"]::before { background: #2C5A48; }
+.topic-item[data-family="sales"]::before     { background: #2A2C2A; }
+.topic-item[data-family="sales"] .topic-count { color: #2A2C2A; }
+.topic-item[data-family="bd"]::before        { background: #8A5642; }
+.topic-item[data-family="bd"] .topic-count   { color: #8A5642; }
+.topic-item[data-family="strategy"]::before  { background: #556B7E; }
+.topic-item[data-family="strategy"] .topic-count { color: #556B7E; }
 @media (max-width: 900px) { .mvv-grid { grid-template-columns: 1fr; } .mvv-item { border-right: none; } }
 
 .founder-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; align-items: center; }
