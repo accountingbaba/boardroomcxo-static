@@ -590,6 +590,20 @@ ul  { list-style: none; }
 .roles-grid:hover .role-col { opacity: 0.55; }
 .roles-grid:hover .role-col:hover { opacity: 1; }
 .role-index { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.24em; color: var(--clay); }
+.role-col[data-testid="role-marketing"] .role-index { color: #2C5A48; }
+.role-col[data-testid="role-sales"] .role-index    { color: #4A4D4A; }
+.role-col[data-testid="role-bd"] .role-index       { color: #8A5642; }
+.role-col[data-testid="role-strategy"] .role-index { color: #556B7E; }
+
+.role-col[data-testid="role-marketing"] .role-list li::before { color: #2C5A48; }
+.role-col[data-testid="role-sales"] .role-list li::before    { color: #4A4D4A; }
+.role-col[data-testid="role-bd"] .role-list li::before       { color: #8A5642; }
+.role-col[data-testid="role-strategy"] .role-list li::before { color: #556B7E; }
+
+.role-col[data-testid="role-marketing"] .rs-label { color: #2C5A48; }
+.role-col[data-testid="role-sales"] .rs-label    { color: #4A4D4A; }
+.role-col[data-testid="role-bd"] .rs-label       { color: #8A5642; }
+.role-col[data-testid="role-strategy"] .rs-label { color: #556B7E; }
 .role-viz { width: 56px; height: 56px; color: var(--ink); }
 .role-col h3 {
   font-family: var(--font-display); font-size: 1.4rem; font-weight: 500;
@@ -626,6 +640,40 @@ ul  { list-style: none; }
 }
 .rs-fill::before { left: -5px; background: var(--clay); }
 .rs-fill::after { right: -5px; background: var(--emerald); }
+
+/* Family-specific fills */
+.rs-fill--marketing {
+  background: linear-gradient(to right, #2C5A48, #1A362D);
+}
+.rs-fill--marketing::before { background: #2C5A48; }
+.rs-fill--marketing::after { background: #0E241D; }
+
+.rs-fill--sales {
+  background: linear-gradient(to right, #4A4D4A, #0F1110);
+}
+.rs-fill--sales::before { background: #4A4D4A; }
+.rs-fill--sales::after { background: #0F1110; }
+
+.rs-fill--bd {
+  background: linear-gradient(to right, #C69A82, #8A5642);
+}
+.rs-fill--bd::before { background: #C69A82; }
+.rs-fill--bd::after { background: #8A5642; }
+
+.rs-fill--strategy {
+  background: linear-gradient(to right, #556B7E, #2E3D4D);
+}
+.rs-fill--strategy::before { background: #556B7E; }
+.rs-fill--strategy::after { background: #2E3D4D; }
+
+.rs-range .low--marketing { color: #2C5A48; }
+.rs-range .high--marketing { color: #0E241D; font-weight: 700; }
+.rs-range .low--sales { color: #4A4D4A; }
+.rs-range .high--sales { color: #0F1110; font-weight: 700; }
+.rs-range .low--bd { color: #C69A82; }
+.rs-range .high--bd { color: #8A5642; font-weight: 700; }
+.rs-range .low--strategy { color: #556B7E; }
+.rs-range .high--strategy { color: #2E3D4D; font-weight: 700; }
 .rs-range {
   display: flex; justify-content: space-between;
   font-family: var(--font-mono); font-size: 11px; color: var(--ink);
