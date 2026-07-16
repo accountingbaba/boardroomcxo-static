@@ -122,11 +122,11 @@ ul  { list-style: none; }
   color: var(--ink); display: inline-flex; align-items: center; flex-shrink: 0;
   transition: filter 0.25s var(--ease);
 }
-.nav-brand img { height: 44px; width: auto; display: block; }
-.site-header.on-dark:not(.scrolled) .nav-brand img {
-  filter: brightness(0) invert(1);
+.nav-brand img {
+  height: 56px; width: auto; display: block;
+  filter: drop-shadow(0 1px 0 rgba(15,17,16,0.05));
 }
-.site-header.scrolled .nav-brand img { filter: none; }
+/* logo is gold on transparent — no inversion needed on light/dark backgrounds */
 .nav-menu { display: flex; align-items: center; gap: 4px; margin-left: auto; }
 .nav-link {
   font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.2em;
@@ -1031,7 +1031,7 @@ ul  { list-style: none; }
   color: var(--bg); margin-bottom: 20px;
   display: inline-flex; align-items: center;
 }
-.footer-brand img { height: 52px; width: auto; display: block; }
+.footer-brand img { height: 68px; width: auto; display: block; }
 .footer-brand-mark {
   width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.45);
   display: inline-flex; align-items: center; justify-content: center;
