@@ -1,172 +1,92 @@
-/* ── Boardroom CXO — Interactions & Animations ── */
+/* ── Boardroom CXO — Institutional Monolith · Interactions ── */
 
-// ── 1. Sticky header ──────────────────────────────────────────
-const header = document.getElementById('site-header');
-function updateHeader() {
-  if (window.scrollY > 40) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
+// Sticky header
+(function () {
+  const header = document.getElementById('site-header');
+  if (!header) return;
+  function update() {
+    if (window.scrollY > 40) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
   }
-}
-window.addEventListener('scroll', updateHeader, { passive: true });
-updateHeader();
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
 
-// ── 2. Mobile menu ────────────────────────────────────────────
-const hamburger = document.getElementById('hamburger');
-const navMenuCol = document.querySelector('.nav-menu-col');
-hamburger.addEventListener('click', () => {
-  const open = navMenuCol.classList.toggle('open');
-  const spans = hamburger.querySelectorAll('span');
-  if (open) {
-    spans[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
-    spans[1].style.opacity = '0';
-    spans[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
-  } else {
-    spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
-  }
-});
-// Close on link click
-navMenuCol.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  navMenuCol.classList.remove('open');
-  hamburger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
-}));
+// Mobile menu
+(function () {
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('nav-menu-mobile');
+  if (!hamburger || !mobileMenu) return;
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    const spans = hamburger.querySelectorAll('span');
+    if (open) {
+      spans[0].style.transform = 'rotate(45deg) translate(4px, 5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(4px, -5px)';
+    } else {
+      spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+    }
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    hamburger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+  }));
+})();
 
-// ── 3. Counter animation ──────────────────────────────────────
+// Counters
 function animateCounter(el) {
   const target = parseFloat(el.dataset.target);
   const suffix = el.dataset.suffix || '';
+  const prefix = el.dataset.prefix || '';
   const isDecimal = target % 1 !== 0;
-  const duration = 2200;
+  const duration = 1800;
   const start = performance.now();
   function tick(now) {
     const progress = Math.min((now - start) / duration, 1);
-    // ease-out cubic
     const eased = 1 - Math.pow(1 - progress, 3);
     const current = eased * target;
-    el.textContent = (isDecimal ? current.toFixed(1) : Math.floor(current)) + suffix;
+    el.textContent = prefix + (isDecimal ? current.toFixed(1) : Math.floor(current)) + suffix;
     if (progress < 1) requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
 }
 
-// ── 4. IntersectionObserver — fade-up + counters ─────────────
-const fadeObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-      fadeObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      animateCounter(entry.target);
-      counterObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.5 });
-
+// IntersectionObserver
 document.addEventListener('DOMContentLoaded', () => {
-  // Fade-up on scroll
-  const fadeTargets = [
-    '.svc-card', '.process-card', '.testi-card',
-    '.blog-card', '.who-card', '.why-feat',
-    '.cred-main-img', '.ipo-card'
-  ].join(',');
-  document.querySelectorAll(fadeTargets).forEach((el, i) => {
-    el.classList.add('fade-up');
-    const delay = Math.min((i % 3) * 0.08, 0.16);
-    el.style.transitionDelay = delay + 's';
-    fadeObserver.observe(el);
-  });
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Section headings
-  document.querySelectorAll('.section-h2, .tag-pill').forEach(el => {
-    el.classList.add('fade-up');
-    fadeObserver.observe(el);
-  });
+  const fadeObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in-view'); fadeObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-  // Counters
-  document.querySelectorAll('.stat-num[data-target]').forEach(el => {
-    counterObserver.observe(el);
-  });
-});
+  document.querySelectorAll('.reveal, .problem-row, .role-col, .process-step, .why-feat, .testi-item, .blog-item, .mvv-item, .values-item, .what-item, .case-item, .article-row, .topic-item, .stats-band-item, .impact-metric')
+    .forEach((el, i) => {
+      if (!el.classList.contains('reveal')) el.classList.add('reveal');
+      el.style.transitionDelay = Math.min((i % 4) * 0.06, 0.24) + 's';
+      fadeObs.observe(el);
+    });
 
-// ── 5. Hero heading — typewriter animation ────────────────────
-(function heroAnimation() {
-  const headingEl = document.querySelector('.hero-heading-gradient');
-  if (!headingEl) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  const words = [
-    'Right Leaders. Real Results.',
-    'Sourced from Competitors. Placed to Stay.',
-    'Market Mapped. Offer Closed.',
-  ];
-  let wordIndex = 0;
-  let charIndex = 0;
-  let deleting = false;
-  let paused = false;
-
-  // Start with empty so typewriter types in from scratch
-  headingEl.textContent = '';
-
-  function type() {
-    if (paused) { paused = false; setTimeout(type, 2000); return; }
-    const current = words[wordIndex];
-    if (!deleting) {
-      headingEl.textContent = current.substring(0, charIndex + 1);
-      charIndex++;
-      if (charIndex === current.length) { deleting = true; paused = true; setTimeout(type, 50); return; }
-    } else {
-      headingEl.textContent = current.substring(0, charIndex - 1);
-      charIndex--;
-      if (charIndex === 0) {
-        deleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-      }
-    }
-    setTimeout(type, deleting ? 35 : 65);
+  if (!reduced) {
+    const countObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { animateCounter(e.target); countObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-target]').forEach(el => countObs.observe(el));
+  } else {
+    document.querySelectorAll('[data-target]').forEach(el => {
+      const t = parseFloat(el.dataset.target);
+      const s = el.dataset.suffix || '';
+      const p = el.dataset.prefix || '';
+      el.textContent = p + (t % 1 !== 0 ? t.toFixed(1) : Math.floor(t)) + s;
+    });
   }
-
-  setTimeout(type, 500);
-})();
-
-// ── 6. Smooth scroll active nav ───────────────────────────────
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-const navObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(l => l.classList.remove('active'));
-      const link = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-      if (link) link.classList.add('active');
-    }
-  });
-}, { rootMargin: '-50% 0px -50% 0px' });
-sections.forEach(s => navObserver.observe(s));
-
-// ── 7. Service card — icon lift on hover ─────────────────────
-document.querySelectorAll('.svc-card').forEach(card => {
-  const icon = card.querySelector('.svc-icon-wrap');
-  card.addEventListener('mouseenter', () => {
-    if (icon) icon.style.transform = 'translateY(-6px) scale(1.06)';
-    if (icon) icon.style.transition = 'transform 0.2s cubic-bezier(0.23,1,0.32,1)';
-  });
-  card.addEventListener('mouseleave', () => {
-    if (icon) icon.style.transform = '';
-  });
 });
 
-// ── 8. Salary benchmark tool ──────────────────────────────────
-// Ranges in ₹ Lakhs annual CTC. Sourced from BoardroomCXO's 2025-26
-// org-structure/salary market mapping (Category A 100+ stores / large
-// scale, Category B 20-60 stores growth-stage, Category C under 20
-// stores early-stage), cross-checked against live candidate pipeline
-// data. tierCut is the Tier-2 city discount applied to the Tier-1 base.
+// Salary tool data (unchanged from original)
 const SALARY_DATA = [
   { group: 'Marketing', roles: [
     { id: 'perf-junior', label: 'Performance Marketer (Junior, 0–2 yrs)', A: [4, 7], B: [4, 7], C: [3.5, 5], tierCut: 0.15 },
@@ -215,15 +135,21 @@ const SALARY_DATA = [
   });
 
   function findRole(id) {
-    for (const group of SALARY_DATA) {
-      const match = group.roles.find(r => r.id === id);
-      if (match) return match;
-    }
+    for (const g of SALARY_DATA) { const m = g.roles.find(r => r.id === id); if (m) return m; }
     return null;
   }
+  function fmt(n) { return n % 1 === 0 ? n.toFixed(0) : n.toFixed(1); }
 
-  function formatLakhs(n) {
-    return n % 1 === 0 ? n.toFixed(0) : n.toFixed(1);
+  let typeTimer = null;
+  function typeResult(text) {
+    clearTimeout(typeTimer);
+    resultRange.textContent = '';
+    let i = 0;
+    function step() {
+      resultRange.textContent = text.slice(0, ++i);
+      if (i < text.length) typeTimer = setTimeout(step, 22);
+    }
+    step();
   }
 
   function updateResult() {
@@ -232,9 +158,12 @@ const SALARY_DATA = [
     const [min, max] = role[storesSelect.value];
     const isTier2 = tierSelect.value === '2';
     const factor = isTier2 ? (1 - role.tierCut) : 1;
-    const adjMin = min * factor;
-    const adjMax = max * factor;
-    resultRange.textContent = `₹${formatLakhs(adjMin)}L – ₹${formatLakhs(adjMax)}L`;
+    const text = `₹${fmt(min * factor)}L – ₹${fmt(max * factor)}L`;
+    if (modal.classList.contains('open') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      typeResult(text);
+    } else {
+      resultRange.textContent = text;
+    }
   }
 
   function openModal() {
@@ -255,15 +184,5 @@ const SALARY_DATA = [
     if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
   });
   [roleSelect, storesSelect, tierSelect].forEach(el => el.addEventListener('change', updateResult));
-
   updateResult();
 })();
-
-// ── 9. Scroll progress bar ────────────────────────────────────
-const progressBar = document.createElement('div');
-progressBar.style.cssText = 'position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,#D4A860,#2C41E4);z-index:10000;transform:scaleX(0);transform-origin:left;will-change:transform;pointer-events:none;';
-document.body.appendChild(progressBar);
-window.addEventListener('scroll', () => {
-  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-  progressBar.style.transform = `scaleX(${pct})`;
-}, { passive: true });

@@ -4,479 +4,179 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resources | Boardroom CXO — Executive Leadership Insights for IPO Success</title>
-  <meta name="description" content="Expert articles, guides and insights from Boardroom CXO on executive leadership, IPO readiness, and CXO hiring strategy for high-growth companies." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://boardroomcxo.com/resources/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Resources | Boardroom CXO" />
-  <meta property="og:description" content="Expert articles and guides on executive leadership and IPO readiness from Boardroom CXO." />
-  <meta property="og:url" content="https://boardroomcxo.com/resources/" />
+  <meta name="description" content="Expert articles on executive hiring, leadership strategy, and what it takes to build a boardroom that wins in public markets." />
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* ── INNER HERO ─── */
-    .inner-hero {
-      background: linear-gradient(135deg, #010630 0%, #172633 55%, #0d1820 100%);
-      padding: 160px 0 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .inner-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 70% 40%, rgba(192,147,79,0.18) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .inner-hero .breadcrumb {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 14px;
-      color: var(--white-66);
-      margin-bottom: 16px;
-    }
-    .inner-hero .breadcrumb a { color: var(--gold); }
-    .inner-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      font-weight: 600;
-      color: var(--white);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      text-wrap: balance;
-    }
-    .inner-hero p {
-      margin-top: 16px;
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.85);
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* ── FEATURED ARTICLE ─── */
-    .featured-section {
-      padding: 100px 0 0;
-      background: var(--bg-light);
-    }
-    .featured-card {
-      background: var(--white);
-      border-radius: 20px;
-      box-shadow: var(--shadow-card);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      overflow: hidden;
-      margin-top: 40px;
-      transition: transform var(--transition);
-    }
-    .featured-card:hover { transform: translateY(-4px); }
-    .featured-img {
-      position: relative;
-      overflow: hidden;
-      min-height: 420px;
-    }
-    .featured-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    .featured-card:hover .featured-img img { transform: scale(1.05); }
-    .featured-cat {
-      position: absolute;
-      top: 24px;
-      left: 24px;
-      background: var(--gold);
-      color: var(--white);
-      border-radius: 50px;
-      padding: 6px 16px;
-      font-size: 0.78rem;
-      font-weight: 700;
-    }
-    .featured-body {
-      padding: 56px 52px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .featured-body .tag-pill { margin-bottom: 16px; }
-    .featured-body time { font-size: 0.85rem; color: var(--muted); display: block; margin-bottom: 16px; }
-    .featured-body h2 {
-      font-size: clamp(1.4rem, 2vw, 2rem);
-      font-weight: 700;
-      color: var(--primary);
-      line-height: 1.3;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-    }
-    .featured-body p {
-      color: var(--muted-text);
-      line-height: 1.75;
-      margin-bottom: 32px;
-    }
-
-    /* ── ARTICLES GRID ─── */
-    .articles-section {
-      padding: 60px 0 100px;
-      background: var(--bg-light);
-    }
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 48px;
-    }
-
-    /* ── NEWSLETTER BAND ─── */
-    .newsletter-band {
-      background: var(--primary);
-      padding: 80px 0;
-    }
-    .newsletter-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .newsletter-left h2 {
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      font-weight: 700;
-      color: var(--white);
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-    }
-    .newsletter-left p { color: var(--white-66); line-height: 1.7; }
-    .newsletter-form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .newsletter-form input {
-      width: 100%;
-      padding: 16px 20px;
-      border-radius: 50px;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.08);
-      color: var(--white);
-      font-family: var(--font);
-      font-size: 0.95rem;
-      outline: none;
-      transition: border-color var(--transition);
-    }
-    .newsletter-form input::placeholder { color: var(--white-30); }
-    .newsletter-form input:focus { border-color: var(--gold); }
-    .newsletter-form button {
-      width: 100%;
-      padding: 16px 28px;
-      background: var(--gold);
-      color: var(--white);
-      border: none;
-      border-radius: 50px;
-      font-family: var(--font);
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background var(--transition), transform var(--transition);
-    }
-    .newsletter-form button:hover { background: var(--blue); transform: translateY(-2px); }
-
-    /* ── TOPICS BAND ─── */
-    .topics-section {
-      padding: 80px 0;
-      background: var(--bg-light);
-    }
-    .topics-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-top: 48px;
-    }
-    .topic-pill {
-      border: 1px solid var(--border);
-      border-radius: var(--radius-card);
-      padding: 24px 20px;
-      text-align: center;
-      cursor: pointer;
-      transition: border-color var(--transition), background var(--transition), transform var(--transition);
-    }
-    .topic-pill:hover {
-      border-color: var(--gold);
-      background: var(--gold-alpha);
-      transform: translateY(-3px);
-    }
-    .topic-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: var(--icon-bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 12px;
-      color: var(--blue);
-    }
-    .topic-pill h4 { font-size: 0.9rem; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
-    .topic-pill span { font-size: 0.78rem; color: var(--muted); }
-
-    /* ── CTA STRIP ─── */
-    .cta-strip {
-      padding: 80px 0;
-      background: var(--bg-light);
-      text-align: center;
-    }
-    .cta-strip h2 { font-size: clamp(1.6rem,3vw,2.4rem); font-weight:700; color:var(--primary); letter-spacing:-0.02em; margin-bottom:12px; }
-    .cta-strip p { color:var(--muted-text); max-width:520px; margin:0 auto 32px; }
-
-    @media (max-width: 900px) {
-      .featured-card { grid-template-columns: 1fr; }
-      .featured-img { min-height: 260px; }
-      .articles-grid { grid-template-columns: 1fr 1fr; }
-      .newsletter-inner { grid-template-columns: 1fr; gap: 40px; }
-      .topics-grid { grid-template-columns: repeat(2,1fr); }
-    }
-    @media (max-width: 600px) {
-      .articles-grid { grid-template-columns: 1fr; }
-      .topics-grid { grid-template-columns: 1fr 1fr; }
-    }
-  </style>
 </head>
 <body>
 
-  <!-- ============ HEADER / NAV ============ -->
-  <header class="site-header" id="site-header">
-    <div class="nav-inner">
-      <div class="nav-container">
-        <div class="nav-logo-col">
-          <a href="index.html" class="nav-logo">
-            <img src="images/LOGO.png" alt="Boardroom CXO" width="160" />
-          </a>
-        </div>
-        <div class="nav-menu-col">
-          <nav class="nav-menu" id="nav-menu">
-            <ul>
-              <li><a href="index.html" class="nav-link">Home</a></li>
-              <li><a href="about-us.html" class="nav-link">About Us</a></li>
-              <li><a href="resources.html" class="nav-link active">Resources</a></li>
-              <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="nav-cta-col">
-          <a href="schedule-a-call.html" class="btn btn-gold">Let's Talk</a>
-          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- ============ INNER HERO ============ -->
-  <section class="inner-hero">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M9 18l6-6-6-6"/></svg>
-        <span>Resources</span>
-      </div>
-      <h1>Insights &amp; Guides for<br />IPO-Ready Leadership</h1>
-      <p>Expert articles on executive hiring, leadership strategy, and what it takes to build a boardroom that wins in public markets.</p>
-    </div>
-  </section>
-
-  <!-- arch: dark hero → light -->
-  <div class="arch-dark-to-light" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-      <path d="M500,3C126.7,3.7,0.8,80.2,0,100V0l1000,0V99C1000,80.6,873.3,2.2,500,3z" fill="#0d1820"/>
-    </svg>
+<header class="site-header" id="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand"><span class="nav-brand-mark">BX</span><span>Boardroom<em class="mono" style="font-size:14px;color:var(--clay);margin-left:2px;">·</em>CXO</span></a>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about-us.html" class="nav-link">About</a>
+      <a href="resources.html" class="nav-link active">Resources</a>
+      <a href="case-studies.html" class="nav-link">Case Studies</a>
+    </nav>
+    <a href="schedule-a-call.html" class="nav-cta">Let's Talk</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
-
-  <!-- ============ TOPICS ============ -->
-  <section class="topics-section">
-    <div class="container">
-      <h2 class="section-h2">Browse by Topic</h2>
-      <div class="topics-grid">
-        <div class="topic-pill">
-          <div class="topic-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-          </div>
-          <h4>IPO Strategy</h4>
-          <span>4 articles</span>
-        </div>
-        <div class="topic-pill">
-          <div class="topic-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-          </div>
-          <h4>Leadership</h4>
-          <span>6 articles</span>
-        </div>
-        <div class="topic-pill">
-          <div class="topic-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-          <h4>Executive Search</h4>
-          <span>5 articles</span>
-        </div>
-        <div class="topic-pill">
-          <div class="topic-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h4>Compliance</h4>
-          <span>3 articles</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FEATURED ARTICLE ============ -->
-  <section class="featured-section">
-    <div class="container">
-      <h2 class="section-h2">Featured Article</h2>
-      <div class="featured-card">
-        <div class="featured-img">
-          <img src="images/376kn_isple.jpg" alt="Why Leadership Can Make or Break Your IPO" />
-          <span class="featured-cat">Executive Search</span>
-        </div>
-        <div class="featured-body">
-          <time>April 7, 2025</time>
-          <h2>Why Leadership Can Make or Break Your IPO</h2>
-          <p>Going public isn't just about financials. It's about confidence. Investors don't just evaluate numbers — they evaluate people. A strong CXO team signals stability, competence, and long-term vision. Discover why the quality of your executive team is often the deciding factor in a successful IPO.</p>
-          <a href="schedule-a-call.html" class="btn btn-gold" style="align-self:flex-start;">Brief Us on a Mandate</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ ALL ARTICLES ============ -->
-  <section class="articles-section">
-    <div class="container">
-      <div class="blog-header">
-        <div>
-          <h2 class="section-h2">All Articles</h2>
-        </div>
-      </div>
-      <div class="articles-grid blog-grid">
-        <article class="blog-card">
-          <div class="blog-img-wrap">
-            <img src="images/376kn_isple.jpg" alt="Why Leadership Can Make or Break Your IPO" loading="lazy" />
-            <span class="blog-category">Executive Search</span>
-          </div>
-          <div class="blog-body">
-            <time class="blog-date">April 7, 2025</time>
-            <h3>Why Leadership Can Make or Break Your IPO</h3>
-            <p>Going public isn't just about financials. Investors evaluate people. A strong CXO team signals stability, competence, and long-term vision.</p>
-            <a href="schedule-a-call.html" class="blog-read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </article>
-        <article class="blog-card">
-          <div class="blog-img-wrap">
-            <img src="images/kdeqa3atnby.jpg" alt="The Top 3 Leadership Roles You Need Before Going Public" loading="lazy" />
-            <span class="blog-category">IPO Strategy</span>
-          </div>
-          <div class="blog-body">
-            <time class="blog-date">April 7, 2025</time>
-            <h3>The Top 3 Leadership Roles You Need Before Going Public</h3>
-            <p>Not all C-suite roles are created equal, especially when preparing for an IPO. While the CEO sets the vision, it's the CFO, COO and CHRO who operationalize it.</p>
-            <a href="schedule-a-call.html" class="blog-read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </article>
-        <article class="blog-card">
-          <div class="blog-img-wrap">
-            <img src="images/oalh2mojuuk-1024x683.jpg" alt="How to Identify Leadership Gaps Before Your IPO" loading="lazy" />
-            <span class="blog-category">Leadership</span>
-          </div>
-          <div class="blog-body">
-            <time class="blog-date">April 7, 2025</time>
-            <h3>How to Identify Leadership Gaps Before Your IPO</h3>
-            <p>A successful IPO starts with a self-assessment. Look closely at your current leadership team. Do they have experience operating at public-company scale?</p>
-            <a href="schedule-a-call.html" class="blog-read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- arch: light → dark newsletter -->
-  <div class="arch-light-to-dark" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-      <path d="M500,3C126.7,3.7,0.8,80.2,0,100V0l1000,0V99C1000,80.6,873.3,2.2,500,3z" fill="#F9F9FB"/>
-    </svg>
+  <div class="nav-menu-mobile" id="nav-menu-mobile">
+    <a href="index.html">Home</a>
+    <a href="about-us.html">About</a>
+    <a href="resources.html">Resources</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="schedule-a-call.html" class="nav-cta-mobile">Let's Talk →</a>
   </div>
+</header>
 
-  <!-- ============ NEWSLETTER ============ -->
-  <section class="newsletter-band">
-    <div class="container">
-      <div class="newsletter-inner">
-        <div class="newsletter-left">
-          <h2>Get Leadership Insights<br />Straight to Your Inbox</h2>
-          <p>Join 2,000+ founders and executives who receive our bi-weekly newsletter on IPO-ready leadership, executive hiring, and boardroom strategy.</p>
-        </div>
-        <div class="newsletter-right">
-          <form class="newsletter-form" onsubmit="return false;">
-            <input type="text" placeholder="Your full name" autocomplete="name" />
-            <input type="email" placeholder="Your email address" autocomplete="email" />
-            <button type="submit">Subscribe to Newsletter</button>
-          </form>
-        </div>
+<section class="inner-hero" data-testid="resources-hero">
+  <div class="container">
+    <div class="inner-hero-grid">
+      <div>
+        <div class="inner-hero-crumb">Home · Resources</div>
+        <h1>Insights &amp; Guides for<br /><em>IPO-Ready Leadership.</em></h1>
+      </div>
+      <div class="inner-hero-side">
+        <p class="lead">Expert articles on executive hiring, leadership strategy, and what it takes to build a boardroom that wins in public markets.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ============ CTA STRIP ============ -->
-  <!-- ============ FOOTER ============ -->
-  <div style="height:60px;margin-bottom:-1px;background:linear-gradient(180deg, var(--primary), var(--dark-navy));" aria-hidden="true"></div>
-  <section class="cta-section" id="contact">
-    <div class="container" style="padding-top:48px;padding-bottom:48px;text-align:center;">
-      <h2 class="section-h2 section-h2--light" style="margin-bottom:8px;">Tell us the role. We will tell you the market.</h2>
-      <p style="color:rgba(255,255,255,0.65);margin-bottom:28px;font-size:1rem;">Brief us on a mandate and we come back with real market data — before you commit a budget.</p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="schedule-a-call.html" class="btn btn-gold">Brief Us on a Mandate</a>
-        <a href="tel:+919856755000" class="btn btn-outline-white">+91 98567 55000</a>
+<section class="section" data-testid="topics-section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <span class="sec-head-index">§01 · Library</span>
+        <h2 class="h2">Browse by Topic.</h2>
       </div>
     </div>
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-col footer-brand">
-            <img src="images/LOGO.png" alt="Boardroom CXO" class="footer-logo" />
-            <div class="footer-socials">
-              <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-              <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <h5>Quick Links</h5>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about-us.html">About Us</a></li>
-              <li><a href="resources.html">Resources</a></li>
-              <li><a href="case-studies.html">Case Studies</a></li>
-              <li><a href="schedule-a-call.html">Schedule a Call</a></li>
-            </ul>
-          </div>
-          <div class="footer-col footer-contact-col">
-            <h5>Contact</h5>
-            <p class="footer-contact-line">+91 98567 55000 &middot; hire@boardroomcxo.com<br>Mon&ndash;Sat, 10am&ndash;6pm IST &middot; India &amp; UAE</p>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>Boardroom CXO &copy; 2026 | All Rights Reserved</p>
+    <div class="topics-grid">
+      <div class="topic-item"><span class="topic-count">04 Articles</span><h3>IPO Strategy</h3></div>
+      <div class="topic-item"><span class="topic-count">06 Articles</span><h3>Leadership</h3></div>
+      <div class="topic-item"><span class="topic-count">05 Articles</span><h3>Executive Search</h3></div>
+      <div class="topic-item"><span class="topic-count">03 Articles</span><h3>Compliance</h3></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" data-testid="featured-section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <span class="sec-head-index">§02 · Featured</span>
+        <h2 class="h2">Editor's Pick.</h2>
+      </div>
+    </div>
+    <div class="featured-article">
+      <img src="images/oalh2mojuuk-1024x683.jpg" alt="Why Leadership Can Make or Break Your IPO" class="featured-article-img" />
+      <div>
+        <div class="blog-meta"><span class="cat">Executive Search</span><span class="date">April 7, 2025</span></div>
+        <h2>Why Leadership Can Make or Break Your IPO</h2>
+        <p style="color:var(--ink-2);line-height:1.7;font-size:15.5px;margin-bottom:24px;max-width:52ch;">Going public isn't just about financials. It's about confidence. Investors don't just evaluate numbers — they evaluate people. A strong CXO team signals stability, competence, and long-term vision. Discover why the quality of your executive team is often the deciding factor in a successful IPO.</p>
+        <a href="schedule-a-call.html" class="btn">Brief Us on a Mandate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" data-testid="all-articles-section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <span class="sec-head-index">§03 · Archive</span>
+        <h2 class="h2">All Articles.</h2>
+      </div>
+    </div>
+    <div class="articles-list">
+      <a href="#" class="article-row" style="color:inherit;">
+        <span class="num">A · 01</span>
+        <span class="cat">Executive Search · April 7, 2025</span>
+        <h3>Why Leadership Can Make or Break Your IPO</h3>
+        <span class="link-under">Read →</span>
+      </a>
+      <a href="#" class="article-row" style="color:inherit;">
+        <span class="num">A · 02</span>
+        <span class="cat">IPO Strategy · April 7, 2025</span>
+        <h3>The Top 3 Leadership Roles You Need Before Going Public</h3>
+        <span class="link-under">Read →</span>
+      </a>
+      <a href="#" class="article-row" style="color:inherit;">
+        <span class="num">A · 03</span>
+        <span class="cat">Leadership · April 7, 2025</span>
+        <h3>How to Identify Leadership Gaps Before Your IPO</h3>
+        <span class="link-under">Read →</span>
+      </a>
+      <a href="article-hidden-comp-gap.html" class="article-row" style="color:inherit;">
+        <span class="num">A · 04</span>
+        <span class="cat">Compensation Data · June 2026</span>
+        <h3>The Hidden Comp Gap: Why Jewelry Brands Keep Losing Candidates at the Offer Stage</h3>
+        <span class="link-under">Read →</span>
+      </a>
+      <a href="article-performance-marketer-jewelry.html" class="article-row" style="color:inherit;">
+        <span class="num">A · 05</span>
+        <span class="cat">Headhunting · June 2026</span>
+        <h3>Why the Best Performance Marketers in Jewelry Are Not on Naukri</h3>
+        <span class="link-under">Read →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter-band" data-testid="newsletter-section">
+  <div class="container">
+    <div class="newsletter-band-inner">
+      <div>
+        <span class="overline" style="color:var(--clay);">— Subscribe</span>
+        <h2 class="h2" style="margin-top:16px;">Get Leadership Insights<br/><em class="italic-serif" style="color:var(--clay);">Straight to Your Inbox.</em></h2>
+        <p class="lead" style="margin-top:16px;">Join 2,000+ founders and executives who receive our bi-weekly newsletter on IPO-ready leadership, executive hiring, and boardroom strategy.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="event.preventDefault();this.querySelector('input').value='Subscribed ✓';">
+        <input type="email" placeholder="your.email@company.com" required data-testid="newsletter-input" />
+        <button type="submit" data-testid="newsletter-submit">Subscribe →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="cta-block" id="contact">
+  <div class="container">
+    <span class="overline" style="color:var(--clay);">Next Move</span>
+    <h2 class="cta-display" style="margin-top:24px;">Tell us the role.<br/><em>We'll tell you the market.</em></h2>
+    <p class="cta-sub">Brief us on a mandate and we come back with real market data — before you commit a budget.</p>
+    <div class="cta-btns">
+      <a href="schedule-a-call.html" class="btn" style="background:var(--bg);color:var(--ink);border-color:var(--bg);">Brief Us on a Mandate</a>
+      <a href="tel:+919856755000" class="btn btn-light">+91 98567 55000</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><span class="footer-brand-mark">BX</span> Boardroom·CXO</div>
+        <p class="footer-tag">Executive search for jewelry, D2C, and consumer brands. Sourced from competitors. Benchmarked on real pay data.</p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/company/boardroomcxo" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://twitter.com/boardroomcxo" target="_blank" rel="noopener" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
         </div>
       </div>
-    </footer>
-  </section>
+      <div class="footer-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="about-us.html">About Us</a></li><li><a href="resources.html">Resources</a></li><li><a href="case-studies.html">Case Studies</a></li></ul></div>
+      <div class="footer-col"><h5>Engage</h5><ul><li><a href="schedule-a-call.html">Schedule a Call</a></li><li><a href="#contact">Brief a Mandate</a></li><li><a href="https://wa.me/919856755000" target="_blank" rel="noopener">WhatsApp</a></li></ul></div>
+      <div class="footer-col footer-contact"><h5>Contact</h5><p><a href="tel:+919856755000">+91 98567 55000</a></p><p><a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a></p><p>Mon–Sat · 10am–6pm IST</p><p>Surat, India &amp; UAE</p></div>
+    </div>
+    <div class="footer-bottom"><span>© Boardroom CXO · 2026</span><span>All Rights Reserved</span></div>
+  </div>
+</footer>
 
-  <a href="https://wa.me/919856755000" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    <span class="whatsapp-label">WhatsApp us</span>
-  </a>
+<a href="https://wa.me/919856755000" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

@@ -4,514 +4,191 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Boardroom CXO — Executive Search for Jewelry, D2C &amp; Consumer Brands</title>
-  <meta name="description" content="Learn about Boardroom CXO — executive search firm specializing in jewelry, D2C, and consumer brands. Headhunting passive candidates from competitor companies since 2014." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://boardroomcxo.com/about-us/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="About Us | Boardroom CXO" />
-  <meta property="og:description" content="Meet the team behind India's most trusted executive search firm for IPO-bound companies." />
-  <meta property="og:url" content="https://boardroomcxo.com/about-us/" />
+  <meta name="description" content="Boardroom CXO is the executive search firm for jewelry, D2C, and consumer brands in India — placing marketing, sales, BD, and operations leaders sourced from competitor companies." />
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* ── PAGE-LEVEL HERO (inner pages) ─── */
-    .inner-hero {
-      background: linear-gradient(135deg, #010630 0%, #172633 55%, #0d1820 100%);
-      padding: 160px 0 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .inner-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 70% 40%, rgba(192,147,79,0.18) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .inner-hero .breadcrumb {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 14px;
-      color: var(--white-66);
-      margin-bottom: 16px;
-    }
-    .inner-hero .breadcrumb a { color: var(--gold); }
-    .inner-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      font-weight: 600;
-      color: var(--white);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      text-wrap: balance;
-    }
-    .inner-hero p {
-      margin-top: 16px;
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.85);
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* ── STATS BAND ─── */
-    .stats-band {
-      background: var(--bg-light);
-      border-bottom: 1px solid var(--border);
-      padding: 56px 0;
-    }
-    .stats-band-inner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0;
-    }
-    .stat-block {
-      flex: 1;
-      text-align: center;
-      padding: 0 40px;
-    }
-    .stat-block + .stat-block {
-      border-left: 1px solid var(--border);
-    }
-    .stat-block .num {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--primary);
-      letter-spacing: -0.03em;
-      line-height: 1;
-    }
-    .stat-block .num span { color: var(--gold); }
-    .stat-block .lbl {
-      display: block;
-      font-size: 0.9rem;
-      color: var(--muted-text);
-      margin-top: 6px;
-      font-weight: 500;
-    }
-
-    /* ── MISSION / VISION / VALUES ─── */
-    .mvv-section {
-      padding: 100px 0;
-      background: var(--bg-light);
-    }
-    .mvv-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 56px;
-    }
-    .mvv-card {
-      background: var(--white);
-      border-radius: var(--radius-card);
-      padding: 40px 32px;
-      box-shadow: var(--shadow-card);
-      border-top: 4px solid var(--gold);
-      transition: transform var(--transition);
-    }
-    .mvv-card:hover { transform: translateY(-4px); }
-    .mvv-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      background: var(--icon-bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      color: var(--blue);
-    }
-    .mvv-card h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 12px;
-    }
-    .mvv-card p {
-      font-size: 0.95rem;
-      color: var(--muted-text);
-      line-height: 1.7;
-    }
-
-    /* ── FOUNDER SECTION ─── */
-    .founder-section {
-      padding: 100px 0;
-      background: var(--bg-light);
-    }
-    .founder-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-      margin-top: 56px;
-    }
-    .founder-img-wrap {
-      position: relative;
-    }
-    .founder-img-wrap img {
-      border-radius: 20px;
-      width: 100%;
-      object-fit: cover;
-      object-position: center top;
-      height: 520px;
-    }
-    .founder-badge {
-      position: absolute;
-      bottom: -24px;
-      right: -24px;
-      background: var(--gold);
-      color: var(--white);
-      border-radius: 16px;
-      padding: 20px 28px;
-      box-shadow: 0 12px 40px rgba(192,147,79,0.35);
-    }
-    .founder-badge strong {
-      display: block;
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 1;
-    }
-    .founder-badge span {
-      font-size: 0.85rem;
-      opacity: 0.85;
-    }
-    .founder-content .tag-pill { margin-bottom: 16px; }
-    .founder-content h2 { color: var(--primary); font-size: clamp(1.6rem,3vw,2.4rem); font-weight:700; letter-spacing:-0.02em; line-height:1.2; margin-bottom:20px; }
-    .founder-content p { color: var(--muted-text); line-height:1.75; margin-bottom:16px; }
-    .founder-name {
-      margin-top: 32px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .founder-avatar {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: var(--primary);
-      color: var(--white);
-      font-weight: 700;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .founder-name strong { display:block; color:var(--primary); font-size:1rem; }
-    .founder-name span { font-size:0.85rem; color:var(--muted-text); }
-
-    /* ── TEAM SECTION ─── */
-    .team-section {
-      padding: 100px 0;
-      background: var(--bg-light);
-    }
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 28px;
-      margin-top: 56px;
-    }
-    .team-card {
-      background: var(--white);
-      border-radius: var(--radius-card);
-      padding: 32px 24px;
-      text-align: center;
-      box-shadow: var(--shadow-card);
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .team-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(1,6,48,0.12);
-    }
-    .team-avatar {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: var(--primary);
-      color: var(--gold);
-      font-weight: 700;
-      font-size: 1.3rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 16px;
-    }
-    .team-card h4 { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
-    .team-card span { font-size: 0.85rem; color: var(--gold); font-weight: 600; }
-
-    /* ── VALUES ─── */
-    .values-section {
-      padding: 100px 0;
-      background: var(--primary);
-    }
-    .values-section .tag-pill { background: rgba(192,147,79,0.15); color: var(--gold); border-color: transparent; }
-    .values-section .section-h2 { color: var(--white); }
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      margin-top: 56px;
-    }
-    .value-card {
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-card);
-      padding: 36px 28px;
-      transition: border-color var(--transition), background var(--transition);
-    }
-    .value-card:hover { border-color: var(--gold); background: rgba(255,255,255,0.04); }
-    .value-number {
-      font-size: 3rem;
-      font-weight: 800;
-      color: rgba(192,147,79,0.5);
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-    .value-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 10px; }
-    .value-card p { font-size: 0.9rem; color: var(--white-66); line-height: 1.7; }
-
-    /* ─── CTA STRIP ─── */
-    .cta-strip {
-      padding: 80px 0;
-      background: var(--bg-light);
-      text-align: center;
-    }
-    .cta-strip h2 { font-size: clamp(1.6rem,3vw,2.4rem); font-weight:700; color:var(--primary); letter-spacing:-0.02em; margin-bottom:12px; }
-    .cta-strip p { color:var(--muted-text); max-width:520px; margin:0 auto 32px; }
-
-    @media (max-width: 1024px) {
-      .team-grid { grid-template-columns: repeat(3,1fr); }
-      .mvv-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 768px) {
-      .stats-band-inner { flex-direction: column; }
-      .stat-block + .stat-block { border-left: none; border-top: 1px solid var(--border); }
-      .stat-block { padding: 24px 0; }
-      .founder-grid { grid-template-columns: 1fr; gap: 60px; }
-      .founder-badge { right: 0; }
-      .team-grid { grid-template-columns: repeat(2,1fr); }
-      .mvv-grid { grid-template-columns: 1fr; }
-      .values-grid { grid-template-columns: 1fr; }
-    }
-  </style>
 </head>
 <body>
 
-  <!-- ============ HEADER / NAV ============ -->
-  <header class="site-header" id="site-header">
-    <div class="nav-inner">
-      <div class="nav-container">
-        <div class="nav-logo-col">
-          <a href="index.html" class="nav-logo">
-            <img src="images/LOGO.png" alt="Boardroom CXO" width="160" />
-          </a>
-        </div>
-        <div class="nav-menu-col">
-          <nav class="nav-menu" id="nav-menu">
-            <ul>
-              <li><a href="index.html" class="nav-link">Home</a></li>
-              <li><a href="about-us.html" class="nav-link active">About Us</a></li>
-              <li><a href="resources.html" class="nav-link">Resources</a></li>
-              <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="nav-cta-col">
-          <a href="schedule-a-call.html" class="btn btn-gold">Let's Talk</a>
-          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- ============ INNER HERO ============ -->
-  <section class="inner-hero">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M9 18l6-6-6-6"/></svg>
-        <span>About Us</span>
-      </div>
-      <h1>The search firm built for<br />jewelry, D2C, and consumer brands</h1>
-      <p>10+ years of placing marketing, sales, BD, and operations leaders sourced from competitor companies.</p>
-    </div>
-  </section>
-
-  <!-- arch: dark hero → light -->
-  <div class="arch-dark-to-light" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-      <path d="M500,3C126.7,3.7,0.8,80.2,0,100V0l1000,0V99C1000,80.6,873.3,2.2,500,3z" fill="#0d1820"/>
-    </svg>
+<header class="site-header" id="site-header" data-testid="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand"><span class="nav-brand-mark">BX</span><span>Boardroom<em class="mono" style="font-size:14px;color:var(--clay);margin-left:2px;">·</em>CXO</span></a>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about-us.html" class="nav-link active">About</a>
+      <a href="resources.html" class="nav-link">Resources</a>
+      <a href="case-studies.html" class="nav-link">Case Studies</a>
+    </nav>
+    <a href="schedule-a-call.html" class="nav-cta">Let's Talk</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
-
-  <!-- ============ STATS BAND ============ -->
-  <section class="stats-band">
-    <div class="container">
-      <div class="stats-band-inner">
-        <div class="stat-block">
-          <div class="num" style="color:var(--primary);">97.2%</div>
-          <span class="lbl">Placement Success Rate</span>
-        </div>
-        <div class="stat-block">
-          <div class="num" style="color:var(--primary);">500+</div>
-          <span class="lbl">Clients Served</span>
-        </div>
-        <div class="stat-block">
-          <div class="num" style="color:var(--primary);">10+</div>
-          <span class="lbl">Years of Experience</span>
-        </div>
-        <div class="stat-block">
-          <div class="num" style="color:var(--primary);">Rs.20L+</div>
-          <span class="lbl">Average Package Placed</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ MISSION / VISION / VALUES ============ -->
-  <section class="mvv-section">
-    <div class="container">
-      <h2 class="section-h2">Guided by Purpose,<br />Driven by Results</h2>
-      <div class="mvv-grid">
-        <div class="mvv-card">
-          <div class="mvv-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="26" height="26"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-          </div>
-          <h3>Our Mission</h3>
-          <p>To empower IPO-bound companies with leadership that drives confidence, compliance, and long-term growth in public markets.</p>
-        </div>
-        <div class="mvv-card">
-          <div class="mvv-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="26" height="26"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-          </div>
-          <h3>Our Vision</h3>
-          <p>To become India's most trusted partner for executive hiring focused on IPO readiness — building leadership teams that inspire investor confidence and sustainable growth.</p>
-        </div>
-        <div class="mvv-card">
-          <div class="mvv-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="26" height="26"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-          </div>
-          <h3>Our Approach</h3>
-          <p>We go beyond résumés. We identify strategic fit, cultural alignment, and IPO readiness — placing CXOs who are built for the moment your company enters the public market.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FOUNDER ============ -->
-  <section class="founder-section">
-    <div class="container">
-      <div class="founder-grid">
-        <div class="founder-img-wrap">
-          <img src="images/ketul-patel.png" alt="CA Ketul Patel — Founder, Boardroom CXO" />
-          <div class="founder-badge">
-            <strong>10+</strong>
-            <span>Years in Executive Search</span>
-          </div>
-        </div>
-        <div class="founder-content">
-          <span class="tag-pill">Meet the Founder</span>
-          <h2>CA Ketul Patel</h2>
-          <p>CA Ketul Patel is a Chartered Accountant turned executive search specialist with over a decade placing marketing, sales, BD, and operations leaders at jewelry and consumer brands. His financial background gives him a different lens: he reads compensation structures that CTC slips hide, and he understands what a senior hire actually costs versus what a brand budgets.</p>
-          <p>Having worked across jewelry, D2C, and organized retail, Ketul built Boardroom CXO around one conviction: the best candidates are not applying anywhere. They are running the functions you need to build, inside competitor companies. Reaching them requires research, timing, and a confidential approach.</p>
-          <p>Every search at Boardroom CXO starts with market mapping and ends with a mandate defined clearly enough that the hire stays.</p>
-          <div class="founder-name">
-            <div class="founder-avatar">KP</div>
-            <div>
-              <strong>CA Ketul Patel</strong>
-              <span>Founder &amp; Recruitment Expert, Boardroom CXO</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CORE VALUES ============ -->
-  <!-- arch: light → dark values -->
-  <div class="arch-light-to-dark" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-      <path d="M500,3C126.7,3.7,0.8,80.2,0,100V0l1000,0V99C1000,80.6,873.3,2.2,500,3z" fill="#F9F9FB"/>
-    </svg>
+  <div class="nav-menu-mobile" id="nav-menu-mobile">
+    <a href="index.html">Home</a>
+    <a href="about-us.html">About</a>
+    <a href="resources.html">Resources</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="schedule-a-call.html" class="nav-cta-mobile">Let's Talk →</a>
   </div>
+</header>
 
-  <section class="values-section">
-    <div class="container">
-      <h2 class="section-h2">What We Stand For</h2>
-      <div class="values-grid">
-        <div class="value-card">
-          <div class="value-number">01</div>
-          <h3>Commitment</h3>
-          <p>We are committed to quality in every search engagement. Our clients' business success is the measure of our own — we don't stop until the right leader is in the right seat.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-number">02</div>
-          <h3>Accessibility</h3>
-          <p>We build bespoke solutions for companies of every size and sector. Whether you're a funded startup or a pre-IPO enterprise, our strategies are tailored to your specific needs.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-number">03</div>
-          <h3>Openness</h3>
-          <p>Collaboration and innovation drive everything we do. We work as a true extension of your team — transparent, communicative, and aligned with your long-term vision at every step.</p>
-        </div>
+<!-- INNER HERO -->
+<section class="inner-hero" data-testid="about-hero">
+  <div class="container">
+    <div class="inner-hero-grid">
+      <div>
+        <div class="inner-hero-crumb">Home · About Us</div>
+        <h1>The search firm built for<br /><em>jewelry, D2C, and consumer brands.</em></h1>
+      </div>
+      <div class="inner-hero-side">
+        <p class="lead">10+ years of placing marketing, sales, BD, and operations leaders sourced from competitor companies.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ============ FOOTER ============ -->
-  <div style="height:60px;margin-bottom:-1px;background:linear-gradient(180deg, var(--primary), var(--dark-navy));" aria-hidden="true"></div>
-  <section class="cta-section" id="contact">
-    <div class="container" style="padding-top:48px;padding-bottom:48px;text-align:center;">
-      <h2 class="section-h2 section-h2--light" style="margin-bottom:8px;">Tell us the role. We will tell you the market.</h2>
-      <p style="color:rgba(255,255,255,0.65);margin-bottom:28px;font-size:1rem;">Brief us on a mandate and we come back with real market data — before you commit a budget.</p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="schedule-a-call.html" class="btn btn-gold">Brief Us on a Mandate</a>
-        <a href="tel:+919856755000" class="btn btn-outline-white">+91 98567 55000</a>
+<!-- STATS BAND -->
+<section style="padding: 0;">
+  <div class="container">
+    <div class="stats-band" data-testid="stats-band">
+      <div class="stats-band-item">
+        <div class="stats-band-num" data-target="97.2" data-suffix="%">97.2%</div>
+        <div class="stats-band-label">Placement Success Rate</div>
+      </div>
+      <div class="stats-band-item">
+        <div class="stats-band-num" data-target="500" data-suffix="+">500+</div>
+        <div class="stats-band-label">Clients Served</div>
+      </div>
+      <div class="stats-band-item">
+        <div class="stats-band-num" data-target="10" data-suffix="+">10+</div>
+        <div class="stats-band-label">Years of Experience</div>
+      </div>
+      <div class="stats-band-item">
+        <div class="stats-band-num"><em>₹</em>20L+</div>
+        <div class="stats-band-label">Average Package Placed</div>
       </div>
     </div>
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-col footer-brand">
-            <img src="images/LOGO.png" alt="Boardroom CXO" class="footer-logo" />
-            <div class="footer-socials">
-              <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-              <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <h5>Quick Links</h5>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about-us.html">About Us</a></li>
-              <li><a href="resources.html">Resources</a></li>
-              <li><a href="case-studies.html">Case Studies</a></li>
-              <li><a href="schedule-a-call.html">Schedule a Call</a></li>
-            </ul>
-          </div>
-          <div class="footer-col footer-contact-col">
-            <h5>Contact</h5>
-            <p class="footer-contact-line">+91 98567 55000 &middot; hire@boardroomcxo.com<br>Mon&ndash;Sat, 10am&ndash;6pm IST &middot; India &amp; UAE</p>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>Boardroom CXO &copy; 2026 | All Rights Reserved</p>
+  </div>
+</section>
+
+<!-- MISSION / VISION / APPROACH -->
+<section class="section" data-testid="mvv-section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <span class="sec-head-index">§01 · Purpose</span>
+        <h2 class="h2">Guided by Purpose,<br/><em class="italic-serif" style="color:var(--clay);">Driven by Results.</em></h2>
+      </div>
+      <p class="lead">Three principles shape every mandate we take on.</p>
+    </div>
+    <div class="mvv-grid">
+      <div class="mvv-item">
+        <span class="mvv-num">i.</span>
+        <h3>Our Mission</h3>
+        <p>To empower IPO-bound companies with leadership that drives confidence, compliance, and long-term growth in public markets.</p>
+      </div>
+      <div class="mvv-item">
+        <span class="mvv-num">ii.</span>
+        <h3>Our Vision</h3>
+        <p>To become India's most trusted partner for executive hiring focused on IPO readiness — building leadership teams that inspire investor confidence and sustainable growth.</p>
+      </div>
+      <div class="mvv-item">
+        <span class="mvv-num">iii.</span>
+        <h3>Our Approach</h3>
+        <p>We go beyond résumés. We identify strategic fit, cultural alignment, and IPO readiness — placing CXOs who are built for the moment your company enters the public market.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="section section-alt" data-testid="founder-section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <span class="sec-head-index">§02 · 10+ Years in Executive Search</span>
+        <h2 class="h2">Meet the Founder.</h2>
+      </div>
+    </div>
+    <div class="founder-grid">
+      <img src="images/ketul-patel.png" alt="CA Ketul Patel — Founder" class="founder-img" data-testid="founder-img" />
+      <div class="founder-body">
+        <div class="overline" style="margin-bottom:12px;color:var(--clay);">— Founder &amp; Recruitment Lead</div>
+        <h2>CA Ketul Patel</h2>
+        <p>CA Ketul Patel is a Chartered Accountant turned executive search specialist with over a decade placing marketing, sales, BD, and operations leaders at jewelry and consumer brands.</p>
+        <p>His financial background gives him a different lens: he reads compensation structures that CTC slips hide, and he understands what a senior hire actually costs versus what a brand budgets.</p>
+        <p>Having worked across jewelry, D2C, and organized retail, Ketul built Boardroom CXO around one conviction: <strong>the best candidates are not applying anywhere</strong>. They are running the functions you need to build, inside competitor companies. Reaching them requires research, timing, and a confidential approach.</p>
+        <p>Every search at Boardroom CXO starts with market mapping and ends with a mandate defined clearly enough that the hire stays.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section" data-testid="values-section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <span class="sec-head-index">§03 · What We Stand For</span>
+        <h2 class="h2">Three commitments.</h2>
+      </div>
+    </div>
+    <div class="values-grid">
+      <div class="values-item">
+        <div class="values-symbol">01</div>
+        <h3>Commitment</h3>
+        <p>We are committed to quality in every search engagement. Our clients' business success is the measure of our own — we don't stop until the right leader is in the right seat.</p>
+      </div>
+      <div class="values-item">
+        <div class="values-symbol">02</div>
+        <h3>Accessibility</h3>
+        <p>We build bespoke solutions for companies of every size and sector. Whether you're a funded startup or a pre-IPO enterprise, our strategies are tailored to your specific needs.</p>
+      </div>
+      <div class="values-item">
+        <div class="values-symbol">03</div>
+        <h3>Openness</h3>
+        <p>Collaboration and innovation drive everything we do. We work as a true extension of your team — transparent, communicative, and aligned with your long-term vision at every step.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-block" id="contact">
+  <div class="container">
+    <span class="overline" style="color:var(--clay);">Next Move</span>
+    <h2 class="cta-display" style="margin-top:24px;">Tell us the role.<br/><em>We'll tell you the market.</em></h2>
+    <p class="cta-sub">Brief us on a mandate and we come back with real market data — before you commit a budget.</p>
+    <div class="cta-btns">
+      <a href="schedule-a-call.html" class="btn" style="background:var(--bg);color:var(--ink);border-color:var(--bg);">Brief Us on a Mandate</a>
+      <a href="tel:+919856755000" class="btn btn-light">+91 98567 55000</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><span class="footer-brand-mark">BX</span> Boardroom·CXO</div>
+        <p class="footer-tag">Executive search for jewelry, D2C, and consumer brands. Sourced from competitors. Benchmarked on real pay data.</p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/company/boardroomcxo" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://twitter.com/boardroomcxo" target="_blank" rel="noopener" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
         </div>
       </div>
-    </footer>
-  </section>
+      <div class="footer-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="about-us.html">About Us</a></li><li><a href="resources.html">Resources</a></li><li><a href="case-studies.html">Case Studies</a></li></ul></div>
+      <div class="footer-col"><h5>Engage</h5><ul><li><a href="schedule-a-call.html">Schedule a Call</a></li><li><a href="#contact">Brief a Mandate</a></li><li><a href="https://wa.me/919856755000" target="_blank" rel="noopener">WhatsApp</a></li></ul></div>
+      <div class="footer-col footer-contact"><h5>Contact</h5><p><a href="tel:+919856755000">+91 98567 55000</a></p><p><a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a></p><p>Mon–Sat · 10am–6pm IST</p><p>Surat, India &amp; UAE</p></div>
+    </div>
+    <div class="footer-bottom"><span>© Boardroom CXO · 2026</span><span>All Rights Reserved</span></div>
+  </div>
+</footer>
 
-  <a href="https://wa.me/919856755000" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    <span class="whatsapp-label">WhatsApp us</span>
-  </a>
+<a href="https://wa.me/919856755000" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

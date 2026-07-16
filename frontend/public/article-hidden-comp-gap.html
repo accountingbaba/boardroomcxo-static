@@ -4,345 +4,139 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Hidden Comp Gap: Why Jewelry Brands Keep Losing Candidates at the Offer Stage | Boardroom CXO</title>
-  <meta name="description" content="A candidate at a legacy jewelry brand citing Rs. 12-15 LPA is often earning Rs. 16-20 LPA in total. If you benchmark against the CTC slip, you will lose the hire. Field data on the gap, and how to close it." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://boardroomcxo.com/article-hidden-comp-gap.html" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="The Hidden Comp Gap: Why Jewelry Brands Keep Losing Candidates at the Offer Stage | Boardroom CXO" />
-  <meta property="og:description" content="Field data from live candidate conversations shows legacy brand candidates earn 25-35% more than their CTC slips say. Here is why it happens, and how to structure offers that actually close." />
-  <meta property="og:url" content="https://boardroomcxo.com/article-hidden-comp-gap.html" />
+  <meta name="description" content="A jewelry brand offers 30% above documented salary and the candidate still declines. Why? The CTC slip lied. Field data on the compensation gap at legacy brands." />
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .inner-hero {
-      background: linear-gradient(135deg, var(--primary) 0%, #172633 60%, #2C41E4 100%);
-      padding: 160px 0 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .inner-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(44,65,228,0.25) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .inner-hero .breadcrumb {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 14px;
-      color: rgba(255,255,255,0.6);
-      margin-bottom: 16px;
-    }
-    .inner-hero .breadcrumb a { color: var(--gold); text-decoration: none; }
-    .inner-hero h1 {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      max-width: 820px;
-      margin: 0 auto;
-    }
-    .inner-hero .article-meta {
-      margin-top: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .inner-hero .article-meta span {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.6);
-    }
-
-    .article-body {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 80px 24px 100px;
-    }
-    .article-body p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: #333;
-      margin-bottom: 24px;
-    }
-    .article-body h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary, #1E2B5E);
-      margin: 48px 0 16px;
-      line-height: 1.3;
-    }
-    .article-body h3 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--primary, #1E2B5E);
-      margin: 32px 0 12px;
-    }
-    .article-body ul {
-      margin: 0 0 24px 0;
-      padding-left: 24px;
-    }
-    .article-body ul li {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: #333;
-      margin-bottom: 8px;
-    }
-    .article-callout {
-      background: #F3F4FB;
-      border-left: 4px solid var(--gold);
-      border-radius: 0 12px 12px 0;
-      padding: 24px 28px;
-      margin: 36px 0;
-    }
-    .article-callout p { margin: 0; font-size: 1rem; color: #333; font-style: italic; }
-
-    .comp-example {
-      background: var(--primary, #1E2B5E);
-      border-radius: 16px;
-      padding: 32px;
-      margin: 36px 0;
-    }
-    .comp-example h4 {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 20px;
-    }
-    .comp-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      gap: 16px;
-    }
-    .comp-row:last-child { border-bottom: none; }
-    .comp-row .label { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
-    .comp-row .value { font-size: 1rem; font-weight: 600; color: var(--white); text-align: right; }
-    .comp-row .value.highlight { color: var(--gold); }
-    .comp-row .value.danger { color: #f87171; }
-
-    .article-data-box {
-      background: #F3F4FB;
-      border-radius: 16px;
-      padding: 32px;
-      margin: 36px 0;
-    }
-    .article-data-box h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--primary, #1E2B5E);
-      margin-bottom: 16px;
-    }
-    .article-data-box ul { padding-left: 0; list-style: none; margin: 0; }
-    .article-data-box ul li {
-      font-size: 0.95rem;
-      color: #333;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
-    .article-data-box ul li:last-child { border-bottom: none; }
-    .article-data-box ul li::before { content: '→'; color: var(--gold); flex-shrink: 0; }
-
-    .article-cta-box {
-      background: linear-gradient(135deg, #1E2B5E 0%, #2C41E4 100%);
-      border-radius: 20px;
-      padding: 40px;
-      text-align: center;
-      margin: 60px 0 0;
-    }
-    .article-cta-box h3 { color: var(--white); font-size: 1.4rem; margin-bottom: 12px; }
-    .article-cta-box p { color: rgba(255,255,255,0.75); max-width: 480px; margin: 0 auto 24px; }
-  </style>
 </head>
 <body>
 
-  <header class="site-header" id="site-header">
-    <div class="nav-inner">
-      <div class="nav-container">
-        <div class="nav-logo-col">
-          <a href="index.html" class="nav-logo">
-            <img src="images/LOGO.png" alt="Boardroom CXO" width="160" />
-          </a>
-        </div>
-        <div class="nav-menu-col">
-          <nav class="nav-menu" id="nav-menu">
-            <ul>
-              <li><a href="index.html" class="nav-link">Home</a></li>
-              <li><a href="about-us.html" class="nav-link">About Us</a></li>
-              <li><a href="resources.html" class="nav-link active">Resources</a></li>
-              <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="nav-cta-col">
-          <a href="schedule-a-call.html" class="btn btn-gold">Let's Talk</a>
-          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <section class="inner-hero">
-    <div class="container" style="position:relative;z-index:1;">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span>/</span>
-        <a href="resources.html">Resources</a>
-        <span>/</span>
-        <span>Compensation Data</span>
-      </div>
-      <span class="tag-pill" style="margin-bottom:16px;display:inline-block;">Compensation Data</span>
-      <h1>The Hidden Comp Gap: Why Jewelry Brands Keep Losing Candidates at the Offer Stage</h1>
-      <div class="article-meta">
-        <span>June 2026</span>
-        <span>7 min read</span>
-        <span>By Boardroom CXO</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="article-body">
-
-    <p>A jewelry brand in Surat runs a search for a Regional Sales Manager. After two months, they have a strong candidate, someone from a well-known organized player, with the right experience, the right references, a track record of opening stores across two regions.</p>
-
-    <p>The candidate's CTC slip shows Rs. 13 LPA. The brand puts together what feels like a generous offer: Rs. 17 LPA, a 30% increment, and a clear title upgrade.</p>
-
-    <p>The candidate declines.</p>
-
-    <p>The hiring team is confused. They offered 30% above the documented salary. Why did it not work?</p>
-
-    <p>Because the CTC slip lied. Not maliciously, structurally. The candidate was actually earning Rs. 19-20 LPA once cash components, travel allowances, and unreported variable payouts were counted in. The 30% increment on the formal number was effectively a pay cut on the real one.</p>
-
-    <p>This is the hidden comp gap. It is endemic to India's organized jewelry sector, and it is the single most common reason offers fail at the final stage.</p>
-
-    <h2>Why the Gap Exists</h2>
-
-    <p>India's organized jewelry retail sector has a long history of legacy compensation structures. At brands like ORRA, Senco, PN Gadgil, and similar organized players, compensation packages were, and in many cases still are, structured to minimize formal payroll costs while keeping employees whole through informal channels.</p>
-
-    <p>The result is a pay structure that looks one way on paper and functions differently in practice. A typical arrangement at a legacy brand might look like this:</p>
-
-    <div class="comp-example">
-      <h4>Illustrative example, RSM at a legacy organized brand</h4>
-      <div class="comp-row">
-        <span class="label">Formal monthly salary (on slip)</span>
-        <span class="value">Rs. 75,000</span>
-      </div>
-      <div class="comp-row">
-        <span class="label">Cash component (monthly, unreported)</span>
-        <span class="value">Rs. 36,000</span>
-      </div>
-      <div class="comp-row">
-        <span class="label">Formally reported cash (of the above)</span>
-        <span class="value danger">Rs. 9,000/month only</span>
-      </div>
-      <div class="comp-row">
-        <span class="label">Actual monthly take-home</span>
-        <span class="value highlight">Rs. 1,11,000+</span>
-      </div>
-      <div class="comp-row">
-        <span class="label">Stated annual CTC</span>
-        <span class="value">Rs. 9 LPA (slip-based)</span>
-      </div>
-      <div class="comp-row">
-        <span class="label">Actual annual take-home</span>
-        <span class="value highlight">Rs. 13.3 LPA+</span>
-      </div>
-    </div>
-
-    <p>A hiring brand that benchmarks an offer against the Rs. 9 LPA slip, even generously, at a 35-40% increment, arrives at Rs. 12-12.5 LPA. The candidate, who is actually earning Rs. 13.3 LPA and has additional benefits not reflected anywhere on paper, has no reason to move.</p>
-
-    <p>This is not an edge case. It is the norm at legacy organized brands, and it affects every function, sales, business development, marketing, and operations.</p>
-
-    <h2>How It Shows Up in Practice</h2>
-
-    <h3>The offer gets declined without explanation</h3>
-
-    <p>Candidates rarely explain why they declined. They say they received a better offer elsewhere, or that the timing did not work, or that they have decided to stay put. The real reason, that the offer was below their actual current earnings, goes unspoken because discussing the cash component openly creates problems for the candidate with their current employer.</p>
-
-    <h3>The counter-offer wins without effort</h3>
-
-    <p>When a candidate's current employer learns they are considering a move, the counter-offer conversation is straightforward. The employer simply formalizes part of the cash component, raises the slip by Rs. 2-3 LPA, and the candidate has no reason to leave. The recruiting brand never finds out why it lost.</p>
-
-    <h3>The hire happens, at the wrong number</h3>
-
-    <p>In some cases, the candidate agrees to the offer because they need the formal CTC on their next slip for tax or loan purposes. But they arrive with an expectation, unspoken, of additional benefits that were never discussed. Six months in, the dissatisfaction surfaces.</p>
-
-    <div class="article-callout">
-      <p>The comp gap is not just a negotiation problem. It is an intelligence problem. If you do not know what the candidate actually earns, you cannot structure an offer that works, regardless of how generous your intentions are.</p>
-    </div>
-
-    <h2>The Numbers Across the Market</h2>
-
-    <p>Based on live candidate conversations across our pipeline, the gap between stated CTC and actual take-home at legacy organized brands runs consistently between 25% and 35%. Some specific anchors from recent mandates:</p>
-
-    <div class="article-data-box">
-      <h4>Field data, live pipeline (primary source)</h4>
-      <ul>
-        <li>BlueStone RSM: Rs. 27.5 LPA total (Rs. 24L fixed + Rs. 3.5L variable), appraising toward Rs. 30-35L. Formal slip reflects the fixed component only.</li>
-        <li>CaratLane RSM: Rs. 13.5–18.25 LPA. Range is wider than headline benchmarks suggest, the premium-brand floor does not hold across mid-tier mandates.</li>
-        <li>GIVA BDM: Rs. 20 LPA current, expecting Rs. 30L+ with ESOPs on any move. The ESOP expectation is non-negotiable at this seniority.</li>
-        <li>GIVA National Sales: Rs. 31 LPA + ESOPs. Benchmark for what a first National Sales Head costs at a funded Cat B brand.</li>
-        <li>Legacy brand RSM (ORRA-adjacent): Rs. 75,000/month bank + Rs. 36,000/month cash, of which only Rs. 9 LPA is formally reported. Actual earnings nearly 50% above the stated CTC.</li>
-      </ul>
-    </div>
-
-    <h2>The Correction That Actually Works</h2>
-
-    <h3>Verify against bank credit, not the CTC slip</h3>
-
-    <p>The only reliable way to understand what a candidate earns is to look at what arrives in their bank account. Candidates who are genuinely interested in a role will share this, not the slip, but the bank statement or a screenshot of monthly credits. A candidate who refuses to provide any verification of actual earnings is signalling that the gap is significant and they know the formal number will not support the offer they want.</p>
-
-    <h3>Benchmark against the verified number, then add a real increment</h3>
-
-    <p>A CaratLane or GIVA candidate at Rs. 13-18 LPA verified earnings will move on a 25-30% uplift on that real number, not on the 40-50% many brands think they need to offer because they are starting from the wrong base. Once you know the true number, the math becomes straightforward.</p>
-
-    <h3>Structure the offer to be clean</h3>
-
-    <p>Growth-stage and new-age brands have an advantage that legacy brands do not: transparent, clean compensation structures. No cash components, no informal payouts, clear variable logic. For candidates who have spent years inside legacy structures, a clean offer is itself an attraction, provided it is benchmarked correctly.</p>
-
-    <h3>Address the ESOP question early</h3>
-
-    <p>At the Rs. 20-40 LPA level, regional sales, senior BD, national roles, candidates from growth-stage brands (GIVA, Limelight, Palmonas) will have ESOP expectations. This is not a negotiating tactic; it reflects the standard at their current employer. If your brand is not in a position to offer ESOPs, that needs to be surfaced early and offset through other means, not discovered at the offer stage.</p>
-
-    <h2>What This Costs When It Goes Wrong</h2>
-
-    <p>A failed senior hire, where the candidate declines at the offer stage or joins and leaves within the first year, costs the brand roughly 200% of annual salary once recruitment, onboarding, and lost productivity are factored in. For a mandate at Rs. 20-25 LPA, that is Rs. 40-50 lakhs in direct cost, not counting the strategic cost of operating without the function for 6-9 months.</p>
-
-    <p>Most of these failures are avoidable. They happen not because the brand was unwilling to pay correctly but because they did not have the information needed to structure the offer correctly.</p>
-
-    <p>That is an intelligence problem. And it has a straightforward solution: verify the real number before you build the offer.</p>
-
-    <div class="article-cta-box">
-      <h3>Losing candidates at the offer stage?</h3>
-      <p>We benchmark every mandate against verified take-home, not CTC slips. Brief us on your next search and we will tell you what the role actually costs to close, before you start the process.</p>
-      <a href="index.html#contact" class="btn btn-gold">Brief Us on a Mandate</a>
-    </div>
-
+<header class="site-header" id="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand"><span class="nav-brand-mark">BX</span><span>Boardroom<em class="mono" style="font-size:14px;color:var(--clay);margin-left:2px;">·</em>CXO</span></a>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about-us.html" class="nav-link">About</a>
+      <a href="resources.html" class="nav-link active">Resources</a>
+      <a href="case-studies.html" class="nav-link">Case Studies</a>
+    </nav>
+    <a href="schedule-a-call.html" class="nav-cta">Let's Talk</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
+  <div class="nav-menu-mobile" id="nav-menu-mobile">
+    <a href="index.html">Home</a>
+    <a href="about-us.html">About</a>
+    <a href="resources.html">Resources</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="schedule-a-call.html" class="nav-cta-mobile">Let's Talk →</a>
+  </div>
+</header>
 
-  <a href="https://wa.me/919856755000" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    <span class="whatsapp-label">WhatsApp us</span>
-  </a>
+<section class="article-hero">
+  <div class="container">
+    <div class="article-hero-inner">
+      <div class="crumb">Home · Resources · Compensation Data</div>
+      <h1>The Hidden Comp Gap: Why Jewelry Brands Keep Losing Candidates at the Offer Stage</h1>
+      <div class="meta">
+        <span>June 2026</span>
+        <span>· 8 min read</span>
+        <span>· By Boardroom CXO</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<article class="article-body container">
+  <p>A jewelry brand in Surat runs a search for a Regional Sales Manager. After two months, they have a strong candidate — someone from a well-known organized player, with the right experience, the right references, a track record of opening stores across two regions.</p>
+  <p>The candidate's CTC slip shows Rs. 13 LPA. The brand puts together what feels like a generous offer: Rs. 17 LPA, a 30% increment, and a clear title upgrade.</p>
+  <p>The candidate declines.</p>
+  <p>The hiring team is confused. They offered 30% above the documented salary. Why did it not work?</p>
+  <blockquote>Because the CTC slip lied. Not maliciously — structurally.</blockquote>
+  <p>The candidate was actually earning Rs. 19-20 LPA once cash components, travel allowances, and unreported variable payouts were counted in. The 30% increment on the formal number was effectively a pay cut on the real one.</p>
+  <p>This is the hidden comp gap. It is endemic to India's organized jewelry sector, and it is the single most common reason offers fail at the final stage.</p>
+
+  <h2>Why the Gap Exists</h2>
+  <p>India's organized jewelry retail sector has a long history of legacy compensation structures. At brands like ORRA, Senco, PN Gadgil, and similar organized players, compensation packages were, and in many cases still are, structured to minimize formal payroll costs while keeping effective take-home competitive.</p>
+  <p>The result is a pay structure that looks one way on paper and functions differently in practice. A typical arrangement at a legacy brand might look like this:</p>
+  <p>A hiring brand that benchmarks an offer against the Rs. 9 LPA slip, even generously — at a 35-40% increment — arrives at Rs. 12-12.5 LPA. The candidate, who is actually earning Rs. 13.3 LPA and has additional benefits not reflected anywhere on paper, has no reason to move.</p>
+  <p>This is not an edge case. It is the norm at legacy organized brands, and it affects every function — sales, business development, marketing, and operations.</p>
+
+  <h2>How It Shows Up in Practice</h2>
+  <h3>The offer gets declined without explanation</h3>
+  <p>Candidates rarely explain why they declined. They say they received a better offer elsewhere, or that the timing did not work, or that they have decided to stay put. The real reason — that the offer was below their actual current earnings — goes unspoken because discussing the cash component would expose their current employer's payroll practices.</p>
+  <h3>The counter-offer wins without effort</h3>
+  <p>When a candidate's current employer learns they are considering a move, the counter-offer conversation is straightforward. The employer simply formalizes part of the cash component, raises the slip by Rs. 2-3 LPA, and the candidate has no reason to leave. The recruiting brand never had a real shot.</p>
+  <h3>The hire happens, at the wrong number</h3>
+  <p>In some cases, the candidate agrees to the offer because they need the formal CTC on their next slip for tax or loan purposes. But they arrive with an expectation — unspoken — of additional benefits that were never discussed. Six months in, the dissatisfaction surfaces.</p>
+  <p>The comp gap is not just a negotiation problem. It is an intelligence problem. <strong>If you do not know what the candidate actually earns, you cannot structure an offer that works</strong>, regardless of how generous your intentions are.</p>
+
+  <h2>The Numbers Across the Market</h2>
+  <p>Based on live candidate conversations across our pipeline, the gap between stated CTC and actual take-home at legacy organized brands runs consistently between 25% and 35%. Some specific anchors from recent mandates:</p>
+  <ul>
+    <li><strong>BlueStone RSM:</strong> Rs. 27.5 LPA total (Rs. 24L fixed + Rs. 3.5L variable), appraising toward Rs. 30-35L. Formal slip reflects the fixed component only.</li>
+    <li><strong>CaratLane RSM:</strong> Rs. 13.5–18.25 LPA. Range is wider than headline benchmarks suggest — the premium-brand floor does not hold across mid-tier mandates.</li>
+    <li><strong>GIVA BDM:</strong> Rs. 20 LPA current, expecting Rs. 30L+ with ESOPs on any move. The ESOP expectation is non-negotiable at this seniority.</li>
+    <li><strong>GIVA National Sales:</strong> Rs. 31 LPA + ESOPs. Benchmark for what a first National Sales Head costs at a funded Cat B brand.</li>
+    <li><strong>Legacy brand RSM (ORRA-adjacent):</strong> Rs. 75,000/month bank + Rs. 36,000/month cash, of which only Rs. 9 LPA is formally reported. Actual earnings nearly 50% above the stated CTC.</li>
+  </ul>
+
+  <h2>The Correction That Actually Works</h2>
+  <h3>Verify against bank credit, not the CTC slip</h3>
+  <p>The only reliable way to understand what a candidate earns is to look at what arrives in their bank account. Candidates who are genuinely interested in a role will share this — not the slip, but the bank statement or a screenshot of monthly credits. A candidate who refuses to provide this data is signaling something about the fit that a hiring team should pay attention to.</p>
+  <h3>Benchmark against the verified number, then add a real increment</h3>
+  <p>A CaratLane or GIVA candidate at Rs. 13-18 LPA verified earnings will move on a 25-30% uplift on that real number, not on the 40-50% many brands think they need to offer because they are starting from the wrong base. Once you know the true number, the math becomes straightforward.</p>
+  <h3>Structure the offer to be clean</h3>
+  <p>Growth-stage and new-age brands have an advantage that legacy brands do not: transparent, clean compensation structures. No cash components, no informal payouts, clear variable logic. For candidates who have spent years inside legacy structures, a clean offer is itself an attraction — provided the total number is right.</p>
+  <h3>Address the ESOP question early</h3>
+  <p>At the Rs. 20-40 LPA level — regional sales, senior BD, national roles — candidates from growth-stage brands (GIVA, Limelight, Palmonas) will have ESOP expectations. This is not a negotiating tactic; it reflects the standard at their current employer. If your brand is not in a position to offer equity, that needs to be communicated upfront, and the cash component needs to be structured accordingly.</p>
+
+  <h2>What This Costs When It Goes Wrong</h2>
+  <p>A failed senior hire — where the candidate declines at the offer stage or joins and leaves within the first year — costs the brand roughly 200% of annual salary once recruitment, onboarding, and lost productivity are factored in. For a mandate at Rs. 20-25 LPA, that is Rs. 40-50 lakhs in avoidable cost.</p>
+  <p>Most of these failures are avoidable. They happen not because the brand was unwilling to pay correctly but because they did not have the information needed to structure the offer correctly.</p>
+  <p>That is an intelligence problem. And it has a straightforward solution: <strong>verify the real number before you build the offer.</strong></p>
+
+  <div class="article-inline-cta">
+    <h3>Losing candidates at the offer stage?</h3>
+    <p>We benchmark every mandate against verified take-home — not CTC slips. Brief us on your next search and we will tell you what the role actually costs to close, before you start the process.</p>
+    <a href="schedule-a-call.html" class="btn" style="background:var(--bg);color:var(--ink);border-color:var(--bg);">Brief Us on a Mandate</a>
+  </div>
+</article>
+
+<section class="cta-block" id="contact">
+  <div class="container">
+    <span class="overline" style="color:var(--clay);">Next Move</span>
+    <h2 class="cta-display" style="margin-top:24px;">Tell us the role.<br/><em>We'll tell you the market.</em></h2>
+    <p class="cta-sub">Brief us on a mandate and we come back with real market data — before you commit a budget.</p>
+    <div class="cta-btns">
+      <a href="schedule-a-call.html" class="btn" style="background:var(--bg);color:var(--ink);border-color:var(--bg);">Brief Us on a Mandate</a>
+      <a href="tel:+919856755000" class="btn btn-light">+91 98567 55000</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><span class="footer-brand-mark">BX</span> Boardroom·CXO</div>
+        <p class="footer-tag">Executive search for jewelry, D2C, and consumer brands. Sourced from competitors. Benchmarked on real pay data.</p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/company/boardroomcxo" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://twitter.com/boardroomcxo" target="_blank" rel="noopener" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="about-us.html">About Us</a></li><li><a href="resources.html">Resources</a></li><li><a href="case-studies.html">Case Studies</a></li></ul></div>
+      <div class="footer-col"><h5>Engage</h5><ul><li><a href="schedule-a-call.html">Schedule a Call</a></li><li><a href="#contact">Brief a Mandate</a></li><li><a href="https://wa.me/919856755000" target="_blank" rel="noopener">WhatsApp</a></li></ul></div>
+      <div class="footer-col footer-contact"><h5>Contact</h5><p><a href="tel:+919856755000">+91 98567 55000</a></p><p><a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a></p><p>Mon–Sat · 10am–6pm IST</p><p>Surat, India &amp; UAE</p></div>
+    </div>
+    <div class="footer-bottom"><span>© Boardroom CXO · 2026</span><span>All Rights Reserved</span></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919856755000" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+<script src="script.js"></script>
 </body>
 </html>

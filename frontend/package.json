@@ -61,7 +61,7 @@
     "zod": "3.24.4"
   },
   "scripts": {
-    "start": "serve public -l tcp://0.0.0.0:3000 --no-clipboard --config ../serve.json",
+    "start": "python3 -m http.server 3000 --bind 0.0.0.0 --directory public",
     "build": "craco build",
     "test": "craco test"
   },
