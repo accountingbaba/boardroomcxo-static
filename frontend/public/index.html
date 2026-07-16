@@ -166,72 +166,110 @@
     </div>
 
     <div class="problems-list">
-      <!-- 01 -->
+      <!-- 01 Budget-Reality Gap -->
       <div class="problem-row" data-testid="problem-1">
         <div class="problem-num">01 —</div>
-        <div class="problem-stat">25–40<span style="color:var(--clay);">%</span></div>
+        <div class="problem-stat">25–40<sup>%</sup></div>
         <div class="problem-body">
           <h3>The Budget-Reality Gap</h3>
           <p>The typical ask above current CTC. We map the market before you lock a budget.</p>
+          <span class="problem-fix">Market Mapping First</span>
         </div>
-        <svg class="problem-viz" viewBox="0 0 180 68" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <line x1="0" y1="46" x2="80" y2="46" />
-          <line x1="0" y1="22" x2="140" y2="22" />
-          <line x1="80" y1="46" x2="140" y2="22" stroke-dasharray="3 3" />
-          <circle cx="80" cy="46" r="3" fill="currentColor" stroke="none" />
-          <circle cx="140" cy="22" r="3" fill="currentColor" stroke="none" />
-          <text x="150" y="26" font-family="Space Mono" font-size="10" fill="currentColor" stroke="none">+40%</text>
-        </svg>
-        <span class="problem-fix">Market Mapping First</span>
+        <div class="viz-box">
+          <div class="viz-bars">
+            <div class="viz-bar-row">
+              <span class="viz-bar-label">Budget</span>
+              <div class="viz-bar"><div class="viz-bar-fill clay" style="width:62%"></div></div>
+              <span class="viz-bar-value">₹18L</span>
+            </div>
+            <div class="viz-bar-row">
+              <span class="viz-bar-label">Ask</span>
+              <div class="viz-bar"><div class="viz-bar-fill emerald" style="width:88%"></div></div>
+              <span class="viz-bar-value accent">+40%</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- 02 -->
+
+      <!-- 02 Authority Without Mandate -->
       <div class="problem-row" data-testid="problem-2">
         <div class="problem-num">02 —</div>
-        <div class="problem-stat">200<span style="color:var(--clay);">%</span></div>
+        <div class="problem-stat">200<sup>%</sup></div>
         <div class="problem-body">
           <h3>Authority Without Mandate</h3>
           <p>The cost of replacing a senior hire brought in to "transform" but never given real authority to act.</p>
+          <span class="problem-fix">Mandate Defined at Offer</span>
         </div>
-        <svg class="problem-viz" viewBox="0 0 180 68" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <circle cx="30" cy="34" r="20" />
-          <circle cx="60" cy="34" r="20" opacity="0.5" />
-          <path d="M90 34 L170 34" stroke-dasharray="4 4" />
-          <path d="M160 26 L170 34 L160 42" />
-        </svg>
-        <span class="problem-fix">Mandate Defined at Offer</span>
+        <div class="viz-box">
+          <div class="viz-cost">
+            <div class="viz-cost-block">
+              <div class="viz-cost-fig"></div>
+              <span class="viz-cost-lbl">1× Hire</span>
+            </div>
+            <span class="viz-cost-plus">+</span>
+            <div class="viz-cost-block">
+              <div class="viz-cost-fig faded"></div>
+              <span class="viz-cost-lbl">1× Replace</span>
+            </div>
+            <span class="viz-cost-eq">=</span>
+            <div class="viz-cost-block">
+              <div style="font-family:var(--font-display);font-size:32px;font-weight:500;color:var(--clay);line-height:1;font-style:italic;">2×</div>
+              <span class="viz-cost-lbl">Salary Cost</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- 03 -->
+
+      <!-- 03 Hidden Comp Gap -->
       <div class="problem-row" data-testid="problem-3">
         <div class="problem-num">03 —</div>
-        <div class="problem-stat">25–35<span style="color:var(--clay);">%</span></div>
+        <div class="problem-stat">25–35<sup>%</sup></div>
         <div class="problem-body">
           <h3>The Hidden Comp Gap</h3>
           <p>How much formal CTC understates true pay at legacy brands. We verify bank credit, not slips.</p>
+          <span class="problem-fix">Real Compensation Data</span>
         </div>
-        <svg class="problem-viz" viewBox="0 0 180 68" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <rect x="10" y="30" width="50" height="24" />
-          <rect x="10" y="18" width="80" height="36" opacity="0.4" stroke-dasharray="3 2" />
-          <text x="100" y="24" font-family="Space Mono" font-size="9" fill="currentColor" stroke="none">TRUE</text>
-          <text x="100" y="46" font-family="Space Mono" font-size="9" fill="currentColor" stroke="none">CTC SLIP</text>
-        </svg>
-        <span class="problem-fix">Real Compensation Data</span>
+        <div class="viz-box">
+          <div class="viz-iceberg">
+            <div class="viz-iceberg-row">
+              <span class="viz-iceberg-label top">CTC Slip</span>
+              <div class="viz-iceberg-stack" style="height:16px;">
+                <div class="viz-iceberg-block slip" style="flex:100;"></div>
+              </div>
+              <span class="viz-iceberg-num">₹9L</span>
+            </div>
+            <div class="viz-iceberg-row">
+              <span class="viz-iceberg-label bot">Actual</span>
+              <div class="viz-iceberg-stack">
+                <div class="viz-iceberg-block slip" style="flex:65;"></div>
+                <div class="viz-iceberg-block hidden" style="flex:35;"></div>
+              </div>
+              <span class="viz-iceberg-num" style="color:var(--clay);font-weight:700;">₹13.3L</span>
+            </div>
+            <div class="viz-iceberg-note">
+              <span>Reported</span>
+              <span>Cash / Unreported</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- 04 -->
+
+      <!-- 04 Passive Candidate Problem -->
       <div class="problem-row" data-testid="problem-4">
         <div class="problem-num">04 —</div>
-        <div class="problem-stat">3</div>
+        <div class="problem-stat">03</div>
         <div class="problem-body">
           <h3>The Passive Candidate Problem</h3>
           <p>Performance Marketer, BDM, Founder's Office — the hardest roles to fill in 2026. None of these people are job-hunting.</p>
+          <span class="problem-fix">Direct Headhunting</span>
         </div>
-        <svg class="problem-viz" viewBox="0 0 180 68" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <circle cx="30" cy="34" r="6" />
-          <circle cx="60" cy="34" r="6" />
-          <circle cx="90" cy="34" r="6" />
-          <circle cx="120" cy="34" r="6" opacity="0.3" stroke-dasharray="2 2" />
-          <circle cx="150" cy="34" r="6" opacity="0.3" stroke-dasharray="2 2" />
-        </svg>
-        <span class="problem-fix">Direct Headhunting</span>
+        <div class="viz-box">
+          <div class="viz-chips">
+            <div class="viz-chip">Performance Marketer<span class="viz-chip-tag">0% Applying</span></div>
+            <div class="viz-chip">Business Dev Manager<span class="viz-chip-tag clay">0% Applying</span></div>
+            <div class="viz-chip">Founder's Office<span class="viz-chip-tag dark">0% Applying</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
