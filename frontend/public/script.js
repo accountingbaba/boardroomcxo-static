@@ -114,17 +114,14 @@ const SALARY_DATA = [
 ];
 
 (function salaryTool() {
-  const modal = document.getElementById('salary-modal');
-  const openBtn = document.getElementById('open-salary-tool');
   const roleSelect = document.getElementById('salary-role');
   const storesSelect = document.getElementById('salary-stores');
   const tierSelect = document.getElementById('salary-tier');
   const resultRange = document.getElementById('salary-result-range');
   const familyBadge = document.getElementById('salary-family-badge');
-  const modalPanel = modal ? modal.querySelector('.modal-panel') : null;
-  if (!modal || !openBtn || !roleSelect) return;
+  const toolPanel = document.querySelector('.salary-tool-live');
+  if (!roleSelect || !storesSelect || !tierSelect || !resultRange || !toolPanel) return;
 
-  // Map group name -> family key
   const FAMILY_KEY = {
     'Marketing': 'marketing',
     'Sales & Retail': 'sales',
@@ -132,10 +129,10 @@ const SALARY_DATA = [
     'Strategy & Operations': 'strategy'
   };
   const FAMILY_LABEL = {
-    marketing: 'A · Marketing',
-    sales:     'B · Sales & Retail',
-    bd:        'C · BD & Franchise',
-    strategy:  'D · Strategy & Ops'
+    marketing: 'A / Marketing',
+    sales:     'B / Sales & Retail',
+    bd:        'C / BD & Franchise',
+    strategy:  'D / Strategy & Ops'
   };
 
   SALARY_DATA.forEach(group => {
@@ -173,41 +170,39 @@ const SALARY_DATA = [
     step();
   }
 
-  function updateResult() {
+  function updateResult(animate) {
     const found = findRole(roleSelect.value);
     if (!found) return;
     const { role, family } = found;
-    // Apply family class to modal panel
-    if (modalPanel) modalPanel.dataset.family = family;
+    toolPanel.dataset.family = family;
     if (familyBadge) familyBadge.textContent = FAMILY_LABEL[family];
     const [min, max] = role[storesSelect.value];
     const isTier2 = tierSelect.value === '2';
     const factor = isTier2 ? (1 - role.tierCut) : 1;
-    const text = `₹${fmt(min * factor)}L – ₹${fmt(max * factor)}L`;
-    if (modal.classList.contains('open') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const text = `\u20B9${fmt(min * factor)}L to \u20B9${fmt(max * factor)}L`;
+    if (animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       typeResult(text);
     } else {
       resultRange.textContent = text;
     }
   }
 
-  function openModal() {
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    updateResult();
-  }
-  function closeModal() {
-    modal.classList.remove('open');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
+  [roleSelect, storesSelect, tierSelect].forEach(el => el.addEventListener('change', () => updateResult(true)));
+  // initial render (no animation)
+  updateResult(false);
 
-  openBtn.addEventListener('click', openModal);
-  modal.querySelectorAll('[data-close-modal]').forEach(el => el.addEventListener('click', closeModal));
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
-  });
-  [roleSelect, storesSelect, tierSelect].forEach(el => el.addEventListener('change', updateResult));
-  updateResult();
+  // Animate result on scroll-into-view (first time only)
+  if ('IntersectionObserver' in window) {
+    let played = false;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && !played) {
+          played = true;
+          updateResult(true);
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    io.observe(toolPanel);
+  }
 })();

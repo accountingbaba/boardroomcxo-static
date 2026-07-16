@@ -40,9 +40,8 @@
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="site-header" data-testid="site-header">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand" data-testid="nav-brand">
-      <span class="nav-brand-mark">BX</span>
-      <span>Boardroom<em class="mono" style="font-size:14px;color:var(--clay);margin-left:2px;">·</em>CXO</span>
+    <a href="index.html" class="nav-brand" data-testid="nav-brand" aria-label="Boardroom CXO">
+      <img src="images/logo-boardroomcxo.png" alt="Boardroom CXO" />
     </a>
     <nav class="nav-menu" data-testid="nav-menu">
       <a href="index.html" class="nav-link active" data-testid="nav-link-home">Home</a>
@@ -71,7 +70,7 @@
       <div class="hero-left">
         <div class="hero-meta">
           <span class="hero-meta-line"></span>
-          <span class="overline">Executive Search · Est. Surat, India</span>
+          <span class="overline">Executive Search · India &amp; UAE</span>
         </div>
         <h1 class="hero-display" data-testid="hero-heading">
           Right Leaders.<br /><em>Real Results.</em>
@@ -86,7 +85,7 @@
       </div>
       <div class="hero-right">
         <div class="hero-badge" data-testid="hero-badge">
-          <span class="hero-badge-num">350<em style="font-style:normal;color:var(--clay)">+</em></span>
+          <span class="hero-badge-num">350<em style="font-style:normal;color:var(--gold);">+</em></span>
           <div class="hero-badge-copy">
             <span class="stars">★★★★★</span>
             Client Ratings
@@ -109,7 +108,7 @@
       <div class="hero-stat">
         <span class="hero-stat-index">02 / Cost of Failure</span>
         <span class="hero-stat-num" data-target="200" data-suffix="%" data-testid="stat-2-num">200%</span>
-        <span class="hero-stat-label">cost of a bad senior hire</span>
+        <span class="hero-stat-label">cost to company due to a wrong senior hire</span>
       </div>
       <div class="hero-stat">
         <span class="hero-stat-index">03 / Hidden Reality</span>
@@ -122,7 +121,7 @@
 
 <!-- ============ LOGOS RIBBON ============ -->
 <section class="ribbon" data-testid="logos-ribbon">
-  <p class="ribbon-label overline">— Talent sourced from India's leading consumer &amp; jewelry brands</p>
+  <p class="ribbon-label overline">// Talent sourced from India's leading consumer &amp; jewelry brands</p>
   <div class="marquee-wrap">
     <div class="marquee-track">
       <img src="images/lenskart.png" alt="Lenskart" data-logo="lenskart" />
@@ -168,7 +167,7 @@
     <div class="problems-list">
       <!-- 01 Budget-Reality Gap -->
       <div class="problem-row" data-testid="problem-1">
-        <div class="problem-num">01 —</div>
+        <div class="problem-num">01 /</div>
         <div class="problem-stat">25–40<sup>%</sup></div>
         <div class="problem-body">
           <h3>The Budget-Reality Gap</h3>
@@ -193,7 +192,7 @@
 
       <!-- 02 Authority Without Mandate -->
       <div class="problem-row" data-testid="problem-2">
-        <div class="problem-num">02 —</div>
+        <div class="problem-num">02 /</div>
         <div class="problem-stat">200<sup>%</sup></div>
         <div class="problem-body">
           <h3>Authority Without Mandate</h3>
@@ -222,11 +221,11 @@
 
       <!-- 03 Hidden Comp Gap -->
       <div class="problem-row" data-testid="problem-3">
-        <div class="problem-num">03 —</div>
-        <div class="problem-stat">25–35<sup>%</sup></div>
+        <div class="problem-num">03 /</div>
+        <div class="problem-stat">35<sup>%</sup></div>
         <div class="problem-body">
-          <h3>The Hidden Comp Gap</h3>
-          <p>How much formal CTC understates true pay at legacy brands. We verify bank credit, not slips.</p>
+          <h3>Actual Pay v/s CTC</h3>
+          <p>The difference between actual pay and CTC at legacy brands. We verify bank credit, not slips.</p>
           <span class="problem-fix">Real Compensation Data</span>
         </div>
         <div class="viz-box">
@@ -256,11 +255,11 @@
 
       <!-- 04 Passive Candidate Problem -->
       <div class="problem-row" data-testid="problem-4">
-        <div class="problem-num">04 —</div>
+        <div class="problem-num">04 /</div>
         <div class="problem-stat">03</div>
         <div class="problem-body">
           <h3>The Passive Candidate Problem</h3>
-          <p>Performance Marketer, BDM, Founder's Office — the hardest roles to fill in 2026. None of these people are job-hunting.</p>
+          <p>Performance Marketer, BDM, Founder's Office, the hardest roles to fill in 2026. None of these people are job-hunting.</p>
           <span class="problem-fix">Direct Headhunting</span>
         </div>
         <div class="viz-box">
@@ -275,73 +274,65 @@
   </div>
 </section>
 
-<!-- ============ SALARY BAND ============ -->
-<section class="salary-band" data-testid="salary-band">
+<!-- ============ SALARY BAND (Live Tool) ============ -->
+<section class="salary-band" id="salary-tool" data-testid="salary-band">
   <div class="container">
     <div class="salary-band-inner">
-      <div>
-        <span class="overline" style="color:var(--clay);">§02 · Free Tool</span>
-        <h2 style="margin-top:20px;">What other companies are<br/><em style="font-style:italic;color:var(--clay);font-weight:400;">actually paying.</em></h2>
-        <p class="lead">Pick a role and your store count — get a live compensation range from our 2025–26 market mapping across Category A/B/C jewelry &amp; D2C brands.</p>
-        <button class="btn btn-light" id="open-salary-tool" type="button" data-testid="open-salary-tool" style="margin-top:8px;">Check the Benchmark</button>
+      <div class="salary-band-copy">
+        <span class="overline" style="color:var(--gold);">§02 / Live Tool</span>
+        <h2 style="margin-top:20px;">What other companies are<br/><em style="font-style:italic;color:var(--gold);font-weight:400;">actually paying.</em></h2>
+        <p class="lead" style="color:rgba(255,255,255,0.7);margin-bottom:28px;">Pick a role and your store count. Get a live compensation range from our 2025-26 market mapping across Category A, B, and C jewelry &amp; D2C brands. Play with the tool below.</p>
+        <ul class="salary-band-tags">
+          <li>15 Roles</li>
+          <li>3 Store Tiers</li>
+          <li>2 City Tiers</li>
+          <li>Live Data</li>
+        </ul>
       </div>
-      <div class="salary-terminal" data-testid="salary-terminal">
+      <div class="salary-tool-live" data-family="marketing">
         <div class="salary-terminal-header">
           <span>Live · BCXO Terminal</span>
           <span>v.2025-26</span>
         </div>
-        <div class="salary-terminal-line">&gt; <b>select role</b> — Performance Marketer (Lead)</div>
-        <div class="salary-terminal-line">&gt; <b>stores</b> — 20-60 (Category B)</div>
-        <div class="salary-terminal-line">&gt; <b>tier</b> — 1 (Mumbai / BLR / DEL)</div>
-        <div class="salary-terminal-line" style="margin-top:14px;color:#59D28E;">&gt; range = <b style="color:#59D28E;">₹13L – ₹22L</b></div>
-        <div class="salary-terminal-line" style="opacity:0.4;">&gt; indicative · brief us for a mandate-specific number</div>
+        <div class="modal-family-strip">
+          <span class="modal-family-dot"></span>
+          <span id="salary-family-badge">A / Marketing</span>
+        </div>
+        <div class="terminal-form">
+          <label>
+            Role
+            <select id="salary-role" data-testid="salary-role"></select>
+          </label>
+          <div class="terminal-form-row">
+            <label>
+              Store count
+              <select id="salary-stores" data-testid="salary-stores">
+                <option value="C">Under 20 stores</option>
+                <option value="B" selected>20 to 60 stores</option>
+                <option value="A">60+ stores</option>
+              </select>
+            </label>
+            <label>
+              City tier
+              <select id="salary-tier" data-testid="salary-tier">
+                <option value="1" selected>Tier 1 · Metro</option>
+                <option value="2">Tier 2 · Surat / Pune</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="terminal-result">
+          <span class="terminal-result-label">Typical Annual CTC</span>
+          <div class="terminal-result-line">
+            <span class="terminal-result-range" id="salary-result-range" data-testid="salary-result-range">&#8377;13L to &#8377;22L</span>
+            <span class="terminal-result-cursor"></span>
+          </div>
+        </div>
+        <a href="schedule-a-call.html" class="modal-cta" data-testid="salary-tool-cta">Brief Us on a Mandate /</a>
       </div>
     </div>
   </div>
 </section>
-
-<!-- Salary Modal -->
-<div class="modal" id="salary-modal" aria-hidden="true" data-testid="salary-modal">
-  <div class="modal-backdrop" data-close-modal></div>
-  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="salary-modal-title">
-    <button class="modal-close" type="button" data-close-modal aria-label="Close" data-testid="salary-modal-close">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M18 6 6 18M6 6l12 12"/></svg>
-    </button>
-    <h3 id="salary-modal-title" class="modal-title">What other companies are paying</h3>
-    <p class="modal-sub">Based on BoardroomCXO's 2025–26 market mapping across jewelry &amp; D2C brands. Indicative range — brief us for a mandate-specific number.</p>
-    <div class="modal-family-strip" id="salary-family-strip">
-      <span class="modal-family-dot"></span>
-      <span class="modal-family-label" id="salary-family-badge">A · Marketing</span>
-    </div>
-    <div class="terminal-form">
-      <label>
-        Role
-        <select id="salary-role" data-testid="salary-role"></select>
-      </label>
-      <label>
-        Your store count
-        <select id="salary-stores" data-testid="salary-stores">
-          <option value="C">Under 20 stores (early-stage)</option>
-          <option value="B" selected>20–60 stores (growth-stage)</option>
-          <option value="A">60+ stores / large-scale</option>
-        </select>
-      </label>
-      <label>
-        City tier
-        <select id="salary-tier" data-testid="salary-tier">
-          <option value="1" selected>Tier 1 — Mumbai, Bengaluru, Delhi NCR</option>
-          <option value="2">Tier 2 — Surat, Jaipur, Pune, Hyderabad outer</option>
-        </select>
-      </label>
-    </div>
-    <div class="terminal-result">
-      <span class="terminal-result-label">Typical Annual CTC</span>
-      <span class="terminal-result-range" id="salary-result-range" data-testid="salary-result-range">—</span>
-      <span class="terminal-result-cursor"></span>
-    </div>
-    <a href="schedule-a-call.html" class="modal-cta" data-testid="modal-cta">Brief Us on a Mandate →</a>
-  </div>
-</div>
 
 <!-- ============ HOW WE WORK ============ -->
 <section class="section section-alt" id="how-we-work" data-testid="process-section">
@@ -351,7 +342,7 @@
         <span class="sec-head-index">§03 · How We Work</span>
         <h2 class="h2">The best hire you can make <em class="italic-serif" style="color:var(--clay);">is not looking for a job.</em></h2>
       </div>
-      <p class="lead">The performance marketer holding an 8x ROAS at BlueStone. The BDM who opened 40 stores for CaratLane. None of them are applying anywhere — they respond to a confidential, well-researched approach, before a single job description is written. That's how every search here starts.</p>
+      <p class="lead">The performance marketer holding an 8x ROAS at BlueStone. The BDM who opened 40 stores for CaratLane. None of them are applying anywhere, they respond to a confidential, well-researched approach, before a single job description is written. That's how every search here starts.</p>
     </div>
 
     <div class="process-track">
@@ -371,7 +362,7 @@
         <div class="pstep-meta"><span>12–24 mo view</span><span class="pct">50%</span></div>
         <div class="pstep-bar"><div class="pstep-bar-fill" style="width:50%"></div></div>
         <h4>Define What the Role Must Deliver</h4>
-        <p>Outcomes, authority, and KPIs for the next 12–24 months — before writing a job description.</p>
+        <p>Outcomes, authority, and KPIs for the next 12–24 months, before writing a job description.</p>
         <div class="pstep-kpi">
           <span class="pstep-kpi-label">Deliverable</span>
           <span class="pstep-kpi-value">KPIs &amp; <em>Authority Scope</em></span>
@@ -382,7 +373,7 @@
         <div class="pstep-meta"><span>Week 3–8</span><span class="pct">75%</span></div>
         <div class="pstep-bar"><div class="pstep-bar-fill" style="width:75%"></div></div>
         <h4>Direct Headhunting, Intermediary-Led</h4>
-        <p>We approach people already at scale inside competitor brands — candidates self-select in before your name is disclosed.</p>
+        <p>We approach people already at scale inside competitor brands, candidates self-select in before your name is disclosed.</p>
         <div class="pstep-kpi">
           <span class="pstep-kpi-label">Deliverable</span>
           <span class="pstep-kpi-value">Confidential <em>Shortlist</em></span>
@@ -647,7 +638,7 @@
           <span class="date">June 2026</span>
         </div>
         <h3>Why Good BDMs Are Never Available, And How Growth-Stage Brands Can Still Hire Them</h3>
-        <p>Good BDMs — the ones who can identify locations, negotiate leases, and execute store launches — are held tightly by their employers.</p>
+        <p>Good BDMs, the ones who can identify locations, negotiate leases, and execute store launches, are held tightly by their employers.</p>
         <a href="#" class="link-under">Read Article →</a>
       </article>
     </div>
@@ -670,7 +661,7 @@
 <footer class="footer" data-testid="footer">
   <div class="container">
         <div class="footer-practice">
-      <span class="fp-label">— Our Practice</span>
+      <span class="fp-label">// Our Practice</span>
       <div class="fp-strip">
         <a href="index.html#roles" class="fp-item fp-item--marketing"><span class="fp-dot"></span>A · Marketing</a>
         <a href="index.html#roles" class="fp-item fp-item--sales"><span class="fp-dot"></span>B · Sales &amp; Retail</a>
@@ -680,7 +671,7 @@
     </div>
     <div class="footer-grid">
       <div>
-        <div class="footer-brand"><span class="footer-brand-mark">BX</span> Boardroom·CXO</div>
+        <div class="footer-brand"><img src="images/logo-boardroomcxo.png" alt="Boardroom CXO" /></div>
         <p class="footer-tag">Executive search for jewelry, D2C, and consumer brands. Sourced from competitors. Benchmarked on real pay data.</p>
         <div class="footer-socials">
           <a href="https://www.linkedin.com/company/boardroomcxo" target="_blank" rel="noopener" aria-label="LinkedIn" data-testid="footer-linkedin">
