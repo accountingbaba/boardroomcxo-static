@@ -206,3 +206,39 @@ const SALARY_DATA = [
     io.observe(toolPanel);
   }
 })();
+
+// Form submission (contact form + newsletter signup) via mail-handler.php
+(function () {
+  function wireForm(form, successText) {
+    if (!form) return;
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn ? btn.textContent : '';
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (btn) { btn.textContent = 'Sending…'; btn.disabled = true; }
+      try {
+        const res = await fetch('/mail-handler.php', {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form),
+        });
+        const result = await res.json();
+        if (result.success) {
+          if (btn) btn.textContent = successText;
+          form.reset();
+        } else {
+          if (btn) btn.textContent = 'Something went wrong — try again';
+          setTimeout(() => { if (btn) { btn.textContent = originalText; btn.disabled = false; } }, 3000);
+        }
+      } catch (err) {
+        if (btn) btn.textContent = 'Network error — try again';
+        setTimeout(() => { if (btn) { btn.textContent = originalText; btn.disabled = false; } }, 3000);
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    wireForm(document.querySelector('[data-testid="contact-form"]'), "Sent ✓, We'll be in touch");
+    wireForm(document.querySelector('[data-testid="newsletter-form"]'), 'Subscribed ✓');
+  });
+})();

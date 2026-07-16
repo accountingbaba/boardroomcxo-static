@@ -1,0 +1,42 @@
+# ============================================================
+# Boardroom CXO — WordPress → static site cutover redirects
+# Upload this to public_html/ alongside the static site files.
+# Requires Apache mod_rewrite (standard on cPanel shared hosting).
+# ============================================================
+
+RewriteEngine On
+
+# Force https and non-www (canonical origin: https://boardroomcxo.com)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteCond %{HTTP_HOST} ^(www\.)?(.+)$ [NC]
+RewriteRule ^ https://%2%{REQUEST_URI} [L,R=301,NE]
+
+# ---- WordPress pages -> static pages ----
+Redirect 301 /about-us/ /about-us.html
+Redirect 301 /case-studies/ /case-studies.html
+Redirect 301 /schedule-a-call/ /schedule-a-call.html
+Redirect 301 /resources/ /resources.html
+
+# ---- WordPress portfolio (case studies) -> new case studies page ----
+# All three portfolio items are covered as case studies on the new page.
+Redirect 301 /portfolio/ /case-studies.html
+Redirect 301 /portfolio/case-study-cmo-hiring-ipo-jewellery-strategy/ /case-studies.html
+Redirect 301 /portfolio/case-study-cfo-hiring-jewellery-brand-ipo/ /case-studies.html
+Redirect 301 /portfolio/case-study-finance-head-singapore-expansion/ /case-studies.html
+
+# ---- WordPress blog posts -> Resources hub (no direct static equivalent) ----
+Redirect 301 /how-to-identify-leadership-gaps-before-your-ipo/ /resources.html
+Redirect 301 /the-top-3-leadership-roles-you-need-before-going-public/ /resources.html
+Redirect 301 /why-leadership-can-make-or-break-your-ipo/ /resources.html
+
+# ---- WordPress category archive -> Resources hub ----
+Redirect 301 /category/blogs/ /resources.html
+
+# ---- Old WordPress system paths: send to homepage rather than 404 ----
+RedirectMatch 301 ^/wp-admin/?$ /
+RedirectMatch 301 ^/wp-login\.php$ /
+RedirectMatch 301 ^/feed/?$ /
+
+# ---- Clean 404 fallback for anything else unmapped ----
+ErrorDocument 404 /index.html

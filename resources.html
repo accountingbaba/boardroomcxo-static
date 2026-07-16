@@ -152,8 +152,10 @@
         <h2 class="h2" style="margin-top:16px;">Get Leadership Insights<br/><em class="italic-serif" style="color:var(--clay);">Straight to Your Inbox.</em></h2>
         <p class="lead" style="margin-top:16px;">Join 2,000+ founders and executives who receive our bi-weekly newsletter on IPO-ready leadership, executive hiring, and boardroom strategy.</p>
       </div>
-      <form class="newsletter-form" onsubmit="event.preventDefault();this.querySelector('input').value='Subscribed ✓';">
-        <input type="email" placeholder="your.email@company.com" required data-testid="newsletter-input" />
+      <form class="newsletter-form" data-testid="newsletter-form">
+        <input type="hidden" name="form_type" value="newsletter" />
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+        <input type="email" name="email" placeholder="your.email@company.com" required data-testid="newsletter-input" />
         <button type="submit" data-testid="newsletter-submit">Subscribe →</button>
       </form>
     </div>

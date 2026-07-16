@@ -94,29 +94,31 @@
           <div class="contact-channel"><span class="k">Email</span><span class="v"><a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a></span><span></span></div>
           <div class="contact-channel"><span class="k">Hours</span><span class="v">Mon – Sat · 10am – 6pm IST</span><span></span></div>
           <div class="contact-channel"><span class="k">Locations</span><span class="v">India &amp; UAE</span><span></span></div>
-          <div class="contact-channel"><span class="k">Pick a Time</span><span class="v">Book directly via Calendly, no waiting</span><a href="https://calendly.com/boardroomcxo" target="_blank" rel="noopener" class="link-under">Book Now →</a></div>
+          <div class="contact-channel"><span class="k">Pick a Time</span><span class="v">Book directly via Calendly, no waiting</span><a href="https://calendly.com/caketul/virtualmeets" target="_blank" rel="noopener" class="link-under">Book Now →</a></div>
         </div>
       </div>
 
-      <form class="contact-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Sent ✓, We\'ll be in touch';" data-testid="contact-form">
+      <form class="contact-form" data-testid="contact-form">
+        <input type="hidden" name="form_type" value="contact" />
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
         <div class="overline" style="color:var(--clay);">§02 · Message</div>
         <h3>Send Us a Message.</h3>
         <p style="font-size:14px;color:var(--ink-2);line-height:1.6;">Fill in the form and our team will get back to you within one business day.</p>
         <div class="form-row-2">
-          <div class="form-row"><label>First Name *</label><input type="text" required data-testid="form-firstname" /></div>
-          <div class="form-row"><label>Last Name *</label><input type="text" required data-testid="form-lastname" /></div>
+          <div class="form-row"><label>First Name *</label><input type="text" name="first_name" required data-testid="form-firstname" /></div>
+          <div class="form-row"><label>Last Name *</label><input type="text" name="last_name" required data-testid="form-lastname" /></div>
         </div>
         <div class="form-row-2">
-          <div class="form-row"><label>Email *</label><input type="email" required data-testid="form-email" /></div>
-          <div class="form-row"><label>Phone</label><input type="tel" data-testid="form-phone" /></div>
+          <div class="form-row"><label>Email *</label><input type="email" name="email" required data-testid="form-email" /></div>
+          <div class="form-row"><label>Phone</label><input type="tel" name="phone" data-testid="form-phone" /></div>
         </div>
         <div class="form-row-2">
-          <div class="form-row"><label>Company *</label><input type="text" required data-testid="form-company" /></div>
-          <div class="form-row"><label>Your Role</label><input type="text" data-testid="form-role" /></div>
+          <div class="form-row"><label>Company *</label><input type="text" name="company" required data-testid="form-company" /></div>
+          <div class="form-row"><label>Your Role</label><input type="text" name="role" data-testid="form-role" /></div>
         </div>
         <div class="form-row">
           <label>What Are You Looking For? *</label>
-          <select required data-testid="form-service">
+          <select name="service" required data-testid="form-service">
             <option value="">Select a service</option>
             <option>Leadership Gap Analysis</option>
             <option>Strategic CXO Search</option>
@@ -126,7 +128,7 @@
             <option>Other / Not Sure Yet</option>
           </select>
         </div>
-        <div class="form-row"><label>Tell Us About Your Needs</label><textarea rows="3" data-testid="form-message"></textarea></div>
+        <div class="form-row"><label>Tell Us About Your Needs</label><textarea rows="3" name="message" data-testid="form-message"></textarea></div>
         <button type="submit" class="btn" style="justify-content:center;" data-testid="form-submit">Schedule a Free Consultation</button>
         <p style="font-size:11px;color:var(--ink-2);line-height:1.5;">By submitting, you agree to our privacy policy. We never share your data.</p>
       </form>

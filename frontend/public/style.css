@@ -474,7 +474,7 @@ ul  { list-style: none; }
   display: flex; align-items: center; justify-content: space-between;
   margin-bottom: 20px; padding-bottom: 12px;
   border-bottom: 1px solid rgba(255,255,255,0.15);
-  color: rgba(255,255,255,0.5); font-size: 10.5px;
+  color: rgba(255,255,255,0.72); font-size: 10.5px;
   letter-spacing: 0.22em; text-transform: uppercase;
 }
 .salary-terminal-header span:first-child::before { content: '● '; color: #59D28E; }
@@ -525,7 +525,7 @@ ul  { list-style: none; }
 .terminal-form label {
   display: flex; flex-direction: column; gap: 6px;
   font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.22em;
-  text-transform: uppercase; color: rgba(255,255,255,0.55);
+  text-transform: uppercase; color: rgba(255,255,255,0.72);
 }
 .terminal-form select {
   font-family: var(--font-mono); font-size: 13px; background: transparent;
@@ -540,7 +540,7 @@ ul  { list-style: none; }
 .terminal-result { border: 1px solid rgba(255,255,255,0.2); padding: 24px; margin-bottom: 24px; }
 .terminal-result-label {
   font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em;
-  text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 10px; display: block;
+  text-transform: uppercase; color: rgba(255,255,255,0.72); margin-bottom: 10px; display: block;
 }
 .terminal-result-line { display: flex; align-items: center; }
 .terminal-result-range {
@@ -565,7 +565,15 @@ ul  { list-style: none; }
 .salary-tool-live[data-family="bd"] .modal-cta:hover        { background: #E0B899; border-color: #E0B899; }
 .salary-tool-live[data-family="strategy"] .modal-cta:hover  { background: #9CB4CB; border-color: #9CB4CB; }
 
-@media (max-width: 900px) { .salary-band-inner { grid-template-columns: 1fr; gap: 40px; } .salary-tool-live { padding: 24px; box-shadow: 6px 6px 0 var(--gold-deep); } .terminal-form-row { grid-template-columns: 1fr; } }
+@media (max-width: 900px) {
+  .salary-band-inner { grid-template-columns: 1fr; gap: 40px; }
+  .salary-band-copy, .salary-tool-live { min-width: 0; }
+  .salary-tool-live { padding: 24px; box-shadow: 6px 6px 0 var(--gold-deep); }
+  .terminal-form-row { grid-template-columns: 1fr; min-width: 0; }
+  .terminal-form-row label { min-width: 0; }
+  .terminal-form select { max-width: 100%; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+  .salary-band-tags { max-width: 100%; }
+}
 
 /* MODAL */
 .modal {
@@ -601,7 +609,7 @@ ul  { list-style: none; }
 .terminal-form label {
   display: flex; flex-direction: column; gap: 6px;
   font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.22em;
-  text-transform: uppercase; color: rgba(255,255,255,0.55);
+  text-transform: uppercase; color: rgba(255,255,255,0.72);
 }
 .terminal-form select {
   font-family: var(--font-mono); font-size: 13px; background: transparent;
@@ -616,7 +624,7 @@ ul  { list-style: none; }
 .terminal-result { border: 1px solid rgba(255,255,255,0.2); padding: 24px; margin-bottom: 24px; }
 .terminal-result-label {
   font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em;
-  text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 10px; display: block;
+  text-transform: uppercase; color: rgba(255,255,255,0.72); margin-bottom: 10px; display: block;
 }
 .terminal-result-range {
   font-family: var(--font-mono); font-size: 30px; letter-spacing: -0.01em;
@@ -868,7 +876,7 @@ ul  { list-style: none; }
   display: flex; flex-direction: column; gap: 24px; align-items: flex-start;
 }
 .why-media img {
-  width: 100%; aspect-ratio: 4/3; object-fit: cover;
+  width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center 80%;
   filter: grayscale(1) contrast(1.05);
 }
 .why-cta-inline { align-self: flex-start; }
@@ -1363,9 +1371,11 @@ ul  { list-style: none; }
 .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 @media (max-width: 800px) {
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  .contact-info { padding-right: 0; }
+  .contact-info, .contact-form { min-width: 0; padding-right: 0; }
   .contact-form { padding: 32px 24px; }
   .form-row-2 { grid-template-columns: 1fr; }
+  .form-row-2 .form-row { min-width: 0; }
+  .form-row select { max-width: 100%; text-overflow: ellipsis; }
 }
 
 .what-youll-get { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
