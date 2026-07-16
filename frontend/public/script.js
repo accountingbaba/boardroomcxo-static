@@ -120,22 +120,43 @@ const SALARY_DATA = [
   const storesSelect = document.getElementById('salary-stores');
   const tierSelect = document.getElementById('salary-tier');
   const resultRange = document.getElementById('salary-result-range');
+  const familyBadge = document.getElementById('salary-family-badge');
+  const modalPanel = modal ? modal.querySelector('.modal-panel') : null;
   if (!modal || !openBtn || !roleSelect) return;
 
+  // Map group name -> family key
+  const FAMILY_KEY = {
+    'Marketing': 'marketing',
+    'Sales & Retail': 'sales',
+    'Business & Franchise Development': 'bd',
+    'Strategy & Operations': 'strategy'
+  };
+  const FAMILY_LABEL = {
+    marketing: 'A · Marketing',
+    sales:     'B · Sales & Retail',
+    bd:        'C · BD & Franchise',
+    strategy:  'D · Strategy & Ops'
+  };
+
   SALARY_DATA.forEach(group => {
+    const fam = FAMILY_KEY[group.group];
     const optgroup = document.createElement('optgroup');
     optgroup.label = group.group;
     group.roles.forEach(role => {
       const opt = document.createElement('option');
       opt.value = role.id;
       opt.textContent = role.label;
+      opt.dataset.family = fam;
       optgroup.appendChild(opt);
     });
     roleSelect.appendChild(optgroup);
   });
 
   function findRole(id) {
-    for (const g of SALARY_DATA) { const m = g.roles.find(r => r.id === id); if (m) return m; }
+    for (const g of SALARY_DATA) {
+      const m = g.roles.find(r => r.id === id);
+      if (m) return { role: m, family: FAMILY_KEY[g.group] };
+    }
     return null;
   }
   function fmt(n) { return n % 1 === 0 ? n.toFixed(0) : n.toFixed(1); }
@@ -153,8 +174,12 @@ const SALARY_DATA = [
   }
 
   function updateResult() {
-    const role = findRole(roleSelect.value);
-    if (!role) return;
+    const found = findRole(roleSelect.value);
+    if (!found) return;
+    const { role, family } = found;
+    // Apply family class to modal panel
+    if (modalPanel) modalPanel.dataset.family = family;
+    if (familyBadge) familyBadge.textContent = FAMILY_LABEL[family];
     const [min, max] = role[storesSelect.value];
     const isTier2 = tierSelect.value === '2';
     const factor = isTier2 ? (1 - role.tierCut) : 1;
