@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 64" width="200" height="64">
+  <!-- Upward trend line accent -->
+  <polyline points="10,48 30,28 50,36 70,16" fill="none" stroke="#C0934F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Wordmark -->
+  <text x="10" y="58" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#1A1A2E" letter-spacing="4">TREND</text>
+  <text x="80" y="58" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="400" fill="#888" letter-spacing="3">LIMITED</text>
+</svg>
