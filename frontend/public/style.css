@@ -521,6 +521,7 @@ ul  { list-style: none; }
 }
 .process-step {
   padding: 40px 32px 40px 0; border-right: 1px solid var(--line); position: relative;
+  display: flex; flex-direction: column; gap: 16px;
 }
 .process-step:last-child { border-right: none; padding-right: 0; }
 .process-step::before {
@@ -532,13 +533,43 @@ ul  { list-style: none; }
 .process-step-num {
   font-family: var(--font-display); font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 400; line-height: 1; letter-spacing: -0.04em;
-  color: var(--clay); margin-bottom: 24px; font-style: italic;
+  color: var(--clay); margin-bottom: 4px; font-style: italic;
 }
+.pstep-meta {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--ink-2);
+}
+.pstep-meta .pct { color: var(--emerald); font-weight: 700; font-size: 11px; }
+.pstep-bar {
+  position: relative; height: 3px; background: var(--bg-alt);
+  overflow: hidden; margin-bottom: 4px;
+}
+.section-alt .pstep-bar { background: rgba(15,17,16,0.08); }
+.pstep-bar-fill {
+  position: absolute; left: 0; top: 0; bottom: 0;
+  background: var(--emerald);
+  transition: width 1s var(--ease);
+}
+.pstep-bar-fill.clay { background: var(--clay); }
 .process-step h4 {
   font-family: var(--font-display); font-size: clamp(1.15rem, 1.6vw, 1.4rem);
-  font-weight: 500; letter-spacing: -0.015em; line-height: 1.2; margin-bottom: 12px;
+  font-weight: 500; letter-spacing: -0.015em; line-height: 1.2; margin-top: 6px;
 }
 .process-step p { font-size: 14px; color: var(--ink-2); line-height: 1.6; max-width: 32ch; }
+.pstep-kpi {
+  margin-top: auto; padding-top: 20px; border-top: 1px dashed var(--line);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.pstep-kpi-label {
+  font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--clay);
+}
+.pstep-kpi-value {
+  font-family: var(--font-display); font-size: 1.15rem; font-weight: 500;
+  letter-spacing: -0.015em; color: var(--ink); line-height: 1.2;
+}
+.pstep-kpi-value em { font-style: italic; color: var(--emerald); }
 @media (max-width: 900px) {
   .process-track { grid-template-columns: 1fr; border-top: none; }
   .process-step { border-right: none; border-top: 1px solid var(--line); padding: 32px 0; }
@@ -567,6 +598,47 @@ ul  { list-style: none; }
 .role-list { display: flex; flex-direction: column; gap: 10px; padding-top: 8px; border-top: 1px solid var(--line); }
 .role-list li { font-size: 13.5px; color: var(--ink-2); line-height: 1.5; padding-left: 18px; position: relative; }
 .role-list li::before { content: '—'; position: absolute; left: 0; top: 0; color: var(--clay); font-family: var(--font-mono); }
+
+/* Salary spectrum */
+.role-salary {
+  margin-top: auto; padding-top: 20px; border-top: 1px dashed var(--line);
+  display: flex; flex-direction: column; gap: 10px;
+}
+.rs-label {
+  font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--clay); display: flex;
+  align-items: center; justify-content: space-between;
+}
+.rs-label small { color: var(--ink-2); font-size: 9px; letter-spacing: 0.18em; }
+.rs-track {
+  position: relative; height: 6px; background: var(--bg-alt);
+  border: 1px solid var(--line);
+}
+.section-alt .rs-track { background: var(--bg); }
+.rs-fill {
+  position: absolute; top: -1px; bottom: -1px;
+  background: linear-gradient(to right, var(--clay), var(--emerald));
+}
+.rs-fill::before, .rs-fill::after {
+  content: ''; position: absolute; top: 50%; transform: translateY(-50%);
+  width: 10px; height: 10px; border-radius: 50%;
+  border: 2px solid var(--bg); background: var(--ink);
+}
+.rs-fill::before { left: -5px; background: var(--clay); }
+.rs-fill::after { right: -5px; background: var(--emerald); }
+.rs-range {
+  display: flex; justify-content: space-between;
+  font-family: var(--font-mono); font-size: 11px; color: var(--ink);
+}
+.rs-range .low { color: var(--clay); }
+.rs-range .high { color: var(--emerald); font-weight: 700; }
+.rs-anchor {
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--ink-2); line-height: 1.4;
+  display: flex; justify-content: space-between; gap: 8px;
+}
+.rs-anchor span:first-child { text-align: left; max-width: 45%; }
+.rs-anchor span:last-child { text-align: right; max-width: 45%; }
 @media (max-width: 900px) {
   .roles-grid { grid-template-columns: 1fr; }
   .roles-grid:hover .role-col { opacity: 1; }
