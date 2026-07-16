@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" width="260" height="64">
+  <!-- Diamond icon -->
+  <polygon points="18,4 32,4 38,18 18,56 -2,18 4,4" fill="#C0934F" opacity="0.9"/>
+  <polygon points="18,4 32,4 18,20 4,4" fill="rgba(255,255,255,0.35)"/>
+  <!-- Brand name -->
+  <text x="48" y="26" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="700" fill="#1A1A2E" letter-spacing="1">SOLIDARIO</text>
+  <text x="48" y="46" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#888" letter-spacing="1.5">LIMELIGHT DIAMONDS</text>
+</svg>

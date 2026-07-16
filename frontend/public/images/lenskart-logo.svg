@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="220" height="60">
+  <!-- Lens icon: two overlapping circles -->
+  <circle cx="22" cy="30" r="16" fill="none" stroke="#72C7C0" stroke-width="4"/>
+  <circle cx="36" cy="30" r="16" fill="none" stroke="#64AF44" stroke-width="4"/>
+  <!-- bridge -->
+  <line x1="38" y1="30" x2="20" y2="30" stroke="#053A66" stroke-width="1" opacity="0.3"/>
+  <!-- wordmark -->
+  <text x="60" y="37" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#053A66" letter-spacing="-0.5">lenskart</text>
+</svg>

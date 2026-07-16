@@ -1,113 +1,657 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="description" content="A product of emergent.sh" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet" />
-        <!--
-        manifest.json provides metadata used when your web app is installed on a
-        user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-        -->
-        <!--
-        Notice the use of %PUBLIC_URL% in the tags above.
-        It will be replaced with the URL of the `public` folder during the build.
-        Only files inside the `public` folder can be referenced from the HTML.
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Executive Search for Jewelry, D2C &amp; Consumer Brands | Boardroom CXO</title>
+  <meta name="description" content="Hire proven leaders from competitor companies. Executive search for jewelry, D2C, and consumer brands using market mapping and targeted headhunting. Based in Surat." />
+  <meta name="keywords" content="jewelry executive search India, D2C brand hiring, consumer brand talent, headhunting India, performance marketer jewelry, BDM fashion brand, executive search Surat, BlueStone CaratLane talent, passive candidate search" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Boardroom CXO" />
+  <link rel="canonical" href="https://boardroomcxo.com/" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Executive Search for Jewelry, D2C &amp; Consumer Brands | Boardroom CXO" />
+  <meta property="og:description" content="We place marketing, sales, BD, and operations leaders at jewelry and D2C brands, sourced from competitor companies, benchmarked on real compensation data." />
+  <meta property="og:url" content="https://boardroomcxo.com/" />
+  <meta property="og:image" content="https://boardroomcxo.com/images/Homepage-Meta-removebg-preview.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Executive Search for Jewelry, D2C &amp; Consumer Brands | Boardroom CXO" />
+  <meta name="twitter:description" content="We place growth leaders at jewelry and D2C brands. Sourced from competitors. Benchmarked on live market data. Not a database search." />
+  <!-- GEO / AI discoverability -->
+  <meta name="geo.region" content="IN" />
+  <meta name="geo.country" content="India" />
+  <meta name="language" content="English" />
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Boardroom CXO",
+    "description": "Executive search firm specialising in jewelry, D2C, and consumer brands. Focused on marketing, sales, business development, and operations leadership.",
+    "telephone": "+919856755000",
+    "email": "hire@boardroomcxo.com",
+    "areaServed": ["India", "UAE"],
+    "url": "https://boardroomcxo.com",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Executive Search Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Market Mapping Before Mandate"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Intermediary-Led Passive Candidate Sourcing"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "True Compensation Benchmarking"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mandate and Authority Definition at Offer Stage"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Executive Search for Jewelry and D2C Brands"}}
+      ]
+    }
+  }
+  </script>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── ROLES SECTION ── */
+    .roles-section { padding: 64px 0; background: var(--off-white, #F3F4FB); }
+    .roles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 32px; }
+    .role-card { background: var(--white); border-radius: 16px; padding: 32px; border: 1px solid rgba(0,0,0,0.07); }
+    .role-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .role-card-icon {
+      width: 44px; height: 44px; background: rgba(44,65,228,0.08); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; color: var(--primary, #1E2B5E); flex-shrink: 0;
+    }
+    .role-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--primary, #1E2B5E); margin: 0; }
+    .role-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+    .role-list li { font-size: 0.875rem; color: var(--muted-text); display: flex; align-items: center; gap: 8px; }
+    .role-list li::before { content: ''; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+    @media (max-width: 768px) { .roles-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
 
-        Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-        work correctly both with client-side routing and a non-root public URL.
-        Learn how to configure a non-root public URL by running `npm run build`.
-        -->
-        <title>Emergent | Fullstack App</title>
-        <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
-        <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
-    </head>
-    <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
-        <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="site-header">
+    <div class="nav-inner">
+      <div class="nav-container">
+        <div class="nav-logo-col">
+          <a href="#" class="nav-logo">
+            <img src="images/LOGO.png" alt="Boardroom CXO" width="160" />
+          </a>
+        </div>
+        <div class="nav-menu-col">
+          <nav class="nav-menu" id="nav-menu">
+            <ul>
+              <li><a href="index.html" class="nav-link active">Home</a></li>
+              <li><a href="about-us.html" class="nav-link">About Us</a></li>
+              <li><a href="resources.html" class="nav-link">Resources</a></li>
+              <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="nav-cta-col">
+          <a href="schedule-a-call.html" class="btn btn-gold">Let's Talk</a>
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  <!-- ============ HERO ============ -->
+  <section class="hero-section" id="home">
+    <div class="hero-shape-divider"></div>
+    <div class="container hero-inner">
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-        <script>
-            !(function (t, e) {
-                var o, n, p, r;
-                e.__SV ||
-                    ((window.posthog = e),
-                    (e._i = []),
-                    (e.init = function (i, s, a) {
-                        function g(t, e) {
-                            var o = e.split(".");
-                            2 == o.length && ((t = t[o[0]]), (e = o[1])),
-                                (t[e] = function () {
-                                    t.push(
-                                        [e].concat(
-                                            Array.prototype.slice.call(
-                                                arguments,
-                                                0,
-                                            ),
-                                        ),
-                                    );
-                                });
-                        }
-                        ((p = t.createElement("script")).type =
-                            "text/javascript"),
-                            (p.crossOrigin = "anonymous"),
-                            (p.async = !0),
-                            (p.src =
-                                s.api_host.replace(
-                                    ".i.posthog.com",
-                                    "-assets.i.posthog.com",
-                                ) + "/static/array.js"),
-                            (r =
-                                t.getElementsByTagName(
-                                    "script",
-                                )[0]).parentNode.insertBefore(p, r);
-                        var u = e;
-                        for (
-                            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
-                                u.people = u.people || [],
-                                u.toString = function (t) {
-                                    var e = "posthog";
-                                    return (
-                                        "posthog" !== a && (e += "." + a),
-                                        t || (e += " (stub)"),
-                                        e
-                                    );
-                                },
-                                u.people.toString = function () {
-                                    return u.toString(1) + ".people (stub)";
-                                },
-                                o =
-                                    "init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(
-                                        " ",
-                                    ),
-                                n = 0;
-                            n < o.length;
-                            n++
-                        )
-                            g(u, o[n]);
-                        e._i.push([i, s, a]);
-                    }),
-                    (e.__SV = 1));
-            })(document, window.posthog || []);
-            posthog.init("phc_DbsPb39SRc8z3EiQ6Dhj6ikv4H4rTKcht9d4sZSesceP", {
-                api_host: "https://ap.emergent.sh",
-                person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well,
-                session_recording: {
-                    recordCrossOriginIframes: true,
-                    capturePerformance: false,
-                },
-            });
-        </script>
-    </body>
+      <div class="hero-content">
+        <h1 class="hero-heading">
+          Right Leaders.<br><em>Real Results.</em>
+        </h1>
+        <p class="hero-sub">Marketing, sales, BD, and operations leaders for jewelry and D2C brands. Sourced from competitor companies. Benchmarked on real pay data.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn btn-gold">Brief Us on a Mandate</a>
+          <a href="#how-we-work" class="btn btn-outline-white">See How We Work</a>
+        </div>
+        <div class="hero-stats-grid">
+          <div class="hero-stat">
+            <span class="stat-num" data-target="82" data-suffix="%">82%</span>
+            <span class="stat-label">of employers can't find the right senior talent</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num" data-target="200" data-suffix="%">200%</span>
+            <span class="stat-label">cost of a bad senior hire</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num" data-target="35" data-suffix="%">35%</span>
+            <span class="stat-label">comp gap hidden from CTC slips at legacy brands</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image-col">
+        <div class="hero-visual">
+          <img src="images/handsome-businessman-in-formal-wear-and-glasses-holding-documents.jpg"
+               alt="Executive" class="hero-main-img" />
+          <div class="hero-rating-badge">
+            <span class="hero-rating-stars">★★★★★</span>
+            <div class="hero-rating-copy">
+              <strong>350+</strong> Ratings
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ LOGOS MARQUEE ============ -->
+  <section class="logos-section">
+    <div class="container">
+      <p class="logos-label">Talent sourced from India's leading consumer and jewelry brands:</p>
+    </div>
+    <div class="logos-marquee-wrap">
+      <div class="logos-marquee">
+        <div class="logos-track">
+          <img src="images/lenskart.png" alt="Lenskart" data-logo="lenskart" />
+          <img src="images/dyson-logo.svg" alt="Dyson" data-logo="dyson" />
+          <img src="images/H&M.svg" alt="H&amp;M" data-logo="hm" />
+          <img src="images/trent.png" alt="Trent" data-logo="trent" />
+          <img src="images/jewel box.jpeg" alt="Jewel Box" data-logo="jewel-box" />
+          <img src="images/solitario.png" alt="Solitario" data-logo="solitario" />
+          <img src="images/Limelight.jpg" alt="Limelight" data-logo="limelight" />
+          <img src="images/Paytm-Logo.wine_.png" alt="Paytm" data-logo="paytm" />
+          <img src="images/OYO_Rooms_logo.png" alt="OYO" data-logo="oyo" />
+          <img src="images/Meesho_logo.png" alt="Meesho" data-logo="meesho" />
+          <img src="images/zomato-log-transparent-background-701751694712227nvjxqt9tkj-removebg-preview.png" alt="Zomato" data-logo="zomato" />
+          <img src="images/Untitled_design__2_-removebg-preview.png" alt="GoMechanic" data-logo="gomechanic" />
+          <!-- duplicate for seamless loop -->
+          <img src="images/lenskart.png" alt="Lenskart" data-logo="lenskart" />
+          <img src="images/dyson-logo.svg" alt="Dyson" data-logo="dyson" />
+          <img src="images/H&M.svg" alt="H&amp;M" data-logo="hm" />
+          <img src="images/trent.png" alt="Trent" data-logo="trent" />
+          <img src="images/jewel box.jpeg" alt="Jewel Box" data-logo="jewel-box" />
+          <img src="images/solitario.png" alt="Solitario" data-logo="solitario" />
+          <img src="images/Limelight.jpg" alt="Limelight" data-logo="limelight" />
+          <img src="images/Paytm-Logo.wine_.png" alt="Paytm" data-logo="paytm" />
+          <img src="images/OYO_Rooms_logo.png" alt="OYO" data-logo="oyo" />
+          <img src="images/Meesho_logo.png" alt="Meesho" data-logo="meesho" />
+          <img src="images/zomato-log-transparent-background-701751694712227nvjxqt9tkj-removebg-preview.png" alt="Zomato" data-logo="zomato" />
+          <img src="images/Untitled_design__2_-removebg-preview.png" alt="GoMechanic" data-logo="gomechanic" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE PROBLEM WE SOLVE ============ -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="services-top">
+        <span class="tag-pill">The Problem We Solve</span>
+        <h2 class="section-h2">Four ways growth-stage brands lose months and money on hiring</h2>
+        <p>What we verify before a single job description gets written.</p>
+      </div>
+      <div class="svc-grid-2x2">
+        <div class="svc-card-v2" data-hover="rise" data-num="01">
+          <div class="svc-card-v2__head">
+            <span class="svc-num">01</span>
+            <div class="svc-icon-v2 svc-icon-v2--blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+          </div>
+          <div class="svc-card-v2__body">
+            <div class="svc-stat">25–40%</div>
+            <h3>The Budget-Reality Gap</h3>
+            <p>The typical ask above current CTC. We map the market before you lock a budget.</p>
+          </div>
+          <div class="svc-card-v2__foot">
+            <span class="svc-fix-tag">Fixed by: Market Mapping First</span>
+            <svg class="svc-card-v2__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+        </div>
+
+        <div class="svc-card-v2 svc-card-v2--accent" data-hover="rise" data-num="02">
+          <div class="svc-card-v2__head">
+            <span class="svc-num">02</span>
+            <div class="svc-icon-v2 svc-icon-v2--gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+          </div>
+          <div class="svc-card-v2__body">
+            <div class="svc-stat">200%</div>
+            <h3>Authority Without Mandate</h3>
+            <p>The cost of replacing a senior hire brought in to "transform" but never given real authority to act.</p>
+          </div>
+          <div class="svc-card-v2__foot">
+            <span class="svc-fix-tag">Fixed by: Mandate Defined at Offer</span>
+            <svg class="svc-card-v2__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+        </div>
+
+        <div class="svc-card-v2" data-hover="rise" data-num="03">
+          <div class="svc-card-v2__head">
+            <span class="svc-num">03</span>
+            <div class="svc-icon-v2 svc-icon-v2--blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+            </div>
+          </div>
+          <div class="svc-card-v2__body">
+            <div class="svc-stat">25–35%</div>
+            <h3>The Hidden Comp Gap</h3>
+            <p>How much formal CTC understates true pay at legacy brands. We verify bank credit, not slips.</p>
+          </div>
+          <div class="svc-card-v2__foot">
+            <span class="svc-fix-tag">Fixed by: Real Compensation Data</span>
+            <svg class="svc-card-v2__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+        </div>
+
+        <div class="svc-card-v2" data-hover="rise" data-num="04">
+          <div class="svc-card-v2__head">
+            <span class="svc-num">04</span>
+            <div class="svc-icon-v2 svc-icon-v2--blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </div>
+          </div>
+          <div class="svc-card-v2__body">
+            <div class="svc-stat">3</div>
+            <h3>The Passive Candidate Problem</h3>
+            <p>Performance Marketer, BDM, Founder's Office — the hardest roles to fill in 2026. None of these people are job-hunting.</p>
+          </div>
+          <div class="svc-card-v2__foot">
+            <span class="svc-fix-tag">Fixed by: Direct Headhunting</span>
+            <svg class="svc-card-v2__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SALARY BENCHMARK TOOL CTA ============ -->
+  <section class="salary-cta-section">
+    <div class="container">
+      <div class="salary-cta-card">
+        <div class="salary-cta-text">
+          <span class="tag-pill tag-light">Free Tool</span>
+          <h3>What Other Companies Are Paying</h3>
+          <p>Pick a role and your store count — get a live compensation range from our 2025–26 market mapping across Category A/B/C jewelry &amp; D2C brands.</p>
+        </div>
+        <button class="btn btn-gold" id="open-salary-tool" type="button">Check the Benchmark</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Salary Benchmark Tool Modal -->
+  <div class="salary-modal" id="salary-modal" aria-hidden="true">
+    <div class="salary-modal-backdrop" data-close-modal></div>
+    <div class="salary-modal-panel" role="dialog" aria-modal="true" aria-labelledby="salary-modal-title">
+      <button class="salary-modal-close" type="button" data-close-modal aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 id="salary-modal-title">What Other Companies Are Paying</h3>
+      <p class="salary-modal-sub">Based on BoardroomCXO's 2025–26 market mapping across jewelry &amp; D2C brands. Indicative range — brief us for a mandate-specific number.</p>
+      <div class="salary-form">
+        <label>
+          Role
+          <select id="salary-role"></select>
+        </label>
+        <label>
+          Your store count
+          <select id="salary-stores">
+            <option value="C">Under 20 stores (early-stage)</option>
+            <option value="B" selected>20–60 stores (growth-stage)</option>
+            <option value="A">60+ stores / large-scale</option>
+          </select>
+        </label>
+        <label>
+          City
+          <select id="salary-tier">
+            <option value="1" selected>Tier 1 — Mumbai, Bengaluru, Delhi NCR</option>
+            <option value="2">Tier 2 — Surat, Jaipur, Pune, Hyderabad outer</option>
+          </select>
+        </label>
+      </div>
+      <div class="salary-result" id="salary-result">
+        <span class="salary-result-label">Typical Annual CTC</span>
+        <span class="salary-result-range" id="salary-result-range">—</span>
+      </div>
+      <a href="#contact" class="btn btn-gold salary-modal-cta" data-close-modal>Brief Us on a Mandate</a>
+    </div>
+  </div>
+
+  <!-- ============ HOW WE WORK ============ -->
+  <section class="process-section" id="how-we-work">
+    <div class="container">
+      <div class="process-intro">
+        <span class="tag-pill">How We Work</span>
+        <h2 class="section-h2 process-title">The best hire you can make <span class="text-accent">is not looking for a job.</span></h2>
+        <p class="process-lead">The performance marketer holding an 8x ROAS at BlueStone. The BDM who opened 40 stores for CaratLane. None of them are applying anywhere — they respond to a confidential, well-researched approach, before a single job description is written. That's how every search here starts.</p>
+      </div>
+      <div class="process-flow">
+        <div class="process-step">
+          <div class="process-step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+          <h4>Market Map Before Mandate</h4>
+          <p>We confirm what the role pays across your category and city before you lock a budget.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h4>Define What the Role Must Deliver</h4>
+          <p>Outcomes, authority, and KPIs for the next 12–24 months — before writing a job description.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><path d="M11 18H8a2 2 0 0 1-2-2V9"/></svg>
+          </div>
+          <h4>Direct Headhunting, Intermediary-Led</h4>
+          <p>We approach people already at scale inside competitor brands — candidates self-select in before your name is disclosed.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h4>Mandate Defined at Offer</h4>
+          <p>A realistic uplift is 25–30%, not the 40–50% many brands blindly offer. We give you that number upfront.</p>
+        </div>
+      </div>
+      <div class="process-cta">
+        <a href="#contact" class="btn btn-gold">Brief Us on a Mandate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROLES WE FILL ============ -->
+  <section class="roles-section" id="roles">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:12px;">
+        <span class="tag-pill">Roles We Fill</span>
+      </div>
+      <h2 class="section-h2" style="text-align:center;">We place across the full growth org</h2>
+      <p style="text-align:center;max-width:580px;margin:12px auto 0;color:#555;">Three function families. Deep specialisation inside each. These are the roles that decide whether a growth-stage brand scales or stalls.</p>
+      <div class="roles-grid">
+        <div class="role-card">
+          <div class="role-card-header">
+            <div class="role-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3>Marketing</h3>
+          </div>
+          <ul class="role-list">
+            <li>Performance Marketer (D2C and value segment)</li>
+            <li>Online / E-commerce Marketing (mid to senior)</li>
+            <li>Brand and Marketing Lead</li>
+            <li>Social Media Manager</li>
+            <li>Organic / Content Marketing</li>
+          </ul>
+        </div>
+        <div class="role-card">
+          <div class="role-card-header">
+            <div class="role-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><polyline points="23 6 13.5 15.5 8.5 10.5 2 17"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <h3>Sales &amp; Retail</h3>
+          </div>
+          <ul class="role-list">
+            <li>Sales Associate to Store Manager</li>
+            <li>Area Sales Manager / Area Business Manager</li>
+            <li>Regional Sales Manager</li>
+            <li>Zonal and National Sales Manager</li>
+            <li>National Sales Head</li>
+          </ul>
+        </div>
+        <div class="role-card">
+          <div class="role-card-header">
+            <div class="role-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>Business &amp; Franchise Development</h3>
+          </div>
+          <ul class="role-list">
+            <li>Business Development Manager (expansion)</li>
+            <li>Senior BD / Expansion Head</li>
+            <li>Franchise Development Lead</li>
+          </ul>
+        </div>
+        <div class="role-card">
+          <div class="role-card-header">
+            <div class="role-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Strategy &amp; Operations</h3>
+          </div>
+          <ul class="role-list">
+            <li>Founder's Office / Strategy Generalist</li>
+            <li>Growth and Strategy (ISB / MBA, 2-4 yrs)</li>
+            <li>Operations / Sales Mid-Management</li>
+            <li>Business Head / General Manager</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY A SPECIALIST ============ -->
+  <section class="why-section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-left">
+          <h2 class="section-h2">A generalist recruiter sends you resumes.<br />We send you a read on the market.</h2>
+          <div class="why-features">
+            <div class="why-feat">
+              <div class="why-feat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <div>
+                <h4>We Know the Migration Patterns</h4>
+                <p>Talent is moving from BlueStone and CaratLane into growth-stage brands. We know who's movable and what pulls them.</p>
+              </div>
+            </div>
+            <div class="why-feat">
+              <div class="why-feat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+              </div>
+              <div>
+                <h4>We Know the Relocation Barrier</h4>
+                <p>Surat and Thane-based brands face a conversion challenge, not a sourcing one. We structure Core-Flex relocation that actually closes.</p>
+              </div>
+            </div>
+            <div class="why-feat">
+              <div class="why-feat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              </div>
+              <div>
+                <h4>We Know the Expectation Gap</h4>
+                <p>Candidates ask 20–40% above current CTC. We flag the inflated asks before they cost you a boardroom meeting.</p>
+              </div>
+            </div>
+            <div class="why-feat">
+              <div class="why-feat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div>
+                <h4>We Know the Market Context</h4>
+                <p>India's gems &amp; jewelry market is scaling from $101B to $169B by 2030. This hiring need is structural, not cyclical.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-gold mt-20">Brief Us on a Mandate</a>
+        </div>
+        <div class="why-right">
+          <div class="why-img-wrap">
+            <img src="images/94823.jpg" alt="Executive leadership meeting" class="why-img" />
+            <div class="why-float-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28" style="color:var(--gold);flex-shrink:0"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Trusted by 500+ Companies</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="testi-section">
+    <div class="container">
+      <div class="testi-header">
+        <div>
+          <h2 class="section-h2">What our clients say</h2>
+        </div>
+        <div class="testi-meta">
+          <div class="testi-rating-badge">
+            <span class="stars">★★★★★</span>
+            <strong>350+</strong> Ratings
+          </div>
+        </div>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-top">
+            <div class="testi-stars">★★★★★</div>
+            <span class="testi-rated">4.9 Rated</span>
+          </div>
+          <p>"We needed a performance marketer who had actually operated under real ROAS pressure in our price range. Boardroom CXO came back with candidates from the exact brands we benchmark against. The shortlist was sharper than anything we had seen from a generalist firm."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">AJ</div>
+            <span>Founder, D2C Jewelry Brand</span>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-top">
+            <div class="testi-stars">★★★★★</div>
+            <span class="testi-rated">4.9 Rated</span>
+          </div>
+          <p>"We had budgeted at a number that no serious BDM would have moved for. Boardroom CXO told us that before we ran the search, and told us what the market actually looked like. We adjusted, ran the search, and closed the hire in under 60 days."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">RS</div>
+            <span>Founder &amp; CEO, Consumer Brand</span>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-top">
+            <div class="testi-stars">★★★★★</div>
+            <span class="testi-rated">5.0 Rated</span>
+          </div>
+          <p>"We were at the 30-store stage and needed a senior BD head who had done this before. Every candidate Boardroom CXO presented had direct franchise and expansion experience from comparable brands. No learning curve, no compromise."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">WB</div>
+            <span>CEO, Growth-Stage Jewelry Brand</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BLOG / RESOURCES ============ -->
+  <section class="blog-section" id="resources">
+    <div class="container">
+      <div class="blog-header">
+        <div>
+          <h2 class="section-h2">Insights from inside the market</h2>
+        </div>
+        <a href="resources.html" class="btn btn-outline-dark">View All Articles</a>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-img-wrap">
+            <img src="images/oalh2mojuuk-1024x683.jpg" alt="Headhunting passive candidates in jewelry" loading="lazy" />
+            <span class="blog-category">Headhunting</span>
+          </div>
+          <div class="blog-body">
+            <time class="blog-date">June 2026</time>
+            <h3>Why the Best Performance Marketers in Jewelry Are Not on Naukri</h3>
+            <p>The pool of marketers who have operated under real ROAS pressure in the Rs. 5,000–60,000 price range is thin, and none of them are job-hunting. Here is how you reach them.</p>
+            <a href="article-performance-marketer-jewelry.html" class="blog-read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-img-wrap">
+            <img src="images/kdeqa3atnby.jpg" alt="Compensation gap at legacy jewelry brands" loading="lazy" />
+            <span class="blog-category">Compensation Data</span>
+          </div>
+          <div class="blog-body">
+            <time class="blog-date">June 2026</time>
+            <h3>The Hidden Comp Gap: Why Jewelry Brands Keep Losing Candidates at the Offer Stage</h3>
+            <p>A candidate at a legacy brand citing Rs. 12-15 LPA is often earning Rs. 16-20 LPA in total. If you benchmark against the CTC slip, you will lose the hire. Field data on the gap, and how to close it.</p>
+            <a href="article-hidden-comp-gap.html" class="blog-read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-img-wrap">
+            <img src="images/376kn_isple.jpg" alt="BDM hiring for jewelry franchise expansion" loading="lazy" />
+            <span class="blog-category">Franchise Expansion</span>
+          </div>
+          <div class="blog-body">
+            <time class="blog-date">June 2026</time>
+            <h3>Why Good BDMs Are Never Available, And How Growth-Stage Brands Can Still Hire Them</h3>
+            <p>Good Business Development Managers, the ones who can identify locations, negotiate lease terms, and execute store launches, are held tightly by their employers. Passive sourcing is the only route that works.</p>
+            <a href="#" class="blog-read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA + FOOTER ============ -->
+  <section class="cta-section" id="contact">
+    <div class="cta-shape-top"></div>
+    <div class="container">
+      <div class="cta-content cta-content--centered">
+        <h2 class="section-h2 section-h2--light">Tell us the role. We will tell you the market.</h2>
+        <p class="cta-sub">Brief us on a mandate and we will come back with a market map: what the role pays across your category, who is movable, and what offer structure actually closes, before you commit a budget.</p>
+        <div class="cta-btns">
+          <a href="https://calendly.com/boardroomcxo" class="btn btn-gold" target="_blank" rel="noopener">Brief Us on a Mandate</a>
+          <a href="tel:+919856755000" class="btn btn-outline-white">+91 98567 55000</a>
+        </div>
+      </div>
+    </div>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col footer-brand">
+            <img src="images/LOGO.png" alt="Boardroom CXO" class="footer-logo" />
+            <div class="footer-socials">
+              <a href="https://www.linkedin.com/company/boardroomcxo" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://twitter.com/boardroomcxo" target="_blank" rel="noopener" aria-label="Twitter / X">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="case-studies.html">Case Studies</a></li>
+              <li><a href="#contact">Brief Us on a Mandate</a></li>
+            </ul>
+          </div>
+          <div class="footer-col footer-contact-col">
+            <h5>Contact</h5>
+            <p class="footer-contact-line">+91 98567 55000 &middot; hire@boardroomcxo.com<br>Mon&ndash;Sat, 10am&ndash;6pm IST &middot; Surat, India &amp; UAE</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>Boardroom CXO &copy; 2026 | All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/919856755000" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="whatsapp-label">WhatsApp us</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
 </html>

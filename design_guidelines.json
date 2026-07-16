@@ -1,0 +1,111 @@
+{
+  "overall_direction": {
+    "name": "The Institutional Monolith",
+    "philosophy": "A departure from the generic startup 'slop'—this design commands authority through 'Swiss Brutalist' precision mixed with high-end editorial luxury. It uses expansive negative space, razor-sharp 1px grid borders, and massive, striking serif typography to communicate trust, discretion, and heritage for India's ₹500Cr+ D2C and jewelry founders. Information is presented not as marketing copy, but as absolute, unvarnished truth."
+  },
+  "color_palette": {
+    "background_primary": "#F7F6F2",
+    "background_secondary": "#EAE8E1",
+    "surface": "#FFFFFF",
+    "text_primary": "#0F1110",
+    "text_secondary": "#4A4D4A",
+    "accent_primary": "#1A362D",
+    "accent_secondary": "#A86F58",
+    "border": "#D1CFCA",
+    "notes": "No gradients anywhere. Colors are matte and solid. The 'Oxidized Emerald' (accent_primary) replaces the old electric blue to provide grounded authority. 'Burnished Clay' (accent_secondary) replaces the gold for a more sophisticated, muted warmth. Backgrounds are soft 'Pearl/Stone' to contrast with the sharp borders."
+  },
+  "typography": {
+    "display": "Bodoni Moda",
+    "body": "Manrope",
+    "mono": "Space Mono",
+    "notes": "Bodoni Moda provides the high-fashion/jewelry elegance and extreme contrast (thin hairlines, thick stems) needed for hero sections and massive stats. Manrope offers geometric, sterile legibility for body and UI elements, acting as the perfect counterweight. Space Mono is used strictly for data points, tags, and the salary tool."
+  },
+  "type_scale": {
+    "display": "text-[4.5rem] leading-[1.05] tracking-tighter md:text-[6rem] lg:text-[7.5rem]",
+    "h1": "text-5xl leading-tight tracking-tight md:text-6xl",
+    "h2": "text-3xl leading-snug tracking-tight md:text-4xl",
+    "h3": "text-xl leading-snug md:text-2xl",
+    "body_large": "text-lg leading-relaxed text-text_secondary",
+    "body": "text-base leading-relaxed text-text_secondary",
+    "small": "text-sm leading-normal tracking-wide",
+    "overline": "text-xs uppercase tracking-[0.2em] font-bold text-accent_primary"
+  },
+  "spacing_and_layout": {
+    "container_width": "max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24",
+    "section_padding": "py-24 md:py-32 lg:py-40",
+    "grid_system": "12-column CSS Grid. Use 'Bento' architectural layouts. Elements should frequently cross column boundaries asynchronously.",
+    "borders": "Expose the skeleton. Use 1px solid borders (#D1CFCA) to separate sections, cards, and grid items, creating a 'financial terminal' or 'dossier' feel.",
+    "border_radius": "0px. Sharp corners only. Absolute rigidity."
+  },
+  "section_treatments": {
+    "homepage": {
+      "hero": "Asymmetric split. Left: massive Bodoni heading. Right: The 3 stats presented as a strict architectural grid with Space Mono numerals. The businessman photo sits in the bottom right, cropped strictly with a 1px border. No overlays, just raw contrast.",
+      "client_marquee": "Minimalist 'Editorial Ribbon'. Solid #EAE8E1 background, 1px top/bottom border. Logos rendered in pure monochrome black, moving at a glacial, luxurious pace.",
+      "problem_we_solve": "A 2x2 or 1x4 strict grid layout. Each card is a 1px outlined box. Minimal text, heavy use of SVG line charts showing the 'gap'.",
+      "salary_tool": "Designed like a Bloomberg terminal crossed with a high-end catalog. Dark mode override: #0F1110 background, Space Mono green/white text, 1px borders. Dropdowns have sharp edges and absolute precision.",
+      "how_we_work": "Horizontal timeline. A single continuous 1px line traversing the section. Steps marked by massive Bodoni numerals (01, 02) resting on the line. Generous padding.",
+      "roles_we_fill": "Architectural grid. Four sharp-edged columns. Hovering over a column dims the others. Bullet points use em-dashes (\u2014) instead of standard bullets.",
+      "why_a_specialist": "Large executive image on the left (grayscale with high contrast), wrapped by the 4 feature blocks on the right. 'Trusted by 500+' card overlaps the image boundary with a pure white background and sharp drop shadow.",
+      "testimonials": "Editorial blockquotes. Massive Bodoni hanging quotes (\"). No 'cards'\u2014just text floating in generous negative space, separated by 1px horizontal lines.",
+      "blog_previews": "Magazine layout. Images are black and white by default, switching to color on hover. Category tags are uppercase, highly tracked.",
+      "cta_footer": "Dark mode block (#0F1110). Massive display text 'LET'S BUILD YOUR BOARD'. Footer links arranged in strict, dense columns."
+    },
+    "inner_pages": {
+      "about_us": "Inner hero has a massive Bodoni title, pushing content down. Founder card is pure editorial: sharp black/white portrait, minimal bio. Values section uses horizontal accordions or large typography blocks.",
+      "resources": "Library aesthetic. Strict grid layout for articles. Featured article takes up 2/3 of the top width. Newsletter opt-in is a brutalist form: 1px border input, pure black submit button.",
+      "case_studies": "Dossier style. Lots of tabular data presentation. The 'impact band' uses massive typography with Space Mono metrics.",
+      "schedule_a_call": "Split screen. Left: form, completely flat, 1px borders on inputs, no background on inputs. Right: the 'what you'll get' info with large abstract iconography.",
+      "article": "Pure typography exercise. Narrow reading column (max-w-2xl). Massive drop caps. Pull quotes break out into the margins. Inline CTAs are sharp, dark boxes."
+    }
+  },
+  "infographic_treatments": {
+    "hero_stats": "Instead of standard floating text, present stats in a 'data table' format. 1px borders separating them. Use Space Mono for the percentages, Bodoni for the descriptor.",
+    "problem_cards": "Visuals: SVG data-viz. E.g., for 'Budget-Reality Gap', show two parallel horizontal lines of different lengths with a dashed line connecting them. 'Fixed by' tag is a solid black rectangle with white monospace text.",
+    "process": "A horizontal timeline. Use an SVG line that steps down (like a staircase) at each phase. Replace standard icons with geometric primitives (circle, square, triangle, diamond).",
+    "salary_tool": "Terminal aesthetic. When result shows, it doesn't just pop up\u2014it 'decrypts' or types out. Use monospace typography for the \u20b9 amounts, with a subtle pulsing cursor next to the number.",
+    "role_families": "Instead of generic icons, use abstract geometric compositions (e.g., a pie chart wireframe for Strategy, an upward arrow wireframe for BD).",
+    "why_a_specialist": "Use Venn diagram wireframes or concentric circles in thin 1px lines to visually represent 'focus' and 'specialization'."
+  },
+  "component_styling": {
+    "buttons": {
+      "primary": "Solid #0F1110 background, #FFFFFF text. Sharp corners (0px radius). On hover, background shifts to #1A362D (Accent Primary).",
+      "secondary": "Transparent background, 1px solid #0F1110 border. On hover, inverse to #0F1110 background.",
+      "ghost": "No background, underline on hover with a 0.2s ease-in-out transition."
+    },
+    "tags": "Rectangle (0px radius). 1px border. Space Mono font. Uppercase.",
+    "inputs": "Flat. border-b-only or full 1px border. No background. Padding 1rem. Focus state: border color darkens, 0 box-shadow.",
+    "navigation": "Sticky, but changes background from transparent to Solid White (#FFFFFF) with a 1px bottom border upon scroll. Logo is text-based Bodoni or the existing logo."
+  },
+  "motion_and_interaction": {
+    "principles": "Deliberate, heavy, cinematic. No bouncy or playful animations.",
+    "scroll": "Use IntersectionObserver to fade in and slide up (translate-y-4) elements over 0.8s with a cubic-bezier(0.22, 1, 0.36, 1) ease.",
+    "hover": "Image desaturation (B&W to Color on hover). Links get a 1px underline that expands from center.",
+    "reduced_motion": "Wrap all JS animations in `window.matchMedia('(prefers-reduced-motion: reduce)')` checks and fallback to simple opacity changes."
+  },
+  "image_strategy_and_urls": {
+    "strategy": "Use existing images from `/images/` where requested. For new additions, favor high-contrast architectural abstracts, extreme close-ups of premium materials, or cinematic boardroom shots. Never use 'cheesy' smiling stock photos.",
+    "urls": {
+      "hero_fallback": {
+        "url": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHwzfHxwcmVtaXVtJTIwbWluaW1hbCUyMGJvYXJkcm9vbXxlbnwwfHx8fDE3ODQyMDA4ODR8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Premium minimal boardroom (Unsplash)"
+      },
+      "abstract_accent": {
+        "url": "https://images.unsplash.com/photo-1498262257252-c282316270bc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwzfHxhYnN0cmFjdCUyMGFyY2hpdGVjdHVyYWwlMjBsaW5lc3xlbnwwfHx8fDE3ODQyMDA4ODR8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract architectural lines (Unsplash)"
+      },
+      "jewelry_abstract": {
+        "url": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwxfHxqZXdlbHJ5JTIwY3JhZnQlMjBlbGVnYW50fGVufDB8fHx8MTc4NDIwMDg4NHww&ixlib=rb-4.1.0&q=85",
+        "description": "Silver-colored accessory macro shot (Unsplash)"
+      }
+    }
+  },
+  "universal_guidelines": [
+    "No React or Next.js\u2014this is pure HTML, CSS, and Vanilla JS.",
+    "Never apply `transition: all`. Target specific properties.",
+    "Do not center align app containers or large paragraphs of text.",
+    "Use 2x-3x the normal padding for an editorial, luxurious feel.",
+    "All interactive elements MUST include `data-testid` attributes (e.g., `data-testid='hero-cta-button'`).",
+    "Do not use complete transparent background in headers or overlays where text sits on top of images.",
+    "Avoid AI emoji characters (\ud83e\udd16\ud83e\udde0\ud83d\udca1). Use Lucide icons or pure CSS/SVG geometry."
+  ]
+}

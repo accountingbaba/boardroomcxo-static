@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Studies | Boardroom CXO — Leadership That Drives IPO Success</title>
+  <meta name="description" content="Real-world case studies from Boardroom CXO — how we placed game-changing executives for IPO-bound companies across India and UAE." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://boardroomcxo.com/case-studies/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Case Studies | Boardroom CXO" />
+  <meta property="og:description" content="See how Boardroom CXO placed game-changing executives for IPO-bound companies." />
+  <meta property="og:url" content="https://boardroomcxo.com/case-studies/" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── INNER HERO ─── */
+    .inner-hero {
+      background: linear-gradient(135deg, #010630 0%, #172633 55%, #0d1820 100%);
+      padding: 160px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .inner-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 40%, rgba(192,147,79,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .inner-hero .breadcrumb {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--white-66);
+      margin-bottom: 16px;
+    }
+    .inner-hero .breadcrumb a { color: var(--gold); }
+    .inner-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+    .inner-hero p {
+      margin-top: 16px;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── CASE STUDIES SECTION ─── */
+    .cases-section {
+      padding: 100px 0;
+      background: var(--bg-light);
+    }
+
+    .cases-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      margin-top: 56px;
+    }
+
+    .case-card {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .case-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 48px rgba(1,6,48,0.10);
+    }
+    .case-card.reverse { direction: rtl; }
+    .case-card.reverse > * { direction: ltr; }
+
+    .case-img {
+      position: relative;
+      overflow: hidden;
+    }
+    .case-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .case-card:hover .case-img img { transform: scale(1.05); }
+    .case-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(1,6,48,0.5) 0%, transparent 60%);
+    }
+    .case-num {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .case-tag {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--white);
+      border-radius: 50px;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .case-body {
+      padding: 48px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .case-body .tag-pill { margin-bottom: 16px; }
+    .case-body h2 {
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .case-body p {
+      color: var(--muted-text);
+      line-height: 1.75;
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+    .case-outcomes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .case-outcomes li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--muted-text);
+    }
+    .case-outcomes li .check {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(192,147,79,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .case-outcomes li .check svg { color: var(--gold); }
+    .case-read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--gold);
+      transition: gap var(--transition);
+    }
+    .case-read-more:hover { gap: 14px; }
+
+    /* ── IMPACT BAND ─── */
+    .impact-band {
+      background: var(--primary);
+      padding: 80px 0;
+    }
+    .impact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .impact-left h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .impact-left p { color: var(--white-66); line-height: 1.75; }
+    .impact-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .impact-stat {
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-card);
+      padding: 28px 24px;
+    }
+    .impact-stat .num {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .impact-stat .lbl {
+      font-size: 0.85rem;
+      color: var(--white-66);
+    }
+
+    /* ── CTA STRIP ─── */
+    .cta-strip {
+      padding: 80px 0;
+      background: var(--bg-light);
+      text-align: center;
+    }
+    .cta-strip h2 { font-size: clamp(1.6rem,3vw,2.4rem); font-weight:700; color:var(--primary); letter-spacing:-0.02em; margin-bottom:12px; }
+    .cta-strip p { color:var(--muted-text); max-width:520px; margin:0 auto 32px; }
+
+    @media (max-width: 900px) {
+      .case-card { grid-template-columns: 1fr; }
+      .case-card.reverse { direction: ltr; }
+      .case-img { height: 260px; }
+      .case-body { padding: 32px 28px; }
+      .impact-inner { grid-template-columns: 1fr; gap: 48px; }
+    }
+    @media (max-width: 600px) {
+      .impact-right { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="site-header">
+    <div class="nav-inner">
+      <div class="nav-container">
+        <div class="nav-logo-col">
+          <a href="index.html" class="nav-logo">
+            <img src="images/LOGO.png" alt="Boardroom CXO" width="160" />
+          </a>
+        </div>
+        <div class="nav-menu-col">
+          <nav class="nav-menu" id="nav-menu">
+            <ul>
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="about-us.html" class="nav-link">About Us</a></li>
+              <li><a href="resources.html" class="nav-link">Resources</a></li>
+              <li><a href="case-studies.html" class="nav-link active">Case Studies</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="nav-cta-col">
+          <a href="schedule-a-call.html" class="btn btn-gold">Let's Talk</a>
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ INNER HERO ============ -->
+  <section class="inner-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M9 18l6-6-6-6"/></svg>
+        <span>Case Studies</span>
+      </div>
+      <h1>Case Studies: Leadership<br />That Drives IPO Success</h1>
+      <p>From early-stage planning to final execution — see how we've helped high-growth companies assemble IPO-ready leadership teams.</p>
+    </div>
+  </section>
+
+  <!-- arch: dark hero → light -->
+  <div class="arch-dark-to-light" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+      <path d="M500,3C126.7,3.7,0.8,80.2,0,100V0l1000,0V99C1000,80.6,873.3,2.2,500,3z" fill="#0d1820"/>
+    </svg>
+  </div>
+
+  <!-- ============ CASE STUDIES ============ -->
+  <section class="cases-section">
+    <div class="container">
+      <h2 class="section-h2">Real Placements.<br />Real Results.</h2>
+      <div class="cases-grid">
+
+        <!-- Case Study 1 -->
+        <div class="case-card">
+          <div class="case-img">
+            <img src="images/oalh2mojuuk-1024x683.jpg" alt="Finance Head — Singapore Company Expanding into India" />
+            <div class="case-img-overlay"></div>
+            <div class="case-num">01</div>
+            <span class="case-tag">Finance Leadership</span>
+          </div>
+          <div class="case-body">
+            <span class="tag-pill">Singapore Expansion</span>
+            <h2>From Budget Constraints to Boardroom Success — Hiring a Finance Head for a Singapore Company Expanding into India</h2>
+            <p>A fast-growing Singapore-based company entering the Indian market faced a critical challenge: finding an experienced Finance Head who could navigate India's complex regulatory environment — all within a constrained budget. Traditional hiring approaches had failed to surface the right profiles.</p>
+            <ul class="case-outcomes">
+              <li>
+                <span class="check"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><polyline points="2 8 6 12 14 4"/></svg></span>
+                Identified and placed a Finance Head with India-market expertise within 6 weeks
+              </li>
+              <li>
+                <span class="check"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><polyline points="2 8 6 12 14 4"/></svg></span>
+                Candidate secured at 20% below budget without compromising quality
+              </li>
+              <li>
+                <span class="check"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><polyline points="2 8 6 12 14 4"/></svg></span>
+                Full compliance setup completed within 90 days of joining
+              </li>
+            </ul>
+            <a href="schedule-a-call.html" class="case-read-more">
+              Discuss a Similar Challenge
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="case-card reverse">
+          <div class="case-img">
+            <img src="images/kdeqa3atnby.jpg" alt="CFO Search — Pre-IPO Jewellery Brand" />
+            <div class="case-img-overlay"></div>
+            <div class="case-num">02</div>
+            <span class="case-tag">CFO Search</span>
+          </div>
+          <div class="case-body">
+            <span class="tag-pill">Pre-IPO Jewellery Brand</span>
+            <h2>From Talent Scarcity to Strategic Leadership — Closing a Critical CFO Role for a Pre-IPO Jewellery Brand</h2>
+            <p>A leading jewellery brand preparing for its IPO had been unable to attract a CFO with the right mix of retail sector knowledge and public-market experience. Previous searches had stalled after months of effort, jeopardising the IPO timeline.</p>
+            <ul class="case-outcomes">
+              <li>
+                <span class="check"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><polyline points="2 8 6 12 14 4"/></svg></span>
+                Shortlisted 4 pre-qualified CFO candidates from listed retail companies
+              </li>
+              <li>
+                <span class="check"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><polyline points="2 8 6 12 14 4"/></svg></span>
+                Placement completed in 8 weeks — IPO timeline preserved
+              </li>
+              <li>
+                <span class="check"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><polyline points="2 8 6 12 14 4"/></svg></span>
+                New CFO oversaw full SEBI compliance and investor roadshow preparation
+              </li>
+            </ul>
+            <a href="schedule-a-call.html" class="case-read-more">
+              Discuss a Similar Challenge
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Case Study 3 -->
+        <div class="case-card">
+          <div class="case-img">
+            <img src="images/94823.jpg" alt="CMO Search — Jewellery Brand IPO-Driven Growth" />
+            <div class="case-img-overlay"></div>
+            <div class="case-num">03</div>
+            <span class="case-tag">CMO Search</span>
+          </div>
+          <div class="case-body">
+            <span class="tag-pill">IPO-Driven Growth</span>
+            <h2>From Search to Strategy — Closing a Game-Changing CMO for a Jewellery Brand's IPO-Driven Growth</h2>
+            <p>With an IPO on the horizon and a major brand repositioning underway, a prominent jewellery brand needed a Chief Marketing Officer who could build investor-facing brand equity while simultaneously driving consumer growth. The right CMO had to be rare — equal parts strategist and storyteller.</p>
+            <ul class="case-outcomes">
+              <li>
+                <span class="check"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><polyline points="2 8 6 12 14 4"/></svg></span>
+                Placed a CMO with D2C and listed-brand experience from a top consumer company
+              </li>
+              <li>
+                <span class="check"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><polyline points="2 8 6 12 14 4"/></svg></span>
+                Brand NPS rose 34 points in the first two quarters post-joining
+              </li>
+              <li>
+                <span class="check"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><polyline points="2 8 6 12 14 4"/></svg></span>
+                IPO launch achieved with strong retail and institutional investor demand
+              </li>
+            </ul>
+            <a href="schedule-a-call.html" class="case-read-more">
+              Discuss a Similar Challenge
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- arch: light → dark impact band -->
+  <div class="arch-light-to-dark" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+      <path d="M500,3C126.7,3.7,0.8,80.2,0,100V0l1000,0V99C1000,80.6,873.3,2.2,500,3z" fill="#F9F9FB"/>
+    </svg>
+  </div>
+
+  <!-- ============ IMPACT BAND ============ -->
+  <section class="impact-band">
+    <div class="container">
+      <div class="impact-inner">
+        <div class="impact-left">
+          <h2>Powering IPOs with<br />Leadership That Delivers</h2>
+          <p>We specialize in placing CXOs with Rs. 20 LPA+ packages from established organizations into companies preparing for IPO launches, across India and UAE.</p>
+          <a href="schedule-a-call.html" class="btn btn-gold" style="margin-top:28px;">Brief Us on a Mandate</a>
+        </div>
+        <div class="impact-right">
+          <div class="impact-stat">
+            <div class="num">97.2%</div>
+            <div class="lbl">Placement Success Rate</div>
+          </div>
+          <div class="impact-stat">
+            <div class="num">500+</div>
+            <div class="lbl">Clients Served</div>
+          </div>
+          <div class="impact-stat">
+            <div class="num">10+</div>
+            <div class="lbl">Years of Experience</div>
+          </div>
+          <div class="impact-stat">
+            <div class="num">₹20L+</div>
+            <div class="lbl">Avg. CXO Package</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA STRIP ============ -->
+  <!-- ============ FOOTER ============ -->
+  <section class="cta-section" id="contact">
+    <div class="cta-shape-top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+        <path d="M500,3C126.7,3.7,0.8,80.2,0,100V0l1000,0V99C1000,80.6,873.3,2.2,500,3z" fill="#010630"/>
+      </svg>
+    </div>
+    <div class="container" style="padding-top:48px;padding-bottom:48px;text-align:center;">
+      <h2 class="section-h2 section-h2--light" style="margin-bottom:8px;">Tell us the role. We will tell you the market.</h2>
+      <p style="color:rgba(255,255,255,0.65);margin-bottom:28px;font-size:1rem;">Brief us on a mandate and we come back with real market data — before you commit a budget.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="schedule-a-call.html" class="btn btn-gold">Brief Us on a Mandate</a>
+        <a href="tel:+919856755000" class="btn btn-outline-white">+91 98567 55000</a>
+      </div>
+    </div>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col footer-brand">
+            <img src="images/LOGO.png" alt="Boardroom CXO" class="footer-logo" />
+            <p>Powering IPOs with Leadership That Delivers. We specialize in placing CXOs with ₹20 LPA+ packages from top firms into IPO-bound companies.</p>
+            <div class="footer-socials">
+              <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="case-studies.html">Case Studies</a></li>
+              <li><a href="schedule-a-call.html">Schedule a Call</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Services</h5>
+            <ul>
+              <li><a href="index.html#services">Leadership Gap Analysis</a></li>
+              <li><a href="index.html#services">Strategic CXO Search</a></li>
+              <li><a href="index.html#services">Executive Screening</a></li>
+              <li><a href="index.html#services">Interview Coordination</a></li>
+              <li><a href="index.html#services">IPO-Aligned Placement</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Contact</h5>
+            <ul>
+              <li>+919856755000</li>
+              <li>hire@boardroomcxo.com</li>
+              <li>Mon–Sat, 10am–6pm IST</li>
+              <li>India &amp; UAE</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>Boardroom CXO &copy; 2026 | All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <a href="https://wa.me/919856755000" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="whatsapp-label">WhatsApp us</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
