@@ -318,13 +318,14 @@ ul  { list-style: none; }
 .problems-list { border-top: 1px solid var(--ink); }
 .problem-row {
   display: grid;
-  grid-template-columns: 44px minmax(160px, 0.85fr) 1.3fr minmax(260px, 300px);
-  gap: 32px; align-items: center;
+  grid-template-columns: 44px minmax(160px, 0.8fr) 1.15fr minmax(280px, 340px);
+  gap: 40px; align-items: center;
   padding: 56px 0; border-bottom: 1px solid var(--line);
   border-left: 3px solid transparent;
   transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 .problem-row:hover { background: var(--bg-alt); border-left-color: var(--clay); }
+.problem-row:hover .viz-box { background: var(--bg); border: 1px solid var(--line); padding: 16px; margin: -16px; }
 .problem-num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.24em; color: var(--ink-2); align-self: start; padding-top: 4px; }
 .problem-stat {
   font-family: var(--font-display); font-size: clamp(2.4rem, 5.5vw, 4.5rem);
@@ -345,7 +346,7 @@ ul  { list-style: none; }
 .problem-fix::before { content: '→'; font-family: var(--font-body); color: var(--clay); }
 
 /* CSS-built visualizations */
-.viz-box { padding: 8px 0; }
+.viz-box { padding: 8px 0; transition: background 0.3s var(--ease), border-color 0.3s var(--ease); }
 
 /* 01: Budget vs Ask double bar */
 .viz-bars { display: flex; flex-direction: column; gap: 14px; }
@@ -452,6 +453,7 @@ ul  { list-style: none; }
     grid-template-columns: 1fr; gap: 20px; padding: 40px 0;
   }
   .viz-box { max-width: 320px; }
+  .problem-row:hover .viz-box { margin: 0; }
 }
 
 /* SALARY */
@@ -907,7 +909,7 @@ ul  { list-style: none; }
   display: flex; flex-direction: column; gap: 24px; align-items: flex-start;
 }
 .why-media img {
-  width: 100%; aspect-ratio: 2.15/1; object-fit: cover; object-position: center;
+  width: 100%; aspect-ratio: 3/2; object-fit: cover; object-position: center;
   filter: grayscale(1) contrast(1.05);
 }
 .why-cta-inline { align-self: flex-start; }
