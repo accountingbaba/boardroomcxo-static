@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "boardroomcxo",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "."],
+      "port": 4500,
+      "autoPort": true
+    },
+    {
+      "name": "boardroomcxo-tool",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd /Users/theiphonepandit/Downloads/boardroomcxo-tool && npm run dev"],
+      "port": 5173
+    }
+  ]
+}
