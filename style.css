@@ -1438,7 +1438,7 @@ ul  { list-style: none; }
 .article-body h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 2.5vw, 2.1rem); font-weight: 500; letter-spacing: -0.02em; color: var(--ink); margin: 60px 0 20px; line-height: 1.15; }
 .article-body h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 500; letter-spacing: -0.015em; color: var(--ink); margin: 40px 0 16px; }
 .article-body p { font-size: 17px; line-height: 1.75; color: var(--ink); margin-bottom: 20px; }
-.article-body p:first-of-type::first-letter { font-family: var(--font-display); font-size: 5rem; float: left; line-height: 0.8; padding: 8px 12px 0 0; font-weight: 500; color: var(--clay); }
+.article-body > p:first-of-type::first-letter { font-family: var(--font-display); font-size: 5rem; float: left; line-height: 0.8; padding: 8px 12px 0 0; font-weight: 500; color: var(--clay); }
 .article-body ul, .article-body ol { margin: 0 0 20px 20px; color: var(--ink); font-size: 17px; line-height: 1.75; }
 .article-body ul { list-style: none; padding-left: 0; }
 .article-body ul li { padding-left: 20px; position: relative; margin-bottom: 10px; }
@@ -1451,6 +1451,12 @@ ul  { list-style: none; }
 .article-inline-cta h3 { font-family: var(--font-display); color: var(--bg); margin-bottom: 16px; font-size: 1.5rem; font-weight: 500; }
 .article-inline-cta p { color: rgba(255,255,255,0.75); margin-bottom: 24px; font-size: 15px; }
 .article-inline-cta p::first-letter { color: rgba(255,255,255,0.75) !important; font-size: 15px !important; font-family: inherit !important; float: none !important; padding: 0 !important; }
+
+.article-faq { margin: 56px 0; padding-top: 40px; border-top: 1px solid var(--line); }
+.article-faq h2 { margin: 0 0 24px; }
+.faq-item { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.faq-item h3 { margin: 0 0 10px; font-size: 1.1rem; }
+.faq-item p { font-size: 15px; color: var(--ink-2); margin-bottom: 0; }
 
 /* Base: mobile nav hidden on desktop */
 .nav-menu-mobile { display: none; }

@@ -1,0 +1,880 @@
+# Boardroom CXO — Full Article Archive
+
+> Complete text of all published field articles from Boardroom CXO, an executive search firm for jewelry, D2C, and consumer brands in India and the UAE. For summaries and metadata, see /llms.txt. Canonical URLs are listed per article below.
+
+================================================================================
+# The Hidden Comp Gap: Why Jewelry Brands Keep Losing Candidates at the Offer Stage
+URL: https://boardroomcxo.com/article-hidden-comp-gap.html
+Published: 2026-06-01
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+A jewelry brand in Surat runs a search for a Regional Sales Manager. After two months, they have a strong candidate, someone from a well-known organized player, with the right experience, the right references, a track record of opening stores across two regions.
+
+The candidate's CTC slip shows Rs. 13 LPA. The brand puts together what feels like a generous offer: Rs. 17 LPA, a 30% increment, and a clear title upgrade.
+
+The candidate declines.
+
+The hiring team is confused. They offered 30% above the documented salary. Why did it not work?
+
+
+> Because the CTC slip lied. Not maliciously, structurally.
+
+The candidate was actually earning Rs. 19-20 LPA once cash components, travel allowances, and unreported variable payouts were counted in. The 30% increment on the formal number was effectively a pay cut on the real one.
+
+This is the hidden comp gap. It is endemic to India's organized jewelry sector, and it is the single most common reason offers fail at the final stage.
+
+
+## Why the Gap Exists
+
+India's organized jewelry retail sector has a long history of legacy compensation structures. At brands like ORRA, Senco, PN Gadgil, and similar organized players, compensation packages were, and in many cases still are, structured to minimize formal payroll costs while keeping effective take-home competitive.
+
+The result is a pay structure that looks one way on paper and functions differently in practice. A typical arrangement at a legacy brand might look like this:
+
+A hiring brand that benchmarks an offer against the Rs. 9 LPA slip, even generously, at a 35-40% increment, arrives at Rs. 12-12.5 LPA. The candidate, who is actually earning Rs. 13.3 LPA and has additional benefits not reflected anywhere on paper, has no reason to move.
+
+This is not an edge case. It is the norm at legacy organized brands, and it affects every function, sales, business development, marketing, and operations.
+
+
+## How It Shows Up in Practice
+
+
+### The offer gets declined without explanation
+
+Candidates rarely explain why they declined. They say they received a better offer elsewhere, or that the timing did not work, or that they have decided to stay put. The real reason, that the offer was below their actual current earnings, goes unspoken because discussing the cash component would expose their current employer's payroll practices.
+
+
+### The counter-offer wins without effort
+
+When a candidate's current employer learns they are considering a move, the counter-offer conversation is straightforward. The employer simply formalizes part of the cash component, raises the slip by Rs. 2-3 LPA, and the candidate has no reason to leave. The recruiting brand never had a real shot.
+
+
+### The hire happens, at the wrong number
+
+In some cases, the candidate agrees to the offer because they need the formal CTC on their next slip for tax or loan purposes. But they arrive with an expectation, unspoken, of additional benefits that were never discussed. Six months in, the dissatisfaction surfaces.
+
+The comp gap is not just a negotiation problem. It is an intelligence problem. If you do not know what the candidate actually earns, you cannot structure an offer that works, regardless of how generous your intentions are.
+
+
+## The Numbers Across the Market
+
+Based on live candidate conversations across our pipeline, the gap between stated CTC and actual take-home at legacy organized brands runs consistently between 25% and 35%. Some specific anchors from recent mandates:
+
+
+- BlueStone RSM: Rs. 27.5 LPA total (Rs. 24L fixed + Rs. 3.5L variable), appraising toward Rs. 30-35L. Formal slip reflects the fixed component only.
+- CaratLane RSM: Rs. 13.5–18.25 LPA. Range is wider than headline benchmarks suggest, the premium-brand floor does not hold across mid-tier mandates.
+- GIVA BDM: Rs. 20 LPA current, expecting Rs. 30L+ with ESOPs on any move. The ESOP expectation is non-negotiable at this seniority.
+- GIVA National Sales: Rs. 31 LPA + ESOPs. Benchmark for what a first National Sales Head costs at a funded Cat B brand.
+- Legacy brand RSM (ORRA-adjacent): Rs. 75,000/month bank + Rs. 36,000/month cash, of which only Rs. 9 LPA is formally reported. Actual earnings nearly 50% above the stated CTC.
+
+
+
+## The Correction That Actually Works
+
+
+### Verify against bank credit, not the CTC slip
+
+The only reliable way to understand what a candidate earns is to look at what arrives in their bank account. Candidates who are genuinely interested in a role will share this, not the slip, but the bank statement or a screenshot of monthly credits. A candidate who refuses to provide this data is signaling something about the fit that a hiring team should pay attention to.
+
+
+### Benchmark against the verified number, then add a real increment
+
+A CaratLane or GIVA candidate at Rs. 13-18 LPA verified earnings will move on a 25-30% uplift on that real number, not on the 40-50% many brands think they need to offer because they are starting from the wrong base. Once you know the true number, the math becomes straightforward.
+
+
+### Structure the offer to be clean
+
+Growth-stage and new-age brands have an advantage that legacy brands do not: transparent, clean compensation structures. No cash components, no informal payouts, clear variable logic. For candidates who have spent years inside legacy structures, a clean offer is itself an attraction, provided the total number is right.
+
+
+### Address the ESOP question early
+
+At the Rs. 20-40 LPA level, regional sales, senior BD, national roles, candidates from growth-stage brands (GIVA, Limelight, Palmonas) will have ESOP expectations. This is not a negotiating tactic; it reflects the standard at their current employer. If your brand is not in a position to offer equity, that needs to be communicated upfront, and the cash component needs to be structured accordingly.
+
+
+## What This Costs When It Goes Wrong
+
+A failed senior hire, where the candidate declines at the offer stage or joins and leaves within the first year, costs the brand roughly 200% of annual salary once recruitment, onboarding, and lost productivity are factored in. For a mandate at Rs. 20-25 LPA, that is Rs. 40-50 lakhs in avoidable cost.
+
+Most of these failures are avoidable. They happen not because the brand was unwilling to pay correctly but because they did not have the information needed to structure the offer correctly.
+
+That is an intelligence problem. And it has a straightforward solution: verify the real number before you build the offer.
+
+
+
+## Frequently Asked Questions
+
+
+
+### What is the hidden comp gap in India's jewelry industry?
+
+The hidden comp gap is the difference between a candidate's documented CTC slip and their actual take-home pay at legacy organized jewelry brands. It typically runs 25% to 35%, because cash components, travel allowances, and unreported variable payouts are left off the formal payroll slip.
+
+
+
+
+### Why do jewelry brands lose candidates even after offering 30% above their CTC?
+
+Because the CTC slip understates real earnings. A candidate documented at Rs. 13 LPA may actually take home Rs. 19-20 LPA once cash components are counted. A 30% increment on the formal number can work out to a pay cut on the real one, so the candidate declines.
+
+
+
+
+### How can a hiring brand verify a candidate's real compensation?
+
+The only reliable method is to verify against bank credit rather than the CTC slip. Candidates genuinely interested in a role will share bank statements or screenshots of monthly credits. A candidate who refuses to provide this is signaling something worth paying attention to.
+
+
+
+
+### What does a failed senior hire actually cost a jewelry brand?
+
+A failed senior hire, where the candidate declines at the offer stage or leaves within the first year, costs roughly 200% of annual salary once recruitment, onboarding, and lost productivity are factored in. For a mandate at Rs. 20-25 LPA, that is Rs. 40-50 lakhs in avoidable cost.
+
+
+
+
+### Do candidates from growth-stage D2C jewelry brands expect ESOPs?
+
+At the Rs. 20-40 LPA level for regional sales, senior BD, and national roles, candidates from growth-stage brands like GIVA, Limelight, and Palmonas typically expect ESOPs as standard, not as a negotiating tactic. Brands unable to offer equity need to communicate that upfront and structure the cash component accordingly.
+
+================================================================================
+# Why the Best Performance Marketers in Jewelry Are Not on Naukri
+URL: https://boardroomcxo.com/article-performance-marketer-jewelry.html
+Published: 2026-06-01
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+Every growing jewelry brand eventually reaches the same moment. The ROAS dashboard is breaking down under scale. The marketing team that drove early growth is hitting its ceiling. Someone needs to come in and hold performance efficiency while doubling revenue.
+
+The search begins. A job post goes up on Naukri. LinkedIn InMail campaigns go out. A few referrals come in. The shortlist looks thin. The candidates who do apply look good on paper, certifications, agency backgrounds, years of experience, but none of them have operated at scale in your category.
+
+After two or three months, the brand settles. They hire the best available candidate rather than the right one.
+
+
+> This is not a failure of effort. It is a failure of method.
+
+
+## The Pool Is Thin, and It Does Not Job-Hunt
+
+India's organized jewelry sector has a small number of brands that have actually built performance marketing functions at scale: BlueStone, CaratLane, GIVA, Limelight, Palmonas, Aukera. That is the entire competitive set for senior-level performance marketing talent with genuine category experience.
+
+The marketers who have operated inside these organizations, building ROAS frameworks for products priced between Rs. 5,000 and Rs. 60,000, managing creative fatigue across gold, silver, and diamond categories, holding efficiency through wedding season spikes, represent a pool of perhaps a few dozen individuals across the country.
+
+None of them are actively looking for jobs.
+
+The professional who has spent three years optimizing BlueStone's Meta spend at scale is not refreshing Naukri on a Tuesday afternoon. They are in a performance review meeting. Their current employer knows exactly how much they are worth and is doing what it can to keep them.
+
+This is the passive candidate problem, and it is acute in performance marketing because the skill set is rare, brand-specific, and deeply tied to the category economics of each price point.
+
+
+## Why Category Experience Matters More Here Than Almost Anywhere Else
+
+Performance marketing in jewelry is not the same as performance marketing in apparel, electronics, or FMCG. The variables that determine whether a campaign is actually profitable are different.
+
+
+### The ROAS number that looks healthy often is not
+
+A reported 6x ROAS in jewelry can mask a business that is losing money. The gap between reported ROAS and actual cash flow depends on return rates, exchange program usage, certification costs, and the proportion of high-ticket versus low-ticket orders in the mix. A marketer who has not worked inside this category will optimize for the wrong number.
+
+
+### The price range dictates everything
+
+A brand in the Rs. 5,000–15,000 range competes on impulse and gifting behaviour. A brand at Rs. 30,000–60,000 is selling to a deliberate buyer who researches for weeks. Creative strategy, bidding logic, and funnel design are fundamentally different. A marketer who has only operated in the value segment will misprice creative for premium products, and vice versa.
+
+
+### Seasonality is not optional to understand
+
+Dhanteras, Akshaya Tritiya, Valentine's Day, and wedding season create demand spikes that compress margins if managed poorly. The marketer who has navigated these cycles before knows how to protect efficiency during peak periods without overpaying for inventory that will sit post-festival.
+
+What this means in practice: the right candidate has:
+
+
+- Operated under real ROAS pressure in the Rs. 5,000–60,000 jewelry price range for a minimum of 18–24 months
+- Managed monthly media spends of Rs. 30 lakhs or more, not agency-billed but brand-side ownership
+- Can articulate the difference between reported ROAS and cash flow ROAS, and has built a system to monitor both
+- Has navigated at least one full Akshaya Tritiya or Dhanteras cycle with P&L visibility
+- Has owned the creative brief, not just executed it, understands why jewelry creative ages faster than most categories
+
+
+
+## Database Hiring Cannot Solve This
+
+The typical recruiting process, post a job description, screen applications, run interviews, self-selects for candidates who are either unemployed, unhappy, or passively browsing. None of those conditions describe the performance marketer you actually want.
+
+The BlueStone performance head who has delivered three strong quarters is not unhappy. The CaratLane digital marketing manager who built the ROAS framework from scratch is not browsing job boards. They are not available through conventional hiring channels because they are not in a market that hiring channels serve.
+
+82% of Indian employers report difficulty finding the right talent for specialized roles. In performance marketing specifically, the difficulty is not a sourcing problem, it is a visibility problem. The candidates exist. They are simply invisible to standard hiring methods.
+
+
+## How Headhunting Actually Works for This Role
+
+A targeted search for a performance marketing hire in jewelry starts not with a job description but with a market map. Which organizations have built this function at a level of maturity that is relevant? Which individuals within those organizations are at the right career stage, senior enough to have real ownership, junior enough to still be movable? Who has recently expressed dissatisfaction, joined a bad manager, been passed over for a promotion, or otherwise entered a window where a serious conversation is possible?
+
+Once the target list is built, the approach is indirect. A well-researched, confidential outreach that demonstrates understanding of the candidate's current work, their career trajectory, and why the specific opportunity is worth a conversation. Not a cold InMail with a generic job description.
+
+The conversation that follows is about the move, the mandate, the authority, the two-year picture, not just the package. Because the candidates worth approaching have options. What moves them is the quality of the problem, not the size of the increment.
+
+
+### What the offer needs to look like
+
+A performance marketer at BlueStone or CaratLane in a mid-to-senior role is earning between Rs. 10 and Rs. 32 LPA depending on seniority and tenure. A 25-30% uplift on verified current compensation is typically sufficient to move a candidate who is otherwise open to the right opportunity. Above that, you are overpaying; below that, you will lose to a counter-offer.
+
+The mistake brands make is benchmarking against what the candidate states, rather than what they actually earn. At organized brands, cash components and variable payouts mean stated CTC and actual take-home diverge significantly. An offer structured against the slip will either lose the candidate or bring them in dissatisfied.
+
+
+## The Cost of Getting This Wrong
+
+The replacement cost for a specialized senior hire runs to 200% of annual salary when recruitment time, onboarding, ramp-up, and lost productivity are factored in. For a performance marketing hire at Rs. 18-25 LPA, a failed placement costs the brand Rs. 36-50 lakhs, before considering the opportunity cost of a marketing engine that ran below capacity for the duration of the search.
+
+Growth-stage brands cannot absorb that cost twice. The first hire needs to be the right one.
+
+
+
+## Frequently Asked Questions
+
+
+
+### Why is it hard to find performance marketers with jewelry category experience?
+
+Only a handful of Indian jewelry brands, including BlueStone, CaratLane, GIVA, Limelight, Palmonas, and Aukera, have built performance marketing functions at scale. The pool of marketers with genuine ROAS ownership in the Rs. 5,000-60,000 jewelry price range is a few dozen people nationally, and none of them are actively job-hunting.
+
+
+
+
+### Why does category experience matter so much for jewelry performance marketing?
+
+Jewelry performance marketing has category-specific dynamics that generic experience doesn't cover: reported ROAS can mask unprofitable orders once return rates and exchange programs are counted, price range dictates creative and bidding strategy, and festival seasonality like Dhanteras and Akshaya Tritiya compresses margins if managed poorly.
+
+
+
+
+### Why doesn't posting a job on Naukri work for hiring senior performance marketers?
+
+Database hiring self-selects for candidates who are unemployed, unhappy, or passively browsing. The performance marketers who have actually built ROAS frameworks at BlueStone- or CaratLane-scale are not browsing job boards; they are in performance review meetings with employers who already know their worth.
+
+
+
+
+### What should a jewelry brand offer to hire a senior performance marketer?
+
+A performance marketer at BlueStone or CaratLane in a mid-to-senior role earns between Rs. 10 and Rs. 32 LPA depending on seniority. A 25-30% uplift on verified current compensation, not the stated CTC, is typically sufficient to move a candidate who is otherwise open to a conversation.
+
+
+
+
+### What does a failed performance marketing hire cost a jewelry brand?
+
+The replacement cost for a specialized senior hire runs to roughly 200% of annual salary once recruitment time, onboarding, ramp-up, and lost productivity are factored in. For a performance marketing hire at Rs. 18-25 LPA, a failed placement costs the brand Rs. 36-50 lakhs.
+
+================================================================================
+# Refused to Blink: The Boardroom Lesson Behind Marico's War With Hindustan Lever
+URL: https://boardroomcxo.com/article-marico-refused-to-blink.html
+Published: 2026-07-17
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+In 1999, Hindustan Lever, now Hindustan Unilever, decided to kill Parachute. Not compete with it. Kill it.
+
+The multinational giant launched its own coconut hair oil, Nihar, and went straight after the one brand that mattered most to a much smaller company called Marico Limited. Parachute was not just any product for Marico. It brought in up to 60% of the company's profits. If Parachute fell, Marico fell with it.
+
+Hindustan Lever knew that.
+
+
+## The Cheque on the Table
+
+They approached Harsh Mariwala more than once, along with bankers, suggesting he simply sell the company and walk away. On paper, it made sense. He was a commerce graduate running a business he had carved out of his family's old commodity trading firm. Now the largest FMCG company in the country wanted his crown jewel. Most founders would have taken the cheque.
+
+He said no.
+
+His reasoning was simple. He knew coconut oil better than anyone, and Marico still held around 50% of the market. So instead of selling, he fought, on four fronts at once.
+
+
+## The Four Fronts
+
+He improved the product. He built emotional advertising around what coconut means in Indian homes, in weddings, in daily rituals. He pushed harder into rural distribution. And he put real power in the hands of his ground sales staff, because he understood that FMCG battles are won street by street, not in boardrooms.
+
+
+> FMCG battles are won street by street, not in boardrooms.
+
+Marico held its ground. Then it won. Years later, in a twist nobody saw coming, Marico bought the Nihar brand from Hindustan Unilever itself.
+
+Today Marico sells across 25 countries and is worth well over ₹80,000 crore. The coconut oil brand a giant tried to bury is still a leader.
+
+
+## Why This Belongs in a Boardroom Conversation
+
+Every founder who has built something worth defending eventually gets the version of this offer, a buyout, an acqui-hire, a "strategic partnership" that quietly ends with someone else owning the thing they built. The decision to stay and fight instead of sell is not a strategy slide. It is a leadership call, made under real pressure, with the company's survival on the line.
+
+What made Marico's answer credible was not conviction alone. It was that the conviction could actually be executed, on four fronts, at the same time, by people who owned each front. Product. Brand. Distribution. Ground sales. A founder cannot run all four personally at scale. That takes a bench.
+
+The market does not remember who had the bigger budget. It remembers who refused to blink, and who had the leadership in place to back that decision up.
+
+
+
+## Frequently Asked Questions
+
+
+
+### Why did Hindustan Lever try to kill Parachute in 1999?
+
+Hindustan Lever, now Hindustan Unilever, launched its own coconut hair oil, Nihar, to directly attack Parachute, the Marico brand that generated up to 60% of Marico's profits. Weakening Parachute would have crippled Marico as a company.
+
+
+
+
+### Why did Harsh Mariwala refuse to sell Marico to Hindustan Lever?
+
+Hindustan Lever and its bankers approached Harsh Mariwala more than once suggesting he sell the company. He refused because he knew the coconut oil category better than anyone and Marico still held around 50% of the market, so he chose to fight rather than exit.
+
+
+
+
+### What were the four fronts Marico fought on against Hindustan Lever?
+
+Marico improved the product itself, built emotional advertising around coconut oil's role in Indian households, pushed harder into rural distribution, and gave real power to its ground sales staff, fighting on product, brand, distribution, and ground sales simultaneously.
+
+
+
+
+### What happened to Marico after the war with Hindustan Lever?
+
+Marico held its ground and won. Years later, Marico bought the Nihar brand from Hindustan Unilever itself. Today Marico sells across 25 countries and is worth well over ₹80,000 crore.
+
+
+
+
+### What is the boardroom leadership lesson from Marico's fight with Hindustan Lever?
+
+Conviction alone does not win a category war. It has to be executable on every front, product, brand, distribution, and ground sales, at the same time, by leaders who each own their front. A founder cannot run all four personally at scale, which is why the leadership bench matters as much as the decision to fight.
+
+================================================================================
+# Sanjiv Mehta: The HUL Leader Who Never Forgot Bhopal
+URL: https://boardroomcxo.com/article-sanjiv-mehta-crisis-leadership.html
+Published: 2026-07-24
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+In December 1984, a gas leak at a Union Carbide plant in Bhopal killed thousands of people in one of the worst industrial disasters the world has seen. A young accountant, barely a year into his first job, sat on the crisis team that had to deal with it.
+
+That accountant was Sanjiv Mehta. He had joined Union Carbide India in 1983. Most people carry an experience like that quietly, or try to forget it. He did the opposite. For the next four decades, in almost every important meeting he ran, he opened with the safety agenda before anything else on the table.
+
+One disaster, early in a career, set the operating rhythm for the rest of it.
+
+
+## Who Is Sanjiv Mehta?
+
+Sanjiv Mehta is a chartered accountant who spent over three decades inside the Unilever group, culminating in a decade as Chairman and CEO of Hindustan Unilever (HUL) from 2013. He joined Unilever in 1992 and, market after market, was handed the difficult ones: Bangladesh, which he turned into one of the group's best-performing businesses, then the Philippines, then North Africa and the Middle East, running operations through political instability most executives never face in a career.
+
+In 2013, he came home to run HUL.
+
+
+## How Much Did HUL Grow Under Sanjiv Mehta?
+
+Over his decade at the top, HUL's market value grew from roughly $17 billion to over $70 billion, a fivefold increase. Revenue crossed ₹50,000 crore. The company became India's largest FMCG business and Asia's largest consumer staples company. Few Indian corporate leaders have compounding numbers attached to their name at that scale.
+
+He also closed the 2020 merger with GlaxoSmithKline Consumer Healthcare's Indian business, bringing Horlicks and Boost into HUL, one of the largest FMCG deals India has recorded.
+
+But the number that says the most about him is quieter than any of those. Women in HUL's management rose from under 20% to 45% on his watch. That is not a headline metric investors ask about on earnings calls. It is a workforce decision made and sustained over years, which is precisely why it is a better signal of how someone actually leads than a market-cap chart is.
+
+
+## The Governance Habit Most Leadership Profiles Skip
+
+Most coverage of Mehta's career reads as a business-numbers story: market cap, the GSK deal, revenue crossed. What gets left out is the mechanism behind it, the specific, repeatable habit that ran underneath four decades of leadership across four continents.
+
+Opening every important meeting with a safety and risk review is not a mission-statement line. It is a governance discipline that forces an organization to surface bad news early, before it becomes a crisis nobody planned for. Founders and boards can adopt the ritual itself, not just admire the outcome.
+
+
+> The best leaders are not shaped only by their wins. They are shaped by what they refuse to forget.
+
+
+## Common Mistakes Boards Make With Crisis-Shaped Leaders
+
+Boards evaluating senior candidates tend to make three errors with profiles like this one.
+
+They treat early hardship as a liability to smooth over in interviews, rather than the source of the operating discipline that made the rest of the career work. A candidate who has run crisis response early tends to build risk visibility into every process that follows, which is exactly the instinct a growth-stage or IPO-track company needs and rarely screens for.
+
+They evaluate leaders purely on growth numbers and skip the harder question: what specific habit or structure produced those numbers, and can it survive the leader's departure. A fivefold value increase means little to a successor who never learned the underlying discipline.
+
+They underweight the diversity and governance metrics that took years to move, in favor of the ones that moved in a single quarter. A 20% to 45% shift in women in management is a harder, slower number to produce than a revenue line, and it says more about whether an organization was actually rebuilt or just scaled.
+
+
+## A Framework for Recognizing This Kind of Leadership
+
+When boards brief us on a CXO search, we push for the same three checks on every strong candidate, regardless of function.
+
+
+- Ask what discipline they installed, not just what number they hit. Growth without a named, repeatable mechanism behind it does not transfer to a new company.
+- Ask what they were handed early, and what they did with it. A leader who was given the hardest markets first, and delivered, has already been stress-tested in ways an interview process cannot replicate.
+- Look for one slow metric they moved on purpose. Fast numbers can be bought with budget. Slow ones, like management diversity or safety culture, require sustained intent across years.
+
+
+
+## Why This Belongs in the Boardroom, Not Just the Business Pages
+
+A founder or board weighing a buyout offer faces a different kind of pressure than a leader inheriting a crisis, but both are tests of whether conviction can actually be executed. We wrote recently about Harsh Mariwala's decision to fight Hindustan Lever instead of selling Marico, a conviction that only worked because it was backed by leaders who owned product, brand, distribution, and ground sales at the same time. Mehta's career is the other half of that same lesson: conviction that survives four decades is built on a discipline you install and repeat, not a single bold call.
+
+Both stories point to the same hiring problem. The market does not reward the biggest budget or the boldest slide. It rewards boards that can identify, and hire, the people who carry a discipline through decades of pressure.
+
+
+## Frequently Asked Questions
+
+
+### Who is Sanjiv Mehta?
+
+Sanjiv Mehta is a chartered accountant who joined Union Carbide India in 1983 and later spent over three decades at Unilever, including a decade as Chairman and CEO of Hindustan Unilever from 2013. HUL's market value grew roughly fivefold under his leadership, from about $17 billion to over $70 billion.
+
+
+### What was Sanjiv Mehta's connection to the Bhopal gas tragedy?
+
+He was a young accountant on Union Carbide India's crisis response team during the December 1984 Bhopal gas leak, barely a year into his career. The experience shaped a governance habit he carried for the next four decades: opening every important meeting with a review of the safety agenda.
+
+
+### How much did Hindustan Unilever grow under Sanjiv Mehta?
+
+HUL's market value grew from around $17 billion to over $70 billion during his decade as Chairman and CEO, a roughly fivefold increase. Revenue crossed ₹50,000 crore, and HUL became India's largest FMCG company.
+
+
+### What was the GSK-HUL merger?
+
+In 2020, HUL merged with GlaxoSmithKline Consumer Healthcare's Indian business under Mehta's leadership, bringing Horlicks and Boost into the company. It is one of the largest FMCG deals in Indian corporate history.
+
+
+### How did women's representation change at HUL under Sanjiv Mehta?
+
+Women in HUL's management rose from under 20% to 45% during his tenure, a shift built over years rather than a single reporting cycle.
+
+
+
+## Frequently Asked Questions
+
+
+
+### Who is Sanjiv Mehta?
+
+Sanjiv Mehta is a chartered accountant who joined Union Carbide India in 1983 and later spent over three decades at Unilever, including a decade as Chairman and CEO of Hindustan Unilever (HUL) from 2013. Under his leadership, HUL's market value grew roughly fivefold, from about $17 billion to over $70 billion, and the company became India's largest FMCG business.
+
+
+
+
+### What was Sanjiv Mehta's connection to the Bhopal gas tragedy?
+
+Sanjiv Mehta was a young accountant on Union Carbide India's crisis response team during the December 1984 Bhopal gas leak, barely a year into his career. He has said the experience shaped how he ran every meeting for the following four decades, starting with a review of the safety agenda before any other business.
+
+
+
+
+### How much did Hindustan Unilever grow under Sanjiv Mehta?
+
+Under Sanjiv Mehta's decade as Chairman and CEO, Hindustan Unilever's market value grew from around $17 billion to over $70 billion, a roughly fivefold increase. Revenue crossed ₹50,000 crore, and HUL became India's largest FMCG company and Asia's largest consumer staples business.
+
+
+
+
+### What was the GSK-HUL merger?
+
+In 2020, Hindustan Unilever, under Sanjiv Mehta, completed its merger with GlaxoSmithKline Consumer Healthcare's Indian business, bringing the Horlicks and Boost brands into HUL. It remains one of the largest FMCG deals in Indian corporate history.
+
+
+
+
+### How did women's representation change at HUL under Sanjiv Mehta?
+
+The share of women in Hindustan Unilever's management rose from under 20% to 45% during Sanjiv Mehta's tenure as Chairman and CEO, one of the more significant workforce diversity shifts among large Indian companies in that period.
+
+================================================================================
+# Suresh Narayanan: The MD Who Walked Into the Maggi Ban
+URL: https://boardroomcxo.com/article-suresh-narayanan-maggi-crisis.html
+Published: 2026-07-31
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+In June 2015, 38,000 tonnes of Maggi noodles were pulled off Indian shelves and destroyed. Not recalled. Destroyed.
+
+Nestle India's largest brand had an 80% market share and ₹2,000 crore in annual sales. It went to zero in weeks. That is the moment Suresh Narayanan walked in as Managing Director.
+
+His own words when he got the call: "My first reaction was, why me?"
+
+
+## Who Is Suresh Narayanan?
+
+Suresh Narayanan had already led Nestle through the 2008 financial downturn in Singapore and run the company's Egypt operations during the Arab Spring. Both were external shocks the business had to absorb. The Maggi ban was different. It was a food safety order, a trust collapse, on a consumer brand three generations of Indian families had grown up eating. He took the MD role at Nestle India in the middle of that collapse and led the company until his retirement in July 2025.
+
+
+## How Did Suresh Narayanan Handle the Maggi Ban?
+
+Most leaders in that position go into damage control: press statements, legal teams, aggressive PR. He did not.
+
+He chose transparency with regulators over fighting them. Honest communication over spin. And he kept the internal culture intact, which is the part nobody talks about when they tell this story. A brand can survive a bad quarter. It has a much harder time surviving a leadership team that panics in front of its own employees.
+
+Five months later, Maggi was back on shelves.
+
+
+## The Numbers After the Crisis
+
+By 2019, Nestle India delivered nine consecutive quarters of double-digit value growth. By the time Narayanan retired in July 2025, the company had crossed ₹20,000 crore in revenue, roughly ten times what Maggi alone contributed annually before the ban.
+
+He also expanded rural distribution from roughly 40,000 to over 90,000 villages across India, because he understood where the next wave of consumer demand was actually coming from. Not just metros, but tier 2 cities, smaller towns, and markets most FMCG leadership teams were still treating as secondary.
+
+
+## The Line Worth Sitting With
+
+
+> If the decision is right, the credit goes to the team. If it is wrong, I am responsible.
+
+That sentence is not a leadership-poster line. It is an operating principle, and it explains why the internal culture held together during the crisis. People do not panic in front of a leader who has already told them, in advance, who owns the downside.
+
+
+## Common Mistakes Boards Make When Hiring for a Crisis
+
+Boards evaluating candidates for a high-stakes turnaround tend to repeat the same errors.
+
+They look for a fighter, not a communicator. The instinct in a crisis is to hire someone combative, someone who will push back hard against regulators and critics. Narayanan's approach was the opposite: cooperate with regulators, communicate honestly, and let the transparency do the work that a legal fight could not.
+
+They ignore the internal audience. Most crisis-response plans are built for customers, media, and regulators. Employee morale is treated as a side effect rather than a variable to actively manage. A company that loses its internal culture during a crisis has a much longer recovery even after the external problem is resolved.
+
+They hire for the crisis and stop evaluating for the decade after it. The harder skill was not surviving the ban. It was reading, correctly, that rural India and tier 2 markets were where the next decade of growth would come from, and building distribution into 90,000 villages to capture it.
+
+
+## A Framework for Identifying This Kind of Leader
+
+
+- Ask how they behaved when they had no good options. Narayanan's answer during the Maggi ban was transparency over spin. Candidates who default to PR and legal maneuvering under pressure tend to protect the brand's image before they protect the underlying trust.
+- Ask what happened to the team, not just the numbers. A leader who can name specific steps they took to protect internal morale during a hard period is describing a repeatable practice. A leader who only remembers the external outcome is describing luck.
+- Ask where they placed the next bet, once the crisis was over. Recovery is not the finish line. Narayanan used the reset to expand into markets the company had underweighted for years. The best crisis leaders treat the recovery as a platform for a bigger decision, not a return to the status quo.
+
+
+
+## Why This Belongs in the Boardroom, Not Just the Case Study
+
+Business schools teach the Maggi crisis as a case study on brand recovery. What gets less attention is what it revealed about the senior leader who actually handled it, and that is the part boards should be studying when they hire. We have written about Harsh Mariwala's decision to fight instead of sell when Hindustan Lever tried to kill Parachute, and about Sanjiv Mehta's habit of opening every meeting with a safety review after Bhopal. Narayanan's story completes the same pattern: the leaders worth hiring are not the ones who never face a hard room. They are the ones who are shaped by it, and who can name exactly what they did differently because of it.
+
+Good times do not build that kind of CXO. Hard rooms do.
+
+
+## Frequently Asked Questions
+
+
+### Who is Suresh Narayanan?
+
+Suresh Narayanan is the former Chairman and Managing Director of Nestle India, who took the role in 2015 during the Maggi noodles ban. He had previously led Nestle's Singapore business through the 2008 downturn and its Egypt operations during the Arab Spring, and retired from Nestle India in July 2025.
+
+
+### What happened during the Maggi crisis in 2015?
+
+Indian regulators banned Maggi noodles over lead content concerns in June 2015, forcing Nestle India to destroy roughly 38,000 tonnes of product. The brand held about 80% market share and ₹2,000 crore in annual sales before the ban took it to zero within weeks.
+
+
+### How did Suresh Narayanan handle the Maggi ban?
+
+He prioritized transparency with regulators over fighting them, chose honest communication over aggressive PR, and worked to keep Nestle India's internal culture intact. Maggi returned to shelves five months after the ban.
+
+
+### How much did Nestle India grow under Suresh Narayanan?
+
+Nestle India posted nine consecutive quarters of double-digit value growth by 2019, and crossed ₹20,000 crore in annual revenue by the time he retired in July 2025.
+
+
+### How did rural distribution change under his leadership?
+
+Nestle India's rural distribution expanded from roughly 40,000 to over 90,000 villages, reflecting a deliberate push into tier 2 cities and smaller towns.
+
+
+
+## Frequently Asked Questions
+
+
+
+### Who is Suresh Narayanan?
+
+Suresh Narayanan is the former Chairman and Managing Director of Nestle India, who took the role in 2015 in the middle of the Maggi noodles ban. He had previously led Nestle through the 2008 financial downturn in Singapore and run the company's Egypt operations during the Arab Spring. He retired from Nestle India in July 2025.
+
+
+
+
+### What happened during the Maggi crisis in 2015?
+
+In June 2015, Indian food safety regulators ordered a ban on Maggi noodles over lead content concerns, forcing Nestle India to pull and destroy roughly 38,000 tonnes of product. Maggi held around 80% market share and generated about ₹2,000 crore in annual sales before the ban took its sales to zero within weeks.
+
+
+
+
+### How did Suresh Narayanan handle the Maggi ban?
+
+Suresh Narayanan chose transparency with regulators over contesting them, prioritized honest public communication over aggressive PR and legal pushback, and worked to keep Nestle India's internal culture and employee morale intact through the crisis. Maggi returned to Indian shelves five months after the ban, in November 2015.
+
+
+
+
+### How much did Nestle India grow under Suresh Narayanan?
+
+By 2019, Nestle India delivered nine consecutive quarters of double-digit value growth following the Maggi crisis. By the time Suresh Narayanan retired in July 2025, the company had crossed ₹20,000 crore in annual revenue, up from roughly ₹2,000 crore contributed by Maggi alone at the time of the 2015 ban.
+
+
+
+
+### How did Nestle India's rural distribution change under Suresh Narayanan?
+
+Nestle India's rural distribution network expanded from roughly 40,000 villages to over 90,000 villages under Suresh Narayanan's leadership, reflecting a deliberate push into tier 2 cities and smaller towns rather than relying solely on metro markets.
+
+================================================================================
+# Aukera Raised ₹90 Cr: Inside India's Lab-Grown Diamond Race
+URL: https://boardroomcxo.com/article-aukera-lab-grown-diamond-category-race.html
+Published: 2026-08-07
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+Aukera Grown Diamond Jewellery just raised ₹90 crore. Less than 12 months after raising ₹125 crore.
+
+A lab-grown diamond jewellery brand founded in Bengaluru in 2023, in a category most Indian families are still figuring out. This is not just a funding story. It is a category-creation race in India's lab-grown diamond jewellery market, and the clock just started ticking louder.
+
+
+## What Is Aukera Grown Diamond Jewellery?
+
+Aukera is a lab-grown diamond jewellery brand founded in 2023 by Lisa Mukhedkar and Kumar Saurabh. Lab-grown diamonds are chemically identical to mined diamonds: same hardness, same brilliance, same certifications. The only real difference is origin and price.
+
+And yet, for most Indian families walking into a jewellery store today, the question is still the same. Is it real?
+
+
+## Why This Is a Trust Problem, Not a Product Problem
+
+That question is not a consumer education problem. It is a trust infrastructure problem. Trust in jewellery is built through stores, buyback programmes, certified products, and a brand that feels permanent. Not through Instagram ads.
+
+This is exactly what Mukhedkar and Saurabh are building at Aukera. Quietly, deliberately, and faster than most people in India's jewellery industry have noticed.
+
+
+## The Validation Moment Nobody Priced In
+
+Recently, one of India's most trusted jewellery conglomerates entered and validated the lab-grown diamond category. When a legacy giant walks into a room, it does not just compete. It tells every Indian consumer that the category is real, permanent, and worth trusting.
+
+That kind of validation is worth more than any marketing budget. It compresses years of category education into a single signal: if this established name is selling it, it must be legitimate.
+
+
+## What It Actually Costs to Lead This Category
+
+Kumar Saurabh has said publicly that the category leader in India's lab-grown diamond space will need to invest at least ₹1,000 crore. Aukera has already gone from 13 to 35 company-owned stores in 12 months, backed by Peak XV Partners, Fireside Ventures, and Alteria Capital.
+
+The window to define India's lab-grown diamond jewellery category is open. It will not stay open forever.
+
+
+## The Real Constraint Isn't Capital. It's the Bench.
+
+Aukera has proven it can raise capital twice in a year. That was never going to be the hard part for a category this early and this large. The hard part is deploying ₹1,000 crore worth of ambition through a retail organization that has to move faster than a legacy player waking up to the same opportunity.
+
+Going from 13 to 35 stores in a year is a store rollout problem, a certified-inventory problem, a buyback-programme design problem, and a category-education-at-the-counter problem, all at once. None of those get solved by the funding round. They get solved by the specific people running retail ops, merchandising, and BD, and by how fast a founder can hire them without diluting the trust the brand is trying to build.
+
+
+## Common Mistakes Founders Make in a Category-Creation Race
+
+They mistake funding velocity for a moat. Two raises in 12 months signals investor confidence, not category ownership. A legacy player with an existing store network and consumer trust can close that gap faster than a funding round suggests.
+
+They underinvest in trust infrastructure relative to growth infrastructure. It is easier to open a 36th store than to build a buyback programme customers actually believe in. In categories where the core objection is "is it real," trust infrastructure is the product, not a supporting function.
+
+They hire generalist retail leaders instead of category-specific operators. Someone who has scaled a fashion D2C brand's retail footprint is not automatically equipped to run a jewellery store network where certification, buyback, and resale value are core to the customer promise. The skill sets look adjacent and are not identical.
+
+They wait too long to build the leadership bench once a legacy player validates the category. Validation from an established name is a starting gun, not a reassurance. The founders who move fastest to staff up retail ops, BD, and category marketing in that window are the ones who convert validation into share.
+
+
+## A Framework for Founders Racing to Define a Category
+
+
+- Treat every funding round as a hiring deadline, not just a growth budget. Capital deployed without the operators to execute it sits idle in a category where speed decides who owns the definition.
+- Separate the growth story from the trust story, and staff both. Store count is a growth metric. Buyback redemption rates and certification consistency are trust metrics. They need different owners, not one generalist stretched across both.
+- Hire ahead of the legacy player's response, not after it. Once a conglomerate validates a category, its own leadership bench mobilizes fast. The founders who already have their retail, BD, and ops leadership in place when that happens keep the lead. The ones still recruiting lose it.
+
+
+
+## Why This Belongs in the Boardroom
+
+Category-creation races look like funding stories in the press and hiring stories on the ground. A ₹1,000 crore category-leader estimate is not a capital target so much as a signal of how large the operating organization behind it needs to be, across retail, merchandising, BD, and trust infrastructure. Boards backing a category creator should be asking the same question we ask on every jewellery and D2C mandate: is the leadership bench being built at the same speed as the funding round, or is it a step behind.
+
+
+## Frequently Asked Questions
+
+
+### What is Aukera Grown Diamond Jewellery?
+
+Aukera is a lab-grown diamond jewellery brand founded in Bengaluru in 2023 by Lisa Mukhedkar and Kumar Saurabh, operating a company-owned retail network that grew from 13 to 35 stores in 12 months.
+
+
+### How much funding has Aukera raised?
+
+Aukera raised ₹90 crore in its latest round, less than 12 months after a ₹125 crore raise, backed by Peak XV Partners, Fireside Ventures, and Alteria Capital.
+
+
+### What is the difference between lab-grown and mined diamonds?
+
+Lab-grown diamonds are chemically identical to mined diamonds in hardness, brilliance, and certification. The differences are origin and price, not physical quality.
+
+
+### Why does a legacy jewellery conglomerate entering the category matter?
+
+An established, trusted jewellery name entering lab-grown diamonds signals to consumers that the category is legitimate and permanent, a form of validation that is difficult to buy through advertising.
+
+
+### How much investment does it take to lead this category?
+
+Aukera co-founder Kumar Saurabh has said the category leader in India's lab-grown diamond jewellery space will need to invest at least ₹1,000 crore.
+
+
+
+## Frequently Asked Questions
+
+
+
+### What is Aukera Grown Diamond Jewellery?
+
+Aukera Grown Diamond Jewellery is a lab-grown diamond jewellery brand founded in Bengaluru in 2023 by Lisa Mukhedkar and Kumar Saurabh. The company sells certified lab-grown diamond jewellery through a company-owned retail network that has expanded from 13 to 35 stores in 12 months.
+
+
+
+
+### How much funding has Aukera raised?
+
+Aukera raised ₹90 crore in its most recent funding round, coming less than 12 months after an earlier ₹125 crore raise. Its backers include Peak XV Partners, Fireside Ventures, and Alteria Capital.
+
+
+
+
+### What is the difference between lab-grown and mined diamonds?
+
+Lab-grown diamonds are chemically identical to mined diamonds, with the same hardness, brilliance, and certification standards. The primary differences are origin, since lab-grown diamonds are created in controlled environments rather than mined from the earth, and price, with lab-grown diamonds typically costing significantly less than mined equivalents of comparable quality.
+
+
+
+
+### Why does a legacy jewellery conglomerate entering the lab-grown diamond category matter?
+
+When an established, trusted jewellery conglomerate enters a new category like lab-grown diamonds, it signals to consumers that the category is legitimate, permanent, and worth trusting, which is a harder outcome to achieve through advertising alone. In jewellery, where purchase trust depends on brand permanence and buyback assurance, this kind of validation from a legacy player can be more valuable than a marketing budget.
+
+
+
+
+### How much investment does it take to lead India's lab-grown diamond jewellery category?
+
+Aukera co-founder Kumar Saurabh has stated publicly that the category leader in India's lab-grown diamond jewellery space will need to invest at least ₹1,000 crore, reflecting the scale of retail infrastructure, certification systems, and buyback programmes required to build consumer trust in a new jewellery category.
+
+================================================================================
+# Solitario's Netflix Moment Exposes a Marketing Hiring Gap
+URL: https://boardroomcxo.com/article-solitario-cultural-relevance-marketing-leadership.html
+Published: 2026-08-14
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+A lab-grown diamond brand appeared on a Netflix series last month without a single rupee in ad spend. What followed is worth paying attention to.
+
+Solitario Diamonds featured inside "Desi Bling", a luxury lifestyle series on Netflix. No campaign. No media buy. The jewellery simply lived inside a show its audience was already watching. The brand reported a sharp rise in website traffic, digital engagement, and customer enquiries almost immediately after the show aired.
+
+
+## The Surface Read and the Real One
+
+The surface read is smart product placement. The more interesting read is what it tells us about how consumer brand marketing is changing.
+
+For years, jewellery brand marketing meant buying visibility: ads, billboards, festive campaigns. Brands chose the channel and pushed their message out. Solitario did something different. They placed their product where their customers were already spending time.
+
+Their CEO framed it well: people don't want to be sold to, they want to be inspired.
+
+
+## Why This Is Bigger Than One Placement
+
+This shift, from paid reach to cultural relevance, has a direct consequence for D2C and consumer brands, one that most founders are slow to act on.
+
+Reach marketing is a media-buying discipline. It rewards a leader who can manage budgets, optimize spend across channels, and report on performance metrics. Cultural relevance marketing is a different discipline entirely. It rewards a leader who understands brand positioning, storytelling, and category thinking well enough to know which show, which creator, or which cultural moment is actually worth a brand's product living inside.
+
+Same job title on the job description. Fundamentally different person.
+
+
+## The Leadership Consequence Nobody's Hiring For
+
+When the marketing strategy changes, the marketing leadership needs to change with it. This is a pattern we see consistently in our executive search work across jewellery and D2C brands. The strategy evolves quickly. The leadership hiring rarely keeps pace.
+
+A founder decides the brand needs to move toward cultural relevance, and then runs a search using the same job description that hired their last performance-focused CMO. The result is a leader who is genuinely skilled, just skilled at the wrong discipline for where the brand is headed next.
+
+
+## Common Mistakes Founders Make in This Transition
+
+They confuse a bigger title with a different skill set. Promoting an internal performance marketer to CMO does not automatically produce a brand storyteller. The two disciplines require different instincts, built over different kinds of experience.
+
+They chase the tactic instead of the capability. A founder impressed by Solitario's Netflix result might brief a search for "someone who can get us on Netflix," when the actual capability needed is a leader who can consistently identify where cultural relevance lives for their specific audience, of which a streaming placement is one example, not the model.
+
+They keep the old scorecard. A cultural-relevance hire will look weaker on short-term performance metrics like cost-per-click than a reach-focused hire, by design. Boards that evaluate the new hire against the old scorecard will misread a long-term brand investment as underperformance.
+
+
+## A Framework for Hiring the Right Marketing Leader
+
+
+- Name the strategy before writing the job description. Decide explicitly whether the brand is optimizing for reach, cultural relevance, or a deliberate mix, and let that decision shape the candidate profile, not the other way round.
+- Screen for category thinking, not just channel expertise. Ask candidates to explain how they would identify a cultural moment worth entering, not just how they would run a media plan once a moment is chosen.
+- Set the scorecard to match the strategy. If the mandate is cultural relevance, measure brand engagement, earned media, and enquiry quality alongside performance metrics, not instead of them, but not subordinate to them either.
+
+
+
+## Why This Belongs in the Boardroom
+
+We have written before about how Marico built emotional advertising around what coconut means in Indian homes to defend Parachute, and about how Aukera is building trust infrastructure rather than buying visibility in the lab-grown diamond category. Solitario's Netflix moment is the same pattern showing up again: brands that win on cultural relevance are not spending less on marketing, they are spending on a different discipline entirely. The boardroom question is not whether to make that shift. It is whether the marketing leader currently in the room is the right person to execute it.
+
+
+## Frequently Asked Questions
+
+
+### How did Solitario Diamonds get featured on Netflix without paid advertising?
+
+Solitario Diamonds appeared inside "Desi Bling" on Netflix through product placement, not a paid campaign. There was no ad buy behind the appearance.
+
+
+### What happened to Solitario Diamonds after the Netflix appearance?
+
+The brand reported a sharp rise in website traffic, digital engagement, and customer enquiries almost immediately after the show aired.
+
+
+### What is the difference between marketing for reach and marketing for cultural relevance?
+
+Reach marketing buys visibility through ads and campaigns. Cultural relevance marketing places a brand inside content its audience already values, earning attention instead of purchasing it.
+
+
+### Why does this shift change who a brand should hire as a marketing leader?
+
+A reach-focused marketing leader manages budgets and performance metrics. A cultural-relevance leader needs brand positioning, storytelling, and category thinking, a different skill set under the same job title.
+
+
+### What should D2C and jewellery brands look for in a marketing leader today?
+
+Look for a track record in brand positioning and content partnerships, not only performance marketing and paid media management.
+
+
+
+## Frequently Asked Questions
+
+
+
+### How did Solitario Diamonds get featured on Netflix without paid advertising?
+
+Solitario Diamonds appeared inside 'Desi Bling', a luxury lifestyle series on Netflix, through product placement rather than a paid media campaign. The brand's jewellery was simply part of a show its target audience was already watching, with no billboard, festive campaign, or ad buy behind it.
+
+
+
+
+### What happened to Solitario Diamonds after the Netflix appearance?
+
+Solitario Diamonds reported a sharp rise in website traffic, digital engagement, and customer enquiries almost immediately after 'Desi Bling' aired on Netflix, despite spending nothing on advertising to generate that response.
+
+
+
+
+### What is the difference between marketing for reach and marketing for cultural relevance?
+
+Marketing for reach means a brand buys visibility through ads, billboards, and campaigns, choosing the channel and pushing a message out to as many people as possible. Marketing for cultural relevance means a brand places its product inside content and contexts its audience already values, earning attention rather than purchasing it.
+
+
+
+
+### Why does a shift to cultural relevance marketing change who a brand should hire as a marketing leader?
+
+A brand optimizing for reach needs a marketing leader who manages budgets and performance metrics. A brand building cultural relevance needs a senior leader who understands brand positioning, storytelling, and category thinking. Both roles can carry the same job title, such as CMO or Head of Marketing, but require a fundamentally different skill set and hiring profile.
+
+
+
+
+### What should D2C and jewellery brands look for in a marketing leader today?
+
+D2C and jewellery brands shifting toward cultural relevance should look for marketing leaders with a track record in brand positioning, content and storytelling partnerships, and category-defining campaigns, not only leaders skilled in performance marketing and paid media management.

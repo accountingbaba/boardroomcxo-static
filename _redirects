@@ -1,0 +1,28 @@
+# Cloudflare Pages redirects — WordPress -> static site cutover
+# (mirrors .htaccess rules for the Hostinger fallback host)
+
+# WordPress pages -> static pages
+/about-us/ /about-us.html 301
+/case-studies/ /case-studies.html 301
+/schedule-a-call/ /schedule-a-call.html 301
+/resources/ /resources.html 301
+
+# WordPress portfolio (case studies) -> new case studies page
+/portfolio/ /case-studies.html 301
+/portfolio/case-study-cmo-hiring-ipo-jewellery-strategy/ /case-studies.html 301
+/portfolio/case-study-cfo-hiring-jewellery-brand-ipo/ /case-studies.html 301
+/portfolio/case-study-finance-head-singapore-expansion/ /case-studies.html 301
+
+# WordPress blog posts -> Resources hub (no direct static equivalent)
+/how-to-identify-leadership-gaps-before-your-ipo/ /resources.html 301
+/the-top-3-leadership-roles-you-need-before-going-public/ /resources.html 301
+/why-leadership-can-make-or-break-your-ipo/ /resources.html 301
+
+# WordPress category archive -> Resources hub
+/category/blogs/ /resources.html 301
+
+# Old WordPress system paths -> homepage
+/wp-admin/* / 301
+/wp-login.php / 301
+/feed/ / 301
+/feed/* / 301

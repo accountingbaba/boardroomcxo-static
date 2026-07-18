@@ -9,13 +9,22 @@ Boardroom CXO is based in Surat, India, and serves clients across India and the 
 - [Home](https://boardroomcxo.com/): positioning, market-signal statistics, and a live compensation-benchmarking tool by role/store-count/city-tier
 - [About Us](https://boardroomcxo.com/about-us.html): firm history, placement track record, and team
 - [Case Studies](https://boardroomcxo.com/case-studies.html): real placement outcomes, including finance, sales, and operations leadership hires
-- [Resources](https://boardroomcxo.com/resources.html): field articles on executive hiring and compensation trends
+- [Resources](https://boardroomcxo.com/resources.html): field articles on executive hiring, compensation trends, and leadership case studies
 - [Schedule a Call](https://boardroomcxo.com/schedule-a-call.html): contact and booking
 
 ## Articles
 
 - [Why the Best Performance Marketers in Jewelry Are Not on Naukri](https://boardroomcxo.com/article-performance-marketer-jewelry.html): on the thin, non-job-hunting pool of marketers with real ROAS experience in the jewelry price range of ₹5,000–60,000
 - [The Hidden Comp Gap: Why Jewelry Brands Keep Losing Candidates at the Offer Stage](https://boardroomcxo.com/article-hidden-comp-gap.html): field data on the gap between documented CTC and actual take-home pay at legacy jewelry/retail brands
+- [Aukera Raised ₹90 Cr: Inside India's Lab-Grown Diamond Category Race](https://boardroomcxo.com/article-aukera-lab-grown-diamond-category-race.html): what Aukera's back-to-back funding rounds and a legacy conglomerate's entry signal about the leadership talent lab-grown diamond jewellery brands need to scale
+- [Refused to Blink: The Boardroom Lesson Behind Marico's War With Hindustan Lever](https://boardroomcxo.com/article-marico-refused-to-blink.html): how Marico's founder rejected a 1999 buyout offer from Hindustan Lever and fought a four-front category war instead — a case study in founder-led leadership under existential pressure
+- [Sanjiv Mehta: The HUL Leader Who Never Forgot Bhopal](https://boardroomcxo.com/article-sanjiv-mehta-crisis-leadership.html): how Sanjiv Mehta grew Hindustan Unilever's value 5x, closed the GSK Consumer merger, and doubled women in leadership, shaped by lessons from the Bhopal gas tragedy
+- [Solitario's Netflix Moment Exposes a Marketing Hiring Gap](https://boardroomcxo.com/article-solitario-cultural-relevance-marketing-leadership.html): why an unpaid Netflix placement that spiked Solitario Diamonds' traffic reveals most jewelry and D2C brands have hired the wrong kind of marketing leader — for paid reach, not cultural relevance
+- [Suresh Narayanan: The MD Who Walked Into the Maggi Ban](https://boardroomcxo.com/article-suresh-narayanan-maggi-crisis.html): how Suresh Narayanan took the Nestlé India MD role the same year 38,000 tonnes of Maggi were destroyed, and rebuilt the business to ₹20,000 crore
+
+## Full text
+
+- [llms-full.txt](https://boardroomcxo.com/llms-full.txt): complete plain-text content of every article listed above, for direct ingestion without crawling each page
 
 ## Contact
 
