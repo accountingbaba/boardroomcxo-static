@@ -1428,6 +1428,10 @@ ul  { list-style: none; }
 }
 
 /* ARTICLE */
+/* Hero images carry width/height HTML attributes for CLS prevention; those attributes
+   map to a UA-stylesheet height that outranks aspect-ratio unless height is reset to auto,
+   which otherwise breaks object-fit:cover into a hard crop on narrow viewports. */
+.article-body img { height: auto; }
 .article-hero { padding: 180px 0 60px; border-bottom: 1px solid var(--line); }
 .article-hero-inner { max-width: 900px; }
 .article-hero .crumb { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--clay); margin-bottom: 32px; }
