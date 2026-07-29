@@ -1076,7 +1076,7 @@ ul  { list-style: none; }
 }
 .footer-socials a:hover { border-color: var(--clay); color: var(--clay); }
 .footer-socials svg { width: 15px; height: 15px; }
-.footer-col h5 {
+.footer-col .footer-h5 {
   font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.24em;
   text-transform: uppercase; color: var(--clay); margin-bottom: 20px; font-weight: 400;
 }
@@ -1326,22 +1326,22 @@ ul  { list-style: none; }
 }
 .case-item[data-family="marketing"] .case-num,
 .case-item[data-family="marketing"] .case-overline,
-.case-item[data-family="marketing"] .case-meta-block h5 { color: #2C5A48; }
+.case-item[data-family="marketing"] .case-meta-block .case-meta-label { color: #2C5A48; }
 .case-item[data-family="marketing"]::before { background: #2C5A48; }
 
 .case-item[data-family="sales"] .case-num,
 .case-item[data-family="sales"] .case-overline,
-.case-item[data-family="sales"] .case-meta-block h5 { color: #2A2C2A; }
+.case-item[data-family="sales"] .case-meta-block .case-meta-label { color: #2A2C2A; }
 .case-item[data-family="sales"]::before { background: #2A2C2A; }
 
 .case-item[data-family="bd"] .case-num,
 .case-item[data-family="bd"] .case-overline,
-.case-item[data-family="bd"] .case-meta-block h5 { color: #8A5642; }
+.case-item[data-family="bd"] .case-meta-block .case-meta-label { color: #8A5642; }
 .case-item[data-family="bd"]::before { background: #8A5642; }
 
 .case-item[data-family="strategy"] .case-num,
 .case-item[data-family="strategy"] .case-overline,
-.case-item[data-family="strategy"] .case-meta-block h5 { color: #556B7E; }
+.case-item[data-family="strategy"] .case-meta-block .case-meta-label { color: #556B7E; }
 .case-item[data-family="strategy"]::before { background: #556B7E; }
 
 /* Family tag pill for each case */
@@ -1361,7 +1361,7 @@ ul  { list-style: none; }
 .case-body h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 2.5vw, 2.1rem); font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 20px; }
 .case-body p { font-size: 15px; color: var(--ink-2); line-height: 1.7; margin-bottom: 12px; }
 .case-meta { padding-left: 32px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 24px; }
-.case-meta-block h5 { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--clay); margin-bottom: 8px; }
+.case-meta-block .case-meta-label { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--clay); margin-bottom: 8px; }
 .case-meta-block p { font-size: 14.5px; color: var(--ink); line-height: 1.6; }
 .case-meta-block .metric { font-family: var(--font-display); font-size: 2rem; font-weight: 500; color: var(--ink); line-height: 1; letter-spacing: -0.02em; }
 @media (max-width: 900px) {
@@ -1419,7 +1419,7 @@ ul  { list-style: none; }
 .what-item { padding: 60px 32px; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 20px; }
 .what-item:last-child { border-right: none; }
 .what-item .num { font-family: var(--font-display); font-size: 60px; font-style: italic; color: var(--clay); line-height: 1; font-weight: 400; }
-.what-item h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
+.what-item h2, .what-item h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
 .what-item p { font-size: 14.5px; color: var(--ink-2); line-height: 1.65; }
 @media (max-width: 900px) {
   .what-youll-get { grid-template-columns: 1fr; }
