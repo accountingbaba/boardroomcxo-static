@@ -1428,9 +1428,9 @@ ul  { list-style: none; }
 }
 
 /* ARTICLE */
-/* Hero images carry width/height HTML attributes for CLS prevention; those attributes
-   map to a UA-stylesheet height that outranks aspect-ratio unless height is reset to auto,
-   which otherwise breaks object-fit:cover into a hard crop on narrow viewports. */
+/* Hero <img> tags must not carry HTML width/height attributes alongside inline
+   aspect-ratio: the attributes override the CSS-computed height on narrow
+   viewports, which turns object-fit:cover into a hard left/right crop. */
 .article-body img { height: auto; }
 .article-hero { padding: 180px 0 60px; border-bottom: 1px solid var(--line); }
 .article-hero-inner { max-width: 900px; }
