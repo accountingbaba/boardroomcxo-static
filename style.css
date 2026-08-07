@@ -185,6 +185,9 @@ ul  { list-style: none; }
   padding-left: clamp(24px, 4vw, 60px); padding-bottom: 60px;
   min-height: 100%; display: flex; flex-direction: column; justify-content: flex-end;
 }
+/* Do not add width/height attributes to the <img> in HTML: inside this flex
+   column they override the aspect-ratio below and blow the box up to the
+   image's natural 900x1348px size, pushing .hero-left off-screen. */
 .hero-portrait {
   width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top center;
   filter: grayscale(1) contrast(1.05); border: 1px solid var(--ink);
