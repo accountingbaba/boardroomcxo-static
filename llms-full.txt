@@ -3,6 +3,100 @@
 > Complete text of all published field articles from Boardroom CXO, an executive search firm for jewelry, D2C, and consumer brands in India and the UAE. For summaries and metadata, see /llms.txt. Canonical URLs are listed per article below.
 
 ================================================================================
+# Cadbury Found Out About the Worms From a TV Reporter. Bharat Puri Fixed It in Eight Weeks.
+URL: https://boardroomcxo.com/article-bharat-puri-cadbury-worm-crisis.html
+Published: 2026-08-14
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+On 3 October 2003, a phone rang at Cadbury India's head office in Mumbai. A television reporter was asking for a comment on worms found in Dairy Milk bars.
+
+Nobody had told them.
+
+The regulator had already seized stock and briefed the press. Diwali was a month away and fresh chocolate was moving to 650,000 outlets across India. Cadbury held about 70 percent of the Indian chocolate market and sold 30 million Dairy Milk bars a month. Within a week, volumes fell 30 percent. In three weeks the company collected close to 1,000 hostile newspaper articles and around 120 television clips in ten languages.
+
+Bharat Puri had been Managing Director for about a year. He later described what he told his team: "it's not about falling down, it's about how you get up."
+
+## The Facts Were on Cadbury's Side. That Was Not Enough.
+
+Every investigation that followed found the same thing. The factories were clean. The problem was storage at the retail end, outside the company's control.
+
+Most companies would have said exactly that, loudly, and waited for the news cycle to move on. It is the natural response, and often the correct one on the facts: if you did not cause the problem, say so and let the evidence carry the argument.
+
+He did not.
+
+Puri's read was that being right about the cause would not fix what the story had already done to trust in the product on the shelf. A consumer holding a chocolate bar during Diwali gifting season was not going to run the storage-chain forensics before deciding whether to buy it again.
+
+## Verify It Yourself Before You Ask Anyone Else to Believe You
+
+He sent his own salespeople into their own markets to buy a thousand rupees of chocolate each and look for worms themselves. None of them found any, which is when he decided the packaging had to change anyway.
+
+> The proof that the product was clean was not the point where the response stopped. It was the point where the real fix started.
+
+Cadbury spent about ₹15 crore on imported machinery and built a purity-sealed foil wrap in eight weeks, a process that normally takes six months. It ran a plain page called Facts about Cadbury in 55 publications in 11 languages. Then it put Amitabh Bachchan on camera, not to charm anyone, but to name the problem out loud.
+
+## Paying for Something You Did Not Break
+
+The new packaging launched in January 2004. By June 2004, intention to buy and to gift Cadbury was back at pre-incident levels. Sales recovered fully within eight months.
+
+The new wrapper cost 10 to 15 percent more per bar. The price on the pack never moved.
+
+That last detail is the one worth sitting with. Cadbury had a clean audit, an external cause, and a legitimate defense. It still chose to absorb a permanent cost increase, on every bar, indefinitely, rather than pass it to the customer whose trust it was trying to rebuild. The company was not paying to fix a defect. It was paying to be believed again.
+
+## The Boardroom Read
+
+Reputation is not defended by being right.
+
+It is rebuilt by paying for something you did not break. Puri's sequence, verify personally before defending publicly, fix the visible product even when the audit clears you, disclose the problem by name instead of managing around it, and absorb the cost rather than pass it on, is a harder playbook to run than simply pointing at a clean factory report. It is also the reason Cadbury had a full recovery to point to eight months later instead of a legal victory nobody outside the industry remembers.
+
+================================================================================
+# Verghese Kurien Packed His Bags to Leave Anand. He Stayed Fifty Years and Built Amul.
+URL: https://boardroomcxo.com/article-verghese-kurien-amul-cooperative.html
+Published: 2026-08-14
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+A 27-year-old engineer got off a train at Anand and started counting the days until he could leave.
+
+India had been free for twenty-one months. Verghese Kurien had studied dairy engineering in America on a government bond, and was sent to a small creamery in Gujarat to work it off. He did not like milk. He knew nothing about dairy.
+
+His release came at the end of 1949. He packed. Then a farmer asked him to stay.
+
+## India Did Not Have a Milk Problem
+
+He stayed, and saw how the farmers were treated. The country was free. The men who milked the buffaloes still had no say in what their milk was worth. A private dairy controlled procurement in the district, set the price, and took the margin. Independence had changed who ran the government. It had not changed who owned the cow.
+
+Kurien's read on the situation was not a technical one. India did not have a milk problem. It had an ownership problem. Most engineers sent to fix a creamery would have fixed the machines and caught the next train home. Kurien stayed fifty years.
+
+## The Bet: Give the Business to the People Who Do the Work
+
+The fix he backed was structural, not operational. Instead of a company that bought milk from farmers and sold it downstream, keeping the margin for itself and the middlemen, the farmers of Kaira district built a co-operative that they owned outright, from procurement through processing. Kurien put his engineering training behind that structure rather than behind a single product or plant.
+
+In 1955, that structure needed a technical breakthrough to scale. Spray-drying, the process used to turn liquid milk into powder, was believed to work only with cow's milk. Buffalo milk, the dominant milk source in the district, was considered too high in fat for the process. Kurien backed the experiment anyway. The plant built at Anand that year became the world's first to spray-dry buffalo milk commercially.
+
+> It was not a product launch. It was proof that a farmer-owned co-operative could out-engineer the private dairies that had written it off.
+
+That single technical fix is what made the ownership structure economically viable at scale. A co-operative that could not process its members' surplus milk into a shelf-stable product would have stayed a local arrangement. One that could, could grow into a national model.
+
+## Fifty Years, Not a Quarter
+
+In 1965, Kurien was appointed founding chairman of the National Dairy Development Board and ran it for the next 33 years. His mandate was to take what had worked in one Gujarat district, farmer ownership backed by real processing capacity, and replicate it across India. The programme that carried this out, Operation Flood, is the reason India became the world's largest milk producer.
+
+That is the part of the story most leadership retrospectives skip past: the multi-decade middle. It is easy to admire a founder's first bold call. It is harder to sustain the discipline of running the institution that call created for three decades, through changes in government, changes in technology, and the ordinary erosion that eventually captures most co-operative structures back into someone else's hands. Kurien ran NDDB for 33 years. He did not treat the founding moment as the finish line.
+
+## What the Numbers Say Now
+
+Amul is owned today by 3.6 million farmers through the Gujarat Co-operative Milk Marketing Federation. In April 2026, Amul crossed ₹1 lakh crore in turnover, the first Indian FMCG brand to do so, more than seventy years after a reluctant 27-year-old first stepped off a train at Anand.
+
+The structure Kurien fought for in 1949, farmers owning the business rather than selling into it, is the same structure still distributing that turnover back to 3.6 million people instead of to a single promoter family or a set of outside shareholders.
+
+## The Boardroom Read
+
+A country wins freedom on one date.
+
+It earns independence the day the people who do the work finally own it. Kurien's real decision was made in 1949, before Amul existed and before there was any evidence the co-operative model would work at scale: to spend his career on who owned the outcome, not just on who ran the machines. Every structural choice that followed, the spray dryer, the NDDB chairmanship, Operation Flood, was downstream of that first refusal to leave. The lesson does not stay in dairy. Any leader inheriting a business built on someone else's labour faces the same fork Kurien faced at that train station: fix the operation and move on, or stay long enough to change who it actually belongs to.
+
+================================================================================
 # Everyone Said Royal Enfield Was Finished. Siddhartha Lal Asked for Two Years.
 URL: https://boardroomcxo.com/article-siddhartha-lal-royal-enfield.html
 Published: 2026-08-07
