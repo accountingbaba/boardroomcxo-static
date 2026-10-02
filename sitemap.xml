@@ -2,127 +2,205 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://boardroomcxo.com/</loc>
-    <lastmod>2026-07-18</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://boardroomcxo.com/about-us.html</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://boardroomcxo.com/case-studies.html</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://boardroomcxo.com/resources.html</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://boardroomcxo.com/joining-announcement.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <loc>https://boardroomcxo.com/about-us</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://boardroomcxo.com/schedule-a-call.html</loc>
-    <lastmod>2026-07-18</lastmod>
+    <loc>https://boardroomcxo.com/case-studies</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://boardroomcxo.com/article-hidden-comp-gap.html</loc>
-    <lastmod>2026-07-18</lastmod>
+    <loc>https://boardroomcxo.com/resources</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boardroomcxo.com/schedule-a-call</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boardroomcxo.com/finance-leadership-hiring</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boardroomcxo.com/get-featured</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boardroomcxo.com/hr-leadership-hiring</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boardroomcxo.com/marketing-leadership-hiring</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boardroomcxo.com/sales-leadership-hiring</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boardroomcxo.com/uae-consulting-hiring</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boardroomcxo.com/article-anish-shah-mahindra-turnaround</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://boardroomcxo.com/article-performance-marketer-jewelry.html</loc>
-    <lastmod>2026-07-18</lastmod>
+    <loc>https://boardroomcxo.com/article-aukera-lab-grown-diamond-category-race</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://boardroomcxo.com/article-aukera-lab-grown-diamond-category-race.html</loc>
-    <lastmod>2026-07-18</lastmod>
+    <loc>https://boardroomcxo.com/article-bharat-puri-cadbury-worm-crisis</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://boardroomcxo.com/article-marico-refused-to-blink.html</loc>
-    <lastmod>2026-07-18</lastmod>
+    <loc>https://boardroomcxo.com/article-ck-venkataraman-tanishq-jewelry</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://boardroomcxo.com/article-sanjiv-mehta-crisis-leadership.html</loc>
-    <lastmod>2026-07-18</lastmod>
+    <loc>https://boardroomcxo.com/article-gopal-vittal-airtel-arpu</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://boardroomcxo.com/article-solitario-cultural-relevance-marketing-leadership.html</loc>
-    <lastmod>2026-07-18</lastmod>
+    <loc>https://boardroomcxo.com/article-hidden-comp-gap</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://boardroomcxo.com/article-suresh-narayanan-maggi-crisis.html</loc>
-    <lastmod>2026-07-18</lastmod>
+    <loc>https://boardroomcxo.com/article-marico-refused-to-blink</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://boardroomcxo.com/article-sudhir-sitapati-godrej-leadership.html</loc>
-    <lastmod>2026-07-28</lastmod>
+    <loc>https://boardroomcxo.com/article-mp-ahammed-malabar-gold</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://boardroomcxo.com/article-shailesh-jejurikar-pg-leadership.html</loc>
-    <lastmod>2026-07-28</lastmod>
+    <loc>https://boardroomcxo.com/article-noel-tata-trent-zudio</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://boardroomcxo.com/article-ramesh-chauhan-bisleri-thums-up.html</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://boardroomcxo.com/article-performance-marketer-jewelry</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://boardroomcxo.com/article-sunil-dsouza-tata-consumer-products.html</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://boardroomcxo.com/article-puneet-chhatwal-ihcl-taj</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://boardroomcxo.com/article-ck-venkataraman-tanishq-jewelry.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <loc>https://boardroomcxo.com/article-ramesh-chauhan-bisleri-thums-up</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://boardroomcxo.com/article-siddhartha-lal-royal-enfield.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <loc>https://boardroomcxo.com/article-sameer-khetarpal-dominos-india</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://boardroomcxo.com/article-verghese-kurien-amul-cooperative.html</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://boardroomcxo.com/article-sanjiv-mehta-crisis-leadership</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://boardroomcxo.com/article-bharat-puri-cadbury-worm-crisis.html</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://boardroomcxo.com/article-shailesh-jejurikar-pg-leadership</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boardroomcxo.com/article-siddhartha-lal-royal-enfield</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boardroomcxo.com/article-solitario-cultural-relevance-marketing-leadership</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boardroomcxo.com/article-sudhir-jatia-safari-industries</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boardroomcxo.com/article-sudhir-sitapati-godrej-leadership</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boardroomcxo.com/article-sunil-dsouza-tata-consumer-products</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boardroomcxo.com/article-suresh-narayanan-maggi-crisis</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boardroomcxo.com/article-venu-nair-shoppers-stop</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boardroomcxo.com/article-verghese-kurien-amul-cooperative</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
