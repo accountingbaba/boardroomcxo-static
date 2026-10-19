@@ -251,7 +251,7 @@ const SCREENS = {
     ${!V.has_photo && !uploading ? '<p class="hint" style="margin-top:10px">Continue unlocks once your photo is added.</p>' : ''}</form>`,
   questions: () => { const d = V.details || {}, a = draft.answers || d.answers || [], q = V.questions[qi];
     if (draft.linkMode) return `<p class="kicker">In your words</p><h1>Share what you have already written</h1><p class="lead">A LinkedIn post about your move, a press release or your company's announcement. We write your feature from it, and you approve it.</p>%ERR%
-    <form data-f="source"><label class="f"><span>Link</span><input type="url" name="source_link" value="${esc(d.source_link || '')}" required placeholder="https://www.linkedin.com/posts/…"><small>Up to three links, separated by a space.</small></label>
+    <form data-f="source"><label class="f"><span>Link</span><input type="text" inputmode="url" autocomplete="off" name="source_link" value="${esc(d.source_link || '')}" required placeholder="https://www.linkedin.com/posts/…"><small>Up to three links, separated by a space.</small></label>
     <label class="f"><span>Anything to add? <em style="font-weight:400;color:var(--ink-2)">(optional)</em></span><textarea name="source_note" style="min-height:90px" placeholder="e.g. what you are most excited about in the new role">${esc(d.source_note || '')}</textarea></label>
     <div class="actions">${btn('Continue')} <button type="button" class="link" data-linkmode="0">Answer the questions instead</button></div></form>`;
     return `<p class="kicker">In your words · ${qi + 1} of ${V.questions.length}</p><h1>${esc(q)}</h1><p class="lead">A few lines is plenty. We shape it into your post and you approve it.</p>%ERR%
