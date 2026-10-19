@@ -273,7 +273,8 @@ async function openLead(id, notice) {
 }
 function linkNotice(r, p) {
   const msg = fill('link', p, r.link);
-  return `<div class="ok"><b>Link created.</b> ${r.emailed ? 'Emailed to them. ' : ''}Send it on LinkedIn${r.whatsapp_link ? ' or WhatsApp' : ''} now.
+  return `<div class="ok"><b>Link created.</b> ${r.emailed ? 'Emailed to them. ' : '<b>Not emailed</b> (email is not connected yet). '}Send it on LinkedIn${r.whatsapp_link ? ' or WhatsApp' : ''} now.
+    <p style="margin:8px 0 0;word-break:break-all;user-select:all"><a href="${esc(r.link)}" target="_blank" rel="noopener">${esc(r.link)}</a></p>
     <div class="row" style="margin-top:8px">${copyBtn(msg, 'LinkedIn message', 's')}${r.whatsapp_link ? `<a class="btn g s" href="${esc(r.whatsapp_link)}" target="_blank" rel="noopener">Send on WhatsApp</a>` : ''}${copyBtn(r.link, 'Link')}</div></div>`;
 }
 async function leadAct(id, act, extra, stay) {
@@ -342,7 +343,7 @@ function renderOrder(notice) {
       <form id="payf" hidden style="margin-top:12px"><p class="sub" style="margin:0 0 8px">Only after you see ${rs(o.total)} in the bank or Razorpay.</p><div class="row"><input type="text" name="reference" placeholder="UTR or payment reference" style="max-width:260px" required><button class="btn s" type="submit">Record payment</button></div></form></div>` : ''}
     ${packBuyer ? `<div class="sec"><h3>Company pack</h3><dl class="kv"><dt>Features used</dt><dd>${O.pack ? O.pack.used : 0} of ${o.features_total || 4}</dd><dt>Valid until</dt><dd>${esc(o.features_until || 'Starts when paid')}</dd></dl>
       ${o.paid_at ? `<form id="packinv" style="margin-top:12px"><h3>Add a leader to this pack</h3><div class="g2"><label class="f"><span>Name</span><input type="text" name="name" required></label><label class="f"><span>New role</span><input type="text" name="role_title" required></label><label class="f"><span>Email</span><input type="email" name="email"></label><label class="f"><span>WhatsApp</span><input type="tel" name="phone"></label></div><button class="btn s" type="submit">Create their link</button></form>` : ''}</div>` : ''}
-    <div class="sec"><h3>Their link</h3><div class="row">${copyBtn(O.link, 'Link')}${msgs.map(([k, v]) => O.wa[k] ? (O.wa_phone ? `<a class="btn g s" href="${esc(waUrl(O.wa_phone, O.wa[k]))}" target="_blank" rel="noopener">WhatsApp: ${v}</a>` : copyBtn(O.wa[k], v + ' text')) : '').join('')}
+    <div class="sec"><h3>Their link</h3><p style="margin:0 0 10px;word-break:break-all;user-select:all;font-size:13px"><a href="${esc(O.link)}" target="_blank" rel="noopener">${esc(O.link)}</a></p><div class="row">${copyBtn(O.link, 'Link')}${msgs.map(([k, v]) => O.wa[k] ? (O.wa_phone ? `<a class="btn g s" href="${esc(waUrl(O.wa_phone, O.wa[k]))}" target="_blank" rel="noopener">WhatsApp: ${v}</a>` : copyBtn(O.wa[k], v + ' text')) : '').join('')}
       ${o.email && ['invite', 'remindDetails', 'remindPayment', 'approval'].includes((msgs[msgs.length - 1] || [])[0]) ? B('Email again', { oact: 'notify', kind: msgs[msgs.length - 1][0] }, 'g s') : ''}</div>
       ${o.email || o.phone ? `<p class="sub" style="margin:8px 0 0">${esc(o.email || '')}${o.email && o.phone ? ' · ' : ''}${esc(o.phone || '')}</p>` : ''}</div>
     ${O.checklist.length ? `<div class="sec"><h3>Checklist</h3><ul class="cl">${O.checklist.map(([k, v]) => `<li class="${v ? 'y' : ''}">${esc(k)}</li>`).join('')}</ul></div>` : ''}
