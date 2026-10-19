@@ -23,6 +23,7 @@ button{font:inherit;color:inherit}
 .tabs a{padding:18px 12px 16px;text-decoration:none;font-weight:600;font-size:13.5px;color:#B9C4CE;border-bottom:2px solid transparent;white-space:nowrap}
 .tabs a.on{color:var(--bg);border-bottom-color:var(--gold)}
 .tabs a .n{display:inline-block;min-width:18px;padding:0 5px;margin-left:5px;border-radius:9px;background:var(--gold);color:var(--emerald);font-size:11px;text-align:center}
+.me .alldesks{color:var(--gold);margin-right:14px;font-weight:600;text-decoration:none;border:1px solid rgba(212,168,96,.5);padding:5px 10px;border-radius:3px}
 .me{font-size:12.5px;color:#B9C4CE;white-space:nowrap}.me button{background:none;border:0;color:var(--gold);cursor:pointer;text-decoration:underline;padding:0 0 0 8px}
 main{max-width:1180px;margin:0 auto;padding:26px max(16px,env(safe-area-inset-right)) 80px max(16px,env(safe-area-inset-left))}
 h1{font-family:var(--display);font-weight:500;font-size:30px;line-height:1.1;margin:0}
@@ -121,16 +122,10 @@ const when = iso => iso ? new Date(iso).toLocaleString('en-GB', { day: 'numeric'
 let ME = null, TODAY = null, mineOnly = true;
 
 // ── Messages the team sends by hand on LinkedIn (from the Moves playbook v5, wording agreed 19 Oct 2026) ──
-const TPL = {
-  note: "Hi {{First Name}}, congratulations on your new role at {{Company}}. I'm Sagar, Co-Founder of BoardRoom CXO. We cover senior leadership moves on our LinkedIn page and would love to include yours. Happy to connect?",
-  msg1: "Thanks for connecting, {{First Name}}, and congratulations again on {{Company}}.\nWe'd like to include your move in this week's Boardroom Moves post on the BoardRoom CXO page. It's free, and nothing goes live until you've seen and approved it.\nShall we go ahead?",
-  nudge: "Hi {{First Name}}, a quick nudge on featuring your move to {{Company}}. Happy to do it whenever it suits you, and if you'd rather skip it, no problem at all.",
-  link: "Wonderful, thank you {{First Name}}. Here is your personal link to share a few details and a photo. You see and approve the draft before anything goes live: {{Link}}",
-  wa_ask: "Thank you, {{First Name}}. Could you share a WhatsApp number? It's quicker for the photo, a few details and your approval of the draft before anything goes live.",
-  ci30: "Hi {{First Name}}, about a month into the role at {{Company}} now. Hope it's going well.\nOut of interest, are you building out the team with your in-house HR, or working with a search partner?",
-  ci60: "Hi {{First Name}}, if any senior roles open up in your team at {{Company}}, we'd be glad to help. We place senior leaders in retail and consumer brands."
-};
-const fill = (k, p, link) => TPL[k].replace(/{{First Name}}/g, first(p.name)).replace(/{{Company}}/g, p.company || 'your new company').replace(/{{Link}}/g, link || '');
+// On the team desk (desk.accountingbaba.com) this page is served at /moves/ next to the other companies.
+const ON_TEAM_DESK = location.pathname.startsWith('/moves');
+let TPL = {}; // the LinkedIn messages, loaded from Settings so admins can edit them
+const fill = (k, p, link) => String(TPL[k] || '').replace(/{{First Name}}/g, first(p.name)).replace(/{{Company}}/g, p.company || 'your new company').replace(/{{Link}}/g, link || '');
 const STAGES = { ready: 'To send', sent: 'Request sent', connected: 'Connected', replied: 'Replied', linked: 'Link sent', noreply: 'No reply', declined: 'Declined' };
 const STATUS = { invited: 'Link sent', details: 'Filling details', payment: 'Waiting for payment', ready: 'To draft', approval: 'With leader', changes: 'Changes asked', approved: 'Approved', scheduled: 'Scheduled', live: 'Live', removed: 'Removed', cancelled: 'Cancelled', active: 'Pack active' };
 const TIER = { free: 'Free', plus: 'Plus', pick: 'Pick', pack: 'Pack' };
@@ -178,8 +173,9 @@ async function boot() {
   const m = await api('me').catch(() => ({ signedIn: false }));
   if (!m.signedIn) return signin();
   ME = m; mineOnly = !ME.isAdmin; $('#top').hidden = false;
-  $('#me').innerHTML = `${esc(ME.name)}${ME.isAdmin ? ' · admin' : ''}<button type="button" id="out">Sign out</button>`;
-  $('#out').onclick = async () => { await api('auth/logout', {}).catch(() => {}); ME = null; signin(); };
+  try { TPL = (await api('team/settings')).settings.templates || {}; } catch (e) { if (/access/.test(e.message)) { $('#view').innerHTML = `<div class="err">${esc(e.message)}</div>`; return; } }
+  $('#me').innerHTML = `${ON_TEAM_DESK ? '<a href="/" class="alldesks">All companies</a>' : ''}${esc(ME.name)}${ME.isAdmin ? ' · admin' : ''}<button type="button" id="out">Sign out</button>`;
+  $('#out').onclick = async () => { await api('auth/logout', {}).catch(() => {}); ME = null; if (ON_TEAM_DESK) location.href = '/'; else signin(); };
   route();
 }
 
@@ -202,6 +198,7 @@ async function route() {
 window.addEventListener('hashchange', route);
 
 // ── Today ────────────────────────────────────────────────────────────────────
+const DESKS = [['uae', 'AB UAE'], ['eo', 'EarthOne'], ['cxo', 'CXO'], ['mv', 'Moves']];
 const DUTY = { outreach: 'Outreach and publishing', content: 'Replies and drafting', approvals: 'Approvals', checkins: 'Check-ins' };
 async function vToday() {
   TODAY = await api('team/today');
@@ -509,9 +506,9 @@ async function vSettings() {
   const conn = (k, label, how) => `<div><b style="font-size:20px">${c[k] ? 'Connected' : 'Not yet'}</b><span>${label}${c[k] ? '' : ' · ' + how}</span></div>`;
   $('#view').innerHTML = `<div class="head"><div><h1>Settings</h1></div></div>
   <div class="stat">${conn('email', 'Email (ZeptoMail)', 'add boardroomcxo.com in ZeptoMail')}${conn('razorpay', 'Razorpay', 'waiting for KYC')}${conn('books', 'Zoho Books invoices', 'needs the Zoho keys')}${conn('loader', 'Daily loader', 'needs its key')}${conn('lookup', 'LinkedIn auto-fill', 'needs the Firecrawl key')}</div>
-  <h2>Team</h2><div class="tw"><table><thead><tr><th>Email</th><th>Name</th><th>Role</th><th>Active</th></tr></thead><tbody>
-    ${d.admins.map(a => `<tr><td>${esc(a)}</td><td></td><td>Admin (owner)</td><td>Yes</td></tr>`).join('')}
-    ${d.staff.filter(x => !d.admins.includes(x.email)).map(x => `<tr><td>${esc(x.email)}</td><td>${esc(x.name || '')}</td><td>${x.role === 'admin' ? 'Admin' : 'Team'}</td><td>${x.active ? 'Yes' : 'No'} ${B(x.active ? 'Turn off' : 'Turn on', { staffon: x.email, name: x.name || '', role: x.role, active: x.active ? 0 : 1 }, 'g s')}</td></tr>`).join('')}</tbody></table></div>
+  <h2>Team</h2><p class="sub" style="margin:-4px 0 10px">Companies: which desks each person sees on the team desk. None ticked means all.</p><div class="tw"><table><thead><tr><th>Email</th><th>Name</th><th>Role</th><th>Companies</th><th>Active</th></tr></thead><tbody>
+    ${d.admins.map(a => `<tr><td>${esc(a)}</td><td></td><td>Admin (owner)</td><td>All</td><td>Yes</td></tr>`).join('')}
+    ${d.staff.filter(x => !d.admins.includes(x.email)).map(x => `<tr><td>${esc(x.email)}</td><td>${esc(x.name || '')}</td><td>${x.role === 'admin' ? 'Admin' : 'Team'}</td><td>${x.role === 'admin' ? 'All' : DESKS.map(([k, v]) => `<label style="white-space:nowrap;margin-right:8px;font-size:12.5px"><input type="checkbox" data-deskfor="${esc(x.email)}" data-name="${esc(x.name || '')}" value="${k}" ${String(x.desks || '').split(',').includes(k) ? 'checked' : ''}> ${v}</label>`).join('')}</td><td>${x.active ? 'Yes' : 'No'} ${B(x.active ? 'Turn off' : 'Turn on', { staffon: x.email, name: x.name || '', role: x.role, active: x.active ? 0 : 1 }, 'g s')}</td></tr>`).join('')}</tbody></table></div>
   <form id="stf" class="card" style="padding:14px;margin-top:10px"><div class="g3"><label class="f"><span>Email</span><input type="email" name="email" required></label><label class="f"><span>Name</span><input type="text" name="name"></label><label class="f"><span>Role</span><select name="role"><option value="member">Team</option><option value="admin">Admin</option></select></label></div><button class="btn s" type="submit">Add to the team</button></form>
   <h2>Who does what</h2><form id="sf2" class="card" style="padding:14px"><div class="g2">
     ${Object.entries({ outreach: 'Outreach and publishing', content: 'Replies and drafting', approvals: 'Approvals', checkins: 'Check-ins' }).map(([k, v]) => `<label class="f"><span>${v}</span><input type="email" name="duty_${k}" value="${esc(s.duties[k] || '')}"></label>`).join('')}</div>
@@ -519,7 +516,20 @@ async function vSettings() {
     <label class="f"><span>Plus price (Rs, before GST)</span><input type="number" name="plus" value="${s.prices.plus}"></label><label class="f"><span>Company pack (Rs, before GST)</span><input type="number" name="pack" value="${s.prices.pack}"></label><label class="f"><span>Plus offered from</span><input type="date" name="price_from" value="${esc(s.price_from)}"></label>
     <label class="f"><span>Connection requests a day</span><input type="number" name="daily_requests" value="${s.daily_requests}"></label><label class="f"><span>Paid features Ketul checks first</span><input type="number" name="internal_approval_first" value="${s.internal_approval_first}"></label><label class="f"><span>Next Boardroom Moves #</span><input type="number" name="moves_next" value="${s.moves_next}"></label>
     <label class="f"><span>SAC code for invoices</span><input type="text" name="books_sac" value="${esc(s.books_sac)}" placeholder="From the CA"></label><label class="f"><span>WhatsApp community size</span><input type="text" name="whatsapp_community" value="${esc(s.whatsapp_community)}"></label></div>
-  <button class="btn" type="submit">Save settings</button></form>`;
+  <button class="btn" type="submit">Save settings</button></form>
+  <h2>LinkedIn messages</h2><form id="tpf" class="card" style="padding:14px"><p class="sub" style="margin:0 0 12px">{{First Name}}, {{Company}} and {{Link}} are filled in for each person.</p>
+    ${[['note', 'Connection request note'], ['msg1', 'Message 1, after they accept'], ['nudge', 'Nudge'], ['link', 'Sending their personal link'], ['wa_ask', 'Asking for WhatsApp'], ['ci30', 'Day-30 check-in'], ['ci60', 'Day-60 check-in']]
+      .map(([k, v]) => `<label class="f"><span>${v}</span><textarea name="${k}" style="min-height:${k === 'note' ? 70 : 100}px">${esc((s.templates || {})[k] || '')}</textarea>${k === 'note' ? `<small class="sub" data-notelen></small>` : ''}</label>`).join('')}
+    <button class="btn" type="submit">Save messages</button></form>`;
+  const nl = document.querySelector('[data-notelen]'), nt = document.querySelector('#tpf textarea[name=note]');
+  const showLen = () => { nl.textContent = nt.value.length + ' characters (LinkedIn allows 300 in a connection note)'; nl.style.color = nt.value.length > 300 ? 'var(--bad)' : ''; };
+  nt.oninput = showLen; showLen();
+  $('#tpf').onsubmit = async e => { e.preventDefault(); const t = Object.fromEntries(new FormData(e.target)); try { await api('team/settings', { settings: { templates: t } }); TPL = t; toast('Messages saved'); } catch (x) { toast(x.message); } };
+  document.querySelectorAll('[data-deskfor]').forEach(cb => cb.onchange = async () => {
+    const em = cb.dataset.deskfor, boxes = [...document.querySelectorAll(`[data-deskfor="${CSS.escape(em)}"]`)];
+    const row = d.staff.find(x => x.email === em);
+    try { await api('team/settings', { staff: { email: em, name: row.name || '', role: row.role, active: Boolean(row.active), desks: boxes.filter(b => b.checked).map(b => b.value) } }); toast('Saved'); } catch (x) { toast(x.message); }
+  });
   $('#stf').onsubmit = async e => { e.preventDefault(); try { await api('team/settings', { staff: Object.fromEntries(new FormData(e.target)) }); toast('Added'); vSettings(); } catch (x) { toast(x.message); } };
   $('#sf2').onsubmit = async e => {
     e.preventDefault(); const v = Object.fromEntries(new FormData(e.target));

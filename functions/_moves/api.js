@@ -664,6 +664,7 @@ export async function handleApi(context) {
     if (parts[0] === 'me') return json(staff ? { signedIn: true, ...staff } : { signedIn: false });
     if (parts[0] !== 'team') return fail('Not found.', 404);
     if (!staff) return fail('Sign in first.', 401);
+    if (staff.desks && !staff.desks.includes('mv')) return fail('You do not have access to the Moves desk. Ask Ketul to add it.', 403);
     const [, what, id, sub, sub2] = parts;
     const db = env.MOVES_DB;
     if (what === 'today') return await today(env, staff);
@@ -699,7 +700,7 @@ export async function handleApi(context) {
     if (what === 'revenue') { if (!staff.isAdmin) return fail('Admins only.', 403); return await revenue(env); }
     if (what === 'calendar') return await calendar(env);
     if (what === 'settings' && method === 'GET') {
-      const staffRows = (await db.prepare('SELECT email, name, role, active FROM staff ORDER BY email').all()).results || [];
+      const staffRows = (await db.prepare('SELECT email, name, role, active, desks FROM staff ORDER BY email').all()).results || [];
       return json({ settings: await getSettings(db), staff: staffRows, admins: admins(env), connections: { email: Boolean(env.ZEPTOMAIL_TOKEN), razorpay: razorpayOn(env), books: booksOn(env), loader: Boolean(env.MOVES_LOADER_KEY), lookup: Boolean(env.FIRECRAWL_API_KEY) } });
     }
     if (what === 'settings' && method === 'POST') {
@@ -707,8 +708,9 @@ export async function handleApi(context) {
       if (body.staff) {
         const e = str(body.staff.email, 160).toLowerCase();
         if (!/@/.test(e)) return fail('Enter an email address.');
-        await db.prepare(`INSERT INTO staff (email, name, role, active, created_at) VALUES (?, ?, ?, ?, ?) ON CONFLICT(email) DO UPDATE SET name = excluded.name, role = excluded.role, active = excluded.active`)
-          .bind(e, str(body.staff.name, 80), body.staff.role === 'admin' ? 'admin' : 'member', body.staff.active === false ? 0 : 1, nowIso()).run();
+        const desks = Array.isArray(body.staff.desks) ? body.staff.desks.filter(d => ['uae', 'eo', 'cxo', 'mv'].includes(d)).join(',') : null;
+        await db.prepare(`INSERT INTO staff (email, name, role, active, created_at, desks) VALUES (?, ?, ?, ?, ?, ?) ON CONFLICT(email) DO UPDATE SET name = excluded.name, role = excluded.role, active = excluded.active, desks = COALESCE(?, staff.desks)`)
+          .bind(e, str(body.staff.name, 80), body.staff.role === 'admin' ? 'admin' : 'member', body.staff.active === false ? 0 : 1, nowIso(), desks, desks).run();
       }
       for (const k of Object.keys(DEFAULTS)) if (k in (body.settings || {})) await setSetting(db, k, body.settings[k]);
       return json({ ok: true });

@@ -30,7 +30,9 @@ export const slugify = s => String(s || '').toLowerCase().normalize('NFKD').repl
 
 // ── Schema ───────────────────────────────────────────────────────────────────
 // Applied on first use; bump SCHEMA_VERSION and add statements to change it. Never ask the owner to run SQL.
-const SCHEMA_VERSION = 1;
+const SCHEMA_VERSION = 2;
+// Changes after the first version, applied once each in order.
+const MIGRATIONS = { 2: [`ALTER TABLE staff ADD COLUMN desks TEXT`] };
 const SCHEMA = [
   `CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT)`,
   `CREATE TABLE IF NOT EXISTS staff (email TEXT PRIMARY KEY, name TEXT, role TEXT NOT NULL DEFAULT 'member', duty TEXT, active INTEGER NOT NULL DEFAULT 1, created_at TEXT)`,
@@ -65,8 +67,11 @@ export async function ensureSchema(db) {
   if (schemaReady) return;
   await db.prepare(SCHEMA[0]).run();
   const row = await db.prepare("SELECT value FROM meta WHERE key = 'schema'").first();
-  if (!row || Number(row.value) < SCHEMA_VERSION) {
-    await db.batch(SCHEMA.slice(1).map(s => db.prepare(s)));
+  const have = row ? Number(row.value) : 0;
+  if (have < SCHEMA_VERSION) {
+    if (have < 1) await db.batch(SCHEMA.slice(1).map(s => db.prepare(s)));
+    for (let v = Math.max(have, 1) + 1; v <= SCHEMA_VERSION; v++)
+      for (const q of MIGRATIONS[v] || []) { try { await db.prepare(q).run(); } catch (e) { if (!/duplicate column/i.test(e.message)) throw e; } }
     await db.prepare("INSERT INTO meta (key, value) VALUES ('schema', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value").bind(String(SCHEMA_VERSION)).run();
   }
   schemaReady = true;
@@ -86,7 +91,17 @@ export const DEFAULTS = {
   internal_approval_first: 10, // Ketul approves the first 10 paid features
   books_sac: '',              // SAC code for the Plus invoice: to be confirmed by the CA before invoices are made
   whatsapp_community: '100+ CXOs',
-  moves_next: 88              // the next "Boardroom Moves #" number for dedicated posts (#87 was the last made in Canva)
+  moves_next: 88,
+  // LinkedIn messages the team sends by hand. {{First Name}}, {{Company}} and {{Link}} are filled in. Admins edit them on the Settings screen.
+  templates: {
+    note: "Hi {{First Name}}, congratulations on your new role at {{Company}}. I'm Sagar, Co-Founder of BoardRoom CXO. We cover senior leadership moves on our LinkedIn page and would love to include yours. Happy to connect?",
+    msg1: "Thanks for connecting, {{First Name}}, and congratulations again on {{Company}}.\nWe'd like to include your move in this week's Boardroom Moves post on the BoardRoom CXO page. It's free, and nothing goes live until you've seen and approved it.\nShall we go ahead?",
+    nudge: "Hi {{First Name}}, a quick nudge on featuring your move to {{Company}}. Happy to do it whenever it suits you, and if you'd rather skip it, no problem at all.",
+    link: "Wonderful, thank you {{First Name}}. Here is your personal link to share a few details and a photo. You see and approve the draft before anything goes live: {{Link}}",
+    wa_ask: "Thank you, {{First Name}}. Could you share a WhatsApp number? It's quicker for the photo, a few details and your approval of the draft before anything goes live.",
+    ci30: "Hi {{First Name}}, about a month into the role at {{Company}} now. Hope it's going well.\nOut of interest, are you building out the team with your in-house HR, or working with a search partner?",
+    ci60: "Hi {{First Name}}, if any senior roles open up in your team at {{Company}}, we'd be glad to help. We place senior leaders in retail and consumer brands."
+  }              // the next "Boardroom Moves #" number for dedicated posts (#87 was the last made in Canva)
 };
 export async function getSettings(db) {
   const rows = (await db.prepare('SELECT key, value FROM settings').all()).results || [];
@@ -118,7 +133,8 @@ export async function getStaff(request, env) {
   const st = await db.prepare('SELECT * FROM staff WHERE email = ? AND active = 1').bind(s.email).first();
   const isAdmin = admins(env).includes(s.email) || (st && st.role === 'admin');
   if (!st && !isAdmin) return null;
-  return { email: s.email, name: (st && st.name) || s.email.split('@')[0], isAdmin };
+  const desks = st && st.desks ? String(st.desks).split(',').filter(Boolean) : null; // null = every desk
+  return { email: s.email, name: (st && st.name) || s.email.split('@')[0], isAdmin, desks: isAdmin ? null : desks };
 }
 export async function requestCode(env, body) {
   const db = env.MOVES_DB;
