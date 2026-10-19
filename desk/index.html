@@ -8,7 +8,7 @@
 <link rel="icon" href="/images/favicon.png" type="image/png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Manrope:wght@400;500;600;700&family=Open+Sans:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@700;800&display=swap" rel="stylesheet" />
 <style>
 :root{--bg:#F7F6F2;--bg-alt:#EFEDE7;--surface:#FFFFFF;--ink:#0F1110;--ink-2:#55584F;--emerald:#172633;--emerald-2:#22384A;--mint:#E4EAF0;--gold:#D4A860;--gold-soft:#F6ECD9;--line:#D9D6CF;--bad:#9B2C1F;--bad-soft:#F6E4DF;
 --display:'Bodoni Moda','Times New Roman',serif;--body:'Manrope',system-ui,sans-serif;--mono:'Space Mono',ui-monospace,monospace}
@@ -98,14 +98,56 @@ input[type=range]{width:100%;accent-color:var(--emerald)}
 .cal{display:grid;gap:8px}.cal .day{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;padding:12px 14px;align-items:start}
 .cal .day b{display:block}.cal .day .k{font-size:11.5px;color:var(--ink-2)}
 @media(max-width:760px){.task{grid-template-columns:1fr}.task .b{justify-content:flex-start}.g2,.g3{grid-template-columns:1fr}.ib{grid-template-columns:1fr}.ibp{grid-template-columns:1fr}.kv{grid-template-columns:1fr}.kv dt{margin-top:6px}.cal .day{grid-template-columns:1fr}.me{display:none}}
+
+/* ===== Team Desk design (Oct 2026): the same shell as the other companies =====
+   Dark ink sidebar, slate work area, Plus Jakarta Sans. Moves keeps the BoardRoom navy for actions and gold as its accent. */
+:root{--bg:#F4F6F9;--bg-alt:#EEF1F5;--surface:#FFFFFF;--ink:#0F172A;--ink-2:#5B6576;--emerald:#172633;--emerald-2:#22384A;--mint:#E8EDF2;--gold:#D4A860;--gold-soft:#F8EEDB;--line:#E1E5EB;
+  --display:'Plus Jakarta Sans',system-ui,sans-serif;--body:'Plus Jakarta Sans',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+  --side:#0E1726;--side-2:#172235;--side-text:#A9B4C6;--side-strong:#F3F5F9;--shadow:0 1px 2px rgba(15,23,42,.05),0 1px 3px rgba(15,23,42,.04)}
+body{font-size:14.5px;letter-spacing:-.003em}
+h1{font-weight:700;font-size:24px;letter-spacing:-.02em}
+h2{font-family:var(--body);font-size:12px;letter-spacing:.06em;font-weight:700;color:var(--ink-2)}
+.card,.stat div,.tw,.sec{box-shadow:var(--shadow);border-color:var(--line);border-radius:12px}.tw{border-radius:12px}
+.btn{border-radius:8px}.chip{border-radius:999px}.tag{border-radius:999px}
+input[type=text],input[type=email],input[type=tel],input[type=date],input[type=number],input[type=url],select,textarea{border-radius:8px}
+.stat b{font-family:var(--body);font-weight:700}
+.ctx{display:flex;justify-content:flex-end;align-items:center;gap:12px;margin:-6px 0 14px}
+.copick{position:relative}
+.cobtn{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 12px;font-weight:600;font-size:13.5px;cursor:pointer;box-shadow:var(--shadow)}
+.cobtn::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px var(--gold-soft)}
+.cobtn small{color:var(--ink-2);font-weight:500}
+.comenu{position:absolute;right:0;top:calc(100% + 6px);z-index:40;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px rgba(15,23,42,.14);padding:6px;min-width:260px}
+.comenu a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px}
+.comenu a:hover{background:var(--bg-alt)}.comenu a.on{background:var(--gold-soft)}
+.comenu i{width:10px;height:10px;border-radius:50%;flex:none}
+@media(min-width:1024px){
+  html.td body{padding-left:232px}
+  html.td .top{position:fixed;left:0;top:0;bottom:0;width:232px;flex-direction:column;align-items:stretch;gap:18px;padding:20px 12px;min-height:0;flex-wrap:nowrap;background:var(--side)}
+  html.td .brand{flex-direction:column;align-items:flex-start;gap:2px;padding:4px 10px 14px;border-bottom:1px solid rgba(255,255,255,.07)}
+  html.td .tabs{flex-direction:column;flex:0 0 auto;overflow:visible;gap:2px}
+  html.td .tabs a{padding:10px 12px;border-bottom:0;border-radius:8px;color:var(--side-text);display:flex;align-items:center;justify-content:space-between}
+  html.td .tabs a:hover{background:var(--side-2);color:var(--side-strong)}
+  html.td .tabs a.on{background:var(--side-2);color:var(--side-strong);box-shadow:inset 3px 0 0 var(--gold)}
+  html.td .me{margin-top:auto;white-space:normal;border-top:1px solid rgba(255,255,255,.07);padding:14px 10px 0;display:flex;flex-direction:column;gap:8px;color:var(--side-text)}
+  html.td .me a,html.td .me button{color:var(--side-strong);text-decoration:none;padding:0;text-align:left;opacity:.85}html.td .me a:hover,html.td .me button:hover{opacity:1;text-decoration:underline}
+  html.td main{max-width:1240px;padding-top:28px}
+  html.td .drawer{width:min(780px,calc(100% - 232px))}
+}
+html.td .top{background:var(--side)}
+html.td .brand .brandrow{display:flex;align-items:center;gap:10px;color:var(--side-strong);font-weight:700;font-size:16px}
+html.td .brand .mark{width:30px;height:30px;border-radius:9px;background:var(--gold);color:#0E1726;display:grid;place-items:center;font-size:13px;font-weight:700}
+html.td .brand small{color:var(--side-text);font-size:12px;font-weight:500;padding-left:40px;font-family:var(--body);letter-spacing:0;text-transform:none}
+html.td .brand img{display:none}
+.drawer{box-shadow:-24px 0 48px rgba(15,23,42,.18)}
 </style>
 </head>
 <body>
 <header class="top" id="top" hidden>
-  <div class="brand"><img src="/images/logo-boardroomcxo-transparent.png" alt="BoardRoom CXO" width="87" height="38"><span>Moves desk</span></div>
+  <div class="brand"><img src="/images/logo-boardroomcxo-transparent.png" alt="BoardRoom CXO" width="87" height="38"><span class="brandrow" hidden><span class="mark" aria-hidden="true">TD</span>Team Desk</span><small hidden>Boardroom Moves</small></div>
   <nav class="tabs" id="tabs"></nav>
   <div class="me" id="me"></div>
 </header>
+<div class="ctx" id="ctx" hidden></div>
 <main id="view"><p class="sub"><span class="spin"></span> Loading…</p></main>
 <div class="scrim" id="scrim" hidden></div>
 <aside class="drawer" id="drawer" hidden aria-modal="true" role="dialog"></aside>
@@ -175,9 +217,24 @@ async function boot() {
   if (!m.signedIn || !ON_TEAM_DESK) { location.href = ON_TEAM_DESK ? TEAM_HOME : 'https://accountingbaba.com/bd/moves/'; return; } // one door: the team desk
   ME = m; mineOnly = !ME.isAdmin; $('#top').hidden = false;
   try { TPL = (await api('team/settings')).settings.templates || {}; } catch (e) { if (/access/.test(e.message)) { $('#view').innerHTML = `<div class="err">${esc(e.message)}</div>`; return; } }
-  $('#me').innerHTML = `${ON_TEAM_DESK ? `<a href="${TEAM_HOME}" class="alldesks">All companies</a>` : ''}${esc(ME.name)}${ME.isAdmin ? ' · admin' : ''}<button type="button" id="out">Sign out</button>`;
+  document.documentElement.classList.add('td');
+  document.querySelectorAll('.brand [hidden]').forEach(el => el.hidden = false);
+  $('#me').innerHTML = `<span>Signed in as ${esc(ME.name)}${ME.isAdmin ? ' · admin' : ME.isManager ? ' · manager' : ''}</span>${ME.isAdmin || ME.isManager ? `<a href="${TEAM_HOME}team">Team activity</a>` : ''}<a href="/portal/#/team">Open the hiring portal</a><button type="button" id="out">Sign out</button>`;
+  companyPicker();
   $('#out').onclick = async () => { await api('auth/logout', {}).catch(() => {}); ME = null; if (ON_TEAM_DESK) location.href = TEAM_HOME; else signin(); };
   route();
+}
+
+// The company switcher, the same as on the other companies' screens.
+const COMPANIES = [['uae', 'Accounting Baba UAE', '#6DBE3B'], ['eo', 'EarthOne UK', '#1A9696'], ['cxo', 'BoardRoom CXO', '#172633'], ['mv', 'Boardroom Moves', '#D4A860']];
+function companyPicker() {
+  const mine = COMPANIES.filter(([k]) => !ME.desks || ME.desks.includes(k));
+  const ctx = $('#ctx'); ctx.hidden = false;
+  ctx.innerHTML = `<div class="copick"><button type="button" class="cobtn" id="cobtn" aria-haspopup="true" aria-expanded="false"><small>Company</small> Boardroom Moves ▾</button>
+    <div class="comenu" id="comenu" hidden>${mine.map(([k, n, c]) => `<a href="${k === 'mv' ? '#today' : TEAM_HOME + '#' + k}" class="${k === 'mv' ? 'on' : ''}"><i style="background:${c}"></i>${n}</a>`).join('')}</div></div>`;
+  const b = $('#cobtn'), m = $('#comenu');
+  b.onclick = e => { e.stopPropagation(); m.hidden = !m.hidden; b.setAttribute('aria-expanded', String(!m.hidden)); };
+  document.addEventListener('click', e => { if (!e.target.closest('.copick')) { m.hidden = true; b.setAttribute('aria-expanded', 'false'); } });
 }
 
 // ── Routing ──────────────────────────────────────────────────────────────────
