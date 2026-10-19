@@ -138,6 +138,11 @@ html.td .brand .brandrow{display:flex;align-items:center;gap:10px;color:var(--si
 html.td .brand .mark{width:30px;height:30px;border-radius:9px;background:var(--gold);color:#0E1726;display:grid;place-items:center;font-size:13px;font-weight:700}
 html.td .brand small{color:var(--side-text);font-size:12px;font-weight:500;padding-left:40px;font-family:var(--body);letter-spacing:0;text-transform:none}
 html.td .brand img{display:none}
+html.td .brand span.brandrow,html.td .brand span.mark{font-family:var(--body);text-transform:none;letter-spacing:0;margin-left:0}
+html.td .brand span.brandrow{font-size:16px;color:var(--side-strong)}html.td .brand span.mark{font-size:13px;color:#0E1726}
+html.td .ctx{max-width:1240px;margin:0 auto;padding:20px max(16px,env(safe-area-inset-right)) 0 max(16px,env(safe-area-inset-left))}
+html.td main{padding-top:6px}
+@media(max-width:1023px){html.td .ctx{justify-content:flex-start}}
 .drawer{box-shadow:-24px 0 48px rgba(15,23,42,.18)}
 </style>
 </head>
