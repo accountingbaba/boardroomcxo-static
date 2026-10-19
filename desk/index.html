@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Moves Desk | BoardRoom CXO</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/images/favicon.png" type="image/png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Manrope:wght@400;500;600;700&family=Open+Sans:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+:root{--bg:#F7F6F2;--bg-alt:#EFEDE7;--surface:#FFFFFF;--ink:#0F1110;--ink-2:#55584F;--emerald:#1A362D;--emerald-2:#244A3D;--mint:#E3ECE6;--gold:#D4A860;--gold-soft:#F6ECD9;--line:#D9D6CF;--bad:#9B2C1F;--bad-soft:#F6E4DF;
+--display:'Bodoni Moda','Times New Roman',serif;--body:'Manrope',system-ui,sans-serif;--mono:'Space Mono',ui-monospace,monospace}
+*,*::before,*::after{box-sizing:border-box}html,body{margin:0}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);font-size:14.5px;line-height:1.5;-webkit-font-smoothing:antialiased}
+[hidden]{display:none!important}
+a{color:inherit}
+button{font:inherit;color:inherit}
+.top{position:sticky;top:0;z-index:20;background:var(--emerald);color:var(--bg);display:flex;align-items:center;gap:18px;padding:0 max(16px,env(safe-area-inset-right)) 0 max(16px,env(safe-area-inset-left));min-height:56px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:18px;font-weight:600;white-space:nowrap}.brand span{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-left:8px;font-weight:400}
+.tabs{display:flex;gap:2px;overflow-x:auto;flex:1;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tabs a{padding:18px 12px 16px;text-decoration:none;font-weight:600;font-size:13.5px;color:#C9D3CD;border-bottom:2px solid transparent;white-space:nowrap}
+.tabs a.on{color:var(--bg);border-bottom-color:var(--gold)}
+.tabs a .n{display:inline-block;min-width:18px;padding:0 5px;margin-left:5px;border-radius:9px;background:var(--gold);color:var(--emerald);font-size:11px;text-align:center}
+.me{font-size:12.5px;color:#C9D3CD;white-space:nowrap}.me button{background:none;border:0;color:var(--gold);cursor:pointer;text-decoration:underline;padding:0 0 0 8px}
+main{max-width:1180px;margin:0 auto;padding:26px max(16px,env(safe-area-inset-right)) 80px max(16px,env(safe-area-inset-left))}
+h1{font-family:var(--display);font-weight:500;font-size:30px;line-height:1.1;margin:0}
+h2{font-size:12px;font-family:var(--mono);letter-spacing:.16em;text-transform:uppercase;font-weight:400;color:var(--ink-2);margin:28px 0 10px}
+h3{font-size:15px;margin:0 0 8px}
+.head{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:flex-end;justify-content:space-between;margin-bottom:18px}
+.sub{color:var(--ink-2);margin:4px 0 0}
+.btn{appearance:none;border:1px solid var(--emerald);background:var(--emerald);color:var(--bg);font-weight:600;font-size:13px;padding:8px 14px;cursor:pointer;border-radius:3px;display:inline-flex;align-items:center;gap:6px;text-decoration:none;white-space:nowrap;line-height:1.3}
+.btn:hover{background:var(--emerald-2)}.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.g{background:var(--surface);color:var(--ink);border-color:var(--line)}.btn.g:hover{border-color:var(--ink)}
+.btn.s{padding:5px 10px;font-size:12.5px}.btn.bad{background:var(--surface);color:var(--bad);border-color:#E3B9AE}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.chip{border:1px solid var(--line);background:var(--surface);padding:5px 11px;border-radius:14px;font-size:12.5px;cursor:pointer;font-weight:600;color:var(--ink-2)}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;background:var(--bg-alt);color:var(--ink-2);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+.tag.plus{background:var(--gold-soft);color:#7A5512}.tag.pick{background:#E8E3F4;color:#4B3A80}.tag.pack{background:#E1EAF4;color:#24476E}.tag.free{background:var(--mint);color:var(--emerald)}
+.tag.over{background:var(--bad-soft);color:var(--bad)}.tag.live{background:var(--emerald);color:var(--bg)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:4px}
+.tasks{display:grid;gap:8px}
+.task{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 16px;align-items:center;padding:12px 14px}
+.task .t{font-weight:700}.task .d{color:var(--ink-2);font-size:13px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.task .b{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.task.done{opacity:.45}
+.who{font-size:11.5px;color:var(--ink-2);margin-top:3px}
+.empty{padding:28px;text-align:center;color:var(--ink-2)}
+table{width:100%;border-collapse:collapse;background:var(--surface)}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:4px}
+th{text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);font-weight:700;padding:10px 12px;border-bottom:1px solid var(--line);background:var(--bg-alt);white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr.click{cursor:pointer}tr.click:hover td{background:#FAF9F6}
+.num{font-family:var(--mono);font-size:13px;text-align:right;white-space:nowrap}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:8px}
+.stat div{background:var(--surface);border:1px solid var(--line);padding:14px 16px;border-radius:4px}
+.stat b{display:block;font-family:var(--display);font-size:28px;font-weight:500;line-height:1.1}.stat span{font-size:12px;color:var(--ink-2)}
+label.f{display:block;margin:0 0 12px}label.f>span{display:block;font-size:12px;font-weight:700;margin-bottom:4px;color:var(--ink-2)}
+input[type=text],input[type=email],input[type=tel],input[type=date],input[type=number],input[type=url],select,textarea{width:100%;font:inherit;font-size:14px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:8px 10px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--emerald);box-shadow:0 0 0 1px var(--emerald)}
+textarea{min-height:120px;resize:vertical;line-height:1.5}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:0 12px}
+.err{background:var(--bad-soft);color:var(--bad);padding:9px 12px;border-radius:3px;margin:0 0 12px;font-size:13.5px}
+.note{background:var(--gold-soft);padding:10px 12px;border-radius:3px;font-size:13.5px;margin:0 0 12px}
+.ok{background:var(--mint);color:var(--emerald);padding:10px 12px;border-radius:3px;font-size:13.5px;margin:0 0 12px}
+/* drawer */
+.scrim{position:fixed;inset:0;background:rgba(15,17,16,.35);z-index:30}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(760px,100%);background:var(--bg);z-index:31;overflow-y:auto;box-shadow:-10px 0 30px rgba(0,0,0,.12);padding:0 0 60px}
+.drawer.wide{width:min(1240px,100%)}
+.dh{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);padding:16px 20px 14px;display:flex;gap:12px;align-items:flex-start;justify-content:space-between;z-index:2}
+.dh h1{font-size:24px}.dh .x{background:none;border:0;font-size:26px;line-height:1;cursor:pointer;color:var(--ink-2);padding:0 4px}
+.db{padding:6px 20px}
+.sec{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:14px 16px;margin:12px 0}
+.sec>h3{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.cl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:4px 14px}
+.cl li{font-size:13px;padding-left:22px;position:relative}.cl li::before{content:'';position:absolute;left:0;top:3px;width:13px;height:13px;border:1px solid var(--line);border-radius:2px}
+.cl li.y::before{background:var(--emerald);border-color:var(--emerald)}.cl li.y::after{content:'';position:absolute;left:4px;top:5px;width:4px;height:7px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.kv{display:grid;grid-template-columns:140px minmax(0,1fr);gap:4px 12px;font-size:13.5px}.kv dt{color:var(--ink-2)}.kv dd{margin:0;word-break:break-word}
+.ev{list-style:none;margin:0;padding:0;font-size:12.5px;color:var(--ink-2)}.ev li{padding:4px 0;border-bottom:1px dashed var(--line)}.ev b{color:var(--ink);font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ans{font-size:13.5px;margin:0 0 10px}.ans b{display:block;font-size:12px;color:var(--ink-2)}
+.thumbs{display:flex;flex-wrap:wrap;gap:10px}.thumbs figure{margin:0;font-size:11.5px;color:var(--ink-2)}.thumbs img{display:block;height:120px;border:1px solid var(--line)}
+.ver{font-size:11.5px;color:var(--ink-2);font-weight:400}
+/* image builder */
+.ib{display:grid;grid-template-columns:300px minmax(0,1fr);gap:20px}
+.ib canvas{width:100%;height:auto;border:1px solid var(--line);display:block;background:#222}
+.ibp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:start}
+.ibp figure{margin:0}.ibp figcaption{font-size:11.5px;color:var(--ink-2);margin-top:4px}
+input[type=range]{width:100%;accent-color:var(--emerald)}
+/* sign in */
+.signin{max-width:400px;margin:10vh auto 0;padding:0 16px}
+.signin .card{padding:28px}
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:4px;font-weight:600;z-index:60;font-size:13.5px;max-width:calc(100% - 32px)}
+.spin{display:inline-block;width:12px;height:12px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:sp .7s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}
+.cal{display:grid;gap:8px}.cal .day{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;padding:12px 14px;align-items:start}
+.cal .day b{display:block}.cal .day .k{font-size:11.5px;color:var(--ink-2)}
+@media(max-width:760px){.task{grid-template-columns:1fr}.task .b{justify-content:flex-start}.g2,.g3{grid-template-columns:1fr}.ib{grid-template-columns:1fr}.ibp{grid-template-columns:1fr}.kv{grid-template-columns:1fr}.kv dt{margin-top:6px}.cal .day{grid-template-columns:1fr}.me{display:none}}
+</style>
+</head>
+<body>
+<header class="top" id="top" hidden>
+  <div class="brand">BoardRoom CXO<span>Moves desk</span></div>
+  <nav class="tabs" id="tabs"></nav>
+  <div class="me" id="me"></div>
+</header>
+<main id="view"><p class="sub"><span class="spin"></span> Loading…</p></main>
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-modal="true" role="dialog"></aside>
+<div class="toast" id="toast" hidden></div>
+<script>
+(() => {
+'use strict';
+const $ = s => document.querySelector(s);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const rs = n => 'Rs ' + Number(n || 0).toLocaleString('en-IN');
+const first = n => String(n || '').trim().split(/\s+/)[0] || '';
+const day = d => d ? new Date(String(d).slice(0, 10) + 'T00:00:00Z').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' }) : '';
+const when = iso => iso ? new Date(iso).toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kolkata' }) : '';
+let ME = null, TODAY = null, mineOnly = true;
+
+// ── Messages the team sends by hand on LinkedIn (from the Moves playbook v5, wording agreed 19 Oct 2026) ──
+const TPL = {
+  note: "Hi {{First Name}}, congratulations on your new role at {{Company}}. I'm Sagar, Co-Founder of BoardRoom CXO. We cover senior leadership moves on our LinkedIn page and would love to include yours. Happy to connect?",
+  msg1: "Thanks for connecting, {{First Name}}, and congratulations again on {{Company}}.\nWe'd like to include your move in this week's Boardroom Moves post on the BoardRoom CXO page. It's free, and nothing goes live until you've seen and approved it.\nShall we go ahead?",
+  nudge: "Hi {{First Name}}, a quick nudge on featuring your move to {{Company}}. Happy to do it whenever it suits you, and if you'd rather skip it, no problem at all.",
+  link: "Wonderful, thank you {{First Name}}. Here is your personal link to share a few details and a photo. You see and approve the draft before anything goes live: {{Link}}",
+  wa_ask: "Thank you, {{First Name}}. Could you share a WhatsApp number? It's quicker for the photo, a few details and your approval of the draft before anything goes live.",
+  ci30: "Hi {{First Name}}, about a month into the role at {{Company}} now. Hope it's going well.\nOut of interest, are you building out the team with your in-house HR, or working with a search partner?",
+  ci60: "Hi {{First Name}}, if any senior roles open up in your team at {{Company}}, we'd be glad to help. We place senior leaders in retail and consumer brands."
+};
+const fill = (k, p, link) => TPL[k].replace(/{{First Name}}/g, first(p.name)).replace(/{{Company}}/g, p.company || 'your new company').replace(/{{Link}}/g, link || '');
+const STAGES = { ready: 'To send', sent: 'Request sent', connected: 'Connected', replied: 'Replied', linked: 'Link sent', noreply: 'No reply', declined: 'Declined' };
+const STATUS = { invited: 'Link sent', details: 'Filling details', payment: 'Waiting for payment', ready: 'To draft', approval: 'With leader', changes: 'Changes asked', approved: 'Approved', scheduled: 'Scheduled', live: 'Live', removed: 'Removed', cancelled: 'Cancelled', active: 'Pack active' };
+const TIER = { free: 'Free', plus: 'Plus', pick: 'Pick', pack: 'Pack' };
+const tierTag = t => t ? `<span class="tag ${t}">${TIER[t] || t}</span>` : '<span class="tag">Not chosen</span>';
+
+async function api(path, body, opt = {}) {
+  const o = { method: body !== undefined || opt.raw ? 'POST' : 'GET', headers: {} };
+  if (opt.raw) { o.body = opt.raw; o.headers['Content-Type'] = opt.raw.type || 'application/octet-stream'; }
+  else if (body !== undefined) { o.body = JSON.stringify(body); o.headers['Content-Type'] = 'application/json'; }
+  const r = await fetch('/api/moves/' + path, o);
+  const d = await r.json().catch(() => ({ error: 'The server sent an unexpected reply.' }));
+  if (r.status === 401 && path.startsWith('team')) { ME = null; signin(); throw new Error('Sign in again.'); }
+  if (!r.ok) throw new Error(d.error || 'Something went wrong.');
+  return d;
+}
+function toast(msg) { const t = $('#toast'); t.textContent = msg; t.hidden = false; clearTimeout(toast.h); toast.h = setTimeout(() => t.hidden = true, 2600); }
+async function copy(text, label) {
+  try { await navigator.clipboard.writeText(text); toast((label || 'Text') + ' copied'); }
+  catch { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); toast((label || 'Text') + ' copied'); }
+}
+const waUrl = (phone, text) => { const d = String(phone || '').replace(/\D/g, ''); return d ? `https://wa.me/${d.length === 10 ? '91' + d : d}?text=${encodeURIComponent(text)}` : ''; };
+// Buttons carry their action in data attributes; one handler for the whole page.
+const B = (label, attrs, cls) => `<button type="button" class="btn ${cls || ''}" ${Object.entries(attrs).map(([k, v]) => `data-${k}="${esc(v)}"`).join(' ')}>${label}</button>`;
+const COPY = new Map(); let copyN = 0;
+const copyBtn = (text, label, cls) => { const k = 'c' + (++copyN); COPY.set(k, [text, label]); return B(label ? 'Copy ' + label.toLowerCase() : 'Copy', { copy: k }, cls || 'g s'); };
+
+// ── Sign in ──────────────────────────────────────────────────────────────────
+function signin(sentTo, err, devCode) {
+  $('#top').hidden = true; closeDrawer();
+  $('#view').innerHTML = `<div class="signin"><div class="card"><h1 style="margin-bottom:6px">Moves desk</h1><p class="sub" style="margin-bottom:20px">${sentTo ? `We sent a 6-digit code to <b>${esc(sentTo)}</b>.` : 'Sign in with your work email. We email you a code.'}</p>
+    ${err ? `<div class="err">${esc(err)}</div>` : ''}${devCode ? `<div class="note">Test mode code: <b>${esc(devCode)}</b></div>` : ''}
+    <form id="sf">${sentTo ? `<label class="f"><span>Code</span><input type="text" name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" required autofocus></label>`
+      : `<label class="f"><span>Email</span><input type="email" name="email" autocomplete="email" required autofocus></label>`}
+    <div class="row"><button class="btn" type="submit">${sentTo ? 'Sign in' : 'Email me a code'}</button>${sentTo ? '<button type="button" class="btn g" id="sback">Use another email</button>' : ''}</div></form></div></div>`;
+  $('#sf').onsubmit = async e => {
+    e.preventDefault(); const v = Object.fromEntries(new FormData(e.target));
+    try {
+      if (!sentTo) { const r = await api('auth/code', { email: v.email }); signin(v.email.toLowerCase(), '', r.devCode); }
+      else { await api('auth/verify', { email: sentTo, code: v.code }); boot(); }
+    } catch (x) { signin(sentTo, x.message, devCode); }
+  };
+  if ($('#sback')) $('#sback').onclick = () => signin();
+}
+async function boot() {
+  const m = await api('me').catch(() => ({ signedIn: false }));
+  if (!m.signedIn) return signin();
+  ME = m; mineOnly = !ME.isAdmin; $('#top').hidden = false;
+  $('#me').innerHTML = `${esc(ME.name)}${ME.isAdmin ? ' · admin' : ''}<button type="button" id="out">Sign out</button>`;
+  $('#out').onclick = async () => { await api('auth/logout', {}).catch(() => {}); ME = null; signin(); };
+  route();
+}
+
+// ── Routing ──────────────────────────────────────────────────────────────────
+const VIEWS = { today: 'Today', leads: 'Leads', orders: 'Features', calendar: 'Calendar', revenue: 'Revenue', settings: 'Settings' };
+function tabs(cur) {
+  $('#tabs').innerHTML = Object.entries(VIEWS).filter(([k]) => ME.isAdmin || !['revenue', 'settings'].includes(k))
+    .map(([k, v]) => `<a href="#${k}" class="${cur === k ? 'on' : ''}">${v}${k === 'today' && TODAY ? `<span class="n">${myTasks().length}</span>` : ''}</a>`).join('');
+}
+const myTasks = () => TODAY ? TODAY.tasks.filter(t => !mineOnly || t.owner === ME.email) : [];
+async function route() {
+  if (!ME) return;
+  const [v, id] = (location.hash.slice(1) || 'today').split(':');
+  const view = VIEWS[v] ? v : 'today';
+  tabs(view);
+  try { await ({ today: vToday, leads: vLeads, orders: vOrders, calendar: vCalendar, revenue: vRevenue, settings: vSettings })[view](); }
+  catch (e) { $('#view').innerHTML = `<div class="err">${esc(e.message)}</div>`; }
+  if (id && v === 'orders') openOrder(id); else if (id && v === 'leads') openLead(id);
+}
+window.addEventListener('hashchange', route);
+
+// ── Today ────────────────────────────────────────────────────────────────────
+const DUTY = { outreach: 'Outreach and publishing', content: 'Replies and drafting', approvals: 'Approvals', checkins: 'Check-ins' };
+async function vToday() {
+  TODAY = await api('team/today');
+  tabs('today');
+  const list = myTasks(), groups = {};
+  list.forEach(t => (groups[t.duty] = groups[t.duty] || []).push(t));
+  $('#view').innerHTML = `<div class="head"><div><h1>Today</h1><p class="sub">${day(TODAY.today)} · connection requests sent ${TODAY.sent_today} of ${TODAY.daily_requests}</p></div>
+    <div class="chips" style="margin:0"><button class="chip ${mineOnly ? 'on' : ''}" data-mine="1">My tasks</button><button class="chip ${!mineOnly ? 'on' : ''}" data-mine="0">Everyone's</button></div></div>
+    ${!list.length ? `<div class="card empty">Nothing waiting${mineOnly ? ' for you' : ''}. New tasks appear here as leads and features move along.</div>` : ''}
+    ${Object.keys(DUTY).filter(k => groups[k]).map(k => `<h2>${DUTY[k]} · ${groups[k].length}</h2><div class="tasks">${groups[k].map(taskRow).join('')}</div>`).join('')}`;
+}
+function taskRow(t) {
+  const p = { name: t.name, company: t.company };
+  let b = '';
+  if (t.type === 'send') b = (t.linkedin ? `<a class="btn g s" href="${esc(t.linkedin)}" target="_blank" rel="noopener">Open LinkedIn</a>` : '') + copyBtn(fill('note', p), 'Note') + B('Mark sent', { lead: t.lead_id, act: 'sent' }, 's');
+  else if (t.type === 'm1') b = (t.linkedin ? `<a class="btn g s" href="${esc(t.linkedin)}" target="_blank" rel="noopener">Open LinkedIn</a>` : '') + copyBtn(fill('msg1', p), 'Message') + B('Mark sent', { lead: t.lead_id, act: 'm1' }, 's') + B('They replied', { openlead: t.lead_id }, 'g s');
+  else if (t.type === 'nudge') b = copyBtn(fill('nudge', p), 'Nudge') + B('Mark sent', { lead: t.lead_id, act: 'nudge' }, 's') + B('They replied', { openlead: t.lead_id }, 'g s');
+  else if (t.type === 'close') b = B('Close, no reply', { lead: t.lead_id, act: 'close' }, 'g s') + B('They replied', { openlead: t.lead_id }, 'g s');
+  else if (t.type === 'reply') b = B('Open', { openlead: t.lead_id }, 's');
+  else if (t.type === 'ci30' || t.type === 'ci60') b = copyBtn(fill(t.type, p), 'Message') + B('Mark sent', { order: t.order_id, oact: t.type }, 's');
+  else b = B('Open', { openorder: t.order_id }, 's');
+  const owner = !mineOnly && t.owner !== ME.email ? `<div class="who">For ${esc(t.owner)}</div>` : '';
+  return `<div class="card task"><div><div class="t">${esc(t.title)} ${t.tier ? tierTag(t.tier) : ''} ${t.overdue ? '<span class="tag over">Overdue</span>' : ''}</div>${t.sub ? `<div class="d">${esc(t.sub)}</div>` : ''}${owner}</div><div class="b">${b}</div></div>`;
+}
+
+// ── Leads ────────────────────────────────────────────────────────────────────
+let leadStage = 'ready';
+async function vLeads() {
+  const d = await api('team/leads' + (leadStage ? '?stage=' + leadStage : ''));
+  $('#view').innerHTML = `<div class="head"><div><h1>Leads</h1><p class="sub">Leaders who just moved. The daily loader adds new ones every morning.</p></div>${B('Add a lead', { addlead: 1 })}</div>
+    <div class="chips">${[...Object.entries(STAGES), ['', 'All']].map(([k, v]) => `<button class="chip ${leadStage === k ? 'on' : ''}" data-stage="${k}">${v}</button>`).join('')}</div>
+    ${d.leads.length ? `<div class="tw"><table><thead><tr><th>Name</th><th>New role</th><th>Moved</th><th>Stage</th><th class="num">Score</th></tr></thead><tbody>
+    ${d.leads.map(l => `<tr class="click" data-openlead="${l.id}"><td><b>${esc(l.name)}</b>${l.flags ? `<div class="who">${esc(l.flags)}</div>` : ''}</td><td>${esc(l.role_title)}${l.company ? ' at ' + esc(l.company) : ''}</td><td>${esc(l.move_date || '')}</td><td>${esc(STAGES[l.stage] || l.stage)}</td><td class="num">${l.score ?? ''}</td></tr>`).join('')}
+    </tbody></table></div>` : `<div class="card empty">No leads here.</div>`}`;
+}
+async function openLead(id, notice) {
+  const d = await api('team/leads/' + id), l = d.lead;
+  drawer(`<div class="dh"><div><h1>${esc(l.name)}</h1><p class="sub">${esc(l.role_title || '')}${l.company ? ' at ' + esc(l.company) : ''} · ${esc(STAGES[l.stage] || l.stage)}</p></div><button class="x" data-close aria-label="Close">×</button></div>
+  <div class="db">${notice || ''}
+    <div class="sec"><div class="row">${l.linkedin ? `<a class="btn g s" href="${esc(l.linkedin)}" target="_blank" rel="noopener">Open LinkedIn</a>` : ''}
+      ${l.stage === 'ready' ? B('Request sent', { lead: l.id, act: 'sent', stay: 1 }, 's') : ''}
+      ${l.stage === 'sent' ? B('They accepted', { lead: l.id, act: 'accepted', stay: 1 }, 's') : ''}
+      ${['sent', 'connected'].includes(l.stage) ? B('They replied', { replybox: 1 }, 'g s') : ''}
+      ${['connected', 'replied', 'sent'].includes(l.stage) ? B('Not interested', { lead: l.id, act: 'declined', stay: 1 }, 'bad s') : ''}
+      ${['noreply', 'declined'].includes(l.stage) ? B('Back to the send list', { lead: l.id, act: 'reopen', stay: 1 }, 'g s') : ''}</div>
+      <form id="rf" hidden style="margin-top:12px"><label class="f"><span>What did they say?</span><textarea name="reply" style="min-height:70px"></textarea></label><button class="btn s" type="submit">Save reply</button></form></div>
+    ${d.order ? `<div class="sec"><h3>Feature ${tierTag(d.order.tier)} <span class="tag">${esc(STATUS[d.order.status] || d.order.status)}</span></h3>${B('Open the feature', { openorder: d.order.id }, 's')}</div>`
+    : ['replied', 'connected'].includes(l.stage) ? `<div class="sec"><h3>Send their personal link</h3><p class="sub" style="margin:0 0 10px">Creates the feature and their link. If you add an email, the link is emailed too.</p>
+      <form id="inv"><div class="g2"><label class="f"><span>Email (optional)</span><input type="email" name="email" value="${esc(l.email || '')}"></label><label class="f"><span>WhatsApp (optional)</span><input type="tel" name="phone" value="${esc(l.phone || '')}"></label></div>
+      ${ME.isAdmin ? `<label class="f"><span>Type</span><select name="tier"><option value="">They choose (Free or Plus)</option><option value="pick">Editorial pick (free dedicated feature)</option></select></label>` : ''}
+      <button class="btn" type="submit">Create link</button></form></div>` : ''}
+    <div class="sec"><h3>Messages</h3><div class="row">${copyBtn(fill('note', l), 'Note')}${copyBtn(fill('msg1', l), 'Message 1')}${copyBtn(fill('nudge', l), 'Nudge')}${copyBtn(fill('wa_ask', l), 'WhatsApp ask')}</div></div>
+    <div class="sec"><h3>Details</h3><form id="lf"><div class="g2">
+      ${[['name', 'Name'], ['role_title', 'New role'], ['company', 'Company'], ['move_date', 'Moved on'], ['prev_role', 'Previous role'], ['sector', 'Sector'], ['linkedin', 'LinkedIn URL'], ['followers', 'Followers'], ['email', 'Email'], ['phone', 'Phone']]
+        .map(([k, v]) => `<label class="f"><span>${v}</span><input type="text" name="${k}" value="${esc(l[k] ?? '')}"></label>`).join('')}</div>
+      <label class="f"><span>Note</span><textarea name="note" style="min-height:60px">${esc(l.note || '')}</textarea></label>
+      ${l.source_url ? `<p class="sub" style="margin:0 0 10px">Source: <a href="${esc(l.source_url)}" target="_blank" rel="noopener">${esc(l.source || 'link')}</a></p>` : ''}
+      <button class="btn g s" type="submit">Save details</button></form></div>
+    ${l.reply ? `<div class="sec"><h3>Their reply</h3><p style="margin:0;white-space:pre-wrap">${esc(l.reply)}</p></div>` : ''}
+    <div class="sec"><h3>History</h3><ul class="ev">${d.events.map(e => `<li>${esc(when(e.at))} · <b>${esc(e.text)}</b> · ${esc(e.by_who)}</li>`).join('') || '<li>Nothing yet</li>'}</ul></div>
+  </div>`, 'leads:' + id);
+  const rf = $('#rf'); const rb = document.querySelector('[data-replybox]'); if (rb) rb.onclick = () => { rf.hidden = false; rf.querySelector('textarea').focus(); };
+  rf.onsubmit = async e => { e.preventDefault(); await leadAct(l.id, 'replied', { reply: new FormData(rf).get('reply') }, true); };
+  $('#lf').onsubmit = async e => { e.preventDefault(); await leadAct(l.id, 'edit', { lead: Object.fromEntries(new FormData(e.target)) }, true); toast('Saved'); };
+  const inv = $('#inv'); if (inv) inv.onsubmit = async e => {
+    e.preventDefault(); const v = Object.fromEntries(new FormData(inv));
+    try { const r = await api('team/invite', { lead_id: l.id, ...v }); openOrder(r.order_id, linkNotice(r, l)); } catch (x) { toast(x.message); }
+  };
+}
+function linkNotice(r, p) {
+  const msg = fill('link', p, r.link);
+  return `<div class="ok"><b>Link created.</b> ${r.emailed ? 'Emailed to them. ' : ''}Send it on LinkedIn${r.whatsapp_link ? ' or WhatsApp' : ''} now.
+    <div class="row" style="margin-top:8px">${copyBtn(msg, 'LinkedIn message', 's')}${r.whatsapp_link ? `<a class="btn g s" href="${esc(r.whatsapp_link)}" target="_blank" rel="noopener">Send on WhatsApp</a>` : ''}${copyBtn(r.link, 'Link')}</div></div>`;
+}
+async function leadAct(id, act, extra, stay) {
+  try { await api(`team/leads/${id}/action`, { act, ...(extra || {}) }); toast('Saved'); if (stay) openLead(id); refreshBehind(); }
+  catch (e) { toast(e.message); }
+}
+function addLead() {
+  drawer(`<div class="dh"><div><h1>Add a lead</h1><p class="sub">Someone who just moved into a senior role.</p></div><button class="x" data-close aria-label="Close">×</button></div>
+  <div class="db"><div class="sec"><form id="al"><div class="g2">
+    ${[['name', 'Name', 1], ['role_title', 'New role', 1], ['company', 'Company', 1], ['linkedin', 'LinkedIn URL'], ['move_date', 'Moved on (YYYY-MM-DD)'], ['prev_role', 'Previous role'], ['sector', 'Sector'], ['followers', 'Followers']]
+      .map(([k, v, r]) => `<label class="f"><span>${v}</span><input type="text" name="${k}" ${r ? 'required' : ''}></label>`).join('')}</div>
+    <label class="f"><span>Note</span><textarea name="note" style="min-height:60px"></textarea></label><button class="btn" type="submit">Add lead</button></form></div></div>`);
+  $('#al').onsubmit = async e => {
+    e.preventDefault();
+    try { const r = await api('team/leads', { ...Object.fromEntries(new FormData(e.target)), source: 'manual' }); toast(r.added ? 'Lead added' : 'Already on the list'); closeDrawer(); refreshBehind(); }
+    catch (x) { toast(x.message); }
+  };
+}
+
+// ── Features (orders) ────────────────────────────────────────────────────────
+let orderFilter = 'open';
+const OPEN = ['invited', 'details', 'payment', 'ready', 'approval', 'changes', 'approved', 'scheduled'];
+async function vOrders() {
+  const d = await api('team/orders');
+  const rows = d.orders.filter(o => orderFilter === 'open' ? OPEN.includes(o.status) && !(o.tier === 'pack' && !o.pack_id) : orderFilter === 'packs' ? o.tier === 'pack' && !o.pack_id : orderFilter === 'all' ? true : o.status === orderFilter);
+  const F = { open: 'In progress', ready: 'To draft', approval: 'With leader', scheduled: 'Scheduled', live: 'Live', packs: 'Company packs', all: 'All' };
+  $('#view').innerHTML = `<div class="head"><div><h1>Features</h1><p class="sub">Every Boardroom Moves feature, from link to live.</p></div><div class="row">${B('New feature link', { newfeature: 1 }, 'g')}${ME.isAdmin ? B('New company pack', { newpack: 1 }, 'g') : ''}</div></div>
+    <div class="chips">${Object.entries(F).map(([k, v]) => `<button class="chip ${orderFilter === k ? 'on' : ''}" data-ofilter="${k}">${v}</button>`).join('')}</div>
+    ${rows.length ? `<div class="tw"><table><thead><tr><th>Name</th><th>Role</th><th>Type</th><th>Stage</th><th>Slot</th><th class="num">Paid</th></tr></thead><tbody>
+    ${rows.map(o => `<tr class="click" data-openorder="${o.id}"><td><b>${esc(o.name || '(no name yet)')}</b></td><td>${esc(o.role_title || '')}${o.company ? ' at ' + esc(o.company) : ''}</td><td>${tierTag(o.tier)}</td><td>${o.status === 'live' ? '<span class="tag live">Live</span>' : esc(STATUS[o.status] || o.status)}</td><td>${o.slot_date ? day(o.slot_date) : ''}</td><td class="num">${o.paid_at ? rs(o.total) : ''}</td></tr>`).join('')}
+    </tbody></table></div>` : `<div class="card empty">Nothing here.</div>`}`;
+}
+const PLAT = { linkedin: 'LinkedIn post', instagram: 'Instagram caption', website: 'Website page (blank line between paragraphs; "## " for a subheading)', whatsapp: 'WhatsApp community share', carousel: 'Line in Moves of the week' };
+let O = null; // the open feature
+async function openOrder(id, notice) {
+  O = await api('team/orders/' + id);
+  renderOrder(notice);
+}
+function renderOrder(notice) {
+  const o = O.order, d = o.details || {}, packBuyer = o.tier === 'pack' && !o.pack_id;
+  const st = o.status, act = [];
+  if (st === 'ready' || st === 'changes' || st === 'approval') {
+    if (O.needs_internal && ME.isAdmin) act.push(B('Approve internally', { oact: 'internal_ok' }));
+    act.push(B(st === 'approval' ? 'Send the draft again' : 'Send to leader for approval', { oact: 'send_approval' }, O.needs_internal ? 'g' : ''));
+  }
+  if (['approved', 'scheduled', 'live'].includes(st)) act.push(B(st === 'live' ? 'Update post links' : 'Mark published', { publishbox: 1 }));
+  if (['approved', 'scheduled'].includes(st)) act.push(B('Change date', { datebox: 1 }, 'g'));
+  if (st === 'live' && !o.wa_shared_at && ['plus', 'pack'].includes(o.tier)) act.push(copyBtn(O.contents.whatsapp ? O.contents.whatsapp.text : '', 'WhatsApp share', 'g') + B('Mark shared in community', { oact: 'wa_shared' }, 'g'));
+  if (st === 'live') act.push(B('Take down', { oact: 'remove', confirm: 'Take the website page down? Remove the LinkedIn and Instagram posts by hand.' }, 'bad'));
+  if (!['live', 'removed', 'cancelled'].includes(st) && !o.paid_at) act.push(B('Cancel', { oact: 'cancel', confirm: 'Cancel this feature? Their link stops working.' }, 'bad'));
+  if (ME.isAdmin && o.total && !o.paid_at) act.push(B('Record payment', { paybox: 1 }, 'g'));
+  if (ME.isAdmin && o.paid_at && !o.books_invoice_id) act.push(B('Make the invoice again', { oact: 'retry_invoice' }, 'g'));
+  const msgs = [['invite', 'Invite'], ...(['invited', 'details'].includes(st) ? [['remindDetails', 'Reminder']] : []), ...(st === 'payment' ? [['remindPayment', 'Payment reminder']] : []), ...(st === 'approval' ? [['approval', 'Approval request']] : []), ...(st === 'live' ? [['live', 'Live links']] : [])];
+  const answers = (d.answers || []).map((a, i) => a ? `<p class="ans"><b>${esc(O.questions[i].replace('{company}', d.company || o.company || ''))}</b>${esc(a)}</p>` : '').join('');
+  drawer(`<div class="dh"><div><h1>${esc(o.name || '(no name yet)')}</h1><p class="sub">${esc(o.role_title || '')}${o.company ? ' at ' + esc(o.company) : ''}</p>
+    <div class="row" style="margin-top:6px">${tierTag(o.tier)} <span class="tag ${st === 'live' ? 'live' : ''}">${esc(STATUS[st] || st)}</span>${o.slot_date ? `<span class="tag">${day(o.slot_date)}</span>` : ''}${o.moves_no ? `<span class="tag">#${o.moves_no}</span>` : ''}${o.paid_at ? `<span class="tag plus">Paid ${rs(o.total)}</span>` : ''}</div></div><button class="x" data-close aria-label="Close">×</button></div>
+  <div class="db">${notice || ''}
+    ${o.change_note && st === 'changes' ? `<div class="note"><b>They asked for changes:</b> ${esc(o.change_note)}</div>` : ''}
+    ${o.books_error ? `<div class="err">Invoice: ${esc(o.books_error)}</div>` : ''}
+    ${O.needs_internal && ['ready', 'changes'].includes(st) ? `<div class="note">${ME.isAdmin ? 'You approve' : 'Ketul approves'} this one before it goes to the leader (the first paid features are checked internally).</div>` : ''}
+    ${act.length ? `<div class="sec"><div class="row">${act.join('')}</div>
+      <form id="pubf" hidden style="margin-top:12px"><div class="g2"><label class="f"><span>LinkedIn post link</span><input type="url" name="linkedin_url" value="${esc(o.linkedin_url || '')}" required placeholder="https://www.linkedin.com/posts/…"></label>
+        ${['free'].includes(o.tier) ? '' : `<label class="f"><span>Instagram post link</span><input type="url" name="instagram_url" value="${esc(o.instagram_url || '')}" placeholder="https://www.instagram.com/p/…"></label>`}</div>
+        <p class="sub" style="margin:0 0 10px">Saving puts their page live on boardroomcxo.com and emails them the links.</p><button class="btn s" type="submit">Save and go live</button></form>
+      <form id="datef" hidden style="margin-top:12px"><div class="row"><input type="date" name="date" value="${esc(o.slot_date || '')}" style="max-width:200px" required><button class="btn s" type="submit">Save date</button></div></form>
+      <form id="payf" hidden style="margin-top:12px"><p class="sub" style="margin:0 0 8px">Only after you see ${rs(o.total)} in the bank or Razorpay.</p><div class="row"><input type="text" name="reference" placeholder="UTR or payment reference" style="max-width:260px" required><button class="btn s" type="submit">Record payment</button></div></form></div>` : ''}
+    ${packBuyer ? `<div class="sec"><h3>Company pack</h3><dl class="kv"><dt>Features used</dt><dd>${O.pack ? O.pack.used : 0} of ${o.features_total || 4}</dd><dt>Valid until</dt><dd>${esc(o.features_until || 'Starts when paid')}</dd></dl>
+      ${o.paid_at ? `<form id="packinv" style="margin-top:12px"><h3>Add a leader to this pack</h3><div class="g2"><label class="f"><span>Name</span><input type="text" name="name" required></label><label class="f"><span>New role</span><input type="text" name="role_title" required></label><label class="f"><span>Email</span><input type="email" name="email"></label><label class="f"><span>WhatsApp</span><input type="tel" name="phone"></label></div><button class="btn s" type="submit">Create their link</button></form>` : ''}</div>` : ''}
+    <div class="sec"><h3>Their link</h3><div class="row">${copyBtn(O.link, 'Link')}${msgs.map(([k, v]) => O.wa[k] ? (O.wa_phone ? `<a class="btn g s" href="${esc(waUrl(O.wa_phone, O.wa[k]))}" target="_blank" rel="noopener">WhatsApp: ${v}</a>` : copyBtn(O.wa[k], v + ' text')) : '').join('')}
+      ${o.email && ['invite', 'remindDetails', 'remindPayment', 'approval'].includes((msgs[msgs.length - 1] || [])[0]) ? B('Email again', { oact: 'notify', kind: msgs[msgs.length - 1][0] }, 'g s') : ''}</div>
+      ${o.email || o.phone ? `<p class="sub" style="margin:8px 0 0">${esc(o.email || '')}${o.email && o.phone ? ' · ' : ''}${esc(o.phone || '')}</p>` : ''}</div>
+    ${O.checklist.length ? `<div class="sec"><h3>Checklist</h3><ul class="cl">${O.checklist.map(([k, v]) => `<li class="${v ? 'y' : ''}">${esc(k)}</li>`).join('')}</ul></div>` : ''}
+    ${packBuyer ? '' : `<div class="sec"><h3>What they sent</h3><dl class="kv"><dt>Name</dt><dd>${esc(d.name || '')}</dd><dt>Role</dt><dd>${esc(d.role_title || '')}</dd><dt>Company</dt><dd>${esc(d.company || '')}</dd>
+      ${d.prev_role ? `<dt>Previously</dt><dd>${esc(d.prev_role)}</dd>` : ''}${d.start_date ? `<dt>Start date</dt><dd>${esc(d.start_date)}</dd>` : ''}${d.city ? `<dt>City</dt><dd>${esc(d.city)}</dd>` : ''}
+      ${d.linkedin ? `<dt>LinkedIn</dt><dd><a href="${esc(d.linkedin)}" target="_blank" rel="noopener">${esc(d.linkedin)}</a></dd>` : ''}${o.payer_type ? `<dt>Invoice to</dt><dd>${esc(o.billing_name || '')}${o.gstin ? ' · ' + esc(o.gstin) : ''}${o.invoice_no ? ' · ' + esc(o.invoice_no) : ''}</dd>` : ''}</dl>
+      ${o.photo_key ? `<div class="thumbs" style="margin-top:12px"><figure><a href="/api/moves/team/orders/${o.id}/photo" target="_blank"><img src="/api/moves/team/orders/${o.id}/photo" alt="Their photo"></a><figcaption>Their photo</figcaption></figure></div>` : ''}
+      ${answers ? `<h3 style="margin-top:14px">Their answers</h3>${answers}` : o.skip_questions ? '<p class="sub">They skipped the questions: draft from public information only.</p>' : ''}</div>`}
+    ${!packBuyer && o.tier ? `<div class="sec"><h3>Brief for the Content Studio ${copyBtn(O.brief, 'Brief')}</h3><p class="sub" style="margin:0">Paste this into the Content Studio, then paste each draft below.</p></div>
+    ${O.need_content.map(p => { const c = O.contents[p]; return `<div class="sec"><h3>${esc(PLAT[p])} ${c ? `<span class="ver">v${c.version} · ${esc(c.updated_by.split('@')[0])} · ${esc(when(c.updated_at))}</span>` : ''}</h3>
+      <form data-content="${p}"><textarea name="text" style="min-height:${p === 'website' ? 260 : 150}px">${esc(c ? c.text : '')}</textarea><div class="row" style="margin-top:8px"><button class="btn s" type="submit">Save</button>${c ? copyBtn(c.text, 'Text') : ''}</div></form></div>`; }).join('')}
+    ${O.need_images.length ? `<div class="sec"><h3>Images ${B(O.images.length ? 'Rebuild images' : 'Build images', { builder: 1 }, 's')}</h3>
+      <div class="thumbs">${O.need_images.map(k => O.images.includes(k) ? `<figure><a href="/api/moves/team/orders/${o.id}/image/${k}" target="_blank" download="${esc((o.name || 'feature').replace(/\W+/g, '-'))}-${k}.png"><img src="/api/moves/team/orders/${o.id}/image/${k}?v=${Date.now()}" alt="${k} image"></a><figcaption>${k} · click to download</figcaption></figure>` : `<figure><div style="height:120px;width:120px;border:1px dashed var(--line);display:grid;place-items:center;color:var(--ink-2)">${k}</div><figcaption>Not made yet</figcaption></figure>`).join('')}</div></div>` : ''}` : ''}
+    ${ME.isAdmin && !o.paid_at && !packBuyer ? `<div class="sec"><h3>Edit</h3><form id="edf"><div class="g2">${['name', 'role_title', 'company', 'email', 'phone'].map(k => `<label class="f"><span>${k.replace('_', ' ')}</span><input type="text" name="${k}" value="${esc(o[k] || '')}"></label>`).join('')}
+      <label class="f"><span>Type</span><select name="tier"><option value="">Leave as is</option><option value="free">Free</option><option value="plus">Plus</option><option value="pick">Editorial pick</option></select></label></div><button class="btn g s" type="submit">Save</button></form></div>` : ''}
+    ${O.approvals.length ? `<div class="sec"><h3>Approval rounds</h3><ul class="ev">${O.approvals.map(a => `<li>Round ${a.round} · <b>${a.decision === 'approve' ? 'Approved' : 'Changes: ' + esc(a.comment)}</b> · ${esc(when(a.at))}</li>`).join('')}</ul></div>` : ''}
+    <div class="sec"><h3>History</h3><ul class="ev">${O.events.map(e => `<li>${esc(when(e.at))} · <b>${esc(e.text)}</b> · ${esc(e.by_who)}</li>`).join('')}</ul></div>
+  </div>`, 'orders:' + o.id);
+  const show = (btn, form) => { const b = document.querySelector(`[data-${btn}]`); if (b) b.onclick = () => { $('#' + form).hidden = false; }; };
+  show('publishbox', 'pubf'); show('datebox', 'datef'); show('paybox', 'payf');
+  const on = (id, fn) => { const f = $('#' + id); if (f) f.onsubmit = e => { e.preventDefault(); fn(Object.fromEntries(new FormData(f))); }; };
+  on('pubf', v => orderAct('publish', v));
+  on('datef', v => orderAct('schedule', v));
+  on('payf', v => orderAct('manual_paid', v));
+  on('edf', v => { if (!v.tier) delete v.tier; orderAct('edit', v); });
+  on('packinv', async v => { try { const r = await api('team/invite', { ...v, company: o.company, tier: 'pack', pack_id: o.id }); openOrder(r.order_id, linkNotice(r, { name: v.name, company: o.company })); } catch (x) { toast(x.message); } });
+  document.querySelectorAll('form[data-content]').forEach(f => f.onsubmit = e => { e.preventDefault(); orderAct('content', { platform: f.dataset.content, text: new FormData(f).get('text') }, 'Saved'); });
+}
+async function orderAct(act, extra, okMsg) {
+  try {
+    const r = await api(`team/orders/${O.order.id}/action`, { act, ...(extra || {}) });
+    O = r; let notice = '';
+    if (r.whatsapp_text) notice = `<div class="ok">${r.emailed ? 'Emailed. ' : 'Not emailed (no email address, or email is not connected yet). '}${r.whatsapp_link ? `<a class="btn g s" href="${esc(r.whatsapp_link)}" target="_blank" rel="noopener">Send on WhatsApp</a>` : ''} ${copyBtn(r.whatsapp_text, 'WhatsApp text')}</div>`;
+    renderOrder(notice); toast(okMsg || 'Done'); refreshBehind();
+  } catch (e) { toast(e.message); }
+}
+function newFeature() {
+  drawer(`<div class="dh"><div><h1>New feature link</h1><p class="sub">For someone not on the leads list.</p></div><button class="x" data-close aria-label="Close">×</button></div>
+  <div class="db"><div class="sec"><form id="nf"><div class="g2">${[['name', 'Name', 1], ['role_title', 'New role', 1], ['company', 'Company', 1], ['email', 'Email'], ['phone', 'WhatsApp']].map(([k, v, r]) => `<label class="f"><span>${v}</span><input type="text" name="${k}" ${r ? 'required' : ''}></label>`).join('')}</div>
+  ${ME.isAdmin ? `<label class="f"><span>Type</span><select name="tier"><option value="">They choose (Free or Plus)</option><option value="pick">Editorial pick</option></select></label>` : ''}<button class="btn" type="submit">Create link</button></form></div></div>`);
+  $('#nf').onsubmit = async e => { e.preventDefault(); const v = Object.fromEntries(new FormData(e.target)); try { const r = await api('team/invite', v); openOrder(r.order_id, linkNotice(r, v)); refreshBehind(); } catch (x) { toast(x.message); } };
+}
+function newPack() {
+  drawer(`<div class="dh"><div><h1>New company pack</h1><p class="sub">4 features over 12 months. The buyer pays on their link, or you record a bank payment.</p></div><button class="x" data-close aria-label="Close">×</button></div>
+  <div class="db"><div class="sec"><form id="np"><div class="g2">${[['company', 'Company', 1], ['name', 'Buyer name', 1], ['role_title', 'Buyer role'], ['email', 'Buyer email'], ['phone', 'Buyer WhatsApp']].map(([k, v, r]) => `<label class="f"><span>${v}</span><input type="text" name="${k}" ${r ? 'required' : ''}></label>`).join('')}</div><button class="btn" type="submit">Create pack</button></form></div></div>`);
+  $('#np').onsubmit = async e => { e.preventDefault(); try { const r = await api('team/packs', Object.fromEntries(new FormData(e.target))); openOrder(r.order_id); refreshBehind(); } catch (x) { toast(x.message); } };
+}
+
+// ── Image builder: the Canva "Boardroom Moves #" template, drawn for each platform ──
+const SIZES = { linkedin: [1080, 1080, 'LinkedIn 1080×1080'], instagram: [1080, 1350, 'Instagram 1080×1350'], website: [1200, 630, 'Website 1200×630'] };
+const YELLOW = '#FFD84D';
+let IB = null, LOGO = null;
+const loadImg = src => new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = () => no(new Error('Could not load ' + src)); i.src = src; });
+async function builder() {
+  const o = O.order, d = o.details || {};
+  if (!o.moves_no) { O = await api(`team/orders/${o.id}/action`, { act: 'number' }); }
+  IB = { name: d.name || o.name, line: `appointed as ${d.role_title || o.role_title} at`, company: d.company || o.company, no: O.order.moves_no, zoom: 1, x: 0, y: 0, photo: null };
+  drawer(`<div class="dh"><div><h1>Images</h1><p class="sub">Same design as the Canva template. Adjust the text and the photo crop, then save all three.</p></div><button class="x" data-close aria-label="Close">×</button></div>
+  <div class="db"><div class="ib"><div class="sec" style="margin-top:12px">
+    <label class="f"><span>Name (yellow)</span><input type="text" id="ibn" value="${esc(IB.name)}"></label>
+    <label class="f"><span>Middle line (white)</span><input type="text" id="ibl" value="${esc(IB.line)}"></label>
+    <label class="f"><span>Company (yellow)</span><input type="text" id="ibc" value="${esc(IB.company)}"></label>
+    <label class="f"><span>Boardroom Moves #</span><input type="number" id="ibno" value="${IB.no || ''}"></label>
+    <label class="f"><span>Photo zoom</span><input type="range" id="ibz" min="1" max="2.5" step="0.01" value="1"></label>
+    <label class="f"><span>Move photo left / right</span><input type="range" id="ibx" min="-1" max="1" step="0.01" value="0"></label>
+    <label class="f"><span>Move photo up / down</span><input type="range" id="iby" min="-1" max="1" step="0.01" value="0"></label>
+    <label class="f"><span>Use a different photo</span><input type="file" id="ibf" accept="image/*"></label>
+    <div class="row">${B('Save all three', { ibsave: 1 })}${B('Back', { openorder: o.id }, 'g')}</div></div>
+    <div class="ibp" style="margin-top:12px">${Object.entries(SIZES).map(([k, [w, h, l]]) => `<figure><canvas id="cv-${k}" width="${w}" height="${h}"></canvas><figcaption>${l}</figcaption></figure>`).join('')}</div></div></div>`, 'orders:' + o.id, true);
+  await document.fonts.load('800 40px "Open Sans"'); await document.fonts.load('700 24px "Open Sans"');
+  try { LOGO = LOGO || await loadImg('/images/logo-boardroomcxo.png'); } catch { LOGO = null; }
+  if (o.photo_key) { try { IB.photo = await loadImg(`/api/moves/team/orders/${o.id}/photo`); } catch { toast('Their photo could not load. Choose one below.'); } }
+  const bindIn = (id, k, num) => { $('#' + id).oninput = e => { IB[k] = num ? Number(e.target.value) : e.target.value; draw(); }; };
+  bindIn('ibn', 'name'); bindIn('ibl', 'line'); bindIn('ibc', 'company'); bindIn('ibno', 'no', 1); bindIn('ibz', 'zoom', 1); bindIn('ibx', 'x', 1); bindIn('iby', 'y', 1);
+  $('#ibf').onchange = async e => { const f = e.target.files[0]; if (f) { IB.photo = await loadImg(URL.createObjectURL(f)); draw(); } };
+  draw();
+}
+function draw() { Object.keys(SIZES).forEach(k => paint($('#cv-' + k), k)); }
+function paint(cv, kind) {
+  const W = cv.width, H = cv.height, g = cv.getContext('2d'), s = kind === 'website' ? 0.72 : 1;
+  g.fillStyle = '#1b1d1c'; g.fillRect(0, 0, W, H);
+  if (IB.photo) { // cover crop, then zoom and pan within the spare area
+    const p = IB.photo, sc = Math.max(W / p.width, H / p.height) * IB.zoom, pw = p.width * sc, ph = p.height * sc;
+    const yb = kind === 'website' ? Math.max(-1, IB.y - 0.7) : IB.y; // the wide crop keeps the face: start near the top of the photo
+    g.drawImage(p, (W - pw) / 2 + IB.x * (pw - W) / 2, (H - ph) / 2 + yb * (ph - H) / 2, pw, ph);
+  }
+  // dark fade behind the text at the bottom
+  const fadeTop = H * (kind === 'website' ? 0.38 : 0.55), gr = g.createLinearGradient(0, fadeTop, 0, H);
+  gr.addColorStop(0, 'rgba(0,0,0,0)'); gr.addColorStop(0.55, 'rgba(0,0,0,0.72)'); gr.addColorStop(1, 'rgba(0,0,0,0.92)');
+  g.fillStyle = gr; g.fillRect(0, fadeTop, W, H - fadeTop);
+  // top-left band: "Boardroom Moves #NN"
+  const bandY = 48 * s, bandH = 52 * s, label = 'Boardroom Moves ', num = IB.no ? '#' + IB.no : '';
+  g.font = `700 ${Math.round(25 * s)}px "Open Sans"`; const lw = g.measureText(label).width, nw = g.measureText(num).width;
+  g.fillStyle = 'rgba(30,30,30,0.62)'; g.fillRect(0, bandY, 40 * s + lw + nw + 150 * s, bandH);
+  g.textBaseline = 'middle'; g.fillStyle = '#fff'; g.fillText(label, 40 * s, bandY + bandH / 2 + 1); g.fillStyle = YELLOW; g.fillText(num, 40 * s + lw, bandY + bandH / 2 + 1);
+  // top-right logo square
+  const ls = 158 * s; if (LOGO) g.drawImage(LOGO, W - ls - 56 * s, 48 * s, ls, ls);
+  // bottom text: name and company in yellow, the line in white, wrapped and centred
+  const fs = Math.round((kind === 'website' ? 34 : 44)), lh = fs * 1.22, maxW = W - (kind === 'website' ? 120 : 90);
+  g.font = `800 ${fs}px "Open Sans"`; g.textBaseline = 'alphabetic';
+  const words = [].concat(...[[IB.name, YELLOW], [IB.line, '#fff'], [IB.company, YELLOW]].map(([t, c]) => String(t || '').split(/\s+/).filter(Boolean).map(w => [w, c])));
+  const lines = []; let cur = [], cw = 0; const sp = g.measureText(' ').width;
+  for (const w of words) { const ww = g.measureText(w[0]).width; if (cur.length && cw + sp + ww > maxW) { lines.push([cur, cw]); cur = []; cw = 0; } cw += (cur.length ? sp : 0) + ww; cur.push([w[0], w[1], ww]); }
+  if (cur.length) lines.push([cur, cw]);
+  const bottom = H - (kind === 'website' ? 38 : 52); let y = bottom - (lines.length - 1) * lh;
+  g.shadowColor = 'rgba(0,0,0,0.35)'; g.shadowBlur = 6;
+  for (const [ws, w] of lines) { let x = (W - w) / 2; for (const [t, c, tw] of ws) { g.fillStyle = c; g.fillText(t, x, y); x += tw + sp; } y += lh; }
+  g.shadowBlur = 0;
+}
+async function saveImages() {
+  if (!IB.photo) return toast('Add a photo first.');
+  const btn = document.querySelector('[data-ibsave]'); btn.disabled = true; btn.textContent = 'Saving…';
+  try {
+    for (const k of Object.keys(SIZES)) {
+      const blob = await new Promise(ok => $('#cv-' + k).toBlob(ok, 'image/png'));
+      await api(`team/orders/${O.order.id}/image/${k}`, undefined, { raw: blob });
+    }
+    toast('Images saved'); openOrder(O.order.id);
+  } catch (e) { toast(e.message); btn.disabled = false; btn.textContent = 'Save all three'; }
+}
+
+// ── Calendar, revenue, settings ──────────────────────────────────────────────
+async function vCalendar() {
+  const d = await api('team/calendar');
+  $('#view').innerHTML = `<div class="head"><div><h1>Calendar</h1><p class="sub">Dedicated posts on Tuesday and Thursday at 6 pm. Moves of the week on Friday.</p></div></div>
+  <div class="cal">${d.days.map(x => `<div class="card day"><div><b>${day(x.date)}</b><span class="k">${x.kind === 'carousel' ? 'Moves of the week' : 'Dedicated post'}</span></div>
+    <div>${x.orders.length ? x.orders.map(o => `<div class="row" style="margin-bottom:4px"><a href="#orders:${o.id}"><b>${esc(o.name)}</b></a> ${esc(o.company || '')} ${tierTag(o.tier)} <span class="tag">${esc(STATUS[o.status] || o.status)}</span></div>`).join('') : `<span class="sub">${x.kind === 'carousel' ? 'No free features yet' : 'Open slot'}</span>`}</div></div>`).join('')}</div>`;
+}
+async function vRevenue() {
+  const d = await api('team/revenue'), m = d.by_month[d.month] || { revenue: 0, plus: 0, packs: 0 }, f = d.funnel;
+  $('#view').innerHTML = `<div class="head"><div><h1>Revenue</h1><p class="sub">Before GST. Target Rs 25,000 to 30,000 a month.</p></div></div>
+  <div class="stat"><div><b>${rs(m.revenue)}</b><span>This month</span></div><div><b>${m.plus}</b><span>Plus features paid</span></div><div><b>${m.packs}</b><span>Company packs paid</span></div><div><b>${Math.round(m.revenue / 280)}%</b><span>Of Rs 28,000</span></div></div>
+  <h2>This month's funnel</h2><div class="stat">${[['requests', 'Requests sent'], ['accepted', 'Accepted'], ['replied', 'Replied'], ['links', 'Links sent'], ['plus_chosen', 'Chose Plus'], ['paid', 'Paid'], ['live', 'Went live']].map(([k, v]) => `<div><b>${f[k]}</b><span>${v}</span></div>`).join('')}</div>
+  <h2>By month</h2><div class="tw"><table><thead><tr><th>Month</th><th class="num">Revenue</th><th class="num">Plus</th><th class="num">Packs</th></tr></thead><tbody>${Object.keys(d.by_month).sort().reverse().map(k => `<tr><td>${k}</td><td class="num">${rs(d.by_month[k].revenue)}</td><td class="num">${d.by_month[k].plus}</td><td class="num">${d.by_month[k].packs}</td></tr>`).join('') || '<tr><td colspan="4" class="empty">No payments yet</td></tr>'}</tbody></table></div>
+  <h2>Payments</h2><div class="tw"><table><thead><tr><th>Date</th><th>Name</th><th>Type</th><th class="num">Total</th><th>Invoice</th></tr></thead><tbody>${d.payments.map(p => `<tr class="click" data-openorder="${p.id}"><td>${esc(String(p.paid_at).slice(0, 10))}</td><td>${esc(p.name)}${p.company ? ', ' + esc(p.company) : ''}</td><td>${tierTag(p.tier)}</td><td class="num">${rs(p.total)}</td><td>${p.invoice_no ? esc(p.invoice_no) : p.books_error ? '<span class="tag over">Problem</span>' : ''}</td></tr>`).join('') || '<tr><td colspan="5" class="empty">No payments yet</td></tr>'}</tbody></table></div>`;
+}
+async function vSettings() {
+  const d = await api('team/settings'), s = d.settings, c = d.connections;
+  const conn = (k, label, how) => `<div><b style="font-size:20px">${c[k] ? 'Connected' : 'Not yet'}</b><span>${label}${c[k] ? '' : ' · ' + how}</span></div>`;
+  $('#view').innerHTML = `<div class="head"><div><h1>Settings</h1></div></div>
+  <div class="stat">${conn('email', 'Email (ZeptoMail)', 'add boardroomcxo.com in ZeptoMail')}${conn('razorpay', 'Razorpay', 'waiting for KYC')}${conn('books', 'Zoho Books invoices', 'needs the Zoho keys')}${conn('loader', 'Daily loader', 'needs its key')}</div>
+  <h2>Team</h2><div class="tw"><table><thead><tr><th>Email</th><th>Name</th><th>Role</th><th>Active</th></tr></thead><tbody>
+    ${d.admins.map(a => `<tr><td>${esc(a)}</td><td></td><td>Admin (owner)</td><td>Yes</td></tr>`).join('')}
+    ${d.staff.filter(x => !d.admins.includes(x.email)).map(x => `<tr><td>${esc(x.email)}</td><td>${esc(x.name || '')}</td><td>${x.role === 'admin' ? 'Admin' : 'Team'}</td><td>${x.active ? 'Yes' : 'No'} ${B(x.active ? 'Turn off' : 'Turn on', { staffon: x.email, name: x.name || '', role: x.role, active: x.active ? 0 : 1 }, 'g s')}</td></tr>`).join('')}</tbody></table></div>
+  <form id="stf" class="card" style="padding:14px;margin-top:10px"><div class="g3"><label class="f"><span>Email</span><input type="email" name="email" required></label><label class="f"><span>Name</span><input type="text" name="name"></label><label class="f"><span>Role</span><select name="role"><option value="member">Team</option><option value="admin">Admin</option></select></label></div><button class="btn s" type="submit">Add to the team</button></form>
+  <h2>Who does what</h2><form id="sf2" class="card" style="padding:14px"><div class="g2">
+    ${Object.entries({ outreach: 'Outreach and publishing', content: 'Replies and drafting', approvals: 'Approvals', checkins: 'Check-ins' }).map(([k, v]) => `<label class="f"><span>${v}</span><input type="email" name="duty_${k}" value="${esc(s.duties[k] || '')}"></label>`).join('')}</div>
+  <h2 style="margin-top:6px">Prices and rules</h2><div class="g3">
+    <label class="f"><span>Plus price (Rs, before GST)</span><input type="number" name="plus" value="${s.prices.plus}"></label><label class="f"><span>Company pack (Rs, before GST)</span><input type="number" name="pack" value="${s.prices.pack}"></label><label class="f"><span>Plus offered from</span><input type="date" name="price_from" value="${esc(s.price_from)}"></label>
+    <label class="f"><span>Connection requests a day</span><input type="number" name="daily_requests" value="${s.daily_requests}"></label><label class="f"><span>Paid features Ketul checks first</span><input type="number" name="internal_approval_first" value="${s.internal_approval_first}"></label><label class="f"><span>Next Boardroom Moves #</span><input type="number" name="moves_next" value="${s.moves_next}"></label>
+    <label class="f"><span>SAC code for invoices</span><input type="text" name="books_sac" value="${esc(s.books_sac)}" placeholder="From the CA"></label><label class="f"><span>WhatsApp community size</span><input type="text" name="whatsapp_community" value="${esc(s.whatsapp_community)}"></label></div>
+  <button class="btn" type="submit">Save settings</button></form>`;
+  $('#stf').onsubmit = async e => { e.preventDefault(); try { await api('team/settings', { staff: Object.fromEntries(new FormData(e.target)) }); toast('Added'); vSettings(); } catch (x) { toast(x.message); } };
+  $('#sf2').onsubmit = async e => {
+    e.preventDefault(); const v = Object.fromEntries(new FormData(e.target));
+    const settings = { duties: { outreach: v.duty_outreach, content: v.duty_content, approvals: v.duty_approvals, checkins: v.duty_checkins },
+      prices: { ...s.prices, plus: Number(v.plus), pack: Number(v.pack) }, price_from: v.price_from, daily_requests: Number(v.daily_requests),
+      internal_approval_first: Number(v.internal_approval_first), moves_next: Number(v.moves_next), books_sac: v.books_sac.trim(), whatsapp_community: v.whatsapp_community };
+    try { await api('team/settings', { settings }); toast('Settings saved'); } catch (x) { toast(x.message); }
+  };
+}
+
+// ── Drawer and clicks ────────────────────────────────────────────────────────
+function drawer(html, hash, wide) {
+  COPY.clear(); $('#drawer').classList.toggle('wide', Boolean(wide));
+  $('#drawer').innerHTML = html; $('#drawer').hidden = false; $('#scrim').hidden = false; $('#drawer').scrollTop = 0;
+  if (hash && location.hash.slice(1) !== hash) history.replaceState(null, '', '#' + hash);
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  $('#drawer').hidden = true; $('#scrim').hidden = true; document.body.style.overflow = '';
+  const v = location.hash.slice(1).split(':')[0]; if (location.hash.includes(':')) history.replaceState(null, '', '#' + v);
+}
+function refreshBehind() { const v = (location.hash.slice(1) || 'today').split(':')[0]; ({ today: vToday, leads: vLeads, orders: vOrders })[v]?.().catch(() => {}); }
+$('#scrim').onclick = closeDrawer;
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#drawer').hidden) closeDrawer(); });
+document.addEventListener('click', async e => {
+  const el = e.target.closest('[data-copy],[data-close],[data-lead],[data-openlead],[data-openorder],[data-oact],[data-mine],[data-stage],[data-ofilter],[data-addlead],[data-newfeature],[data-newpack],[data-builder],[data-ibsave],[data-staffon]');
+  if (!el) return;
+  const ds = el.dataset;
+  if (ds.copy) { const [t, l] = COPY.get(ds.copy) || ['', '']; return copy(t, l); }
+  if ('close' in ds) return closeDrawer();
+  if (ds.lead) {
+    if (ds.stay) return leadAct(ds.lead, ds.act, null, true);
+    el.closest('.task')?.classList.add('done'); return leadAct(ds.lead, ds.act);
+  }
+  if (ds.openlead) return openLead(ds.openlead).catch(x => toast(x.message));
+  if (ds.oact) {
+    if (ds.confirm && !el.dataset.armed) { el.dataset.armed = 1; el.textContent = 'Click again to confirm'; toast(ds.confirm); return; }
+    if (ds.order) { try { await api(`team/orders/${ds.order}/action`, { act: ds.oact }); el.closest('.task')?.classList.add('done'); toast('Saved'); } catch (x) { toast(x.message); } return; }
+    return orderAct(ds.oact, ds.kind ? { kind: ds.kind } : {});
+  }
+  if (ds.openorder) return openOrder(ds.openorder).catch(x => toast(x.message));
+  if (ds.mine) { mineOnly = ds.mine === '1'; return vToday(); }
+  if (ds.stage !== undefined) { leadStage = ds.stage; return vLeads(); }
+  if (ds.ofilter) { orderFilter = ds.ofilter; return vOrders(); }
+  if (ds.addlead) return addLead();
+  if (ds.newfeature) return newFeature();
+  if (ds.newpack) return newPack();
+  if (ds.builder) return builder().catch(x => toast(x.message));
+  if (ds.ibsave) return saveImages();
+  if (ds.staffon) { try { await api('team/settings', { staff: { email: ds.staffon, name: ds.name, role: ds.role, active: ds.active === '1' } }); vSettings(); } catch (x) { toast(x.message); } }
+});
+boot();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Your Boardroom Moves feature | BoardRoom CXO</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/images/favicon.png" type="image/png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+:root{--bg:#F7F6F2;--bg-alt:#EAE8E1;--surface:#FFFFFF;--ink:#0F1110;--ink-2:#4A4D4A;--emerald:#1A362D;--emerald-2:#244A3D;--gold:#D4A860;--line:#D1CFCA;--bad:#9B2C1F;
+--display:'Bodoni Moda','Times New Roman',serif;--body:'Manrope',system-ui,sans-serif;--mono:'Space Mono',ui-monospace,monospace}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+[hidden]{display:none!important}
+.top{background:var(--emerald);color:var(--bg);padding:14px max(18px,env(safe-area-inset-right)) 14px max(18px,env(safe-area-inset-left));display:flex;align-items:center;justify-content:space-between;gap:12px}
+.top b{font-family:var(--display);font-size:19px;font-weight:600;letter-spacing:.01em}
+.top span{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.bar{height:3px;background:var(--bg-alt)}.bar i{display:block;height:100%;background:var(--gold);width:0;transition:width .4s}
+main{flex:1;width:100%;max-width:640px;margin:0 auto;padding:clamp(28px,6vw,56px) max(18px,env(safe-area-inset-right)) 48px max(18px,env(safe-area-inset-left))}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);margin:0 0 14px}
+h1{font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,6vw,2.6rem);line-height:1.1;letter-spacing:-.015em;margin:0 0 14px;text-wrap:balance}
+h2{font-family:var(--display);font-weight:500;font-size:1.45rem;margin:0 0 8px}
+p.lead{color:var(--ink-2);font-size:1.05rem;margin:0 0 26px;max-width:52ch}
+label.f{display:block;margin:0 0 18px}
+label.f>span{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+label.f small{display:block;color:var(--ink-2);font-size:12.5px;margin-top:5px}
+input[type=text],input[type=email],input[type=tel],input[type=date],select,textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:0;padding:13px 14px;outline:none;transition:border-color .15s}
+input:focus,select:focus,textarea:focus{border-color:var(--emerald);box-shadow:0 0 0 1px var(--emerald)}
+textarea{min-height:150px;resize:vertical;line-height:1.55}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px}
+.btn{appearance:none;border:1px solid var(--emerald);background:var(--emerald);color:var(--bg);font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding:15px 24px;cursor:pointer;border-radius:0;display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.btn:hover{background:var(--emerald-2)}.btn:disabled{opacity:.5;cursor:wait}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}.btn.ghost:hover{border-color:var(--ink)}
+.link{background:none;border:0;padding:0;font:inherit;color:var(--ink-2);text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:14px}
+.hint{font-size:12.5px;color:var(--ink-2)}
+.err{background:#F6E4DF;border-left:3px solid var(--bad);color:var(--bad);padding:11px 14px;font-size:14px;margin:0 0 18px}
+.pkgs{display:grid;gap:14px}
+.pkg{display:block;text-align:left;width:100%;background:var(--surface);border:1px solid var(--line);padding:22px 22px 20px;cursor:pointer;font:inherit;color:inherit;border-radius:0;position:relative;transition:border-color .15s}
+.pkg:hover{border-color:var(--ink)}.pkg.on{border-color:var(--emerald);box-shadow:inset 0 0 0 1px var(--emerald)}
+.pkg .pt{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px}
+.pkg h3{font-family:var(--display);font-weight:500;font-size:1.5rem;margin:0}
+.pkg .pr{font-family:var(--mono);font-size:13px;white-space:nowrap}
+.pkg ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.pkg li{padding-left:18px;position:relative;color:var(--ink-2);font-size:14.5px}
+.pkg li::before{content:'—';position:absolute;left:0;color:var(--emerald)}
+.photo{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center;margin-bottom:8px}
+.photo .ph{width:120px;height:120px;background:var(--bg-alt) center/cover no-repeat;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink-2);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;text-align:center}
+.drop{border:1px dashed var(--ink-2);padding:18px;text-align:center;cursor:pointer;background:var(--surface)}
+.drop.over{border-color:var(--emerald);background:#EEF2EF}
+.check{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);padding:16px;cursor:pointer;font-size:14.5px}
+.check input{width:20px;height:20px;margin-top:2px;accent-color:var(--emerald);flex:none}
+.seg{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-bottom:18px}
+.seg button{font:inherit;font-size:14px;padding:12px;border:0;background:var(--surface);cursor:pointer;color:var(--ink-2)}
+.seg button.on{background:var(--emerald);color:var(--bg)}
+.sum{background:var(--surface);border:1px solid var(--line);padding:18px 20px;margin:0 0 6px;font-size:14.5px}
+.sum div{display:flex;justify-content:space-between;gap:12px;padding:4px 0}
+.sum div.t{border-top:1px solid var(--line);margin-top:8px;padding-top:10px;font-weight:700}
+.tl{list-style:none;margin:28px 0 0;padding:0;border-left:1px solid var(--line)}
+.tl li{position:relative;padding:0 0 18px 24px;color:var(--ink-2);font-size:14.5px}
+.tl li::before{content:'';position:absolute;left:-6px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:1px solid var(--line)}
+.tl li.done{color:var(--ink)}.tl li.done::before{background:var(--emerald);border-color:var(--emerald)}
+.tl li.now{color:var(--ink);font-weight:600}.tl li.now::before{background:var(--gold);border-color:var(--gold)}
+.rv{background:var(--surface);border:1px solid var(--line);margin:0 0 16px}
+.rv h3{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:400;margin:0;padding:12px 16px;border-bottom:1px solid var(--line);color:var(--ink-2)}
+.rv pre{white-space:pre-wrap;word-wrap:break-word;font:inherit;font-size:15px;margin:0;padding:16px;max-height:420px;overflow:auto}
+.imgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;padding:14px}
+.imgs figure{margin:0}.imgs img{width:100%;border:1px solid var(--line);display:block}.imgs figcaption{font-size:12px;color:var(--ink-2);margin-top:4px}
+.links a{display:block;border:1px solid var(--line);background:var(--surface);padding:15px 18px;margin-bottom:10px;color:var(--ink);text-decoration:none;font-weight:600}
+.links a:hover{border-color:var(--emerald)}
+.qn{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--ink-2);margin-bottom:8px}
+footer{font-size:12px;color:var(--ink-2);text-align:center;padding:18px 18px calc(18px + env(safe-area-inset-bottom))}
+footer a{color:inherit}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:sp .7s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.fade{animation:fd .25s ease}@keyframes fd{from{transform:translateY(6px)}to{transform:none}}
+@media(prefers-reduced-motion:reduce){.fade{animation:none}}
+@media(max-width:480px){.row2{grid-template-columns:1fr}.photo{grid-template-columns:96px 1fr}.photo .ph{width:96px;height:96px}}
+</style>
+</head>
+<body>
+<header class="top"><b>BoardRoom CXO</b><span>Boardroom Moves</span></header>
+<div class="bar"><i id="bar"></i></div>
+<main id="app" aria-live="polite"><p class="hint"><span class="spin"></span> Loading your feature…</p></main>
+<footer>Questions? Reply to our message or write to <a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a></footer>
+<script>
+(() => {
+const token = new URLSearchParams(location.search).get('t') || '';
+const API = '/api/moves/f/' + encodeURIComponent(token);
+const app = document.getElementById('app'), bar = document.getElementById('bar');
+let V = null, step = null, qi = 0, err = '', busy = false, photoUrl = '', draft = {};
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const first = n => String(n || '').trim().split(/\s+/)[0] || '';
+const rs = n => 'Rs ' + Number(n || 0).toLocaleString('en-IN');
+const niceDate = d => d ? new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' }) : '';
+const STATE_NAMES = { AN:'Andaman & Nicobar',AP:'Andhra Pradesh',AR:'Arunachal Pradesh',AS:'Assam',BR:'Bihar',CH:'Chandigarh',CT:'Chhattisgarh',DL:'Delhi',DN:'Dadra & Nagar Haveli and Daman & Diu',GA:'Goa',GJ:'Gujarat',HP:'Himachal Pradesh',HR:'Haryana',JH:'Jharkhand',JK:'Jammu & Kashmir',KA:'Karnataka',KL:'Kerala',LA:'Ladakh',LD:'Lakshadweep',MH:'Maharashtra',ML:'Meghalaya',MN:'Manipur',MP:'Madhya Pradesh',MZ:'Mizoram',NL:'Nagaland',OR:'Odisha',PB:'Punjab',PY:'Puducherry',RJ:'Rajasthan',SK:'Sikkim',TN:'Tamil Nadu',TR:'Tripura',TS:'Telangana',UK:'Uttarakhand',UP:'Uttar Pradesh',WB:'West Bengal' };
+
+async function call(path, body, form) {
+  const opt = body || form ? { method: 'POST' } : {};
+  if (body) { opt.headers = { 'Content-Type': 'application/json' }; opt.body = JSON.stringify(body); }
+  if (form) opt.body = form;
+  const r = await fetch(API + (path ? '/' + path : ''), opt);
+  const d = await r.json().catch(() => ({ error: 'Something went wrong. Please try again.' }));
+  if (!r.ok) throw new Error(d.error || 'Something went wrong. Please try again.');
+  return d;
+}
+async function act(path, body, form, nextStep) {
+  if (busy) return; busy = true; err = ''; render();
+  try { V = await call(path, body, form); if (nextStep !== undefined) step = nextStep; }
+  catch (e) { err = e.message; }
+  busy = false; render();
+}
+
+// Which screens this person still needs, in order.
+function flow() {
+  const s = [];
+  if (!V.pack_buyer) {
+    s.push('welcome');
+    if (!V.locked_tier && !V.paid) s.push('package');
+    s.push('details', 'contact', 'photo');
+    if (V.tier && V.tier !== 'free') s.push('questions');
+    s.push('consent');
+    if (V.tier === 'plus' && !V.paid) s.push('billing', 'pay');
+  } else if (!V.paid) s.push('packwelcome', 'billing', 'pay');
+  return s;
+}
+const inWizard = () => ['invited', 'details', 'payment'].includes(V.status) || (V.pack_buyer && !V.paid);
+function firstOpen() {
+  const d = V.details || {};
+  if (V.pack_buyer) return V.payer_type ? 'pay' : 'packwelcome';
+  if (V.status === 'invited' && !V.tier) return 'welcome';
+  if (!V.tier) return 'package';
+  if (!(d.name && d.role_title && d.company)) return 'details';
+  if (!V.email || !V.phone) return 'contact';
+  if (!V.has_photo) return 'photo';
+  if (V.tier !== 'free' && !V.skip_questions && (d.answers || []).filter(a => String(a || '').trim()).length < 3) return 'questions';
+  if (!V.consent) return 'consent';
+  if (V.tier === 'plus' && !V.paid) return V.payer_type ? 'pay' : 'billing';
+  return null;
+}
+function go(dir) {
+  const f = flow(), i = f.indexOf(step);
+  step = f[Math.max(0, Math.min(f.length - 1, i + dir))]; err = ''; qi = 0; render(); scrollTo(0, 0);
+}
+
+function render() {
+  if (!V) return;
+  if (inWizard() && !step) step = firstOpen() || 'done';
+  if (!inWizard()) step = null;
+  const f = flow(), i = f.indexOf(step);
+  bar.style.width = inWizard() ? Math.round(((i < 0 ? f.length : i) + 1) / (f.length + 1) * 100) + '%' : '100%';
+  const E = err ? `<div class="err" role="alert">${esc(err)}</div>` : '';
+  const html = inWizard() ? (SCREENS[step] || SCREENS.done)() : STATUS();
+  app.innerHTML = `<div class="fade">${html.replace('%ERR%', E)}</div>`;
+  bind();
+}
+const back = () => `<button type="button" class="link" data-go="-1">Back</button>`;
+const btn = (label, attr) => `<button type="submit" class="btn" ${busy ? 'disabled' : ''} ${attr || ''}>${busy ? '<span class="spin"></span>' : ''}${esc(label)}</button>`;
+
+const SCREENS = {
+  welcome: () => `<p class="kicker">Boardroom Moves</p><h1>Congratulations${V.name ? ', ' + esc(first(V.name)) : ''}.</h1>
+    <p class="lead">${V.role_title || V.company ? `Your move to <strong>${esc([V.role_title, V.company].filter(Boolean).join(' at '))}</strong> deserves to be seen. ` : ''}This takes about five minutes: ${V.locked_tier ? 'confirm your details, add a photo' : 'choose how you would like your move carried, confirm your details, add a photo'}, and you approve everything before it goes live.</p>
+    ${V.tier === 'pick' ? `<p class="lead">You have been chosen as an <strong>Editorial pick</strong>: a dedicated feature on us.</p>` : ''}
+    ${V.tier === 'pack' ? `<p class="lead">Your company has arranged a <strong>dedicated feature</strong> for you.</p>` : ''}
+    <form data-f="next"><div class="actions">${btn('Start')}</div></form>`,
+  package: () => `<p class="kicker">Step 1 · Your feature</p><h1>How would you like your move carried?</h1>%ERR%
+    <div class="pkgs">${V.packages.map(p => `<button type="button" class="pkg ${V.tier === p.tier ? 'on' : ''}" data-tier="${p.tier}">
+      <div class="pt"><h3>${esc(p.title)}</h3><span class="pr">${p.price ? rs(p.price) + ' + GST' : 'Free'}</span></div>
+      <ul>${p.includes.map(x => `<li>${esc(x)}</li>`).join('')}</ul>${p.price ? `<p class="hint" style="margin:12px 0 0">${rs(p.total)} including GST. GST invoice to you or your company.</p>` : ''}</button>`).join('')}</div>
+    <div class="actions">${back()}</div>`,
+  details: () => { const d = V.details || {}; return `<p class="kicker">Your move</p><h1>Is this right?</h1><p class="lead">We use these exact words in your post.</p>%ERR%
+    <form data-f="details"><label class="f"><span>Your full name</span><input type="text" name="name" value="${esc(d.name || V.name)}" required autocomplete="name"></label>
+    <label class="f"><span>New role title</span><input type="text" name="role_title" value="${esc(d.role_title || V.role_title)}" required placeholder="e.g. Chief Marketing Officer"></label>
+    <label class="f"><span>Company</span><input type="text" name="company" value="${esc(d.company || V.company)}" required></label>
+    <div class="row2"><label class="f"><span>Start date</span><input type="date" name="start_date" value="${esc(d.start_date || '')}"></label>
+    <label class="f"><span>City</span><input type="text" name="city" value="${esc(d.city || '')}" placeholder="e.g. Mumbai"></label></div>
+    <label class="f"><span>Previous role <em style="font-weight:400;color:var(--ink-2)">(optional)</em></span><input type="text" name="prev_role" value="${esc(d.prev_role || '')}" placeholder="e.g. VP Marketing, Tanishq"><small>Mentioned in the post if you add it.</small></label>
+    <label class="f"><span>Your LinkedIn profile <em style="font-weight:400;color:var(--ink-2)">(so we tag you)</em></span><input type="text" name="linkedin" value="${esc(d.linkedin || '')}" placeholder="https://www.linkedin.com/in/…"></label>
+    <div class="actions">${btn('Continue')} ${back()}</div></form>`; },
+  contact: () => `<p class="kicker">Staying in touch</p><h1>Where should we send your draft?</h1><p class="lead">You get the draft to approve, and the links once it is live. Nothing else.</p>%ERR%
+    <form data-f="contact"><label class="f"><span>Email</span><input type="email" name="email" value="${esc(V.email || '')}" required autocomplete="email"></label>
+    <label class="f"><span>WhatsApp number</span><input type="tel" name="phone" value="${esc(V.phone || '')}" required autocomplete="tel" placeholder="+91 98xxx xxxxx"></label>
+    <div class="actions">${btn('Continue')} ${back()}</div></form>`,
+  photo: () => `<p class="kicker">Your photo</p><h1>Add a professional photo</h1><p class="lead">A clear headshot works best: face the camera, plain background, good light. We use it in your post${V.tier !== 'free' ? ' and profile page' : ''}.</p>%ERR%
+    <form data-f="photo"><div class="photo"><div class="ph" id="ph" style="${photoUrl ? `background-image:url('${photoUrl}')` : ''}">${photoUrl ? '' : 'No photo<br>yet'}</div>
+    <label class="drop" id="drop"><input type="file" id="file" accept="image/jpeg,image/png,image/webp" hidden><strong>${V.has_photo ? 'Change photo' : 'Choose a photo'}</strong><br><span class="hint">JPG, PNG or WebP, up to 10 MB</span></label></div>
+    <div class="actions">${V.has_photo ? btn('Continue') : ''} ${back()}</div></form>`,
+  questions: () => { const d = V.details || {}, a = draft.answers || d.answers || [], q = V.questions[qi];
+    return `<p class="kicker">In your words · ${qi + 1} of ${V.questions.length}</p><h1>${esc(q)}</h1><p class="lead">A few lines is plenty. We shape it into your post and you approve it.</p>%ERR%
+    <form data-f="answer"><label class="f"><textarea name="a" placeholder="Type your answer…">${esc(a[qi] || '')}</textarea></label>
+    <div class="actions">${btn(qi < V.questions.length - 1 ? 'Next question' : 'Continue')} <button type="button" class="link" data-qback>Back</button></div></form>
+    <p class="hint" style="margin-top:28px">Short on time? <button type="button" class="link" data-skipq>Skip the questions</button> and we prepare it from your public profile. You still approve it.</p>`; },
+  consent: () => `<p class="kicker">Almost done</p><h1>One confirmation</h1>%ERR%
+    <form data-f="consent"><label class="check"><input type="checkbox" name="ok" ${V.consent ? 'checked' : ''} required><span>I agree to BoardRoom CXO featuring my move${V.tier && V.tier !== 'free' && !V.skip_questions ? ', my photo and my answers' : ' and my photo'} on its LinkedIn page${V.tier && V.tier !== 'free' ? ', Instagram and boardroomcxo.com' : ' and boardroomcxo.com'}. Nothing goes live until I approve the draft, and I can ask for it to be taken down later.</span></label>
+    <div class="actions">${btn(V.tier === 'plus' && !V.paid ? 'Continue to payment' : 'Submit')} ${back()}</div></form>`,
+  packwelcome: () => `<p class="kicker">Boardroom Moves · Company pack</p><h1>${esc(V.company || 'Your company')}'s leadership features</h1>
+    <p class="lead">${V.pack_terms.features} dedicated Boardroom Moves features for your leadership hires, to use over ${V.pack_terms.months} months. Each person gets their own link to share details and approve their feature.</p>
+    <form data-f="next"><div class="actions">${btn('Continue to billing')}</div></form>`,
+  billing: () => `<p class="kicker">Billing</p><h1>Who should the GST invoice go to?</h1>%ERR%
+    <form data-f="billing"><div class="seg" role="tablist"><button type="button" data-payer="self" class="${(draft.payer || V.payer_type || (V.pack_buyer ? 'company' : 'self')) === 'self' ? 'on' : ''}">Me</button><button type="button" data-payer="company" class="${(draft.payer || V.payer_type || (V.pack_buyer ? 'company' : 'self')) === 'company' ? 'on' : ''}">My company</button></div>
+    <label class="f"><span>Name on the invoice</span><input type="text" name="billing_name" value="${esc(V.billing_name || ((draft.payer || V.payer_type) === 'company' || V.pack_buyer ? V.company : V.name) || '')}" required></label>
+    <label class="f"><span>GSTIN <em style="font-weight:400;color:var(--ink-2)">(optional)</em></span><input type="text" name="gstin" value="${esc(V.gstin || '')}" maxlength="15" style="text-transform:uppercase" placeholder="22AAAAA0000A1Z5"><small>Add it to claim input tax credit.</small></label>
+    <label class="f"><span>State</span><select name="billing_state" required><option value="">Choose your state</option>${V.states.map(s => `<option value="${s}" ${V.billing_state === s ? 'selected' : ''}>${esc(STATE_NAMES[s] || s)}</option>`).join('')}</select></label>
+    <label class="f"><span>Invoice email</span><input type="email" name="billing_email" value="${esc(V.billing_email || V.email || '')}" required></label>
+    <div class="actions">${btn('Continue')} ${V.pack_buyer ? '' : back()}</div></form>`,
+  pay: () => `<p class="kicker">Payment</p><h1>${V.pack_buyer ? 'Company pack' : 'Plus feature'}</h1>%ERR%
+    <div class="sum"><div><span>${V.pack_buyer ? `Boardroom Moves Company pack (${V.pack_terms.features} features, ${V.pack_terms.months} months)` : 'Boardroom Moves Plus feature'}</span><span>${rs(V.price)}</span></div><div><span>GST 18%</span><span>${rs(V.gst)}</span></div><div class="t"><span>Total</span><span>${rs(V.total)}</span></div></div>
+    <p class="hint">Invoice to ${esc(V.billing_name || '')}${V.gstin ? ' · GSTIN ' + esc(V.gstin) : ''}. <button type="button" class="link" data-go="-1">Change</button></p>
+    ${V.pay_online ? `<form data-f="pay"><div class="actions">${btn('Pay ' + rs(V.total))}</div><p class="hint" style="margin-top:14px">Secure payment by UPI, card or net banking through Razorpay. Your GST invoice appears on this page once paid.</p></form>`
+      : `<div class="sum" style="margin-top:18px"><strong>Online payment opens shortly.</strong><br><span class="hint">Our team will send you a payment link on WhatsApp. Your details are saved.</span></div>`}
+    ${V.pack_buyer ? '' : `<p class="hint" style="margin-top:26px">Changed your mind? <button type="button" class="link" data-free>Switch to the free feature</button></p>`}`,
+  done: () => STATUS()
+};
+
+// After the wizard: where things stand.
+function STATUS() {
+  if (V.pack_buyer) return `<p class="kicker">Company pack</p><h1>Your pack is active</h1><p class="lead">${V.pack_terms.features} Boardroom Moves features to use${V.pack_terms.until ? ' until ' + esc(niceDate(V.pack_terms.until)) : ''}. Send us the names of the leaders you would like featured and we send each one their own link.</p>${invoiceLine()}`;
+  const plus = V.tier === 'plus';
+  const steps = [['Your details and photo', true], ...(plus ? [['Payment', V.paid]] : []), ['We prepare your draft', ['approval', 'changes', 'approved', 'scheduled', 'live'].includes(V.status)],
+    ['You approve it', ['approved', 'scheduled', 'live'].includes(V.status)], ['Live', V.status === 'live']];
+  const nowI = steps.findIndex(s => !s[1]);
+  const tl = `<ol class="tl">${steps.map((s, i) => `<li class="${s[1] ? 'done' : i === nowI ? 'now' : ''}">${esc(s[0])}</li>`).join('')}</ol>`;
+  if (V.status === 'removed') return `<h1>Your feature has been taken down</h1><p class="lead">As you asked. Reply to our message if anything else is needed.</p>`;
+  if (V.status === 'approval') return REVIEW();
+  if (V.status === 'changes') return `<p class="kicker">Revising</p><h1>Thank you. We are making your changes.</h1><p class="lead">You asked: “${esc(V.change_note)}”. You will get the revised draft to approve.</p>${tl}`;
+  if (V.status === 'approved' || V.status === 'scheduled') return `<p class="kicker">Approved</p><h1>You are scheduled${V.slot_date ? ' for ' + esc(niceDate(V.slot_date)) : ''}.</h1><p class="lead">${V.tier === 'free' ? 'You appear in that day\'s Moves of the week post.' : 'Your post goes live at 6 pm India time.'} We send you the links as soon as it is live.</p>${tl}${invoiceLine()}`;
+  if (V.status === 'live') return `<p class="kicker">Live</p><h1>Your feature is live.</h1><p class="lead">A like or a comment from you on the LinkedIn post helps it reach more people.</p>
+    <div class="links">${V.linkedin_url ? `<a href="${esc(V.linkedin_url)}" target="_blank" rel="noopener">LinkedIn post →</a>` : ''}${V.instagram_url ? `<a href="${esc(V.instagram_url)}" target="_blank" rel="noopener">Instagram post →</a>` : ''}${V.site_url ? `<a href="${esc(V.site_url)}" target="_blank">Your page on boardroomcxo.com →</a>` : ''}</div>${invoiceLine()}`;
+  return `<p class="kicker">Thank you</p><h1>We have everything we need${V.name ? ', ' + esc(first(V.name)) : ''}.</h1><p class="lead">We are preparing your draft. You get it by email${V.phone ? ' and WhatsApp' : ''} to approve, and nothing goes live until you do.</p>${tl}${invoiceLine()}
+    ${V.tier === 'free' && V.packages.some(p => p.tier === 'plus') ? `<p class="hint" style="margin-top:22px">Want your own dedicated post and a profile page? <button type="button" class="link" data-upgrade>See Plus</button></p>` : ''}`;
+}
+function invoiceLine() {
+  if (!V.paid) return '';
+  return V.invoice ? `<p style="margin-top:22px"><a class="btn ghost" href="${API}/invoice">Download GST invoice${V.invoice_no ? ' ' + esc(V.invoice_no) : ''}</a></p>` : `<p class="hint" style="margin-top:22px">Payment received. Your GST invoice appears here shortly.</p>`;
+}
+function REVIEW() {
+  const r = V.review || { contents: {}, images: [] }, names = { linkedin: 'LinkedIn post', instagram: 'Instagram caption', website: 'Your page on boardroomcxo.com', carousel: 'Your line in Moves of the week' };
+  const imgNames = { linkedin: 'LinkedIn', instagram: 'Instagram', website: 'Website' };
+  return `<p class="kicker">Your approval</p><h1>Your draft is ready</h1><p class="lead">Read it through. Approve it, or tell us what to change. Nothing goes live until you approve.</p>%ERR%
+    ${r.images.length ? `<section class="rv"><h3>Images</h3><div class="imgs">${r.images.map(k => `<figure><img src="${API}/image/${k}" alt="${imgNames[k]} image"><figcaption>${imgNames[k]}</figcaption></figure>`).join('')}</div></section>` : ''}
+    ${Object.entries(r.contents).filter(([, t]) => t).map(([k, t]) => `<section class="rv"><h3>${names[k] || k}</h3><pre>${esc(t)}</pre></section>`).join('')}
+    <form data-f="approve"><div class="actions">${btn('Approve')} <button type="button" class="btn ghost" data-changes>Ask for changes</button></div></form>
+    <form data-f="changes" id="chg" hidden style="margin-top:22px"><label class="f"><span>What should we change?</span><textarea name="comment" placeholder="e.g. Please use “Head of Retail” and remove the line about…" required></textarea></label><div class="actions">${btn('Send changes')}</div></form>`;
+}
+
+function bind() {
+  app.querySelectorAll('[data-go]').forEach(b => b.onclick = () => go(Number(b.dataset.go)));
+  app.querySelectorAll('[data-tier]').forEach(b => b.onclick = () => act('choose', { tier: b.dataset.tier }, null, 'details'));
+  app.querySelectorAll('[data-payer]').forEach(b => b.onclick = () => { draft.payer = b.dataset.payer; render(); });
+  const free = app.querySelector('[data-free]'); if (free) free.onclick = () => act('choose', { tier: 'free' }, null, null);
+  const up = app.querySelector('[data-upgrade]'); if (up) up.onclick = () => act('choose', { tier: 'plus' }, null, 'questions');
+  const ch = app.querySelector('[data-changes]'); if (ch) ch.onclick = () => { const f = document.getElementById('chg'); f.hidden = false; f.querySelector('textarea').focus(); };
+  const qb = app.querySelector('[data-qback]'); if (qb) qb.onclick = () => { saveAnswer(); if (qi > 0) { qi--; render(); } else go(-1); };
+  const sk = app.querySelector('[data-skipq]'); if (sk) sk.onclick = () => act('details', { skip_questions: true }, null, 'consent');
+  const file = document.getElementById('file'), drop = document.getElementById('drop');
+  if (file) {
+    file.onchange = () => file.files[0] && upload(file.files[0]);
+    drop.ondragover = e => { e.preventDefault(); drop.classList.add('over'); };
+    drop.ondragleave = () => drop.classList.remove('over');
+    drop.ondrop = e => { e.preventDefault(); drop.classList.remove('over'); e.dataTransfer.files[0] && upload(e.dataTransfer.files[0]); };
+  }
+  app.querySelectorAll('form[data-f]').forEach(f => f.onsubmit = e => { e.preventDefault(); submit(f.dataset.f, Object.fromEntries(new FormData(f))); });
+  const firstInput = app.querySelector('input:not([type=hidden]):not([type=checkbox]):not([type=file]),textarea');
+  if (firstInput && !('ontouchstart' in window)) firstInput.focus();
+}
+function saveAnswer() {
+  const t = app.querySelector('textarea[name=a]'); if (!t) return;
+  draft.answers = (draft.answers || (V.details.answers || []).slice()); draft.answers[qi] = t.value;
+}
+async function upload(f) {
+  if (!/^image\/(jpeg|png|webp)$/.test(f.type)) { err = 'Use a JPG, PNG or WebP photo.'; return render(); }
+  if (f.size > 10 * 1024 * 1024) { err = 'That photo is over 10 MB. Use a smaller one.'; return render(); }
+  photoUrl = URL.createObjectURL(f);
+  const fd = new FormData(); fd.append('photo', f);
+  await act('photo', null, fd);
+}
+async function submit(kind, v) {
+  if (kind === 'next') return go(1);
+  if (kind === 'details') return act('details', v, null, 'contact');
+  if (kind === 'contact') {
+    if (String(v.phone).replace(/\D/g, '').length < 10) { err = 'Enter your WhatsApp number with the country code if you are outside India.'; return render(); }
+    return act('details', v, null, 'photo');
+  }
+  if (kind === 'photo') return go(1);
+  if (kind === 'answer') {
+    saveAnswer();
+    if (qi < V.questions.length - 1) { qi++; err = ''; render(); return; }
+    const filled = draft.answers.filter(a => String(a || '').trim()).length;
+    if (filled < 3) { err = `Answer at least three questions (you have ${filled}), or skip them all below.`; return render(); }
+    return act('details', { answers: draft.answers, skip_questions: false }, null, 'consent');
+  }
+  if (kind === 'consent') { await act('details', { consent: true }, null, V.tier === 'plus' && !V.paid ? 'billing' : 'done'); return; }
+  if (kind === 'billing') return act('billing', { ...v, payer_type: draft.payer || V.payer_type || (V.pack_buyer ? 'company' : 'self') }, null, 'pay');
+  if (kind === 'pay') return pay();
+  if (kind === 'approve') return act('approve', { decision: 'approve' });
+  if (kind === 'changes') return act('approve', { decision: 'changes', comment: v.comment });
+}
+async function pay() {
+  if (busy) return; busy = true; err = ''; render();
+  try {
+    const o = await call('pay', {});
+    if (o.dev) { V = await call('paid', { dev: true }); busy = false; step = null; return render(); }
+    await loadRazorpay();
+    const rz = new window.Razorpay({
+      key: o.key, order_id: o.order_id, amount: o.amount, currency: 'INR', name: 'BoardRoom CXO', description: V.pack_buyer ? 'Boardroom Moves Company pack' : 'Boardroom Moves Plus feature',
+      prefill: { name: o.name || '', email: o.email || '', contact: o.phone || '' }, theme: { color: '#1A362D' },
+      handler: async resp => { busy = true; render(); try { V = await call('paid', resp); step = null; } catch (e) { err = e.message; } busy = false; render(); },
+      modal: { ondismiss: () => { busy = false; render(); } }
+    });
+    rz.on('payment.failed', r => { err = (r.error && r.error.description) || 'The payment did not go through. Try again.'; busy = false; render(); });
+    rz.open();
+  } catch (e) { err = e.message; busy = false; render(); }
+}
+function loadRazorpay() {
+  return window.Razorpay ? Promise.resolve() : new Promise((ok, no) => { const s = document.createElement('script'); s.src = 'https://checkout.razorpay.com/v1/checkout.js'; s.onload = ok; s.onerror = () => no(new Error('The payment window could not load. Check your connection and try again.')); document.head.appendChild(s); });
+}
+
+(async () => {
+  if (!/^[a-f0-9]{48}$/.test(token)) { app.innerHTML = `<h1>This link is incomplete</h1><p class="lead">Open the full link from our message, or reply and we will send it again.</p>`; return; }
+  try { V = await call(''); if (V.has_photo) photoUrl = API + '/photo?v=' + Date.now(); render(); }
+  catch (e) { app.innerHTML = `<h1>We could not open your feature</h1><p class="lead">${esc(e.message)}</p>`; }
+})();
+})();
+</script>
+</body>
+</html>
