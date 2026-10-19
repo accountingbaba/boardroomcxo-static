@@ -299,10 +299,11 @@ async function today(env, staff) {
   const sentToday = leads.filter(l => l.sent_date === t).length + ((await db.prepare("SELECT COUNT(*) AS n FROM leads WHERE sent_date = ? AND stage NOT IN ('ready','sent','connected','replied')").bind(t).first()).n);
   const ready = leads.filter(l => l.stage === 'ready').sort((a, b) => (b.score || 0) - (a.score || 0) || String(b.move_date || '').localeCompare(String(a.move_date || '')));
   const room = Math.max(0, s.daily_requests - sentToday);
-  ready.slice(0, room).forEach(l => add('outreach', { type: 'send', lead_id: l.id, name: l.name, company: l.company, linkedin: l.linkedin, phone: l.phone, title: `Send connection request: ${l.name}`, sub: [l.role_title, l.company].filter(Boolean).join(' at '), due: t }));
+  const from = `from ${s.linkedin_account || 'Sagar'}'s LinkedIn`;
+  ready.slice(0, room).forEach(l => add('outreach', { type: 'send', from, lead_id: l.id, name: l.name, company: l.company, linkedin: l.linkedin, phone: l.phone, title: `Send connection request: ${l.name}`, sub: [l.role_title, l.company].filter(Boolean).join(' at '), due: t }));
   for (const l of leads.filter(l => l.stage === 'connected')) {
-    if (!l.m1_date) add('outreach', { type: 'm1', lead_id: l.id, name: l.name, company: l.company, linkedin: l.linkedin, phone: l.phone, title: `Message 1: ${l.name}`, sub: 'Accepted ' + (l.accepted_date || ''), due: l.accepted_date || t });
-    else if (!l.nudge_date && addDays(l.m1_date, 2) <= t) add('outreach', { type: 'nudge', lead_id: l.id, name: l.name, company: l.company, linkedin: l.linkedin, phone: l.phone, title: `Nudge: ${l.name}`, sub: 'Message 1 sent ' + l.m1_date, due: addDays(l.m1_date, 2) });
+    if (!l.m1_date) add('outreach', { type: 'm1', from, lead_id: l.id, name: l.name, company: l.company, linkedin: l.linkedin, phone: l.phone, title: `Message 1: ${l.name}`, sub: 'Accepted ' + (l.accepted_date || ''), due: l.accepted_date || t });
+    else if (!l.nudge_date && addDays(l.m1_date, 2) <= t) add('outreach', { type: 'nudge', from, lead_id: l.id, name: l.name, company: l.company, linkedin: l.linkedin, phone: l.phone, title: `Nudge: ${l.name}`, sub: 'Message 1 sent ' + l.m1_date, due: addDays(l.m1_date, 2) });
     else if (l.nudge_date && addDays(l.nudge_date, 3) <= t) add('outreach', { type: 'close', lead_id: l.id, name: l.name, company: l.company, linkedin: l.linkedin, phone: l.phone, title: `Close, no reply: ${l.name}`, sub: 'Nudge sent ' + l.nudge_date, due: addDays(l.nudge_date, 3) });
   }
   leads.filter(l => l.stage === 'replied').forEach(l => add('content', { type: 'reply', lead_id: l.id, name: l.name, company: l.company, linkedin: l.linkedin, phone: l.phone, title: `Reply and send the feature link: ${l.name}`, sub: l.reply || '', due: String(l.replied_at || '').slice(0, 10) || t }));
@@ -710,11 +711,11 @@ export async function handleApi(context) {
         const e = str(body.staff.email, 160).toLowerCase();
         const known = await db.prepare('SELECT * FROM staff WHERE email = ?').bind(e).first();
         if (!known) return fail('Add people on the Accounting Baba portal Team page first.');
-        body.staff = { ...body.staff, name: known.name, role: known.role, active: Boolean(known.active) };
+        body.staff = { ...body.staff, name: known.name, role: ['member', 'manager'].includes(body.staff.role) ? body.staff.role : known.role, active: Boolean(known.active) };
         if (!/@/.test(e)) return fail('Enter an email address.');
         const desks = Array.isArray(body.staff.desks) ? body.staff.desks.filter(d => ['uae', 'eo', 'cxo', 'mv'].includes(d)).join(',') : null;
         await db.prepare(`INSERT INTO staff (email, name, role, active, created_at, desks) VALUES (?, ?, ?, ?, ?, ?) ON CONFLICT(email) DO UPDATE SET name = excluded.name, role = excluded.role, active = excluded.active, desks = COALESCE(?, staff.desks)`)
-          .bind(e, str(body.staff.name, 80), body.staff.role === 'admin' ? 'admin' : 'member', body.staff.active === false ? 0 : 1, nowIso(), desks, desks).run();
+          .bind(e, str(body.staff.name, 80), ['admin', 'manager'].includes(body.staff.role) ? body.staff.role : 'member', body.staff.active === false ? 0 : 1, nowIso(), desks, desks).run();
       }
       for (const k of Object.keys(DEFAULTS)) if (k in (body.settings || {})) await setSetting(db, k, body.settings[k]);
       return json({ ok: true });

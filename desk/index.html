@@ -222,7 +222,7 @@ function taskRow(t) {
   else if (t.type === 'ci30' || t.type === 'ci60') b = copyBtn(fill(t.type, p), 'Message') + B('Mark sent', { order: t.order_id, oact: t.type }, 's');
   else b = B('Open', { openorder: t.order_id }, 's');
   const owner = !mineOnly && t.owner !== ME.email ? `<div class="who">For ${esc(t.owner)}</div>` : '';
-  return `<div class="card task"><div><div class="t">${esc(t.title)} ${t.tier ? tierTag(t.tier) : ''} ${t.overdue ? '<span class="tag over">Overdue</span>' : ''}</div>${t.sub ? `<div class="d">${esc(t.sub)}</div>` : ''}${owner}</div><div class="b">${b}</div></div>`;
+  return `<div class="card task"><div><div class="t">${esc(t.title)} ${t.tier ? tierTag(t.tier) : ''} ${t.overdue ? '<span class="tag over">Overdue</span>' : ''} ${t.from ? `<span class="tag">${esc(t.from)}</span>` : ''}</div>${t.sub ? `<div class="d">${esc(t.sub)}</div>` : ''}${owner}</div><div class="b">${b}</div></div>`;
 }
 
 // ── Leads ────────────────────────────────────────────────────────────────────
@@ -507,9 +507,9 @@ async function vSettings() {
   const conn = (k, label, how) => `<div><b style="font-size:20px">${c[k] ? 'Connected' : 'Not yet'}</b><span>${label}${c[k] ? '' : ' · ' + how}</span></div>`;
   $('#view').innerHTML = `<div class="head"><div><h1>Settings</h1></div></div>
   <div class="stat">${conn('email', 'Email (ZeptoMail)', 'add boardroomcxo.com in ZeptoMail')}${conn('razorpay', 'Razorpay', 'waiting for KYC')}${conn('books', 'Zoho Books invoices', 'needs the Zoho keys')}${conn('loader', 'Daily loader', 'needs its key')}${conn('lookup', 'LinkedIn auto-fill', 'needs the Firecrawl key')}</div>
-  <h2>Team</h2><p class="sub" style="margin:-4px 0 10px">The team is whoever is on the <a href="https://accountingbaba.com/portal/#/team/staff" target="_blank" rel="noopener">Accounting Baba portal Team page</a>: add or remove people there and it shows here. Here you choose which companies each person sees (none ticked means all).</p><div class="tw"><table><thead><tr><th>Email</th><th>Name</th><th>Role</th><th>Companies</th><th>Active</th></tr></thead><tbody>
+  <h2>Team</h2><p class="sub" style="margin:-4px 0 10px">The team is whoever is on the <a href="https://accountingbaba.com/portal/#/team/staff" target="_blank" rel="noopener">Accounting Baba portal Team page</a>: add or remove people there and it shows here. Here you choose each person's companies. A Manager sees every company and the Team activity page.</p><div class="tw"><table><thead><tr><th>Email</th><th>Name</th><th>Role</th><th>Companies</th><th>Active</th></tr></thead><tbody>
     ${d.admins.map(a => `<tr><td>${esc(a)}</td><td></td><td>Admin (owner)</td><td>All</td><td>Yes</td></tr>`).join('')}
-    ${d.staff.filter(x => !d.admins.includes(x.email)).map(x => `<tr><td>${esc(x.email)}</td><td>${esc(x.name || '')}</td><td>${x.role === 'admin' ? 'Admin' : 'Team'}</td><td>${x.role === 'admin' ? 'All' : DESKS.map(([k, v]) => `<label style="white-space:nowrap;margin-right:8px;font-size:12.5px"><input type="checkbox" data-deskfor="${esc(x.email)}" data-name="${esc(x.name || '')}" value="${k}" ${String(x.desks || '').split(',').includes(k) ? 'checked' : ''}> ${v}</label>`).join('')}</td><td>${x.active ? 'Yes' : 'No (removed on the portal)'}</td></tr>`).join('')}</tbody></table></div>
+    ${d.staff.filter(x => !d.admins.includes(x.email)).map(x => `<tr><td>${esc(x.email)}</td><td>${esc(x.name || '')}</td><td>${x.role === 'admin' ? 'Admin' : `<select data-rolefor="${esc(x.email)}" style="width:auto;padding:4px 6px"><option value="member" ${x.role !== 'manager' ? 'selected' : ''}>Team</option><option value="manager" ${x.role === 'manager' ? 'selected' : ''}>Manager (sees all)</option></select>`}</td><td>${x.role === 'admin' || x.role === 'manager' ? 'All' : DESKS.map(([k, v]) => `<label style="white-space:nowrap;margin-right:8px;font-size:12.5px"><input type="checkbox" data-deskfor="${esc(x.email)}" data-name="${esc(x.name || '')}" value="${k}" ${String(x.desks || '').split(',').includes(k) ? 'checked' : ''}> ${v}</label>`).join('')}</td><td>${x.active ? 'Yes' : 'No (removed on the portal)'}</td></tr>`).join('')}</tbody></table></div>
   <h2>Who does what</h2><form id="sf2" class="card" style="padding:14px"><div class="g2">
     ${Object.entries({ outreach: 'Outreach and publishing', content: 'Replies and drafting', approvals: 'Approvals', checkins: 'Check-ins' }).map(([k, v]) => `<label class="f"><span>${v}</span><input type="email" name="duty_${k}" value="${esc(s.duties[k] || '')}"></label>`).join('')}</div>
   <h2 style="margin-top:6px">Prices and rules</h2><div class="g3">
@@ -525,6 +525,10 @@ async function vSettings() {
   const showLen = () => { nl.textContent = nt.value.length + ' characters (LinkedIn allows 300 in a connection note)'; nl.style.color = nt.value.length > 300 ? 'var(--bad)' : ''; };
   nt.oninput = showLen; showLen();
   $('#tpf').onsubmit = async e => { e.preventDefault(); const t = Object.fromEntries(new FormData(e.target)); try { await api('team/settings', { settings: { templates: t } }); TPL = t; toast('Messages saved'); } catch (x) { toast(x.message); } };
+  document.querySelectorAll('[data-rolefor]').forEach(sel => sel.onchange = async () => {
+    const row = d.staff.find(x => x.email === sel.dataset.rolefor);
+    try { await api('team/settings', { staff: { email: row.email, role: sel.value } }); toast('Saved'); vSettings(); } catch (x) { toast(x.message); }
+  });
   document.querySelectorAll('[data-deskfor]').forEach(cb => cb.onchange = async () => {
     const em = cb.dataset.deskfor, boxes = [...document.querySelectorAll(`[data-deskfor="${CSS.escape(em)}"]`)];
     const row = d.staff.find(x => x.email === em);

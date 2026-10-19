@@ -86,8 +86,9 @@ export const DEFAULTS = {
   daily_requests: 6,
   slot_days: [2, 4],          // dedicated posts on Tuesday and Thursday
   carousel_day: 5,            // Friday "Moves of the week"
-  // Who gets which tasks. Outreach and publishing: Paridhi. Replies and content: Soumavo. Approvals and check-ins: admins.
-  duties: { outreach: 'paridhiwork28@gmail.com', content: 'ashokbhatt6960@gmail.com', approvals: 'ketul4nil@gmail.com', checkins: 'ketul4nil@gmail.com' },
+  // Paridhi runs BoardRoom CXO and Moves end to end, follow-ups included (Ketul, 19 Oct). Ketul approves; Soumavo manages.
+  duties: { outreach: 'paridhiwork28@gmail.com', content: 'paridhiwork28@gmail.com', approvals: 'ketul4nil@gmail.com', checkins: 'paridhiwork28@gmail.com' },
+  linkedin_account: 'Sagar',   // every Moves message goes out from Sagar's LinkedIn
   internal_approval_first: 10, // Ketul approves the first 10 paid features
   books_sac: '',              // SAC code for the Plus invoice: to be confirmed by the CA before invoices are made
   whatsapp_community: '100+ CXOs',
@@ -133,8 +134,10 @@ export async function getStaff(request, env) {
   const st = await db.prepare('SELECT * FROM staff WHERE email = ? AND active = 1').bind(s.email).first();
   const isAdmin = admins(env).includes(s.email) || (st && st.role === 'admin');
   if (!st && !isAdmin) return null;
-  const desks = st && st.desks ? String(st.desks).split(',').filter(Boolean) : null; // null = every desk
-  return { email: s.email, name: (st && st.name) || s.email.split('@')[0], isAdmin, desks: isAdmin ? null : desks };
+  // Admins and managers see every company; everyone else only the companies ticked for them.
+  const isManager = !isAdmin && Boolean(st && st.role === 'manager');
+  const desks = isAdmin || isManager ? null : String((st && st.desks) || '').split(',').filter(Boolean);
+  return { email: s.email, name: (st && st.name) || s.email.split('@')[0], isAdmin, isManager, desks };
 }
 export async function requestCode(env, body) {
   // The team signs in on the team desk (accountingbaba.com/bd) with the Accounting Baba portal login. This sign-in is off.
