@@ -90,9 +90,9 @@ async function imagesOf(db, id) {
 const detailsOf = o => parseJson(o.details, {});
 function detailsComplete(o) {
   const d = detailsOf(o);
-  const base = d.name && d.role_title && d.company && o.photo_key && o.consent_at;
+  const base = d.name && d.role_title && d.company && o.photo_key && o.consent_at && String(o.phone || '').replace(/\D/g, '').length >= 10;
   if (!base) return false;
-  if (o.tier === 'plus' || o.tier === 'pick' || o.tier === 'pack') return o.skip_questions || (Array.isArray(d.answers) && d.answers.filter(a => String(a || '').trim()).length >= 3);
+  if (o.tier === 'plus' || o.tier === 'pick' || o.tier === 'pack') return o.skip_questions || Boolean(d.source_link) || (Array.isArray(d.answers) && d.answers.filter(a => String(a || '').trim()).length >= 3);
   return true;
 }
 async function needsInternal(db, o, settings) {
@@ -181,6 +181,12 @@ async function leader(request, env, token, action, body) {
     const d = { ...detailsOf(o) };
     for (const k of ['name', 'role_title', 'company', 'start_date', 'prev_role', 'linkedin', 'city']) if (k in body) d[k] = str(body[k], 200);
     if (Array.isArray(body.answers)) d.answers = body.answers.slice(0, 5).map(a => str(a, 1500));
+    if ('source_link' in body) {
+      const links = String(body.source_link || '').split(/\s+/).filter(u => /^https?:\/\/[^\s]+\.[^\s]+/i.test(u)).slice(0, 3);
+      if (String(body.source_link || '').trim() && !links.length) return fail('That link does not look right. Paste the full address, starting with https://');
+      d.source_link = links.join(' ');
+    }
+    if ('source_note' in body) d.source_note = str(body.source_note, 1500);
     const patch = { details: JSON.stringify(d), name: d.name || o.name, role_title: d.role_title || o.role_title, company: d.company || o.company };
     if ('email' in body) patch.email = str(body.email, 160).toLowerCase();
     if ('phone' in body) patch.phone = str(body.phone, 30);
@@ -440,7 +446,8 @@ function briefFor(o, contents) {
   const answers = (d.answers || []).map((a, i) => a ? `${i + 1}. ${QUESTIONS[i].replace('{company}', d.company || o.company || '')}\n${a}` : '').filter(Boolean).join('\n\n');
   return [`Boardroom Moves feature: ${TIER_LABEL[o.tier] || ''}`, `Person: ${d.name || o.name}`, `New role: ${d.role_title || o.role_title} at ${d.company || o.company}`,
     d.prev_role ? `Previous role: ${d.prev_role}` : '', d.start_date ? `Start date: ${d.start_date}` : '', d.city ? `City: ${d.city}` : '', d.linkedin ? `LinkedIn: ${d.linkedin}` : '',
-    answers ? `\nTheir answers:\n${answers}` : (o.skip_questions ? '\nThey skipped the questions: use only public information and mark anything unverified.' : ''),
+    d.source_link ? `\nThey shared an existing write-up about their move. Read it and write from it; confirm anything that is not in it:\n${d.source_link}${d.source_note ? '\nTheir note: ' + d.source_note : ''}` : '',
+    answers ? `\nTheir answers:\n${answers}` : (o.skip_questions && !d.source_link ? '\nThey skipped the questions: use only public information and mark anything unverified.' : ''),
     `\nPlatforms needed: ${needContent(o).join(', ')}.`, o.change_note ? `\nChanges they asked for: ${o.change_note}` : ''].filter(Boolean).join('\n');
 }
 async function orderAction(request, env, staff, id, body) {

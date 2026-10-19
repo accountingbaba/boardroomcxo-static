@@ -78,6 +78,11 @@ textarea{min-height:150px;resize:vertical;line-height:1.55}
 .photo{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center;margin-bottom:8px}
 .photo .ph{width:120px;height:120px;background:var(--bg-alt) center/cover no-repeat;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink-2);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;text-align:center}
 .drop{border:1px dashed var(--ink-2);padding:18px;text-align:center;cursor:pointer;background:var(--surface)}
+.drop.busy{cursor:wait;border-style:solid;border-color:var(--emerald);background:#EEF2EF}
+.ph.busy{position:relative}.ph.busy::after{content:'';position:absolute;inset:0;background:rgba(247,246,242,.55)}
+.okline{color:var(--emerald);font-weight:600;font-size:14px;margin:6px 0 0}
+.alt{background:var(--surface);border:1px solid var(--line);padding:16px 18px;margin-top:30px;font-size:14.5px}
+.alt b{display:block;margin-bottom:4px}
 .drop.over{border-color:var(--emerald);background:#EEF2EF}
 .check{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);padding:16px;cursor:pointer;font-size:14.5px}
 .check input{width:20px;height:20px;margin-top:2px;accent-color:var(--emerald);flex:none}
@@ -119,7 +124,7 @@ footer a{color:inherit}
 const token = new URLSearchParams(location.search).get('t') || '';
 const API = '/api/moves/f/' + encodeURIComponent(token);
 const app = document.getElementById('app'), bar = document.getElementById('bar');
-let V = null, step = null, qi = 0, err = '', busy = false, photoUrl = '', draft = {};
+let V = null, step = null, qi = 0, err = '', busy = false, photoUrl = '', draft = {}, uploading = false, justUploaded = false;
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const first = n => String(n || '').trim().split(/\s+/)[0] || '';
 const rs = n => 'Rs ' + Number(n || 0).toLocaleString('en-IN');
@@ -164,7 +169,7 @@ function firstOpen() {
   if (!(d.name && d.role_title && d.company)) return 'details';
   if (!V.email || !V.phone) return 'contact';
   if (!V.has_photo) return 'photo';
-  if (V.tier !== 'free' && !V.skip_questions && (d.answers || []).filter(a => String(a || '').trim()).length < 3) return 'questions';
+  if (V.tier !== 'free' && !V.skip_questions && !d.source_link && (d.answers || []).filter(a => String(a || '').trim()).length < 3) return 'questions';
   if (!V.consent) return 'consent';
   if (V.tier === 'plus' && !V.paid) return V.payer_type ? 'pay' : 'billing';
   return null;
@@ -233,21 +238,29 @@ const SCREENS = {
     ${d.linkedin && !draft.editLi ? `<div class="lichk"><b>We tag this LinkedIn profile</b><a href="${esc(d.linkedin)}" target="_blank" rel="noopener">${esc(d.linkedin.replace(/^https:\/\/(www\.)?/, ''))}</a> · <button type="button" class="link" data-editli>Not you? Change it</button><input type="hidden" name="linkedin" value="${esc(d.linkedin)}"></div>`
       : `<label class="f"><span>Your LinkedIn profile <em style="font-weight:400;color:var(--ink-2)">(so we tag you)</em></span><input type="text" name="linkedin" value="${esc(d.linkedin || '')}" placeholder="https://www.linkedin.com/in/…"></label>`}
     <div class="actions">${btn('Continue')} ${back()}</div></form>`; },
-  contact: () => `<p class="kicker">Staying in touch</p><h1>Where should we send your draft?</h1><p class="lead">You get the draft to approve, and the links once it is live. Nothing else.</p>%ERR%
-    <form data-f="contact"><label class="f"><span>Email</span><input type="email" name="email" value="${esc(V.email || '')}" required autocomplete="email"></label>
-    <label class="f"><span>WhatsApp number</span><input type="tel" name="phone" value="${esc(V.phone || '')}" required autocomplete="tel" placeholder="+91 98xxx xxxxx"></label>
+  contact: () => `<p class="kicker">Staying in touch</p><h1>Where should we send your draft?</h1><p class="lead">We send your draft on WhatsApp so you can approve it in a minute, and the links once it is live. Nothing else.</p>%ERR%
+    <form data-f="contact"><label class="f"><span>WhatsApp number</span><input type="tel" name="phone" value="${esc(V.phone || '')}" required autocomplete="tel" inputmode="tel" placeholder="+91 98xxx xxxxx"><small>Add the country code if your number is outside India.</small></label>
+    <label class="f"><span>Email</span><input type="email" name="email" value="${esc(V.email || '')}" required autocomplete="email"><small>For your invoice and a copy of the links.</small></label>
     <div class="actions">${btn('Continue')} ${back()}</div></form>`,
   photo: () => `<p class="kicker">Your photo</p><h1>Add a professional photo</h1><p class="lead">A clear headshot works best: face the camera, plain background, good light. We use it in your post${V.tier !== 'free' ? ' and profile page' : ''}.</p>%ERR%
-    <form data-f="photo"><div class="photo"><div class="ph" id="ph" style="${photoUrl ? `background-image:url('${photoUrl}')` : ''}">${photoUrl ? '' : 'No photo<br>yet'}</div>
-    <label class="drop" id="drop"><input type="file" id="file" accept="image/jpeg,image/png,image/webp" hidden><strong>${V.has_photo ? 'Change photo' : 'Choose a photo'}</strong><br><span class="hint">JPG, PNG or WebP, up to 10 MB</span></label></div>
-    <div class="actions">${V.has_photo ? btn('Continue') : ''} ${back()}</div></form>`,
+    <form data-f="photo"><div class="photo"><div class="ph ${uploading ? 'busy' : ''}" id="ph" style="${photoUrl ? `background-image:url('${photoUrl}')` : ''}">${photoUrl ? '' : 'No photo<br>yet'}</div>
+    ${uploading ? `<div class="drop busy" role="status"><strong><span class="spin"></span> Uploading your photo…</strong><br><span class="hint">This takes a few seconds. Please keep this page open.</span></div>`
+      : `<label class="drop" id="drop"><input type="file" id="file" accept="image/jpeg,image/png,image/webp" hidden><strong>${V.has_photo ? 'Change photo' : 'Choose a photo'}</strong><br><span class="hint">JPG, PNG or WebP, up to 10 MB</span></label>`}</div>
+    ${V.has_photo && !uploading ? `<p class="okline">✓ ${justUploaded ? 'Photo uploaded' : 'Photo added'}</p>` : ''}
+    <div class="actions"><button type="submit" class="btn" ${uploading || !V.has_photo ? 'disabled' : ''}>${uploading ? '<span class="spin"></span> Uploading…' : 'Continue'}</button> ${uploading ? '' : back()}</div>
+    ${!V.has_photo && !uploading ? '<p class="hint" style="margin-top:10px">Continue unlocks once your photo is added.</p>' : ''}</form>`,
   questions: () => { const d = V.details || {}, a = draft.answers || d.answers || [], q = V.questions[qi];
+    if (draft.linkMode) return `<p class="kicker">In your words</p><h1>Share what you have already written</h1><p class="lead">A LinkedIn post about your move, a press release or your company's announcement. We write your feature from it, and you approve it.</p>%ERR%
+    <form data-f="source"><label class="f"><span>Link</span><input type="url" name="source_link" value="${esc(d.source_link || '')}" required placeholder="https://www.linkedin.com/posts/…"><small>Up to three links, separated by a space.</small></label>
+    <label class="f"><span>Anything to add? <em style="font-weight:400;color:var(--ink-2)">(optional)</em></span><textarea name="source_note" style="min-height:90px" placeholder="e.g. what you are most excited about in the new role">${esc(d.source_note || '')}</textarea></label>
+    <div class="actions">${btn('Continue')} <button type="button" class="link" data-linkmode="0">Answer the questions instead</button></div></form>`;
     return `<p class="kicker">In your words · ${qi + 1} of ${V.questions.length}</p><h1>${esc(q)}</h1><p class="lead">A few lines is plenty. We shape it into your post and you approve it.</p>%ERR%
     <form data-f="answer"><label class="f"><textarea name="a" placeholder="Type your answer…">${esc(a[qi] || '')}</textarea></label>
     <div class="actions">${btn(qi < V.questions.length - 1 ? 'Next question' : 'Continue')} <button type="button" class="link" data-qback>Back</button></div></form>
-    <p class="hint" style="margin-top:28px">Short on time? <button type="button" class="link" data-skipq>Skip the questions</button> and we prepare it from your public profile. You still approve it.</p>`; },
+    <div class="alt"><b>Already written about your move?</b>Share a link to your LinkedIn post, press release or company announcement, and continue with that instead. <button type="button" class="link" data-linkmode="1">Share a link</button></div>
+    <p class="hint" style="margin-top:18px">Short on time? <button type="button" class="link" data-skipq>Skip the questions</button> and we prepare it from your public profile. You still approve it.</p>`; },
   consent: () => `<p class="kicker">Almost done</p><h1>One confirmation</h1>%ERR%
-    <form data-f="consent"><label class="check"><input type="checkbox" name="ok" ${V.consent ? 'checked' : ''} required><span>I agree to BoardRoom CXO featuring my move${V.tier && V.tier !== 'free' && !V.skip_questions ? ', my photo and my answers' : ' and my photo'} on its LinkedIn page${V.tier && V.tier !== 'free' ? ', Instagram and boardroomcxo.com' : ' and boardroomcxo.com'}. Nothing goes live until I approve the draft, and I can ask for it to be taken down later.</span></label>
+    <form data-f="consent"><label class="check"><input type="checkbox" name="ok" ${V.consent ? 'checked' : ''} required><span>I agree to BoardRoom CXO featuring my move${V.tier && V.tier !== 'free' && ((V.details.answers || []).some(x => String(x || '').trim()) || V.details.source_link) ? ', my photo and what I shared' : ' and my photo'} on its LinkedIn page${V.tier && V.tier !== 'free' ? ', Instagram and boardroomcxo.com' : ' and boardroomcxo.com'}. Nothing goes live until I approve the draft, and I can ask for it to be taken down later.</span></label>
     <div class="actions">${btn(V.tier === 'plus' && !V.paid ? 'Continue to payment' : 'Submit')} ${back()}</div></form>`,
   packwelcome: () => `<p class="kicker">Boardroom Moves · Company pack</p><h1>${esc(V.company || 'Your company')}'s leadership features</h1>
     <p class="lead">${V.pack_terms.features} dedicated Boardroom Moves features for your leadership hires, to use over ${V.pack_terms.months} months. Each person gets their own link to share details and approve their feature.</p>
@@ -309,6 +322,7 @@ function bind() {
   if (document.getElementById('mini')) drawMini(document.getElementById('mini'));
   const ch = app.querySelector('[data-changes]'); if (ch) ch.onclick = () => { const f = document.getElementById('chg'); f.hidden = false; f.querySelector('textarea').focus(); };
   const qb = app.querySelector('[data-qback]'); if (qb) qb.onclick = () => { saveAnswer(); if (qi > 0) { qi--; render(); } else go(-1); };
+  app.querySelectorAll('[data-linkmode]').forEach(b => b.onclick = () => { saveAnswer(); draft.linkMode = b.dataset.linkmode === '1'; err = ''; render(); });
   const sk = app.querySelector('[data-skipq]'); if (sk) sk.onclick = () => act('details', { skip_questions: true }, null, 'consent');
   const file = document.getElementById('file'), drop = document.getElementById('drop');
   if (file) {
@@ -354,18 +368,37 @@ function saveAnswer() {
 async function upload(f) {
   if (!/^image\/(jpeg|png|webp)$/.test(f.type)) { err = 'Use a JPG, PNG or WebP photo.'; return render(); }
   if (f.size > 10 * 1024 * 1024) { err = 'That photo is over 10 MB. Use a smaller one.'; return render(); }
-  photoUrl = URL.createObjectURL(f);
-  const fd = new FormData(); fd.append('photo', f);
-  await act('photo', null, fd);
+  photoUrl = URL.createObjectURL(f); uploading = true; justUploaded = false; err = ''; render();
+  try {
+    const fd = new FormData(); fd.append('photo', await shrink(f), 'photo.jpg');
+    V = await call('photo', null, fd); justUploaded = true;
+  } catch (e) { err = e.message || 'The photo did not upload. Check your connection and try again.'; }
+  uploading = false; render();
+}
+// Phone photos are often 4 to 8 MB: scale to 1800 px on the long side before sending, so the upload takes a second or two.
+function shrink(f) {
+  return new Promise(ok => {
+    const img = new Image();
+    img.onload = () => {
+      const k = Math.min(1, 1800 / Math.max(img.naturalWidth, img.naturalHeight));
+      if (k === 1 && f.size < 1.5 * 1024 * 1024) return ok(f);
+      const c = document.createElement('canvas'); c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      c.toBlob(b => ok(b && b.size < f.size ? b : f), 'image/jpeg', 0.88);
+    };
+    img.onerror = () => ok(f);
+    img.src = photoUrl;
+  });
 }
 async function submit(kind, v) {
   if (kind === 'next') return go(1);
   if (kind === 'details') return act('details', v, null, 'contact');
   if (kind === 'contact') {
-    if (String(v.phone).replace(/\D/g, '').length < 10) { err = 'Enter your WhatsApp number with the country code if you are outside India.'; return render(); }
+    if (String(v.phone).replace(/\D/g, '').length < 10) { err = 'Enter your full WhatsApp number. We send your draft there for approval.'; return render(); }
     return act('details', v, null, 'photo');
   }
-  if (kind === 'photo') return go(1);
+  if (kind === 'photo') { if (uploading || !V.has_photo) return; justUploaded = false; return go(1); }
+  if (kind === 'source') { const r = await act('details', { source_link: v.source_link, source_note: v.source_note, skip_questions: false }, null, undefined); if (!err) { draft.linkMode = false; step = 'consent'; render(); } return r; }
   if (kind === 'answer') {
     saveAnswer();
     if (qi < V.questions.length - 1) { qi++; err = ''; render(); return; }
