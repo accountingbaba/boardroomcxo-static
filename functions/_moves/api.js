@@ -332,6 +332,41 @@ async function today(env, staff) {
   return json({ today: t, me: staff.email, isAdmin: staff.isAdmin, duties: D, tasks, sent_today: sentToday, daily_requests: s.daily_requests });
 }
 
+// ── Team: fill a new person from their LinkedIn link ─────────────────────────
+// Uses the public search result for the profile (title "Name - Role - Company | LinkedIn"), never a LinkedIn login.
+// Needs FIRECRAWL_API_KEY; without it only the name is guessed from the address. The team always checks the result.
+const titleCase = t => t.replace(/\b\w/g, c => c.toUpperCase());
+export async function lookupLinkedIn(env, raw) {
+  const m = String(raw || '').match(/linkedin\.com\/in\/([^/?#\s]+)/i);
+  if (!m) return { error: 'Paste a LinkedIn profile link, like https://www.linkedin.com/in/name' };
+  const slug = decodeURIComponent(m[1]).toLowerCase(), url = `https://www.linkedin.com/in/${slug}`;
+  const guess = titleCase(slug.replace(/-[0-9a-f]{5,}$/i, '').replace(/-\d+$/, '').replace(/[-_]+/g, ' ').trim());
+  const out = { linkedin: url, name: guess, role_title: '', company: '', headline: '', source: 'address' };
+  if (!env.FIRECRAWL_API_KEY) return out;
+  try {
+    const res = await fetch('https://api.firecrawl.dev/v2/search', { method: 'POST', headers: { Authorization: 'Bearer ' + env.FIRECRAWL_API_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: `"linkedin.com/in/${slug}"`, limit: 5, sources: ['web'] }) });
+    const data = await res.json().catch(() => ({}));
+    const hits = (data.data && (data.data.web || data.data)) || [];
+    const hit = (Array.isArray(hits) ? hits : []).find(h => String(h.url || '').toLowerCase().includes('/in/' + slug));
+    if (!hit) return out;
+    const title = String(hit.title || '').replace(/\s*\|\s*LinkedIn\s*$/i, '').trim();
+    const parts = title.split(/\s+[-–—|]\s+/).map(x => x.trim()).filter(Boolean);
+    const desc = String(hit.description || '');
+    if (parts[0]) out.name = parts[0];
+    if (parts.length >= 3) { out.role_title = parts[1]; out.company = parts.slice(2).join(' - '); }
+    else if (parts[1]) {
+      out.headline = parts[1];
+      const at = parts[1].match(/^(.+?)\s+(?:at|@)\s+(.+)$/i);
+      if (at) { out.role_title = at[1].trim(); out.company = at[2].trim(); } else out.role_title = parts[1];
+    }
+    const exp = desc.match(/Experience:\s*([^·\n]+)/i);
+    if (exp && !out.company) out.company = exp[1].trim();
+    out.source = 'search';
+    return out;
+  } catch (e) { console.error('[Moves][lookup]', e.message); return out; }
+}
+
 // ── Team: leads ──────────────────────────────────────────────────────────────
 const LEAD_FIELDS = ['name', 'role_title', 'company', 'linkedin', 'sector', 'followers', 'move_date', 'prev_role', 'source', 'source_url', 'score', 'flags', 'email', 'phone', 'note'];
 function cleanLead(b) {
@@ -647,6 +682,7 @@ export async function handleApi(context) {
       return json({ lead: l, events: ev, order: ord });
     }
     if (what === 'invite' && method === 'POST') return await invite(request, env, staff, body);
+    if (what === 'lookup' && method === 'POST') { const r = await lookupLinkedIn(env, body.url); return r.error ? fail(r.error) : json(r); }
     if (what === 'packs' && method === 'POST') { if (!staff.isAdmin) return fail('Admins only.', 403); return await createPack(request, env, staff, body); }
     if (what === 'orders' && !id) {
       const st = url.searchParams.get('status');
@@ -664,7 +700,7 @@ export async function handleApi(context) {
     if (what === 'calendar') return await calendar(env);
     if (what === 'settings' && method === 'GET') {
       const staffRows = (await db.prepare('SELECT email, name, role, active FROM staff ORDER BY email').all()).results || [];
-      return json({ settings: await getSettings(db), staff: staffRows, admins: admins(env), connections: { email: Boolean(env.ZEPTOMAIL_TOKEN), razorpay: razorpayOn(env), books: booksOn(env), loader: Boolean(env.MOVES_LOADER_KEY) } });
+      return json({ settings: await getSettings(db), staff: staffRows, admins: admins(env), connections: { email: Boolean(env.ZEPTOMAIL_TOKEN), razorpay: razorpayOn(env), books: booksOn(env), loader: Boolean(env.MOVES_LOADER_KEY), lookup: Boolean(env.FIRECRAWL_API_KEY) } });
     }
     if (what === 'settings' && method === 'POST') {
       if (!staff.isAdmin) return fail('Admins only.', 403);

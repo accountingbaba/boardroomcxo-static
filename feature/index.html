@@ -10,14 +10,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Open+Sans:wght@700;800&display=swap" rel="stylesheet" />
 <style>
-:root{--bg:#F7F6F2;--bg-alt:#EAE8E1;--surface:#FFFFFF;--ink:#0F1110;--ink-2:#4A4D4A;--emerald:#1A362D;--emerald-2:#244A3D;--gold:#D4A860;--line:#D1CFCA;--bad:#9B2C1F;
+:root{--bg:#F7F6F2;--bg-alt:#EAE8E1;--surface:#FFFFFF;--ink:#0F1110;--ink-2:#4A4D4A;--emerald:#172633;--emerald-2:#22384A;--gold:#D4A860;--line:#D1CFCA;--bad:#9B2C1F;
 --display:'Bodoni Moda','Times New Roman',serif;--body:'Manrope',system-ui,sans-serif;--mono:'Space Mono',ui-monospace,monospace}
 *,*::before,*::after{box-sizing:border-box}
 html,body{margin:0}
 body{font-family:var(--body);background:var(--bg);color:var(--ink);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
 [hidden]{display:none!important}
 .top{background:var(--emerald);color:var(--bg);padding:14px max(18px,env(safe-area-inset-right)) 14px max(18px,env(safe-area-inset-left));display:flex;align-items:center;justify-content:space-between;gap:12px}
-.top b{font-family:var(--display);font-size:19px;font-weight:600;letter-spacing:.01em}
+.top img{height:40px;width:auto;display:block}
 .top span{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
 .bar{height:3px;background:var(--bg-alt)}.bar i{display:block;height:100%;background:var(--gold);width:0;transition:width .4s}
 main{flex:1;width:100%;max-width:640px;margin:0 auto;padding:clamp(28px,6vw,56px) max(18px,env(safe-area-inset-right)) 48px max(18px,env(safe-area-inset-left))}
@@ -45,15 +45,15 @@ textarea{min-height:150px;resize:vertical;line-height:1.55}
 .plus .pt{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:0 0 4px}
 .plus h3{font-family:var(--display);font-weight:500;font-size:1.9rem;margin:0}
 .plus .pr{font-family:var(--mono);font-size:14px;color:var(--gold);white-space:nowrap}
-.plus .tagline{color:#C9D3CD;margin:0 0 18px;font-size:14.5px}
+.plus .tagline{color:#B9C4CE;margin:0 0 18px;font-size:14.5px}
 .plus .grid{display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:22px;align-items:start}
 .plus ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
 .plus li{padding-left:24px;position:relative;font-size:14.5px;line-height:1.45}
 .plus li::before{content:'\2713';position:absolute;left:0;color:var(--gold);font-weight:700}
 .plus figure{margin:0}.plus canvas{width:100%;height:auto;display:block;border:1px solid rgba(255,255,255,.15)}
-.plus figcaption{font-size:11.5px;color:#C9D3CD;margin-top:6px;text-align:center}
+.plus figcaption{font-size:11.5px;color:#B9C4CE;margin-top:6px;text-align:center}
 .plus .btn{background:var(--gold);border-color:var(--gold);color:var(--emerald);margin-top:22px;font-weight:700}.plus .btn:hover{background:#E2BB78}
-.plus .hint{color:#C9D3CD;margin:10px 0 0}
+.plus .hint{color:#B9C4CE;margin:10px 0 0}
 .freec{background:var(--surface);border:1px solid var(--line);padding:20px 22px}
 .freec .pt{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px}
 .freec h3{font-family:var(--display);font-weight:500;font-size:1.35rem;margin:0}.freec .pr{font-family:var(--mono);font-size:13px}
@@ -63,7 +63,7 @@ textarea{min-height:150px;resize:vertical;line-height:1.55}
 .cmp th,.cmp td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
 .cmp th{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:var(--ink-2);background:var(--bg-alt)}
 .cmp th.y{background:var(--emerald);color:var(--gold)}
-.cmp td:first-child{font-weight:600;width:26%}.cmp td.y{background:#EEF2EF}.cmp .no{color:#A3A39E}
+.cmp td:first-child{font-weight:600;width:26%}.cmp td.y{background:#E9EEF3}.cmp .no{color:#A3A39E}
 .lichk{background:var(--surface);border:1px solid var(--line);padding:14px 16px;margin:0 0 18px;font-size:14.5px}
 .lichk b{display:block;font-size:13px;margin-bottom:4px}.lichk a{color:var(--emerald);word-break:break-all}
 @media(max-width:560px){.plus .grid{grid-template-columns:1fr}.plus figure{max-width:240px}}
@@ -78,12 +78,12 @@ textarea{min-height:150px;resize:vertical;line-height:1.55}
 .photo{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center;margin-bottom:8px}
 .photo .ph{width:120px;height:120px;background:var(--bg-alt) center/cover no-repeat;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink-2);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;text-align:center}
 .drop{border:1px dashed var(--ink-2);padding:18px;text-align:center;cursor:pointer;background:var(--surface)}
-.drop.busy{cursor:wait;border-style:solid;border-color:var(--emerald);background:#EEF2EF}
+.drop.busy{cursor:wait;border-style:solid;border-color:var(--emerald);background:#E9EEF3}
 .ph.busy{position:relative}.ph.busy::after{content:'';position:absolute;inset:0;background:rgba(247,246,242,.55)}
 .okline{color:var(--emerald);font-weight:600;font-size:14px;margin:6px 0 0}
 .alt{background:var(--surface);border:1px solid var(--line);padding:16px 18px;margin-top:30px;font-size:14.5px}
 .alt b{display:block;margin-bottom:4px}
-.drop.over{border-color:var(--emerald);background:#EEF2EF}
+.drop.over{border-color:var(--emerald);background:#E9EEF3}
 .check{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);padding:16px;cursor:pointer;font-size:14.5px}
 .check input{width:20px;height:20px;margin-top:2px;accent-color:var(--emerald);flex:none}
 .seg{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-bottom:18px}
@@ -115,7 +115,7 @@ footer a{color:inherit}
 </style>
 </head>
 <body>
-<header class="top"><b>BoardRoom CXO</b><span>Boardroom Moves</span></header>
+<header class="top"><img src="/images/logo-boardroomcxo-transparent.png" alt="BoardRoom CXO" width="91" height="40"><span>Boardroom Moves</span></header>
 <div class="bar"><i id="bar"></i></div>
 <main id="app" aria-live="polite"><p class="hint"><span class="spin"></span> Loading your feature…</p></main>
 <footer>Questions? Reply to our message or write to <a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a></footer>

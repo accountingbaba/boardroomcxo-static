@@ -184,8 +184,8 @@ export async function sendEmail(env, { to, subject, html, db = null, order_id = 
 }
 export function shell(title, body) {
   return `<div style="font-family:Arial,Helvetica,sans-serif;max-width:600px;margin:0 auto;color:#0F1110;background:#FFFFFF">
-<div style="background:#1A362D;padding:16px 24px"><span style="color:#F7F6F2;font-family:Georgia,serif;font-size:20px;font-weight:700">BoardRoom CXO</span><span style="color:#D29A82;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-left:12px">Boardroom Moves</span></div>
+<div style="background:#172633;padding:16px 24px"><span style="color:#F7F6F2;font-family:Georgia,serif;font-size:20px;font-weight:700">BoardRoom CXO</span><span style="color:#D29A82;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-left:12px">Boardroom Moves</span></div>
 <div style="padding:24px;border:1px solid #D1CFCA;border-top:0"><h2 style="margin:0 0 14px;font-size:20px;font-family:Georgia,serif">${esc(title)}</h2>${body}
 <p style="color:#4A4D4A;font-size:12px;margin-top:24px;border-top:1px solid #EAE8E1;padding-top:12px">BoardRoom CXO, Surat. Reply to this email to reach our team.</p></div></div>`;
 }
-export const button = (href, label) => `<p style="margin:20px 0"><a href="${esc(href)}" style="background:#1A362D;color:#F7F6F2;padding:12px 20px;text-decoration:none;font-weight:700;display:inline-block">${esc(label)}</a></p>`;
+export const button = (href, label) => `<p style="margin:20px 0"><a href="${esc(href)}" style="background:#172633;color:#F7F6F2;padding:12px 20px;text-decoration:none;font-weight:700;display:inline-block">${esc(label)}</a></p>`;

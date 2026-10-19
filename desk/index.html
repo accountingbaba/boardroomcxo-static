@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Manrope:wght@400;500;600;700&family=Open+Sans:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <style>
-:root{--bg:#F7F6F2;--bg-alt:#EFEDE7;--surface:#FFFFFF;--ink:#0F1110;--ink-2:#55584F;--emerald:#1A362D;--emerald-2:#244A3D;--mint:#E3ECE6;--gold:#D4A860;--gold-soft:#F6ECD9;--line:#D9D6CF;--bad:#9B2C1F;--bad-soft:#F6E4DF;
+:root{--bg:#F7F6F2;--bg-alt:#EFEDE7;--surface:#FFFFFF;--ink:#0F1110;--ink-2:#55584F;--emerald:#172633;--emerald-2:#22384A;--mint:#E4EAF0;--gold:#D4A860;--gold-soft:#F6ECD9;--line:#D9D6CF;--bad:#9B2C1F;--bad-soft:#F6E4DF;
 --display:'Bodoni Moda','Times New Roman',serif;--body:'Manrope',system-ui,sans-serif;--mono:'Space Mono',ui-monospace,monospace}
 *,*::before,*::after{box-sizing:border-box}html,body{margin:0}
 body{font-family:var(--body);background:var(--bg);color:var(--ink);font-size:14.5px;line-height:1.5;-webkit-font-smoothing:antialiased}
@@ -18,12 +18,12 @@ body{font-family:var(--body);background:var(--bg);color:var(--ink);font-size:14.
 a{color:inherit}
 button{font:inherit;color:inherit}
 .top{position:sticky;top:0;z-index:20;background:var(--emerald);color:var(--bg);display:flex;align-items:center;gap:18px;padding:0 max(16px,env(safe-area-inset-right)) 0 max(16px,env(safe-area-inset-left));min-height:56px;flex-wrap:wrap}
-.brand{font-family:var(--display);font-size:18px;font-weight:600;white-space:nowrap}.brand span{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-left:8px;font-weight:400}
+.brand{display:flex;align-items:center;gap:10px;white-space:nowrap}.brand img{height:38px;width:auto;display:block}.brand span{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-left:8px;font-weight:400}
 .tabs{display:flex;gap:2px;overflow-x:auto;flex:1;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
-.tabs a{padding:18px 12px 16px;text-decoration:none;font-weight:600;font-size:13.5px;color:#C9D3CD;border-bottom:2px solid transparent;white-space:nowrap}
+.tabs a{padding:18px 12px 16px;text-decoration:none;font-weight:600;font-size:13.5px;color:#B9C4CE;border-bottom:2px solid transparent;white-space:nowrap}
 .tabs a.on{color:var(--bg);border-bottom-color:var(--gold)}
 .tabs a .n{display:inline-block;min-width:18px;padding:0 5px;margin-left:5px;border-radius:9px;background:var(--gold);color:var(--emerald);font-size:11px;text-align:center}
-.me{font-size:12.5px;color:#C9D3CD;white-space:nowrap}.me button{background:none;border:0;color:var(--gold);cursor:pointer;text-decoration:underline;padding:0 0 0 8px}
+.me{font-size:12.5px;color:#B9C4CE;white-space:nowrap}.me button{background:none;border:0;color:var(--gold);cursor:pointer;text-decoration:underline;padding:0 0 0 8px}
 main{max-width:1180px;margin:0 auto;padding:26px max(16px,env(safe-area-inset-right)) 80px max(16px,env(safe-area-inset-left))}
 h1{font-family:var(--display);font-weight:500;font-size:30px;line-height:1.1;margin:0}
 h2{font-size:12px;font-family:var(--mono);letter-spacing:.16em;text-transform:uppercase;font-weight:400;color:var(--ink-2);margin:28px 0 10px}
@@ -101,7 +101,7 @@ input[type=range]{width:100%;accent-color:var(--emerald)}
 </head>
 <body>
 <header class="top" id="top" hidden>
-  <div class="brand">BoardRoom CXO<span>Moves desk</span></div>
+  <div class="brand"><img src="/images/logo-boardroomcxo-transparent.png" alt="BoardRoom CXO" width="87" height="38"><span>Moves desk</span></div>
   <nav class="tabs" id="tabs"></nav>
   <div class="me" id="me"></div>
 </header>
@@ -281,12 +281,34 @@ async function leadAct(id, act, extra, stay) {
   try { await api(`team/leads/${id}/action`, { act, ...(extra || {}) }); toast('Saved'); if (stay) openLead(id); refreshBehind(); }
   catch (e) { toast(e.message); }
 }
+// Paste a LinkedIn link and the desk fills name, role and company from the public search result.
+function liFill(form) {
+  const inp = form.querySelector('[data-lifill]'), note = form.querySelector('[data-linote]'), btn = form.querySelector('[data-lifetch]');
+  let last = '';
+  const run = async () => {
+    const url = inp.value.trim(); if (!/linkedin\.com\/in\//i.test(url) || url === last) return; last = url;
+    btn.disabled = true; btn.innerHTML = '<span class="spin"></span>'; note.textContent = 'Looking up the profile…';
+    try {
+      const r = await api('team/lookup', { url });
+      inp.value = r.linkedin;
+      const set = (k, v) => { const f = form.querySelector(`[name=${k}]`); if (f && v && !f.value.trim()) f.value = v; };
+      set('name', r.name); set('role_title', r.role_title); set('company', r.company);
+      note.textContent = r.source === 'search' ? `Filled from the public LinkedIn result${r.headline ? ' (headline: ' + r.headline + ')' : ''}. Check the role and company before saving.`
+        : 'Only the name could be read from the link. Add the role and company.';
+    } catch (x) { note.textContent = x.message; last = ''; }
+    btn.disabled = false; btn.textContent = 'Fill';
+  };
+  inp.addEventListener('paste', () => setTimeout(run, 50));
+  inp.addEventListener('change', run);
+  btn.onclick = () => { last = ''; run(); };
+}
 function addLead() {
   drawer(`<div class="dh"><div><h1>Add a lead</h1><p class="sub">Someone who just moved into a senior role.</p></div><button class="x" data-close aria-label="Close">×</button></div>
-  <div class="db"><div class="sec"><form id="al"><div class="g2">
-    ${[['name', 'Name', 1], ['role_title', 'New role', 1], ['company', 'Company', 1], ['linkedin', 'LinkedIn URL'], ['move_date', 'Moved on (YYYY-MM-DD)'], ['prev_role', 'Previous role'], ['sector', 'Sector'], ['followers', 'Followers']]
+  <div class="db"><div class="sec"><form id="al"><label class="f"><span>LinkedIn profile link</span><div class="row" style="flex-wrap:nowrap"><input type="text" name="linkedin" inputmode="url" placeholder="https://www.linkedin.com/in/…" data-lifill autofocus><button type="button" class="btn g s" data-lifetch>Fill</button></div><small class="sub" data-linote style="display:block;margin-top:4px">Paste the link: name, role and company fill in. Check them before saving.</small></label><div class="g2">
+    ${[['name', 'Name', 1], ['role_title', 'New role', 1], ['company', 'Company', 1], ['move_date', 'Moved on (YYYY-MM-DD)'], ['prev_role', 'Previous role'], ['sector', 'Sector'], ['followers', 'Followers']]
       .map(([k, v, r]) => `<label class="f"><span>${v}</span><input type="text" name="${k}" ${r ? 'required' : ''}></label>`).join('')}</div>
     <label class="f"><span>Note</span><textarea name="note" style="min-height:60px"></textarea></label><button class="btn" type="submit">Add lead</button></form></div></div>`);
+  liFill($('#al'));
   $('#al').onsubmit = async e => {
     e.preventDefault();
     try { const r = await api('team/leads', { ...Object.fromEntries(new FormData(e.target)), source: 'manual' }); toast(r.added ? 'Lead added' : 'Already on the list'); closeDrawer(); refreshBehind(); }
@@ -383,8 +405,9 @@ async function orderAct(act, extra, okMsg) {
 }
 function newFeature() {
   drawer(`<div class="dh"><div><h1>New feature link</h1><p class="sub">For someone not on the leads list.</p></div><button class="x" data-close aria-label="Close">×</button></div>
-  <div class="db"><div class="sec"><form id="nf"><div class="g2">${[['name', 'Name', 1], ['role_title', 'New role', 1], ['company', 'Company', 1], ['linkedin', 'LinkedIn profile URL'], ['email', 'Email'], ['phone', 'WhatsApp']].map(([k, v, r]) => `<label class="f"><span>${v}</span><input type="text" name="${k}" ${r ? 'required' : ''}></label>`).join('')}</div>
+  <div class="db"><div class="sec"><form id="nf"><label class="f"><span>LinkedIn profile link</span><div class="row" style="flex-wrap:nowrap"><input type="text" name="linkedin" inputmode="url" placeholder="https://www.linkedin.com/in/…" data-lifill autofocus><button type="button" class="btn g s" data-lifetch>Fill</button></div><small class="sub" data-linote style="display:block;margin-top:4px">Paste the link: name, role and company fill in. Check them before saving.</small></label><div class="g2">${[['name', 'Name', 1], ['role_title', 'New role', 1], ['company', 'Company', 1], ['email', 'Email'], ['phone', 'WhatsApp']].map(([k, v, r]) => `<label class="f"><span>${v}</span><input type="text" name="${k}" ${r ? 'required' : ''}></label>`).join('')}</div>
   ${ME.isAdmin ? `<label class="f"><span>Type</span><select name="tier"><option value="">They choose (Free or Plus)</option><option value="pick">Editorial pick</option></select></label>` : ''}<button class="btn" type="submit">Create link</button></form></div></div>`);
+  liFill($('#nf'));
   $('#nf').onsubmit = async e => { e.preventDefault(); const v = Object.fromEntries(new FormData(e.target)); try { const r = await api('team/invite', v); openOrder(r.order_id, linkNotice(r, v)); refreshBehind(); } catch (x) { toast(x.message); } };
 }
 function newPack() {
@@ -485,7 +508,7 @@ async function vSettings() {
   const d = await api('team/settings'), s = d.settings, c = d.connections;
   const conn = (k, label, how) => `<div><b style="font-size:20px">${c[k] ? 'Connected' : 'Not yet'}</b><span>${label}${c[k] ? '' : ' · ' + how}</span></div>`;
   $('#view').innerHTML = `<div class="head"><div><h1>Settings</h1></div></div>
-  <div class="stat">${conn('email', 'Email (ZeptoMail)', 'add boardroomcxo.com in ZeptoMail')}${conn('razorpay', 'Razorpay', 'waiting for KYC')}${conn('books', 'Zoho Books invoices', 'needs the Zoho keys')}${conn('loader', 'Daily loader', 'needs its key')}</div>
+  <div class="stat">${conn('email', 'Email (ZeptoMail)', 'add boardroomcxo.com in ZeptoMail')}${conn('razorpay', 'Razorpay', 'waiting for KYC')}${conn('books', 'Zoho Books invoices', 'needs the Zoho keys')}${conn('loader', 'Daily loader', 'needs its key')}${conn('lookup', 'LinkedIn auto-fill', 'needs the Firecrawl key')}</div>
   <h2>Team</h2><div class="tw"><table><thead><tr><th>Email</th><th>Name</th><th>Role</th><th>Active</th></tr></thead><tbody>
     ${d.admins.map(a => `<tr><td>${esc(a)}</td><td></td><td>Admin (owner)</td><td>Yes</td></tr>`).join('')}
     ${d.staff.filter(x => !d.admins.includes(x.email)).map(x => `<tr><td>${esc(x.email)}</td><td>${esc(x.name || '')}</td><td>${x.role === 'admin' ? 'Admin' : 'Team'}</td><td>${x.active ? 'Yes' : 'No'} ${B(x.active ? 'Turn off' : 'Turn on', { staffon: x.email, name: x.name || '', role: x.role, active: x.active ? 0 : 1 }, 'g s')}</td></tr>`).join('')}</tbody></table></div>
