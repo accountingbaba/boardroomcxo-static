@@ -133,7 +133,7 @@ async function leaderView(env, o) {
       { tier: 'free', title: 'Moves of the week', price: 0, includes: ['A place in our Friday "Moves of the week" post on the BoardRoom CXO LinkedIn page', 'A short note on boardroomcxo.com', 'You approve it before it goes live'] },
       ...(priced || o.tier === 'plus' ? [{ tier: 'plus', title: 'Plus', price: plusPrice, gst, total: plusPrice + gst, includes: ['Your own dedicated post on the BoardRoom CXO LinkedIn page, Tuesday or Thursday at 6 pm, with you and your company tagged', 'Instagram post', `A profile page under your name on boardroomcxo.com`, `A share in our WhatsApp community of ${settings.whatsapp_community}`, 'GST invoice to you or your company', 'You approve everything before it goes live'] }] : [])
     ],
-    locked_tier: o.tier === 'pick' || o.tier === 'pack',
+    locked_tier: o.tier === 'pick' || o.tier === 'pack', community: settings.whatsapp_community,
     pack_buyer: o.tier === 'pack' && !o.pack_id, pack_terms: { features: settings.pack.features, months: settings.pack.months, used: 0, until: o.features_until },
     payer_type: o.payer_type, billing_name: o.billing_name, gstin: o.gstin, billing_state: o.billing_state, billing_email: o.billing_email, states: STATES,
     price: o.price, gst: o.gst, total: o.total, paid: Boolean(o.paid_at), paid_at: o.paid_at, invoice: Boolean(o.books_invoice_id), invoice_no: o.invoice_no,
@@ -390,7 +390,8 @@ async function invite(request, env, staff, body) {
     email: str(body.email, 160).toLowerCase() || (l && l.email) || '', phone: str(body.phone, 30) || (l && l.phone) || '',
     price: 0, gst: 0, total: 0, created_at: nowIso(), created_by: staff.email, updated_at: nowIso(), last_activity_at: null
   };
-  o.details = JSON.stringify({ name: o.name, role_title: o.role_title, company: o.company, linkedin: l ? l.linkedin || '' : '', prev_role: l ? l.prev_role || '' : '', start_date: l ? l.move_date || '' : '' });
+  const li = str(body.linkedin, 300);
+  o.details = JSON.stringify({ name: o.name, role_title: o.role_title, company: o.company, linkedin: (/^https:\/\/([a-z]+\.)?linkedin\.com\//i.test(li) ? li : '') || (l ? l.linkedin || '' : ''), prev_role: l ? l.prev_role || '' : '', start_date: l ? l.move_date || '' : '' });
   const keys = Object.keys(o);
   await db.prepare(`INSERT INTO orders (${keys.join(', ')}) VALUES (${keys.map(() => '?').join(', ')})`).bind(...keys.map(k => o[k])).run();
   if (l) await db.prepare("UPDATE leads SET stage = 'linked', email = COALESCE(NULLIF(?, ''), email), phone = COALESCE(NULLIF(?, ''), phone), updated_at = ? WHERE id = ?").bind(o.email, o.phone, nowIso(), l.id).run();

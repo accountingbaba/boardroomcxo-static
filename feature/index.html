@@ -8,7 +8,7 @@
 <link rel="icon" href="/images/favicon.png" type="image/png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Open+Sans:wght@700;800&display=swap" rel="stylesheet" />
 <style>
 :root{--bg:#F7F6F2;--bg-alt:#EAE8E1;--surface:#FFFFFF;--ink:#0F1110;--ink-2:#4A4D4A;--emerald:#1A362D;--emerald-2:#244A3D;--gold:#D4A860;--line:#D1CFCA;--bad:#9B2C1F;
 --display:'Bodoni Moda','Times New Roman',serif;--body:'Manrope',system-ui,sans-serif;--mono:'Space Mono',ui-monospace,monospace}
@@ -39,7 +39,34 @@ textarea{min-height:150px;resize:vertical;line-height:1.55}
 .link{background:none;border:0;padding:0;font:inherit;color:var(--ink-2);text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:14px}
 .hint{font-size:12.5px;color:var(--ink-2)}
 .err{background:#F6E4DF;border-left:3px solid var(--bad);color:var(--bad);padding:11px 14px;font-size:14px;margin:0 0 18px}
-.pkgs{display:grid;gap:14px}
+.pkgs{display:grid;gap:16px}
+.plus{background:var(--emerald);color:var(--bg);padding:26px 22px 22px;position:relative;margin-top:10px}
+.plus .badge{position:absolute;top:-11px;left:22px;background:var(--gold);color:var(--emerald);font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding:4px 10px;font-weight:700}
+.plus .pt{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:0 0 4px}
+.plus h3{font-family:var(--display);font-weight:500;font-size:1.9rem;margin:0}
+.plus .pr{font-family:var(--mono);font-size:14px;color:var(--gold);white-space:nowrap}
+.plus .tagline{color:#C9D3CD;margin:0 0 18px;font-size:14.5px}
+.plus .grid{display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:22px;align-items:start}
+.plus ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+.plus li{padding-left:24px;position:relative;font-size:14.5px;line-height:1.45}
+.plus li::before{content:'\2713';position:absolute;left:0;color:var(--gold);font-weight:700}
+.plus figure{margin:0}.plus canvas{width:100%;height:auto;display:block;border:1px solid rgba(255,255,255,.15)}
+.plus figcaption{font-size:11.5px;color:#C9D3CD;margin-top:6px;text-align:center}
+.plus .btn{background:var(--gold);border-color:var(--gold);color:var(--emerald);margin-top:22px;font-weight:700}.plus .btn:hover{background:#E2BB78}
+.plus .hint{color:#C9D3CD;margin:10px 0 0}
+.freec{background:var(--surface);border:1px solid var(--line);padding:20px 22px}
+.freec .pt{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px}
+.freec h3{font-family:var(--display);font-weight:500;font-size:1.35rem;margin:0}.freec .pr{font-family:var(--mono);font-size:13px}
+.freec p{color:var(--ink-2);font-size:14.5px;margin:0 0 14px}
+.cmpw{overflow-x:auto;margin-top:32px}.cmpw h2{font-size:1.25rem;margin:0 0 10px}
+.cmp{width:100%;min-width:460px;border-collapse:collapse;font-size:13.5px;background:var(--surface)}
+.cmp th,.cmp td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+.cmp th{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:var(--ink-2);background:var(--bg-alt)}
+.cmp th.y{background:var(--emerald);color:var(--gold)}
+.cmp td:first-child{font-weight:600;width:26%}.cmp td.y{background:#EEF2EF}.cmp .no{color:#A3A39E}
+.lichk{background:var(--surface);border:1px solid var(--line);padding:14px 16px;margin:0 0 18px;font-size:14.5px}
+.lichk b{display:block;font-size:13px;margin-bottom:4px}.lichk a{color:var(--emerald);word-break:break-all}
+@media(max-width:560px){.plus .grid{grid-template-columns:1fr}.plus figure{max-width:240px}}
 .pkg{display:block;text-align:left;width:100%;background:var(--surface);border:1px solid var(--line);padding:22px 22px 20px;cursor:pointer;font:inherit;color:inherit;border-radius:0;position:relative;transition:border-color .15s}
 .pkg:hover{border-color:var(--ink)}.pkg.on{border-color:var(--emerald);box-shadow:inset 0 0 0 1px var(--emerald)}
 .pkg .pt{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px}
@@ -167,11 +194,35 @@ const SCREENS = {
     ${V.tier === 'pick' ? `<p class="lead">You have been chosen as an <strong>Editorial pick</strong>: a dedicated feature on us.</p>` : ''}
     ${V.tier === 'pack' ? `<p class="lead">Your company has arranged a <strong>dedicated feature</strong> for you.</p>` : ''}
     <form data-f="next"><div class="actions">${btn('Start')}</div></form>`,
-  package: () => `<p class="kicker">Step 1 · Your feature</p><h1>How would you like your move carried?</h1>%ERR%
-    <div class="pkgs">${V.packages.map(p => `<button type="button" class="pkg ${V.tier === p.tier ? 'on' : ''}" data-tier="${p.tier}">
-      <div class="pt"><h3>${esc(p.title)}</h3><span class="pr">${p.price ? rs(p.price) + ' + GST' : 'Free'}</span></div>
-      <ul>${p.includes.map(x => `<li>${esc(x)}</li>`).join('')}</ul>${p.price ? `<p class="hint" style="margin:12px 0 0">${rs(p.total)} including GST. GST invoice to you or your company.</p>` : ''}</button>`).join('')}</div>
-    <div class="actions">${back()}</div>`,
+  package: () => {
+    const plus = V.packages.find(p => p.tier === 'plus'), free = V.packages.find(p => p.tier === 'free');
+    if (!plus) return `<p class="kicker">Step 1 · Your feature</p><h1>Your feature</h1>%ERR%<div class="freec"><div class="pt"><h3>${esc(free.title)}</h3><span class="pr">Free</span></div><p>${free.includes.map(esc).join('. ')}.</p><button type="button" class="btn" data-tier="free">Continue</button></div><div class="actions">${back()}</div>`;
+    const no = '<span class="no">—</span>';
+    const rows = [
+      ['On LinkedIn', 'One line in a shared Friday post, alongside other moves', 'Your own post, Tuesday or Thursday at 6 pm, with you and your company tagged'],
+      ['Your post image', no, 'A designed Boardroom Moves image with your photo, name and role'],
+      ['On boardroomcxo.com', 'A short note on the Boardroom Moves page', 'A profile page under your name, written from your answers'],
+      ['Instagram', no, 'A post on the BoardRoom CXO Instagram'],
+      ['WhatsApp community', no, `Shared with our community of ${esc(V.community || '100+ CXOs')}`],
+      ['Invoice', no, 'GST invoice to you or your company'],
+      ['Your approval', 'Yes, before it goes live', 'Yes, before anything goes live']];
+    return `<p class="kicker">Step 1 · Your feature</p><h1>How would you like your move carried?</h1>%ERR%
+    <div class="pkgs">
+      <section class="plus"><span class="badge">Recommended</span>
+        <div class="pt"><h3>Plus</h3><span class="pr">${rs(plus.price)} + GST</span></div>
+        <p class="tagline">Your own feature, not a line in a list.</p>
+        <div class="grid"><ul>${plus.includes.filter(x => !/approve/i.test(x)).map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+          <figure><canvas id="mini" width="1080" height="1080" aria-label="Preview of your Boardroom Moves post"></canvas><figcaption>How your post looks, with your photo</figcaption></figure></div>
+        <button type="button" class="btn" data-tier="plus">Choose Plus · ${rs(plus.total)}</button>
+        <p class="hint">${rs(plus.total)} including GST. You approve everything before it goes live.</p>
+      </section>
+      <section class="freec"><div class="pt"><h3>${esc(free.title)}</h3><span class="pr">Free</span></div>
+        <p>One line about your move in our Friday round-up post on LinkedIn, and a short note on boardroomcxo.com. You approve it first.</p>
+        <button type="button" class="btn ghost" data-tier="free">Continue with the free option</button></section>
+    </div>
+    <div class="cmpw"><h2>What is the difference?</h2><table class="cmp"><thead><tr><th></th><th>Free</th><th class="y">Plus</th></tr></thead><tbody>
+      ${rows.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td class="y">${r[2]}</td></tr>`).join('')}</tbody></table></div>
+    <div class="actions">${back()}</div>`; },
   details: () => { const d = V.details || {}; return `<p class="kicker">Your move</p><h1>Is this right?</h1><p class="lead">We use these exact words in your post.</p>%ERR%
     <form data-f="details"><label class="f"><span>Your full name</span><input type="text" name="name" value="${esc(d.name || V.name)}" required autocomplete="name"></label>
     <label class="f"><span>New role title</span><input type="text" name="role_title" value="${esc(d.role_title || V.role_title)}" required placeholder="e.g. Chief Marketing Officer"></label>
@@ -179,7 +230,8 @@ const SCREENS = {
     <div class="row2"><label class="f"><span>Start date</span><input type="date" name="start_date" value="${esc(d.start_date || '')}"></label>
     <label class="f"><span>City</span><input type="text" name="city" value="${esc(d.city || '')}" placeholder="e.g. Mumbai"></label></div>
     <label class="f"><span>Previous role <em style="font-weight:400;color:var(--ink-2)">(optional)</em></span><input type="text" name="prev_role" value="${esc(d.prev_role || '')}" placeholder="e.g. VP Marketing, Tanishq"><small>Mentioned in the post if you add it.</small></label>
-    <label class="f"><span>Your LinkedIn profile <em style="font-weight:400;color:var(--ink-2)">(so we tag you)</em></span><input type="text" name="linkedin" value="${esc(d.linkedin || '')}" placeholder="https://www.linkedin.com/in/…"></label>
+    ${d.linkedin && !draft.editLi ? `<div class="lichk"><b>We tag this LinkedIn profile</b><a href="${esc(d.linkedin)}" target="_blank" rel="noopener">${esc(d.linkedin.replace(/^https:\/\/(www\.)?/, ''))}</a> · <button type="button" class="link" data-editli>Not you? Change it</button><input type="hidden" name="linkedin" value="${esc(d.linkedin)}"></div>`
+      : `<label class="f"><span>Your LinkedIn profile <em style="font-weight:400;color:var(--ink-2)">(so we tag you)</em></span><input type="text" name="linkedin" value="${esc(d.linkedin || '')}" placeholder="https://www.linkedin.com/in/…"></label>`}
     <div class="actions">${btn('Continue')} ${back()}</div></form>`; },
   contact: () => `<p class="kicker">Staying in touch</p><h1>Where should we send your draft?</h1><p class="lead">You get the draft to approve, and the links once it is live. Nothing else.</p>%ERR%
     <form data-f="contact"><label class="f"><span>Email</span><input type="email" name="email" value="${esc(V.email || '')}" required autocomplete="email"></label>
@@ -253,6 +305,8 @@ function bind() {
   app.querySelectorAll('[data-payer]').forEach(b => b.onclick = () => { draft.payer = b.dataset.payer; render(); });
   const free = app.querySelector('[data-free]'); if (free) free.onclick = () => act('choose', { tier: 'free' }, null, null);
   const up = app.querySelector('[data-upgrade]'); if (up) up.onclick = () => act('choose', { tier: 'plus' }, null, 'questions');
+  const el = app.querySelector('[data-editli]'); if (el) el.onclick = () => { saveForm(app.querySelector('form[data-f=details]')); draft.editLi = true; render(); };
+  if (document.getElementById('mini')) drawMini(document.getElementById('mini'));
   const ch = app.querySelector('[data-changes]'); if (ch) ch.onclick = () => { const f = document.getElementById('chg'); f.hidden = false; f.querySelector('textarea').focus(); };
   const qb = app.querySelector('[data-qback]'); if (qb) qb.onclick = () => { saveAnswer(); if (qi > 0) { qi--; render(); } else go(-1); };
   const sk = app.querySelector('[data-skipq]'); if (sk) sk.onclick = () => act('details', { skip_questions: true }, null, 'consent');
@@ -266,6 +320,32 @@ function bind() {
   app.querySelectorAll('form[data-f]').forEach(f => f.onsubmit = e => { e.preventDefault(); submit(f.dataset.f, Object.fromEntries(new FormData(f))); });
   const firstInput = app.querySelector('input:not([type=hidden]):not([type=checkbox]):not([type=file]),textarea');
   if (firstInput && !('ontouchstart' in window)) firstInput.focus();
+}
+function saveForm(f) { // keep what they typed when the screen redraws
+  V.details = { ...V.details, ...Object.fromEntries(new FormData(f)) };
+}
+// A preview of their Plus post in the Boardroom Moves template, with a placeholder where their photo goes.
+let LOGO = null;
+async function drawMini(cv) {
+  const g = cv.getContext('2d'), W = 1080, H = 1080, d = V.details || {};
+  const name = d.name || V.name || 'Your name', role = d.role_title || V.role_title || 'your new role', company = d.company || V.company || 'your company';
+  try { await document.fonts.load('800 44px "Open Sans"'); await document.fonts.load('700 25px "Open Sans"'); } catch (e) {}
+  if (!LOGO) { LOGO = new Image(); LOGO.src = '/images/logo-boardroomcxo.png'; await new Promise(ok => { LOGO.onload = ok; LOGO.onerror = ok; }); }
+  const bg = g.createLinearGradient(0, 0, 0, H); bg.addColorStop(0, '#6A7570'); bg.addColorStop(1, '#2B3330'); g.fillStyle = bg; g.fillRect(0, 0, W, H);
+  g.fillStyle = 'rgba(255,255,255,0.16)'; g.beginPath(); g.arc(W / 2, 420, 165, 0, Math.PI * 2); g.fill();
+  g.beginPath(); g.ellipse(W / 2, 1010, 370, 360, 0, Math.PI, 0); g.fill();
+  g.fillStyle = 'rgba(255,255,255,0.8)'; g.font = '700 34px "Open Sans", sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('Your photo', W / 2, 420); g.textAlign = 'left';
+  const gr = g.createLinearGradient(0, H * 0.55, 0, H); gr.addColorStop(0, 'rgba(0,0,0,0)'); gr.addColorStop(0.55, 'rgba(0,0,0,0.72)'); gr.addColorStop(1, 'rgba(0,0,0,0.92)'); g.fillStyle = gr; g.fillRect(0, H * 0.55, W, H * 0.45);
+  g.font = '700 25px "Open Sans", sans-serif'; const lab = 'Boardroom Moves', lw = g.measureText(lab).width;
+  g.fillStyle = 'rgba(30,30,30,0.62)'; g.fillRect(0, 48, 40 + lw + 150, 52); g.fillStyle = '#fff'; g.fillText(lab, 40, 75);
+  if (LOGO && LOGO.naturalWidth) g.drawImage(LOGO, W - 214, 48, 158, 158);
+  g.font = '800 44px "Open Sans", sans-serif'; g.textBaseline = 'alphabetic';
+  const words = [].concat(...[[name, '#FFD84D'], ['appointed as ' + role + ' at', '#fff'], [company, '#FFD84D']].map(([t, c]) => String(t).split(/\s+/).filter(Boolean).map(w => [w, c])));
+  const sp = g.measureText(' ').width, lines = []; let cur = [], cw = 0;
+  for (const [w, c] of words) { const ww = g.measureText(w).width; if (cur.length && cw + sp + ww > W - 90) { lines.push([cur, cw]); cur = []; cw = 0; } cw += (cur.length ? sp : 0) + ww; cur.push([w, c, ww]); }
+  if (cur.length) lines.push([cur, cw]);
+  let y = H - 52 - (lines.length - 1) * 54;
+  for (const [ws, w] of lines) { let x = (W - w) / 2; for (const [t, c, tw] of ws) { g.fillStyle = c; g.fillText(t, x, y); x += tw + sp; } y += 54; }
 }
 function saveAnswer() {
   const t = app.querySelector('textarea[name=a]'); if (!t) return;
