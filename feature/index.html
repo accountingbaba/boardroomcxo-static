@@ -245,7 +245,7 @@ const SCREENS = {
   photo: () => `<p class="kicker">Your photo</p><h1>Add a professional photo</h1><p class="lead">A clear headshot works best: face the camera, plain background, good light. We use it in your post${V.tier !== 'free' ? ' and profile page' : ''}.</p>%ERR%
     <form data-f="photo"><div class="photo"><div class="ph ${uploading ? 'busy' : ''}" id="ph" style="${photoUrl ? `background-image:url('${photoUrl}')` : ''}">${photoUrl ? '' : 'No photo<br>yet'}</div>
     ${uploading ? `<div class="drop busy" role="status"><strong><span class="spin"></span> Uploading your photo…</strong><br><span class="hint">This takes a few seconds. Please keep this page open.</span></div>`
-      : `<label class="drop" id="drop"><input type="file" id="file" accept="image/jpeg,image/png,image/webp" hidden><strong>${V.has_photo ? 'Change photo' : 'Choose a photo'}</strong><br><span class="hint">JPG, PNG or WebP, up to 10 MB</span></label>`}</div>
+      : `<label class="drop" id="drop"><input type="file" id="file" accept="image/jpeg,image/png,image/webp" hidden><strong>${V.has_photo ? 'Change photo' : 'Choose a photo'}</strong><br><span class="hint">JPG, PNG or WebP</span></label>`}</div>
     ${V.has_photo && !uploading ? `<p class="okline">✓ ${justUploaded ? 'Photo uploaded' : 'Photo added'}</p>` : ''}
     <div class="actions"><button type="submit" class="btn" ${uploading || !V.has_photo ? 'disabled' : ''}>${uploading ? '<span class="spin"></span> Uploading…' : 'Continue'}</button> ${uploading ? '' : back()}</div>
     ${!V.has_photo && !uploading ? '<p class="hint" style="margin-top:10px">Continue unlocks once your photo is added.</p>' : ''}</form>`,
@@ -367,7 +367,7 @@ function saveAnswer() {
 }
 async function upload(f) {
   if (!/^image\/(jpeg|png|webp)$/.test(f.type)) { err = 'Use a JPG, PNG or WebP photo.'; return render(); }
-  if (f.size > 10 * 1024 * 1024) { err = 'That photo is over 10 MB. Use a smaller one.'; return render(); }
+  if (f.size > 25 * 1024 * 1024) { err = 'That photo is over 25 MB. Use a smaller one.'; return render(); }
   photoUrl = URL.createObjectURL(f); uploading = true; justUploaded = false; err = ''; render();
   try {
     const fd = new FormData(); fd.append('photo', await shrink(f), 'photo.jpg');
