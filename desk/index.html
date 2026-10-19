@@ -172,7 +172,7 @@ function signin(sentTo, err, devCode) {
 }
 async function boot() {
   const m = await api('me').catch(() => ({ signedIn: false }));
-  if (!m.signedIn) { if (ON_TEAM_DESK) { location.href = TEAM_HOME; return; } return signin(); }
+  if (!m.signedIn || !ON_TEAM_DESK) { location.href = ON_TEAM_DESK ? TEAM_HOME : 'https://accountingbaba.com/bd/moves/'; return; } // one door: the team desk
   ME = m; mineOnly = !ME.isAdmin; $('#top').hidden = false;
   try { TPL = (await api('team/settings')).settings.templates || {}; } catch (e) { if (/access/.test(e.message)) { $('#view').innerHTML = `<div class="err">${esc(e.message)}</div>`; return; } }
   $('#me').innerHTML = `${ON_TEAM_DESK ? `<a href="${TEAM_HOME}" class="alldesks">All companies</a>` : ''}${esc(ME.name)}${ME.isAdmin ? ' · admin' : ''}<button type="button" id="out">Sign out</button>`;
@@ -507,10 +507,9 @@ async function vSettings() {
   const conn = (k, label, how) => `<div><b style="font-size:20px">${c[k] ? 'Connected' : 'Not yet'}</b><span>${label}${c[k] ? '' : ' · ' + how}</span></div>`;
   $('#view').innerHTML = `<div class="head"><div><h1>Settings</h1></div></div>
   <div class="stat">${conn('email', 'Email (ZeptoMail)', 'add boardroomcxo.com in ZeptoMail')}${conn('razorpay', 'Razorpay', 'waiting for KYC')}${conn('books', 'Zoho Books invoices', 'needs the Zoho keys')}${conn('loader', 'Daily loader', 'needs its key')}${conn('lookup', 'LinkedIn auto-fill', 'needs the Firecrawl key')}</div>
-  <h2>Team</h2><p class="sub" style="margin:-4px 0 10px">Companies: which desks each person sees on the team desk. None ticked means all.</p><div class="tw"><table><thead><tr><th>Email</th><th>Name</th><th>Role</th><th>Companies</th><th>Active</th></tr></thead><tbody>
+  <h2>Team</h2><p class="sub" style="margin:-4px 0 10px">The team is whoever is on the <a href="https://accountingbaba.com/portal/#/team/staff" target="_blank" rel="noopener">Accounting Baba portal Team page</a>: add or remove people there and it shows here. Here you choose which companies each person sees (none ticked means all).</p><div class="tw"><table><thead><tr><th>Email</th><th>Name</th><th>Role</th><th>Companies</th><th>Active</th></tr></thead><tbody>
     ${d.admins.map(a => `<tr><td>${esc(a)}</td><td></td><td>Admin (owner)</td><td>All</td><td>Yes</td></tr>`).join('')}
-    ${d.staff.filter(x => !d.admins.includes(x.email)).map(x => `<tr><td>${esc(x.email)}</td><td>${esc(x.name || '')}</td><td>${x.role === 'admin' ? 'Admin' : 'Team'}</td><td>${x.role === 'admin' ? 'All' : DESKS.map(([k, v]) => `<label style="white-space:nowrap;margin-right:8px;font-size:12.5px"><input type="checkbox" data-deskfor="${esc(x.email)}" data-name="${esc(x.name || '')}" value="${k}" ${String(x.desks || '').split(',').includes(k) ? 'checked' : ''}> ${v}</label>`).join('')}</td><td>${x.active ? 'Yes' : 'No'} ${B(x.active ? 'Turn off' : 'Turn on', { staffon: x.email, name: x.name || '', role: x.role, active: x.active ? 0 : 1 }, 'g s')}</td></tr>`).join('')}</tbody></table></div>
-  <form id="stf" class="card" style="padding:14px;margin-top:10px"><div class="g3"><label class="f"><span>Email</span><input type="email" name="email" required></label><label class="f"><span>Name</span><input type="text" name="name"></label><label class="f"><span>Role</span><select name="role"><option value="member">Team</option><option value="admin">Admin</option></select></label></div><button class="btn s" type="submit">Add to the team</button></form>
+    ${d.staff.filter(x => !d.admins.includes(x.email)).map(x => `<tr><td>${esc(x.email)}</td><td>${esc(x.name || '')}</td><td>${x.role === 'admin' ? 'Admin' : 'Team'}</td><td>${x.role === 'admin' ? 'All' : DESKS.map(([k, v]) => `<label style="white-space:nowrap;margin-right:8px;font-size:12.5px"><input type="checkbox" data-deskfor="${esc(x.email)}" data-name="${esc(x.name || '')}" value="${k}" ${String(x.desks || '').split(',').includes(k) ? 'checked' : ''}> ${v}</label>`).join('')}</td><td>${x.active ? 'Yes' : 'No (removed on the portal)'}</td></tr>`).join('')}</tbody></table></div>
   <h2>Who does what</h2><form id="sf2" class="card" style="padding:14px"><div class="g2">
     ${Object.entries({ outreach: 'Outreach and publishing', content: 'Replies and drafting', approvals: 'Approvals', checkins: 'Check-ins' }).map(([k, v]) => `<label class="f"><span>${v}</span><input type="email" name="duty_${k}" value="${esc(s.duties[k] || '')}"></label>`).join('')}</div>
   <h2 style="margin-top:6px">Prices and rules</h2><div class="g3">
@@ -531,7 +530,6 @@ async function vSettings() {
     const row = d.staff.find(x => x.email === em);
     try { await api('team/settings', { staff: { email: em, name: row.name || '', role: row.role, active: Boolean(row.active), desks: boxes.filter(b => b.checked).map(b => b.value) } }); toast('Saved'); } catch (x) { toast(x.message); }
   });
-  $('#stf').onsubmit = async e => { e.preventDefault(); try { await api('team/settings', { staff: Object.fromEntries(new FormData(e.target)) }); toast('Added'); vSettings(); } catch (x) { toast(x.message); } };
   $('#sf2').onsubmit = async e => {
     e.preventDefault(); const v = Object.fromEntries(new FormData(e.target));
     const settings = { duties: { outreach: v.duty_outreach, content: v.duty_content, approvals: v.duty_approvals, checkins: v.duty_checkins },

@@ -706,7 +706,11 @@ export async function handleApi(context) {
     if (what === 'settings' && method === 'POST') {
       if (!staff.isAdmin) return fail('Admins only.', 403);
       if (body.staff) {
+        // People are added and removed on the Accounting Baba portal's Team page. Here only their companies change.
         const e = str(body.staff.email, 160).toLowerCase();
+        const known = await db.prepare('SELECT * FROM staff WHERE email = ?').bind(e).first();
+        if (!known) return fail('Add people on the Accounting Baba portal Team page first.');
+        body.staff = { ...body.staff, name: known.name, role: known.role, active: Boolean(known.active) };
         if (!/@/.test(e)) return fail('Enter an email address.');
         const desks = Array.isArray(body.staff.desks) ? body.staff.desks.filter(d => ['uae', 'eo', 'cxo', 'mv'].includes(d)).join(',') : null;
         await db.prepare(`INSERT INTO staff (email, name, role, active, created_at, desks) VALUES (?, ?, ?, ?, ?, ?) ON CONFLICT(email) DO UPDATE SET name = excluded.name, role = excluded.role, active = excluded.active, desks = COALESCE(?, staff.desks)`)

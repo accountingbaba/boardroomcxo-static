@@ -137,6 +137,8 @@ export async function getStaff(request, env) {
   return { email: s.email, name: (st && st.name) || s.email.split('@')[0], isAdmin, desks: isAdmin ? null : desks };
 }
 export async function requestCode(env, body) {
+  // The team signs in on the team desk (accountingbaba.com/bd) with the Accounting Baba portal login. This sign-in is off.
+  if (env.MOVES_OWN_LOGIN !== '1') return fail('Sign in at accountingbaba.com/bd with your Accounting Baba portal login.', 403);
   const db = env.MOVES_DB;
   const email = str(body.email, 160).toLowerCase();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return fail('Enter a valid email address.');
