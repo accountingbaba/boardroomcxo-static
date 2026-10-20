@@ -220,7 +220,7 @@ function signin(sentTo, err, devCode) {
 async function boot() {
   const m = await api('me').catch(() => ({ signedIn: false }));
   if (!m.signedIn || !ON_TEAM_DESK) { location.href = ON_TEAM_DESK ? TEAM_HOME : 'https://accountingbaba.com/bd/moves/'; return; } // one door: the team desk
-  ME = m; mineOnly = !ME.isAdmin; $('#top').hidden = false;
+  ME = m; mineOnly = !(ME.isAdmin || ME.isManager); $('#top').hidden = false; // Ketul and managers see everyone's tasks first
   try { TPL = (await api('team/settings')).settings.templates || {}; } catch (e) { if (/access/.test(e.message)) { $('#view').innerHTML = `<div class="err">${esc(e.message)}</div>`; return; } }
   document.documentElement.classList.add('td');
   document.querySelectorAll('.brand [hidden]').forEach(el => el.hidden = false);
@@ -270,7 +270,7 @@ async function vToday() {
   list.forEach(t => (groups[t.duty] = groups[t.duty] || []).push(t));
   $('#view').innerHTML = `<div class="head"><div><h1>Today</h1><p class="sub">${day(TODAY.today)} · connection requests sent ${TODAY.sent_today} of ${TODAY.daily_requests}</p></div>
     <div class="chips" style="margin:0"><button class="chip ${mineOnly ? 'on' : ''}" data-mine="1">My tasks</button><button class="chip ${!mineOnly ? 'on' : ''}" data-mine="0">Everyone's</button></div></div>
-    ${!list.length ? `<div class="card empty">Nothing waiting${mineOnly ? ' for you' : ''}. New tasks appear here as leads and features move along.</div>` : ''}
+    ${!list.length ? `<div class="card empty">Nothing waiting${mineOnly ? ' for you' : ''}. ${mineOnly && TODAY.tasks.length ? `${TODAY.tasks.length} task${TODAY.tasks.length === 1 ? ' is' : 's are'} waiting for others: <button class="chip" data-mine="0">See everyone's</button>` : 'New tasks appear here as leads and features move along.'}</div>` : ''}
     ${Object.keys(DUTY).filter(k => groups[k]).map(k => `<h2>${DUTY[k]} · ${groups[k].length}</h2><div class="tasks">${groups[k].map(taskRow).join('')}</div>`).join('')}`;
 }
 function taskRow(t) {
