@@ -295,7 +295,7 @@ In a price war, the obvious move is to chase every subscriber you can hold. He d
 
 He kept investing through the losses, adding towers and mobile broadband stations quarter after quarter. He built the business around people who would pay more for something better, not around people who would leave for a rupee.
 
-By the December 2025 quarter, Airtel's revenue per user was ₹259, against ₹213.7 at Jio and ₹186 at Vodafone Idea. Its India operating margin reached 60.4%, with 368.5 million mobile customers. FY26 closed with ₹2.1 lakh crore in revenue and ₹26,695 crore in net profit. The company that refused to chase the cheapest customer was earning about 21% more per user than the company that started the war.
+By the December 2025 quarter, Airtel's revenue per user was ₹259, against ₹213.7 at Jio and ₹172 at Vodafone Idea. Its India operating margin reached 60.4%, with 368.5 million mobile customers. FY26 closed with ₹2.1 lakh crore in revenue and ₹26,695 crore in net profit. The company that refused to chase the cheapest customer was earning about 21% more per user than the company that started the war.
 
 ## The Boardroom Lesson Most Turnaround Stories Miss
 
@@ -345,7 +345,7 @@ Instead of chasing every subscriber to hold market share, Gopal Vittal let Airte
 
 ### How is Airtel performing under Gopal Vittal today?
 
-By the December 2025 quarter, Airtel's revenue per user reached ₹259, against ₹213.7 at Jio and ₹186 at Vodafone Idea. Its India operating margin reached 60.4% with 368.5 million mobile customers, and FY26 closed with ₹2.1 lakh crore in revenue and ₹26,695 crore in net profit.
+By the December 2025 quarter, Airtel's revenue per user reached ₹259, against ₹213.7 at Jio and ₹172 at Vodafone Idea. Its India operating margin reached 60.4% with 368.5 million mobile customers, and FY26 closed with ₹2.1 lakh crore in revenue and ₹26,695 crore in net profit.
 
 ### What is Gopal Vittal's approach to capital allocation?
 
@@ -353,6 +353,7 @@ Gopal Vittal treats core telecom as the first call on Airtel's capital. In his o
 
 ## Sources
 
+- Vodafone Idea, Quarterly Report Mar’26, May 2026
 - Mint, Airtel revenue climbs 20% in Q3; Arpu gap to Jio rises, February 2026
 - Business Standard, Bharti Airtel Q4 profit falls 33.5% despite strong revenue growth, May 2026
 
@@ -366,7 +367,7 @@ Publisher: Boardroom CXO (https://boardroomcxo.com)
 
 In June 2020, a Mahindra Group executive told reporters the group was ready to hand over SsangYong, the Korean carmaker it had saved from collapse ten years earlier. He was not the chairman. He was not the chief executive either.
 
-He was giving it away.
+He was letting it go.
 
 The reason sat in the accounts. In the year to March 2020, Mahindra's businesses outside India lost more than ₹5,200 crore, wiping out most of what the rest of the group had earned. Profit for the year fell almost 98%, from ₹5,315 crore to ₹127 crore. Return on equity, the profit a company makes on its owners' money, dropped from 14.9% to 6.4%.
 
@@ -380,13 +381,13 @@ SsangYong was not his mistake. Anand Mahindra had bought it himself, years befor
 
 That same month in 2020, the group told analysts it would reach 18% return on equity within five years, a modest ambition given how far the number had fallen. Most leaders who inherit a mess start by cutting, and stop there. Shah did not.
 
-He exited fifteen businesses that were not performing. Then he spent what that freed: a majority stake in the truck maker SML Isuzu, a life insurance venture with Canada's Manulife, and serious money behind electric vehicles and SUVs. The promise took him eighteen months. "We got to the RoE target in 18 months rather than five years," he says.
+He exited fifteen businesses that were not performing. The promise took him eighteen months. "We got to the RoE target in 18 months rather than five years," he says. Then he spent what that freed: serious money behind electric vehicles and SUVs and, by 2025, a majority stake in the truck maker SML Isuzu and a life insurance venture with Canada's Manulife.
 
-By March 2026, Mahindra was earning ₹17,099 crore a year on sales of ₹1.98 lakh crore, nine times the profit of the year he took charge. It had taken second place in the Indian car market from Hyundai, which had held that position for seventeen years.
+By March 2026, Mahindra was earning ₹17,099 crore a year on sales of ₹1.98 lakh crore. It had taken second place in the Indian car market from Hyundai, which had held that position for many years.
 
 ## The Boardroom Lesson Most Turnaround Stories Miss
 
-Most coverage of this story stops at the headline: outsider takes over, cuts the fat, profit recovers. What gets skipped is the sequencing. Shah did not treat the fifteen exits as the plan. He treated them as the funding mechanism for the plan, the SML Isuzu stake, the Manulife venture, the EV and SUV investment, that actually moved the return-on-equity number.
+Most coverage of this story stops at the headline: outsider takes over, cuts the fat, profit recovers. What gets skipped is the sequencing. Shah did not treat the fifteen exits as the plan. He treated them as the funding mechanism for the plan that followed: the EV and SUV investment and, later, the SML Isuzu stake and the Manulife venture.
 
 > Cutting is not a strategy. It is only how you pay for one.
 
@@ -420,7 +421,7 @@ The market does not reward the executive with the most reassuring background. It
 
 ### Who is Anish Shah?
 
-Anish Shah is the managing director and chief executive of Mahindra Group, a role he took up in April 2021 as the first person from outside the founding family to lead the group in seventy-five years. He joined Mahindra as deputy managing director and group chief financial officer after fourteen years at GE Capital.
+Anish Shah is the managing director and chief executive of Mahindra Group, a role he took up in April 2021 as the first person from outside the founding family to lead the group in seventy-five years. He joined Mahindra in 2014 after fourteen years at GE Capital, and was deputy managing director and group chief financial officer before taking the top job.
 
 ### Why were Mahindra's overseas businesses struggling before Anish Shah took over?
 
@@ -436,7 +437,16 @@ In June 2020, Mahindra told analysts it would reach 18% return on equity within 
 
 ### How is Mahindra performing under Anish Shah today?
 
-By March 2026, Mahindra Group was earning ₹17,099 crore a year on sales of ₹1.98 lakh crore, roughly nine times the profit recorded the year Anish Shah took charge. The group also took second place in the Indian car market from Hyundai, which had held that position for seventeen years.
+By March 2026, Mahindra Group was earning ₹17,099 crore a year on sales of ₹1.98 lakh crore. The group also took second place in the Indian car market from Hyundai, which had held that position for many years.
+
+## Sources
+
+- Mahindra & Mahindra, M&M Results Q4 F26 and FY26, May 2026
+- Mahindra & Mahindra, Mahindra & Mahindra Integrated Annual Report 2019-20, July 2020
+- Business Today, From capital allocation discipline to bold bets: How Anish Shah steered Mahindra Group over last 5 years, April 2026
+- Forbes India, Anish Shah's Mahindra bet: The strategy behind a 12x market cap, March 2026
+- Business Today, Mahindra topples Hyundai to become 2nd biggest carmaker in 2025, December 2025
+- Reuters, Indian automaker Mahindra seeks to give up control of struggling unit SsangYong, June 2020
 
 ================================================================================
 # Costs Were Rising Everywhere. Sameer Khetarpal Cut Domino's Prices Anyway.
@@ -446,15 +456,15 @@ Author: CA Ketul Patel, Founder, Boardroom CXO
 Publisher: Boardroom CXO (https://boardroomcxo.com)
 ================================================================================
 
-In September 2022, a man who had spent seven years building grocery and delivery businesses at Amazon walked into India's largest foodservice company and inherited a pizza chain that was quietly losing its pull.
+In September 2022, a man who had spent six and a half years building grocery and delivery businesses at Amazon walked into India's largest foodservice company and inherited a pizza chain that was quietly losing its pull.
 
 Not a collapse. A slow erosion.
 
 ## Rising Costs, an Unlikely Résumé
 
-People were still ordering from Domino's. But demand was softening, and the ticket was being held up by price increases rather than appetite. Inflation was pushing cheese and vegetable costs higher, total expenses rose more than 18 percent in a single quarter, and the push into smaller towns was thinning margins further. The share price had fallen to a 52-week low of ₹451.60 in May 2022 (split-adjusted), and the previous chief executive had resigned well before his term ended.
+People were still ordering from Domino's. But demand was softening, and the ticket was being held up by price increases rather than appetite. Inflation was pushing cheese and vegetable costs higher, total expenses rose more than 18 percent in a single quarter, and the push into smaller towns was thinning margins further. The share price had slumped to a 52-week low in March 2022, when the previous chief executive resigned.
 
-Sameer Khetarpal had never run a restaurant company. Production manager at Unilever. Years at GE Capital. Partner at McKinsey. Then Amazon Fresh, Amazon Food, and Amazon Pharmacy.
+Sameer Khetarpal had never run a restaurant company. Hindustan Unilever. GE Capital. Partner at McKinsey. Then Amazon Fresh, Amazon Food, and Amazon Pharmacy.
 
 ## He Cut Prices When the Textbook Said Raise Them
 
@@ -464,7 +474,7 @@ He did not. He cut prices instead, and then held them, keeping menu pricing broa
 
 ## The Turnaround, By the Numbers
 
-By the September 2025 quarter, net profit was up 190.2 percent to ₹186 crore, and sales were up 19.7 percent to ₹2,340 crore. Domino's India had grown like-for-like for seven quarters in a row. FY26 group revenue closed at ₹9,512.5 crore across a global network of 3,480 stores, Domino's India accounting for the largest share of that footprint.
+By the September 2025 quarter, net profit was up 190 percent to ₹186 crore, helped by a one-time gain, and sales were up 19.7 percent to ₹2,340 crore. Domino's India had grown like-for-like for seven quarters in a row. FY26 group revenue closed at ₹9,512.5 crore across a global network of 3,636 stores, Domino's India accounting for the largest share of that footprint.
 
 And Domino's became the first quick service brand in India to reach 500 cities. Not the biggest cities. The five hundredth one.
 
@@ -472,7 +482,7 @@ And Domino's became the first quick service brand in India to reach 500 cities. 
 
 ## The Boardroom Read
 
-Khetarpal's path to this seat was unconventional by restaurant industry standards: an FMCG production background, a stint at GE Capital, a consulting career, and an e-commerce operating record with no food service on the résumé. Boards hiring for a foodservice turnaround often default to candidates from inside the category. What he brought instead was pricing discipline from FMCG and a delivery-first operating model from Amazon, applied to a business that needed both.
+Khetarpal's path to this seat was unconventional by restaurant industry standards: an FMCG background, a stint at GE Capital, a consulting career, and an e-commerce operating record with no food service on the résumé. Boards hiring for a foodservice turnaround often default to candidates from inside the category. What he brought instead was pricing discipline from FMCG and a delivery-first operating model from Amazon, applied to a business that needed both.
 
 The lesson for a hiring board is not that outsiders always win. It is that the skill a turnaround actually needs, in this case pricing conviction and last-mile logistics, matters more than a résumé line that says the candidate has run a chain like this one before.
 
@@ -482,11 +492,11 @@ The category on the résumé matters less than the discipline the business actua
 
 ### Why was Domino's India losing momentum before Sameer Khetarpal took over?
 
-Demand was softening and revenue was being held up by price increases rather than appetite. Cheese and vegetable costs were rising, total expenses rose more than 18% in a single quarter, and the share price had fallen to a 52-week low of ₹451.60 in May 2022 (split-adjusted).
+Demand was softening and revenue was being held up by price increases rather than appetite. Cheese and vegetable costs were rising, total expenses rose more than 18% in a single quarter, and the share price had slumped to a 52-week low in March 2022, when the previous chief executive resigned.
 
 ### What was Sameer Khetarpal's background before Jubilant FoodWorks?
 
-He had never run a restaurant company. He was a production manager at Unilever, spent years at GE Capital, was a partner at McKinsey, and then ran Amazon Fresh, Amazon Food, and Amazon Pharmacy before joining Jubilant FoodWorks in September 2022.
+He had never run a restaurant company. He worked at Hindustan Unilever and GE Capital, was a partner at McKinsey, and then ran Amazon Fresh, Amazon Food, and Amazon Pharmacy before joining Jubilant FoodWorks in September 2022.
 
 ### Why did Sameer Khetarpal cut Domino's prices instead of raising them?
 
@@ -498,11 +508,23 @@ He doubled down on Domino's own delivery fleet rather than leaning on aggregator
 
 ### What results has Domino's India posted under Sameer Khetarpal?
 
-By the September 2025 quarter, net profit was up 190.2% to ₹186 crore and sales were up 19.7% to ₹2,340 crore, with like-for-like growth for seven quarters in a row. FY26 group revenue closed at ₹9,512.5 crore across 3,480 stores globally.
+By the September 2025 quarter, net profit was up 190% to ₹186 crore, helped by a one-time gain, and sales were up 19.7% to ₹2,340 crore, with like-for-like growth for seven quarters in a row. FY26 group revenue closed at ₹9,512.5 crore across 3,636 stores globally.
 
 ### What milestone did Domino's India reach under Sameer Khetarpal?
 
 Domino's became the first quick service restaurant brand in India to reach 500 cities, not the biggest cities, the five hundredth one, reflecting the continued push into smaller towns.
+
+## Sources
+
+- Jubilant FoodWorks, Earnings Presentation Q4 & FY26, May 2026
+- Jubilant FoodWorks, Jubilant FoodWorks Limited Reports Q2FY26 Results, November 2025
+- CNBC-TV18, Jubilant FoodWorks Q2 Results: Domino’s like-for-like, order growth lift revenue 20%, November 2025
+- Reuters, Domino's India operator posts higher profit on strong online sales, new stores, May 2025
+- CNBC-TV18, Jubilant Foodworks Q4 Results: Domino's Like-For-Like growth turns positive after four quarters, May 2024
+- Reuters, Focus: The world's cheapest Domino's pizza is in inflation-hit India. It costs $0.60, July 2023
+- The Indian Express, Jubilant FoodWorks Q2 profit up 9.7% to Rs 131.5 crore; revenue up 16.6% to Rs 1,301.5 crore, November 2022
+- Mint, Sameer Khetarpal is new CEO & MD at Jubilant FoodWorks, May 2022
+- Business Standard, Jubilant FoodWorks slumps 15%, hits 52-week low as CEO Pratik Pota resigns, March 2022
 
 ================================================================================
 # He Ran India's Biggest Luggage Company. Then He Bought the Rival One-Tenth Its Size.
@@ -591,11 +613,11 @@ Author: CA Ketul Patel, Founder, Boardroom CXO
 Publisher: Boardroom CXO (https://boardroomcxo.com)
 ================================================================================
 
-In November 2020, a man walked away from the top job at Westside to run Shoppers Stop. Department stores in India live inside shopping malls, and that year, malls were the last place anyone wanted to be. Footfall was running at a fifth of the previous year.
+In November 2020, a man walked away from the top job at Westside to run Shoppers Stop. Department stores in India live inside shopping malls, and that year, malls were the last place anyone wanted to be. In the quarter before he arrived, footfall had run at about a fifth of the previous year's.
 
 Nobody wanted that job.
 
-## Losing Half the Business in a Year
+## Losing Nearly Half the Business in a Year
 
 By March 2021, Shoppers Stop had lost 44 percent of its revenue in twelve months. Sales fell to ₹1,973 crore. The loss for the year was ₹267 crore.
 
@@ -605,17 +627,17 @@ He did not.
 
 ## Nine Weeks to Renegotiate Everything
 
-He set a cost target of ₹450 crore and went looking for it line by line. Nine weeks into the job, in January 2021, he told analysts the company had renegotiated every cost. A rights issue was raised and oversubscribed, ₹125 crore of debt was repaid, and the company turned net cash, all while footfall was still a fraction of what it had been a year earlier.
+The company had set a cost-savings target of ₹450 crore, and he kept going after it line by line. Nine weeks into the job, in January 2021, he told analysts the company had renegotiated every cost and had already saved ₹390 crore. A rights issue was raised and oversubscribed, ₹125 crore of debt was repaid, and the company turned net cash, all while footfall was still a fraction of what it had been a year earlier.
 
 ## Building Online While the Fire Was Still Burning
 
-At the same time, he put more than 50 stores onto Amazon and pushed the live catalogue to 61,000 items, taking online from 1.5 percent of sales to 6 percent. Then, with the core business still being repaired, he committed to 10 to 12 new stores, most of them in tier 2 cities. Most turnaround plans fix one thing at a time. His ran three in parallel: cost, balance sheet, and growth.
+At the same time, with more than 50 stores already live on Amazon, he pushed the live catalogue to 61,000 items, taking online from 1.5 percent of sales to 6 percent. Then, with the core business still being repaired, he committed to 10 to 12 new stores, most of them in tier 2 cities. Most turnaround plans fix one thing at a time. His ran three in parallel: cost, balance sheet, and growth.
 
 ## The Numbers Turned, Then He Left
 
-By the December 2021 quarter, Shoppers Stop reported a net profit of ₹77.32 crore against a loss of ₹25.11 crore a year earlier, with zero net debt. A year after that, quarterly revenue was back above ₹948 crore.
+By the December 2021 quarter, Shoppers Stop reported a net profit of ₹77.32 crore against a loss of ₹25.11 crore a year earlier, with zero net debt. A year after that, quarterly revenue had reached ₹1,137 crore.
 
-In August 2023, with the balance sheet clean, he resigned to spend more time with his family. The stock fell 8 percent that day.
+In August 2023, with the balance sheet clean, he resigned to spend more time with his family. The stock fell 8 percent in early trade that day.
 
 > The market does not price a leader while he is fixing things. It prices him on the day he leaves.
 
@@ -631,7 +653,7 @@ The market does not remember who inherited the recovery. It remembers who was in
 
 ### Why did Venu Nair take the top job at Shoppers Stop when nobody else wanted it?
 
-In November 2020, Indian malls were running at about a fifth of their usual footfall and Shoppers Stop, a department store chain that lives inside malls, was in freefall. Venu Nair took the CEO role anyway, drawing on 27 years across Marks and Spencer Reliance, Madura, Arvind, and Westside.
+In November 2020, Shoppers Stop, a department store chain that lives inside malls, was in freefall: in the September 2020 quarter its footfall had been about a fifth of the previous year's. Venu Nair took the CEO role anyway, drawing on 27 years across Marks and Spencer Reliance, Madura, Arvind, and Westside.
 
 ### How much revenue had Shoppers Stop lost by March 2021?
 
@@ -639,19 +661,27 @@ By March 2021, Shoppers Stop had lost 44% of its revenue in twelve months. Sales
 
 ### What cost actions did Venu Nair take at Shoppers Stop?
 
-He set a cost reduction target of ₹450 crore and went after it line by line. Nine weeks into the job, he told analysts the company had renegotiated every cost. A rights issue was raised and oversubscribed, ₹125 crore of debt was repaid, and the company turned net cash.
+Shoppers Stop had set a cost-savings target of ₹450 crore, and he kept going after it line by line. Nine weeks into the job, he told analysts the company had renegotiated every cost and had already saved ₹390 crore. A rights issue was raised and oversubscribed, ₹125 crore of debt was repaid, and the company turned net cash.
 
 ### How did Shoppers Stop's online business grow under Venu Nair?
 
-He put more than 50 stores onto Amazon and pushed the live catalogue to 61,000 items, taking online sales from 1.5% of revenue to 6%, while still committing to 10 to 12 new physical stores, most of them in tier 2 cities.
+With more than 50 stores already live on Amazon, he pushed the live catalogue to 61,000 items, and online sales rose from 1.5% of revenue to 6%, while still committing to 10 to 12 new physical stores, most of them in tier 2 cities.
 
 ### What happened to Shoppers Stop's financials after the turnaround?
 
-By the December 2021 quarter, Shoppers Stop reported a net profit of ₹77.32 crore against a loss of ₹25.11 crore a year earlier, with zero net debt. A year later, quarterly revenue was back above ₹948 crore.
+By the December 2021 quarter, Shoppers Stop reported a net profit of ₹77.32 crore against a loss of ₹25.11 crore a year earlier, with zero net debt. A year later, quarterly revenue had reached ₹1,137 crore.
 
 ### Why did Shoppers Stop's stock fall when Venu Nair resigned in 2023?
 
-He resigned in August 2023 with the balance sheet clean, and the stock fell 8% that day. The market tends not to price a turnaround leader while he is fixing the business, it prices him on the day he leaves.
+He resigned in August 2023 with the balance sheet clean, and the stock fell 8% in early trade that day. The market tends not to price a turnaround leader while he is fixing the business, it prices him on the day he leaves.
+
+## Sources
+
+- Shoppers Stop, Shoppers Stop Q3 FY21 Earnings Conference Call, January 2021
+- Business Standard, Shoppers Stop sinks 8% as Venugopal Nair tenders resignation as MD & CEO, August 2023
+- Business Standard, Shoppers Stop slips after Q3 PAT drops 19% YoY to Rs 63 cr, January 2023
+- Business Standard, Shoppers Stop Q3 net profit at Rs 77.32 cr; sales up 33.82% at Rs 95,811 cr, January 2022
+- Business Standard, Shoppers Stop Q4 net loss narrows to Rs 24 cr; total income declines 3.7%, May 2021
 
 ================================================================================
 # Verghese Kurien Packed His Bags to Leave Anand. He Stayed Fifty Years and Built Amul.
@@ -744,9 +774,9 @@ Author: CA Ketul Patel, Founder, Boardroom CXO
 Publisher: Boardroom CXO (https://boardroomcxo.com)
 ================================================================================
 
-A lab-grown diamond brand appeared on a Netflix series last month without a single rupee in ad spend. What followed is worth paying attention to.
+A lab-grown diamond brand appeared on a Netflix series earlier this year. Not in an ad break, but inside the show. What followed is worth paying attention to.
 
-Solitario Diamonds featured inside "Desi Bling", a luxury lifestyle series on Netflix. No campaign. No media buy. The jewellery simply lived inside a show its audience was already watching. The brand reported a sharp rise in website traffic, digital engagement, and customer enquiries almost immediately after the show aired.
+Solitario Diamonds featured inside "Desi Bling", a luxury lifestyle series on Netflix. Not a conventional ad campaign. The jewellery was woven into a show its audience was already watching. The brand reported a sharp rise in website traffic, digital engagement, and customer enquiries almost immediately after the show aired.
 
 ## The Surface Read and the Real One
 
@@ -754,7 +784,7 @@ The surface read is smart product placement. The more interesting read is what i
 
 For years, jewellery brand marketing meant buying visibility: ads, billboards, festive campaigns. Brands chose the channel and pushed their message out. Solitario did something different. They placed their product where their customers were already spending time.
 
-Their CEO framed it well: people don't want to be sold to, they want to be inspired.
+Their CEO, Ricky Vasandani, framed it well: people don't want to be sold to, they want to be inspired.
 
 ## Why This Is Bigger Than One Placement
 
@@ -792,13 +822,13 @@ We have written before about how Marico built emotional advertising around what 
 
 ## Frequently Asked Questions
 
-### How did Solitario Diamonds get featured on Netflix without paid advertising?
+### How did Solitario Diamonds get featured on Netflix?
 
-Solitario Diamonds appeared inside 'Desi Bling', a luxury lifestyle series on Netflix, through product placement rather than a paid media campaign. The brand's jewellery was simply part of a show its target audience was already watching, with no billboard, festive campaign, or ad buy behind it.
+Solitario Diamonds appeared inside 'Desi Bling', a luxury lifestyle series on Netflix, through a brand integration rather than a conventional ad campaign. The brand's jewellery was woven into the show's visual storytelling, in front of an audience that was already watching.
 
 ### What happened to Solitario Diamonds after the Netflix appearance?
 
-Solitario Diamonds reported a sharp rise in website traffic, digital engagement, and customer enquiries almost immediately after 'Desi Bling' aired on Netflix, despite spending nothing on advertising to generate that response.
+Solitario Diamonds reported a sharp rise in website traffic, digital engagement, and customer enquiries almost immediately after 'Desi Bling' aired on Netflix.
 
 ### What is the difference between marketing for reach and marketing for cultural relevance?
 
@@ -812,83 +842,98 @@ A brand optimizing for reach needs a marketing leader who manages budgets and pe
 
 D2C and jewellery brands shifting toward cultural relevance should look for marketing leaders with a track record in brand positioning, content and storytelling partnerships, and category-defining campaigns, not only leaders skilled in performance marketing and paid media management.
 
+## Sources
+
+- Retail Jeweller India, Solitario appears on Netflix web series ‘DesiBling’, experiences impact of OTT visibility, June 2026
+- The Telegraph, Small-screen couple Karan Kundrra and Tejasswi Prakash step into Dubai's glam world in reality show Desi Bling, May 2026
+- Khaleej Times, 'Desi' Bling in Dubai? Netflix teases new reality show on Indian elite in UAE, February 2026
+
 ================================================================================
-# Cadbury Found Out About the Worms From a TV Reporter. Bharat Puri Fixed It in Eight Weeks.
+# Bharat Puri Heard About the Cadbury Worms From TV News. He Fixed It in Three Months.
 URL: https://boardroomcxo.com/article-bharat-puri-cadbury-worm-crisis
 Published: 2026-08-14
 Author: CA Ketul Patel, Founder, Boardroom CXO
 Publisher: Boardroom CXO (https://boardroomcxo.com)
 ================================================================================
 
-On 3 October 2003, a phone rang at Cadbury India's head office in Mumbai. A television reporter was asking for a comment on worms found in Dairy Milk bars.
+In October 2003, Cadbury India's senior team was at a hotel in Bangkok for its annual budget meeting when the call came. CNBC was running a story about worms in Dairy Milk bars.
 
-Nobody had told them.
+It had been their best year ever.
 
-The regulator had already seized stock and briefed the press. Diwali was a month away and fresh chocolate was moving to 650,000 outlets across India. Cadbury held about 70 percent of the Indian chocolate market and sold 30 million Dairy Milk bars a month. Within a week, volumes fell 30 percent. In three weeks the company collected close to 1,000 hostile newspaper articles and around 120 television clips in ten languages.
+On 3 October, Maharashtra's Food and Drug Administration had seized Cadbury stock from shops across the state after complaints from Mumbai and Pune. Diwali was weeks away and Cadbury was supplying about 650,000 retailers across India. It held about 70 percent of the Indian chocolate market and sold about a million bars a day. Festival-season sales fell 30 percent.
 
-Bharat Puri had been Managing Director for about a year. He later described what he told his team: "it's not about falling down, it's about how you get up."
+Bharat Puri had been Managing Director for about a year. He later recalled the rule he gave his team: "Anybody can fall down. It is all about how quickly we get up."
 
 ## The Facts Were on Cadbury's Side. That Was Not Enough.
 
-Every investigation that followed found the same thing. The factories were clean. The problem was storage at the retail end, outside the company's control.
+The Maharashtra FDA gave Cadbury's two plants in the state a clean chit. Cadbury traced the problem to storage at the retail end, outside its control.
 
 Most companies would have said exactly that, loudly, and waited for the news cycle to move on. It is the natural response, and often the correct one on the facts: if you did not cause the problem, say so and let the evidence carry the argument.
 
-He did not.
+Puri said it, but he did not stop there.
 
 Puri's read was that being right about the cause would not fix what the story had already done to trust in the product on the shelf. A consumer holding a chocolate bar during Diwali gifting season was not going to run the storage-chain forensics before deciding whether to buy it again.
 
 ## Verify It Yourself Before You Ask Anyone Else to Believe You
 
-He sent his own salespeople into their own markets to buy a thousand rupees of chocolate each and look for worms themselves. None of them found any, which is when he decided the packaging had to change anyway.
+He sent his own salespeople into their own markets to buy a thousand rupees of chocolate each and look for worms themselves. None of them found any. The packaging changed anyway.
 
 > The proof that the product was clean was not the point where the response stopped. It was the point where the real fix started.
 
-Cadbury spent about ₹15 crore on imported machinery and built a purity-sealed foil wrap in eight weeks, a process that normally takes six months. It ran a plain page called Facts about Cadbury in 55 publications in 11 languages. Then it put Amitabh Bachchan on camera, not to charm anyone, but to name the problem out loud.
+Cadbury spent ₹12 to 15 crore on imported machinery and had a sealed double wrap on shelves by January 2004, about three months after the crisis broke. Puri went to media offices around the country to answer hostile questions himself. Then Cadbury put Amitabh Bachchan on camera inside its own factory, not to charm anyone, but to show the process and vouch for the product.
 
 ## Paying for Something You Did Not Break
 
-The new packaging launched in January 2004. By June 2004, intention to buy and to gift Cadbury was back at pre-incident levels. Sales recovered fully within eight months.
+The new packaging launched in January 2004. By May 2004, Cadbury's value share was climbing back, to 71 percent from 69.4 percent in January. Puri later said sales recovered in six months, half the time the team had expected.
 
-The new wrapper cost 10 to 15 percent more per bar. The price on the pack never moved.
+The new packaging was expected to add 12 to 15 percent to production costs. Puri said Cadbury would not pass that on to consumers.
 
-That last detail is the one worth sitting with. Cadbury had a clean audit, an external cause, and a legitimate defense. It still chose to absorb a permanent cost increase, on every bar, indefinitely, rather than pass it to the customer whose trust it was trying to rebuild. The company was not paying to fix a defect. It was paying to be believed again.
+That last detail is the one worth sitting with. Cadbury had a clean chit, an external cause, and a legitimate defense. It still chose to absorb a permanent cost increase, on every bar, indefinitely, rather than pass it to the customer whose trust it was trying to rebuild. The company was not paying to fix a defect. It was paying to be believed again.
 
 ## The Boardroom Read
 
 Reputation is not defended by being right.
 
-It is rebuilt by paying for something you did not break. Puri's sequence, verify personally before defending publicly, fix the visible product even when the audit clears you, disclose the problem by name instead of managing around it, and absorb the cost rather than pass it on, is a harder playbook to run than simply pointing at a clean factory report. It is also the reason Cadbury had a full recovery to point to eight months later instead of a legal victory nobody outside the industry remembers.
+It is rebuilt by paying for something you did not break. Puri's sequence, verify personally before defending publicly, fix the visible product even when the audit clears you, disclose the problem by name instead of managing around it, and absorb the cost rather than pass it on, is a harder playbook to run than simply pointing at a clean factory report. It is also the reason Cadbury had a full recovery to point to six months later instead of a legal victory nobody outside the industry remembers.
 
 ## Frequently Asked Questions
 
 ### What happened to Cadbury India in October 2003?
 
-On 3 October 2003, a television reporter called Cadbury India's Mumbai office asking for comment on worms found in Dairy Milk bars, before the company had been informed. The regulator had already seized stock and briefed the press. Within a week, sales volumes fell 30 percent, and within three weeks the company drew close to 1,000 hostile newspaper articles and around 120 television clips in ten languages.
+On 3 October 2003, Maharashtra's Food and Drug Administration seized Cadbury Dairy Milk stock from shops across the state after consumers in Mumbai and Pune complained of worms. Bharat Puri, at a budget meeting in Bangkok, learned of it from a call telling him CNBC was running the story. Festival-season sales fell 30 percent in the run-up to Diwali.
 
 ### Who was Bharat Puri and what was his role during the crisis?
 
-Bharat Puri had been Managing Director of Cadbury India for about a year when the crisis broke. He told his team the moment was about how you get up, not about falling down, and led the company's response through the peak Diwali selling season, when fresh chocolate was moving to 650,000 outlets across India.
+Bharat Puri had been Managing Director of Cadbury India for about a year when the crisis broke. He later recalled the rule he gave his team: anybody can fall down, and what matters is how quickly you get up. He led the company's response through the peak Diwali selling season, when Cadbury was supplying about 650,000 retailers across India.
 
 ### Did Cadbury's factories cause the worm contamination?
 
-No. Every investigation that followed found the factories were clean; the contamination was traced to storage conditions at the retail end, outside the company's direct control. Cadbury could have publicized that finding and waited for the news cycle to move on. Bharat Puri chose not to rely on that defense alone.
+No. The Maharashtra FDA gave Cadbury's two plants in the state a clean chit, and Cadbury traced the problem to storage conditions at the retail end, outside its direct control. Cadbury could have publicized that finding and waited for the news cycle to move on. Bharat Puri chose not to rely on that defense alone.
 
 ### What did Bharat Puri do differently in response to the crisis?
 
-Puri sent his own salespeople into the market to buy about a thousand rupees of chocolate each and inspect it themselves; none found worms. He then had Cadbury redesign the packaging anyway, spending about ₹15 crore on imported machinery to build a purity-sealed foil wrap in eight weeks, a process that normally takes six months. Cadbury also ran a plain-page ad titled Facts about Cadbury in 55 publications across 11 languages and put Amitabh Bachchan on camera to name the problem directly.
+Puri sent his own salespeople into the market to buy about a thousand rupees of chocolate each and inspect it themselves; none found worms. He had Cadbury redesign the packaging anyway, spending ₹12 to 15 crore on imported machinery for a sealed double wrap that reached shelves by January 2004. Puri also visited media offices around the country to answer reporters himself, and Cadbury put Amitabh Bachchan on camera inside its factory to vouch for the product.
 
 ### How much did the new Cadbury packaging cost, and who paid for it?
 
-The purity-sealed foil wrap cost 10 to 15 percent more per bar to produce. Cadbury absorbed that cost; the price on the pack never moved.
+The new double packaging was expected to add 12 to 15 percent to production costs. Puri said Cadbury would absorb that cost and not pass it on to consumers.
 
 ### How long did it take Cadbury to recover from the worm crisis?
 
-The redesigned packaging launched in January 2004. By June 2004, intention to buy and to gift Cadbury chocolate was back at pre-incident levels, and sales recovered fully within eight months of the crisis breaking.
+The redesigned packaging launched in January 2004. By May 2004, Cadbury's chocolate value share was climbing back, to 71 percent from 69.4 percent in January, and Puri later said sales recovered within six months, half the time the team had expected.
 
 ### What is the leadership lesson from Bharat Puri's handling of the Cadbury worm crisis?
 
-Being factually right was not enough to rebuild trust. Puri treated the crisis as a trust problem, not a factory problem, and paid to fix something the company had not technically broken, new packaging, public disclosure, personal verification, at Cadbury's own cost and without raising the price. Reputation was rebuilt by visible, costly action, not by winning the argument about fault.
+Being factually right was not enough to rebuild trust. Puri treated the crisis as a trust problem, not a factory problem, and paid to fix something the company had not technically broken, new packaging, public disclosure, personal verification, at Cadbury's own cost and without passing it on to consumers. Reputation was rebuilt by visible, costly action, not by winning the argument about fault.
+
+## Sources
+
+- CNBC-TV18, BACKSTORY: How Cadbury chose Amitabh Bachchan to be its mascot after bar-of-worms crisis, November 2020
+- Outlook Business, Keeping Up Morale And Keeping The Faith Are Most Important In A Crisis, March 2017
+- Business Standard, Maggi in a soup: Brands that fought back controversies and regained trust, June 2015
+- Business Standard, A sweet comeback, October 2004
+- Business Standard, Big B to promote Cadbury chocolates, Dairy Milk to get facelift, January 2004
+- Times of India, FDA to prosecute Cadburys, October 2003
 
 ================================================================================
 # Everyone Said Royal Enfield Was Finished. Siddhartha Lal Asked for Two Years.
@@ -976,14 +1021,14 @@ Shrinking a business is not the same as giving up on it. Lal deliberately made E
 - Economic Times, Royal Enfield retail sales grow 11 pc to 1,12,334 in March, April 2026
 
 ================================================================================
-# C K Venkataraman: How Tanishq Fixed a Decade of Being Wrong About India
+# C K Venkataraman: How Tanishq Fixed Years of Being Wrong About India
 URL: https://boardroomcxo.com/article-ck-venkataraman-tanishq-jewelry
 Published: 2026-08-07
 Author: CA Ketul Patel, Founder, Boardroom CXO
 Publisher: Boardroom CXO (https://boardroomcxo.com)
 ================================================================================
 
-India's most trusted jewellery brand spent its first decade being wrong about India. Completely wrong.
+India's leading jewellery brand spent its early years being wrong about India. Completely wrong.
 
 Tanishq launched in the mid-1990s on a borrowed idea. Titan Company Limited had taught Indians to buy watches as fashion, so gold got the same treatment: Western-influenced designs, mostly 18 karat, because it was cheaper, harder, and easier to work with.
 
@@ -1001,7 +1046,7 @@ The response was a machine, not a marketing line. Tanishq put a karatmeter in it
 
 The karatmeter solved the diagnosis problem. It did not solve the switching problem, which was that most Indian households already owned gold, often inherited, often of uncertain purity, and had no reason to trust a new brand enough to start over.
 
-Tanishq's answer was to remove the risk entirely. If a customer's old jewellery tested between 19 and 22 karats, Tanishq exchanged it for 22 karat Tanishq jewellery and charged only the making charges. The brand absorbed the gold.
+Tanishq's answer was to remove the risk entirely. If a customer's old jewellery tested at 19 karat or above, Tanishq exchanged it for 22 karat Tanishq jewellery at no extra cost for the gold. The brand absorbed the gap.
 
 > Expensive. Also the only honest way to buy trust in a market that had almost none.
 
@@ -1015,7 +1060,7 @@ In FY25, Titan's jewellery division reported total income above ₹46,000 crore.
 
 ## Where Most Leadership Playbooks Get This Wrong
 
-The comfortable version of this story is "Tanishq found the winning design." That undersells what actually happened. The winning design was never the issue. The issue was that an entire category, organised jewellery retail, had trained Indian consumers to expect to be shortchanged on purity, and no brand had been willing to prove otherwise at its own cost.
+The comfortable version of this story is "Tanishq found the winning design." That undersells what actually happened. The winning design was never the issue. The issue was that an entire category, jewellery retail, had trained Indian consumers to expect to be shortchanged on purity, and no brand had been willing to prove otherwise at its own cost.
 
 Founders and leadership teams tend to treat a failing strategy as a marketing problem first, a pricing problem second, and a trust problem last, if at all, because trust is the hardest one to fix and the most expensive to prove. Tanishq's turnaround worked because it inverted that order: trust first, at real cost, before anything else.
 
@@ -1027,7 +1072,7 @@ The best ones bury it the day it stops being true. Tanishq's early leadership di
 
 ## Frequently Asked Questions
 
-### Why did Tanishq struggle in its first decade?
+### Why did Tanishq struggle in its early years?
 
 Tanishq launched in the mid-1990s on the assumption that Indians would buy gold the way Titan had taught them to buy watches, as Western-influenced fashion, mostly in 18 karat because it was cheaper and easier to work with. Indian gold buyers wanted 22 karat, because gold in India functions as savings, security, and a wedding promise, not an accessory. That mismatch produced losses for years.
 
@@ -1037,7 +1082,7 @@ A karatmeter is an X-ray based machine that tests the purity of gold jewellery o
 
 ### What was Tanishq's gold exchange offer?
 
-If a customer's old jewellery tested between 19 and 22 karats, Tanishq exchanged it for new 22 karat Tanishq jewellery and charged only the making charges, absorbing the gold purity gap itself. It was an expensive policy, but it was the most direct way to buy trust in a market where most buyers had been shortchanged on purity for generations.
+If a customer's old jewellery tested at 19 karat or above, Tanishq exchanged it for new 22 karat Tanishq jewellery at no extra cost for the gold, absorbing the purity gap itself. It was an expensive policy, but it was the most direct way to buy trust in a market where most buyers had been shortchanged on purity for generations.
 
 ### Who is C K Venkataraman and what was his role at Tanishq?
 
@@ -1051,6 +1096,15 @@ In FY25, Titan's jewellery division, which includes Tanishq, reported total inco
 
 Most leaders protect the strategy that made their career. The Tanishq team, and C K Venkataraman after them, did the opposite: they abandoned the founding design philosophy the moment the market proved it wrong, and rebuilt the business around what Indian gold buyers actually valued, purity and trust, ahead of Western design cues.
 
+## Sources
+
+- Titan Company, Earnings Presentation for the Quarter and Financial Year ended March 31, 2025, May 2025
+- Business Standard, Titan's managing director Venkataraman to retire by year end: CEO, May 2025
+- Rediff, The Machine That Saved Tanishq, August 2024
+- Juggernaut Books, The Tanishq Story: Inside India’s No. 1 Jewellery Brand, 2024
+- The Economic Times, Tanishq asked to reply to unfair trade practice charges, October 2002
+- Rediff, Tanishq makes US debut, unveils 'Impure to Pure' campaign, May 2002
+
 ================================================================================
 # Aukera Raised ₹90 Cr: Inside India's Lab-Grown Diamond Race
 URL: https://boardroomcxo.com/article-aukera-lab-grown-diamond-category-race
@@ -1059,13 +1113,13 @@ Author: CA Ketul Patel, Founder, Boardroom CXO
 Publisher: Boardroom CXO (https://boardroomcxo.com)
 ================================================================================
 
-Aukera Grown Diamond Jewellery just raised ₹90 crore. Less than 12 months after raising ₹125 crore.
+Aukera Grown Diamond Jewellery just raised ₹90 crore. About a year after raising ₹124 crore.
 
 A lab-grown diamond jewellery brand founded in Bengaluru in 2023, in a category most Indian families are still figuring out. This is not just a funding story. It is a category-creation race in India's lab-grown diamond jewellery market, and the clock just started ticking louder.
 
 ## What Is Aukera Grown Diamond Jewellery?
 
-Aukera is a lab-grown diamond jewellery brand founded in 2023 by Lisa Mukhedkar and Kumar Saurabh. Lab-grown diamonds are chemically identical to mined diamonds: same hardness, same brilliance, same certifications. The only real difference is origin and price.
+Aukera is a lab-grown diamond jewellery brand founded in 2023 by Lisa Mukhedkar and Kumar Saurabh. Lab-grown diamonds are chemically identical to mined diamonds: same hardness, same brilliance. The only real difference is origin and price.
 
 And yet, for most Indian families walking into a jewellery store today, the question is still the same. Is it real?
 
@@ -1095,7 +1149,7 @@ Going from 13 to 35 stores in a year is a store rollout problem, a certified-inv
 
 ## Common Mistakes Founders Make in a Category-Creation Race
 
-They mistake funding velocity for a moat. Two raises in 12 months signals investor confidence, not category ownership. A legacy player with an existing store network and consumer trust can close that gap faster than a funding round suggests.
+They mistake funding velocity for a moat. Two raises in about a year signals investor confidence, not category ownership. A legacy player with an existing store network and consumer trust can close that gap faster than a funding round suggests.
 
 They underinvest in trust infrastructure relative to growth infrastructure. It is easier to open a 36th store than to build a buyback programme customers actually believe in. In categories where the core objection is "is it real," trust infrastructure is the product, not a supporting function.
 
@@ -1123,11 +1177,11 @@ Aukera Grown Diamond Jewellery is a lab-grown diamond jewellery brand founded in
 
 ### How much funding has Aukera raised?
 
-Aukera raised ₹90 crore in its most recent funding round, coming less than 12 months after an earlier ₹125 crore raise. Its backers include Peak XV Partners, Fireside Ventures, and Alteria Capital.
+Aukera raised ₹90 crore in its most recent funding round, coming about a year after an earlier ₹124 crore raise. Its backers include Peak XV Partners, Fireside Ventures, and Alteria Capital.
 
 ### What is the difference between lab-grown and mined diamonds?
 
-Lab-grown diamonds are chemically identical to mined diamonds, with the same hardness, brilliance, and certification standards. The primary differences are origin, since lab-grown diamonds are created in controlled environments rather than mined from the earth, and price, with lab-grown diamonds typically costing significantly less than mined equivalents of comparable quality.
+Lab-grown diamonds are chemically identical to mined diamonds, with the same hardness and brilliance. The primary differences are origin, since lab-grown diamonds are created in controlled environments rather than mined from the earth, and price, with lab-grown diamonds typically costing significantly less than mined equivalents of comparable quality.
 
 ### Why does a legacy jewellery conglomerate entering the lab-grown diamond category matter?
 
@@ -1136,6 +1190,15 @@ When an established, trusted jewellery conglomerate enters a new category like l
 ### How much investment does it take to lead India's lab-grown diamond jewellery category?
 
 Aukera co-founder Kumar Saurabh has stated publicly that the category leader in India's lab-grown diamond jewellery space will need to invest at least ₹1,000 crore, reflecting the scale of retail infrastructure, certification systems, and buyback programmes required to build consumer trust in a new jewellery category.
+
+## Sources
+
+- Titan Company, Titan Explores Accessible Fashion Jewellery With Lab Grown Diamonds Launching Beyon From House of Titan, December 2025
+- Retail4Growth, Aukera raises Rs 90 Cr in fresh funding to accelerate national expansion, July 2026
+- Outlook Business, Lab-Grown Diamond Jeweller Aukera Raises ₹90-cr Funds, July 2026
+- Inc42, Lab-Grown Diamond Brand Aukera Raises ₹90 Cr Debt To Expand Store Network, July 2026
+- Entrackr, Aukera’s valuation surges over 4.5X in Series B round, August 2025
+- Entrackr, Lab-grown diamond brand Aukera raises $15 Mn led by Peak XV, June 2025
 
 ================================================================================
 # Sunil D'Souza Turned Down Tata's FMCG Job, Then Built It From Tea and Salt
@@ -1230,7 +1293,7 @@ Publisher: Boardroom CXO (https://boardroomcxo.com)
 
 In 1993, Ramesh Chauhan sold the biggest soft drink brand in India. Thums Up. At its peak. To Coca-Cola.
 
-Thums Up controlled close to 85% of the Indian cola market that year. Chauhan had built it himself in 1977, in the exact gap Coca-Cola left when it walked out of the country. For over a decade the brand was untouchable. Then liberalisation opened the doors again, the American giants came back, and they went straight after his bottlers with offers those partners could not refuse.
+Thums Up controlled around 80% of the Indian cola market that year. Chauhan had built it himself in 1977, in the exact gap Coca-Cola left when it walked out of the country. For over a decade the brand was untouchable. Then Pepsi arrived in 1990, Coca-Cola came back in 1993, and Coca-Cola went straight after his bottlers with offers those partners could not refuse.
 
 Chauhan ran the numbers. What he saw was a price war against balance sheets he could not match. So he sold, Thums Up, Limca, Gold Spot, Maaza, the entire stable, for around ₹186 crore.
 
@@ -1238,27 +1301,27 @@ Most operators take that outcome as a retirement plan. He read it as capital for
 
 ## The Part of the Story Everyone Skips
 
-Bisleri was not a new idea for Chauhan. Parle had owned the brand since 1969, when it existed as a niche glass-bottle product sold to hotels and foreign visitors who did not trust Indian tap water. For over two decades it stayed a rounding error in the company's numbers, because no one in India was going to pay for something that came free from a municipal pipe.
+Bisleri was not a new idea for Chauhan. Parle had owned the brand since 1969, when it existed as a niche glass-bottle product sold mainly through five-star hotels and restaurants. For over two decades it stayed a rounding error in the company's numbers, because no one in India was going to pay for something that came free from a municipal pipe.
 
 What changed in 1993 was not the product. It was the amount of seriousness behind it.
 
-Chauhan stopped running Bisleri as a side business the moment he had capital and no soft drink empire left to distract him. That distinction matters more than the founding story most retellings lead with. The brand existed for 24 years before anyone treated it like a real bet.
+Chauhan stopped running Bisleri as a side business the moment he had capital and no soft drink empire left to distract him. That distinction matters more than the founding story most retellings lead with. Parle had owned the brand for 24 years before anyone treated it like a real bet.
 
 ## The Problem Nobody Wanted to Solve
 
 Bottled water has a structural cost problem that cola does not. It is heavy, it is priced low per unit, and the margin on moving it is thin enough that most transporters would rather carry almost anything else. That single fact had kept water a marginal category in India for decades. It was not a demand problem. It was a logistics problem dressed up as a demand problem.
 
-Chauhan's answer was to buy his own trucks and run distribution in-house.
+Chauhan's answer was to move the water himself.
 
-> A man who had just exited soft drinks ended up running a fleet that grew into thousands of vehicles.
+> A man who had just exited soft drinks ended up with over 2,000 trucks carrying his water.
 
-That is not a marketing decision. It is an infrastructure decision, made by someone who understood that owning the unglamorous, low-margin, operationally painful part of a business is often the only way to actually own the category. Competitors who wanted to enter bottled water later had to either build the same logistics muscle from zero or rent it from someone, usually Bisleri's own network, at a price that protected the incumbent.
+That is not a marketing decision. It is an infrastructure decision, made by someone who understood that owning the unglamorous, low-margin, operationally painful part of a business is often the only way to actually own the category. Competitors who wanted to enter bottled water later had to build the same logistics muscle from zero.
 
 ## Where Most Leadership Playbooks Get This Wrong
 
 The conventional read on Chauhan's move is "he saw water coming before everyone else." That is not quite right, and it is worth being precise about why.
 
-Bisleri had existed since 1969. The opportunity was visible to anyone in Parle's leadership for two decades. What was missing was not foresight. It was a leader willing to solve a boring, capital-intensive, low-glamour operating problem instead of chasing a category that already had obvious demand.
+Parle had owned Bisleri since 1969. The opportunity was visible to anyone in Parle's leadership for two decades. What was missing was not foresight. It was a leader willing to solve a boring, capital-intensive, low-glamour operating problem instead of chasing a category that already had obvious demand.
 
 This is the mistake founders make constantly when they raise a round or exit a business and go looking for "the next big thing." They search for a market that is already exciting instead of asking which unsexy operational bottleneck, if solved properly, would let them own a category outright. Chauhan did not discover thirst. He discovered that nobody had bothered to fix distribution economics for water, and that fixing it was worth more than any single product innovation.
 
@@ -1268,9 +1331,9 @@ He was not selling water. He was building a habit that did not exist, one truckl
 
 Today Bisleri International Pvt Ltd is dominant enough that Indians use the brand name as a generic term for bottled water, regardless of who made it. That is the rarest kind of market position a consumer brand can reach.
 
-The company holds roughly a third of the organised bottled water market in India and posted ₹2,689 crore in revenue in FY24. In 2023, Chauhan turned down a reported ₹7,000 crore acquisition offer from the Tata Group and kept the business in the family.
+The company holds roughly a third of the organised bottled water market in India and posted ₹2,689 crore in revenue in FY24. In late 2022, Chauhan held talks to sell Bisleri to Tata Consumer Products for a reported ₹6,000 to ₹7,000 crore. In March 2023, Tata Consumer said it had ceased negotiations, and the business stayed with the family.
 
-He had already given up the number one brand in the country once. He was not doing it again on a category he had spent thirty years building from nothing.
+He had already given up the number one brand in the country once. This time the deal did not happen, and the family still runs the category he spent thirty years building.
 
 ## The Boardroom Read
 
@@ -1284,19 +1347,19 @@ The safe move is rarely the one that builds an empire. What is less obvious is t
 
 ### Why did Ramesh Chauhan sell Thums Up to Coca-Cola?
 
-After liberalisation in 1991, Coca-Cola and Pepsi returned to India and went straight after Chauhan's bottling network with offers his partners could not match. He judged it a price war against balance sheets far deeper than his own and chose to sell rather than fight it, taking Thums Up, Limca, Gold Spot, and Maaza to Coca-Cola in 1993 for around ₹186 crore.
+Pepsi entered India in 1990, and when Coca-Cola returned in 1993 it went straight after Chauhan's bottling network with offers he could not match. He judged it a price war against balance sheets far deeper than his own and chose to sell rather than fight it, taking Thums Up, Limca, Gold Spot, and Maaza to Coca-Cola in 1993 for around ₹186 crore.
 
 ### How big was Thums Up when Ramesh Chauhan sold it?
 
-Thums Up commanded close to 85% of the Indian cola market at the time of the sale. Chauhan had built it from scratch in 1977, in the gap Coca-Cola left when it exited India, and it stayed dominant for over a decade before liberalisation reopened the market to multinational competition.
+Thums Up commanded around 80% of the Indian cola market at the time of the sale. Chauhan had built it from scratch in 1977, in the gap Coca-Cola left when it exited India, and it stayed dominant for over a decade before Pepsi and Coca-Cola reopened the market to multinational competition.
 
-### Why did Bisleri take over two decades to become profitable?
+### Why did Bisleri take over two decades to scale?
 
-Parle acquired Bisleri in 1969 as a niche glass-bottle product sold mainly to hotels and foreign visitors. For more than twenty years it stayed a side business because Indian consumers would not pay for something available free from a tap. It only scaled after 1993, when Chauhan committed the capital and distribution investment the category needed.
+Parle acquired Bisleri in 1969 as a niche glass-bottle product sold mainly through five-star hotels and restaurants. For more than twenty years it stayed a side business because Indian consumers would not pay for something available free from a tap. It only scaled after 1993, when Chauhan committed the capital and distribution investment the category needed.
 
 ### Why did Ramesh Chauhan build his own trucking fleet for Bisleri?
 
-Bottled water is heavy relative to its price, which made third-party transporters reluctant to carry it profitably. Chauhan solved this by buying his own trucks and running distribution in-house, a decision that grew into a fleet of thousands of vehicles and became one of Bisleri's structural advantages over later entrants.
+Bottled water is heavy relative to its price, which made third-party transporters reluctant to carry it profitably. Chauhan solved this by moving the water himself, a decision that grew to over 2,000 trucks carrying Bisleri by 2008 and became one of Bisleri's structural advantages over later entrants.
 
 ### How large is Bisleri today?
 
@@ -1304,11 +1367,20 @@ Bisleri International Pvt Ltd holds roughly a third of India's organised bottled
 
 ### Did Ramesh Chauhan sell Bisleri to the Tatas?
 
-No. In 2023, Chauhan walked away from a reported ₹7,000 crore acquisition offer from the Tata Group and kept Bisleri under family ownership, choosing to continue running the business he had spent three decades building rather than exit at the peak.
+No. Chauhan held talks in late 2022 to sell Bisleri to Tata Consumer Products for a reported ₹6,000 to ₹7,000 crore, but in March 2023 Tata Consumer said it had ceased negotiations without any binding agreement. Bisleri stayed under family ownership.
 
 ### What is the leadership lesson from Ramesh Chauhan's move from Thums Up to Bisleri?
 
 The lesson is that defending a market position and building a category are different jobs requiring different leadership instincts. Chauhan gave up the safer role of protecting a dominant cola brand and instead spent decades solving the unglamorous operational problem, distribution economics, that was blocking an entire category from existing. Category creation rewards operators willing to own problems competitors consider beneath them.
+
+## Sources
+
+- Business Standard, Bisleri FY24 profit rises 82.8% to Rs 317 crore, revenue at Rs 2,689.69 cr, January 2025
+- The Economic Times, From Bisleri to Bilseri: How water became an FMCG product in India, March 2023
+- Moneycontrol, Tata Consumer stops Rs 7,000-crore Bisleri buyout talks, March 2023
+- Reuters, India's Tata Consumer drops acquisition talks with Bisleri, March 2023
+- CNBC-TV18, Coca Cola's India coup: Buying Thums Up, October 2021
+- Business Today, Why Ramesh Chauhan is high on water, September 2008
 
 ================================================================================
 # Suresh Narayanan: The MD Who Walked Into the Maggi Ban
@@ -1318,7 +1390,7 @@ Author: CA Ketul Patel, Founder, Boardroom CXO
 Publisher: Boardroom CXO (https://boardroomcxo.com)
 ================================================================================
 
-In June 2015, 38,000 tonnes of Maggi noodles were pulled off Indian shelves and destroyed. Not recalled. Destroyed.
+After the June 2015 ban, 38,000 tonnes of Maggi noodles were pulled off Indian shelves and destroyed. Not recalled. Destroyed.
 
 Nestle India's largest brand had an 80% market share and ₹2,000 crore in annual sales. It went to zero in weeks. That is the moment Suresh Narayanan walked in as Managing Director.
 
@@ -1326,25 +1398,25 @@ His own words when he got the call: "My first reaction was, why me?"
 
 ## Who Is Suresh Narayanan?
 
-Suresh Narayanan had already led Nestle through the 2008 financial downturn in Singapore and run the company's Egypt operations during the Arab Spring. Both were external shocks the business had to absorb. The Maggi ban was different. It was a food safety order, a trust collapse, on a consumer brand three generations of Indian families had grown up eating. He took the MD role at Nestle India in the middle of that collapse and led the company until his retirement in July 2025.
+Suresh Narayanan had already led Nestle through the 2008 financial downturn in Singapore and run the company's Egypt operations during the Arab Spring. Both were external shocks the business had to absorb. The Maggi ban was different. It was a food safety order, a trust collapse, on a consumer brand generations of Indian families had grown up eating. He took the MD role at Nestle India in the middle of that collapse and led the company until his retirement in July 2025.
 
 ## How Did Suresh Narayanan Handle the Maggi Ban?
 
-Most leaders in that position go into damage control: press statements, legal teams, aggressive PR. He did not.
+Most leaders in that position go into damage control: press statements, legal teams, aggressive PR. Nestle India's challenge to the ban was already before the Bombay High Court. He did not make the court case the whole response.
 
-He chose transparency with regulators over fighting them. Honest communication over spin. And he kept the internal culture intact, which is the part nobody talks about when they tell this story. A brand can survive a bad quarter. It has a much harder time surviving a leadership team that panics in front of its own employees.
+He worked to keep distributors, suppliers and shareholders on side, and gave media interviews every few days. Honest communication over spin. And he kept the internal culture intact, which is the part nobody talks about when they tell this story. A brand can survive a bad quarter. It has a much harder time surviving a leadership team that panics in front of its own employees.
 
 Five months later, Maggi was back on shelves.
 
 ## The Numbers After the Crisis
 
-By 2019, Nestle India delivered nine consecutive quarters of double-digit value growth. By the time Narayanan retired in July 2025, the company had crossed ₹20,000 crore in revenue, roughly ten times what Maggi alone contributed annually before the ban.
+Over his decade at the helm, Nestle India grew revenue at more than 10 percent a year. By the time Narayanan retired in July 2025, the company had crossed ₹20,000 crore in revenue, roughly ten times what Maggi alone contributed annually before the ban.
 
 He also expanded rural distribution from roughly 40,000 to over 90,000 villages across India, because he understood where the next wave of consumer demand was actually coming from. Not just metros, but tier 2 cities, smaller towns, and markets most FMCG leadership teams were still treating as secondary.
 
 ## The Line Worth Sitting With
 
-> If the decision is right, the credit goes to the team. If it is wrong, I am responsible.
+> If the decision is right, the credit goes to the team; if the decision is wrong, I am responsible as the leader.
 
 That sentence is not a leadership-poster line. It is an operating principle, and it explains why the internal culture held together during the crisis. People do not panic in front of a leader who has already told them, in advance, who owns the downside.
 
@@ -1352,7 +1424,7 @@ That sentence is not a leadership-poster line. It is an operating principle, and
 
 Boards evaluating candidates for a high-stakes turnaround tend to repeat the same errors.
 
-They look for a fighter, not a communicator. The instinct in a crisis is to hire someone combative, someone who will push back hard against regulators and critics. Narayanan's approach was the opposite: cooperate with regulators, communicate honestly, and let the transparency do the work that a legal fight could not.
+They look for a fighter, not a communicator. The instinct in a crisis is to hire someone combative, someone who will push back hard against regulators and critics. Narayanan let the court case run its course, but did not lean on it alone: he kept distributors, suppliers and shareholders on side, communicated honestly, and protected the people inside the company.
 
 They ignore the internal audience. Most crisis-response plans are built for customers, media, and regulators. Employee morale is treated as a side effect rather than a variable to actively manage. A company that loses its internal culture during a crisis has a much longer recovery even after the external problem is resolved.
 
@@ -1384,15 +1456,25 @@ In June 2015, Indian food safety regulators ordered a ban on Maggi noodles over 
 
 ### How did Suresh Narayanan handle the Maggi ban?
 
-Suresh Narayanan chose transparency with regulators over contesting them, prioritized honest public communication over aggressive PR and legal pushback, and worked to keep Nestle India's internal culture and employee morale intact through the crisis. Maggi returned to Indian shelves five months after the ban, in November 2015.
+While Nestle India's legal challenge to the ban ran in the Bombay High Court, Suresh Narayanan worked on what a court could not fix: keeping distributors, suppliers and shareholders on side, communicating openly and often instead of relying on aggressive PR, and keeping employee morale intact. No one was laid off, and staff from the five sealed factories were put on a training programme. Maggi returned to Indian shelves five months after the ban, in November 2015.
 
 ### How much did Nestle India grow under Suresh Narayanan?
 
-By 2019, Nestle India delivered nine consecutive quarters of double-digit value growth following the Maggi crisis. By the time Suresh Narayanan retired in July 2025, the company had crossed ₹20,000 crore in annual revenue, up from roughly ₹2,000 crore contributed by Maggi alone at the time of the 2015 ban.
+Over the 2015 to 2025 decade, Nestle India grew revenue at a compound rate of more than 10 percent a year. By the time Suresh Narayanan retired in July 2025, the company had crossed ₹20,000 crore in annual revenue, up from roughly ₹2,000 crore contributed by Maggi alone at the time of the 2015 ban.
 
 ### How did Nestle India's rural distribution change under Suresh Narayanan?
 
 Nestle India's rural distribution network expanded from roughly 40,000 villages to over 90,000 villages under Suresh Narayanan's leadership, reflecting a deliberate push into tier 2 cities and smaller towns rather than relying solely on metro markets.
+
+## Sources
+
+- Nestlé India, Mr. Suresh Narayanan, August 2015
+- Times of India, Maggi crisis daunting, among career's greatest challenge: Nestle India CMD, June 2025
+- Business Today, Best CEOs: Meet Suresh Narayanan, the man steering FMCG giant Nestle towards a steady growth territory, April 2023
+- Reuters, Nestle welcomes India's Supreme Court ruling in Maggi case, January 2019
+- Outlook Business, If you treat employees and stakeholders with respect, you can find your way out of any crisis, March 2017
+- BBC, In numbers: How Nestle India will destroy 27,000 tonnes of Maggi, June 2015
+- Times of India, Maggi risks losing Rs 2,000 crore brand' tag, June 2015
 
 ================================================================================
 # Sudhir Sitapati: Why He Left HUL's Safest Seat for Godrej
@@ -1402,21 +1484,21 @@ Author: CA Ketul Patel, Founder, Boardroom CXO
 Publisher: Boardroom CXO (https://boardroomcxo.com)
 ================================================================================
 
-Sudhir Sitapati had the safest seat in Indian FMCG. Two decades inside Hindustan Unilever, brand thinking on Surf Excel and Brooke Bond that competitors still study, a lead role in the roughly $5 billion merger that brought Horlicks into HUL, and a spot on the management committee as one of its youngest ever executive directors. He had even written the book on how HUL builds leaders like him, literally, called The CEO Factory.
+Sudhir Sitapati had the safest seat in Indian FMCG. Twenty-two years inside Hindustan Unilever, senior roles in the businesses behind Surf Excel and Brooke Bond, a lead role in the roughly $5 billion merger that brought Horlicks into HUL, and a spot on the management committee as one of its youngest ever executive directors. He had even written the book on how HUL builds leaders like him, literally, called The CEO Factory.
 
-In 2021, he walked away from all of it. Not for a bigger company. For Godrej Consumer Products, a business less than a third HUL's size, mid-restructuring, with none of HUL's operating polish. From the outside, it read like a downgrade. It was the opposite.
+In 2021, he walked away from all of it. Not for a bigger company. For Godrej Consumer Products, a much smaller business a year after its previous CEO had stepped down, with none of HUL's operating polish. From the outside, it read like a downgrade. It was the opposite.
 
 ## Who Is Sudhir Sitapati?
 
-Sudhir Sitapati is the MD and CEO of Godrej Consumer Products (GCPL). Before that, he spent roughly twenty years at Hindustan Unilever, building the category and brand strategy behind Surf Excel and Brooke Bond, and sitting at the center of the deal that folded GSK's Horlicks business into HUL, one of the largest FMCG transactions India has recorded. He rose to HUL's management committee as one of its youngest ever executive directors, a track record that made him a serious internal candidate for the top job.
+Sudhir Sitapati was MD and CEO of Godrej Consumer Products (GCPL) from October 2021 until he resigned in August 2026. Before that, he spent 22 years at Hindustan Unilever, in senior roles in the detergents business and at the head of foods and refreshment, the businesses behind Surf Excel and Brooke Bond. He led the merger that folded GSK's consumer healthcare business, and Horlicks, into HUL, one of the largest FMCG transactions India has recorded. In 2016 he joined HUL's management committee as one of its youngest ever executive directors.
 
 He also wrote The CEO Factory, a book that reverse-engineers exactly how HUL manufactures senior leaders better than almost any company in India. Then, in 2021, he left to run one himself, at a company with none of HUL's institutional scaffolding to lean on.
 
 ## What Did He Actually Do at Godrej Consumer?
 
-The turnaround was not loud. Sitapati cut a bloated product range instead of adding to it, sharpened GCPL's portfolio around health and beauty, and backed category creation over the kind of quick wins that flatter a quarterly slide. In the international business, he fixed markets one at a time rather than chasing scale everywhere simultaneously, a slower, harder discipline than the growth-at-any-cost playbook most FMCG turnarounds default to.
+The turnaround was not loud. Sitapati cut back the product range, sharpened GCPL's portfolio, and backed category development over the kind of quick wins that flatter a quarterly slide, a slower, harder discipline than the growth-at-any-cost playbook most FMCG turnarounds default to.
 
-The results arrived on a delay, which is exactly how real operating fixes tend to show up. For the year ending March 2026, Godrej Consumer crossed ₹15,000 crore in revenue with double-digit volume growth, and the board responded with a fresh five-year term rather than a search for his replacement.
+The results arrived on a delay, which is exactly how real operating fixes tend to show up. For the year ending March 2026, Godrej Consumer crossed ₹15,000 crore in revenue, up about 8.5%, and in May 2026 the board approved a fresh five-year term for him. Then, in August 2026, days after shareholders approved that term, Sitapati resigned, writing that the task he had set for himself was done. GCPL named its CFO, Aasif Malbari, as MD and CEO, and its chairperson Nisaba Godrej said the company needed a step up in execution.
 
 ## The Boardroom Lesson Most Career Profiles Miss
 
@@ -1441,7 +1523,7 @@ They underweight candidates who choose difficulty on purpose. Someone who leaves
 When we brief boards on a CXO search involving a candidate with a similar profile, insider expertise from a category leader, we push for three specific checks.
 
 - Separate the system's track record from the candidate's. Ask what this person built or fixed personally, distinct from what the organization's existing playbook would have produced with anyone competent in the seat.
-- Ask what they cut, not just what they launched. Sitapati's actual turnaround lever at Godrej was subtraction, a narrower portfolio, sharper focus, fewer markets chased at once. Addition is the easy, visible move. Subtraction under pressure is the harder signal.
+- Ask what they cut, not just what they launched. Sitapati's actual turnaround lever at Godrej was subtraction, a narrower portfolio and sharper focus. Addition is the easy, visible move. Subtraction under pressure is the harder signal.
 - Look at the size and shape of the bet they chose. A candidate who consistently picks the harder, less certain option when a safer one is available has a decision-making pattern worth more than any single résumé line.
 
 ## Why This Belongs in the Boardroom, Not Just the Business Pages
@@ -1454,23 +1536,32 @@ The market does not reward the most polished résumé or the most prestigious fo
 
 ### Who is Sudhir Sitapati?
 
-Sudhir Sitapati is the MD and CEO of Godrej Consumer Products (GCPL). He spent roughly two decades at Hindustan Unilever, where he built the brand strategy behind Surf Excel and Brooke Bond, played a key role in the merger that brought Horlicks into HUL, and became one of the youngest ever executive directors on HUL's management committee. He also wrote The CEO Factory, a book on how HUL builds senior leaders.
+Sudhir Sitapati was MD and CEO of Godrej Consumer Products (GCPL) from October 2021 until he resigned in August 2026. He spent 22 years at Hindustan Unilever, where he held senior roles in the detergents and foods businesses behind Surf Excel and Brooke Bond, led the merger that brought Horlicks into HUL, and became one of the youngest ever executive directors on HUL's management committee. He also wrote The CEO Factory, a book on how HUL builds senior leaders.
 
 ### Why did Sudhir Sitapati leave Hindustan Unilever?
 
-In 2021, Sudhir Sitapati left HUL, where he was widely seen as next in line for the top job, to become MD and CEO of Godrej Consumer Products, a company less than a third HUL's size that had just gone through a significant restructuring. He has framed the move as the difference between writing about leadership theory and being the one accountable for running the company.
+In 2021, Sudhir Sitapati left HUL, where he sat on the management committee, to become MD and CEO of Godrej Consumer Products, a much smaller company whose previous CEO had stepped down in 2020. The move tested whether the leadership lessons he had written about would hold once he was the one accountable for running the company.
 
 ### What did Sudhir Sitapati do at Godrej Consumer Products?
 
-At Godrej Consumer Products, Sudhir Sitapati cut a bloated product range down to a sharper portfolio focused on health and beauty, prioritized category creation over short-term wins, and rebuilt the international business market by market instead of chasing scale everywhere at once.
+At Godrej Consumer Products, Sudhir Sitapati cut back the product range to a sharper portfolio and prioritized category development over short-term wins. He resigned in August 2026, and CFO Aasif Malbari succeeded him as MD and CEO.
 
 ### What is The CEO Factory by Sudhir Sitapati about?
 
 The CEO Factory is Sudhir Sitapati's book on how Hindustan Unilever systematically develops senior leaders, examining the specific practices, postings, and disciplines that turn young managers into CEOs across Indian and global consumer companies.
 
-### How has Godrej Consumer performed under Sudhir Sitapati?
+### How did Godrej Consumer perform under Sudhir Sitapati?
 
-For the year ending March 2026, Godrej Consumer Products crossed ₹15,000 crore in revenue with double-digit volume growth under Sudhir Sitapati, and the board renewed his mandate with a fresh five-year term.
+For the year ending March 2026, Godrej Consumer Products crossed ₹15,000 crore in revenue under Sudhir Sitapati, up about 8.5% on the year. In May 2026 the board approved a fresh five-year term for him, but he resigned in August 2026, days after shareholders approved it.
+
+## Sources
+
+- Godrej Consumer Products, Audited Financial Results for the Quarter and Year Ended March 31, 2026, May 2026
+- Reuters, India's Godrej Consumer names new CEO after Sitapati's 'sudden' exit, August 2026
+- Mint, Godrej Consumer CEO Sudhir Sitapati quits days after reappointment, August 2026
+- Business Standard, Godrej Consumer Q4 PAT jumps 10% YoY to Rs 452 cr, May 2026
+- Moneycontrol, What Sudhir Sitapati's appointment as CEO means for Godrej Consumer Products, May 2021
+- Mint, HUL's Sudhir Sitapati to join Godrej Consumer as MD and CEO, May 2021
 
 ================================================================================
 # Shailesh Jejurikar: P&G's First Indian-Origin CEO in 187 Years
@@ -1480,21 +1571,21 @@ Author: CA Ketul Patel, Founder, Boardroom CXO
 Publisher: Boardroom CXO (https://boardroomcxo.com)
 ================================================================================
 
-187 years. Dozens of CEOs. Not one of them Indian, until a boy from Mumbai who joined the company fresh out of business school, and never left, walked into the top job.
+187 years. Not one Indian CEO, until a boy from Mumbai who joined the company fresh out of business school, and never left, walked into the top job.
 
 On January 1, 2026, Shailesh Jejurikar became CEO of Procter & Gamble, the first person of Indian origin to lead it in nearly two centuries. P&G reaches an estimated 5 billion people across more than 180 countries. He joined the company in 1989, straight out of IIM Lucknow, as an assistant brand manager in India. Then something unusual happened: nothing else happened. He never switched employers again.
 
 ## Who Is Shailesh Jejurikar?
 
-Shailesh Jejurikar is P&G's CEO, appointed effective January 1, 2026, after 36 years at the company, all of them inside the same organization. In an era where managers typically change employers every two or three years to climb faster, he did the exact opposite. And he did it the hard way: while others chased comfortable postings, he kept raising his hand for the difficult ones, East Africa, Korea, Singapore, running detergent brands in markets that rarely make a global headline. Each move was a quiet bet on discomfort over ease.
+Shailesh Jejurikar is P&G's CEO, appointed effective January 1, 2026, after 36 years at the company, all of them inside the same organization. In an era when many managers change employers every few years to climb faster, he did the exact opposite. And he did it the hard way: while others chased comfortable postings, he kept raising his hand for the difficult ones, East Africa, then fabric and home care across Southeast Asia, India and Korea, running detergent brands in markets that rarely make a global headline. Each move was a quiet bet on discomfort over ease.
 
-By 2019 he was running P&G's single biggest business, Global Fabric and Home Care, a roughly $30 billion portfolio holding Tide, Ariel, and Downy. He backed innovations like Tide Pods and caught consumer shifts others missed, including a move toward smaller, more frequent dishwashing batches instead of full loads. In 2021, he became Chief Operating Officer, the seat that typically precedes the top job.
+By 2019 he was running P&G's single biggest business, Global Fabric and Home Care, a sector worth about a third of company sales and holding Tide, Ariel, and Downy. He points to innovations like Tide Pods, and to consumer shifts such as people washing dishes a few at a time instead of a sinkful, the insight behind Dawn Power Wash. In 2021, he became Chief Operating Officer, the seat that typically precedes the top job.
 
 ## What His Career Says About How P&G Actually Picks a CEO
 
-The obvious read on this appointment is representation: the first Indian-origin CEO of a 187-year-old American consumer giant. The more useful read for anyone hiring senior leaders is different. P&G did not hand its largest, most political business unit and then the top job to someone who optimized for visibility. It handed them to someone whose résumé is a list of markets other people avoided.
+The obvious read on this appointment is representation: the first Indian-origin CEO of a 187-year-old American consumer giant. The more useful read for anyone hiring senior leaders is different. P&G did not hand its largest, most political business unit and then the top job to someone who optimized for visibility. It handed them to someone whose résumé is full of markets other people avoided.
 
-On the hardest part of consumer leadership, Jejurikar has said it is "understanding articulated and unarticulated needs…get that right, and everything follows." That is not a line about strategy decks. It is a line about the kind of pattern recognition that only gets built by running unglamorous categories in unglamorous markets long enough to see what consumers actually do, not what they say in a focus group.
+On understanding consumers, Jejurikar has said: "It's easy to say, tough to do. It requires intimately understanding people's articulated and unarticulated needs." That is not a line about strategy decks. It is a line about the kind of pattern recognition that only gets built by running unglamorous categories in unglamorous markets long enough to see what consumers actually do, not what they say in a focus group.
 
 > The world rewards those who leave to grow. He proved the bigger bet can be staying.
 
@@ -1504,16 +1595,16 @@ Boards and search committees evaluating a candidate with one long tenure tend to
 
 They read long tenure as a lack of ambition or optionality, rather than checking what that tenure actually contained. Thirty-six years at one employer looks identical on a résumé whether it was thirty-six years of comfortable, low-risk postings or thirty-six years of the hardest assignments on offer. The difference only shows up when you ask what markets, what categories, and what condition the business was in when they took it over.
 
-They overweight the foreign-degree, marquee-market signal and underweight operators who built range in markets the rest of the organization treats as a detour. Jejurikar's path ran through East Africa and Korea, not the postings that usually get internal buzz, and that is exactly what built the operating range the board eventually needed.
+They overweight the foreign-degree, marquee-market signal and underweight operators who built range in markets the rest of the organization treats as a detour. Jejurikar's path ran through East Africa and Southeast Asia long before North America, not the postings that usually get internal buzz, and that is exactly what built the operating range the board eventually needed.
 
-They evaluate P&L size without asking what was inherited versus built. Running a $30 billion unit is a fact. Whether the leader grew it, defended it, or simply held the seat is the question that actually predicts what they will do with a bigger mandate.
+They evaluate P&L size without asking what was inherited versus built. Running a sector worth a third of company sales is a fact. Whether the leader grew it, defended it, or simply held the seat is the question that actually predicts what they will do with a bigger mandate.
 
 ## A Framework for Spotting This Kind of Leader Earlier
 
 When boards brief us on a CXO search, a long single-employer tenure gets three specific checks before it is treated as a strength.
 
 - Map the postings, not just the titles. A leader who chose difficult markets and categories repeatedly, over decades, has a decision pattern worth more than the title on their final role.
-- Ask what consumer shift they caught before it showed up in the data. Jejurikar's read on smaller, more frequent dishwashing batches is the kind of ground-level pattern recognition that separates operators from administrators. Push candidates for a specific example, not a general claim of "consumer insight."
+- Ask what consumer shift they caught before it showed up in the data. The insight behind Dawn Power Wash, that people now wash dishes a few at a time rather than a sinkful, is the kind of ground-level pattern recognition that separates operators from administrators. Push candidates for a specific example, not a general claim of "consumer insight."
 - Test whether their tenure was compounding or repeating. One long employer can mean thirty-six years of the same year repeated, or thirty-six years of expanding scope. The postings and the P&L history tell you which.
 
 ## Why This Belongs in the Boardroom, Not Just the Business Pages
@@ -1526,7 +1617,7 @@ Both stories point to the same hiring problem. The market does not reward the fl
 
 ### Who is Shailesh Jejurikar?
 
-Shailesh Jejurikar is the CEO of Procter & Gamble, appointed effective January 1, 2026. He joined P&G in 1989 straight out of IIM Lucknow as an assistant brand manager in India and spent his entire 36-year career at the company, rising through fabric and home care leadership roles in East Africa, Korea, and Singapore before becoming Chief Operating Officer in 2021.
+Shailesh Jejurikar is the CEO of Procter & Gamble, appointed effective January 1, 2026. He joined P&G in 1989 straight out of IIM Lucknow as an assistant brand manager in India and spent his entire 36-year career at the company, rising through roles in India, East Africa, Asia and North America and leading Global Fabric and Home Care before becoming Chief Operating Officer in 2021.
 
 ### Why is Shailesh Jejurikar's appointment as P&G CEO significant?
 
@@ -1534,15 +1625,24 @@ Shailesh Jejurikar is the first person of Indian origin to lead Procter & Gamble
 
 ### What did Shailesh Jejurikar run before becoming P&G CEO?
 
-Before becoming CEO, Shailesh Jejurikar ran P&G's largest business unit, Global Fabric and Home Care, a roughly $30 billion portfolio that includes Tide, Ariel, and Downy, starting in 2019. He became P&G's Chief Operating Officer in 2021.
+Before becoming CEO, Shailesh Jejurikar ran P&G's largest business unit, Global Fabric and Home Care, a sector that makes up about a third of company sales and includes Tide, Ariel, and Downy, as its CEO from 2019. He became P&G's Chief Operating Officer in 2021.
 
 ### What markets did Shailesh Jejurikar work in during his career at P&G?
 
-Shailesh Jejurikar took on postings in East Africa, Korea, and Singapore, largely running detergent and fabric care brands in markets that rarely generate global headlines, before being handed P&G's biggest business unit.
+Shailesh Jejurikar started in India, took his first overseas posting in East Africa in 1996, then ran fabric and home care across Southeast Asia, India, Australia and Korea, largely in markets that rarely generate global headlines, and later led Home Care and Fabric Care in North America before being handed P&G's biggest business unit.
 
 ### Why did Shailesh Jejurikar stay at one company for 36 years?
 
-Shailesh Jejurikar joined P&G in 1989 and never switched employers, an unusual path in an era where managers typically change companies every two to three years to climb faster. He instead raised his hand for difficult postings and product categories inside the same organization, a pattern that ultimately built the operating range P&G's board chose for the top job.
+Shailesh Jejurikar joined P&G in 1989 and never switched employers, an unusual path in an era when many managers change companies every few years to climb faster. He instead raised his hand for difficult postings and product categories inside the same organization, a pattern that ultimately built the operating range P&G's board chose for the top job.
+
+## Sources
+
+- Procter & Gamble, Shailesh G. Jejurikar: Chairman of the Board, President and Chief Executive Officer, August 2026
+- Procter & Gamble, Shailesh Jejurikar: Chairman of the Board, President and Chief Executive Officer of The Procter & Gamble Company, August 2026
+- Procter & Gamble, Shailesh Jejurikar Talks About Unlocking Market Growth, April 2024
+- Procter & Gamble, Shailesh G. Jejurikar: President, Global Fabric Care, August 2018
+- The Economic Times, Three cheers & three chairs: P&G veteran Shailesh Jejurikar to add chairman's role, July 2026
+- Financial Express, NEWSPOINT: Shailesh Jejurikar, incoming CEO, P&G, July 2025
 
 ================================================================================
 # Sanjiv Mehta: The HUL Leader Who Never Forgot Bhopal
@@ -1554,19 +1654,19 @@ Publisher: Boardroom CXO (https://boardroomcxo.com)
 
 In December 1984, a gas leak at a Union Carbide plant in Bhopal killed thousands of people in one of the worst industrial disasters the world has seen. A young accountant, barely a year into his first job, sat on the crisis team that had to deal with it.
 
-That accountant was Sanjiv Mehta. He had joined Union Carbide India in 1983. Most people carry an experience like that quietly, or try to forget it. He did the opposite. For the next four decades, in almost every important meeting he ran, he opened with the safety agenda before anything else on the table.
+That accountant was Sanjiv Mehta. He had joined Union Carbide India in 1983. Most people carry an experience like that quietly, or try to forget it. He did the opposite. For decades afterwards, in almost every meeting he ran, he opened with the safety agenda before anything else on the table.
 
 One disaster, early in a career, set the operating rhythm for the rest of it.
 
 ## Who Is Sanjiv Mehta?
 
-Sanjiv Mehta is a chartered accountant who spent over three decades inside the Unilever group, culminating in a decade as Chairman and CEO of Hindustan Unilever (HUL) from 2013. He joined Unilever in 1992 and, market after market, was handed the difficult ones: Bangladesh, which he turned into one of the group's best-performing businesses, then the Philippines, then North Africa and the Middle East, running operations through political instability most executives never face in a career.
+Sanjiv Mehta is a chartered accountant who spent over three decades inside the Unilever group, culminating in a decade as CEO of Hindustan Unilever (HUL) from 2013. He joined Unilever in 1992 and, market after market, was handed the difficult ones: Bangladesh, which he turned into one of the group's best-performing businesses, then the Philippines, then North Africa and the Middle East, running operations through political instability most executives never face in a career.
 
 In 2013, he came home to run HUL.
 
 ## How Much Did HUL Grow Under Sanjiv Mehta?
 
-Over his decade at the top, HUL's market value grew from roughly $17 billion to over $70 billion, a fivefold increase. Revenue crossed ₹50,000 crore. The company became India's largest FMCG business and Asia's largest consumer staples company. Few Indian corporate leaders have compounding numbers attached to their name at that scale.
+Over his decade at the top, HUL's market value grew from roughly $17 billion to over $70 billion, a more than fourfold increase. Revenue crossed ₹50,000 crore. The company remained India's largest FMCG business. Few Indian corporate leaders have compounding numbers attached to their name at that scale.
 
 He also closed the 2020 merger with GlaxoSmithKline Consumer Healthcare's Indian business, bringing Horlicks and Boost into HUL, one of the largest FMCG deals India has recorded.
 
@@ -1574,7 +1674,7 @@ But the number that says the most about him is quieter than any of those. Women 
 
 ## The Governance Habit Most Leadership Profiles Skip
 
-Most coverage of Mehta's career reads as a business-numbers story: market cap, the GSK deal, revenue crossed. What gets left out is the mechanism behind it, the specific, repeatable habit that ran underneath four decades of leadership across four continents.
+Most coverage of Mehta's career reads as a business-numbers story: market cap, the GSK deal, revenue crossed. What gets left out is the mechanism behind it, the specific, repeatable habit that ran underneath decades of leadership across several regions.
 
 Opening every important meeting with a safety and risk review is not a mission-statement line. It is a governance discipline that forces an organization to surface bad news early, before it becomes a crisis nobody planned for. Founders and boards can adopt the ritual itself, not just admire the outcome.
 
@@ -1586,7 +1686,7 @@ Boards evaluating senior candidates tend to make three errors with profiles like
 
 They treat early hardship as a liability to smooth over in interviews, rather than the source of the operating discipline that made the rest of the career work. A candidate who has run crisis response early tends to build risk visibility into every process that follows, which is exactly the instinct a growth-stage or IPO-track company needs and rarely screens for.
 
-They evaluate leaders purely on growth numbers and skip the harder question: what specific habit or structure produced those numbers, and can it survive the leader's departure. A fivefold value increase means little to a successor who never learned the underlying discipline.
+They evaluate leaders purely on growth numbers and skip the harder question: what specific habit or structure produced those numbers, and can it survive the leader's departure. A fourfold value increase means little to a successor who never learned the underlying discipline.
 
 They underweight the diversity and governance metrics that took years to move, in favor of the ones that moved in a single quarter. A 20% to 45% shift in women in management is a harder, slower number to produce than a revenue line, and it says more about whether an organization was actually rebuilt or just scaled.
 
@@ -1608,15 +1708,15 @@ Both stories point to the same hiring problem. The market does not reward the bi
 
 ### Who is Sanjiv Mehta?
 
-Sanjiv Mehta is a chartered accountant who joined Union Carbide India in 1983 and later spent over three decades at Unilever, including a decade as Chairman and CEO of Hindustan Unilever (HUL) from 2013. Under his leadership, HUL's market value grew roughly fivefold, from about $17 billion to over $70 billion, and the company became India's largest FMCG business.
+Sanjiv Mehta is a chartered accountant who joined Union Carbide India in 1983 and later spent over three decades at Unilever, including a decade as CEO of Hindustan Unilever (HUL) from 2013. Under his leadership, HUL's market value grew more than fourfold, from about $17 billion to over $70 billion, and the company remained India's largest FMCG business.
 
 ### What was Sanjiv Mehta's connection to the Bhopal gas tragedy?
 
-Sanjiv Mehta was a young accountant on Union Carbide India's crisis response team during the December 1984 Bhopal gas leak, barely a year into his career. He has said the experience shaped how he ran every meeting for the following four decades, starting with a review of the safety agenda before any other business.
+Sanjiv Mehta was a young accountant on Union Carbide India's crisis response team during the December 1984 Bhopal gas leak, barely a year into his career. He has said the experience taught him that safety is of paramount importance, and that he made a habit of starting every meeting by reviewing the safety agenda.
 
 ### How much did Hindustan Unilever grow under Sanjiv Mehta?
 
-Under Sanjiv Mehta's decade as Chairman and CEO, Hindustan Unilever's market value grew from around $17 billion to over $70 billion, a roughly fivefold increase. Revenue crossed ₹50,000 crore, and HUL became India's largest FMCG company and Asia's largest consumer staples business.
+Under Sanjiv Mehta's decade as CEO, Hindustan Unilever's market value grew from around $17 billion to over $70 billion, a more than fourfold increase. Revenue crossed ₹50,000 crore, and HUL remained India's largest FMCG company.
 
 ### What was the GSK-HUL merger?
 
@@ -1624,7 +1724,16 @@ In 2020, Hindustan Unilever, under Sanjiv Mehta, completed its merger with Glaxo
 
 ### How did women's representation change at HUL under Sanjiv Mehta?
 
-The share of women in Hindustan Unilever's management rose from under 20% to 45% during Sanjiv Mehta's tenure as Chairman and CEO, one of the more significant workforce diversity shifts among large Indian companies in that period.
+The share of women in Hindustan Unilever's management rose from under 20% to 45% during Sanjiv Mehta's decade as CEO.
+
+## Sources
+
+- HUL, HUL announces key leadership appointment, March 2023
+- GSK, GSK completes divestment of Horlicks and other Consumer Healthcare nutrition products in India and certain other markets, April 2020
+- The Economic Times, Consumption story unfolding, this decade & beyond is India's: Sanjiv Mehta, June 2023
+- Business Standard, CEO of the Year: How Hindustan Unilever grew well under Sanjiv Mehta, March 2023
+- The Economic Times, Naming of Sanjiv Mehta as HUL CEO comes as a surprise, July 2013
+- Gulf News, Unilever chairman on work and dreams, December 2012
 
 ================================================================================
 # Refused to Blink: The Boardroom Lesson Behind Marico's War With Hindustan Lever
@@ -1751,7 +1860,7 @@ The typical recruiting process, post a job description, screen applications, run
 
 The BlueStone performance head who has delivered three strong quarters is not unhappy. The CaratLane digital marketing manager who built the ROAS framework from scratch is not browsing job boards. They are not available through conventional hiring channels because they are not in a market that hiring channels serve.
 
-82% of Indian employers report difficulty finding the right talent for specialized roles. In performance marketing specifically, the difficulty is not a sourcing problem, it is a visibility problem. The candidates exist. They are simply invisible to standard hiring methods.
+82% of Indian employers report difficulty finding the skilled talent they need, per ManpowerGroup's 2026 Global Talent Shortage Survey. In performance marketing specifically, the difficulty is not a sourcing problem, it is a visibility problem. The candidates exist. They are simply invisible to standard hiring methods.
 
 ## How Headhunting Actually Works for This Role
 
@@ -1769,7 +1878,7 @@ The mistake brands make is benchmarking against what the candidate states, rathe
 
 ## The Cost of Getting This Wrong
 
-The replacement cost for a specialized senior hire runs to 200% of annual salary when recruitment time, onboarding, ramp-up, and lost productivity are factored in. For a performance marketing hire at Rs. 18-25 LPA, a failed placement costs the brand Rs. 36-50 lakhs, before considering the opportunity cost of a marketing engine that ran below capacity for the duration of the search.
+The replacement cost for a specialized senior hire can run up to 200% of annual salary when recruitment time, onboarding, ramp-up, and lost productivity are factored in. For a performance marketing hire at Rs. 18-25 LPA, a failed placement can cost the brand as much as Rs. 36-50 lakhs, before considering the opportunity cost of a marketing engine that ran below capacity for the duration of the search.
 
 Growth-stage brands cannot absorb that cost twice. The first hire needs to be the right one.
 
@@ -1793,7 +1902,15 @@ A performance marketer at BlueStone or CaratLane in a mid-to-senior role earns b
 
 ### What does a failed performance marketing hire cost a jewelry brand?
 
-The replacement cost for a specialized senior hire runs to roughly 200% of annual salary once recruitment time, onboarding, ramp-up, and lost productivity are factored in. For a performance marketing hire at Rs. 18-25 LPA, a failed placement costs the brand Rs. 36-50 lakhs.
+The replacement cost for a specialized senior hire can run up to 200% of annual salary once recruitment time, onboarding, ramp-up, and lost productivity are factored in. For a performance marketing hire at Rs. 18-25 LPA, a failed placement can cost the brand as much as Rs. 36-50 lakhs.
+
+## Sources
+
+- Reuters, India gold demand firms ahead of festival; China premiums ease, April 2026
+- Inc42, Palmonas Raises $40 Mn From Xponentia Capital, Vertex Growth Fund, April 2026
+- India Today, 82% employers struggle to hire right person, India 5th in global talent shortage, March 2026
+- Moneycontrol, Giva raises Rs 530 crore from Creaegis, others; will expand lab-grown diamond offerings, June 2025
+- Gallup, This Fixable Problem Costs U.S. Businesses $1 Trillion, March 2019
 
 ================================================================================
 # The Hidden Comp Gap: Why Jewelry Brands Keep Losing Candidates at the Offer Stage
@@ -1819,7 +1936,7 @@ This is the hidden comp gap. It is endemic to India's organized jewelry sector, 
 
 ## Why the Gap Exists
 
-India's organized jewelry retail sector has a long history of legacy compensation structures. At brands like ORRA, Senco, PN Gadgil, and similar organized players, compensation packages were, and in many cases still are, structured to minimize formal payroll costs while keeping effective take-home competitive.
+India's organized jewelry retail sector has a long history of legacy compensation structures. At many legacy organized players, compensation packages were, and in many cases still are, structured to minimize formal payroll costs while keeping effective take-home competitive.
 
 The result is a pay structure that looks one way on paper and functions differently in practice. A typical arrangement at a legacy brand might look like this:
 
@@ -1877,7 +1994,7 @@ At the Rs. 20-40 LPA level, regional sales, senior BD, national roles, candidate
 
 ## What This Costs When It Goes Wrong
 
-A failed senior hire, where the candidate declines at the offer stage or joins and leaves within the first year, costs the brand roughly 200% of annual salary once recruitment, onboarding, and lost productivity are factored in. For a mandate at Rs. 20-25 LPA, that is Rs. 40-50 lakhs in avoidable cost.
+A failed senior hire, where the candidate declines at the offer stage or joins and leaves within the first year, can cost the brand up to 200% of annual salary once recruitment, onboarding, and lost productivity are factored in. For a mandate at Rs. 20-25 LPA, that can reach Rs. 40-50 lakhs in avoidable cost.
 
 Most of these failures are avoidable. They happen not because the brand was unwilling to pay correctly but because they did not have the information needed to structure the offer correctly.
 
@@ -1899,8 +2016,15 @@ The only reliable method is to verify against bank credit rather than the CTC sl
 
 ### What does a failed senior hire actually cost a jewelry brand?
 
-A failed senior hire, where the candidate declines at the offer stage or leaves within the first year, costs roughly 200% of annual salary once recruitment, onboarding, and lost productivity are factored in. For a mandate at Rs. 20-25 LPA, that is Rs. 40-50 lakhs in avoidable cost.
+A failed senior hire, where the candidate declines at the offer stage or leaves within the first year, can cost up to 200% of annual salary once recruitment, onboarding, and lost productivity are factored in. For a mandate at Rs. 20-25 LPA, that can reach Rs. 40-50 lakhs in avoidable cost.
 
 ### Do candidates from growth-stage D2C jewelry brands expect ESOPs?
 
 At the Rs. 20-40 LPA level for regional sales, senior BD, and national roles, candidates from growth-stage brands like GIVA, Limelight, and Palmonas typically expect ESOPs as standard, not as a negotiating tactic. Brands unable to offer equity need to communicate that upfront and structure the cash component accordingly.
+
+## Sources
+
+- Inc42, Palmonas Raises $40 Mn From Xponentia Capital, Vertex Growth Fund, April 2026
+- Moneycontrol, Giva raises Rs 530 crore from Creaegis, others; will expand lab-grown diamond offerings, June 2025
+- Entrackr, GIVA to raise $53 Mn led by Creaegis at $465 Mn valuation, June 2025
+- Gallup, This Fixable Problem Costs U.S. Businesses $1 Trillion, March 2019
