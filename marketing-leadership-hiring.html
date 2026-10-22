@@ -58,7 +58,9 @@
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" /></noscript>
   <link rel="stylesheet" href="style.css" />
   <style>
     /* Page-scoped: real case-study callout card */
@@ -76,28 +78,28 @@
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="site-header" data-testid="site-header">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand" data-testid="nav-brand" aria-label="Boardroom CXO">
+    <a href="/" class="nav-brand" data-testid="nav-brand" aria-label="Boardroom CXO">
       <img width="341" height="150" src="images/logo-boardroomcxo-transparent.png" alt="Boardroom CXO" />
     </a>
     <nav class="nav-menu" data-testid="nav-menu">
-      <a href="index.html" class="nav-link" data-testid="nav-link-home">Home</a>
-      <a href="about-us.html" class="nav-link" data-testid="nav-link-about">About</a>
-      <a href="resources.html" class="nav-link">Resources</a>
-      <a href="case-studies.html" class="nav-link" data-testid="nav-link-case-studies">Case Studies</a>
+      <a href="/" class="nav-link" data-testid="nav-link-home">Home</a>
+      <a href="/about-us" class="nav-link" data-testid="nav-link-about">About</a>
+      <a href="/resources" class="nav-link">Resources</a>
+      <a href="/case-studies" class="nav-link" data-testid="nav-link-case-studies">Case Studies</a>
       <a href="https://accountingbaba.com/portal/?brand=boardroom" class="nav-link" data-testid="nav-link-client-login">Employer Login</a>
     </nav>
-    <a href="schedule-a-call.html" class="nav-cta" data-testid="nav-cta">Let's Talk</a>
+    <a href="/schedule-a-call" class="nav-cta" data-testid="nav-cta">Let's Talk</a>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" data-testid="hamburger">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="nav-menu-mobile" id="nav-menu-mobile">
-    <a href="index.html" data-testid="mnav-home">Home</a>
-    <a href="about-us.html" data-testid="mnav-about">About</a>
-    <a href="resources.html" data-testid="mnav-resources">Resources</a>
-    <a href="case-studies.html" data-testid="mnav-case-studies">Case Studies</a>
+    <a href="/" data-testid="mnav-home">Home</a>
+    <a href="/about-us" data-testid="mnav-about">About</a>
+    <a href="/resources" data-testid="mnav-resources">Resources</a>
+    <a href="/case-studies" data-testid="mnav-case-studies">Case Studies</a>
     <a href="https://accountingbaba.com/portal/?brand=boardroom" data-testid="mnav-client-login">Employer Login</a>
-    <a href="schedule-a-call.html" class="nav-cta-mobile" data-testid="mnav-cta">Let's Talk →</a>
+    <a href="/schedule-a-call" class="nav-cta-mobile" data-testid="mnav-cta">Let's Talk →</a>
   </div>
 </header>
 
@@ -218,7 +220,7 @@
       <div>
         <div class="case-callout-label">// Real Placement · CMO Search, Jewellery Brand Repositioning</div>
         <h3>Closing a CMO for a Jewellery Brand's Pre-IPO Consumer Growth Push</h3>
-        <p>With a major brand repositioning underway ahead of an IPO, the brand needed a CMO with both D2C and listed-brand experience, equal parts strategist and storyteller. <a href="case-studies.html" class="link-under">Read the full case study →</a></p>
+        <p>With a major brand repositioning underway ahead of an IPO, the brand needed a CMO with both D2C and listed-brand experience, equal parts strategist and storyteller. <a href="/case-studies" class="link-under">Read the full case study →</a></p>
       </div>
       <div class="case-callout-metric">+34<span>NPS pts, first two quarters</span></div>
     </div>
@@ -235,7 +237,7 @@
       </div>
       <p class="lead">Our live compensation tool pulls from 2025-26 market mapping across store tiers and city tiers, not a generic salary survey.</p>
     </div>
-    <a href="index.html#salary-tool" class="btn" data-testid="salary-tool-link">Check Live Marketing Compensation Ranges →</a>
+    <a href="/#salary-tool" class="btn" data-testid="salary-tool-link">Check Live Marketing Compensation Ranges →</a>
   </div>
 </section>
 
@@ -291,16 +293,16 @@
         <span class="sec-head-index">§05 · Field Notes</span>
         <h2 class="h2">More on marketing leadership hiring.</h2>
       </div>
-      <a href="resources.html" class="link-under" data-testid="related-view-all">View All Articles</a>
+      <a href="/resources" class="link-under" data-testid="related-view-all">View All Articles</a>
     </div>
     <div class="articles-list">
-      <a href="article-performance-marketer-jewelry.html" class="article-row reveal">
+      <a href="/article-performance-marketer-jewelry" class="article-row reveal">
         <span class="num">R · 01</span>
         <span class="cat">Headhunting · June 2026</span>
         <h3>Why the Best Performance Marketers in Jewelry Are Not on Naukri</h3>
         <span class="link-under">Read →</span>
       </a>
-      <a href="article-solitario-cultural-relevance-marketing-leadership.html" class="article-row reveal">
+      <a href="/article-solitario-cultural-relevance-marketing-leadership" class="article-row reveal">
         <span class="num">R · 02</span>
         <span class="cat">Marketing Leadership · August 2026</span>
         <h3>Solitario's Netflix Moment Exposes a Marketing Hiring Gap</h3>
@@ -334,7 +336,7 @@
       </div>
       <div class="faq-item">
         <h3>What does it cost to hire a CMO or marketing leader through Boardroom CXO?</h3>
-        <p>A Rs 10,000 service fee starts the search, and it is adjusted against the final fee of one month's CTC, invoiced when your hire joins. For live compensation ranges by role, store count, and city tier, use the <a href="index.html#salary-tool" style="color:inherit;border-bottom:1px solid currentColor;">compensation tool on our homepage</a>, built from our 2025-26 market mapping.</p>
+        <p>A Rs 10,000 service fee starts the search, and it is adjusted against the final fee of one month's CTC, invoiced when your hire joins. For live compensation ranges by role, store count, and city tier, use the <a href="/#salary-tool" style="color:inherit;border-bottom:1px solid currentColor;">compensation tool on our homepage</a>, built from our 2025-26 market mapping.</p>
       </div>
     </div>
   </div>
@@ -347,7 +349,7 @@
     <h2 class="cta-display" style="margin-top:24px;">Tell us the role.<br/><em>We'll tell you the market.</em></h2>
     <p class="cta-sub">Brief us on a CMO, CGO, or marketing leadership mandate and we'll come back with who's movable and what the role actually costs.</p>
     <div class="cta-btns">
-      <a href="schedule-a-call.html" class="btn" style="background:var(--bg);color:var(--ink);border-color:var(--bg);" data-testid="cta-primary">Brief Us on a Mandate</a>
+      <a href="/schedule-a-call" class="btn" style="background:var(--bg);color:var(--ink);border-color:var(--bg);" data-testid="cta-primary">Brief Us on a Mandate</a>
       <a href="tel:+919856755000" class="btn btn-light" data-testid="cta-phone">+91 98567 55000</a>
     </div>
   </div>
@@ -358,10 +360,10 @@
     <div class="footer-practice">
       <span class="fp-label">// Our Practice</span>
       <div class="fp-strip">
-        <a href="index.html#roles" class="fp-item fp-item--marketing"><span class="fp-dot"></span>A · Marketing</a>
-        <a href="index.html#roles" class="fp-item fp-item--sales"><span class="fp-dot"></span>B · Sales &amp; Retail</a>
-        <a href="index.html#roles" class="fp-item fp-item--bd"><span class="fp-dot"></span>C · BD &amp; Franchise</a>
-        <a href="index.html#roles" class="fp-item fp-item--strategy"><span class="fp-dot"></span>D · Strategy &amp; Ops</a>
+        <a href="/#roles" class="fp-item fp-item--marketing"><span class="fp-dot"></span>A · Marketing</a>
+        <a href="/#roles" class="fp-item fp-item--sales"><span class="fp-dot"></span>B · Sales &amp; Retail</a>
+        <a href="/#roles" class="fp-item fp-item--bd"><span class="fp-dot"></span>C · BD &amp; Franchise</a>
+        <a href="/#roles" class="fp-item fp-item--strategy"><span class="fp-dot"></span>D · Strategy &amp; Ops</a>
       </div>
     </div>
     <div class="footer-grid">
@@ -377,17 +379,17 @@
       <div class="footer-col">
         <p class="footer-h5">Navigate</p>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about-us.html">About Us</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us">About Us</a></li>
+          <li><a href="/resources">Resources</a></li>
+          <li><a href="/case-studies">Case Studies</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <p class="footer-h5">Engage</p>
         <ul>
-          <li><a href="schedule-a-call.html">Schedule a Call</a></li>
-          <li><a href="get-featured.html">Get Featured</a></li><li><a href="#contact">Brief a Mandate</a></li>
+          <li><a href="/schedule-a-call">Schedule a Call</a></li>
+          <li><a href="/get-featured">Get Featured</a></li><li><a href="#contact">Brief a Mandate</a></li>
           <li><a href="https://wa.me/919856755000" target="_blank" rel="noopener">WhatsApp</a></li>
         </ul>
       </div>
@@ -396,7 +398,7 @@
         <p><a href="tel:+919856755000">+91 98567 55000</a></p>
         <p><a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a></p>
         <p>Mon–Sat · 10am–6pm IST</p>
-        <p>Surat, India &amp; <a href="uae-consulting-hiring.html" style="color:inherit;border-bottom:1px solid currentColor;">UAE</a></p>
+        <p>Surat, India &amp; <a href="/uae-consulting-hiring" style="color:inherit;border-bottom:1px solid currentColor;">UAE</a></p>
       </div>
     </div>
     <div class="footer-bottom">

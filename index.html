@@ -79,7 +79,9 @@
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" /></noscript>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -87,28 +89,28 @@
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="site-header" data-testid="site-header">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand" data-testid="nav-brand" aria-label="Boardroom CXO">
+    <a href="/" class="nav-brand" data-testid="nav-brand" aria-label="Boardroom CXO">
       <img width="341" height="150" src="images/logo-boardroomcxo-transparent.png" alt="Boardroom CXO" />
     </a>
     <nav class="nav-menu" data-testid="nav-menu">
-      <a href="index.html" class="nav-link active" data-testid="nav-link-home">Home</a>
-      <a href="about-us.html" class="nav-link" data-testid="nav-link-about">About</a>
-      <a href="resources.html" class="nav-link">Resources</a>
-      <a href="case-studies.html" class="nav-link" data-testid="nav-link-case-studies">Case Studies</a>
+      <a href="/" class="nav-link active" data-testid="nav-link-home">Home</a>
+      <a href="/about-us" class="nav-link" data-testid="nav-link-about">About</a>
+      <a href="/resources" class="nav-link">Resources</a>
+      <a href="/case-studies" class="nav-link" data-testid="nav-link-case-studies">Case Studies</a>
       <a href="https://accountingbaba.com/portal/?brand=boardroom" class="nav-link" data-testid="nav-link-client-login">Employer Login</a>
     </nav>
-    <a href="schedule-a-call.html" class="nav-cta" data-testid="nav-cta">Let's Talk</a>
+    <a href="/schedule-a-call" class="nav-cta" data-testid="nav-cta">Let's Talk</a>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" data-testid="hamburger">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="nav-menu-mobile" id="nav-menu-mobile">
-    <a href="index.html" data-testid="mnav-home">Home</a>
-    <a href="about-us.html" data-testid="mnav-about">About</a>
-    <a href="resources.html" data-testid="mnav-resources">Resources</a>
-    <a href="case-studies.html" data-testid="mnav-case-studies">Case Studies</a>
+    <a href="/" data-testid="mnav-home">Home</a>
+    <a href="/about-us" data-testid="mnav-about">About</a>
+    <a href="/resources" data-testid="mnav-resources">Resources</a>
+    <a href="/case-studies" data-testid="mnav-case-studies">Case Studies</a>
     <a href="https://accountingbaba.com/portal/?brand=boardroom" data-testid="mnav-client-login">Employer Login</a>
-    <a href="schedule-a-call.html" class="nav-cta-mobile" data-testid="mnav-cta">Let's Talk →</a>
+    <a href="/schedule-a-call" class="nav-cta-mobile" data-testid="mnav-cta">Let's Talk →</a>
   </div>
 </header>
 
@@ -414,7 +416,7 @@
             <span class="terminal-result-cursor"></span>
           </div>
         </div>
-        <a href="schedule-a-call.html" class="modal-cta" data-testid="salary-tool-cta">Brief Us on a Mandate /</a>
+        <a href="/schedule-a-call" class="modal-cta" data-testid="salary-tool-cta">Brief Us on a Mandate /</a>
       </div>
     </div>
   </div>
@@ -563,7 +565,7 @@
           <div class="rs-range"><span class="low low--marketing">₹4L</span><span class="high high--marketing">₹25L</span></div>
           <div class="rs-anchor"><span>Jr. Perf Marketer</span><span>Brand Lead</span></div>
         </div>
-        <a href="marketing-leadership-hiring.html" class="link-under" style="margin-top:16px;display:inline-block;">CMO &amp; Growth Leadership Search →</a>
+        <a href="/marketing-leadership-hiring" class="link-under" style="margin-top:16px;display:inline-block;">CMO &amp; Growth Leadership Search →</a>
       </div>
       <div class="role-col" data-testid="role-sales">
         <span class="role-index">B / Sales &amp; Retail</span>
@@ -587,7 +589,7 @@
           <div class="rs-range"><span class="low low--sales">₹2L</span><span class="high high--sales">₹60L</span></div>
           <div class="rs-anchor"><span>Sales Associate</span><span>National Head</span></div>
         </div>
-        <a href="sales-leadership-hiring.html" class="link-under" style="margin-top:16px;display:inline-block;">Sales &amp; Retail Leadership Search →</a>
+        <a href="/sales-leadership-hiring" class="link-under" style="margin-top:16px;display:inline-block;">Sales &amp; Retail Leadership Search →</a>
       </div>
       <div class="role-col" data-testid="role-bd">
         <span class="role-index">C / BD &amp; Franchise</span>
@@ -631,7 +633,7 @@
           <div class="rs-range"><span class="low low--strategy">₹11L</span><span class="high high--strategy">₹60L</span></div>
           <div class="rs-anchor"><span>Ops Mid-Mgmt</span><span>Business Head / GM</span></div>
         </div>
-        <a href="finance-leadership-hiring.html" class="link-under" style="margin-top:16px;display:inline-block;">CFO &amp; Finance Leadership Search →</a>
+        <a href="/finance-leadership-hiring" class="link-under" style="margin-top:16px;display:inline-block;">CFO &amp; Finance Leadership Search →</a>
       </div>
     </div>
   </div>
@@ -651,7 +653,7 @@
     <div class="why-grid">
       <div class="why-media">
         <img loading="lazy" src="images/kdeqa3atnby.jpg" alt="Executive search specialists reviewing jewelry and D2C market compensation data" />
-        <a href="schedule-a-call.html" class="btn why-cta-inline" data-testid="why-cta">Brief Us on a Mandate</a>
+        <a href="/schedule-a-call" class="btn why-cta-inline" data-testid="why-cta">Brief Us on a Mandate</a>
       </div>
       <div class="why-content">
         <div class="why-features">
@@ -741,7 +743,7 @@
         <span class="sec-head-index">§07 · Insights</span>
         <h2 class="h2">From inside the market.</h2>
       </div>
-      <a href="resources.html" class="link-under" data-testid="blog-view-all">View All Articles</a>
+      <a href="/resources" class="link-under" data-testid="blog-view-all">View All Articles</a>
     </div>
 
     <div class="blog-grid">
@@ -753,7 +755,7 @@
         </div>
         <h3>Puneet Chhatwal: He Grew the Taj by Owning Less of It</h3>
         <p>Taj Hotels had lost money for seven straight years. He raised ₹4,000 crore mid-pandemic and rebuilt growth around hotels IHCL doesn't own. Profit crossed ₹2,000 crore for the first time.</p>
-        <a href="article-puneet-chhatwal-ihcl-taj.html" class="link-under">Read Article →</a>
+        <a href="/article-puneet-chhatwal-ihcl-taj" class="link-under">Read Article →</a>
       </article>
       <article class="blog-item" data-testid="blog-2">
         <div class="blog-img-wrap"><img width="1200" height="900" src="images/gopal-vittal-airtel-arpu.webp" alt="Gopal Vittal: He Let 40 Million Customers Leave Airtel on Purpose" loading="lazy" style="filter:none;" /></div>
@@ -763,7 +765,7 @@
         </div>
         <h3>Gopal Vittal: He Let 40 Million Customers Leave Airtel on Purpose</h3>
         <p>A rival gave away mobile data for free and Airtel's profit fell 76.5% in a year. Vittal let the cheapest customers go and built the highest revenue-per-user in Indian telecom.</p>
-        <a href="article-gopal-vittal-airtel-arpu.html" class="link-under">Read Article →</a>
+        <a href="/article-gopal-vittal-airtel-arpu" class="link-under">Read Article →</a>
       </article>
       <article class="blog-item" data-testid="blog-3">
         <div class="blog-img-wrap"><img width="1200" height="900" src="images/mp-ahammed-malabar-gold.webp" alt="M P Ahammed: No Bank Would Fund Him, So He Borrowed From His Customers" loading="lazy" style="filter:none;" /></div>
@@ -773,7 +775,7 @@
         </div>
         <h3>M P Ahammed: No Bank Would Fund Him, So He Borrowed From His Customers</h3>
         <p>No bank would back a first-time jeweller with no credit history. So he sold debentures to his own Gulf customers instead. Malabar Gold now runs 445 stores in 14 countries.</p>
-        <a href="article-mp-ahammed-malabar-gold.html" class="link-under">Read Article →</a>
+        <a href="/article-mp-ahammed-malabar-gold" class="link-under">Read Article →</a>
       </article>
     </div>
   </div>
@@ -786,7 +788,7 @@
     <h2 class="cta-display" style="margin-top:24px;">Tell us the role.<br/><em>We'll tell you the market.</em></h2>
     <p class="cta-sub">Brief us on a mandate and we will come back with a market map: what the role pays across your category, who is movable, and what offer structure actually closes, before you commit a budget.</p>
     <div class="cta-btns">
-      <a href="schedule-a-call.html" class="btn" style="background:var(--bg);color:var(--ink);border-color:var(--bg);" data-testid="cta-primary">Brief Us on a Mandate</a>
+      <a href="/schedule-a-call" class="btn" style="background:var(--bg);color:var(--ink);border-color:var(--bg);" data-testid="cta-primary">Brief Us on a Mandate</a>
       <a href="tel:+919856755000" class="btn btn-light" data-testid="cta-phone">+91 98567 55000</a>
     </div>
   </div>
@@ -797,10 +799,10 @@
         <div class="footer-practice">
       <span class="fp-label">// Our Practice</span>
       <div class="fp-strip">
-        <a href="index.html#roles" class="fp-item fp-item--marketing"><span class="fp-dot"></span>A · Marketing</a>
-        <a href="index.html#roles" class="fp-item fp-item--sales"><span class="fp-dot"></span>B · Sales &amp; Retail</a>
-        <a href="index.html#roles" class="fp-item fp-item--bd"><span class="fp-dot"></span>C · BD &amp; Franchise</a>
-        <a href="index.html#roles" class="fp-item fp-item--strategy"><span class="fp-dot"></span>D · Strategy &amp; Ops</a>
+        <a href="/#roles" class="fp-item fp-item--marketing"><span class="fp-dot"></span>A · Marketing</a>
+        <a href="/#roles" class="fp-item fp-item--sales"><span class="fp-dot"></span>B · Sales &amp; Retail</a>
+        <a href="/#roles" class="fp-item fp-item--bd"><span class="fp-dot"></span>C · BD &amp; Franchise</a>
+        <a href="/#roles" class="fp-item fp-item--strategy"><span class="fp-dot"></span>D · Strategy &amp; Ops</a>
       </div>
     </div>
     <div class="footer-grid">
@@ -816,17 +818,17 @@
       <div class="footer-col">
         <p class="footer-h5">Navigate</p>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about-us.html">About Us</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us">About Us</a></li>
+          <li><a href="/resources">Resources</a></li>
+          <li><a href="/case-studies">Case Studies</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <p class="footer-h5">Engage</p>
         <ul>
-          <li><a href="schedule-a-call.html">Schedule a Call</a></li>
-          <li><a href="get-featured.html">Get Featured</a></li><li><a href="#contact">Brief a Mandate</a></li>
+          <li><a href="/schedule-a-call">Schedule a Call</a></li>
+          <li><a href="/get-featured">Get Featured</a></li><li><a href="#contact">Brief a Mandate</a></li>
           <li><a href="https://wa.me/919856755000" target="_blank" rel="noopener">WhatsApp</a></li>
         </ul>
       </div>
@@ -835,7 +837,7 @@
         <p><a href="tel:+919856755000">+91 98567 55000</a></p>
         <p><a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a></p>
         <p>Mon–Sat · 10am–6pm IST</p>
-        <p>Surat, India &amp; <a href="uae-consulting-hiring.html" style="color:inherit;border-bottom:1px solid currentColor;">UAE</a></p>
+        <p>Surat, India &amp; <a href="/uae-consulting-hiring" style="color:inherit;border-bottom:1px solid currentColor;">UAE</a></p>
       </div>
     </div>
     <div class="footer-bottom">
