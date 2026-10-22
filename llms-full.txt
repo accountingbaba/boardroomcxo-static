@@ -16,7 +16,7 @@ The Taj was one of the most loved brands in the country, and it had been losing 
 
 ## Who Is Puneet Chhatwal?
 
-Puneet Chhatwal had been chief executive of Steigenberger Hotels in Frankfurt before taking over as managing director and CEO of the Indian Hotels Company Limited (IHCL). The consolidated net loss he inherited was ₹63 crore. Debt stood at ₹3,159 crore. The company owned or leased 74% of its rooms, so every new hotel needed a big cheque before it earned a single rupee. His predecessor had resigned. The Taj name alone brought in 63% of enterprise revenue, around ₹4,500 crore, and the group's other brands were doing very little.
+Puneet Chhatwal had been chief executive of Steigenberger Hotels in Frankfurt before taking over as managing director and CEO of the Indian Hotels Company Limited (IHCL). The consolidated net loss he inherited was ₹63 crore. Net debt stood at ₹3,151 crore. The company owned or leased 74% of its rooms, so every new hotel needed a big cheque before it earned a single rupee. His predecessor had resigned. The Taj name alone brought in 63% of enterprise revenue, around ₹4,500 crore, and the group's other brands were doing very little.
 
 ## What He Did When Covid Hit
 
@@ -30,7 +30,7 @@ By FY26, profit after tax had crossed ₹2,000 crore for the first time, at ₹2
 
 ## The Boardroom Lesson Most Turnaround Stories Miss
 
-Most coverage of this story credits the recovery to Covid ending and travel demand returning. What gets skipped is that Chhatwal raised his largest capital round and made his biggest structural bet, the shift to management contracts, while the outcome was still completely unknown. The rights issue and share sale closed in 2020, with no evidence yet that travel would ever fully recover.
+Most coverage of this story credits the recovery to Covid ending and travel demand returning. What gets skipped is that Chhatwal raised his largest capital round and made his biggest structural bet, the shift to management contracts, while the outcome was still completely unknown. The rights issue closed in December 2021 and the share sale in March 2022, with no certainty yet that travel would fully recover.
 
 > The strongest brands are rarely rescued by spending more. They are rescued by someone willing to change what the business is.
 
@@ -68,7 +68,7 @@ Puneet Chhatwal is the managing director and chief executive of the Indian Hotel
 
 ### What condition was IHCL and Taj Hotels in when Puneet Chhatwal took over?
 
-IHCL had posted a consolidated net loss for seven straight years, with a net loss of ₹63 crore and debt of ₹3,159 crore at the time Chhatwal took over. The company owned or leased 74% of its rooms, meaning every new hotel required a large upfront investment before it earned any revenue. The Taj brand alone generated 63% of enterprise revenue, around ₹4,500 crore, with the group's other brands contributing very little.
+IHCL had posted a consolidated net loss for seven straight years, with a net loss of ₹63 crore and net debt of ₹3,151 crore at the time Chhatwal took over. The company owned or leased 74% of its rooms, meaning every new hotel required a large upfront investment before it earned any revenue. The Taj brand alone generated 63% of enterprise revenue, around ₹4,500 crore, with the group's other brands contributing very little.
 
 ### What did Puneet Chhatwal do differently to grow IHCL?
 
@@ -99,7 +99,7 @@ Author: CA Ketul Patel, Founder, Boardroom CXO
 Publisher: Boardroom CXO (https://boardroomcxo.com)
 ================================================================================
 
-In March 2011, a five-member panel sat down to choose the next chairman of the Tata Group, a hundred companies and more than a century of history. One of the men they interviewed was the half-brother of the man who was retiring. Inside the group, most people assumed he was the obvious answer.
+In 2011, a five-member panel was choosing the next chairman of the Tata Group, a hundred companies and more than a century of history. One of the men they interviewed was the half-brother of the man who was retiring. Inside the group, most people assumed he was the obvious answer.
 
 He did not get it. The job went to Cyrus Mistry, who had been sitting on the very panel that made the choice, and who was also his wife's brother.
 
@@ -157,7 +157,7 @@ Noel Tata is the chairman of Tata Trusts, the philanthropic body that owns rough
 
 ### Why was Noel Tata passed over for Tata Sons chairman in 2011?
 
-In March 2011, a five-member panel selecting the next chairman of Tata Sons chose Cyrus Mistry, who was serving on that same selection panel and was also Noel Tata's brother-in-law. Noel Tata, seen inside the group as a leading contender, was not selected and returned to running Trent's Westside business.
+In November 2011, a five-member panel selecting the next chairman of Tata Sons chose Cyrus Mistry, who was serving on that same selection panel and was also Noel Tata's brother-in-law. Noel Tata, seen inside the group as a leading contender, was not selected and returned to running Trent's Westside business.
 
 ### What did Noel Tata do after being passed over at Tata Sons?
 
@@ -192,7 +192,7 @@ In 1993, a man who sold dried coconut in Kozhikode decided to sell gold. He was 
 
 No bank would back him.
 
-M P Ahammed had spent fourteen years selling dried coconut and spices to shopkeepers across Kerala, and had worked out it would never get big. He was looking for something that would. "My friend who was based in Mumbai told me gold prices will increase," he says.
+M P Ahammed had spent twelve years selling dried coconut and spices to shopkeepers across Kerala, and had worked out it would never get big. He was looking for something that would. "My friend who was based in Mumbai told me gold prices will increase," he says.
 
 ## Who Is M P Ahammed?
 
@@ -214,7 +214,7 @@ Most coverage of this story treats the debenture scheme as a clever workaround, 
 
 > A bank lends against what you own. Customers lend against who you are.
 
-That is a much harder thing to build than a credit history. A bank evaluates collateral. A customer base evaluates a track record of keeping its word, transaction by transaction, over years. Ahammed had spent fourteen years building exactly that reputation in a different business before he ever needed it in this one.
+That is a much harder thing to build than a credit history. A bank evaluates collateral. A customer base evaluates a track record of keeping its word, transaction by transaction, over years. Ahammed had spent twelve years building exactly that reputation in a different business before he ever needed it in this one.
 
 ## Common Mistakes Boards Make When Evaluating Founder-Led Growth
 
@@ -222,7 +222,7 @@ Boards and investors evaluating a founder who scaled without conventional financ
 
 They read unconventional financing as a sign of weak fundamentals. A founder who could not get a bank loan is not automatically a founder with a bad business. In Ahammed's case, the obstacle was a lack of formal credit history and education, not a flawed model.
 
-They underweight the trust infrastructure a founder builds outside the business itself. The debenture scheme worked because of relationships built over a prior, unrelated fourteen-year career. That kind of community trust rarely shows up on a balance sheet, but it is often the actual asset that made the growth possible.
+They underweight the trust infrastructure a founder builds outside the business itself. The debenture scheme worked because of relationships built over a prior, unrelated twelve-year career. That kind of community trust rarely shows up on a balance sheet, but it is often the actual asset that made the growth possible.
 
 They assume family-and-friends funding cannot scale. Malabar's debenture model scaled from a single Kozhikode shop to 445 stores across 14 countries. The structure that starts as an informal workaround can become a genuine, repeatable financing mechanism if the founder treats it with the same discipline as institutional capital.
 
@@ -244,7 +244,7 @@ The market does not reward the founder with the most conventional resume. It rew
 
 ### Who is M P Ahammed?
 
-M P Ahammed is the founder and chairman of Malabar Gold & Diamonds, India's largest jeweller by revenue. He spent fourteen years selling dried coconut and spices to shopkeepers across Kerala before opening his first jewellery shop in Kozhikode in 1993 at age 36, after finishing school only up to Class 12.
+M P Ahammed is the founder and chairman of Malabar Gold & Diamonds, India's largest jeweller by revenue. He spent twelve years selling dried coconut and spices to shopkeepers across Kerala before opening his first jewellery shop in Kozhikode in 1993 at age 36, after finishing school only up to Class 12.
 
 ### How did M P Ahammed start Malabar Gold & Diamonds?
 
