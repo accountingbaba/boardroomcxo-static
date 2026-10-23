@@ -1595,7 +1595,7 @@ Publisher: Boardroom CXO (https://boardroomcxo.com)
 
 Sudhir Sitapati had the safest seat in Indian FMCG. Twenty-two years inside Hindustan Unilever, senior roles in the businesses behind Surf Excel and Brooke Bond, a lead role in the roughly $5 billion merger that brought Horlicks into HUL, and a spot on the management committee as one of its youngest ever executive directors. He had even written the book on how HUL builds leaders like him, literally, called The CEO Factory.
 
-In 2021, he walked away from all of it. Not for a bigger company. For Godrej Consumer Products, a much smaller business a year after its previous CEO had stepped down, with none of HUL's operating polish. From the outside, it read like a downgrade. It was the opposite.
+In 2021, he walked away from all of it. Not for a bigger company. For Godrej Consumer Products, a much smaller business a year after its previous CEO had stepped down, with none of HUL's operating polish. From the outside, it read like a downgrade. Five years later, he left before the test was finished.
 
 ## Who Is Sudhir Sitapati?
 
@@ -1605,13 +1605,13 @@ He also wrote The CEO Factory, a book that reverse-engineers exactly how HUL man
 
 ## What Did He Actually Do at Godrej Consumer?
 
-The turnaround was not loud. Sitapati cut back the product range, sharpened GCPL's portfolio, and backed category development over the kind of quick wins that flatter a quarterly slide, a slower, harder discipline than the growth-at-any-cost playbook most FMCG turnarounds default to.
+His strategy was not loud. Sitapati cut back the product range, sharpened GCPL's portfolio, and backed category development over the kind of quick wins that flatter a quarterly slide, a slower, harder discipline than the growth-at-any-cost playbook most FMCG turnarounds default to.
 
-The results arrived on a delay, which is exactly how real operating fixes tend to show up. For the year ending March 2026, Godrej Consumer crossed ₹15,000 crore in revenue, up about 8.5%, and in May 2026 the board approved a fresh five-year term for him. Then, in August 2026, days after shareholders approved that term, Sitapati resigned, writing that the task he had set for himself was done. GCPL named its CFO, Aasif Malbari, as MD and CEO, and its chairperson Nisaba Godrej said the company needed a step up in execution.
+Some results came, slowly. For the year ending March 2026, Godrej Consumer crossed ₹15,000 crore in revenue, up about 8.5%, and in May 2026 the board approved a fresh five-year term for him. Then, in August 2026, days after shareholders approved that term, Sitapati resigned, writing that the task he had set for himself was done. GCPL named its CFO, Aasif Malbari, as MD and CEO, and its chairperson Nisaba Godrej said the company needed a step up in execution.
 
 ## The Boardroom Lesson Most Career Profiles Miss
 
-Most coverage of this move reads as a career-risk story: safe job, risky bet, bet paid off. What gets skipped is the actual mechanism. Sitapati had spent two decades studying, and writing about, how a well-run system produces leaders. The move to Godrej was the test of whether he could produce results without that system underneath him, using judgment instead of institutional scaffolding.
+Most coverage of this move reads as a career-risk story: safe job, risky bet, and a result that is still argued over. What gets skipped is the actual mechanism. Sitapati had spent two decades studying, and writing about, how a well-run system produces leaders. The move to Godrej was the test of whether he could produce results without that system underneath him, using judgment instead of institutional scaffolding.
 
 That is precisely the test boards are unable to run in an interview. A candidate's track record inside a well-oiled machine tells you the machine works. It tells you almost nothing about what the candidate contributes once the machine is gone.
 
@@ -1632,12 +1632,12 @@ They underweight candidates who choose difficulty on purpose. Someone who leaves
 When we brief boards on a CXO search involving a candidate with a similar profile, insider expertise from a category leader, we push for three specific checks.
 
 - Separate the system's track record from the candidate's. Ask what this person built or fixed personally, distinct from what the organization's existing playbook would have produced with anyone competent in the seat.
-- Ask what they cut, not just what they launched. Sitapati's actual turnaround lever at Godrej was subtraction, a narrower portfolio and sharper focus. Addition is the easy, visible move. Subtraction under pressure is the harder signal.
+- Ask what they cut, not just what they launched. Sitapati's main lever at Godrej was subtraction, a narrower portfolio and sharper focus. Addition is the easy, visible move. Subtraction under pressure is the harder signal.
 - Look at the size and shape of the bet they chose. A candidate who consistently picks the harder, less certain option when a safer one is available has a decision-making pattern worth more than any single résumé line.
 
 ## Why This Belongs in the Boardroom, Not Just the Business Pages
 
-This is the same underlying test we wrote about in Sanjiv Mehta's decade running HUL, where the discipline that mattered most was not the headline growth number but the specific governance habit installed underneath it. Sitapati's story is the inverse case: a leader who left the system that built him to prove the judgment was his own, not the organization's. Both point to the same hiring problem for boards.
+This is the same underlying test we wrote about in Sanjiv Mehta's decade running HUL, where the discipline that mattered most was not the headline growth number but the specific governance habit installed underneath it. Sitapati's story is the inverse case: a leader who left the system that built him to test whether the judgment was his own, and whose exit, with the chairperson asking for a step up in execution, shows that test is not settled. Both point to the same hiring problem for boards.
 
 The market does not reward the most polished résumé or the most prestigious former employer. It rewards boards that can tell the difference between a candidate who thrived inside a great system and one who can build the next one from scratch.
 
