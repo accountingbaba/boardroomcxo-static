@@ -39,6 +39,7 @@ if ($formType === 'newsletter') {
     $company   = isset($_POST['company']) ? clean_field($_POST['company']) : '';
     $role      = isset($_POST['role']) ? clean_field($_POST['role']) : '';
     $service   = isset($_POST['service']) ? clean_field($_POST['service']) : '';
+    $source    = isset($_POST['source']) && $_POST['source'] !== '' ? clean_field($_POST['source']) : 'Not answered';
     $message   = isset($_POST['message']) ? trim((string) $_POST['message']) : '';
 
     if (!$firstName || !$lastName || !filter_var($email, FILTER_VALIDATE_EMAIL) || !$company || !$service) {
@@ -54,7 +55,8 @@ if ($formType === 'newsletter') {
           . "Phone: {$phone}\n"
           . "Company: {$company}\n"
           . "Role: {$role}\n"
-          . "Looking for: {$service}\n\n"
+          . "Looking for: {$service}\n"
+          . "Heard about us: {$source}\n\n"
           . "Message:\n{$message}\n";
     $replyTo = $email;
 }

@@ -175,6 +175,13 @@ ul  { list-style: none; }
   letter-spacing: -0.045em; color: var(--ink); margin-bottom: 40px;
 }
 .hero-display em { font-style: italic; font-weight: 400; color: var(--clay); }
+.hero-display--topic { font-size: clamp(2.2rem, 4.4vw, 4.2rem); line-height: 1.02; letter-spacing: -0.035em; margin-bottom: 24px; }
+.hero-slogan {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(1.3rem, 2vw, 1.85rem); line-height: 1.15;
+  letter-spacing: -0.03em; color: var(--ink); margin-bottom: 32px;
+}
+.hero-slogan em { font-style: italic; font-weight: 400; color: var(--clay); }
 .hero-sub {
   font-size: clamp(1rem, 1.25vw, 1.15rem); line-height: 1.65;
   color: var(--ink-2); max-width: 48ch; margin-bottom: 48px;
@@ -232,6 +239,7 @@ ul  { list-style: none; }
   font-family: var(--font-mono); font-size: clamp(2.4rem, 4.5vw, 3.75rem);
   line-height: 1; font-weight: 400; color: var(--ink); letter-spacing: -0.02em;
 }
+.hero-stat-pre { font-size: 0.36em; letter-spacing: 0.02em; color: var(--ink-2); }
 .hero-stat-label { font-size: 13.5px; color: var(--ink-2); line-height: 1.45; max-width: 28ch; }
 
 /* RIBBON */
@@ -1267,6 +1275,11 @@ ul  { list-style: none; }
   .topic-item:nth-child(2) { border-right: none; }
   .topic-item:nth-child(1), .topic-item:nth-child(2) { border-bottom: 1px solid var(--line); }
 }
+@media (max-width: 420px) {
+  .topics-grid { grid-template-columns: 1fr; }
+  .topic-item { border-right: none; border-bottom: 1px solid var(--line); }
+  .topic-item:last-child { border-bottom: none; }
+}
 
 .featured-article {
   display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center;
@@ -1443,7 +1456,7 @@ ul  { list-style: none; }
   font-weight: 500; line-height: 1.05; letter-spacing: -0.03em;
   color: var(--ink); margin-bottom: 32px;
 }
-.article-hero .meta { display: flex; gap: 32px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-2); padding-top: 24px; border-top: 1px solid var(--line); }
+.article-hero .meta { display: flex; flex-wrap: wrap; gap: 8px 32px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-2); padding-top: 24px; border-top: 1px solid var(--line); }
 
 .article-body { padding: 60px 0 80px; max-width: 720px; margin: 0 auto; }
 .article-body h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 2.5vw, 2.1rem); font-weight: 500; letter-spacing: -0.02em; color: var(--ink); margin: 60px 0 20px; line-height: 1.15; }

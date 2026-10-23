@@ -111,9 +111,9 @@ Publisher: Boardroom CXO (https://boardroomcxo.com)
 - Noel Tata put Trent behind Zudio, a value-fashion format for Indians outside the big cities, which accounted for 963 of its stores by March 2026.
 - A career is not decided by the job you do not get, so boards should judge a passed-over insider by what they did in the years after.
 
-In 2011, a five-member panel was choosing the next chairman of the Tata Group, a hundred companies and more than a century of history. One of the men they interviewed was the half-brother of the man who was retiring. Inside the group, most people assumed he was the obvious answer.
+In 2011, a five-member panel was choosing the next chairman of the Tata Group, a hundred companies and more than a century of history. One of the names in the frame was the half-brother of the man who was retiring. Inside the group, most people assumed he was the obvious answer.
 
-He did not get it. The job went to Cyrus Mistry, who had been sitting on the very panel that made the choice, and who was also his wife's brother.
+He did not get it. The job went to Cyrus Mistry, his wife's brother, who had started out as one of the five people on that panel and stepped off it to become a candidate.
 
 Noel Tata went back to work.
 
@@ -169,7 +169,7 @@ Noel Tata is the chairman of Tata Trusts, the philanthropic body that owns rough
 
 ### Why was Noel Tata passed over for Tata Sons chairman in 2011?
 
-In November 2011, a five-member panel selecting the next chairman of Tata Sons chose Cyrus Mistry, who was serving on that same selection panel and was also Noel Tata's brother-in-law. Noel Tata, seen inside the group as a leading contender, was not selected and returned to running Trent's Westside business.
+In November 2011, the committee choosing the next chairman of Tata Sons picked Cyrus Mistry, Noel Tata's brother-in-law. Mistry had been one of its five members, but left the committee when the others asked him to become a candidate. Noel Tata, seen inside the group as a leading contender, was not selected and returned to running Trent's Westside business.
 
 ### What did Noel Tata do after being passed over at Tata Sons?
 
@@ -191,6 +191,7 @@ Noel Tata has chaired Tata Trusts since October 2024, giving him influence over 
 - Business Today, Noel Tata appointed as the new Chairman of Tata Trusts, October 2024
 - Business Today, Bharat Electronics, Trent shares in news today; here's why, August 2024
 - Knowledge at Wharton, Shareholder's Choice: Cyrus Mistry to Take the Helm of India's Tata Group, November 2011
+- Business Today, Tatas bowl a googly, November 2011
 - Business Standard, Trent, BEL join Nifty 50 as LTI Mindtree, Divi's Labs exit, August 2024
 - Business Standard, IndusInd Bank, Nestle India dropped from BSE Sensex in index rejig, May 2025
 
@@ -208,7 +209,7 @@ Publisher: Boardroom CXO (https://boardroomcxo.com)
 - Instead of waiting or borrowing, Ahammed sold debentures to investors, many working in the Gulf, with interest capped at 15% and conversion into shares once profitable.
 - Because customers lend against who you are, boards should ask what trust a founder built before the business needed it.
 
-In 1993, a man who sold dried coconut in Kozhikode decided to sell gold. He was 36. He had finished school at Class 12.
+In 1993, a man who sold dried coconut in Kozhikode decided to sell gold. He was 36.
 
 M P Ahammed had spent twelve years selling dried coconut and spices to shopkeepers across Kerala, and had worked out it would never get big. He was looking for something that would. "My friend who was based in Mumbai told me gold prices will increase," he says.
 
@@ -238,7 +239,7 @@ That is a much harder thing to build than a credit history. A bank evaluates col
 
 Boards and investors evaluating a founder who scaled without conventional financing tend to make the same three errors.
 
-They read unconventional financing as a sign of weak fundamentals. A founder who raises money outside the banks is not automatically a founder with a bad business. Ahammed had finished school at Class 12 and had never run a jewellery shop, yet the model held up across 445 stores.
+They read unconventional financing as a sign of weak fundamentals. A founder who raises money outside the banks is not automatically a founder with a bad business. Ahammed had spent twelve years trading coconut and spices and had never run a jewellery shop, yet the model held up across 445 stores.
 
 They underweight the trust infrastructure a founder builds outside the business itself. The debenture scheme worked because of relationships built over a prior, unrelated twelve-year career. That kind of community trust rarely shows up on a balance sheet, but it is often the actual asset that made the growth possible.
 
@@ -262,7 +263,7 @@ The market does not reward the founder with the most conventional resume. It rew
 
 ### Who is M P Ahammed?
 
-M P Ahammed is the founder and chairman of Malabar Gold & Diamonds, India's largest jeweller by revenue. He spent twelve years selling dried coconut and spices to shopkeepers across Kerala before opening his first jewellery shop in Kozhikode in 1993 at age 36, after finishing school only up to Class 12.
+M P Ahammed is the founder and chairman of Malabar Gold & Diamonds, India's largest jeweller by revenue. He spent twelve years selling dried coconut and spices to shopkeepers across Kerala before opening his first jewellery shop in Kozhikode in 1993 at age 36.
 
 ### How did M P Ahammed start Malabar Gold & Diamonds?
 
@@ -1594,7 +1595,7 @@ Publisher: Boardroom CXO (https://boardroomcxo.com)
 
 Sudhir Sitapati had the safest seat in Indian FMCG. Twenty-two years inside Hindustan Unilever, senior roles in the businesses behind Surf Excel and Brooke Bond, a lead role in the roughly $5 billion merger that brought Horlicks into HUL, and a spot on the management committee as one of its youngest ever executive directors. He had even written the book on how HUL builds leaders like him, literally, called The CEO Factory.
 
-In 2021, he walked away from all of it. Not for a bigger company. For Godrej Consumer Products, a much smaller business a year after its previous CEO had stepped down, with none of HUL's operating polish. From the outside, it read like a downgrade. It was the opposite.
+In 2021, he walked away from all of it. Not for a bigger company. For Godrej Consumer Products, a much smaller business a year after its previous CEO had stepped down, with none of HUL's operating polish. From the outside, it read like a downgrade. Five years later, he left before the test was finished.
 
 ## Who Is Sudhir Sitapati?
 
@@ -1604,13 +1605,13 @@ He also wrote The CEO Factory, a book that reverse-engineers exactly how HUL man
 
 ## What Did He Actually Do at Godrej Consumer?
 
-The turnaround was not loud. Sitapati cut back the product range, sharpened GCPL's portfolio, and backed category development over the kind of quick wins that flatter a quarterly slide, a slower, harder discipline than the growth-at-any-cost playbook most FMCG turnarounds default to.
+His strategy was not loud. Sitapati cut back the product range, sharpened GCPL's portfolio, and backed category development over the kind of quick wins that flatter a quarterly slide, a slower, harder discipline than the growth-at-any-cost playbook most FMCG turnarounds default to.
 
-The results arrived on a delay, which is exactly how real operating fixes tend to show up. For the year ending March 2026, Godrej Consumer crossed ₹15,000 crore in revenue, up about 8.5%, and in May 2026 the board approved a fresh five-year term for him. Then, in August 2026, days after shareholders approved that term, Sitapati resigned, writing that the task he had set for himself was done. GCPL named its CFO, Aasif Malbari, as MD and CEO, and its chairperson Nisaba Godrej said the company needed a step up in execution.
+Some results came, slowly. For the year ending March 2026, Godrej Consumer crossed ₹15,000 crore in revenue, up about 8.5%, and in May 2026 the board approved a fresh five-year term for him. Then, in August 2026, days after shareholders approved that term, Sitapati resigned, writing that the task he had set for himself was done. GCPL named its CFO, Aasif Malbari, as MD and CEO, and its chairperson Nisaba Godrej said the company needed a step up in execution.
 
 ## The Boardroom Lesson Most Career Profiles Miss
 
-Most coverage of this move reads as a career-risk story: safe job, risky bet, bet paid off. What gets skipped is the actual mechanism. Sitapati had spent two decades studying, and writing about, how a well-run system produces leaders. The move to Godrej was the test of whether he could produce results without that system underneath him, using judgment instead of institutional scaffolding.
+Most coverage of this move reads as a career-risk story: safe job, risky bet, and a result that is still argued over. What gets skipped is the actual mechanism. Sitapati had spent two decades studying, and writing about, how a well-run system produces leaders. The move to Godrej was the test of whether he could produce results without that system underneath him, using judgment instead of institutional scaffolding.
 
 That is precisely the test boards are unable to run in an interview. A candidate's track record inside a well-oiled machine tells you the machine works. It tells you almost nothing about what the candidate contributes once the machine is gone.
 
@@ -1631,12 +1632,12 @@ They underweight candidates who choose difficulty on purpose. Someone who leaves
 When we brief boards on a CXO search involving a candidate with a similar profile, insider expertise from a category leader, we push for three specific checks.
 
 - Separate the system's track record from the candidate's. Ask what this person built or fixed personally, distinct from what the organization's existing playbook would have produced with anyone competent in the seat.
-- Ask what they cut, not just what they launched. Sitapati's actual turnaround lever at Godrej was subtraction, a narrower portfolio and sharper focus. Addition is the easy, visible move. Subtraction under pressure is the harder signal.
+- Ask what they cut, not just what they launched. Sitapati's main lever at Godrej was subtraction, a narrower portfolio and sharper focus. Addition is the easy, visible move. Subtraction under pressure is the harder signal.
 - Look at the size and shape of the bet they chose. A candidate who consistently picks the harder, less certain option when a safer one is available has a decision-making pattern worth more than any single résumé line.
 
 ## Why This Belongs in the Boardroom, Not Just the Business Pages
 
-This is the same underlying test we wrote about in Sanjiv Mehta's decade running HUL, where the discipline that mattered most was not the headline growth number but the specific governance habit installed underneath it. Sitapati's story is the inverse case: a leader who left the system that built him to prove the judgment was his own, not the organization's. Both point to the same hiring problem for boards.
+This is the same underlying test we wrote about in Sanjiv Mehta's decade running HUL, where the discipline that mattered most was not the headline growth number but the specific governance habit installed underneath it. Sitapati's story is the inverse case: a leader who left the system that built him to test whether the judgment was his own, and whose exit, with the chairperson asking for a step up in execution, shows that test is not settled. Both point to the same hiring problem for boards.
 
 The market does not reward the most polished résumé or the most prestigious former employer. It rewards boards that can tell the difference between a candidate who thrived inside a great system and one who can build the next one from scratch.
 
@@ -1687,7 +1688,7 @@ Publisher: Boardroom CXO (https://boardroomcxo.com)
 
 187 years. Not one Indian CEO, until a boy from Mumbai who joined the company fresh out of business school, and never left, walked into the top job.
 
-On January 1, 2026, Shailesh Jejurikar became CEO of Procter & Gamble, the first person of Indian origin to lead it in nearly two centuries. P&G reaches an estimated 5 billion people across more than 180 countries. He joined the company in 1989, straight out of IIM Lucknow, as an assistant brand manager in India. Then something unusual happened: nothing else happened. He never switched employers again.
+On January 1, 2026, Shailesh Jejurikar became CEO of Procter & Gamble, the first person of Indian origin to lead it in nearly two centuries. On August 1, 2026, he also became Chairman of its Board. P&G reaches an estimated 5 billion people across more than 180 countries. He joined the company in 1989, straight out of IIM Lucknow, as an assistant brand manager in India. Then something unusual happened: nothing else happened. He never switched employers again.
 
 ## Who Is Shailesh Jejurikar?
 
@@ -1731,7 +1732,7 @@ Both stories point to the same hiring problem. The market does not reward the fl
 
 ### Who is Shailesh Jejurikar?
 
-Shailesh Jejurikar is the CEO of Procter & Gamble, appointed effective January 1, 2026. He joined P&G in 1989 straight out of IIM Lucknow as an assistant brand manager in India and spent his entire 36-year career at the company, rising through roles in India, East Africa, Asia and North America and leading Global Fabric and Home Care before becoming Chief Operating Officer in 2021.
+Shailesh Jejurikar is the Chairman, President and CEO of Procter & Gamble. He became CEO on January 1, 2026 and Chairman of the Board on August 1, 2026. He joined P&G in 1989 straight out of IIM Lucknow as an assistant brand manager in India and spent his entire 36-year career at the company, rising through roles in India, East Africa, Asia and North America and leading Global Fabric and Home Care before becoming Chief Operating Officer in 2021.
 
 ### Why is Shailesh Jejurikar's appointment as P&G CEO significant?
 
@@ -1753,6 +1754,7 @@ Shailesh Jejurikar joined P&G in 1989 and never switched employers, an unusual p
 
 - Procter & Gamble, Shailesh G. Jejurikar: Chairman of the Board, President and Chief Executive Officer, August 2026
 - Procter & Gamble, Shailesh Jejurikar: Chairman of the Board, President and Chief Executive Officer of The Procter & Gamble Company, August 2026
+- Procter & Gamble, Shailesh Jejurikar Appointed Chairman of P&G Board of Directors, July 2026
 - Procter & Gamble, Shailesh Jejurikar Talks About Unlocking Market Growth, April 2024
 - Procter & Gamble, Shailesh G. Jejurikar: President, Global Fabric Care, August 2018
 - The Economic Times, Three cheers & three chairs: P&G veteran Shailesh Jejurikar to add chairman's role, July 2026
@@ -2076,7 +2078,7 @@ This is the hidden comp gap. It is endemic to India's organized jewelry sector, 
 
 India's organized jewelry retail sector has a long history of legacy compensation structures. At many legacy organized players, compensation packages were, and in many cases still are, structured to minimize formal payroll costs while keeping effective take-home competitive.
 
-The result is a pay structure that looks one way on paper and functions differently in practice. A typical arrangement at a legacy brand might look like this:
+The result is a pay structure that looks one way on paper and functions differently in practice. Take the legacy brand RSM in the pay anchors further down: Rs. 75,000 a month arrives by bank transfer and Rs. 36,000 a month in cash, but only Rs. 9 LPA appears on the slip.
 
 A hiring brand that benchmarks an offer against the Rs. 9 LPA slip, even generously, at a 35-40% increment, arrives at Rs. 12-12.5 LPA. The candidate, who is actually earning Rs. 13.3 LPA and has additional benefits not reflected anywhere on paper, has no reason to move.
 
@@ -2102,13 +2104,13 @@ The comp gap is not just a negotiation problem. It is an intelligence problem. I
 
 ## The Numbers Across the Market
 
-Based on live candidate conversations across our pipeline, the gap between stated CTC and actual take-home at legacy organized brands runs consistently between 25% and 35%. Some specific anchors from recent mandates:
+Based on live candidate conversations across our pipeline, the gap between stated CTC and actual take-home at legacy organized brands typically runs between 25% and 35%, and in some cases much more. Some specific anchors from recent mandates:
 
 - BlueStone RSM: Rs. 27.5 LPA total (Rs. 24L fixed + Rs. 3.5L variable), appraising toward Rs. 30-35L. Formal slip reflects the fixed component only.
 - CaratLane RSM: Rs. 13.5–18.25 LPA. Range is wider than headline benchmarks suggest, the premium-brand floor does not hold across mid-tier mandates.
 - GIVA BDM: Rs. 20 LPA current, expecting Rs. 30L+ with ESOPs on any move. The ESOP expectation is non-negotiable at this seniority.
 - GIVA National Sales: Rs. 31 LPA + ESOPs. Benchmark for what a first National Sales Head costs at a funded Cat B brand.
-- Legacy brand RSM (ORRA-adjacent): Rs. 75,000/month bank + Rs. 36,000/month cash, of which only Rs. 9 LPA is formally reported. Actual earnings nearly 50% above the stated CTC.
+- Legacy brand RSM: Rs. 75,000/month bank + Rs. 36,000/month cash, of which only Rs. 9 LPA is formally reported. Actual earnings nearly 50% above the stated CTC.
 
 ## The Correction That Actually Works
 
@@ -2142,7 +2144,7 @@ That is an intelligence problem. And it has a straightforward solution: verify t
 
 ### What is the hidden comp gap in India's jewelry industry?
 
-The hidden comp gap is the difference between a candidate's documented CTC slip and their actual take-home pay at legacy organized jewelry brands. It typically runs 25% to 35%, because cash components, travel allowances, and unreported variable payouts are left off the formal payroll slip.
+The hidden comp gap is the difference between a candidate's documented CTC slip and their actual take-home pay at legacy organized jewelry brands. It typically runs 25% to 35%, and in some cases much more, because cash components, travel allowances, and unreported variable payouts are left off the formal payroll slip.
 
 ### Why do jewelry brands lose candidates even after offering 30% above their CTC?
 
