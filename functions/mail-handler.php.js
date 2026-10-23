@@ -98,6 +98,7 @@ export async function onRequestPost(context) {
     const company = cleanField(form.get('company'));
     const role = cleanField(form.get('role'));
     const service = cleanField(form.get('service'));
+    const source = cleanField(form.get('source'));
     const message = String(form.get('message') ?? '').trim();
 
     if (!firstName || !lastName || !isValidEmail(email) || !company || !service) {
@@ -111,7 +112,8 @@ export async function onRequestPost(context) {
       + `Phone: ${phone}\n`
       + `Company: ${company}\n`
       + `Role: ${role}\n`
-      + `Looking for: ${service}\n\n`
+      + `Looking for: ${service}\n`
+      + `Heard about us: ${source || 'Not answered'}\n\n`
       + `Message:\n${message}\n`;
     replyTo = email;
   }
