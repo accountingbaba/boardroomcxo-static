@@ -277,12 +277,13 @@ async function vToday() {
 function taskRow(t) {
   const p = { name: t.name, company: t.company };
   let b = '';
-  if (t.type === 'send') b = (t.linkedin ? `<a class="btn g s" href="${esc(t.linkedin)}" target="_blank" rel="noopener">Open LinkedIn</a>` + copyBtn(t.linkedin, 'Link') : '') + copyBtn(fill('note', p), 'Note') + B('Mark sent', { lead: t.lead_id, act: 'sent' }, 's');
-  else if (t.type === 'm1') b = (t.linkedin ? `<a class="btn g s" href="${esc(t.linkedin)}" target="_blank" rel="noopener">Open LinkedIn</a>` + copyBtn(t.linkedin, 'Link') : '') + copyBtn(fill('msg1', p), 'Message') + B('Mark sent', { lead: t.lead_id, act: 'm1' }, 's') + B('They replied', { openlead: t.lead_id }, 'g s');
-  else if (t.type === 'nudge') b = copyBtn(fill('nudge', p), 'Nudge') + B('Mark sent', { lead: t.lead_id, act: 'nudge' }, 's') + B('They replied', { openlead: t.lead_id }, 'g s');
-  else if (t.type === 'close') b = B('Close, no reply', { lead: t.lead_id, act: 'close' }, 'g s') + B('They replied', { openlead: t.lead_id }, 'g s');
+  const li = (t.linkedin ? `<a class="btn g s" href="${esc(t.linkedin)}" target="_blank" rel="noopener">Open LinkedIn</a>` + copyBtn(t.linkedin, 'Link') : '');
+  if (t.type === 'send') b = li + copyBtn(fill('note', p), 'Note') + B('Mark sent', { lead: t.lead_id, act: 'sent' }, 's');
+  else if (t.type === 'm1') b = li + copyBtn(fill('msg1', p), 'Message') + B('Mark sent', { lead: t.lead_id, act: 'm1' }, 's') + B('They replied', { openlead: t.lead_id }, 'g s');
+  else if (t.type === 'nudge') b = li + copyBtn(fill('nudge', p), 'Nudge') + B('Mark sent', { lead: t.lead_id, act: 'nudge' }, 's') + B('They replied', { openlead: t.lead_id }, 'g s');
+  else if (t.type === 'close') b = li + B('Close, no reply', { lead: t.lead_id, act: 'close' }, 'g s') + B('They replied', { openlead: t.lead_id }, 'g s');
   else if (t.type === 'reply') b = B('Open', { openlead: t.lead_id }, 's');
-  else if (t.type === 'ci30' || t.type === 'ci60') b = copyBtn(fill(t.type, p), 'Message') + B('Mark sent', { order: t.order_id, oact: t.type }, 's');
+  else if (t.type === 'ci30' || t.type === 'ci60') b = li + copyBtn(fill(t.type, p), 'Message') + B('Mark sent', { order: t.order_id, oact: t.type }, 's');
   else b = B('Open', { openorder: t.order_id }, 's');
   const owner = !mineOnly && t.owner !== ME.email ? `<div class="who">For ${esc(t.owner)}</div>` : '';
   return `<div class="card task"><div><div class="t">${esc(t.title)} ${t.tier ? tierTag(t.tier) : ''} ${t.overdue ? '<span class="tag over">Overdue</span>' : ''} ${t.from ? `<span class="tag">${esc(t.from)}</span>` : ''}</div>${t.sub ? `<div class="d">${esc(t.sub)}</div>` : ''}${owner}</div><div class="b">${b}</div></div>`;
