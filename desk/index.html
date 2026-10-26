@@ -191,6 +191,7 @@ async function api(path, body, opt = {}) {
 }
 function toast(msg) { const t = $('#toast'); t.textContent = msg; t.hidden = false; clearTimeout(toast.h); toast.h = setTimeout(() => t.hidden = true, 2600); }
 async function copy(text, label) {
+  if (!text) return toast('Nothing to copy here. Refresh the page and try again.');
   try { await navigator.clipboard.writeText(text); toast((label || 'Text') + ' copied'); }
   catch { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); toast((label || 'Text') + ' copied'); }
 }
@@ -276,8 +277,8 @@ async function vToday() {
 function taskRow(t) {
   const p = { name: t.name, company: t.company };
   let b = '';
-  if (t.type === 'send') b = (t.linkedin ? `<a class="btn g s" href="${esc(t.linkedin)}" target="_blank" rel="noopener">Open LinkedIn</a>` : '') + copyBtn(fill('note', p), 'Note') + B('Mark sent', { lead: t.lead_id, act: 'sent' }, 's');
-  else if (t.type === 'm1') b = (t.linkedin ? `<a class="btn g s" href="${esc(t.linkedin)}" target="_blank" rel="noopener">Open LinkedIn</a>` : '') + copyBtn(fill('msg1', p), 'Message') + B('Mark sent', { lead: t.lead_id, act: 'm1' }, 's') + B('They replied', { openlead: t.lead_id }, 'g s');
+  if (t.type === 'send') b = (t.linkedin ? `<a class="btn g s" href="${esc(t.linkedin)}" target="_blank" rel="noopener">Open LinkedIn</a>` + copyBtn(t.linkedin, 'Link') : '') + copyBtn(fill('note', p), 'Note') + B('Mark sent', { lead: t.lead_id, act: 'sent' }, 's');
+  else if (t.type === 'm1') b = (t.linkedin ? `<a class="btn g s" href="${esc(t.linkedin)}" target="_blank" rel="noopener">Open LinkedIn</a>` + copyBtn(t.linkedin, 'Link') : '') + copyBtn(fill('msg1', p), 'Message') + B('Mark sent', { lead: t.lead_id, act: 'm1' }, 's') + B('They replied', { openlead: t.lead_id }, 'g s');
   else if (t.type === 'nudge') b = copyBtn(fill('nudge', p), 'Nudge') + B('Mark sent', { lead: t.lead_id, act: 'nudge' }, 's') + B('They replied', { openlead: t.lead_id }, 'g s');
   else if (t.type === 'close') b = B('Close, no reply', { lead: t.lead_id, act: 'close' }, 'g s') + B('They replied', { openlead: t.lead_id }, 'g s');
   else if (t.type === 'reply') b = B('Open', { openlead: t.lead_id }, 's');
@@ -301,7 +302,7 @@ async function openLead(id, notice) {
   const d = await api('team/leads/' + id), l = d.lead;
   drawer(`<div class="dh"><div><h1>${esc(l.name)}</h1><p class="sub">${esc(l.role_title || '')}${l.company ? ' at ' + esc(l.company) : ''} · ${esc(STAGES[l.stage] || l.stage)}</p></div><button class="x" data-close aria-label="Close">×</button></div>
   <div class="db">${notice || ''}
-    <div class="sec"><div class="row">${l.linkedin ? `<a class="btn g s" href="${esc(l.linkedin)}" target="_blank" rel="noopener">Open LinkedIn</a>` : ''}
+    <div class="sec"><div class="row">${l.linkedin ? `<a class="btn g s" href="${esc(l.linkedin)}" target="_blank" rel="noopener">Open LinkedIn</a>` + copyBtn(l.linkedin, 'Link') : ''}
       ${l.stage === 'ready' ? B('Request sent', { lead: l.id, act: 'sent', stay: 1 }, 's') : ''}
       ${l.stage === 'sent' ? B('They accepted', { lead: l.id, act: 'accepted', stay: 1 }, 's') : ''}
       ${['sent', 'connected'].includes(l.stage) ? B('They replied', { replybox: 1 }, 'g s') : ''}
@@ -607,7 +608,7 @@ async function vSettings() {
 
 // ── Drawer and clicks ────────────────────────────────────────────────────────
 function drawer(html, hash, wide) {
-  COPY.clear(); $('#drawer').classList.toggle('wide', Boolean(wide));
+  $('#drawer').classList.toggle('wide', Boolean(wide));
   $('#drawer').innerHTML = html; $('#drawer').hidden = false; $('#scrim').hidden = false; $('#drawer').scrollTop = 0;
   if (hash && location.hash.slice(1) !== hash) history.replaceState(null, '', '#' + hash);
   document.body.style.overflow = 'hidden';
