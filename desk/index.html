@@ -144,6 +144,47 @@ html.td .ctx{max-width:1240px;margin:0 auto;padding:20px max(16px,env(safe-area-
 html.td main{padding-top:6px}
 @media(max-width:1023px){html.td .ctx{justify-content:flex-start}}
 .drawer{box-shadow:-24px 0 48px rgba(15,23,42,.18)}
+/* ===== Today in the same layout as the other companies' desks (26 Oct 2026). Copied from the team desk, under .tdv ===== */
+.tdv{--accent:#172633;--accent-soft:#E8EDF2;--accent-ink:#172633;--accent-dot:#D4A860;--success:#067647;--success-soft:#DCF3E6;--warning:#9A4A06;--warning-soft:#FDEFD8;--muted:#EEF1F5;--mfg:#5B6576;--border:#E1E5EB;--card:#FFFFFF}
+.tdv .t-hero{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow)}
+.tdv .t-herotop{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.tdv .t-big{display:flex;align-items:baseline;gap:8px}.tdv .t-big b{font-size:40px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;color:var(--accent-ink)}.tdv .t-big span{color:var(--mfg);font-size:15px}
+.tdv .t-heromsg{font-weight:600;font-size:15px;color:var(--accent-ink)}.tdv .t-hero.done .t-heromsg{color:var(--success)}
+.tdv .t-segs{display:flex;gap:3px}.tdv .t-segs i{flex:1;height:12px;border-radius:4px;background:var(--muted)}.tdv .t-segs i.on{background:var(--success)}
+.tdv .t-hero small{color:var(--mfg);font-size:13px}
+.tdv .t-tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:8px;margin:16px 0 8px}
+.tdv .t-tab{font:inherit;color:inherit;text-align:left;cursor:pointer;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:8px 12px;display:flex;flex-direction:column;gap:2px;min-height:44px;box-shadow:var(--shadow)}
+.tdv .t-tab b{font-size:22px;font-weight:700;line-height:1.15;font-variant-numeric:tabular-nums}.tdv .t-tab span{color:var(--mfg);font-size:13px}
+.tdv .t-tab:hover{border-color:var(--accent)}.tdv .t-tab[data-zero="1"] b{color:var(--mfg);font-weight:500}
+.tdv .t-tab[aria-selected="true"]{border-color:var(--accent);background:var(--accent-soft);box-shadow:inset 0 -3px 0 var(--accent),var(--shadow)}.tdv .t-tab[aria-selected="true"] span{color:var(--accent-ink)}
+.tdv section{margin-top:18px}
+.tdv .t-h2{font-size:17px;font-weight:700;margin:0;display:flex;align-items:center;gap:8px;color:var(--ink);letter-spacing:0;text-transform:none}
+.tdv .t-h2 .n{font:500 12px var(--mono);background:var(--muted);color:var(--mfg);border-radius:999px;padding:1px 9px}
+.tdv .t-sub{margin:4px 0 12px;color:var(--mfg);font-size:14px;max-width:68ch}
+.tdv .t-list{display:flex;flex-direction:column;gap:12px}.tdv .t-list.rows{gap:8px}
+@media(min-width:1400px){.tdv .t-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(480px,1fr))}.tdv .t-list.rows{grid-template-columns:minmax(0,1fr)}}
+.tdv .t-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0;box-shadow:var(--shadow)}
+.tdv .t-card.done{opacity:.45;pointer-events:none}
+.tdv .t-card>.t-acts{margin-top:auto}
+.tdv .t-head{display:flex;gap:12px;align-items:center;min-width:0}
+.tdv .t-avatar{width:40px;height:40px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink);display:grid;place-items:center;font-weight:700;font-size:14px;flex:none}
+.tdv .t-id{min-width:0;display:flex;flex-direction:column}.tdv .t-who{font-weight:700;font-size:16px;overflow-wrap:anywhere}.tdv .t-co{color:var(--mfg);font-size:13.5px;overflow-wrap:anywhere}
+.tdv .t-meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.tdv .t-badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--muted);color:var(--mfg);max-width:100%;overflow-wrap:anywhere}
+.tdv .t-badge.primary{background:var(--accent-soft);color:var(--accent-ink)}.tdv .t-badge.warning{background:var(--warning-soft);color:var(--warning)}
+.tdv .t-msgwrap{display:flex;flex-direction:column;gap:6px}
+.tdv .t-msglabel{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12.5px;font-weight:600;color:var(--mfg)}.tdv .t-msglabel .len{font:400 12px var(--mono)}
+.tdv .t-msg{background:var(--muted);border-radius:8px;padding:12px 16px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:1.6;border-left:3px solid var(--accent-dot)}
+.tdv .t-acts{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tdv .t-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:0 14px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--ink);font:600 14px var(--body);cursor:pointer;text-decoration:none}
+.tdv .t-btn:hover{background:var(--muted)}.tdv .t-btn:active{opacity:.8}
+.tdv .t-btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}.tdv .t-btn.primary:hover{opacity:.92}
+.tdv .t-btn.success{background:var(--success);border-color:var(--success);color:#fff}.tdv .t-btn.success:hover{opacity:.9}
+.tdv .t-btn.ghost{border-color:transparent;background:none;color:var(--mfg)}.tdv .t-btn.ghost:hover{background:var(--muted);color:var(--ink)}
+.tdv .t-card.line{flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:12px 16px}
+.tdv .t-card.line .t-head{flex:1 1 240px}.tdv .t-card.line .t-meta{flex:0 1 auto}.tdv .t-card.line>.t-acts{margin:0 0 0 auto}
+.tdv .t-card.line .t-avatar{width:34px;height:34px;font-size:12.5px}.tdv .t-card.line .t-who{font-size:15px}
+.tdv .t-empty{color:var(--mfg);padding:24px 16px;border:1px dashed var(--border);border-radius:12px;font-size:14px;text-align:center;background:var(--card);margin-top:12px}
 </style>
 </head>
 <body>
@@ -262,31 +303,81 @@ async function route() {
 window.addEventListener('hashchange', route);
 
 // ── Today ────────────────────────────────────────────────────────────────────
+// Same layout as the other companies' desks (Ketul, 26 Oct 2026): a sending-progress card, a row of count tabs,
+// and one card per person with the message to copy and the buttons for the step. The server's task list is unchanged.
 const DESKS = [['uae', 'AB UAE'], ['eo', 'EarthOne'], ['cxo', 'CXO'], ['mv', 'Moves']];
-const DUTY = { outreach: 'Outreach and publishing', content: 'Replies and drafting', approvals: 'Approvals', checkins: 'Check-ins' };
+const TTABS = [['send', 'Send today'], ['accept', 'Awaiting acceptance'], ['msg', 'Message and nudge'], ['rep', 'Replies'], ['feat', 'Features'], ['pub', 'To publish'], ['ci', 'Check-ins']];
+const TAB_OF = { send: 'send', m1: 'msg', nudge: 'msg', close: 'msg', reply: 'rep', publish: 'pub', wa_share: 'pub', ci30: 'ci', ci60: 'ci' };
+const TSUB = {
+  send: `Send these from ${'{from}'}. Copy the note, open the profile, send the request with the note, then press Sent.`,
+  accept: 'Connection requests that are out. Press They accepted when they do; Message 1 then appears under Message and nudge.',
+  msg: 'Message 1 when they accept, a nudge 2 days later, then close the card 3 days after the nudge. Stop the moment they reply.',
+  rep: 'They answered. Open the card, log what they said and send their personal feature link.',
+  feat: 'Features being drafted, approved inside the team, or sent to the leader for approval.',
+  pub: 'Approved features due today, and dedicated posts to share in the WhatsApp community.',
+  ci: 'Day-30 and day-60 check-ins with leaders whose feature is live.'
+};
+let todayTab = 'send', AWAIT = [];
+const ini = n => (String(n || '?').replace(/[^A-Za-z ]/g, ' ').trim().split(/\s+/).filter(Boolean).map(w => w[0]).slice(0, 1).join('') + (String(n || '').trim().split(/\s+/).length > 1 ? String(n).trim().split(/\s+/).pop()[0] : '')).toUpperCase() || '?';
+const tb = (label, attrs, cls) => `<button type="button" class="t-btn ${cls || ''}" ${Object.entries(attrs).map(([k, v]) => `data-${k}="${esc(v)}"`).join(' ')}>${label}</button>`;
+const tcopy = (text, label) => { const k = 'c' + (++copyN); COPY.set(k, [text, label]); return tb('Copy ' + label.toLowerCase(), { copy: k }); };
+const badge = (text, tone) => `<span class="t-badge ${tone || ''}">${esc(text)}</span>`;
+const tli = url => url ? `<a class="t-btn" href="${esc(url)}" target="_blank" rel="noopener">Open profile</a>` + tcopy(url, 'Link') : '';
+const msgBlock = (label, text, count) => `<div class="t-msgwrap"><div class="t-msglabel"><span>${esc(label)}</span>${count ? `<span class="len">${text.length} / 300</span>` : ''}</div><div class="t-msg">${esc(text)}</div></div>`;
+
 async function vToday() {
-  TODAY = await api('team/today');
+  const [t, a] = await Promise.all([api('team/today'), api('team/leads?stage=sent').catch(() => ({ leads: [] }))]);
+  TODAY = t; AWAIT = (a.leads || []).filter(l => l.stage === 'sent');
   tabs('today');
-  const list = myTasks(), groups = {};
-  list.forEach(t => (groups[t.duty] = groups[t.duty] || []).push(t));
-  $('#view').innerHTML = `<div class="head"><div><h1>Today</h1><p class="sub">${day(TODAY.today)} · connection requests sent ${TODAY.sent_today} of ${TODAY.daily_requests}</p></div>
-    <div class="chips" style="margin:0"><button class="chip ${mineOnly ? 'on' : ''}" data-mine="1">My tasks</button><button class="chip ${!mineOnly ? 'on' : ''}" data-mine="0">Everyone's</button></div></div>
-    ${!list.length ? `<div class="card empty">Nothing waiting${mineOnly ? ' for you' : ''}. ${mineOnly && TODAY.tasks.length ? `${TODAY.tasks.length} task${TODAY.tasks.length === 1 ? ' is' : 's are'} waiting for others: <button class="chip" data-mine="0">See everyone's</button>` : 'New tasks appear here as leads and features move along.'}</div>` : ''}
-    ${Object.keys(DUTY).filter(k => groups[k]).map(k => `<h2>${DUTY[k]} · ${groups[k].length}</h2><div class="tasks">${groups[k].map(taskRow).join('')}</div>`).join('')}`;
+  const list = myTasks(), mineOut = !mineOnly || (TODAY.duties || {}).outreach === ME.email;
+  const L = { send: [], accept: mineOut ? AWAIT : [], msg: [], rep: [], feat: [], pub: [], ci: [] };
+  list.forEach(x => L[TAB_OF[x.type] || 'feat'].push(x));
+  if (!L[todayTab].length) todayTab = (TTABS.find(([k]) => L[k].length) || ['send'])[0];
+  const lim = TODAY.daily_requests || 0, sent = TODAY.sent_today || 0, done = lim && sent >= lim;
+  let segs = ''; for (let i = 0; i < lim; i++) segs += `<i${i < sent ? ' class="on"' : ''}></i>`;
+  const from = (L.send[0] && L.send[0].from || "from Sagar's LinkedIn").replace(/^from /, '');
+  $('#view').innerHTML = `<div class="tdv">
+    <div class="head"><div><h1>Today</h1><p class="sub">${day(TODAY.today)}</p></div>
+      <div class="chips" style="margin:0"><button class="chip ${mineOnly ? 'on' : ''}" data-mine="1">My tasks</button><button class="chip ${!mineOnly ? 'on' : ''}" data-mine="0">Everyone's</button></div></div>
+    <div class="t-hero${done ? ' done' : ''}" role="group" aria-label="Today's sending progress"><div class="t-herotop"><div class="t-big"><b>${sent}</b><span>of ${lim} sent today</span></div>
+      <div class="t-heromsg">${done ? 'Daily target done' : `${Math.max(0, lim - sent)} to go`}</div></div>
+      <div class="t-segs" role="progressbar" aria-valuemin="0" aria-valuemax="${lim}" aria-valuenow="${Math.min(sent, lim)}">${segs}</div>
+      <small>${done ? 'Well done. The rest of the list moves to the next sending day.' : 'Anything not sent today stays at the top of the list for the next sending day.'} ${L.msg.length ? `${L.msg.length} message${L.msg.length === 1 ? '' : 's'} and nudges due.` : 'No messages are due.'}</small></div>
+    ${!list.length && !L.accept.length && mineOnly && TODAY.tasks.length ? `<div class="t-empty">Nothing waiting for you. ${TODAY.tasks.length} task${TODAY.tasks.length === 1 ? ' is' : 's are'} waiting for others: <button class="chip" data-mine="0">See everyone's</button></div>` : ''}
+    <div class="t-tabs" role="tablist" aria-label="Today's lists">${TTABS.map(([k, v]) => `<button type="button" role="tab" class="t-tab" data-ttab="${k}" aria-selected="${k === todayTab}" data-zero="${L[k].length ? 0 : 1}"><b>${L[k].length}</b><span>${v}</span></button>`).join('')}</div>
+    <section><h2 class="t-h2">${esc(TTABS.find(([k]) => k === todayTab)[1])} <span class="n">${L[todayTab].length}</span></h2><p class="t-sub">${esc(TSUB[todayTab].replace('{from}', from))}</p>
+      ${L[todayTab].length ? `<div class="t-list${todayTab === 'accept' ? ' rows' : ''}">${L[todayTab].map(x => todayTab === 'accept' ? acceptCard(x) : taskCard(x)).join('')}</div>` : `<div class="t-empty">Nothing here right now.</div>`}</section></div>`;
+  document.querySelectorAll('[data-ttab]').forEach(b => b.onclick = () => { todayTab = b.dataset.ttab; vToday(); });
 }
-function taskRow(t) {
+
+function cardShell(name, sub, badges, body, acts, line) {
+  return `<article class="t-card${line ? ' line' : ''}"><div class="t-head"><span class="t-avatar" aria-hidden="true">${esc(ini(name))}</span><div class="t-id"><span class="t-who">${esc(name || 'New feature')}</span>${sub ? `<span class="t-co">${esc(sub)}</span>` : ''}</div></div>
+    ${badges ? `<div class="t-meta">${badges}</div>` : ''}${body || ''}<div class="t-acts">${acts}</div></article>`;
+}
+
+function acceptCard(l) {
+  return cardShell(l.name, [l.role_title, l.company].filter(Boolean).join(' · '), badge(l.sent_date ? 'Sent ' + day(l.sent_date) : 'Sent'),
+    '', tli(l.linkedin) + tb('They accepted', { lead: l.id, act: 'accepted' }, 'success') + tb('They replied', { openlead: l.id }) + tb('Details', { openlead: l.id }, 'ghost'), true);
+}
+
+function taskCard(t) {
   const p = { name: t.name, company: t.company };
-  let b = '';
-  const li = (t.linkedin ? `<a class="btn g s" href="${esc(t.linkedin)}" target="_blank" rel="noopener">Open LinkedIn</a>` + copyBtn(t.linkedin, 'Link') : '');
-  if (t.type === 'send') b = li + copyBtn(fill('note', p), 'Note') + B('Mark sent', { lead: t.lead_id, act: 'sent' }, 's');
-  else if (t.type === 'm1') b = li + copyBtn(fill('msg1', p), 'Message') + B('Mark sent', { lead: t.lead_id, act: 'm1' }, 's') + B('They replied', { openlead: t.lead_id }, 'g s');
-  else if (t.type === 'nudge') b = li + copyBtn(fill('nudge', p), 'Nudge') + B('Mark sent', { lead: t.lead_id, act: 'nudge' }, 's') + B('They replied', { openlead: t.lead_id }, 'g s');
-  else if (t.type === 'close') b = li + B('Close, no reply', { lead: t.lead_id, act: 'close' }, 'g s') + B('They replied', { openlead: t.lead_id }, 'g s');
-  else if (t.type === 'reply') b = B('Open', { openlead: t.lead_id }, 's');
-  else if (t.type === 'ci30' || t.type === 'ci60') b = li + copyBtn(fill(t.type, p), 'Message') + B('Mark sent', { order: t.order_id, oact: t.type }, 's');
-  else b = B('Open', { openorder: t.order_id }, 's');
-  const owner = !mineOnly && t.owner !== ME.email ? `<div class="who">For ${esc(t.owner)}</div>` : '';
-  return `<div class="card task"><div><div class="t">${esc(t.title)} ${t.tier ? tierTag(t.tier) : ''} ${t.overdue ? '<span class="tag over">Overdue</span>' : ''} ${t.from ? `<span class="tag">${esc(t.from)}</span>` : ''}</div>${t.sub ? `<div class="d">${esc(t.sub)}</div>` : ''}${owner}</div><div class="b">${b}</div></div>`;
+  const meta = (t.tier ? badge(TIER[t.tier] || t.tier, 'primary') : '') + (t.overdue ? badge('Overdue', 'warning') : '') + (t.from ? badge('Send ' + t.from) : '')
+    + (!mineOnly && t.owner !== ME.email ? badge('For ' + t.owner) : '') + (t.sub && t.sub !== t.company && !['reply'].includes(t.type) ? badge(t.sub) : '');
+  const sub = t.company || '';
+  let body = '', acts = '';
+  if (t.type === 'send') { const m = fill('note', p); body = msgBlock('Connection note', m, true); acts = tcopy(m, 'Note') + tli(t.linkedin) + tb('Sent', { lead: t.lead_id, act: 'sent' }, 'success'); }
+  else if (t.type === 'm1' || t.type === 'nudge') {
+    const k = t.type === 'm1' ? 'msg1' : 'nudge', m = fill(k, p);
+    body = msgBlock(t.type === 'm1' ? 'Message 1' : 'Nudge', m);
+    acts = tcopy(m, 'Message') + tli(t.linkedin) + tb(t.type === 'm1' ? 'Message 1 sent' : 'Nudge sent', { lead: t.lead_id, act: t.type }, 'success') + tb('They replied', { openlead: t.lead_id });
+  }
+  else if (t.type === 'close') acts = tli(t.linkedin) + tb('Close, no reply', { lead: t.lead_id, act: 'close' }, 'success') + tb('They replied', { openlead: t.lead_id });
+  else if (t.type === 'reply') { body = t.sub ? msgBlock('Their reply', t.sub) : ''; acts = tli(t.linkedin) + tb('Log reply and send their link', { openlead: t.lead_id }, 'primary'); }
+  else if (t.type === 'ci30' || t.type === 'ci60') { const m = fill(t.type, p); body = msgBlock(t.type === 'ci30' ? 'Day-30 check-in' : 'Day-60 check-in', m); acts = tcopy(m, 'Message') + tli(t.linkedin) + tb('Check-in sent', { order: t.order_id, oact: t.type }, 'success') + tb('Open the feature', { openorder: t.order_id }); }
+  else acts = tb(t.type === 'publish' ? 'Open and publish' : t.type === 'wa_share' ? 'Open and share' : 'Open the feature', { openorder: t.order_id }, 'primary');
+  const step = { send: 'Connection request', m1: 'Message 1', nudge: 'Nudge', close: 'Close, no reply', reply: 'Replied', draft: 'Draft', internal: 'Approve inside the team', send_approval: 'Send for approval', revise: 'Revise', publish: 'Publish today', wa_share: 'WhatsApp share', ci30: 'Day-30 check-in', ci60: 'Day-60 check-in' }[t.type];
+  return cardShell(t.name, sub, (step ? badge(step, 'primary') : '') + meta, body, acts);
 }
 
 // ── Leads ────────────────────────────────────────────────────────────────────
@@ -629,12 +720,12 @@ document.addEventListener('click', async e => {
   if ('close' in ds) return closeDrawer();
   if (ds.lead) {
     if (ds.stay) return leadAct(ds.lead, ds.act, null, true);
-    el.closest('.task')?.classList.add('done'); return leadAct(ds.lead, ds.act);
+    el.closest('.task,.t-card')?.classList.add('done'); return leadAct(ds.lead, ds.act);
   }
   if (ds.openlead) return openLead(ds.openlead).catch(x => toast(x.message));
   if (ds.oact) {
     if (ds.confirm && !el.dataset.armed) { el.dataset.armed = 1; el.textContent = 'Click again to confirm'; toast(ds.confirm); return; }
-    if (ds.order) { try { await api(`team/orders/${ds.order}/action`, { act: ds.oact }); el.closest('.task')?.classList.add('done'); toast('Saved'); } catch (x) { toast(x.message); } return; }
+    if (ds.order) { try { await api(`team/orders/${ds.order}/action`, { act: ds.oact }); el.closest('.task,.t-card')?.classList.add('done'); toast('Saved'); refreshBehind(); } catch (x) { toast(x.message); } return; }
     return orderAct(ds.oact, ds.kind ? { kind: ds.kind } : {});
   }
   if (ds.openorder) return openOrder(ds.openorder).catch(x => toast(x.message));
