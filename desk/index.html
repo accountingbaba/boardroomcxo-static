@@ -184,6 +184,8 @@ html.td main{padding-top:6px}
 .tdv .t-card.line{flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:12px 16px}
 .tdv .t-card.line .t-head{flex:1 1 240px}.tdv .t-card.line .t-meta{flex:0 1 auto}.tdv .t-card.line>.t-acts{margin:0 0 0 auto}
 .tdv .t-card.line .t-avatar{width:34px;height:34px;font-size:12.5px}.tdv .t-card.line .t-who{font-size:15px}
+.tdv .t-rmx{min-height:32px;width:32px;padding:0;border-radius:50%;margin-left:auto;font-size:20px;line-height:1;flex:none}.tdv .t-rmx:hover{color:#b42318}
+.tdv .t-rm{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-top:8px;border-top:1px dashed var(--border);font-size:14px;color:var(--mfg)}.tdv .t-rm[hidden]{display:none}.tdv .t-card.line .t-rm{flex-basis:100%}
 .tdv .t-empty{color:var(--mfg);padding:24px 16px;border:1px dashed var(--border);border-radius:12px;font-size:14px;text-align:center;background:var(--card);margin-top:12px}
 </style>
 </head>
@@ -215,7 +217,7 @@ const ON_TEAM_DESK = /\/moves\/?$/.test(location.pathname);
 const TEAM_HOME = location.pathname.replace(/moves\/?$/, ''); // the team desk's company list, e.g. /bd/
 let TPL = {}; // the LinkedIn messages, loaded from Settings so admins can edit them
 const fill = (k, p, link) => String(TPL[k] || '').replace(/{{First Name}}/g, first(p.name)).replace(/{{Company}}/g, p.company || 'your new company').replace(/{{Link}}/g, link || '');
-const STAGES = { ready: 'To send', sent: 'Request sent', connected: 'Connected', replied: 'Replied', linked: 'Link sent', noreply: 'No reply', declined: 'Declined' };
+const STAGES = { ready: 'To send', sent: 'Request sent', connected: 'Connected', replied: 'Replied', linked: 'Link sent', noreply: 'No reply', declined: 'Declined', removed: 'Removed' };
 const STATUS = { invited: 'Link sent', details: 'Filling details', payment: 'Waiting for payment', ready: 'To draft', approval: 'With leader', changes: 'Changes asked', approved: 'Approved', scheduled: 'Scheduled', live: 'Live', removed: 'Removed', cancelled: 'Cancelled', active: 'Pack active' };
 const TIER = { free: 'Free', plus: 'Plus', pick: 'Pick', pack: 'Pack' };
 const tierTag = t => t ? `<span class="tag ${t}">${TIER[t] || t}</span>` : '<span class="tag">Not chosen</span>';
@@ -350,14 +352,18 @@ async function vToday() {
   document.querySelectorAll('[data-ttab]').forEach(b => b.onclick = () => { todayTab = b.dataset.ttab; vToday(); });
 }
 
-function cardShell(name, sub, badges, body, acts, line) {
-  return `<article class="t-card${line ? ' line' : ''}"><div class="t-head"><span class="t-avatar" aria-hidden="true">${esc(ini(name))}</span><div class="t-id"><span class="t-who">${esc(name || 'New feature')}</span>${sub ? `<span class="t-co">${esc(sub)}</span>` : ''}</div></div>
-    ${badges ? `<div class="t-meta">${badges}</div>` : ''}${body || ''}<div class="t-acts">${acts}</div></article>`;
+// Remove profile: a small x on cards waiting to be sent or accepted, for a profile that will not open, asks for an email, or is not relevant.
+const RM = [['Profile won\'t open'], ['Needs email to connect'], ['Not relevant']];
+function cardShell(name, sub, badges, body, acts, line, rmLead) {
+  const x = rmLead ? `<button type="button" class="t-btn ghost t-rmx" data-rmask="1" aria-label="Remove this profile" title="Remove this profile">×</button>` : '';
+  const box = rmLead ? `<div class="t-rm" hidden><span>Remove this profile because:</span>${RM.map(([w]) => tb(esc(w), { rm: rmLead, why: w })).join('')}${tb('Cancel', { rmask: 1 }, 'ghost')}</div>` : '';
+  return `<article class="t-card${line ? ' line' : ''}"><div class="t-head"><span class="t-avatar" aria-hidden="true">${esc(ini(name))}</span><div class="t-id"><span class="t-who">${esc(name || 'New feature')}</span>${sub ? `<span class="t-co">${esc(sub)}</span>` : ''}</div>${x}</div>
+    ${badges ? `<div class="t-meta">${badges}</div>` : ''}${body || ''}<div class="t-acts">${acts}</div>${box}</article>`;
 }
 
 function acceptCard(l) {
   return cardShell(l.name, [l.role_title, l.company].filter(Boolean).join(' · '), badge(l.sent_date ? 'Sent ' + day(l.sent_date) : 'Sent'),
-    '', tli(l.linkedin) + tb('They accepted', { lead: l.id, act: 'accepted' }, 'success') + tb('They replied', { openlead: l.id }) + tb('Details', { openlead: l.id }, 'ghost'), true);
+    '', tli(l.linkedin) + tb('They accepted', { lead: l.id, act: 'accepted' }, 'success') + tb('They replied', { openlead: l.id }) + tb('Details', { openlead: l.id }, 'ghost'), true, l.id);
 }
 
 function taskCard(t) {
@@ -377,7 +383,7 @@ function taskCard(t) {
   else if (t.type === 'ci30' || t.type === 'ci60') { const m = fill(t.type, p); body = msgBlock(t.type === 'ci30' ? 'Day-30 check-in' : 'Day-60 check-in', m); acts = tcopy(m, 'Message') + tli(t.linkedin) + tb('Check-in sent', { order: t.order_id, oact: t.type }, 'success') + tb('Open the feature', { openorder: t.order_id }); }
   else acts = tb(t.type === 'publish' ? 'Open and publish' : t.type === 'wa_share' ? 'Open and share' : 'Open the feature', { openorder: t.order_id }, 'primary');
   const step = { send: 'Connection request', m1: 'Message 1', nudge: 'Nudge', close: 'Close, no reply', reply: 'Replied', draft: 'Draft', internal: 'Approve inside the team', send_approval: 'Send for approval', revise: 'Revise', publish: 'Publish today', wa_share: 'WhatsApp share', ci30: 'Day-30 check-in', ci60: 'Day-60 check-in' }[t.type];
-  return cardShell(t.name, sub, (step ? badge(step, 'primary') : '') + meta, body, acts);
+  return cardShell(t.name, sub, (step ? badge(step, 'primary') : '') + meta, body, acts, false, t.type === 'send' ? t.lead_id : '');
 }
 
 // ── Leads ────────────────────────────────────────────────────────────────────
@@ -399,7 +405,7 @@ async function openLead(id, notice) {
       ${l.stage === 'sent' ? B('They accepted', { lead: l.id, act: 'accepted', stay: 1 }, 's') : ''}
       ${['sent', 'connected'].includes(l.stage) ? B('They replied', { replybox: 1 }, 'g s') : ''}
       ${['connected', 'replied', 'sent'].includes(l.stage) ? B('Not interested', { lead: l.id, act: 'declined', stay: 1 }, 'bad s') : ''}
-      ${['noreply', 'declined'].includes(l.stage) ? B('Back to the send list', { lead: l.id, act: 'reopen', stay: 1 }, 'g s') : ''}</div>
+      ${['noreply', 'declined', 'removed'].includes(l.stage) ? B('Back to the send list', { lead: l.id, act: 'reopen', stay: 1 }, 'g s') : ''}</div>
       <form id="rf" hidden style="margin-top:12px"><label class="f"><span>What did they say?</span><textarea name="reply" style="min-height:70px"></textarea></label><button class="btn s" type="submit">Save reply</button></form></div>
     ${d.order ? `<div class="sec"><h3>Feature ${tierTag(d.order.tier)} <span class="tag">${esc(STATUS[d.order.status] || d.order.status)}</span></h3>${B('Open the feature', { openorder: d.order.id }, 's')}</div>`
     : ['replied', 'connected'].includes(l.stage) ? `<div class="sec"><h3>Send their personal link</h3><p class="sub" style="margin:0 0 10px">Creates the feature and their link. If you add an email, the link is emailed too.</p>
@@ -713,10 +719,12 @@ function refreshBehind() { const v = (location.hash.slice(1) || 'today').split('
 $('#scrim').onclick = closeDrawer;
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#drawer').hidden) closeDrawer(); });
 document.addEventListener('click', async e => {
-  const el = e.target.closest('[data-copy],[data-close],[data-lead],[data-openlead],[data-openorder],[data-oact],[data-mine],[data-stage],[data-ofilter],[data-addlead],[data-newfeature],[data-newpack],[data-builder],[data-ibsave],[data-staffon]');
+  const el = e.target.closest('[data-rmask],[data-rm],[data-copy],[data-close],[data-lead],[data-openlead],[data-openorder],[data-oact],[data-mine],[data-stage],[data-ofilter],[data-addlead],[data-newfeature],[data-newpack],[data-builder],[data-ibsave],[data-staffon]');
   if (!el) return;
   const ds = el.dataset;
   if (ds.copy) { const [t, l] = COPY.get(ds.copy) || ['', '']; return copy(t, l); }
+  if (ds.rmask) { const box = el.closest('.t-card')?.querySelector('.t-rm'); if (box) box.hidden = !box.hidden; return; }
+  if (ds.rm) { el.closest('.t-card')?.classList.add('done'); try { await api(`team/leads/${ds.rm}/action`, { act: 'remove', why: ds.why }); toast('Removed (' + ds.why + '). Find them under Leads > Removed if this was a mistake.'); refreshBehind(); } catch (x) { el.closest('.t-card')?.classList.remove('done'); toast(x.message); } return; }
   if ('close' in ds) return closeDrawer();
   if (ds.lead) {
     if (ds.stay) return leadAct(ds.lead, ds.act, null, true);

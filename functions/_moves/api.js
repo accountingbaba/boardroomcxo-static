@@ -407,6 +407,7 @@ async function leadAction(request, env, staff, id, body) {
   else if (a === 'replied') await set({ stage: 'replied', replied_at: nowIso(), reply: str(body.reply, 1000) || l.reply }, 'Replied');
   else if (a === 'declined') await set({ stage: 'declined', closed_date: t }, 'Not interested');
   else if (a === 'reopen') await set({ stage: 'ready' }, 'Moved back to the send list');
+  else if (a === 'remove') { const why = str(body.why, 60) || 'No reason given'; await set({ stage: 'removed', closed_date: t, note: (l.note ? l.note + '\n' : '') + 'Removed: ' + why }, 'Removed: ' + why); }
   else if (a === 'edit') { const p = cleanLead(body.lead || {}); if (Object.keys(p).length) await set(p, 'Details edited'); }
   else return fail('Unknown action.');
   return json({ ok: true, lead: await db.prepare('SELECT * FROM leads WHERE id = ?').bind(id).first() });
