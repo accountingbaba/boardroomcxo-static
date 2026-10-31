@@ -10,7 +10,7 @@ const niceDate = iso => (iso ? new Date(iso).toLocaleDateString('en-GB', { day: 
 const isDedicated = o => o.tier === 'plus' || o.tier === 'pick' || (o.tier === 'pack' && o.pack_id);
 const DEDICATED_SQL = "(tier IN ('plus', 'pick') OR (tier = 'pack' AND pack_id IS NOT NULL))";
 // Plus pages are paid placements, so links out to the leader and the company never pass ranking.
-const OUT_REL = 'noopener nofollow';
+const OUT_REL = 'noopener sponsored';
 // The matching hiring page for the new role, so each article feeds the service pages.
 const FUNCTIONS = [
   [/\b(cmo|marketing|brand|growth|digital|communications?)\b/i, '/marketing-leadership-hiring', 'marketing and CMO executive search'],
@@ -137,7 +137,7 @@ function page({ title, description, canonical, image, jsonld, robots = 'index, f
       <div class="footer-col"><p class="footer-h5">Engage</p><ul><li><a href="/schedule-a-call">Schedule a Call</a></li><li><a href="/get-featured">Get Featured</a></li><li><a href="https://www.linkedin.com/company/boardroom-cxo" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
       <div class="footer-col footer-contact"><p class="footer-h5">Contact</p><p><a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a></p><p>Mon–Sat · 10am–6pm IST</p><p>Surat, India &amp; UAE</p></div>
     </div>
-    <div class="footer-bottom"><span>© Boardroom CXO · ${todayIst().slice(0, 4)}</span><span>All Rights Reserved</span></div>
+    <div class="footer-bottom"><span>© Boardroom CXO · ${todayIst().slice(0, 4)}</span><span><a href="/privacy-policy">Privacy Policy</a> · All Rights Reserved</span></div>
   </div>
 </footer>
 <script src="/script.js" defer></script>
@@ -207,7 +207,7 @@ export async function renderProfile(env, slug) {
   const relatedBlock = related.length ? `<section class="mv-related"><h2>More Boardroom Moves</h2><div class="mv-grid">${related.map(r => `<a class="mv-card" href="/moves/${esc(r.slug)}">${r.has_img ? `<img src="/moves/img/${esc(r.slug)}" alt="${esc(altOf(r))}" loading="lazy" width="1200" height="630">` : ''}
     <div><time datetime="${esc(String(r.live_at).slice(0, 10))}">${niceDate(r.live_at)}</time><h3>${esc(r.name)}</h3><p>${esc(r.role_title)} at ${esc(r.company)}</p></div></a>`).join('')}</div></section>` : '';
   const body = `<div class="mv-wrap">
-<section class="mv-hero"><p class="mv-crumb"><a href="/">Home</a> / <a href="/moves">Boardroom Moves</a></p><p class="mv-meta">Boardroom Moves · ${niceDate(o.live_at)}</p>
+<section class="mv-hero"><p class="mv-crumb"><a href="/">Home</a> / <a href="/moves">Boardroom Moves</a></p><p class="mv-meta">Boardroom Moves · Featured placement · ${niceDate(o.live_at)}</p>
 <h1 style="margin-top:14px">${esc(headline(o))}</h1></section>
 <article class="mv-article"><div>${img ? `<img class="mv-figure" src="/moves/img/${esc(slug)}" alt="${esc(altOf(o))}" width="1200" height="630">` : ''}
 <div class="mv-body">${prose(c && c.text) || `<p>${esc(headline(o))}.</p>`}</div>${services}${share}</div>
