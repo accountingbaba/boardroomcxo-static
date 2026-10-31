@@ -102,6 +102,12 @@ function page({ title, description, canonical, image, jsonld, robots = 'index, f
 .mv-cta h2{font-family:var(--font-display);font-weight:500;font-size:clamp(1.5rem,3vw,2.2rem);max-width:24ch}
 .mv-cta a{border:1px solid var(--bg);padding:14px 22px;font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
 .mv-empty{padding:40px 0;color:var(--ink-2)}
+.mv-faq{margin:64px 0 0;max-width:820px}
+.mv-faq h2{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;padding-bottom:12px;border-bottom:1px solid var(--ink)}
+.mv-faq div{padding:20px 0;border-bottom:1px solid var(--line)}
+.mv-faq h3{font-family:var(--font-display);font-weight:500;font-size:1.3rem;margin-bottom:8px}
+.mv-faq p{color:var(--ink-2);max-width:68ch}
+.mv-faq a{border-bottom:1px solid var(--ink);color:var(--ink)}
 .mv-share{border-top:1px solid var(--line);margin-top:36px;padding-top:24px;max-width:68ch}
 .mv-share h2,.mv-related h2{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px}
 .mv-share p{color:var(--ink-2);font-size:.95rem;margin-bottom:12px}
@@ -164,6 +170,18 @@ function page({ title, description, canonical, image, jsonld, robots = 'index, f
 
 const ctaBlock = `<section class="mv-cta"><h2>Made a leadership move? Tell us about it.</h2><a href="/get-featured">Get featured</a></section>`;
 
+// Hub FAQ, approved by Ketul 31 Oct 2026. The plain text goes into FAQPage schema; links are added only on the page.
+const HUB_FAQ = [
+  ['What is Boardroom Moves?', 'Boardroom Moves records senior leadership moves in Indian retail, jewellery, D2C and consumer brands. Each move is announced on the Boardroom CXO LinkedIn page and kept here, so anyone searching for the leader or the company can find it.'],
+  ['Who runs it?', 'Boardroom CXO, an executive search firm for retail, jewellery and D2C brands in India and the UAE.'],
+  ['How do I get featured?', 'We look for new leadership appointments on LinkedIn and write to the leader directly. You can also tell us about a move on the Get Featured page.'],
+  ['What is the weekly Brief?', 'A short roundup of 5 to 6 leaders who moved that week, posted on LinkedIn every Thursday and listed here. It is written from public LinkedIn announcements, and nothing is asked of the leader.'],
+  ['Does a featured leader see the write-up before it goes live?', 'Yes. We send the draft first and ask one question: is there anything to highlight or leave out? If we hear nothing within 48 hours, it goes live as drafted.'],
+  ['What does "Featured placement" mean?', 'It marks a feature the leader or their company arranged with us. The weekly Brief is not paid for.'],
+  ['Can a feature be corrected or removed?', 'Yes. Write to hire@boardroomcxo.com with the page link and what needs to change.']];
+const faqLinks = a => esc(a).replace('the Get Featured page', '<a href="/get-featured">the Get Featured page</a>').replace('hire@boardroomcxo.com', '<a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a>');
+const faqBlock = `<section class="mv-faq"><h2>Questions about Boardroom Moves</h2>${HUB_FAQ.map(([q, a]) => `<div><h3>${esc(q)}</h3><p>${faqLinks(a)}</p></div>`).join('')}</section>`;
+
 export async function renderHub(env) {
   const db = env.MOVES_DB;
   await ensureSchema(db);
@@ -183,10 +201,13 @@ export async function renderHub(env) {
 <section class="mv-hero"><p class="mv-crumb"><a href="/">Home</a> / Boardroom Moves</p><h1>Boardroom Moves: who just moved in Indian retail, D2C and consumer leadership</h1>
 <p class="lead">Leadership appointments across retail, jewellery, D2C and consumer brands, announced on the Boardroom CXO LinkedIn page and recorded here. Featured leaders see their write-up before it goes live; the weekly Brief is written from public LinkedIn announcements.</p></section>
 ${featured.length ? `<div class="mv-grid">${cards}</div>` : ''}${weekBlocks}${!featured.length && !shown.length ? '<p class="mv-empty">The first Boardroom Moves features appear here soon.</p>' : ''}
+${faqBlock}
 ${ctaBlock}</div>`;
-  const jsonld = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Boardroom Moves', url: SITE + '/moves',
-    isPartOf: { '@type': 'WebSite', name: 'Boardroom CXO', url: SITE + '/' },
-    mainEntity: { '@type': 'ItemList', itemListElement: featured.slice(0, 50).map((o, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/moves/${o.slug}`, name: `${o.name}, ${o.role_title} at ${o.company}` })) } };
+  const jsonld = { '@context': 'https://schema.org', '@graph': [
+    { '@type': 'CollectionPage', name: 'Boardroom Moves', url: SITE + '/moves',
+      isPartOf: { '@type': 'WebSite', name: 'Boardroom CXO', url: SITE + '/' },
+      mainEntity: { '@type': 'ItemList', itemListElement: featured.slice(0, 50).map((o, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/moves/${o.slug}`, name: `${o.name}, ${o.role_title} at ${o.company}` })) } },
+    { '@type': 'FAQPage', url: SITE + '/moves', mainEntity: HUB_FAQ.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }] };
   return html(page({ title: 'Boardroom Moves | Leadership appointments in Indian retail and D2C | Boardroom CXO',
     description: 'Recent leadership appointments across Indian retail, jewellery, D2C and consumer brands, as featured on the BoardRoom CXO LinkedIn page.',
     canonical: SITE + '/moves', image: SITE + '/images/Homepage-Meta-removebg-preview.png', jsonld, body }));
