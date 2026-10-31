@@ -209,7 +209,7 @@ ${ctaBlock}</div>`;
       mainEntity: { '@type': 'ItemList', itemListElement: featured.slice(0, 50).map((o, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/moves/${o.slug}`, name: `${o.name}, ${o.role_title} at ${o.company}` })) } },
     { '@type': 'FAQPage', url: SITE + '/moves', mainEntity: HUB_FAQ.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }] };
   return html(page({ title: 'Boardroom Moves | Leadership appointments in Indian retail and D2C | Boardroom CXO',
-    description: 'Recent leadership appointments across Indian retail, jewellery, D2C and consumer brands, as featured on the BoardRoom CXO LinkedIn page.',
+    description: 'Recent leadership appointments across Indian retail, jewellery, D2C and consumer brands, as featured on the Boardroom CXO LinkedIn page.',
     canonical: SITE + '/moves', image: SITE + '/images/Homepage-Meta-removebg-preview.png', jsonld, body }));
 }
 
