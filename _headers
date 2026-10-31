@@ -13,3 +13,6 @@
 
 /script.js
   Cache-Control: public, max-age=86400
+
+/desk/*
+  X-Robots-Tag: noindex, nofollow

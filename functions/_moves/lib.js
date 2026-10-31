@@ -30,9 +30,15 @@ export const slugify = s => String(s || '').toLowerCase().normalize('NFKD').repl
 
 // ── Schema ───────────────────────────────────────────────────────────────────
 // Applied on first use; bump SCHEMA_VERSION and add statements to change it. Never ask the owner to run SQL.
-const SCHEMA_VERSION = 2;
+const SCHEMA_VERSION = 3;
 // Changes after the first version, applied once each in order.
-const MIGRATIONS = { 2: [`ALTER TABLE staff ADD COLUMN desks TEXT`] };
+const MIGRATIONS = {
+  2: [`ALTER TABLE staff ADD COLUMN desks TEXT`],
+  // The 5-message flow (31 Oct 2026): M2 to M5, the weekly Brief and the 14-day "later" reminder.
+  3: ['m2_date', 'm3_date', 'm4_date', 'm5_date', 'brief_date', 'later_date', 'later_sent', 'asked_brief'].map(c => `ALTER TABLE leads ADD COLUMN ${c} TEXT`)
+    .concat([`ALTER TABLE orders ADD COLUMN pay_link TEXT`, `ALTER TABLE orders ADD COLUMN pay_sent_at TEXT`, `ALTER TABLE orders ADD COLUMN pay_remind_at TEXT`,
+      `ALTER TABLE orders ADD COLUMN thanks_at TEXT`, `ALTER TABLE orders ADD COLUMN featured_at TEXT`])
+};
 const SCHEMA = [
   `CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT)`,
   `CREATE TABLE IF NOT EXISTS staff (email TEXT PRIMARY KEY, name TEXT, role TEXT NOT NULL DEFAULT 'member', duty TEXT, active INTEGER NOT NULL DEFAULT 1, created_at TEXT)`,
@@ -80,34 +86,53 @@ export async function ensureSchema(db) {
 // ── Settings ─────────────────────────────────────────────────────────────────
 // Defaults are the owner's decisions (19 Oct 2026). Admins change them on the Settings screen.
 export const DEFAULTS = {
-  prices: { plus: 3000, pack: 10000, gst_rate: 18 },
+  // Plans from the Moves monetisation plan (boardroom-moves/CLAUDE.md, 31 Oct 2026). Rupees before GST.
+  prices: { feature: 1499, plus: 3000, pack: 9999, gst_rate: 18 },
   price_from: '2026-10-27',
-  pack: { features: 4, months: 12 },
+  pack: { features: 4, months: 12 },  // Bundle: 4 Plus features for one company, used within a year
   daily_requests: 6,
   slot_days: [2, 4],          // dedicated posts on Tuesday and Thursday
-  carousel_day: 5,            // Friday "Moves of the week"
+  plus_per_week: 5,           // "We do 5 a week": paid dedicated posts per week, all plans together
+  carousel_day: 4,            // Thursday: the free weekly Brief
+  brief_cutoff_day: 3,        // Wednesday noon: later Briefs go to the next week
+  brief_cutoff_hour: 12,
+  samples_link: 'https://boardroomcxo.com/moves-plans',
+  plans_image: 'https://moves-portal.boardroomcxo-static.pages.dev/desk/plans.png',
   // Paridhi runs BoardRoom CXO and Moves end to end, follow-ups included (Ketul, 19 Oct). Ketul approves; Soumavo manages.
   duties: { outreach: 'paridhiwork28@gmail.com', content: 'paridhiwork28@gmail.com', approvals: 'ketul4nil@gmail.com', checkins: 'paridhiwork28@gmail.com' },
   linkedin_account: 'Sagar',   // every Moves message goes out from Sagar's LinkedIn
-  internal_approval_first: 10, // Ketul approves the first 10 paid features
-  books_sac: '',              // SAC code for the Plus invoice: to be confirmed by the CA before invoices are made
+  internal_approval_first: 0,  // Ketul's check on the first paid features was dropped (31 Oct)
+  books_sac: '',              // SAC code for the invoice: to be confirmed by the CA before invoices are made
   whatsapp_community: '100+ CXOs',
-  moves_next: 88,
-  // LinkedIn messages the team sends by hand. {{First Name}}, {{Company}} and {{Link}} are filled in. Admins edit them on the Settings screen.
+  moves_next: 88,             // the next "Boardroom Moves #" number for dedicated posts (#87 was the last made in Canva)
+  // LinkedIn messages the team sends by hand. Admins edit them on the Settings screen.
+  // Filled in: {{First Name}}, {{Company}}, {{Samples Link}}, {{Brief Day}}, {{Brief Link}}, {{Slots}}, {{Pay Link}}, {{Total}}, {{Article Link}}.
+  // note and m2 to m5 are word for word from the plan. The rest were drafted on 31 Oct for Ketul to check.
   templates: {
-    note: "Hi {{First Name}}, congratulations on your new role at {{Company}}. I'm Sagar, Co-Founder of BoardRoom CXO. We cover senior leadership moves on our LinkedIn page and would love to include yours. Happy to connect?",
-    msg1: "Thanks for connecting, {{First Name}}, and congratulations again on {{Company}}.\nWe'd like to include your move in this week's Boardroom Moves post on the BoardRoom CXO page. It's free, and nothing goes live until you've seen and approved it.\nShall we go ahead?",
-    nudge: "Hi {{First Name}}, a quick nudge on featuring your move to {{Company}}. Happy to do it whenever it suits you, and if you'd rather skip it, no problem at all.",
-    link: "Wonderful, thank you {{First Name}}. Here is your personal link to share a few details and a photo. You see and approve the draft before anything goes live: {{Link}}",
-    wa_ask: "Thank you, {{First Name}}. Could you share a WhatsApp number? It's quicker for the photo, a few details and your approval of the draft before anything goes live.",
-    ci30: "Hi {{First Name}}, about a month into the role at {{Company}} now. Hope it's going well.\nOut of interest, are you building out the team with your in-house HR, or working with a search partner?",
-    ci60: "Hi {{First Name}}, if any senior roles open up in your team at {{Company}}, we'd be glad to help. We place senior leaders in retail and consumer brands."
-  }              // the next "Boardroom Moves #" number for dedicated posts (#87 was the last made in Canva)
+    note: "Congrats on the new role at {{Company}}. Saw the news, well deserved.",
+    m2: "Congrats again on the move. We'd like to feature it on Boardroom CXO. Plans are in the image, samples of each are here: {{Samples Link}}. Most people go for Plus at Rs 3,540. We do 5 a week. Reply with the plan you'd like, or Brief for the free mention.",
+    m3: "Did you get a chance to look? Happy to put you in this week's Brief, or maybe you can go for Plus.",
+    m4: "Putting you in {{Brief Day}} Brief unless you'd like Plus. Just reply either way.",
+    m5: "You're in this week's Brief {{Brief Link}}. If you'd like the full Plus feature, it's Rs 3,540. We take 5 a week and {{Slots}} slots are open for next week.",
+    pay: "Great, thank you {{First Name}}. Here is the payment link for {{Plan}} (Rs {{Total}} with GST): {{Pay Link}}\nOnce it's done, we'll write it up from your LinkedIn and share the draft.",
+    pay_remind: "Hi {{First Name}}, just checking if the payment link came through. Here it is again: {{Pay Link}}",
+    question: "Thank you, payment received. Is there anything you'd like us to highlight or leave out?",
+    draft: "Here is the draft. We'll publish it as is unless you'd like a change.",
+    cheap: "Understood. There's also Feature at Rs 1,769 with GST: a dedicated post with your photo, you and {{Company}} tagged. Samples are here: {{Samples Link}}",
+    more: "Sure, samples of each plan are here: {{Samples Link}}",
+    allon: "Fair enough, it's all there already. Nothing needed from you.",
+    later: "Hi {{First Name}}, coming back as promised. Would you like the feature now? Samples are here: {{Samples Link}}",
+    no_brief: "No problem at all. Would you be okay with a short free mention in this week's Brief?",
+    thanks: "Hi {{First Name}}, thanks again for letting us feature your move. If you get a moment, a repost would help it reach more people.",
+    featured: "Your article is live here: {{Article Link}}. If you add it to the Featured section of your LinkedIn profile, it shows up for anyone who looks you up."
+  }
 };
 export async function getSettings(db) {
   const rows = (await db.prepare('SELECT key, value FROM settings').all()).results || [];
   const out = { ...DEFAULTS };
   for (const r of rows) out[r.key] = parseJson(r.value, out[r.key]);
+  // Saved objects keep any new keys added to the defaults later.
+  for (const k of ['prices', 'templates', 'pack']) out[k] = { ...DEFAULTS[k], ...(out[k] || {}) };
   return out;
 }
 export const setSetting = (db, key, value) => db.prepare('INSERT INTO settings (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value').bind(key, JSON.stringify(value)).run();

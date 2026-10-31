@@ -27,7 +27,7 @@ export async function razorpayWebhookValid(env, raw, signature) {
 
 // ── Zoho Books ───────────────────────────────────────────────────────────────
 // Same Zoho Self Client the Accounting Baba portal uses (ZOHO_CLIENT_ID, ZOHO_CLIENT_SECRET, ZOHO_BOOKS_REFRESH_TOKEN).
-// A paid Plus feature becomes a GST invoice from Hopeberry Retail, with the payment recorded against it.
+// A paid Feature, Plus or Bundle becomes a GST invoice from Hopeberry Retail, with the payment recorded against it.
 const BOOKS_API = 'https://www.zohoapis.com/books/v3';
 const BOOKS_ORG_NAME = 'Hopeberry Retail Private Limited';
 const HOME_STATE = 'GJ';
@@ -101,10 +101,11 @@ export async function booksInvoice(env, order, settings) {
     const cust = await customer(env, order);
     const place = order.billing_state || (order.gstin && GST_STATES[order.gstin.slice(0, 2)]) || HOME_STATE;
     const inter = place !== HOME_STATE;
-    const label = order.tier === 'pack' ? `Boardroom Moves Company pack: ${settings.pack.features} features over ${settings.pack.months} months` : `Boardroom Moves Plus feature: ${order.name}, ${order.role_title || ''} at ${order.company || ''}`;
+    const plan = order.tier === 'feature' ? 'Feature' : 'Plus feature';
+    const label = order.tier === 'pack' ? `Boardroom Moves Bundle: ${settings.pack.features} Plus features within ${settings.pack.months} months` : `Boardroom Moves ${plan}: ${order.name}, ${order.role_title || ''} at ${order.company || ''}`;
     const inv = await books(env, 'POST', '/invoices', {
       customer_id: cust, date: String(order.paid_at).slice(0, 10), place_of_supply: place, reference_number: str(order.payment_id || order.id, 50),
-      line_items: [{ name: order.tier === 'pack' ? 'Boardroom Moves Company pack' : 'Boardroom Moves Plus feature', description: label.slice(0, 2000),
+      line_items: [{ name: order.tier === 'pack' ? 'Boardroom Moves Bundle' : `Boardroom Moves ${plan}`, description: label.slice(0, 2000),
         rate: order.price, quantity: 1, hsn_or_sac: settings.books_sac, tax_id: await taxId(env, inter) }]
     });
     const invoice = inv.invoice;

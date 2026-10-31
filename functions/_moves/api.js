@@ -1,13 +1,19 @@
 // Boardroom Moves platform API (/api/moves/*).
 // Leaders use a personal link (/feature/?t=TOKEN); the team signs in with an emailed code (/desk/).
 import { json, fail, nowIso, isDev, str, esc, todayIst, addDays, parseJson, randomToken, newId, slugify,
-  ensureSchema, getSettings, setSetting, logEvent, getStaff, requestCode, verifyCode, logout, admins, sendEmail, shell, button, DEFAULTS } from './lib.js';
+  ensureSchema, getSettings, setSetting, metaSet, logEvent, getStaff, requestCode, verifyCode, logout, admins, sendEmail, shell, button, DEFAULTS } from './lib.js';
 import { razorpayOn, razorpayOrder, razorpayVerify, razorpayWebhookValid, booksOn, booksInvoice, booksInvoicePdf, STATES } from './integrations.js';
 
-const DEDICATED = ['plus', 'pick', 'pack'];
+const DEDICATED = ['feature', 'plus', 'pick', 'pack'];
 const isDedicated = o => DEDICATED.includes(o.tier);
-const needContent = o => (isDedicated(o) ? ['linkedin', 'instagram', 'website', 'whatsapp'] : ['carousel', 'website']);
-const needImages = o => (isDedicated(o) ? ['linkedin', 'instagram', 'website'] : []);
+// Feature is the LinkedIn post only. Plus, Bundle and Editorial add Instagram, the website article and the WhatsApp group.
+const needContent = o => (o.tier === 'feature' ? ['linkedin'] : isDedicated(o) ? ['linkedin', 'instagram', 'website', 'whatsapp'] : ['carousel', 'website']);
+const needImages = o => (o.tier === 'feature' ? ['linkedin'] : isDedicated(o) ? ['linkedin', 'instagram', 'website'] : []);
+const hasPage = o => o.tier !== 'feature';
+const inGroup = o => o.tier === 'plus' || o.tier === 'pack'; // shared in the WhatsApp group, asked to add the article to LinkedIn Featured
+// Orders made from the 5-message flow (31 Oct 2026): the team sends a payment link by hand, no personal link, no emails.
+const isPlain = o => detailsOf(o).flow === 'plain';
+const FLOW_FROM = '2026-10-31';
 export const QUESTIONS = [
   'What drew you to {company}?',
   'What are you building in your first 100 days?',
@@ -16,7 +22,7 @@ export const QUESTIONS = [
   'One piece of advice for someone aiming for a role like yours?'
 ];
 const PLATFORM = { linkedin: 'LinkedIn', instagram: 'Instagram', website: 'Website', whatsapp: 'WhatsApp', carousel: 'Carousel' };
-const TIER_LABEL = { free: 'Moves of the week (free)', plus: 'Plus', pick: 'Editorial pick', pack: 'Company pack feature' };
+const TIER_LABEL = { free: 'Brief (free)', feature: 'Feature', plus: 'Plus', pick: 'Editorial pick', pack: 'Bundle' };
 const money = n => 'Rs ' + Number(n || 0).toLocaleString('en-IN');
 const baseUrl = (env, request) => (env.MOVES_BASE_URL || new URL(request.url).origin).replace(/\/$/, '');
 const featureLink = (env, request, o) => `${baseUrl(env, request)}/feature/?t=${o.token}`;
@@ -69,6 +75,7 @@ const MSG = {
 const niceDate = d => (d ? new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' }) : '');
 
 async function notify(env, request, order, kind, extra) {
+  if (isPlain(order)) return {}; // the team writes to them on LinkedIn
   const link = featureLink(env, request, order);
   const m = MSG[kind](order, link, extra);
   const to = order.email || order.billing_email;
@@ -102,17 +109,41 @@ async function needsInternal(db, o, settings) {
   const done = await db.prepare("SELECT COUNT(*) AS n FROM orders WHERE tier IN ('plus','pack') AND internal_ok = 1").first();
   return done.n < settings.internal_approval_first;
 }
-// The next free slot: a dedicated post gets the next Tuesday or Thursday not already taken; a free feature the next Friday carousel.
+// Dedicated posts go out on Tuesday and Thursday, 5 a week at most ("We do 5 a week"), split across those days.
+const weekStart = d => addDays(d, -((new Date(d + 'T00:00:00Z').getUTCDay() + 6) % 7));
+const postsBetween = async (db, from, to, exceptId = '') => (await db.prepare(
+  "SELECT COUNT(*) AS n FROM orders WHERE slot_date BETWEEN ? AND ? AND tier IN ('feature','plus','pick','pack') AND status NOT IN ('cancelled','removed') AND id <> ?").bind(from, to, exceptId).first()).n;
+const perWeek = s => Number(s.plus_per_week) || 5;
 async function nextSlot(db, o, settings) {
   let d = addDays(todayIst(), 1);
-  for (let i = 0; i < 60; i++, d = addDays(d, 1)) {
+  const perDay = Math.ceil(perWeek(settings) / settings.slot_days.length);
+  for (let i = 0; i < 90; i++, d = addDays(d, 1)) {
     const wd = new Date(d + 'T00:00:00Z').getUTCDay();
     if (!isDedicated(o)) { if (wd === settings.carousel_day) return d; continue; }
     if (!settings.slot_days.includes(wd)) continue;
-    const taken = await db.prepare("SELECT 1 FROM orders WHERE slot_date = ? AND tier IN ('plus','pick','pack') AND status NOT IN ('cancelled','removed') AND id <> ?").bind(d, o.id).first();
-    if (!taken) return d;
+    const ws = weekStart(d);
+    if (await postsBetween(db, d, d, o.id) < perDay && await postsBetween(db, ws, addDays(ws, 6), o.id) < perWeek(settings)) return d;
   }
   return addDays(todayIst(), 7);
+}
+// The real number of paid slots still open next week, for Message 5.
+async function slotsNextWeek(db, settings) {
+  const ws = addDays(weekStart(todayIst()), 7);
+  return Math.max(0, perWeek(settings) - await postsBetween(db, ws, addDays(ws, 6)));
+}
+// The Brief goes out on Thursday. Anyone added after Wednesday noon goes into the next week's Brief.
+function briefDate(s) {
+  const ist = new Date(Date.now() + 5.5 * 3600e3), t = ist.toISOString().slice(0, 10);
+  let d = addDays(t, (s.carousel_day - ist.getUTCDay() + 7) % 7);
+  const cutoff = addDays(d, -((s.carousel_day - s.brief_cutoff_day + 7) % 7));
+  if (t > cutoff || (t === cutoff && ist.getUTCHours() >= s.brief_cutoff_hour)) d = addDays(d, 7);
+  return d;
+}
+const weekdayName = d => new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { weekday: 'long', timeZone: 'UTC' });
+const briefDayWord = d => (d <= addDays(todayIst(), 6) ? '' : 'next ') + weekdayName(d) + "'s";
+async function briefLinks(db) {
+  const rows = (await db.prepare("SELECT key, value FROM meta WHERE key LIKE 'brief:%'").all()).results || [];
+  return Object.fromEntries(rows.map(r => [r.key.slice(6), r.value]));
 }
 const touch = (db, id, patch) => {
   const keys = Object.keys(patch);
@@ -258,6 +289,13 @@ async function leader(request, env, token, action, body) {
 async function advance(request, env, id, by) {
   const db = env.MOVES_DB;
   const o = await getOrder(db, id);
+  if (isPlain(o)) {
+    if (o.status === 'payment' && o.paid_at && !(o.tier === 'pack' && !o.pack_id)) {
+      await touch(db, id, { status: 'ready' });
+      await logEvent(db, { order_id: id, by, text: 'Paid: ready for drafting' });
+    }
+    return json(await leaderView(env, await getOrder(db, id)));
+  }
   if (['invited', 'details', 'payment'].includes(o.status) && o.tier) {
     if (detailsComplete(o)) {
       const next = o.tier === 'plus' && !o.paid_at ? 'payment' : 'ready';
@@ -295,42 +333,75 @@ async function today(env, staff) {
   const db = env.MOVES_DB, s = await getSettings(db), t = todayIst();
   const D = s.duties, tasks = [];
   const add = (duty, task) => tasks.push({ ...task, owner: D[duty] || D.approvals, duty });
-  const leads = (await db.prepare("SELECT * FROM leads WHERE stage IN ('ready','sent','connected','replied')").all()).results || [];
-  const sentToday = leads.filter(l => l.sent_date === t).length + ((await db.prepare("SELECT COUNT(*) AS n FROM leads WHERE sent_date = ? AND stage NOT IN ('ready','sent','connected','replied')").bind(t).first()).n);
+  const OPEN_STAGES = "('ready','sent','connected','replied','brief','later')";
+  const leads = (await db.prepare(`SELECT * FROM leads WHERE stage IN ${OPEN_STAGES}`).all()).results || [];
+  const sentToday = leads.filter(l => l.sent_date === t).length + ((await db.prepare(`SELECT COUNT(*) AS n FROM leads WHERE sent_date = ? AND stage NOT IN ${OPEN_STAGES}`).bind(t).first()).n);
   const ready = leads.filter(l => l.stage === 'ready').sort((a, b) => (b.score || 0) - (a.score || 0) || String(b.move_date || '').localeCompare(String(a.move_date || '')));
   const room = Math.max(0, s.daily_requests - sentToday);
   const from = `from ${s.linkedin_account || 'Sagar'}'s LinkedIn`;
-  ready.slice(0, room).forEach(l => add('outreach', { type: 'send', from, lead_id: l.id, name: l.name, company: l.company, linkedin: l.linkedin, phone: l.phone, title: `Send connection request: ${l.name}`, sub: [l.role_title, l.company].filter(Boolean).join(' at '), due: t }));
-  for (const l of leads.filter(l => l.stage === 'connected')) {
-    if (!l.m1_date) add('outreach', { type: 'm1', from, lead_id: l.id, name: l.name, company: l.company, linkedin: l.linkedin, phone: l.phone, title: `Message 1: ${l.name}`, sub: 'Accepted ' + (l.accepted_date || ''), due: l.accepted_date || t });
-    else if (!l.nudge_date && addDays(l.m1_date, 2) <= t) add('outreach', { type: 'nudge', from, lead_id: l.id, name: l.name, company: l.company, linkedin: l.linkedin, phone: l.phone, title: `Nudge: ${l.name}`, sub: 'Message 1 sent ' + l.m1_date, due: addDays(l.m1_date, 2) });
-    else if (l.nudge_date && addDays(l.nudge_date, 3) <= t) add('outreach', { type: 'close', lead_id: l.id, name: l.name, company: l.company, linkedin: l.linkedin, phone: l.phone, title: `Close, no reply: ${l.name}`, sub: 'Nudge sent ' + l.nudge_date, due: addDays(l.nudge_date, 3) });
+  const briefs = await briefLinks(db), slots = await slotsNextWeek(db, s), nextBrief = briefDate(s);
+  const L = l => ({ lead_id: l.id, name: l.name, company: l.company, linkedin: l.linkedin, phone: l.phone });
+  // M1 is the congrats note sent with the connection request.
+  ready.slice(0, room).forEach(l => add('outreach', { type: 'send', from, ...L(l), title: `Send connection request: ${l.name}`, sub: [l.role_title, l.company].filter(Boolean).join(' at '), due: t }));
+  for (const l of leads) {
+    // A reply restarts the clock: the next message waits a day from the reply.
+    const rd = String(l.replied_at || '').slice(0, 10), after = d => addDays(rd && rd > d ? rd : d, 1);
+    if (l.stage === 'sent' && l.sent_date && addDays(l.sent_date, 7) <= t)
+      add('outreach', { type: 'drop', ...L(l), title: `Not accepted in 7 days: ${l.name}`, sub: 'Sent ' + l.sent_date, due: addDays(l.sent_date, 7) });
+    if (l.stage === 'connected') {
+      if (!l.m2_date) add('outreach', { type: 'm2', from, ...L(l), title: `Message 2: ${l.name}`, sub: 'Accepted ' + (l.accepted_date || ''), due: l.accepted_date || t });
+      else if (!l.m3_date && !l.m4_date && after(l.m2_date) <= t) add('outreach', { type: 'm3', from, ...L(l), title: `Message 3: ${l.name}`, sub: 'Message 2 sent ' + l.m2_date, due: after(l.m2_date) });
+      else if (l.m3_date && !l.m4_date && after(l.m3_date) <= t) add('outreach', { type: 'm4', from, ...L(l), title: `Message 4: ${l.name}`, sub: 'Message 3 sent ' + l.m3_date, due: after(l.m3_date), vars: { brief_day: briefDayWord(nextBrief) } });
+    }
+    if (['connected', 'brief'].includes(l.stage) && l.brief_date && !l.m5_date && briefs[l.brief_date] && addDays(l.brief_date, 1) <= t)
+      add('outreach', { type: 'm5', from, ...L(l), title: `Message 5: ${l.name}`, sub: 'In the Brief of ' + l.brief_date, due: addDays(l.brief_date, 1), vars: { brief_link: briefs[l.brief_date], slots } });
+    if (l.stage === 'later' && l.later_date && l.later_date <= t)
+      add('outreach', { type: 'later', from, ...L(l), title: `14-day reminder: ${l.name}`, sub: 'They said later', due: l.later_date });
+    if (l.stage === 'replied')
+      add('content', { type: 'reply', ...L(l), title: `Answer their reply: ${l.name}`, sub: l.reply || '', due: rd || t });
   }
-  leads.filter(l => l.stage === 'replied').forEach(l => add('content', { type: 'reply', lead_id: l.id, name: l.name, company: l.company, linkedin: l.linkedin, phone: l.phone, title: `Reply and send the feature link: ${l.name}`, sub: l.reply || '', due: String(l.replied_at || '').slice(0, 10) || t }));
+  // The weekly Brief: shown from the day before until its link is pasted in.
+  const BRIEF_IN = "stage NOT IN ('removed','declined','linked')";
+  const briefDays = (await db.prepare(`SELECT DISTINCT brief_date AS d FROM leads WHERE brief_date >= ? AND ${BRIEF_IN}`).bind(addDays(t, -21)).all()).results || [];
+  for (const { d } of briefDays) {
+    if (briefs[d] || addDays(d, -1) > t) continue;
+    const names = (await db.prepare(`SELECT id, name, role_title, company, linkedin FROM leads WHERE brief_date = ? AND ${BRIEF_IN} ORDER BY name`).bind(d).all()).results || [];
+    if (names.length) add('outreach', { type: 'brief', brief_date: d, name: 'Weekly Brief', title: `Write and post the Brief for ${weekdayName(d)} ${d}`, sub: names.length + ' leaders', names, due: d });
+  }
 
   const orders = (await db.prepare("SELECT * FROM orders WHERE status NOT IN ('cancelled','removed')").all()).results || [];
   for (const o of orders) {
-    const who = o.name || 'New feature', c = ['ready', 'changes'].includes(o.status) ? await contentsOf(db, o.id) : {}, im = ['ready', 'changes'].includes(o.status) ? await imagesOf(db, o.id) : {};
+    const who = o.name || 'New feature', plain = isPlain(o), c = ['ready', 'changes'].includes(o.status) ? await contentsOf(db, o.id) : {}, im = ['ready', 'changes'].includes(o.status) ? await imagesOf(db, o.id) : {};
+    const O = { order_id: o.id, lead_id: o.lead_id, name: o.name, company: o.company, phone: o.phone, tier: o.tier, linkedin: detailsOf(o).linkedin || '' };
+    const payVars = { pay_link: o.pay_link || '', total: Number(o.total || 0).toLocaleString('en-IN'), plan: TIER_LABEL[o.tier] || '' };
+    if (plain && o.status === 'payment') {
+      const sent = String(o.pay_sent_at || '').slice(0, 10), reminded = String(o.pay_remind_at || '').slice(0, 10);
+      if (!sent) add('content', { type: 'pay_send', ...O, title: `Send the payment link: ${who}`, sub: `${TIER_LABEL[o.tier]}, ${money(o.total)} with GST`, due: String(o.created_at).slice(0, 10), vars: payVars });
+      else if (!reminded && addDays(sent, 3) <= t) add('content', { type: 'pay_remind', ...O, title: `Not paid in 3 days: ${who}`, sub: 'Send one reminder', due: addDays(sent, 3), vars: payVars });
+      else if (reminded && addDays(reminded, 3) <= t) add('content', { type: 'pay_lapse', ...O, title: `Still not paid: ${who}`, sub: 'Treat as silent: put them in the Brief', due: addDays(reminded, 3) });
+    }
     if (o.status === 'ready') {
       const missing = needContent(o).filter(p => !(c[p] && c[p].text)).concat(needImages(o).filter(k => !im[k]).map(k => k + ' image'));
-      if (missing.length) add('content', { type: 'draft', order_id: o.id, name: o.name, company: o.company, phone: o.phone, tier: o.tier, title: `Draft the feature: ${who}`, sub: 'Still needed: ' + missing.join(', '), due: String(o.updated_at || '').slice(0, 10) });
-      else if (!o.internal_ok && await needsInternal(db, o, s)) add('approvals', { type: 'internal', order_id: o.id, name: o.name, company: o.company, phone: o.phone, tier: o.tier, title: `Approve before it goes to ${firstName(who)}: ${who}`, sub: TIER_LABEL[o.tier], due: t });
-      else add('content', { type: 'send_approval', order_id: o.id, name: o.name, company: o.company, phone: o.phone, tier: o.tier, title: `Send for approval: ${who}`, sub: 'Everything is drafted', due: t });
+      if (missing.length) add('content', { type: 'draft', ...O, plain, title: `Draft the feature: ${who}`, sub: 'Still needed: ' + missing.join(', '), due: String(o.updated_at || '').slice(0, 10) });
+      else if (!o.internal_ok && await needsInternal(db, o, s)) add('approvals', { type: 'internal', ...O, title: `Approve before it goes to ${firstName(who)}: ${who}`, sub: TIER_LABEL[o.tier], due: t });
+      else add('content', { type: 'send_approval', ...O, plain, title: plain ? `Send the draft: ${who}` : `Send for approval: ${who}`, sub: 'Everything is drafted', due: t });
     }
-    if (o.status === 'changes') add('content', { type: 'revise', order_id: o.id, name: o.name, company: o.company, phone: o.phone, tier: o.tier, title: `Revise and resend: ${who}`, sub: o.change_note || '', due: t });
-    if (o.status === 'approved' || o.status === 'scheduled') {
-      if (o.slot_date && o.slot_date <= t) add('outreach', { type: 'publish', order_id: o.id, name: o.name, company: o.company, phone: o.phone, tier: o.tier, title: `Publish today: ${who}`, sub: isDedicated(o) ? 'LinkedIn and Instagram post, then paste the links' : 'In this Friday\'s Moves of the week', due: o.slot_date });
-    }
-    if (o.status === 'live' && isDedicated(o) && o.tier !== 'pick' && !o.wa_shared_at) add('outreach', { type: 'wa_share', order_id: o.id, name: o.name, company: o.company, phone: o.phone, tier: o.tier, title: `Share in the WhatsApp community: ${who}`, sub: 'Use the WhatsApp text on the order', due: String(o.live_at).slice(0, 10) });
-    if (o.status === 'live' && o.live_at) {
-      const lv = String(o.live_at).slice(0, 10);
-      if (!o.ci30_at && addDays(lv, 30) <= t) add('checkins', { type: 'ci30', order_id: o.id, name: o.name, company: o.company, phone: o.phone, tier: o.tier, title: `Day-30 check-in: ${who}`, sub: o.company || '', due: addDays(lv, 30) });
-      else if (o.ci30_at && !o.ci60_at && addDays(lv, 60) <= t) add('checkins', { type: 'ci60', order_id: o.id, name: o.name, company: o.company, phone: o.phone, tier: o.tier, title: `Day-60 check-in: ${who}`, sub: o.company || '', due: addDays(lv, 60) });
+    if (o.status === 'changes') add('content', { type: 'revise', ...O, title: `Revise and resend: ${who}`, sub: o.change_note || '', due: t });
+    if (plain && o.status === 'approval' && o.approval_sent_at && Date.now() - Date.parse(o.approval_sent_at) > 48 * 3600e3)
+      add('content', { type: 'silent_ok', ...O, title: `No reply in 48 hours: ${who}`, sub: 'Publish as drafted', due: addDays(o.approval_sent_at.slice(0, 10), 2) });
+    if ((o.status === 'approved' || o.status === 'scheduled') && o.slot_date && o.slot_date <= t)
+      add('outreach', { type: 'publish', ...O, title: `Publish today: ${who}`, sub: o.tier === 'feature' ? 'LinkedIn post, then paste the link' : isDedicated(o) ? 'LinkedIn and Instagram post, then paste the links' : "In this week's Brief", due: o.slot_date });
+    if (o.status === 'live' && inGroup(o) && !o.wa_shared_at)
+      add('outreach', { type: 'wa_share', ...O, title: `Share in the WhatsApp group: ${who}`, sub: 'Use the WhatsApp text on the order', due: String(o.live_at).slice(0, 10) });
+    if (o.status === 'live' && o.live_at && String(o.live_at).slice(0, 10) >= FLOW_FROM && isDedicated(o)) {
+      const lv = String(o.live_at).slice(0, 10), site = o.slug ? `https://boardroomcxo.com/moves/${o.slug}` : '';
+      if (inGroup(o) && site && !o.featured_at) add('outreach', { type: 'featured', ...O, title: `Ask to add the article to LinkedIn Featured: ${who}`, sub: site, due: lv, vars: { article_link: site } });
+      if (!o.thanks_at && addDays(lv, 7) <= t) add('outreach', { type: 'thanks', ...O, title: `Day-7 thank-you: ${who}`, sub: 'Thank them and ask for a repost', due: addDays(lv, 7) });
     }
   }
   tasks.forEach(x => { x.overdue = x.due && x.due < t; });
   tasks.sort((a, b) => String(a.due).localeCompare(String(b.due)));
-  return json({ today: t, me: staff.email, isAdmin: staff.isAdmin, duties: D, tasks, sent_today: sentToday, daily_requests: s.daily_requests });
+  return json({ today: t, me: staff.email, isAdmin: staff.isAdmin, duties: D, tasks, sent_today: sentToday, daily_requests: s.daily_requests, next_brief: nextBrief, slots_next_week: slots });
 }
 
 // ── Team: fill a new person from their LinkedIn link ─────────────────────────
@@ -398,9 +469,26 @@ async function leadAction(request, env, staff, id, body) {
     db.prepare(`UPDATE leads SET ${Object.keys(patch).map(k => k + ' = ?').join(', ')}, updated_at = ? WHERE id = ?`).bind(...Object.values(patch), nowIso(), id),
     db.prepare('INSERT INTO events (lead_id, at, by_who, text) VALUES (?, ?, ?, ?)').bind(id, nowIso(), staff.email, text)
   ]);
-  const a = body.act;
-  if (a === 'sent') await set({ stage: 'sent', sent_date: t }, 'Connection request sent');
+  const a = body.act, s = await getSettings(db);
+  // How a reply is answered. After the answer they go back into the message sequence (the plan's "treat as silent").
+  const ANSWER = { cheap: 'Too expensive: offered Feature at Rs 1,769', more: 'Asked for more: sent the samples link again', allon: '"It\'s all on my LinkedIn": agreed, nothing needed', pr: 'PR team will handle it: keep pitching the person only' };
+  if (a === 'sent') await set({ stage: 'sent', sent_date: t }, 'Connection request sent with the congrats note (Message 1)');
   else if (a === 'accepted') await set({ stage: 'connected', accepted_date: t }, 'Accepted');
+  else if (a === 'drop') await set({ stage: 'dropped', closed_date: t }, 'Dropped: not accepted in 7 days');
+  else if (['m2', 'm3', 'm5'].includes(a)) await set(a === 'm5' ? { m5_date: t, stage: 'briefed', closed_date: t } : { [a + '_date']: t }, `Message ${a[1]} sent`);
+  else if (a === 'm4') { const d = briefDate(s); await set({ m4_date: t, brief_date: d }, `Message 4 sent. In the Brief of ${d}`); }
+  else if (a === 'brief') { const d = briefDate(s); await set({ stage: 'brief', brief_date: d }, `In the free Brief of ${d}`); }
+  else if (ANSWER[a]) await set({ stage: 'connected', replied_at: nowIso() }, ANSWER[a]);
+  else if (a === 'later') await set({ stage: 'later', later_date: addDays(t, 14) }, 'Said later: one reminder on ' + addDays(t, 14));
+  else if (a === 'later_sent') await set({ stage: 'noreply', later_sent: t, closed_date: t }, '14-day reminder sent');
+  else if (a === 'no') await set({ stage: 'declined', asked_brief: t, closed_date: t }, 'Said no. Asked once about the free Brief');
+  else if (a === 'plan') {
+    const kind = str(body.plan, 20);
+    if (!['feature', 'plus', 'pack', 'free_feature'].includes(kind)) return fail('Choose a plan.');
+    const r = await plainOrder(env, staff, l, kind);
+    if (r.error) return fail(r.error);
+    return json({ ok: true, order_id: r.id, lead: await db.prepare('SELECT * FROM leads WHERE id = ?').bind(id).first() });
+  }
   else if (a === 'm1') await set({ m1_date: t }, 'Message 1 sent');
   else if (a === 'nudge') await set({ nudge_date: t }, 'Nudge sent');
   else if (a === 'close') await set({ stage: 'noreply', closed_date: t }, 'Closed: no reply');
@@ -411,6 +499,27 @@ async function leadAction(request, env, staff, id, body) {
   else if (a === 'edit') { const p = cleanLead(body.lead || {}); if (Object.keys(p).length) await set(p, 'Details edited'); }
   else return fail('Unknown action.');
   return json({ ok: true, lead: await db.prepare('SELECT * FROM leads WHERE id = ?').bind(id).first() });
+}
+// They chose a plan in their reply: the team sends a payment link by hand, then drafts from their LinkedIn.
+// free_feature honours the free feature promised to people who said yes under the old messages.
+async function plainOrder(env, staff, l, kind) {
+  const db = env.MOVES_DB, s = await getSettings(db);
+  const open = await db.prepare("SELECT id FROM orders WHERE lead_id = ? AND status NOT IN ('cancelled','removed')").bind(l.id).first();
+  if (open) return { error: 'This person already has a feature. Open it from Features.' };
+  const tier = kind === 'free_feature' ? 'feature' : kind;
+  const price = kind === 'free_feature' ? 0 : s.prices[tier], gst = Math.round(price * s.prices.gst_rate / 100);
+  const o = {
+    id: newId(tier === 'pack' ? 'pk' : 'mv'), lead_id: l.id, token: randomToken(24), tier, status: price ? 'payment' : 'ready',
+    name: l.name || '', role_title: l.role_title || '', company: l.company || '', email: l.email || '', phone: l.phone || '', price, gst, total: price + gst,
+    details: JSON.stringify({ flow: 'plain', free: kind === 'free_feature', name: l.name || '', role_title: l.role_title || '', company: l.company || '', linkedin: l.linkedin || '', prev_role: l.prev_role || '', start_date: l.move_date || '' }),
+    consent_at: nowIso(), created_at: nowIso(), created_by: staff.email, updated_at: nowIso(),
+    ...(tier === 'pack' ? { payer_type: 'company', billing_name: l.company || '', features_total: s.pack.features } : {})
+  };
+  const keys = Object.keys(o);
+  await db.prepare(`INSERT INTO orders (${keys.join(', ')}) VALUES (${keys.map(() => '?').join(', ')})`).bind(...keys.map(k => o[k])).run();
+  await db.prepare("UPDATE leads SET stage = 'linked', updated_at = ? WHERE id = ?").bind(nowIso(), l.id).run();
+  await logEvent(db, { order_id: o.id, lead_id: l.id, by: staff.email, text: kind === 'free_feature' ? 'Free Feature (promised under the old messages)' : `Chose ${TIER_LABEL[tier]}: ${money(o.total)} with GST` });
+  return o;
 }
 // Create the leader's personal link (an order) from a lead, or for someone added directly.
 async function invite(request, env, staff, body) {
@@ -427,18 +536,20 @@ async function invite(request, env, staff, body) {
     if (used >= (pack.features_total || settings.pack.features)) return fail('This company pack has no features left.');
     if (pack.features_until && pack.features_until < todayIst()) return fail('This company pack has expired.');
   }
+  const plainPack = Boolean(pack && isPlain(pack));
   const o = {
-    id: newId('mv'), lead_id: l ? l.id : null, pack_id: pack ? pack.id : null, token: randomToken(24), tier, status: tier ? 'details' : 'invited',
+    id: newId('mv'), lead_id: l ? l.id : null, pack_id: pack ? pack.id : null, token: randomToken(24), tier, status: plainPack ? 'ready' : tier ? 'details' : 'invited',
     name: str(body.name, 160) || (l && l.name) || '', role_title: str(body.role_title, 200) || (l && l.role_title) || '', company: str(body.company, 200) || (l && l.company) || '',
     email: str(body.email, 160).toLowerCase() || (l && l.email) || '', phone: str(body.phone, 30) || (l && l.phone) || '',
     price: 0, gst: 0, total: 0, created_at: nowIso(), created_by: staff.email, updated_at: nowIso(), last_activity_at: null
   };
   const li = str(body.linkedin, 300);
-  o.details = JSON.stringify({ name: o.name, role_title: o.role_title, company: o.company, linkedin: (/^https:\/\/([a-z]+\.)?linkedin\.com\//i.test(li) ? li : '') || (l ? l.linkedin || '' : ''), prev_role: l ? l.prev_role || '' : '', start_date: l ? l.move_date || '' : '' });
+  o.details = JSON.stringify({ ...(plainPack ? { flow: 'plain' } : {}), name: o.name, role_title: o.role_title, company: o.company, linkedin: (/^https:\/\/([a-z]+\.)?linkedin\.com\//i.test(li) ? li : '') || (l ? l.linkedin || '' : ''), prev_role: l ? l.prev_role || '' : '', start_date: l ? l.move_date || '' : '' });
   const keys = Object.keys(o);
   await db.prepare(`INSERT INTO orders (${keys.join(', ')}) VALUES (${keys.map(() => '?').join(', ')})`).bind(...keys.map(k => o[k])).run();
   if (l) await db.prepare("UPDATE leads SET stage = 'linked', email = COALESCE(NULLIF(?, ''), email), phone = COALESCE(NULLIF(?, ''), phone), updated_at = ? WHERE id = ?").bind(o.email, o.phone, nowIso(), l.id).run();
-  await logEvent(db, { order_id: o.id, lead_id: l ? l.id : null, by: staff.email, text: 'Feature link created' + (tier ? ` (${TIER_LABEL[tier]})` : '') });
+  await logEvent(db, { order_id: o.id, lead_id: l ? l.id : null, by: staff.email, text: plainPack ? `Added to the ${pack.company} Bundle` : 'Feature link created' + (tier ? ` (${TIER_LABEL[tier]})` : '') });
+  if (plainPack) return json({ ok: true, order_id: o.id, plain: true });
   const n = await notify(env, request, o, 'invite');
   return json({ ok: true, order_id: o.id, link: featureLink(env, request, o), ...n });
 }
@@ -448,12 +559,12 @@ async function createPack(request, env, staff, body) {
   const price = s.prices.pack, gst = Math.round(price * s.prices.gst_rate / 100);
   const o = { id: newId('pk'), token: randomToken(24), tier: 'pack', status: 'payment', name: str(body.name, 160), company: str(body.company, 200), role_title: str(body.role_title, 200),
     email: str(body.email, 160).toLowerCase(), phone: str(body.phone, 30), price, gst, total: price + gst, payer_type: 'company', billing_name: str(body.company, 200),
-    features_total: s.pack.features, details: JSON.stringify({ name: str(body.name, 160), company: str(body.company, 200) }), consent_at: nowIso(),
+    features_total: s.pack.features, details: JSON.stringify({ flow: 'plain', name: str(body.name, 160), company: str(body.company, 200) }), consent_at: nowIso(),
     created_at: nowIso(), created_by: staff.email, updated_at: nowIso() };
   if (!o.company || !o.name) return fail('Enter the buyer\'s name and company.');
   const keys = Object.keys(o);
   await db.prepare(`INSERT INTO orders (${keys.join(', ')}) VALUES (${keys.map(() => '?').join(', ')})`).bind(...keys.map(k => o[k])).run();
-  await logEvent(db, { order_id: o.id, by: staff.email, text: 'Company pack created' });
+  await logEvent(db, { order_id: o.id, by: staff.email, text: 'Bundle created' });
   return json({ ok: true, order_id: o.id });
 }
 
@@ -465,7 +576,15 @@ async function orderFull(env, request, o) {
     db.prepare('SELECT round, decision, comment, at FROM approvals WHERE order_id = ? ORDER BY id DESC').bind(o.id).all().then(r => r.results || [])]);
   const link = featureLink(env, request, o);
   const pack = o.tier === 'pack' && !o.pack_id ? { used: (await db.prepare("SELECT COUNT(*) AS n FROM orders WHERE pack_id = ? AND status <> 'cancelled'").bind(o.id).first()).n } : null;
-  const checklist = isDedicated(o) || o.tier === 'free' ? [
+  const site = o.slug && o.live_at && !o.removed_at ? 'https://boardroomcxo.com/moves/' + o.slug : '';
+  const paidSteps = o.total ? [['Payment link sent', Boolean(o.pay_sent_at)], ['Paid', Boolean(o.paid_at)], ['GST invoice', Boolean(o.books_invoice_id)]] : [];
+  const checklist = isPlain(o) ? (o.tier === 'pack' && !o.pack_id ? paidSteps : [...paidSteps,
+    ...needContent(o).map(p => [PLATFORM[p] + ' text', Boolean(contents[p] && contents[p].text)]),
+    ...needImages(o).map(k => [PLATFORM[k] + ' image', Boolean(images[k])]),
+    ['Draft sent', Boolean(o.approval_sent_at)], ['Approved, or 48 hours passed', Boolean(o.approved_at)], ['LinkedIn post link', Boolean(o.linkedin_url)],
+    ...(inGroup(o) ? [['Instagram post link', Boolean(o.instagram_url)], ['Website article live', Boolean(site)], ['Shared in the WhatsApp group', Boolean(o.wa_shared_at)], ['Asked to add to LinkedIn Featured', Boolean(o.featured_at)]] : []),
+    ['Day-7 thank-you', Boolean(o.thanks_at)]
+  ]) : isDedicated(o) || o.tier === 'free' ? [
     ['Details and photo', detailsComplete(o)], ...(o.tier === 'plus' ? [['Payment seen', Boolean(o.paid_at)], ['GST invoice', Boolean(o.books_invoice_id)]] : []),
     ...needContent(o).map(p => [PLATFORM[p] + ' text', Boolean(contents[p] && contents[p].text)]),
     ...needImages(o).map(k => [PLATFORM[k] + ' image', Boolean(images[k])]),
@@ -475,7 +594,7 @@ async function orderFull(env, request, o) {
   return { order: { ...o, details: detailsOf(o), token: undefined }, link, contents, images: Object.keys(images), events, approvals, checklist,
     need_content: needContent(o), need_images: needImages(o), questions: QUESTIONS, needs_internal: await needsInternal(db, o, settings), pack,
     wa: { invite: MSG.invite(o, link).wa, remindDetails: MSG.remindDetails(o, link).wa, remindPayment: MSG.remindPayment(o, link).wa, approval: MSG.approval(o, link).wa, live: MSG.live(o, link, o.slug ? baseUrl(env, request) + '/moves/' + o.slug : '').wa },
-    wa_phone: String(o.phone || '').replace(/\D/g, ''), brief: briefFor(o, contents) };
+    wa_phone: String(o.phone || '').replace(/\D/g, ''), brief: briefFor(o, contents), plain: isPlain(o), site_url: site };
 }
 // The text the team pastes into the Content Studio to draft each platform.
 function briefFor(o, contents) {
@@ -485,6 +604,7 @@ function briefFor(o, contents) {
     d.prev_role ? `Previous role: ${d.prev_role}` : '', d.start_date ? `Start date: ${d.start_date}` : '', d.city ? `City: ${d.city}` : '', d.linkedin ? `LinkedIn: ${d.linkedin}` : '',
     d.source_link ? `\nThey shared an existing write-up about their move. Read it and write from it; confirm anything that is not in it:\n${d.source_link}${d.source_note ? '\nTheir note: ' + d.source_note : ''}` : '',
     answers ? `\nTheir answers:\n${answers}` : (o.skip_questions && !d.source_link ? '\nThey skipped the questions: use only public information and mark anything unverified.' : ''),
+    isPlain(o) ? `\nWrite it from their LinkedIn profile and posts. Rewrite, do not copy.${d.highlight ? '\nTheir answer to "anything to highlight or leave out?": ' + d.highlight : ''}` : '',
     `\nPlatforms needed: ${needContent(o).join(', ')}.`, o.change_note ? `\nChanges they asked for: ${o.change_note}` : ''].filter(Boolean).join('\n');
 }
 async function orderAction(request, env, staff, id, body) {
@@ -514,6 +634,39 @@ async function orderAction(request, env, staff, id, body) {
     await log('Sent for approval');
     return done(await notify(env, request, await getOrder(db, id), 'approval'));
   }
+  // The plain flow: payment link by hand, the leader answers on LinkedIn, the team logs it here.
+  if (a === 'pay_sent') {
+    const link = str(body.pay_link, 400);
+    if (link && !/^https?:\/\//i.test(link)) return fail('Paste the full payment link, starting with https://');
+    await touch(db, id, { pay_link: link || o.pay_link, pay_sent_at: nowIso() }); await log('Payment link sent' + (link ? ': ' + link : '')); return done();
+  }
+  if (a === 'pay_remind') { await touch(db, id, { pay_remind_at: nowIso() }); await log('Payment reminder sent'); return done(); }
+  if (a === 'pay_lapse') {
+    if (o.paid_at) return fail('Already paid.');
+    await touch(db, id, { status: 'cancelled' }); await log('Not paid after the reminder: treated as silent');
+    if (o.lead_id) {
+      const d = briefDate(settings);
+      await db.prepare("UPDATE leads SET stage = 'brief', brief_date = ?, updated_at = ? WHERE id = ?").bind(d, nowIso(), o.lead_id).run();
+      await logEvent(db, { lead_id: o.lead_id, by: staff.email, text: `Not paid: put in the free Brief of ${d}` });
+    }
+    return done();
+  }
+  if (a === 'highlight') { await touch(db, id, { details: JSON.stringify({ ...detailsOf(o), highlight: str(body.text, 1500) }) }); await log('Saved their answer to the one question'); return done(); }
+  if (a === 'approved') {
+    if (!['approval', 'changes'].includes(o.status)) return fail('The draft has not been sent yet.');
+    const slot = await nextSlot(db, o, settings), silent = body.why === 'silent';
+    await touch(db, id, { status: 'approved', approved_at: nowIso(), slot_date: slot, change_note: null });
+    await db.prepare('INSERT INTO approvals (order_id, round, decision, comment, by_who, at) VALUES (?, ?, ?, ?, ?, ?)').bind(id, 0, 'approve', silent ? 'No reply in 48 hours' : '', staff.email, nowIso()).run();
+    await log((silent ? 'No reply in 48 hours: publishing as drafted' : 'They approved the draft') + '. Scheduled for ' + slot); return done();
+  }
+  if (a === 'changes') {
+    const note = str(body.note, 2000); if (!note) return fail('Write what they want changed.');
+    await touch(db, id, { status: 'changes', change_note: note });
+    await db.prepare('INSERT INTO approvals (order_id, round, decision, comment, by_who, at) VALUES (?, ?, ?, ?, ?, ?)').bind(id, 0, 'changes', note, staff.email, nowIso()).run();
+    await log('They asked for changes: ' + note); return done();
+  }
+  if (a === 'featured') { await touch(db, id, { featured_at: nowIso() }); await log('Asked them to add the article to LinkedIn Featured'); return done(); }
+  if (a === 'thanks') { await touch(db, id, { thanks_at: nowIso() }); await log('Day-7 thank-you sent'); return done(); }
   if (a === 'schedule') { const d = str(body.date, 10); if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) return fail('Pick a date.'); await touch(db, id, { slot_date: d, status: o.status === 'approved' ? 'scheduled' : o.status }); await log('Scheduled for ' + d); return done(); }
   if (a === 'publish') {
     if (!['approved', 'scheduled', 'live'].includes(o.status)) return fail('The leader has not approved this yet.');
@@ -522,12 +675,12 @@ async function orderAction(request, env, staff, id, body) {
     if (ig && !/^https:\/\/(www\.)?instagram\.com\//i.test(ig)) return fail('The Instagram link should start with https://www.instagram.com/');
     if (!li) return fail('Paste the LinkedIn post link.');
     let slug = o.slug;
-    if (!slug) { const base = slugify(`${o.name}-${o.company}`) || o.id; slug = base; let i = 2; while (await db.prepare('SELECT 1 FROM orders WHERE slug = ? AND id <> ?').bind(slug, id).first()) slug = `${base}-${i++}`; }
-    await touch(db, id, { linkedin_url: li, instagram_url: ig || o.instagram_url, slug, status: 'live', live_at: o.live_at || nowIso() });
-    await log('Published. Website page live');
+    if (!slug && hasPage(o)) { const base = slugify(`${o.name}-${o.company}`) || o.id; slug = base; let i = 2; while (await db.prepare('SELECT 1 FROM orders WHERE slug = ? AND id <> ?').bind(slug, id).first()) slug = `${base}-${i++}`; }
+    await touch(db, id, { linkedin_url: li, instagram_url: ig || o.instagram_url, slug: slug || null, status: 'live', live_at: o.live_at || nowIso() });
+    await log(slug ? 'Published. Website page live' : 'Published on LinkedIn');
     const fresh = await getOrder(db, id), site = baseUrl(env, request) + '/moves/' + slug;
     let n = {};
-    if (!o.proof_sent_at) { n = await notify(env, request, fresh, 'live', site); await touch(db, id, { proof_sent_at: nowIso() }); }
+    if (!o.proof_sent_at && !isPlain(o)) { n = await notify(env, request, fresh, 'live', site); await touch(db, id, { proof_sent_at: nowIso() }); }
     return done(n);
   }
   if (a === 'number') {
@@ -538,11 +691,10 @@ async function orderAction(request, env, staff, id, body) {
     await touch(db, id, { moves_no: n }); await log('Numbered Boardroom Moves #' + n); return done();
   }
   if (a === 'wa_shared') { await touch(db, id, { wa_shared_at: nowIso() }); await log('Shared in the WhatsApp community'); return done(); }
-  if (a === 'ci30' || a === 'ci60') { await touch(db, id, { [a + '_at']: nowIso() }); await log(a === 'ci30' ? 'Day-30 check-in sent' : 'Day-60 check-in sent'); return done(); }
   if (a === 'remove') { await touch(db, id, { status: 'removed', removed_at: nowIso() }); await log('Removed on request: website page taken down. Remove the LinkedIn and Instagram posts by hand.'); return done(); }
   if (a === 'cancel') { await touch(db, id, { status: 'cancelled' }); await log('Cancelled'); return done(); }
   if (a === 'manual_paid') {
-    if (!staff.isAdmin) return fail('Only an admin can record a payment.');
+    if (!staff.isAdmin && !isPlain(o)) return fail('Only an admin can record a payment.');
     if (o.paid_at) return fail('Already paid.');
     if (!o.total) return fail('This order has no amount.');
     await markPaid(request, env, o, str(body.reference, 60) || 'manual', 'manual');
@@ -553,8 +705,15 @@ async function orderAction(request, env, staff, id, body) {
   if (a === 'edit') {
     const p = {};
     for (const k of ['name', 'role_title', 'company', 'email', 'phone']) if (k in body) p[k] = str(body[k], 200);
-    if ('tier' in body && staff.isAdmin && ['free', 'plus', 'pick'].includes(body.tier) && !o.paid_at) {
-      p.tier = body.tier; const price = body.tier === 'plus' ? settings.prices.plus : 0; p.price = price; p.gst = Math.round(price * settings.prices.gst_rate / 100); p.total = p.price + p.gst;
+    if ('tier' in body && staff.isAdmin && ['free', 'feature', 'plus', 'pick', 'free_feature'].includes(body.tier) && !o.paid_at && !(o.tier === 'pack' && !o.pack_id)) {
+      const tier = body.tier === 'free_feature' ? 'feature' : body.tier;
+      const price = ['feature', 'plus'].includes(body.tier) ? settings.prices[tier] : 0;
+      Object.assign(p, { tier, price, gst: Math.round(price * settings.prices.gst_rate / 100) }); p.total = p.price + p.gst;
+      // Feature and Plus run on the payment-link flow; a portal order moving to them leaves the personal link behind.
+      if (['feature', 'plus'].includes(tier) && !isPlain(o)) {
+        p.details = JSON.stringify({ ...detailsOf(o), flow: 'plain', free: body.tier === 'free_feature' });
+        if (['invited', 'details', 'payment', 'ready'].includes(o.status)) p.status = p.total ? 'payment' : 'ready';
+      }
     }
     await touch(db, id, p); await log('Order details edited'); return done();
   }
@@ -577,14 +736,15 @@ async function revenue(env) {
   const db = env.MOVES_DB, month = todayIst().slice(0, 7);
   const paid = (await db.prepare("SELECT id, name, company, tier, price, total, paid_at, invoice_no, books_error FROM orders WHERE paid_at IS NOT NULL ORDER BY paid_at DESC").all()).results || [];
   const byMonth = {};
-  for (const p of paid) { const m = String(p.paid_at).slice(0, 7); byMonth[m] = byMonth[m] || { revenue: 0, plus: 0, packs: 0 }; byMonth[m].revenue += p.price; byMonth[m][p.tier === 'pack' ? 'packs' : 'plus']++; }
+  for (const p of paid) { const m = String(p.paid_at).slice(0, 7); byMonth[m] = byMonth[m] || { revenue: 0, plus: 0, feature: 0, packs: 0 }; byMonth[m].revenue += p.price; byMonth[m][p.tier === 'pack' ? 'packs' : p.tier === 'feature' ? 'feature' : 'plus']++; }
   const count = async (sql, ...b) => (await db.prepare(sql).bind(...b).first()).n;
   const funnel = {
     requests: await count('SELECT COUNT(*) AS n FROM leads WHERE substr(sent_date,1,7) = ?', month),
     accepted: await count('SELECT COUNT(*) AS n FROM leads WHERE substr(accepted_date,1,7) = ?', month),
     replied: await count('SELECT COUNT(*) AS n FROM leads WHERE substr(replied_at,1,7) = ?', month),
     links: await count("SELECT COUNT(*) AS n FROM orders WHERE substr(created_at,1,7) = ? AND (tier IS NULL OR tier <> 'pack' OR pack_id IS NOT NULL)", month),
-    plus_chosen: await count("SELECT COUNT(*) AS n FROM orders WHERE tier = 'plus' AND substr(created_at,1,7) = ?", month),
+    plus_chosen: await count("SELECT COUNT(*) AS n FROM orders WHERE tier IN ('feature','plus','pack') AND pack_id IS NULL AND total > 0 AND substr(created_at,1,7) = ?", month),
+    brief: await count('SELECT COUNT(*) AS n FROM leads WHERE substr(brief_date,1,7) = ?', month),
     paid: await count("SELECT COUNT(*) AS n FROM orders WHERE substr(paid_at,1,7) = ?", month),
     live: await count("SELECT COUNT(*) AS n FROM orders WHERE substr(live_at,1,7) = ?", month)
   };
@@ -593,12 +753,15 @@ async function revenue(env) {
 async function calendar(env) {
   const db = env.MOVES_DB, s = await getSettings(db), t = todayIst();
   const rows = (await db.prepare("SELECT id, name, company, tier, status, slot_date FROM orders WHERE slot_date >= ? AND status NOT IN ('cancelled','removed') ORDER BY slot_date").bind(addDays(t, -7)).all()).results || [];
-  const days = [];
+  const inBrief = (await db.prepare("SELECT brief_date, name, company FROM leads WHERE brief_date >= ? AND stage NOT IN ('removed','declined','linked') ORDER BY name").bind(t).all()).results || [];
+  const links = await briefLinks(db), days = [];
   for (let i = 0; i < 28; i++) {
     const d = addDays(t, i), wd = new Date(d + 'T00:00:00Z').getUTCDay();
-    if (s.slot_days.includes(wd) || wd === s.carousel_day) days.push({ date: d, kind: wd === s.carousel_day ? 'carousel' : 'dedicated', orders: rows.filter(r => r.slot_date === d) });
+    const brief = wd === s.carousel_day;
+    if (s.slot_days.includes(wd) || brief) days.push({ date: d, kind: s.slot_days.includes(wd) ? 'dedicated' : 'carousel', brief,
+      brief_names: brief ? inBrief.filter(r => r.brief_date === d) : [], brief_link: links[d] || '', orders: rows.filter(r => r.slot_date === d) });
   }
-  return json({ days });
+  return json({ days, per_week: perWeek(s), next_brief: briefDate(s) });
 }
 
 // ── Reminders (called by the cron worker every hour) ─────────────────────────
@@ -607,6 +770,7 @@ async function cron(request, env) {
   const rows = (await db.prepare("SELECT * FROM orders WHERE status IN ('invited','details','payment','approval') AND (email IS NOT NULL AND email <> '')").all()).results || [];
   let sent = 0;
   for (const o of rows) {
+    if (isPlain(o)) continue; // payment-link orders: the team follows up on LinkedIn
     const r = parseJson(o.reminders, {});
     if (o.status === 'approval') {
       const n = r.approval || 0, since = now - Date.parse(o.approval_sent_at || o.updated_at);
@@ -701,6 +865,15 @@ export async function handleApi(context) {
     }
     if (what === 'revenue') { if (!staff.isAdmin) return fail('Admins only.', 403); return await revenue(env); }
     if (what === 'calendar') return await calendar(env);
+    if (what === 'brief' && method === 'POST') {
+      // The weekly Brief is posted: its link goes into Message 5 for everyone in it.
+      const d = str(body.date, 10), link = str(body.link, 400);
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) return fail('Which Brief?');
+      if (!/^https:\/\/([a-z]+\.)?linkedin\.com\//i.test(link)) return fail('Paste the LinkedIn link of the Brief post.');
+      await metaSet(db, 'brief:' + d, link);
+      await logEvent(db, { by: staff.email, text: `Brief of ${d} posted: ${link}` });
+      return json({ ok: true });
+    }
     if (what === 'settings' && method === 'GET') {
       const staffRows = (await db.prepare('SELECT email, name, role, active, desks FROM staff ORDER BY email').all()).results || [];
       return json({ settings: await getSettings(db), staff: staffRows, admins: admins(env), connections: { email: Boolean(env.ZEPTOMAIL_TOKEN), razorpay: razorpayOn(env), books: booksOn(env), loader: Boolean(env.MOVES_LOADER_KEY), lookup: Boolean(env.FIRECRAWL_API_KEY) } });
