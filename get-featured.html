@@ -48,7 +48,8 @@
         "@type": "FAQPage",
         "mainEntity": [
           {"@type": "Question","name": "What is Boardroom Moves?","acceptedAnswer": {"@type": "Answer","text": "Boardroom Moves is our leadership-change announcement series, published on the Boardroom CXO LinkedIn page when someone joins a new company in a marketing, sales, BD, strategy, or other CXO-track role."}},
-          {"@type": "Question","name": "What is Inside the Boardroom?","acceptedAnswer": {"@type": "Answer","text": "Inside the Boardroom profiles leaders who have made a real, verifiable impact, particularly in retail. These are editorial picks based on the strength of the story. Pitch us the story and our team decides based on fit."}},
+          {"@type": "Question","name": "What is Inside the Boardroom?","acceptedAnswer": {"@type": "Answer","text": "Inside the Boardroom is our long-form series on leaders of well-known Indian brands who turned a business around, made a bold bet that paid off, or built something from nothing, particularly in retail and consumer. Each story is researched and written by our team from public sources, published on LinkedIn and as a full article on boardroomcxo.com. These are editorial picks. Suggest a leader and our team decides based on fit."}},
+          {"@type": "Question","name": "What is the difference between Boardroom Moves and Inside the Boardroom?","acceptedAnswer": {"@type": "Answer","text": "Boardroom Moves announces a new role, soon after a leader joins a new company. Inside the Boardroom tells the longer story of what a leader at a well-known brand has already achieved. Moves is written from the leader's LinkedIn. Inside the Boardroom is researched from public sources and needs nothing from the leader."}},
           {"@type": "Question","name": "How are features chosen?","acceptedAnswer": {"@type": "Answer","text": "For Boardroom Moves, our team reaches out with the options when we see a move. Inside the Boardroom is an editorial selection."}},
           {"@type": "Question","name": "How do I submit?","acceptedAnswer": {"@type": "Answer","text": "Fill in the form on this page with which track fits and the details of the move or story. Our team gets back to you within one business day."}}
         ]
@@ -72,6 +73,23 @@
     .track-card p{font-size:14.5px;line-height:1.7;opacity:.75}
     .track-card-tag{display:inline-block;margin-top:16px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:5px 12px;border:1px solid var(--line);border-radius:20px}
     @media(max-width:720px){.track-grid{grid-template-columns:1fr}}
+    /* Page-scoped: Moves vs Inside the Boardroom comparison and examples */
+    .cmp-head{margin:72px 0 20px}
+    .cmp-head h3{font-family:var(--font-display,serif);font-size:28px;margin:10px 0 0}
+    .cmp-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--surface)}
+    .cmp{width:100%;border-collapse:collapse;min-width:620px}
+    .cmp th,.cmp td{text-align:left;vertical-align:top;padding:18px 22px;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.6}
+    .cmp tr:last-child td,.cmp tr:last-child th{border-bottom:none}
+    .cmp thead th{font-family:var(--font-display,serif);font-size:20px;font-weight:500;background:var(--bg-alt)}
+    .cmp tbody th{width:18%;font-family:var(--font-mono);font-size:11.5px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+    .cmp td{width:41%;color:var(--ink)}
+    .ex-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+    .ex-card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:24px;text-decoration:none;color:inherit;transition:border-color .2s}
+    .ex-card:hover{border-color:var(--clay)}
+    .ex-card span{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--clay)}
+    .ex-card h4{font-family:var(--font-display,serif);font-size:19px;font-weight:500;line-height:1.35;margin:10px 0 0}
+    @media(max-width:860px){.ex-grid{grid-template-columns:1fr}}
+    @media(max-width:720px){.cmp{min-width:0}.cmp thead{display:none}.cmp tr{display:block;padding:16px 18px;border-bottom:1px solid var(--line)}.cmp tbody th,.cmp td{display:block;width:auto;padding:0;border:none}.cmp tbody th{margin-bottom:10px}.cmp td{margin-bottom:10px}.cmp td::before{content:attr(data-col);display:block;font-weight:600;font-size:12.5px;color:var(--clay);margin-bottom:2px}}
   </style>
 </head>
 <body>
@@ -140,10 +158,39 @@
       </div>
       <div class="track-card">
         <div class="track-card-label">// Inside the Boardroom</div>
-        <h3>Built or Led Something Real?</h3>
-        <p>A turnaround, a category bet, a hire that changed the trajectory, particularly in retail. We profile leaders who've made a verifiable impact. Editorial picks, based on the story.</p>
+        <h3>Know a Story Worth Telling?</h3>
+        <p>A turnaround, a bold bet that paid off, a business built from nothing, at a well-known Indian brand, particularly in retail and consumer. Our team researches it from public sources and tells it through the leader who made it happen. Editorial picks, based on the story.</p>
         <span class="track-card-tag">Editorial Pick</span>
       </div>
+    </div>
+
+    <div class="cmp-head">
+      <span class="overline" style="color:var(--clay);">Side by Side</span>
+      <h3>Boardroom Moves vs Inside the Boardroom.</h3>
+    </div>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead><tr><th></th><th>Boardroom Moves</th><th>Inside the Boardroom</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">What it is</th><td data-col="Boardroom Moves">An announcement of a new senior role.</td><td data-col="Inside the Boardroom">A long-form story of what a leader has already achieved.</td></tr>
+          <tr><th scope="row">Who it's for</th><td data-col="Boardroom Moves">Leaders who have just joined a new company or stepped into a new CXO-track role.</td><td data-col="Inside the Boardroom">Leaders of well-known Indian brands with a real turnaround, bold bet or build-from-nothing story behind them.</td></tr>
+          <tr><th scope="row">When</th><td data-col="Boardroom Moves">Soon after the move.</td><td data-col="Inside the Boardroom">When the story has a clear before and after.</td></tr>
+          <tr><th scope="row">Format</th><td data-col="Boardroom Moves">A short LinkedIn post: a line in our weekly roundup, or a dedicated post with a creative.</td><td data-col="Inside the Boardroom">A long LinkedIn post, plus a full article on boardroomcxo.com.</td></tr>
+          <tr><th scope="row">How it's written</th><td data-col="Boardroom Moves">From the leader's LinkedIn profile and post.</td><td data-col="Inside the Boardroom">Researched and written by our team from public sources.</td></tr>
+          <tr><th scope="row">From the leader</th><td data-col="Boardroom Moves">Little or nothing.</td><td data-col="Inside the Boardroom">Nothing. The leader is not involved.</td></tr>
+          <tr><th scope="row">How to get in</th><td data-col="Boardroom Moves">We reach out when we spot a move, or tell us about yours below.</td><td data-col="Inside the Boardroom">Editorial pick. Suggest a leader or story below, and our team decides.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cmp-head">
+      <span class="overline" style="color:var(--clay);">Inside the Boardroom</span>
+      <h3>Read a few.</h3>
+    </div>
+    <div class="ex-grid">
+      <a class="ex-card" href="/article-puneet-chhatwal-ihcl-taj"><span>IHCL · Taj</span><h4>Puneet Chhatwal: He Grew the Taj by Owning Less of It</h4></a>
+      <a class="ex-card" href="/article-anish-shah-mahindra-turnaround"><span>Mahindra</span><h4>Anish Shah: The Outsider Who Fixed Mahindra's ₹5,200 Crore Problem</h4></a>
+      <a class="ex-card" href="/article-mp-ahammed-malabar-gold"><span>Malabar Gold</span><h4>M P Ahammed: How a Coconut Trader Built India's Largest Jeweller</h4></a>
     </div>
   </div>
 </section>
@@ -184,7 +231,7 @@
           <select name="service" required data-testid="form-service">
             <option value="">Select one</option>
             <option>Feature My Leadership Move (Boardroom Moves)</option>
-            <option>Pitch a Story for Inside the Boardroom</option>
+            <option>Suggest a Story for Inside the Boardroom</option>
             <option>Nominate Someone Else</option>
             <option>Other / Not Sure Yet</option>
           </select>
@@ -212,7 +259,11 @@
       </div>
       <div class="faq-item">
         <h3>What is Inside the Boardroom?</h3>
-        <p>A series profiling leaders who have made a real, verifiable impact, particularly in retail. These are editorial picks based on the strength of the story. Pitch us the story and our team decides based on fit.</p>
+        <p>Our long-form series on leaders of well-known Indian brands who turned a business around, made a bold bet that paid off, or built something from nothing, particularly in retail and consumer. Each story is researched and written by our team from public sources, published on LinkedIn and as a full article on boardroomcxo.com. These are editorial picks. Suggest a leader and our team decides based on fit.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the difference between Boardroom Moves and Inside the Boardroom?</h3>
+        <p>Boardroom Moves announces a new role, soon after a leader joins a new company. Inside the Boardroom tells the longer story of what a leader at a well-known brand has already achieved. Moves is written from the leader's LinkedIn. Inside the Boardroom is researched from public sources and needs nothing from the leader.</p>
       </div>
       <div class="faq-item">
         <h3>How are features chosen?</h3>
