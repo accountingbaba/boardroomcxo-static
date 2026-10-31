@@ -26,3 +26,9 @@
 /wp-login.php / 301
 /feed/ / 301
 /feed/* / 301
+
+# Boardroom Moves: addresses people and AI tools guess
+/boardroom-moves /moves 301
+/boardroom-moves/ /moves 301
+/leadership-moves /moves 301
+/moves.html /moves 301

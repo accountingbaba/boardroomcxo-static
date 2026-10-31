@@ -51,3 +51,4 @@ User-agent: PetalBot
 Allow: /
 
 Sitemap: https://boardroomcxo.com/sitemap.xml
+Sitemap: https://boardroomcxo.com/sitemap-moves.xml
