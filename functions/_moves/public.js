@@ -8,6 +8,18 @@ const LIVE = "status = 'live' AND removed_at IS NULL AND slug IS NOT NULL";
 const html = (body, status = 200, extra = {}) => new Response(body, { status, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'public, max-age=600', ...extra } });
 const niceDate = iso => (iso ? new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' }) : '');
 const isDedicated = o => o.tier === 'plus' || o.tier === 'pick' || (o.tier === 'pack' && o.pack_id);
+const DEDICATED_SQL = "(tier IN ('plus', 'pick') OR (tier = 'pack' AND pack_id IS NOT NULL))";
+// Plus pages are paid placements, so links out to the leader and the company never pass ranking.
+const OUT_REL = 'noopener nofollow';
+// The matching hiring page for the new role, so each article feeds the service pages.
+const FUNCTIONS = [
+  [/\b(cmo|marketing|brand|growth|digital|communications?)\b/i, '/marketing-leadership-hiring', 'marketing and CMO executive search'],
+  [/\b(cfo|finance|financial|accounts|treasury)\b/i, '/finance-leadership-hiring', 'CFO and finance leadership executive search'],
+  [/\b(chro|hr|people|talent|human)\b/i, '/hr-leadership-hiring', 'HR and people leadership executive search'],
+  [/\b(sales|cso|revenue|commercial|retail|business head|stores?)\b/i, '/sales-leadership-hiring', 'sales and retail leadership executive search']];
+const fnPage = role => (FUNCTIONS.find(([re]) => re.test(role || '')) || []).slice(1);
+const headline = o => `${o.name} joins ${o.company} as ${o.role_title}`;
+const altOf = o => `${o.name}, ${o.role_title}, ${o.company}`;
 
 // The website text the team pastes: blank lines split paragraphs, "## " starts a subheading, "> " a quote.
 function prose(text) {
@@ -32,6 +44,8 @@ function page({ title, description, canonical, image, jsonld, robots = 'index, f
 <meta name="robots" content="${robots}" />
 <link rel="canonical" href="${canonical}" />
 <meta property="og:type" content="article" />
+<meta property="og:site_name" content="Boardroom CXO" />
+<meta property="og:locale" content="en_IN" />
 <meta property="og:title" content="${esc(title)}" />
 <meta property="og:description" content="${esc(description)}" />
 <meta property="og:url" content="${canonical}" />
@@ -79,6 +93,16 @@ function page({ title, description, canonical, image, jsonld, robots = 'index, f
 .mv-cta h2{font-family:var(--font-display);font-weight:500;font-size:clamp(1.5rem,3vw,2.2rem);max-width:24ch}
 .mv-cta a{border:1px solid var(--bg);padding:14px 22px;font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
 .mv-empty{padding:40px 0;color:var(--ink-2)}
+.mv-share{border-top:1px solid var(--line);margin-top:36px;padding-top:24px;max-width:68ch}
+.mv-share h2,.mv-related h2{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px}
+.mv-share p{color:var(--ink-2);font-size:.95rem;margin-bottom:12px}
+.mv-share input{width:100%;font:inherit;font-size:.9rem;padding:10px 12px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.mv-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.mv-btns a,.mv-btns button{border:1px solid var(--ink);background:none;color:var(--ink);padding:10px 16px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.mv-services{margin-top:28px;max-width:68ch;font-size:1rem}
+.mv-services a{border-bottom:1px solid var(--ink)}
+.mv-related{margin:0 0 56px}
+.mv-related .mv-grid{margin:16px 0 0}
 @media(max-width:860px){.mv-article{grid-template-columns:1fr;gap:32px}.mv-side{position:static;border-left:0;border-top:1px solid var(--line);padding:24px 0 0}.mv-week li{grid-template-columns:1fr;gap:4px}}
 </style>
 </head>
@@ -117,6 +141,7 @@ function page({ title, description, canonical, image, jsonld, robots = 'index, f
   </div>
 </footer>
 <script src="/script.js" defer></script>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a||!window.gtag)return;var h=a.getAttribute('href');if(/^[/](get-featured|schedule-a-call|[a-z]+-leadership-hiring)/.test(h))gtag('event','moves_cta',{link:h,page:location.pathname});});</script>
 </body>
 </html>`;
 }
@@ -133,7 +158,7 @@ export async function renderHub(env) {
   const featured = rows.filter(isDedicated), notes = rows.filter(r => !isDedicated(r));
   const weeks = {};
   for (const n of notes) { const w = n.slot_date || String(n.live_at).slice(0, 10); (weeks[w] = weeks[w] || []).push(n); }
-  const cards = featured.map(o => `<a class="mv-card" href="/moves/${esc(o.slug)}">${o.has_img ? `<img src="/moves/img/${esc(o.slug)}" alt="${esc(o.name)}, ${esc(o.role_title)} at ${esc(o.company)}" loading="lazy" width="1200" height="630">` : ''}
+  const cards = featured.map(o => `<a class="mv-card" href="/moves/${esc(o.slug)}">${o.has_img ? `<img src="/moves/img/${esc(o.slug)}" alt="${esc(altOf(o))}" loading="lazy" width="1200" height="630">` : ''}
     <div><time datetime="${esc(String(o.live_at).slice(0, 10))}">${niceDate(o.live_at)}</time><h3>${esc(o.name)}</h3><p>${esc(o.role_title)} at ${esc(o.company)}</p></div></a>`).join('');
   const weekBlocks = Object.keys(weeks).sort().reverse().map(w => `<section class="mv-week"><h2>Moves of the week · ${niceDate(w + 'T12:00:00Z')}</h2><ul>${weeks[w].map(n =>
     `<li id="${esc(n.slug)}"><strong>${esc(n.name)}</strong><span>${esc(n.role_title)} at ${esc(n.company)}${n.website ? '. ' + esc(firstPara(n.website)) : ''}</span></li>`).join('')}</ul></section>`).join('');
@@ -161,23 +186,38 @@ export async function renderProfile(env, slug) {
   const img = await db.prepare("SELECT 1 FROM images WHERE order_id = ? AND kind = 'website'").bind(o.id).first();
   const d = JSON.parse(o.details || '{}');
   const url = `${SITE}/moves/${slug}`, image = img ? `${SITE}/moves/img/${slug}` : SITE + '/images/Homepage-Meta-removebg-preview.png';
-  const title = `${o.name} appointed ${o.role_title} at ${o.company} | Boardroom Moves`;
-  const description = (firstPara(c && c.text) || `${o.name} has been appointed ${o.role_title} at ${o.company}.`).slice(0, 158);
-  const side = [['Appointed', `${esc(o.role_title)}<br>${esc(o.company)}`], d.prev_role ? ['Previously', esc(d.prev_role)] : null, ['Featured', niceDate(o.live_at)],
+  const site = /^https?:\/\/[^\s]+\.[^\s]+/i.test(d.company_site || '') ? d.company_site : '';
+  const related = (await db.prepare(`SELECT id, name, role_title, company, slug, live_at, (SELECT 1 FROM images i WHERE i.order_id = orders.id AND i.kind = 'website') AS has_img
+    FROM orders WHERE ${LIVE} AND ${DEDICATED_SQL} AND slug <> ? ORDER BY live_at DESC LIMIT 3`).bind(slug).all()).results || [];
+  const [fnHref, fnName] = fnPage(o.role_title);
+  const title = `${headline(o)} | Boardroom Moves`;
+  const description = (firstPara(c && c.text) || `${headline(o)}.`).slice(0, 158);
+  const side = [['New role', `${esc(o.role_title)}<br>${esc(o.company)}`], d.prev_role ? ['Previously', esc(d.prev_role)] : null, ['Featured', niceDate(o.live_at)],
+    site ? ['Company', `<a class="mv-link" href="${esc(site)}" target="_blank" rel="${OUT_REL}">${esc(o.company)} website</a>`] : null,
     o.linkedin_url ? ['On LinkedIn', `<a class="mv-link" href="${esc(o.linkedin_url)}" target="_blank" rel="noopener">Read the post</a>`] : null,
-    d.linkedin ? ['Profile', `<a class="mv-link" href="${esc(d.linkedin)}" target="_blank" rel="noopener nofollow">${esc(o.name)} on LinkedIn</a>`] : null].filter(Boolean)
+    d.linkedin ? ['Profile', `<a class="mv-link" href="${esc(d.linkedin)}" target="_blank" rel="${OUT_REL}">${esc(o.name)} on LinkedIn</a>`] : null].filter(Boolean)
     .map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
+  const share = `<section class="mv-share"><h2>Link to this announcement</h2>
+<p>Add it to your LinkedIn Featured section, your company newsroom or your website.</p>
+<input type="text" readonly value="${url}" aria-label="Page link" onclick="this.select()">
+<div class="mv-btns"><button type="button" onclick="navigator.clipboard.writeText('${url}').then(()=>{this.textContent='Copied'})">Copy link</button>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}" target="_blank" rel="noopener">Share on LinkedIn</a>
+<a href="https://wa.me/?text=${encodeURIComponent(headline(o) + ' ' + url)}" target="_blank" rel="noopener">Share on WhatsApp</a></div></section>`;
+  const services = `<p class="mv-services">Boardroom CXO runs executive search for retail, jewellery and D2C brands. ${fnHref ? `See our <a href="${fnHref}">${esc(fnName)}</a>, or <a href="/schedule-a-call">talk to us</a> about a leadership hire.` : `<a href="/schedule-a-call">Talk to us</a> about a leadership hire.`}</p>`;
+  const relatedBlock = related.length ? `<section class="mv-related"><h2>More Boardroom Moves</h2><div class="mv-grid">${related.map(r => `<a class="mv-card" href="/moves/${esc(r.slug)}">${r.has_img ? `<img src="/moves/img/${esc(r.slug)}" alt="${esc(altOf(r))}" loading="lazy" width="1200" height="630">` : ''}
+    <div><time datetime="${esc(String(r.live_at).slice(0, 10))}">${niceDate(r.live_at)}</time><h3>${esc(r.name)}</h3><p>${esc(r.role_title)} at ${esc(r.company)}</p></div></a>`).join('')}</div></section>` : '';
   const body = `<div class="mv-wrap">
 <section class="mv-hero"><p class="mv-crumb"><a href="/">Home</a> / <a href="/moves">Boardroom Moves</a></p><p class="mv-meta">Boardroom Moves · ${niceDate(o.live_at)}</p>
-<h1 style="margin-top:14px">${esc(o.name)}, ${esc(o.role_title)} at ${esc(o.company)}</h1></section>
-<article class="mv-article"><div>${img ? `<img class="mv-figure" src="/moves/img/${esc(slug)}" alt="${esc(o.name)}, ${esc(o.role_title)} at ${esc(o.company)}" width="1200" height="630">` : ''}
-<div class="mv-body">${prose(c && c.text) || `<p>${esc(o.name)} has been appointed ${esc(o.role_title)} at ${esc(o.company)}.</p>`}</div></div>
+<h1 style="margin-top:14px">${esc(headline(o))}</h1></section>
+<article class="mv-article"><div>${img ? `<img class="mv-figure" src="/moves/img/${esc(slug)}" alt="${esc(altOf(o))}" width="1200" height="630">` : ''}
+<div class="mv-body">${prose(c && c.text) || `<p>${esc(headline(o))}.</p>`}</div>${services}${share}</div>
 <aside><dl class="mv-side">${side}</dl></aside></article>
-${ctaBlock}</div>`;
+${relatedBlock}${ctaBlock}</div>`;
   const jsonld = { '@context': 'https://schema.org', '@graph': [
-    { '@type': 'Article', headline: `${o.name} appointed ${o.role_title} at ${o.company}`, url, image, datePublished: o.live_at, dateModified: o.updated_at || o.live_at,
-      author: { '@type': 'Organization', name: 'Boardroom CXO', url: SITE + '/' }, publisher: { '@type': 'Organization', name: 'Boardroom CXO', logo: { '@type': 'ImageObject', url: SITE + '/images/logo-boardroomcxo.png' } },
-      about: { '@type': 'Person', name: o.name, jobTitle: o.role_title, worksFor: { '@type': 'Organization', name: o.company }, ...(d.linkedin ? { sameAs: [d.linkedin] } : {}) },
+    { '@type': 'NewsArticle', headline: headline(o).slice(0, 110), url, mainEntityOfPage: { '@type': 'WebPage', '@id': url }, image: [image], description,
+      datePublished: o.live_at, dateModified: o.updated_at || o.live_at,
+      author: { '@type': 'Organization', name: 'Boardroom CXO', url: SITE + '/' }, publisher: { '@type': 'Organization', name: 'Boardroom CXO', url: SITE + '/', logo: { '@type': 'ImageObject', url: SITE + '/images/logo-boardroomcxo.png' } },
+      about: { '@type': 'Person', name: o.name, jobTitle: o.role_title, worksFor: { '@type': 'Organization', name: o.company, ...(site ? { url: site } : {}) }, ...(d.linkedin ? { sameAs: [d.linkedin] } : {}) },
       isPartOf: { '@type': 'CollectionPage', name: 'Boardroom Moves', url: SITE + '/moves' } },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: 'Boardroom Moves', item: SITE + '/moves' }, { '@type': 'ListItem', position: 3, name: o.name, item: url }] }] };
   return html(page({ title, description, canonical: url, image, jsonld, body }));

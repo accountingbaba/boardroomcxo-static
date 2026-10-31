@@ -581,6 +581,7 @@ async function orderFull(env, request, o) {
   const checklist = isPlain(o) ? (o.tier === 'pack' && !o.pack_id ? paidSteps : [...paidSteps,
     ...needContent(o).map(p => [PLATFORM[p] + ' text', Boolean(contents[p] && contents[p].text)]),
     ...needImages(o).map(k => [PLATFORM[k] + ' image', Boolean(images[k])]),
+    ...(hasPage(o) ? [['Company website', Boolean(detailsOf(o).company_site)]] : []),
     ['Draft sent', Boolean(o.approval_sent_at)], ['Approved, or 48 hours passed', Boolean(o.approved_at)], ['LinkedIn post link', Boolean(o.linkedin_url)],
     ...(inGroup(o) ? [['Instagram post link', Boolean(o.instagram_url)], ['Website article live', Boolean(site)], ['Shared in the WhatsApp group', Boolean(o.wa_shared_at)], ['Asked to add to LinkedIn Featured', Boolean(o.featured_at)]] : []),
     ['Day-7 thank-you', Boolean(o.thanks_at)]
@@ -605,7 +606,21 @@ function briefFor(o, contents) {
     d.source_link ? `\nThey shared an existing write-up about their move. Read it and write from it; confirm anything that is not in it:\n${d.source_link}${d.source_note ? '\nTheir note: ' + d.source_note : ''}` : '',
     answers ? `\nTheir answers:\n${answers}` : (o.skip_questions && !d.source_link ? '\nThey skipped the questions: use only public information and mark anything unverified.' : ''),
     isPlain(o) ? `\nWrite it from their LinkedIn profile and posts. Rewrite, do not copy.${d.highlight ? '\nTheir answer to "anything to highlight or leave out?": ' + d.highlight : ''}` : '',
-    `\nPlatforms needed: ${needContent(o).join(', ')}.`, o.change_note ? `\nChanges they asked for: ${o.change_note}` : ''].filter(Boolean).join('\n');
+    d.company_site ? `Company website: ${d.company_site}` : '',
+    `\nPlatforms needed: ${needContent(o).join(', ')}.`,
+    needContent(o).includes('website') ? `\nWebsite article rules: 500 to 800 words. Name, new role, company and past employers in the first 80 words. Use their name 4 to 6 times. Rewrite, do not copy the LinkedIn post. Open with one sentence that answers "who is the new [role] at [company]?" on its own. After the first 100 words, tell it as a short story. Use only facts from their LinkedIn, the company's announcement or their answer; no number you cannot point to, and date anything that changes ("as of October 2026"). End with the closing couplet.` : '', o.change_note ? `\nChanges they asked for: ${o.change_note}` : ''].filter(Boolean).join('\n');
+}
+// Tells Bing (and the other IndexNow engines) about a new website page the moment it goes live.
+// Off until the public pages are on boardroomcxo.com: set MOVES_INDEXNOW=1 on production at launch.
+const INDEXNOW_KEY = '13d5ee36f6470f5f63f923ca226a3cde';
+async function pingIndexNow(env, slug) {
+  if (String(env.MOVES_INDEXNOW || '') !== '1' || !slug) return false;
+  try {
+    const r = await fetch('https://api.indexnow.org/indexnow', { method: 'POST', headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify({ host: 'boardroomcxo.com', key: INDEXNOW_KEY, keyLocation: `https://boardroomcxo.com/${INDEXNOW_KEY}.txt`,
+        urlList: [`https://boardroomcxo.com/moves/${slug}`, 'https://boardroomcxo.com/moves'] }) });
+    return r.ok;
+  } catch { return false; }
 }
 async function orderAction(request, env, staff, id, body) {
   const db = env.MOVES_DB, settings = await getSettings(db);
@@ -651,6 +666,11 @@ async function orderAction(request, env, staff, id, body) {
     }
     return done();
   }
+  if (a === 'company_site') {
+    const u = str(body.url, 300).trim();
+    if (u && !/^https?:\/\/[^\s]+\.[^\s]+$/i.test(u)) return fail('Paste the full website address, starting with https://');
+    await touch(db, id, { details: JSON.stringify({ ...detailsOf(o), company_site: u }) }); await log(u ? 'Saved the company website' : 'Removed the company website'); return done();
+  }
   if (a === 'highlight') { await touch(db, id, { details: JSON.stringify({ ...detailsOf(o), highlight: str(body.text, 1500) }) }); await log('Saved their answer to the one question'); return done(); }
   if (a === 'approved') {
     if (!['approval', 'changes'].includes(o.status)) return fail('The draft has not been sent yet.');
@@ -678,6 +698,7 @@ async function orderAction(request, env, staff, id, body) {
     if (!slug && hasPage(o)) { const base = slugify(`${o.name}-${o.company}`) || o.id; slug = base; let i = 2; while (await db.prepare('SELECT 1 FROM orders WHERE slug = ? AND id <> ?').bind(slug, id).first()) slug = `${base}-${i++}`; }
     await touch(db, id, { linkedin_url: li, instagram_url: ig || o.instagram_url, slug: slug || null, status: 'live', live_at: o.live_at || nowIso() });
     await log(slug ? 'Published. Website page live' : 'Published on LinkedIn');
+    if (slug && !o.live_at && await pingIndexNow(env, slug)) await log('Website page sent to Bing (IndexNow)');
     const fresh = await getOrder(db, id), site = baseUrl(env, request) + '/moves/' + slug;
     let n = {};
     if (!o.proof_sent_at && !isPlain(o)) { n = await notify(env, request, fresh, 'live', site); await touch(db, id, { proof_sent_at: nowIso() }); }
