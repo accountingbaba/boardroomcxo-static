@@ -396,6 +396,9 @@ async function today(env, staff) {
     if (o.status === 'live' && o.live_at && String(o.live_at).slice(0, 10) >= FLOW_FROM && isDedicated(o)) {
       const lv = String(o.live_at).slice(0, 10), site = o.slug ? `https://boardroomcxo.com/moves/${o.slug}` : '';
       if (inGroup(o) && site && !o.featured_at) add('outreach', { type: 'featured', ...O, title: `Ask to add the article to LinkedIn Featured: ${who}`, sub: site, due: lv, vars: { article_link: site } });
+      // Asked once, a week after the Featured ask, and only if the company has a press page (SEO plan S3.2).
+      if (inGroup(o) && site && o.featured_at && !o.newsroom_at && addDays(o.featured_at.slice(0, 10), 7) <= t)
+        add('outreach', { type: 'newsroom', ...O, title: `Newsroom link ask: ${who}`, sub: `Only if ${o.company || 'the company'} has a press or "in the news" page`, due: addDays(o.featured_at.slice(0, 10), 7), vars: { article_link: site } });
       if (!o.thanks_at && addDays(lv, 7) <= t) add('outreach', { type: 'thanks', ...O, title: `Day-7 thank-you: ${who}`, sub: 'Thank them and ask for a repost', due: addDays(lv, 7) });
     }
   }
@@ -583,7 +586,7 @@ async function orderFull(env, request, o) {
     ...needImages(o).map(k => [PLATFORM[k] + ' image', Boolean(images[k])]),
     ...(hasPage(o) ? [['Company website', Boolean(detailsOf(o).company_site)]] : []),
     ['Draft sent', Boolean(o.approval_sent_at)], ['Approved, or 48 hours passed', Boolean(o.approved_at)], ['LinkedIn post link', Boolean(o.linkedin_url)],
-    ...(inGroup(o) ? [['Instagram post link', Boolean(o.instagram_url)], ['Website article live', Boolean(site)], ['Shared in the WhatsApp group', Boolean(o.wa_shared_at)], ['Asked to add to LinkedIn Featured', Boolean(o.featured_at)]] : []),
+    ...(inGroup(o) ? [['Instagram post link', Boolean(o.instagram_url)], ['Website article live', Boolean(site)], ['Shared in the WhatsApp group', Boolean(o.wa_shared_at)], ['Asked to add to LinkedIn Featured', Boolean(o.featured_at)], ['Newsroom link asked (or no press page)', Boolean(o.newsroom_at)]] : []),
     ['Day-7 thank-you', Boolean(o.thanks_at)]
   ]) : isDedicated(o) || o.tier === 'free' ? [
     ['Details and photo', detailsComplete(o)], ...(o.tier === 'plus' ? [['Payment seen', Boolean(o.paid_at)], ['GST invoice', Boolean(o.books_invoice_id)]] : []),
@@ -686,6 +689,7 @@ async function orderAction(request, env, staff, id, body) {
     await log('They asked for changes: ' + note); return done();
   }
   if (a === 'featured') { await touch(db, id, { featured_at: nowIso() }); await log('Asked them to add the article to LinkedIn Featured'); return done(); }
+  if (a === 'newsroom') { await touch(db, id, { newsroom_at: nowIso() }); await log(body.why === 'none' ? 'No press or newsroom page at the company' : 'Asked once for a link from the company newsroom'); return done(); }
   if (a === 'thanks') { await touch(db, id, { thanks_at: nowIso() }); await log('Day-7 thank-you sent'); return done(); }
   if (a === 'schedule') { const d = str(body.date, 10); if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) return fail('Pick a date.'); await touch(db, id, { slot_date: d, status: o.status === 'approved' ? 'scheduled' : o.status }); await log('Scheduled for ' + d); return done(); }
   if (a === 'publish') {

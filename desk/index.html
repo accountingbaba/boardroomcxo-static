@@ -315,7 +315,7 @@ window.addEventListener('hashchange', route);
 const DESKS = [['uae', 'AB UAE'], ['eo', 'EarthOne'], ['cxo', 'CXO'], ['mv', 'Moves']];
 const TTABS = [['send', 'Send today'], ['accept', 'Awaiting acceptance'], ['msg', 'Messages 2 to 5'], ['rep', 'Replies'], ['brief', 'Weekly Brief'], ['pay', 'Payments'], ['feat', 'Features'], ['pub', 'To publish'], ['after', 'After live']];
 const TAB_OF = { send: 'send', drop: 'accept', m2: 'msg', m3: 'msg', m4: 'msg', m5: 'msg', later: 'msg', reply: 'rep', brief: 'brief',
-  pay_send: 'pay', pay_remind: 'pay', pay_lapse: 'pay', publish: 'pub', wa_share: 'pub', featured: 'after', thanks: 'after' };
+  pay_send: 'pay', pay_remind: 'pay', pay_lapse: 'pay', publish: 'pub', wa_share: 'pub', featured: 'after', newsroom: 'after', thanks: 'after' };
 const TSUB = {
   send: `Send these from ${'{from}'}. The note is Message 1: copy it, open the profile, send the request with the note, then press Sent.`,
   accept: 'Requests that are out. Press They accepted when they do; Message 2 then appears. Not accepted in 7 days: withdraw the request and drop them (no feature, no Brief).',
@@ -325,11 +325,11 @@ const TSUB = {
   pay: 'They chose a plan. Send the payment link, one reminder after 3 days, and if it is still not paid 3 days later, treat them as silent (they go into the Brief).',
   feat: 'Paid features: ask the one question, draft from their LinkedIn, send the draft. If there is no reply in 48 hours, publish as drafted.',
   pub: 'Features due today, and Plus features to share in the WhatsApp group.',
-  after: 'Plus leaders: ask them to add the article to their LinkedIn Featured. Everyone: a thank-you and a repost ask on day 7.'
+  after: 'Plus leaders: ask them to add the article to their LinkedIn Featured, and a week later, only if their company has a press or "in the news" page, ask once for a link from it. Everyone: a thank-you and a repost ask on day 7.'
 };
 const STEP = { send: 'Message 1 + request', drop: 'Not accepted', m2: 'Message 2', m3: 'Message 3', m4: 'Message 4', m5: 'Message 5', later: '14-day reminder', reply: 'Replied', brief: 'Weekly Brief',
   pay_send: 'Payment link', pay_remind: 'Payment reminder', pay_lapse: 'Not paid', draft: 'Draft', internal: 'Approve inside the team', send_approval: 'Send the draft', revise: 'Revise', silent_ok: 'No reply in 48h',
-  publish: 'Publish today', wa_share: 'WhatsApp group', featured: 'LinkedIn Featured', thanks: 'Day-7 thank-you' };
+  publish: 'Publish today', wa_share: 'WhatsApp group', featured: 'LinkedIn Featured', newsroom: 'Newsroom link', thanks: 'Day-7 thank-you' };
 let todayTab = 'send', AWAIT = [];
 const ini = n => (String(n || '?').replace(/[^A-Za-z ]/g, ' ').trim().split(/\s+/).filter(Boolean).map(w => w[0]).slice(0, 1).join('') + (String(n || '').trim().split(/\s+/).length > 1 ? String(n).trim().split(/\s+/).pop()[0] : '')).toUpperCase() || '?';
 const tb = (label, attrs, cls) => `<button type="button" class="t-btn ${cls || ''}" ${Object.entries(attrs).map(([k, v]) => `data-${k}="${esc(v)}"`).join(' ')}>${label}</button>`;
@@ -411,6 +411,7 @@ function taskCard(t) {
   else if (t.type === 'send_approval' && t.plain) { const m = fill('draft', p); body = msgBlock('Send with the draft', m); acts = tcopy(m, 'Message') + tb('Open the feature', { openorder: t.order_id }, 'primary'); }
   else if (t.type === 'silent_ok') acts = tb('Publish as drafted', { order: t.order_id, oact: 'approved', why: 'silent' }, 'success') + tb('Open the feature', { openorder: t.order_id });
   else if (t.type === 'featured') oMsg('featured', 'Ask to add to LinkedIn Featured', 'featured', 'Asked');
+  else if (t.type === 'newsroom') { oMsg('newsroom', 'Newsroom link ask (send once)', 'newsroom', 'Asked'); acts += tb('No press page', { order: t.order_id, oact: 'newsroom', why: 'none' }, 'ghost'); }
   else if (t.type === 'thanks') oMsg('thanks', 'Day-7 thank-you', 'thanks', 'Thank-you sent');
   else if (t.type === 'reply') { body = t.sub ? msgBlock('Their reply', t.sub) : ''; acts = tli(t.linkedin) + tb('Log their answer', { openlead: t.lead_id }, 'primary'); }
   else acts = tb(t.type === 'publish' ? 'Open and publish' : t.type === 'wa_share' ? 'Open and share' : 'Open the feature', { openorder: t.order_id }, 'primary');
@@ -556,6 +557,7 @@ function renderOrder(notice) {
     act.push(B(st === 'approval' ? 'Send the draft again' : 'Send to leader for approval', { oact: 'send_approval' }, O.needs_internal ? 'g' : ''));
   }
   if (plain && st === 'live' && O.site_url && ['plus', 'pack'].includes(o.tier) && !o.featured_at) act.push(copyBtn(fill('featured', p, '', v), 'Featured ask', 'g') + B('Asked to add to Featured', { oact: 'featured' }, 'g'));
+  if (plain && st === 'live' && O.site_url && ['plus', 'pack'].includes(o.tier) && o.featured_at && !o.newsroom_at) act.push(copyBtn(fill('newsroom', p, '', v), 'Newsroom ask', 'g') + B('Newsroom ask sent', { oact: 'newsroom' }, 'g') + B('No press page', { oact: 'newsroom', why: 'none' }, 'g'));
   if (plain && st === 'live' && !o.thanks_at) act.push(copyBtn(fill('thanks', p), 'Thank-you', 'g') + B('Thank-you sent', { oact: 'thanks' }, 'g'));
   if (['approved', 'scheduled', 'live'].includes(st)) act.push(B(st === 'live' ? 'Update post links' : 'Mark published', { publishbox: 1 }));
   if (['approved', 'scheduled'].includes(st)) act.push(B('Change date', { datebox: 1 }, 'g'));
@@ -750,7 +752,7 @@ async function vSettings() {
     ${[['note', 'Message 1: the connection note'], ['m2', 'Message 2: the day they accept (with the plans image)'], ['m3', 'Message 3: next day, if silent'], ['m4', 'Message 4: next day, if silent'], ['m5', 'Message 5: Friday, with the Brief link'],
       ['pay', 'They chose a plan: payment link'], ['pay_remind', 'Not paid in 3 days: one reminder'], ['question', 'After payment: the one question'], ['draft', 'Sending the draft'],
       ['cheap', 'Reply: too expensive'], ['more', 'Reply: tell me more'], ['allon', 'Reply: "it is all on my LinkedIn"'], ['later', 'Said later: the 14-day reminder'], ['no_brief', 'Said no: ask once about the Brief'],
-      ['featured', 'Plus, once live: add the article to LinkedIn Featured'], ['thanks', 'Day 7: thank-you and repost ask']]
+      ['featured', 'Plus, once live: add the article to LinkedIn Featured'], ['newsroom', 'Plus, a week later: newsroom link (only if they have a press page)'], ['thanks', 'Day 7: thank-you and repost ask']]
       .map(([k, v]) => `<label class="f"><span>${v}</span><textarea name="${k}" style="min-height:${k === 'note' ? 70 : 100}px">${esc((s.templates || {})[k] || '')}</textarea>${k === 'note' ? `<small class="sub" data-notelen></small>` : ''}</label>`).join('')}
     <button class="btn" type="submit">Save messages</button></form>`;
   const nl = document.querySelector('[data-notelen]'), nt = document.querySelector('#tpf textarea[name=note]');
