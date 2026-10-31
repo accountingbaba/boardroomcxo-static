@@ -13,3 +13,13 @@
 
 /script.js
   Cache-Control: public, max-age=86400
+
+# Unlisted Boardroom Moves plans page: shared only in DMs, keep out of search
+/moves-plans
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/moves-plans.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/images/moves-plans/*
+  X-Robots-Tag: noindex
