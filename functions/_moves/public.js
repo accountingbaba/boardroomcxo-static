@@ -20,6 +20,15 @@ const FUNCTIONS = [
 const fnPage = role => (FUNCTIONS.find(([re]) => re.test(role || '')) || []).slice(1);
 const headline = o => `${o.name} joins ${o.company} as ${o.role_title}`;
 const altOf = o => `${o.name}, ${o.role_title}, ${o.company}`;
+// The free weekly Brief: one roundup page per Thursday, shown only once the team has pasted the Brief's LinkedIn link.
+// Names come from the leads the desk put in that Brief; anyone who declined, was removed or took a paid plan is left out.
+const BRIEF_IN = "stage NOT IN ('removed', 'declined', 'linked')";
+async function publishedBriefs(db, limit = 60) {
+  return ((await db.prepare("SELECT substr(key, 7) AS d, value AS link FROM meta WHERE key LIKE 'brief:%' AND value <> '' ORDER BY key DESC LIMIT ?").bind(limit).all()).results || [])
+    .filter(r => /^\d{4}-\d{2}-\d{2}$/.test(r.d));
+}
+const briefNames = (db, d) => db.prepare(`SELECT name, role_title, company, prev_role, linkedin FROM leads WHERE brief_date = ? AND ${BRIEF_IN} ORDER BY name`).bind(d).all().then(r => r.results || []);
+const briefTitle = d => `Leadership moves this week: ${niceDate(d + 'T12:00:00Z')}`;
 
 // The website text the team pastes: blank lines split paragraphs, "## " starts a subheading, "> " a quote.
 function prose(text) {
@@ -103,6 +112,13 @@ function page({ title, description, canonical, image, jsonld, robots = 'index, f
 .mv-services a{border-bottom:1px solid var(--ink)}
 .mv-related{margin:0 0 56px}
 .mv-related .mv-grid{margin:16px 0 0}
+.mv-week a{border-bottom:1px solid var(--line)}
+.mv-brief-list{margin:40px 0 0;max-width:820px}
+.mv-brief-list li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px;padding:18px 0;border-bottom:1px solid var(--line)}
+.mv-brief-list strong{font-family:var(--font-display);font-weight:500;font-size:1.25rem}
+.mv-brief-list span{color:var(--ink-2)}
+.mv-brief-src{margin:28px 0 0;color:var(--ink-2)}
+.mv-brief-src a{border-bottom:1px solid var(--ink)}
 @media(max-width:860px){.mv-article{grid-template-columns:1fr;gap:32px}.mv-side{position:static;border-left:0;border-top:1px solid var(--line);padding:24px 0 0}.mv-week li{grid-template-columns:1fr;gap:4px}}
 </style>
 </head>
@@ -155,17 +171,18 @@ export async function renderHub(env) {
       (SELECT text FROM contents c WHERE c.order_id = o.id AND c.platform = 'website') AS website,
       (SELECT 1 FROM images i WHERE i.order_id = o.id AND i.kind = 'website') AS has_img
     FROM orders o WHERE ${LIVE} ORDER BY o.live_at DESC LIMIT 400`).all()).results || [];
-  const featured = rows.filter(isDedicated), notes = rows.filter(r => !isDedicated(r));
-  const weeks = {};
-  for (const n of notes) { const w = n.slot_date || String(n.live_at).slice(0, 10); (weeks[w] = weeks[w] || []).push(n); }
+  const featured = rows.filter(isDedicated);
+  const briefs = await publishedBriefs(db, 8);
+  for (const b of briefs) b.names = await briefNames(db, b.d);
+  const shown = briefs.filter(b => b.names.length);
   const cards = featured.map(o => `<a class="mv-card" href="/moves/${esc(o.slug)}">${o.has_img ? `<img src="/moves/img/${esc(o.slug)}" alt="${esc(altOf(o))}" loading="lazy" width="1200" height="630">` : ''}
     <div><time datetime="${esc(String(o.live_at).slice(0, 10))}">${niceDate(o.live_at)}</time><h3>${esc(o.name)}</h3><p>${esc(o.role_title)} at ${esc(o.company)}</p></div></a>`).join('');
-  const weekBlocks = Object.keys(weeks).sort().reverse().map(w => `<section class="mv-week"><h2>Moves of the week · ${niceDate(w + 'T12:00:00Z')}</h2><ul>${weeks[w].map(n =>
-    `<li id="${esc(n.slug)}"><strong>${esc(n.name)}</strong><span>${esc(n.role_title)} at ${esc(n.company)}${n.website ? '. ' + esc(firstPara(n.website)) : ''}</span></li>`).join('')}</ul></section>`).join('');
+  const weekBlocks = shown.map(b => `<section class="mv-week" id="brief-${b.d}"><h2><a href="/moves/brief/${b.d}">The Brief · ${niceDate(b.d + 'T12:00:00Z')}</a></h2><ul>${b.names.map(n =>
+    `<li><strong>${esc(n.name)}</strong><span>${esc(n.role_title)} at ${esc(n.company)}</span></li>`).join('')}</ul></section>`).join('');
   const body = `<div class="mv-wrap">
 <section class="mv-hero"><p class="mv-crumb"><a href="/">Home</a> / Boardroom Moves</p><h1>Boardroom Moves: who just moved in Indian retail, D2C and consumer leadership</h1>
 <p class="lead">Leadership appointments across retail, jewellery, D2C and consumer brands, announced on the BoardRoom CXO LinkedIn page and recorded here. Every feature is approved by the leader before it goes live.</p></section>
-${featured.length ? `<div class="mv-grid">${cards}</div>` : ''}${weekBlocks}${!rows.length ? '<p class="mv-empty">The first Boardroom Moves features appear here soon.</p>' : ''}
+${featured.length ? `<div class="mv-grid">${cards}</div>` : ''}${weekBlocks}${!featured.length && !shown.length ? '<p class="mv-empty">The first Boardroom Moves features appear here soon.</p>' : ''}
 ${ctaBlock}</div>`;
   const jsonld = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Boardroom Moves', url: SITE + '/moves',
     isPartOf: { '@type': 'WebSite', name: 'Boardroom CXO', url: SITE + '/' },
@@ -223,6 +240,33 @@ ${relatedBlock}${ctaBlock}</div>`;
   return html(page({ title, description, canonical: url, image, jsonld, body }));
 }
 
+export async function renderBrief(env, d) {
+  const db = env.MOVES_DB;
+  await ensureSchema(db);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) return notFound();
+  const link = (await db.prepare('SELECT value FROM meta WHERE key = ?').bind('brief:' + d).first() || {}).value || '';
+  const names = link ? await briefNames(db, d) : [];
+  if (!names.length) return notFound();
+  const url = `${SITE}/moves/brief/${d}`, title = briefTitle(d);
+  const description = `${names.length} leadership ${names.length === 1 ? 'move' : 'moves'} in Indian retail, jewellery, D2C and consumer brands: ${names.slice(0, 3).map(n => `${n.name} (${n.company})`).join(', ')}${names.length > 3 ? ' and more' : ''}.`.slice(0, 158);
+  const list = names.map(n => `<li><strong>${n.linkedin ? `<a href="${esc(n.linkedin)}" target="_blank" rel="noopener nofollow">${esc(n.name)}</a>` : esc(n.name)}</strong><span>${esc(n.role_title)} at ${esc(n.company)}${n.prev_role ? `. Previously ${esc(n.prev_role)}` : ''}</span></li>`).join('');
+  const body = `<div class="mv-wrap">
+<section class="mv-hero"><p class="mv-crumb"><a href="/">Home</a> / <a href="/moves">Boardroom Moves</a> / The Brief</p><p class="mv-meta">The Brief · ${niceDate(d + 'T12:00:00Z')}</p>
+<h1 style="margin-top:14px">${esc(title)}</h1>
+<p class="lead">${names.length} leadership ${names.length === 1 ? 'move' : 'moves'} across retail, jewellery, D2C and consumer brands this week, from the Boardroom CXO weekly Brief.</p></section>
+<ul class="mv-brief-list">${list}</ul>
+<p class="mv-brief-src">Written from public LinkedIn announcements. <a href="${esc(link)}" target="_blank" rel="noopener">Read the Brief on LinkedIn</a>. To correct or remove an entry, write to <a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a>.</p>
+${ctaBlock}</div>`;
+  const jsonld = { '@context': 'https://schema.org', '@graph': [
+    { '@type': 'NewsArticle', headline: title, url, mainEntityOfPage: { '@type': 'WebPage', '@id': url }, description, datePublished: d, dateModified: d,
+      image: [SITE + '/images/Homepage-Meta-removebg-preview.png'],
+      author: { '@type': 'Organization', name: 'Boardroom CXO', url: SITE + '/' }, publisher: { '@type': 'Organization', name: 'Boardroom CXO', url: SITE + '/', logo: { '@type': 'ImageObject', url: SITE + '/images/logo-boardroomcxo.png' } },
+      isPartOf: { '@type': 'CollectionPage', name: 'Boardroom Moves', url: SITE + '/moves' },
+      mentions: names.map(n => ({ '@type': 'Person', name: n.name, jobTitle: n.role_title, worksFor: { '@type': 'Organization', name: n.company } })) },
+    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: 'Boardroom Moves', item: SITE + '/moves' }, { '@type': 'ListItem', position: 3, name: 'The Brief, ' + niceDate(d + 'T12:00:00Z'), item: url }] }] };
+  return html(page({ title: `${title} | Boardroom Moves Brief`, description, canonical: url, image: SITE + '/images/Homepage-Meta-removebg-preview.png', jsonld, body }));
+}
+
 export async function serveProfileImage(env, slug) {
   const db = env.MOVES_DB;
   await ensureSchema(db);
@@ -237,7 +281,8 @@ export async function renderSitemap(env) {
   await ensureSchema(db);
   const rows = (await db.prepare(`SELECT slug, tier, pack_id, live_at, updated_at FROM orders WHERE ${LIVE} ORDER BY live_at DESC`).all()).results || [];
   const urls = [`<url><loc>${SITE}/moves</loc>${rows[0] ? `<lastmod>${String(rows[0].live_at).slice(0, 10)}</lastmod>` : ''}</url>`]
-    .concat(rows.filter(isDedicated).map(r => `<url><loc>${SITE}/moves/${r.slug}</loc><lastmod>${String(r.updated_at || r.live_at).slice(0, 10)}</lastmod></url>`));
+    .concat(rows.filter(isDedicated).map(r => `<url><loc>${SITE}/moves/${r.slug}</loc><lastmod>${String(r.updated_at || r.live_at).slice(0, 10)}</lastmod></url>`))
+    .concat((await publishedBriefs(db, 500)).map(b => `<url><loc>${SITE}/moves/brief/${b.d}</loc><lastmod>${b.d}</lastmod></url>`));
   return new Response(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`,
     { headers: { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=3600' } });
 }
