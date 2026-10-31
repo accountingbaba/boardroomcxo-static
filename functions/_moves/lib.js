@@ -102,12 +102,12 @@ export const DEFAULTS = {
   duties: { outreach: 'paridhiwork28@gmail.com', content: 'paridhiwork28@gmail.com', approvals: 'ketul4nil@gmail.com', checkins: 'paridhiwork28@gmail.com' },
   linkedin_account: 'Sagar',   // every Moves message goes out from Sagar's LinkedIn
   internal_approval_first: 0,  // Ketul's check on the first paid features was dropped (31 Oct)
-  books_sac: '',              // SAC code for the invoice: to be confirmed by the CA before invoices are made
+  books_sac: '998361',        // SAC 998361 Advertising services (GST Council explanatory notes: writing and placing ads). Set live 31 Oct; Ketul's CA can confirm
   whatsapp_community: '100+ CXOs',
   moves_next: 88,             // the next "Boardroom Moves #" number for dedicated posts (#87 was the last made in Canva)
   // LinkedIn messages the team sends by hand. Admins edit them on the Settings screen.
   // Filled in: {{First Name}}, {{Company}}, {{Samples Link}}, {{Brief Day}}, {{Brief Link}}, {{Slots}}, {{Pay Link}}, {{Total}}, {{Article Link}}.
-  // note and m2 to m5 are word for word from the plan. The rest were drafted on 31 Oct for Ketul to check.
+  // note and m2 to m5 are word for word from the plan. The rest were drafted on 31 Oct and approved by Ketul the same day.
   templates: {
     note: "Congrats on the new role at {{Company}}. Saw the news, well deserved.",
     m2: "Congrats again on the move. We'd like to feature it on Boardroom CXO. Plans are in the image, samples of each are here: {{Samples Link}}. Most people go for Plus at Rs 3,540. We do 5 a week. Reply with the plan you'd like, or Brief for the free mention.",
