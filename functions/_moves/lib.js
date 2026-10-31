@@ -30,14 +30,16 @@ export const slugify = s => String(s || '').toLowerCase().normalize('NFKD').repl
 
 // ── Schema ───────────────────────────────────────────────────────────────────
 // Applied on first use; bump SCHEMA_VERSION and add statements to change it. Never ask the owner to run SQL.
-const SCHEMA_VERSION = 3;
+const SCHEMA_VERSION = 4;
 // Changes after the first version, applied once each in order.
 const MIGRATIONS = {
   2: [`ALTER TABLE staff ADD COLUMN desks TEXT`],
   // The 5-message flow (31 Oct 2026): M2 to M5, the weekly Brief and the 14-day "later" reminder.
   3: ['m2_date', 'm3_date', 'm4_date', 'm5_date', 'brief_date', 'later_date', 'later_sent', 'asked_brief'].map(c => `ALTER TABLE leads ADD COLUMN ${c} TEXT`)
     .concat([`ALTER TABLE orders ADD COLUMN pay_link TEXT`, `ALTER TABLE orders ADD COLUMN pay_sent_at TEXT`, `ALTER TABLE orders ADD COLUMN pay_remind_at TEXT`,
-      `ALTER TABLE orders ADD COLUMN thanks_at TEXT`, `ALTER TABLE orders ADD COLUMN featured_at TEXT`])
+      `ALTER TABLE orders ADD COLUMN thanks_at TEXT`, `ALTER TABLE orders ADD COLUMN featured_at TEXT`]),
+  // The newsroom ask (31 Oct 2026): set when the team asked once, or found the company has no press page.
+  4: [`ALTER TABLE orders ADD COLUMN newsroom_at TEXT`]
 };
 const SCHEMA = [
   `CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT)`,
@@ -124,7 +126,8 @@ export const DEFAULTS = {
     later: "Hi {{First Name}}, coming back as promised. Would you like the feature now? Samples are here: {{Samples Link}}",
     no_brief: "No problem at all. Would you be okay with a short free mention in this week's Brief?",
     thanks: "Hi {{First Name}}, thanks again for letting us feature your move. If you get a moment, a repost would help it reach more people.",
-    featured: "Your article is live here: {{Article Link}}. If you add it to the Featured section of your LinkedIn profile, it shows up for anyone who looks you up."
+    featured: "Your article is live here: {{Article Link}}. If you add it to the Featured section of your LinkedIn profile, it shows up for anyone who looks you up.",
+    newsroom: "If {{Company}} keeps a press or 'in the news' page, the article is here if you'd like to add it: {{Article Link}}"
   }
 };
 export async function getSettings(db) {
