@@ -181,7 +181,7 @@ export async function renderHub(env) {
     `<li><strong>${esc(n.name)}</strong><span>${esc(n.role_title)} at ${esc(n.company)}</span></li>`).join('')}</ul></section>`).join('');
   const body = `<div class="mv-wrap">
 <section class="mv-hero"><p class="mv-crumb"><a href="/">Home</a> / Boardroom Moves</p><h1>Boardroom Moves: who just moved in Indian retail, D2C and consumer leadership</h1>
-<p class="lead">Leadership appointments across retail, jewellery, D2C and consumer brands, announced on the BoardRoom CXO LinkedIn page and recorded here. Every feature is approved by the leader before it goes live.</p></section>
+<p class="lead">Leadership appointments across retail, jewellery, D2C and consumer brands, announced on the Boardroom CXO LinkedIn page and recorded here. Featured leaders see their write-up before it goes live; the weekly Brief is written from public LinkedIn announcements.</p></section>
 ${featured.length ? `<div class="mv-grid">${cards}</div>` : ''}${weekBlocks}${!featured.length && !shown.length ? '<p class="mv-empty">The first Boardroom Moves features appear here soon.</p>' : ''}
 ${ctaBlock}</div>`;
   const jsonld = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Boardroom Moves', url: SITE + '/moves',
