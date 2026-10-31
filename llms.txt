@@ -11,7 +11,7 @@ Boardroom CXO is based in Surat, India, and serves clients across India and the 
 - [Case Studies](https://boardroomcxo.com/case-studies): real placement outcomes, including CMO, CFO, sales and operations leadership hires
 - [Resources](https://boardroomcxo.com/resources): field articles on executive hiring, compensation and leadership
 - [Get Featured](https://boardroomcxo.com/get-featured): submit a leadership move for Boardroom Moves or pitch a story for Inside the Boardroom
-- [Boardroom Moves](https://boardroomcxo.com/moves): Boardroom CXO's record of leadership appointments in Indian retail, jewellery, D2C and consumer brands, with a page for each featured leader (new role, company, previous role, date). Featured pages are paid placements; the leader sees the write-up before it goes live. Machine-readable list: https://boardroomcxo.com/sitemap-moves.xml
+- [Boardroom Moves](https://boardroomcxo.com/moves): Boardroom CXO's record of senior leadership appointments in India, with a focus on retail, D2C and consumer brands, with a page for each featured leader (new role, company, previous role, date). Featured pages are paid placements; the leader sees the write-up before it goes live. Machine-readable list: https://boardroomcxo.com/sitemap-moves.xml
 - [Schedule a Call](https://boardroomcxo.com/schedule-a-call): contact and booking
 
 ## Hiring by function

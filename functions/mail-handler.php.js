@@ -99,6 +99,7 @@ export async function onRequestPost(context) {
     const role = cleanField(form.get('role'));
     const service = cleanField(form.get('service'));
     const message = String(form.get('message') ?? '').trim();
+    const heardFrom = cleanField(form.get('heard_from'));
 
     if (!firstName || !lastName || !isValidEmail(email) || !company || !service) {
       return json({ success: false, message: 'Missing required fields' }, 400);
@@ -111,7 +112,8 @@ export async function onRequestPost(context) {
       + `Phone: ${phone}\n`
       + `Company: ${company}\n`
       + `Role: ${role}\n`
-      + `Looking for: ${service}\n\n`
+      + `Looking for: ${service}\n`
+      + `Heard about us: ${heardFrom || 'not given'}\n\n`
       + `Message:\n${message}\n`;
     replyTo = email;
   }
