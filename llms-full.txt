@@ -3,6 +3,595 @@
 > Complete text of every published article from Boardroom CXO, an executive search firm for retail, jewelry and D2C brands in India and the UAE. For summaries, hiring pages and contact details, see https://boardroomcxo.com/llms.txt. Canonical URLs are listed per article below.
 
 ================================================================================
+# How to Announce a New CXO Appointment in India
+URL: https://boardroomcxo.com/article-announce-cxo-appointment-india
+Published: 2026-10-31
+Author: CA Ketul Patel, Founder, Boardroom CXO
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+## Key Takeaways
+
+- Announce in this order: the stock exchange filing if the company is listed, then the company announcement, then the leader's own LinkedIn post, then the outlets that track moves.
+- Agree the exact title, start date and headshot before anyone posts. A title that reads differently in three places is a common mistake.
+- A LinkedIn post scrolls away in days. A page on an indexed website is what comes up when someone searches the leader's name months later.
+
+To announce a new CXO appointment in India, go in this order: the stock exchange filing if the company is listed, then the company's own announcement, then the leader's LinkedIn post, and then the outlets that track leadership moves. Each step uses the same title, the same start date and the same photo.
+
+Order matters because moves are frequent and easy to miss. Sapphire Human Capital tracked 4,361 CXO and senior leadership movements in India between April 2025 and March 2026, as reported by Business Today and MediaNews4U in August 2026. That is more than 80 a week. A single post on a busy week gets lost.
+
+At Boardroom CXO we run executive search for retail, jewellery and D2C brands, and through Boardroom Moves we record senior leadership moves in India every week. This guide is what we see work, written for the new leader and for the founder or HR head announcing them.
+
+## Step 1: agree the facts before anyone posts
+
+Before any announcement, the company and the leader should agree five things in writing: the exact title, the start date, the reporting line, a one-line description of the role and one approved headshot.
+
+This sounds basic, but it is where many announcements go wrong. The company post says "Chief Marketing Officer", the leader's LinkedIn says "CMO, India", and a trade site writes "Head of Marketing". Anyone searching later sees three different jobs. Pick one version of the title and use it everywhere.
+
+Also agree who goes first. In most cases the company announces and the leader reshares and posts the same day.
+
+## Step 2: if the company is listed, the stock exchange filing comes first
+
+Listed companies in India must tell the stock exchanges about changes in directors, key managerial personnel and senior management under SEBI's Listing Regulations, so the filing comes before any public post.
+
+These filings are made under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, read with Para A of Part A of Schedule III. You can see real examples on the BSE and NSE websites. Nestlé India, for instance, filed one for senior management changes in December 2024. The format and the details to include are set by SEBI circulars.
+
+The timing rules are strict and they change, so ask the company secretary when the filing will go out, and plan the LinkedIn posts and press note for after it. Private companies have no such filing, so they start at Step 3.
+
+## Step 3: the company announcement
+
+The company announcement should be short: who has joined, in what role, from when, where they worked before, and one line on what they will lead. It goes on the company's LinkedIn page and, if there is one, its website newsroom.
+
+A quote from the CEO or founder helps, but only a real one that they have approved. Add the approved headshot. If the company has a press or "in the news" page, add the announcement there too, so it has a permanent home on the company's own site.
+
+## Step 4: the leader's own LinkedIn post
+
+The leader's LinkedIn post should go up the same day as the company post, after the profile headline and current role are updated to match the agreed title.
+
+Keep it simple: thank the previous team, say what drew you to the new company, and tag the company. Reshare the company's post as well. Update the headline first, because people who see the post will click through to the profile, and a profile that still shows the old job causes confusion.
+
+## Where leadership moves in India get covered
+
+Leadership moves in India are covered by trade publications for each sector and by sites and LinkedIn pages that track appointments. These are the ones we see most often, as of October 2026:
+- Storyboard18 runs regular "CXO Moves" roundups in its Brand Makers section, mostly marketing, media and consumer brand moves.
+- People Matters reports leadership appointments for an HR audience and has run a weekly tracker called Movement Matters.
+- The Economic Times industry sites, such as ETRetail and ETHRWorld, report appointments in their sectors.
+- IndianRetailer.com reports appointments at retail and consumer companies.
+- CXO Movements is a site that tracks executive leadership changes across industries, gathered from public news.
+- Boardroom Moves by Boardroom CXO posts a weekly Brief on LinkedIn every Thursday with 5 to 6 leaders who moved that week, written from public announcements, with nothing asked of the leader. Moves are also listed on boardroomcxo.com/moves, and each month we publish the counts, as in the October 2026 report.
+
+The trade outlets choose what they cover. To give a move a better chance, send the company announcement, the headshot and three lines on previous roles to the journalist who writes the appointments column. Send it once, on the day of the announcement.
+
+## Make sure the move leaves a page that ranks for your name
+
+The part of an announcement that lasts is the page that comes up when someone searches the leader's name, so it is worth making sure one exists.
+
+LinkedIn posts drop out of the feed within days. Months later, a board member, an investor or a future employer will search your name, and they will see whatever pages Google shows. When we research a senior candidate, a Google search of their name is one of the first things we check. We cover the rest of that list in what a search firm sees when it Googles you.
+
+This is why Boardroom Moves offers Featured placement. With the Plus option, the move gets a dedicated LinkedIn post and an article on boardroomcxo.com written to rank for the leader's name. The leader sees the draft before it goes live and can ask for changes. If we hear nothing within 48 hours, it goes live as drafted. You can tell us about a move here.
+
+## Common mistakes to avoid
+
+Most weak announcements come from a handful of avoidable mistakes:
+- A different title in the company post, the LinkedIn profile and the press.
+- For listed companies, posting on LinkedIn before the stock exchange filing.
+- No headshot, so outlets either skip the story or use an old photo.
+- Changing the LinkedIn headline days after the post, so early visitors see the old role.
+- Leaving the announcement only on LinkedIn, with no page on the company site or anywhere else that will still be found next year.
+
+If you are hiring at the top yourself, our team can help with the search. Schedule a call.
+
+## Frequently Asked Questions
+
+### Does a listed company have to disclose a new CXO appointment?
+
+Yes. Under Regulation 30 of the SEBI Listing Regulations, read with Para A of Part A of Schedule III, listed companies disclose changes in directors, key managerial personnel and senior management to the stock exchanges. Check the exact timeline and format with the company secretary.
+
+### Should the company or the leader announce first?
+
+The company first. If it is listed, the stock exchange filing goes out before anything else. Then the company post, then the leader updates their LinkedIn profile and posts the same day.
+
+### Where are leadership moves in India reported?
+
+Trade publications such as Storyboard18 (CXO Moves), People Matters, ETRetail, ETHRWorld and IndianRetailer.com, tracking sites such as CXO Movements, and LinkedIn series such as Boardroom Moves by Boardroom CXO.
+
+### Do I need a press release for a CXO appointment?
+
+Not always. A listed company needs its stock exchange filing. For a private company, a short announcement on the company LinkedIn page and website is often enough, sent to the trade journalists who cover appointments in that sector.
+
+### How does Boardroom Moves cover a leadership move?
+
+Boardroom Moves lists moves in a weekly LinkedIn Brief every Thursday, written from public announcements. With Featured placement, a move gets a dedicated post, and with Plus also an article on boardroomcxo.com. The leader sees the draft first, and it goes live after 48 hours with no reply.
+
+## Sources
+
+- Business Today, Corporate India is reshaping its boardrooms at a 91% faster pace, August 2026
+- MediaNews4U, Indian firms favour internal promotions as MNC to Indian company CXO moves rise to 59%: Sapphire Human Capital report, August 2026
+- Nestlé India, Regulation 30 and Schedule III of the SEBI Listing Regulations: Disclosure of changes in the Senior Management of the Company, December 2024
+- Storyboard18, CXO Moves: Exec movements across PUMA, Mother Dairy, WPP Media, Reliance Retail and more, December 2025
+- People Matters, There you go! Movement Matters, a weekly moves tracker, June 2022
+- CXO Movements, CXO Movements, accessed October 2026
+
+================================================================================
+# What a Search Firm Sees When It Googles You
+URL: https://boardroomcxo.com/article-what-search-firm-sees-when-it-googles-you
+Published: 2026-10-31
+Author: CA Ketul Patel, Founder, Boardroom CXO
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+## Key Takeaways
+
+- Boardroom CXO checks three things when it looks up a senior candidate: LinkedIn against the CV, a Google search of the name, and what the person posts and comments on LinkedIn.
+- Fix mismatched titles, dates and company names before anyone compares them. LinkedIn shows your edits to anyone viewing your profile as soon as you save them.
+- Make sure at least one page on an indexed website is about your current role, so a search of your name shows who you are now.
+
+When Boardroom CXO looks up a senior candidate, we check three things, in this order: whether the titles, dates and companies on their LinkedIn match their CV, what comes up when we Google their name, and what they post and comment on LinkedIn.
+
+We run executive search for retail, jewellery and D2C brands in India and the UAE, so looking leaders up is part of how we run a search. Through Boardroom Moves we also record senior leadership moves in India every week. This guide explains each of the three checks, and what you can do about each one before anyone searches for you.
+
+We are not the only ones who look. Board members, investors and future employers search a leader's name too, and they see much the same page we do.
+
+## Check 1: does your LinkedIn match your CV?
+
+The first thing we check is whether the titles, dates and companies on your LinkedIn profile match the CV you sent. Both should tell the same story, line by line.
+
+We look at three things on each line: the title, the start and end dates, and the company name. A CV is written for one application. A LinkedIn profile may have been written years earlier and updated in a hurry. Over time the two can drift apart. A promotion shows on one and not the other. A job that ended in March says March on the CV and June on LinkedIn. A company that was renamed appears under two different names.
+
+Each gap is a question you would rather answer before anyone asks it. What you can do:
+- Put your CV next to the Experience section of your LinkedIn profile and check every title, date and company name.
+- Where they differ, decide which version is right and fix the other one. LinkedIn lets you edit or remove any position from the Experience section.
+- If you held two roles at one company, list both, each with its own dates, in both places.
+- If a company changed its name, use the same name on the CV and on LinkedIn.
+- Update your headline to your current title. LinkedIn says anyone who views your profile sees your edits as soon as you save them.
+
+One practical point: if you are only correcting old dates, look at the "Share profile updates" setting under Visibility in LinkedIn's Settings first. When notifications are on, your network may be told about changes to your profile, and a date fix is not news.
+
+## Check 2: what comes up when we Google your name?
+
+Next we search your name on Google, then your name with your company name, and read what comes up. Anyone who searches for you sees much the same page.
+
+For a senior leader, the useful results are pages that say who you are now: your LinkedIn profile, the company's leadership page, an announcement of your appointment, an interview or an article about your role. When you search yourself, the weak spots are easy to see:
+- Nothing about your current role, only pages about a job you left years ago.
+- Someone with the same name filling the first page, so a reader cannot tell which person is you.
+- An out of date profile on a site you no longer use.
+- Your phone number or home address on a directory site.
+
+To see what others see, search in a private browser window, signed out of Google. Search your name alone, then your name with your current company. Then:
+- Make sure at least one page on a website Google indexes is about your current role. The company's leadership or news page is a good place. If it does not exist, ask for one.
+- Close or update old profiles you no longer use.
+- If your contact details show up, Google's "Results about you" tool lets you find results with your phone number, home address or email and ask for them to be removed from Google Search, in the markets where it is available. Google notes that the information still exists on the source website, so you would also need to ask that site's owner to take it down.
+
+A new role is a good moment to make sure that page exists. Boardroom Moves offers Featured placement for this. With the Plus option, the move gets a dedicated LinkedIn post on the Boardroom CXO page and an article on boardroomcxo.com written to rank for the leader's name. The leader sees the draft first and can ask for changes. If we hear nothing within 48 hours, it goes live as drafted. You can tell us about your move here. If the move has not been announced yet, start with how to announce a new CXO appointment in India.
+
+## Check 3: what do you post and comment on LinkedIn?
+
+The third check is what you post and comment on LinkedIn: the tone you write in and the topics you choose. Both are public.
+
+Comments matter here as well as posts. A reply under someone else's post is public too. For a senior leader, the questions are simple. Does the tone sound like someone you would put in front of a board, a team or a customer? Are the topics ones you are happy to be linked with? Is there anything about a former employer that you would not say in an interview?
+
+What you can do:
+- Read back through your own posts and comments from the past year as if you were a stranger deciding whether to hire you.
+- Edit or delete anything you would not say in a board meeting.
+- Post now and then about your actual work: a launch, a team you built, a lesson from your sector. A few real posts about your field give a reader something to go on.
+- Keep disagreements polite. A sharp reply can still be read long after the thread is forgotten.
+
+## How to run the same three checks on yourself
+
+Run all three checks on yourself in one sitting: compare LinkedIn with your CV, Google your name in a private window, then read your recent posts and comments.
+- Open your CV and your LinkedIn Experience section side by side. Fix every title, date and company name that does not match.
+- Search your name, and your name with your current company, signed out of Google. Note whether any page on the first screen is about your current role.
+- Scroll through your LinkedIn posts and comments. Read them for tone and topics, not for likes.
+
+Do it before you start looking for a new role, and again after any move, once the new title is public.
+
+## If you are hiring a senior leader
+
+If you are a founder or HR head hiring at the top, these three checks are how Boardroom CXO looks a senior candidate up online during a search.
+
+We run executive search for retail, jewellery and D2C brands in India and the UAE. To talk about a role you need to fill, schedule a call. To see which leaders moved recently, browse Boardroom Moves.
+
+## Frequently Asked Questions
+
+### What do search firms check about senior candidates online?
+
+At Boardroom CXO we check three things, in this order: whether the titles, dates and companies on LinkedIn match the CV, what comes up when we search the person's name and their name with their company on Google, and what they post and comment on LinkedIn, including the tone and the topics.
+
+### What should I do if my LinkedIn dates do not match my CV?
+
+Fix them before anyone compares the two. Decide which version is correct, then edit the position in the Experience section of your LinkedIn profile or update the CV. If you are only correcting old dates, check the Share profile updates setting first, so your network is not told about a change that is not news.
+
+### How do I make sure a page about my current role shows up on Google?
+
+Ask your company to add you to its leadership or news page, and make sure your LinkedIn headline shows your current title. An appointment announcement or article on an indexed site also helps. Boardroom Moves Featured placement with the Plus option includes an article on boardroomcxo.com written to rank for the leader's name.
+
+### Can I remove my phone number or address from Google results?
+
+Google's Results about you tool lets you find results showing your phone number, home address or email and ask for them to be removed from Google Search, in the markets where it is available. Google says the information still exists on the source page, so you would also need to ask that website's owner to remove it.
+
+### Do I see the Boardroom Moves article before it goes live?
+
+Yes. With Featured placement, the leader sees the draft first and can ask for changes. If we hear nothing within 48 hours, it goes live as drafted. With the Plus option, the move also gets an article on boardroomcxo.com written to rank for the leader's name, alongside the LinkedIn post.
+
+## Sources
+
+- LinkedIn Help, Share profile updates, accessed October 2026
+- LinkedIn Help, Manage your profile Experience section, accessed October 2026
+- Google Search Help, Find and remove personal info in Google Search results, accessed October 2026
+
+================================================================================
+# Executive PR in India: Agency, Paid Profile or Announcement Feature
+URL: https://boardroomcxo.com/article-executive-pr-india-options
+Published: 2026-10-31
+Author: CA Ketul Patel, Founder, Boardroom CXO
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+## Key Takeaways
+
+- A senior leader in India has four main routes to visibility: a PR agency or personal branding service, a paid profile, an announcement feature and their own LinkedIn. Each suits a different goal.
+- A profile or list entry that you or your company paid for is an advertisement. Indian norms say it should be clearly labelled, with words such as Advertisement, Advertorial or Sponsored.
+- Whatever you choose, make sure it leaves a clear, accurate page that comes up when someone searches your name.
+
+A senior leader in India has four main ways to build executive PR: hire a PR agency or personal branding service, pay for a profile in a magazine or list, take an announcement feature when you move, or do it yourself on LinkedIn. Each suits a different need.
+
+At Boardroom CXO we run executive search for retail, jewellery and D2C brands. During a search we look up senior candidates, so we see what each option leaves behind online. We also run one of them, Boardroom Moves, so read this knowing that.
+
+## The four options at a glance
+
+Agencies give ongoing support, paid profiles give a feature you pay for, announcement features record a move, and LinkedIn gives you control but costs your time.
+
+## Option 1: a PR agency or personal branding service
+
+A good agency or personal branding service gives you steady, professional help over months, from media pitches to LinkedIn posts, and suits leaders who want ongoing presence but lack time.
+
+BestMediaInfo reported in August 2025 that reflective LinkedIn posts by Indian CMOs and CEOs are often written by boutique agencies. A strategist it spoke to said a monthly retainer can cover three to four ghostwritten posts, a content calendar and comment management. The same agencies write op-eds that appear in leading publications. A marketing leader quoted in the piece said CXOs hire these agencies because they may not find the time to post regularly.
+
+What it is good for. A good agency knows which journalists cover your sector, prepares you for interviews and keeps your LinkedIn active when you are busy. For a leader in a large role, or one handling a sensitive moment, that support is worth having.
+
+What to watch out for. Ask what the agency will do each month, not what it will get you. Editors decide what they cover, so be careful with anyone who promises a set number of articles in named publications. Read every ghostwritten post before it goes out and make sure it sounds like you. BestMediaInfo is blunt about the downside: thought leadership, it says, is "no longer earned".
+
+## Option 2: a paid profile in a magazine or list
+
+A paid profile is advertising that looks like an article. It can be useful as a polished piece to share, but only when it is clearly labelled as paid.
+
+This is not new. In 2021, Newslaundry documented paid features about company chairmen and executives in Indian papers and magazines, carried under tags such as "Focus" rather than "Advertisement". If you are invited to appear in a leader profile, a cover story or a "top leaders" list, and the invitation comes with a fee or a package, it is a paid profile, whatever it is called.
+
+What it is good for. Done openly, there is nothing wrong with a paid profile. A clearly labelled feature is a normal advertisement, and it gives you a well-produced piece to share.
+
+What to watch out for. The risk is the unlabelled kind. The ASCI Code counts a communication as an advertisement if it is paid for, owned or authorised by the advertiser, even if the public may not recognise it as one. And when we look up a candidate, a list that anyone can pay to join tells us very little about them.
+
+## How to spot a paid profile that is not labelled
+
+Look for a clear label on the piece itself, ask who paid, and treat any feature you or your company paid for as an advertisement, whatever it is called.
+
+The Press Council of India's Norms of Journalistic Conduct (2019 edition) say advertisements must be clearly distinguishable from news content. Advertisements or advertorials that look like news should carry the heading "Advertisement/Advertorials" in bold, and supplements should say "Marketing Initiative". In 2025, ASCI added a clause to its Code saying paid posts on media companies' social media handles must carry the disclosure upfront, at the start of the post. What to check:
+- Clear labels. Advertisement, Ad, Advertorial, Sponsored, Partnership, Collaboration or Marketing Initiative all mean the piece was paid for.
+- Soft labels. Newslaundry found paid features tagged "Focus", "Impact Feature", "Brand Connect" and "initiative". ASCI's general secretary told it in 2021 that terms like "focus" or "initiative" may break the council's code.
+- Where the label sits. A tiny note in a page corner, on the contents page or near the masthead is not the same as a label at the top of the piece.
+- Who paid. Ask. If you, your company or your agency paid to appear, it is paid content.
+
+## Option 3: an announcement feature such as Boardroom Moves
+
+An announcement feature records your move when it happens. It suits the moment you join a new company, but it is one moment, not an ongoing campaign.
+
+Several outlets and LinkedIn pages cover leadership moves in India, listed in our guide on how to announce a new CXO appointment in India. Boardroom Moves is ours, and it works in two ways:
+- The weekly Brief goes out on LinkedIn every Thursday. It covers 5 to 6 leaders who moved that week, written from public announcements, with nothing asked of the leader.
+- Featured placement is the paid option. The move gets its own LinkedIn post, and with the Plus option also an article on boardroomcxo.com written to rank for the leader's name. The leader sees the draft first and can ask for changes. If we hear nothing within 48 hours, it goes live as drafted.
+
+On boardroomcxo.com, paid features are marked "Featured placement", so readers can tell them apart from the Brief. Every paid profile should be this easy to spot.
+
+What it is good for. A clear, accurate page about your move that comes up when someone searches your name. When we research a senior candidate, a Google search of their name is one of the first things we check. We cover the rest of that list in what a search firm sees when it Googles you. When someone Googles you before a board meeting, this is what they'll find.
+
+What to watch out for. Boardroom Moves is not a PR campaign. It will not pitch you to journalists or write your LinkedIn posts. With any feature, ours or anyone else's, check how paid features are labelled and whether you get a web page or only a post.
+
+## Option 4: doing it yourself on LinkedIn
+
+Doing it yourself on LinkedIn gives you full control and your own voice. It costs only time, and time is what senior leaders tend to have least of.
+
+What it is good for. Posts in your own words, about real work, read differently from polished copy. Updating your headline on the day you move, writing your own announcement and posting now and then about your team is enough for most leaders.
+
+What to watch out for. The hard part is keeping it going, which is why many CXOs hand the job to an agency. Posts also drop out of the feed within days, so they rarely come up when someone searches your name later.
+
+## Which option should you choose?
+
+Choose by goal: an agency for ongoing presence, LinkedIn for your own voice, an announcement feature for a move, and a paid profile only if it is clearly labelled.
+- Steady presence over a year, with no time to spare: a PR agency or personal branding service.
+- Something to say and time to say it: your own LinkedIn.
+- Just moved: an announcement feature puts the move on record.
+- Offered a paid profile: take it only if it is labelled as paid, and judge it as an advertisement.
+
+Many leaders combine their own LinkedIn with a feature when they move. Browse recent moves on Boardroom Moves, or our October 2026 moves report. If you have just made a move, tell us about it here.
+
+## Frequently Asked Questions
+
+### What is the difference between a PR agency and a personal branding service?
+
+A PR agency usually works on media: pitching stories, preparing you for interviews and placing op-eds. A personal branding or ghostwriting service usually works on your LinkedIn: writing posts, planning a content calendar and managing comments. Many firms now offer both. Before you sign, ask any provider to list exactly what they will do each month.
+
+### Is a paid magazine profile the same as an advertisement?
+
+Yes. The ASCI Code treats any communication that is paid for, owned or authorised by the advertiser as an advertisement, even if the public may not recognise it as one. The Press Council of India's norms say advertorials that look like news should carry the heading Advertisement/Advertorials. A paid profile is not wrong, but it should say it is paid.
+
+### How can I tell if a leader profile was paid for?
+
+Look for a label at the top of the piece, such as Advertisement, Advertorial, Sponsored, Partnership or Marketing Initiative. Be careful with soft tags such as Focus, Impact Feature or Brand Connect, and with disclaimers in tiny print away from the article. If you are unsure, ask the publication who paid for it.
+
+### Is LinkedIn ghostwriting common among Indian CXOs?
+
+BestMediaInfo reported in August 2025 that reflective LinkedIn posts by Indian CMOs and CEOs are often written by boutique agencies, sometimes on a monthly retainer that covers several posts, a content calendar and comment management. If you use one, read every post before it goes out and make sure it sounds like you.
+
+### How does Boardroom Moves label paid features?
+
+Paid features on Boardroom Moves are called Featured placement. With the Plus option, a move also gets an article on boardroomcxo.com written to rank for the leader's name. The leader sees the draft first and can ask for changes, and if there is no reply within 48 hours it goes live as drafted. The weekly Brief is written from public announcements.
+
+## Sources
+
+- BestMediaInfo, From LinkedIn thought leadership to paid panels, CXOs are spending big to stay relevant, August 2025
+- Advertising Standards Council of India, The ASCI Code, accessed October 2026
+- Social Samosa, ASCI's new code mandates media companies to label paid posts, August 2025
+- Press Council of India, Norms of Journalistic Conduct, 2019 edition (text as reproduced by B&B Associates LLP), 2019 edition, accessed October 2026
+- Newslaundry, Fooling the reader: How Indian papers and magazines disguise ads as news, August 2021
+
+================================================================================
+# How a New Leader Gets Covered by Indian Business Media
+URL: https://boardroomcxo.com/article-new-leader-business-media-coverage-india
+Published: 2026-10-31
+Author: CA Ketul Patel, Founder, Boardroom CXO
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+## Key Takeaways
+
+- The appointment is news for about a week. After that, a new leader gets covered for a launch, results the company will share, or a clear view on the category.
+- Match the story to the outlet: sector trade sites for company news, HR and leadership sites for people and workplace views, mainstream papers once the news is big enough.
+- Pitch in one short email to the one journalist who covers your area. For guest columns, read the outlet's rules first: most want original, exclusive, non-promotional pieces.
+
+A new leader in India gets covered by business media by giving each outlet the kind of story it already publishes. First the appointment, for the people-moves pages. Then a launch, results or a clear view on the category, sent in one short email to the right journalist with the photo and facts attached.
+
+Moves are frequent, so the appointment alone does not carry you far. Boardroom Moves tracked 48 senior leadership moves in India announced between 17 and 29 October 2026, as our October 2026 report shows. Marketing and brand roles moved most, with 18 of the 48. A journalist covering your sector sees many of these.
+
+At Boardroom CXO we run executive search for retail, jewellery and D2C brands, and through Boardroom Moves we record senior leadership moves in India every week. This guide is what we see work for a leader in the first months of a new role. The day-of announcement, and the sites that track appointments, are covered in how to announce a new CXO appointment in India.
+
+## What counts as news for a new leader?
+
+News comes in stages for a new leader: the appointment, then something the company does under you, then numbers it shares, and later your view on the category.
+- The appointment. This is news for about a week. After that, a new leader needs a new reason to be in the news.
+- A first move. A launch, a new market, a new format, a partnership or a rebrand. This is company news, and trade sites cover it.
+- Results. Growth, store counts, customer numbers. Only use numbers the company has cleared for public use.
+- A view on the category. What is changing in your sector and why, backed by data. This is the route to interviews and guest columns.
+
+Before you pitch anything, ask one question: would a reader who does not know you find this useful? If the honest answer is no, it is not news yet.
+
+## Which outlets cover what?
+
+Indian business media splits into three groups: sector trade sites for company news, HR and leadership sites for people topics, and mainstream business papers for the biggest stories.
+
+Sector trade sites are where most new leaders start. For retail and consumer brands, ETRetail and IndianRetailer.com both publish outside contributors, and IndianRetailer.com lists founders, CEOs and vice presidents among its contributors. For marketing and brand leaders, Storyboard18 runs Brand Makers, its section on founders, CMOs and brand leaders. exchange4media has a people movement news section and a guest column for advertising, media, marketing and PR experts, and afaqs runs guest articles.
+
+HR and leadership sites suit a CHRO, or any leader with a view on people and work. People Matters reports leadership appointments and invites C-suite executives and HR leaders to write for it. ETHRWorld has sections for HR movements, Leaders Speak and Expert Speak, and publishes guest posts.
+
+Mainstream business papers such as Mint and The Economic Times run opinion sections with columnists and interviews. Do not start with the mainstream papers. Start with the trade sites that already cover your sector, and aim higher once you have company news of a size those papers report.
+
+## How to pitch a journalist
+
+Send one short email to the one journalist who covers your area, with the news in the subject line and the photo and facts attached.
+
+The right journalist is the one whose name is on the last few stories like yours in that outlet. Read their recent pieces first. A pitch to a general inbox, or to the wrong desk, is easy to miss.
+
+Keep the email to five or six lines:
+- The subject line says the news, in plain words.
+- The first line says what happened and when.
+- One line on why it matters to that outlet's readers.
+- One number or fact the company has cleared, if you have one.
+- When you can talk, and a phone number.
+
+Attach what a journalist needs to file the story: the company announcement or press note, one approved headshot, a three-line bio with your previous roles, and two lines about the company. Use the exact title you agreed at the time of the announcement.
+
+Send one email. If there is no reply in a week, one short follow-up is fine. After that, let it go. Offer a real story to one outlet at a time, and say so in the email.
+
+## Contributed articles and guest columns
+
+A guest column gets a new leader a byline when it follows the outlet's rules: original, written only for that outlet, and not a plug for your company.
+
+The rules are published, and they are strict. As of October 2026:
+- ETRetail wants the full article, not a topic or synopsis. It must be original and written only for ETRetail, not published even on social media or a personal blog. Once ETRetail takes it, it cannot go to another publication without approval. It must not be an endorsement of the author's product, company or client.
+- ETHRWorld asks for original posts written exclusively for it, marketing-neutral and not a plug for the author's product or company. It gives full author credit with a short bio and a link to the author's LinkedIn, Twitter or website.
+- People Matters asks for 700 to 1,500 words, from C-suite executives, HR leaders, professors or researchers, following its style guide. It says it cannot publish articles that are promotional, plagiarised or of low quality.
+
+So write about the category, not your company. Pick one question your sector is arguing about, take a side, and support it with data you can link to. Public data works well. As an example, our monthly Boardroom Moves report gives counts of tracked moves by function and sector, with a CSV download. If you quote it, say what it is: a record of the moves we tracked, not every move in India.
+
+A byline also leaves a page with your name on it. ETHRWorld, for one, links the author bio to the author's LinkedIn profile. That page is still there when someone searches your name next year.
+
+## Where Boardroom Moves fits
+
+Boardroom Moves covers the appointment itself, on LinkedIn and at boardroomcxo.com, so you can save your pitching effort for the stories that come after it.
+
+Every Thursday, the Boardroom Moves Brief on LinkedIn lists 5 to 6 leaders who moved that week, written from public announcements, with nothing asked of the leader. Featured placement gives the move a dedicated LinkedIn post. The Plus option adds an article on boardroomcxo.com written to rank for the leader's name. The leader sees the draft before it goes live and can ask for changes. If we hear nothing within 48 hours, it goes live as drafted.
+
+You can tell us about a move here. If you are weighing this against a PR agency or a paid profile, we compare the options in executive PR in India: agency, paid profile or announcement feature.
+
+## What to avoid
+
+Most pitches from new leaders fail for avoidable reasons: they are promotional, sent to everyone at once, or built on numbers and claims the company has not cleared.
+- Mass emails with a long list of journalists in copy. Each one reads it as a pitch to nobody in particular.
+- Sending the same guest article to several outlets. Outlets such as ETRetail and ETHRWorld ask for pieces written only for them.
+- Pitching your product in a column. Every guidelines page above rules it out.
+- Numbers the company has not cleared, or comments on your old employer.
+- For a listed company, talking to media before the stock exchange filing is out.
+- Chasing a journalist by phone and WhatsApp after one follow-up.
+- Treating paid content as coverage. afaqs, for example, lists Advertorial and Branded Content as their own sections, apart from its news. Readers can tell the difference.
+
+If you are hiring at the top yourself, our team can help with the search. Schedule a call.
+
+## Frequently Asked Questions
+
+### How do I get featured in business media as a new CXO in India?
+
+Start with the appointment, covered by trade sites and trackers in your first week. After that, pitch real news: a launch, results the company has cleared, or a clear view on your category. Send one short email to the journalist who covers your area, or write a guest column that follows the outlet's rules.
+
+### Should I pitch a journalist or write a guest article?
+
+Pitch a journalist when you have company news, such as a launch or results. Write a guest article when you have a view on the category backed by data. For a guest column, the outlet publishes its rules, and most want pieces that are original, exclusive and not promotional.
+
+### What should a pitch email to a journalist include?
+
+A subject line that states the news, five or six short lines on what happened, why it matters to that outlet's readers, one cleared number if you have one, and when you can talk. Attach the company announcement, one approved headshot, a three-line bio and two lines about the company.
+
+### Can I send the same guest article to several publications?
+
+Usually not. ETRetail asks for articles written only for it and not published anywhere before, even on social media, and once it takes a piece, it cannot go elsewhere without approval. ETHRWorld also asks for exclusive posts. Write a separate piece for each outlet you approach.
+
+### How does Boardroom Moves cover a new leader?
+
+Boardroom Moves lists moves in a weekly LinkedIn Brief every Thursday, written from public announcements. With Featured placement, a move gets a dedicated post, and with Plus also an article on boardroomcxo.com written to rank for the leader's name. The leader sees the draft first, and it goes live after 48 hours with no reply.
+
+## Sources
+
+- ETRetail, Guest-Post Guidelines, accessed October 2026
+- ETHRWorld, Guest-Post Guidelines, accessed October 2026
+- People Matters, Write for us, accessed October 2026
+- People Matters, HR Leadership News and Insights, accessed October 2026
+- IndianRetailer.com, Contributors, accessed October 2026
+- Storyboard18, Brand Makers: Latest Updates on Founders, CMOs and Brand Leaders, accessed October 2026
+- exchange4media, Latest People Movement News, accessed October 2026
+- exchange4media, Guest Column, accessed October 2026
+- afaqs, Guest Article, accessed October 2026
+- Mint, Mint Opinion, accessed October 2026
+- The Economic Times, ET Interviews, Columnists, Writers, Debates, Opinion Polls, accessed October 2026
+
+================================================================================
+# Your First 90 Days as a New CMO in Retail or D2C: the Visibility Part
+URL: https://boardroomcxo.com/article-new-cmo-first-90-days-visibility
+Published: 2026-10-31
+Author: CA Ketul Patel, Founder, Boardroom CXO
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+## Key Takeaways
+
+- Weeks 1 to 2: let the company announce first, then update your LinkedIn profile the same day. Profile edits show to visitors as soon as you save them.
+- Month 1: be seen inside the company before outside it. In many D2C companies marketing is founder-led, so the team needs to see your work before the market hears your views.
+- By day 90, a search of your name should show the new title and company. If it still shows the old job, fix that first.
+
+In your first 90 days as a new CMO in retail or D2C, get visible in this order: the announcement and your LinkedIn profile in weeks 1 to 2, the people inside the company in month 1, and your own posts and the trade press in months 2 to 3. All the way through, make sure a search of your name shows the new role.
+
+Marketing leaders move often. Boardroom Moves tracked 48 senior leadership moves in India between 17 and 29 October 2026, and marketing and brand roles were the largest group, 18 of the 48. These are the moves we tracked, not every move in India, and the details are in our October 2026 report. In the US, Spencer Stuart's January 2026 snapshot puts average CMO tenure in the S&P 500 at 4.1 years, against 5.0 years for all C-suite roles. Consumer companies had the shortest CMO tenure of the industries it analysed, at 3.5 years.
+
+The same snapshot found that 73% of S&P 500 CMOs are first-time CMOs. In a role that often does not last long, the first 90 days carry real weight.
+
+At Boardroom CXO we hire marketing leaders for retail, jewellery and D2C brands (see marketing leadership hiring), and through Boardroom Moves we record senior leadership moves in India every week. This guide covers only the visibility part of the first 90 days: what people see of you, inside and outside the company. It does not cover the marketing plan itself.
+
+## Before day one: agree your title and how the move is announced
+
+Before you start, agree the exact title, the start date, one headshot and who announces first. Every later step depends on these being the same everywhere.
+
+Marketing titles vary more than most. Spencer Stuart's 2025 study found that only 40% of Fortune 500 marketing leaders were in roles simply titled chief marketing officer. A title that reads one way in the company post and another way on your profile confuses anyone who searches for you later.
+
+Pick one version of the title and use it in the company post, your LinkedIn profile and any press note. The full order for the announcement, including the stock exchange filing for listed companies, is in how to announce a new CXO appointment in India.
+
+## Weeks 1 to 2: let the announcement go out, then update LinkedIn
+
+In the first two weeks, let the company announce first, then update your LinkedIn headline and current role the same day, and post a short note of your own.
+
+Timing matters here. LinkedIn's help page says anyone who views your profile sees your edits as soon as you save them, even if you choose not to notify your network. So if you change your profile a week early, people can see the move before the company has said anything. Make the change on the day of the announcement.
+
+LinkedIn also lets you choose whether to notify your network about a job change. For this one, turn it on. On the day, update these:
+- Headline: the agreed title and the company name, exactly as in the company post.
+- Current role: the title, the start date and two lines on what you lead.
+- About: the first two lines, which are all most people read, should mention the new role.
+- Photo: the same headshot the company used.
+- Featured: add the company announcement now, and any article about the move later.
+
+Keep your own first post short. Thank the old team, say why you joined, tag the company and reshare the company post. Do not share plans or numbers yet. It is too early, and your founder or CEO may want to say them first.
+
+## Month 1: be visible inside the company before outside it
+
+In month 1, put your time into being seen inside the company: stores, the warehouse, customer service, the sales team and the founder's office. Outside posting can wait.
+
+This matters more in retail and D2C than in many sectors. At an MMA India board discussion, reported by the Free Press Journal in June 2025, members noted that in many unicorns and D2C companies marketing is founder-led and marketers are seen as optional. A new CMO who is loud on LinkedIn in week three, before the team has seen any work, can look like proof of that view.
+
+Being visible inside looks like this:
+- Visit stores or fulfilment centres and talk to the staff who face customers.
+- Read customer service tickets and reviews, or sit in on calls.
+- Meet each function head one to one, including finance and supply chain.
+- At the end of month 1, send a short written note to the leadership team on what you heard.
+- When the team ships something, credit them by name inside the company.
+
+## Months 2 to 3: when to start posting, and on what
+
+Start posting on LinkedIn from month 2, about once a week, on what you are learning about the customer and the category, not on results you do not have yet.
+
+Topics that work for a new CMO in retail or D2C:
+- What you heard from store staff or customers, with no confidential numbers.
+- A campaign or launch the team shipped, with the credit going to them.
+- Roles you are hiring for in the marketing team.
+- One clear view on your category, based on something you saw.
+- A thank you to an agency or partner the team works with.
+
+Topics to avoid: your old employer, numbers the company has not made public, criticism of what was done before you joined, and promises about the brand's future. If the founder is the public face of the brand, agree with them who says what. Your posts should support theirs, not compete with them.
+
+## Trade press in marketing: what gets a new CMO covered
+
+For a new CMO, marketing trade press has two openings: the move itself, and later a real story, such as a campaign, a rebrand or a launch.
+
+The move goes to the people-moves sections. afaqs! has a People Spotting section on appointments at agencies, brands and media companies, and Storyboard18 runs CXO Moves roundups in its Brand Makers section. Send the company announcement, the headshot and three lines on past roles to these desks on the day of the announcement. Send it once.
+
+The second opening comes in months 2 to 3, or later. Trade journalists want a story: a campaign, a new brand position, a launch, or a view on the category backed by something you did. "A new CMO has big plans" is not a story. We cover how this works in how a new leader gets covered by Indian business media.
+
+## Make sure a search of your name shows the new role
+
+By day 90, a Google search of your name should show the new title and company on the first page. If it shows the old job, fix that first.
+
+Search your name in a private window once a month and look at what comes up: your LinkedIn profile, the company site, trade press and anything from your old employer. When we research a senior candidate, a Google search of their name is one of the first things we check, and boards, investors and future employers do the same. We cover what we look at in what a search firm sees when it Googles you.
+
+The usual gaps: the old employer's team page still lists you, or the only page about the move is one line in a roundup.
+
+This is why Boardroom Moves offers Featured placement. With the Plus option, the move gets a dedicated LinkedIn post and an article on boardroomcxo.com written to rank for the leader's name. The leader sees the draft first and can ask for changes. If we hear nothing within 48 hours, it goes live as drafted. Separately, our weekly Brief on LinkedIn every Thursday lists 5 to 6 leaders who moved that week, written from public announcements, with nothing asked of the leader. You can tell us about your move here.
+
+## A 90-day visibility checklist
+
+Here is the whole plan on one page, so you can check it against your own calendar in the first week of the new role.
+- Before day one: agree the title, start date, headshot and who announces first.
+- Weeks 1 to 2: company announces, you update LinkedIn the same day with notify on, you post a short thank you.
+- Month 1: stores, customers, function heads and finance. A written note to leadership at the end of the month.
+- Months 2 to 3: one post a week on what you are learning. A trade press pitch when there is a real story.
+- Day 90: search your name. The first page should show the new role.
+
+If you are a founder or CEO hiring a marketing leader, our team runs marketing leadership searches for retail, jewellery and D2C brands. Schedule a call.
+
+## Frequently Asked Questions
+
+### When should a new CMO update their LinkedIn profile?
+
+On the day the company announces the move, not before. LinkedIn shows your edits to anyone who views your profile as soon as you save them, even if you do not notify your network. Updating early can reveal the move before the company is ready. Update the headline, current role, About and photo together.
+
+### When should a new CMO start posting on LinkedIn?
+
+From month 2, about once a week. Use month 1 to be seen inside the company: stores, customers, function heads and finance. In retail and D2C, where marketing is often founder-led, the team should see your work before the market hears your views. Post on what you are learning, not on results.
+
+### What should a new CMO post about in the first 90 days?
+
+What you heard from customers and store staff, campaigns the team shipped with credit to them, roles you are hiring for, and one clear view on the category. Avoid your old employer, numbers the company has not made public, criticism of earlier work and promises about the brand's future.
+
+### How does a new CMO get covered by marketing trade press in India?
+
+Send the company announcement, a headshot and three lines on past roles to people-moves sections such as afaqs! People Spotting and Storyboard18 CXO Moves on the day of the announcement. A second, bigger chance comes later, when there is a real story such as a campaign, a rebrand or a launch.
+
+### How does Boardroom Moves cover a new CMO?
+
+Our weekly Brief on LinkedIn every Thursday lists 5 to 6 leaders who moved that week, written from public announcements. With Featured placement, a move gets a dedicated post, and with Plus also an article on boardroomcxo.com written to rank for the leader's name. The leader sees the draft first, and it goes live after 48 hours with no reply.
+
+## Sources
+
+- Spencer Stuart, CMO Tenure 2026: Snapshot of an Expanding Role for Marketing Leaders, January 2026
+- Spencer Stuart, CMO Tenure Study 2025: The Evolution of Marketing Leadership, March 2025
+- LinkedIn Help, Share profile updates, accessed October 2026
+- Free Press Journal, Is It Time To Retire The CMO Title?: Insights From The MMA India Boardroom Discussion, June 2025
+- afaqs!, People Spotting, accessed October 2026
+- Storyboard18, CXO Moves: Exec movements across PUMA, Mother Dairy, WPP Media, Reliance Retail and more, December 2025
+
+================================================================================
 # Puneet Chhatwal: He Grew the Taj by Owning Less of It
 URL: https://boardroomcxo.com/article-puneet-chhatwal-ihcl-taj
 Published: 2026-09-22
