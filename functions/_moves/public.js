@@ -313,10 +313,10 @@ export async function renderProfile(env, slug) {
 ${relatedBlock}${ctaBlock}</div>`;
   const jsonld = { '@context': 'https://schema.org', '@graph': [
     { '@type': 'NewsArticle', headline: headline(o).slice(0, 110), url, mainEntityOfPage: { '@type': 'WebPage', '@id': url }, image: [image], description,
-      datePublished: isoSec(o.live_at), dateModified: isoSec(o.updated_at || o.live_at), isPartOf: { '@id': SITE + '/moves#collection' },
+      datePublished: isoSec(o.live_at), dateModified: isoSec(o.updated_at || o.live_at),
       author: ORG, publisher: ORG,
       about: { '@type': 'Person', '@id': url + '#person', name: o.name, jobTitle: o.role_title, worksFor: { '@type': 'Organization', name: o.company, ...(site ? { url: site } : {}) }, ...(d.linkedin ? { sameAs: [d.linkedin] } : {}) },
-      isPartOf: { '@type': 'CollectionPage', name: 'Boardroom Moves', url: SITE + '/moves' } },
+      isPartOf: { '@type': 'CollectionPage', '@id': SITE + '/moves#collection', name: 'Boardroom Moves', url: SITE + '/moves' } },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: 'Boardroom Moves', item: SITE + '/moves' }, { '@type': 'ListItem', position: 3, name: o.name, item: url }] }] };
   return html(page({ title, description, canonical: url, image, jsonld, body }));
 }
@@ -351,10 +351,10 @@ ${services}</div>
 ${relatedSection(db ? (await relatedDb(db, a.slug)).map(fromDb) : [], a.slug)}${ctaBlock}</div>`;
   const jsonld = { '@context': 'https://schema.org', '@graph': [
     { '@type': 'NewsArticle', headline: h1.slice(0, 110), url, mainEntityOfPage: { '@type': 'WebPage', '@id': url }, image: [image], description,
-      datePublished: isoSec(a.published_at), dateModified: isoSec(a.published_at), isPartOf: { '@id': SITE + '/moves#collection' },
+      datePublished: isoSec(a.published_at), dateModified: isoSec(a.published_at),
       author: ORG, publisher: ORG,
       about: { '@type': 'Person', '@id': url + '#person', name: a.name, jobTitle: a.role_title, worksFor: { '@type': 'Organization', name: a.company }, ...(a.profile ? { sameAs: [a.profile] } : {}) },
-      isPartOf: { '@type': 'CollectionPage', name: 'Boardroom Moves', url: SITE + '/moves' } },
+      isPartOf: { '@type': 'CollectionPage', '@id': SITE + '/moves#collection', name: 'Boardroom Moves', url: SITE + '/moves' } },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: 'Boardroom Moves', item: SITE + '/moves' }, { '@type': 'ListItem', position: 3, name: a.name, item: url }] }] };
   return html(page({ title, description, canonical: url, image, jsonld, body }));
 }
@@ -380,7 +380,7 @@ ${ctaBlock}</div>`;
     { '@type': 'NewsArticle', headline: title, url, mainEntityOfPage: { '@type': 'WebPage', '@id': url }, description, datePublished: d, dateModified: d,
       image: [SITE + '/images/Homepage-Meta-removebg-preview.png'],
       author: ORG, publisher: ORG,
-      isPartOf: { '@type': 'CollectionPage', name: 'Boardroom Moves', url: SITE + '/moves' },
+      isPartOf: { '@type': 'CollectionPage', '@id': SITE + '/moves#collection', name: 'Boardroom Moves', url: SITE + '/moves' },
       mentions: names.map(n => ({ '@type': 'Person', name: n.name, jobTitle: n.role_title, worksFor: { '@type': 'Organization', name: n.company } })) },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: 'Boardroom Moves', item: SITE + '/moves' }, { '@type': 'ListItem', position: 3, name: 'The Brief, ' + niceDate(d + 'T12:00:00Z'), item: url }] }] };
   return html(page({ title: `${title} | Boardroom Moves Brief`, description, canonical: url, image: SITE + '/images/Homepage-Meta-removebg-preview.png', jsonld, body }));
@@ -472,7 +472,7 @@ ${ctaBlock}</div>`;
     { '@type': 'Article', headline: title, url, mainEntityOfPage: { '@type': 'WebPage', '@id': url }, description, datePublished: pub, dateModified: pub,
       image: [SITE + '/images/Homepage-Meta-removebg-preview.png'],
       author: ORG, publisher: ORG,
-      isPartOf: { '@type': 'CollectionPage', name: 'Boardroom Moves', url: SITE + '/moves' } },
+      isPartOf: { '@type': 'CollectionPage', '@id': SITE + '/moves#collection', name: 'Boardroom Moves', url: SITE + '/moves' } },
     { '@type': 'Dataset', name: `Boardroom Moves: senior leadership moves in India, ${name}`, description: `Counts of senior leadership moves in India tracked by Boardroom Moves in ${name}, by function and by sector.`,
       url, temporalCoverage: m, spatialCoverage: { '@type': 'Place', name: 'India' }, creator: ORG,
       distribution: [{ '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: `${url}.csv` }] },
