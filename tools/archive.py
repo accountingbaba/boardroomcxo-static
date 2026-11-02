@@ -7,7 +7,7 @@ data/moves-archive.json and run, from the repo root:
     python tools/archive.py
 
 It writes functions/_moves/archive.js (read by the /moves pages and /moves/latest.json) and,
-through tools/stories.py, the homepage card. Importing a LinkedIn copy adds its posts (and their images) to the archive, skipping posts already there:
+through tools/stories.py, the homepage ticker and faces row. Importing a LinkedIn copy adds its posts (and their images) to the archive, skipping posts already there:
 
     python tools/archive.py --import <posts.json> [<more.json> ...]
 """

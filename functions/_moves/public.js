@@ -84,7 +84,7 @@ function page({ title, description, canonical, image, jsonld, robots = 'index, f
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/style.css?v=20261103" />
+<link rel="stylesheet" href="/style.css?v=20261104" />
 <style>
 .mv-wrap{max-width:1100px;margin:0 auto;padding:0 var(--pad-x)}
 .mv-hero{padding:clamp(120px,14vw,170px) 0 40px;border-bottom:1px solid var(--line)}

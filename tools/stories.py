@@ -6,7 +6,7 @@ Run from the repo root after publishing a new story (and listing it on resources
     python tools/stories.py
 
 It writes data/stories.json (read by /moves/latest.json and the /moves page), inside-the-boardroom.html
-(the full list, newest first) and the Boardroom Moves card and band on index.html.
+(the full list, newest first) and, on index.html, the Boardroom Moves ticker, faces row and band.
 """
 import html
 import json
@@ -134,23 +134,48 @@ def page(items):
     return head + tpl[head_end:body_start] + tpl[body_start:tpl.index('<header')] + hdr + '\n' + main + tail
 
 
-def news_item(href, tag, title, sub=''):
+def ticker_item(href, name, role, company, dup=False):
     e = html.escape
-    return (f'            <li><a href="{e(href)}"><span class="news-tag">{e(tag)}</span><strong>{e(title)}</strong>'
-            + (f'<span class="news-sub">{e(sub)}</span>' if sub else '') + '</a></li>')
+    tab = ' tabindex="-1"' if dup else ''
+    return (f'      <a href="{e(href)}"{tab}><strong>{e(name)}</strong>'
+            f'{e(role.split(",")[0])}<span class="ht-co">, {e(company)}</span></a>')
+
+
+def face(m):
+    """A small round crop of the move's LinkedIn image, made once with Pillow (the full image if Pillow is missing)."""
+    import os
+    out = f"images/moves-archive/faces/{m['slug']}.webp"
+    if not os.path.exists(out):
+        try:
+            from PIL import Image
+            im = Image.open(m['image'].lstrip('/'))
+            w, h = im.size
+            # The face sits a little above the middle of these images.
+            im.crop((int(w * .28), int(h * .17), int(w * .72), int(h * .61))).convert('RGB').resize((96, 96), Image.LANCZOS).save(out, 'WEBP', quality=82)
+        except (ImportError, OSError):
+            return m['image']
+    return '/' + out
 
 
 def home(items):
-    """The homepage card and band, as plain HTML so they show without JavaScript.
-    script.js swaps the card for /moves/latest.json, which also has moves added on the Moves desk since."""
+    """The homepage ticker, faces row and band, as plain HTML so they show without JavaScript.
+    script.js adds moves published on the Moves desk since, from /moves/latest.json."""
+    import os
     e = html.escape
     try:
         moves = json.load(open('data/moves-archive.json', encoding='utf-8'))
     except FileNotFoundError:
         moves = []
-    moves = sorted(moves, key=lambda m: m['date'], reverse=True)[:4]
-    news = [news_item('/moves/' + m['slug'], 'New role', m['name'], f"{m['role_title']}, {m['company']}") for m in moves]
-    news += [news_item(st['url'], 'Inside the Boardroom', st['title']) for st in items[:1 if moves else 3]]
+    moves = sorted(moves, key=lambda m: m['date'], reverse=True)
+    latest = moves[:8]
+    os.makedirs('images/moves-archive/faces', exist_ok=True)
+    ticker = '\n'.join(ticker_item('/moves/' + m['slug'], m['name'], m['role_title'], m['company']) for m in latest)
+    ticker += '\n      <span class="ht-dup" aria-hidden="true">\n' + '\n'.join(
+        ticker_item('/moves/' + m['slug'], m['name'], m['role_title'], m['company'], dup=True) for m in latest) + '\n      </span>'
+    pics = ''.join(f'<img src="{e(face(m))}" alt="" width="48" height="48">' for m in [m for m in moves if m['image']][:5])
+    faces = (f'          <a href="/moves" class="hp-faces" tabindex="-1" aria-hidden="true">{pics}</a>\n'
+             f'          <span class="hp-copy"><a href="/moves"><strong>{len(moves)} leaders featured on Boardroom Moves</strong></a>'
+             f'<a href="/get-featured" data-door="moves" data-door-at="hero-faces">Moved into a new role? Get featured →</a></span>')
     band = '\n'.join(f'''      <article class="blog-item">
         <div class="blog-img-wrap"><img width="1200" height="900" src="{e(st['image'])}" alt="{e(st['title'])}" loading="lazy" style="filter:none;" /></div>
         <div class="blog-meta">
@@ -164,15 +189,10 @@ def home(items):
     raw = open('index.html', encoding='utf-8', newline='').read()
     nl = '\r\n' if '\r\n' in raw else '\n'
     s = raw.replace('\r\n', '\n')
-    for name, body in (('news', '\n'.join(news)), ('stories', band)):
+    for name, body in (('ticker', ticker), ('faces', faces), ('stories', band)):
         s, n = re.subn(rf'<!-- {name}:start -->.*?<!-- {name}:end -->',
                        lambda m: f'<!-- {name}:start -->\n{body}\n<!-- {name}:end -->', s, flags=re.S)
         assert n == 1, name
-    import datetime
-    newest = max([m['date'] for m in moves] + [st['date'] for st in items[:1]] or [''])
-    if newest:
-        d = datetime.date.fromisoformat(newest)
-        s = re.sub(r'(data-news-when>)[^<]*', rf'\g<1>Updated {d.day} {d:%b}', s)
     open('index.html', 'w', encoding='utf-8', newline='').write(s.replace('\n', nl))
 
 

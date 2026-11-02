@@ -148,6 +148,8 @@ const SALARY_DATA = [
     });
     roleSelect.appendChild(optgroup);
   });
+  // Open on a senior role: most people who use the tool are hiring at that level.
+  roleSelect.value = 'business-head';
 
   function findRole(id) {
     for (const g of SALARY_DATA) {
@@ -250,22 +252,20 @@ document.addEventListener('click', (e) => {
   gtag('event', 'door_click', { door: a.dataset.door, placement: a.dataset.doorAt || '', page: location.pathname });
 });
 
-// Homepage card: the latest Boardroom Moves. The page ships a copy written by tools/stories.py;
-// /moves/latest.json adds anything published on the Moves desk since.
+// Homepage ticker: the latest Boardroom Moves. The page ships the archive copy written by tools/stories.py;
+// /moves/latest.json puts anything published on the Moves desk since at the front.
 (function () {
-  const list = document.querySelector('[data-news-list]');
-  if (!list || !window.fetch) return;
+  const track = document.querySelector('[data-ticker]');
+  if (!track || !window.fetch) return;
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const item = (href, tag, title, sub) => `<li><a href="${esc(href)}"><span class="news-tag">${esc(tag)}</span><strong>${esc(title)}</strong>${sub ? `<span class="news-sub">${esc(sub)}</span>` : ''}</a></li>`;
+  const item = (m, dup) => `<a href="${esc(m.url)}"${dup ? ' tabindex="-1"' : ''}><strong>${esc(m.name)}</strong>${esc(String(m.role_title).split(',')[0])}<span class="ht-co">, ${esc(m.company)}</span></a>`;
   fetch('/moves/latest.json').then(r => r.ok ? r.json() : null).then(d => {
-    if (!d) return;
-    const moves = (d.moves || []).slice(0, 4).map(m => item(m.url, 'New role', m.name, `${m.role_title}, ${m.company}`));
-    const brief = d.brief ? [item(d.brief.url, 'The Brief', d.brief.title)] : [];
-    const stories = (d.stories || []).slice(0, moves.length ? 1 : 3).map(s => item(s.url, 'Inside the Boardroom', s.title));
-    const rows = moves.concat(brief.slice(0, moves.length >= 4 ? 0 : 1), stories);
-    if (!rows.length) return;
-    list.innerHTML = rows.join('');
-    const when = document.querySelector('[data-news-when]');
-    if (when && d.updated) when.textContent = 'Updated ' + new Date(d.updated + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+    const have = [...track.querySelectorAll(':scope > a')].map(a => a.getAttribute('href'));
+    const fresh = ((d && d.moves) || []).filter(m => !have.includes(m.url));
+    if (!fresh.length) return;
+    const old = [...track.querySelectorAll(':scope > a')].map(a => a.outerHTML);
+    const rows = fresh.map(m => item(m)).concat(old).slice(0, 10);
+    const dups = fresh.map(m => item(m, true)).concat(old.map(h => h.replace('<a ', '<a tabindex="-1" '))).slice(0, 10);
+    track.innerHTML = rows.join('') + `<span class="ht-dup" aria-hidden="true">${dups.join('')}</span>`;
   }).catch(() => {});
 })();
