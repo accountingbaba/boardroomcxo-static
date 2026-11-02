@@ -242,3 +242,30 @@ const SALARY_DATA = [
     wireForm(document.querySelector('[data-testid="newsletter-form"]'), 'Subscribed ✓');
   });
 })();
+
+// The two doors: count clicks on the Executive Search and Boardroom Moves buttons (GA4 event door_click)
+document.addEventListener('click', (e) => {
+  const a = e.target.closest && e.target.closest('[data-door]');
+  if (!a || !window.gtag) return;
+  gtag('event', 'door_click', { door: a.dataset.door, placement: a.dataset.doorAt || '', page: location.pathname });
+});
+
+// Homepage card: the latest Boardroom Moves. The page ships a copy written by tools/stories.py;
+// /moves/latest.json adds anything published on the Moves desk since.
+(function () {
+  const list = document.querySelector('[data-news-list]');
+  if (!list || !window.fetch) return;
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const item = (href, tag, title, sub) => `<li><a href="${esc(href)}"><span class="news-tag">${esc(tag)}</span><strong>${esc(title)}</strong>${sub ? `<span class="news-sub">${esc(sub)}</span>` : ''}</a></li>`;
+  fetch('/moves/latest.json').then(r => r.ok ? r.json() : null).then(d => {
+    if (!d) return;
+    const moves = (d.moves || []).slice(0, 4).map(m => item(m.url, 'New role', m.name, `${m.role_title}, ${m.company}`));
+    const brief = d.brief ? [item(d.brief.url, 'The Brief', d.brief.title)] : [];
+    const stories = (d.stories || []).slice(0, moves.length ? 1 : 3).map(s => item(s.url, 'Inside the Boardroom', s.title));
+    const rows = moves.concat(brief.slice(0, moves.length >= 4 ? 0 : 1), stories);
+    if (!rows.length) return;
+    list.innerHTML = rows.join('');
+    const when = document.querySelector('[data-news-when]');
+    if (when && d.updated) when.textContent = 'Updated ' + new Date(d.updated + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  }).catch(() => {});
+})();

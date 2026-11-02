@@ -1,6 +1,6 @@
 // Repo folders and files that are not part of the website. Pages publishes the whole repo,
 // so these are answered with the site's 404 page instead of being served.
-const BLOCKED_DIRS = ['/frontend/', '/backend/', '/memory/', '/tests/', '/test_reports/'];
+const BLOCKED_DIRS = ['/frontend/', '/backend/', '/memory/', '/tests/', '/test_reports/', '/tools/'];
 const BLOCKED_FILES = new Set(['/README.md', '/test_result.md', '/design_guidelines.json']);
 
 async function notFound(context, url) {

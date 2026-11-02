@@ -2,6 +2,8 @@
 // (/moves/<slug>), their website image (/moves/img/<slug>) and the sitemap (/sitemap-moves.xml).
 // Only features that went live and were not removed appear. Prices never appear here.
 import { esc, ensureSchema, todayIst } from './lib.js';
+import { HEADER, footer } from './chrome.js';
+import { ARCHIVE } from './archive.js';
 
 const SITE = 'https://boardroomcxo.com';
 const LIVE = "status = 'live' AND removed_at IS NULL AND slug IS NOT NULL";
@@ -20,6 +22,20 @@ const FUNCTIONS = [
 const fnPage = role => (FUNCTIONS.find(([re]) => re.test(role || '')) || []).slice(1);
 const headline = o => `${o.name} joins ${o.company} as ${o.role_title}`;
 const altOf = o => `${o.name}, ${o.role_title}, ${o.company}`;
+// Moves posted on LinkedIn before the Moves desk existed (tools/archive.py). They are listed with the desk's
+// features, but their pages say where they first ran and make no claim about how they were arranged.
+const fromDb = o => ({ slug: o.slug, name: o.name, role_title: o.role_title, company: o.company, live_at: o.live_at, img: o.has_img ? `/moves/img/${o.slug}` : '' });
+const fromArchive = a => ({ slug: a.slug, name: a.name, role_title: a.role_title, company: a.company, live_at: a.published_at, img: a.image, sq: true });
+const newestFirst = (a, b) => new Date(b.live_at) - new Date(a.live_at);
+const card = m => `<a class="mv-card${m.sq ? ' mv-card--sq' : ''}" href="/moves/${esc(m.slug)}">${m.img ? `<img src="${esc(m.img)}" alt="${esc(altOf(m))}" loading="lazy" width="${m.sq ? 900 : 1200}" height="${m.sq ? 900 : 630}">` : ''}
+    <div><time datetime="${esc(String(m.live_at).slice(0, 10))}">${niceDate(m.live_at)}</time><h3>${esc(m.name)}</h3><p>${esc(m.role_title)} at ${esc(m.company)}</p></div></a>`;
+// Inside the Boardroom stories, listed in data/stories.json by tools/stories.py.
+async function latestStories(env, request, n = 3) {
+  try {
+    const r = await env.ASSETS.fetch(new URL('/data/stories.json', request ? request.url : SITE));
+    return r.ok ? (await r.json()).slice(0, n) : [];
+  } catch (e) { return []; }
+}
 // The free weekly Brief: one roundup page per Thursday, shown only once the team has pasted the Brief's LinkedIn link.
 // Names come from the leads the desk put in that Brief; anyone who declined, was removed or took a paid plan is left out.
 const BRIEF_IN = "stage NOT IN ('removed', 'declined', 'linked')";
@@ -68,7 +84,7 @@ function page({ title, description, canonical, image, jsonld, robots = 'index, f
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/style.css?v=20261102" />
+<link rel="stylesheet" href="/style.css?v=20261103" />
 <style>
 .mv-wrap{max-width:1100px;margin:0 auto;padding:0 var(--pad-x)}
 .mv-hero{padding:clamp(120px,14vw,170px) 0 40px;border-bottom:1px solid var(--line)}
@@ -89,7 +105,7 @@ function page({ title, description, canonical, image, jsonld, robots = 'index, f
 .mv-week li strong{font-family:var(--font-display);font-weight:500;font-size:1.2rem}
 .mv-week li span{color:var(--ink-2)}
 .mv-article{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;padding:48px 0 80px}
-.mv-article .mv-figure{margin-bottom:32px;border:1px solid var(--line)}
+.mv-article .mv-figure{margin-bottom:32px;border:1px solid var(--line);width:100%;height:auto}
 .mv-body{font-size:1.06rem;line-height:1.75;max-width:68ch}
 .mv-body p{margin:0 0 1.1em}
 .mv-body h2{font-family:var(--font-display);font-weight:500;font-size:1.7rem;margin:1.6em 0 .5em}
@@ -135,56 +151,48 @@ function page({ title, description, canonical, image, jsonld, robots = 'index, f
 .mv-table th:not(:first-child),.mv-table td:not(:first-child){text-align:right;width:90px}
 .mv-table th{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);font-weight:500}
 .mv-table tfoot td{font-weight:600;border-bottom:0}
+.mv-card--sq img{aspect-ratio:1/1}
+.mv-sec{margin:56px 0 0}
+.mv-sec>h2{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;padding-bottom:12px;border-bottom:1px solid var(--ink)}
+.mv-sec .mv-grid{margin:24px 0 0}
+.mv-split{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:48px;margin:64px 0 0;align-items:start}
+.mv-split .mv-sec{margin:0}
+.mv-stories li{padding:18px 0;border-bottom:1px solid var(--line)}
+.mv-stories a{display:flex;flex-direction:column;gap:6px}
+.mv-stories time{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay)}
+.mv-stories strong{font-family:var(--font-display);font-weight:500;font-size:1.25rem;line-height:1.25}
+.mv-stories a:hover strong{color:var(--emerald)}
+.mv-more{display:inline-block;margin-top:18px;font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;border-bottom:1px solid var(--ink)}
+.mv-get{background:var(--ink);color:var(--bg);padding:32px}
+.mv-get .mv-k{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.mv-get h2{font-family:var(--font-display);font-weight:500;font-size:1.7rem;line-height:1.15;margin:12px 0}
+.mv-get p{color:rgba(247,246,242,.78);line-height:1.6}
+.mv-get .mv-price{margin:18px 0;font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.mv-get .mv-price strong{font-family:var(--font-display);font-size:1.8rem;letter-spacing:0;color:var(--gold);font-weight:500}
+.mv-get a{display:inline-block;background:var(--gold);color:var(--ink);padding:14px 22px;font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.mv-source{margin:28px 0 0;padding-top:18px;border-top:1px solid var(--line);color:var(--ink-2);font-size:.95rem;max-width:68ch}
+.mv-source a{border-bottom:1px solid var(--ink);color:var(--ink)}
+.mv-article .mv-figure.mv-sq{max-width:560px}
 .mv-draft{margin:0 0 20px;padding:12px 16px;border:1px solid var(--ink);font-family:var(--font-mono);font-size:12px;letter-spacing:.06em}
-@media(max-width:860px){.mv-article{grid-template-columns:1fr;gap:32px}.mv-side{position:static;border-left:0;border-top:1px solid var(--line);padding:24px 0 0}.mv-week li{grid-template-columns:1fr;gap:4px}}
+@media(max-width:860px){.mv-split{grid-template-columns:1fr;gap:40px}.mv-article{grid-template-columns:1fr;gap:32px}.mv-side{position:static;border-left:0;border-top:1px solid var(--line);padding:24px 0 0}.mv-week li{grid-template-columns:1fr;gap:4px}}
 </style>
 </head>
 <body>
-<header class="site-header" id="site-header">
-  <div class="nav-inner">
-    <a href="/" class="nav-brand" aria-label="Boardroom CXO"><img width="341" height="150" src="/images/logo-boardroomcxo-transparent.png" alt="Boardroom CXO" /></a>
-    <nav class="nav-menu">
-      <a href="/" class="nav-link">Home</a>
-      <a href="/about-us" class="nav-link">About</a>
-      <a href="/resources" class="nav-link">Resources</a>
-      <a href="/case-studies" class="nav-link">Case Studies</a>
-      <a href="/moves" class="nav-link">Boardroom Moves</a>
-    </nav>
-    <a href="/schedule-a-call" class="nav-cta">Let's Talk</a>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-  </div>
-  <div class="nav-menu-mobile" id="nav-menu-mobile">
-    <a href="/">Home</a><a href="/about-us">About</a><a href="/resources">Resources</a><a href="/case-studies">Case Studies</a><a href="/moves">Boardroom Moves</a>
-    <a href="/schedule-a-call" class="nav-cta-mobile">Let's Talk →</a>
-  </div>
-</header>
+${HEADER}
 <main>${body}</main>
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand"><img width="341" height="150" src="/images/logo-boardroomcxo-transparent.png" alt="Boardroom CXO" /></div>
-        <p class="footer-tag">Executive search for retail, jewelry, and D2C brands. Sourced from competitors. Benchmarked on real pay data.</p>
-      </div>
-      <div class="footer-col"><p class="footer-h5">Navigate</p><ul><li><a href="/">Home</a></li><li><a href="/about-us">About Us</a></li><li><a href="/resources">Resources</a></li><li><a href="/moves">Boardroom Moves</a></li></ul></div>
-      <div class="footer-col"><p class="footer-h5">Engage</p><ul><li><a href="/schedule-a-call">Schedule a Call</a></li><li><a href="/get-featured">Get Featured</a></li><li><a href="https://www.linkedin.com/company/boardroom-cxo" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
-      <div class="footer-col footer-contact"><p class="footer-h5">Contact</p><p><a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a></p><p>Mon–Sat · 10am–6pm IST</p><p>Surat, India &amp; UAE</p></div>
-    </div>
-    <div class="footer-bottom"><span>© Boardroom CXO · ${todayIst().slice(0, 4)}</span><span><a href="/privacy-policy">Privacy Policy</a> · All Rights Reserved</span></div>
-  </div>
-</footer>
+${footer(todayIst().slice(0, 4))}
 <script src="/script.js" defer></script>
 <script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a||!window.gtag)return;var h=a.getAttribute('href');if(/^[/](get-featured|schedule-a-call|[a-z]+-leadership-hiring)/.test(h))gtag('event','moves_cta',{link:h,page:location.pathname});});</script>
 </body>
 </html>`;
 }
 
-const ctaBlock = `<section class="mv-cta"><h2>Made a leadership move? Tell us about it.</h2><a href="/get-featured">Get featured</a></section>`;
+const ctaBlock = `<section class="mv-cta"><h2>Made a leadership move? Tell us about it.</h2><a href="/get-featured" data-door="moves" data-door-at="moves-cta">Get featured</a></section>`;
 
 // Hub FAQ, approved by Ketul 31 Oct 2026. The plain text goes into FAQPage schema; links are added only on the page.
 const HUB_FAQ = [
-  ['What is Boardroom Moves?', 'Boardroom Moves records senior leadership moves in India, with a focus on retail, D2C and consumer brands. Each move is announced on the Boardroom CXO LinkedIn page and kept here, so anyone searching for the leader or the company can find it.'],
-  ['Who runs it?', 'Boardroom CXO, an executive search firm for retail, jewellery and D2C brands in India and the UAE.'],
+  ['What is Boardroom Moves?', 'Boardroom Moves records senior leadership moves in India, across sectors. Each move is announced on the Boardroom CXO LinkedIn page and kept here, so anyone searching for the leader or the company can find it.'],
+  ['Who runs it?', 'Boardroom CXO, an executive search firm for CXO and senior leadership roles in India and the UAE, with its deepest network in retail and jewellery.'],
   ['How do I get featured?', 'We look for new leadership appointments on LinkedIn and write to the leader directly. You can also tell us about a move on the Get Featured page.'],
   ['What is the weekly Brief?', 'A short roundup of 5 to 6 leaders who moved that week, posted on LinkedIn every Thursday and listed here. It is written from public LinkedIn announcements, and nothing is asked of the leader.'],
   ['Does a featured leader see the write-up before it goes live?', 'Yes. We send the draft first and ask one question: is there anything to highlight or leave out? If we hear nothing within 48 hours, it goes live as drafted.'],
@@ -193,37 +201,60 @@ const HUB_FAQ = [
 const faqLinks = a => esc(a).replace('the Get Featured page', '<a href="/get-featured">the Get Featured page</a>').replace('hire@boardroomcxo.com', '<a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a>');
 const faqBlock = `<section class="mv-faq"><h2>Questions about Boardroom Moves</h2>${HUB_FAQ.map(([q, a]) => `<div><h3>${esc(q)}</h3><p>${faqLinks(a)}</p></div>`).join('')}</section>`;
 
-export async function renderHub(env) {
+export async function renderHub(env, request) {
   const db = env.MOVES_DB;
   await ensureSchema(db);
   const rows = (await db.prepare(`SELECT o.id, o.name, o.role_title, o.company, o.tier, o.pack_id, o.slug, o.live_at, o.slot_date,
-      (SELECT text FROM contents c WHERE c.order_id = o.id AND c.platform = 'website') AS website,
       (SELECT 1 FROM images i WHERE i.order_id = o.id AND i.kind = 'website') AS has_img
     FROM orders o WHERE ${LIVE} ORDER BY o.live_at DESC LIMIT 400`).all()).results || [];
-  const featured = rows.filter(isDedicated);
+  const moves = rows.filter(isDedicated).map(fromDb).concat(ARCHIVE.map(fromArchive)).sort(newestFirst);
   const briefs = await publishedBriefs(db, 8);
   for (const b of briefs) b.names = await briefNames(db, b.d);
   const shown = briefs.filter(b => b.names.length);
   const reports = await publishedReports(db);
+  const stories = await latestStories(env, request, 4);
   const reportBlock = reports.length ? `<section class="mv-week"><h2>Monthly reports</h2><ul>${reports.map(x => `<li><strong><a href="/moves/report/${x.m}">Senior leadership moves in India: ${monthName(x.m)}</a></strong></li>`).join('')}</ul></section>` : '';
-  const cards = featured.map(o => `<a class="mv-card" href="/moves/${esc(o.slug)}">${o.has_img ? `<img src="/moves/img/${esc(o.slug)}" alt="${esc(altOf(o))}" loading="lazy" width="1200" height="630">` : ''}
-    <div><time datetime="${esc(String(o.live_at).slice(0, 10))}">${niceDate(o.live_at)}</time><h3>${esc(o.name)}</h3><p>${esc(o.role_title)} at ${esc(o.company)}</p></div></a>`).join('');
   const weekBlocks = shown.map(b => `<section class="mv-week" id="brief-${b.d}"><h2><a href="/moves/brief/${b.d}">The Brief · ${niceDate(b.d + 'T12:00:00Z')}</a></h2><ul>${b.names.map(n =>
     `<li><strong>${esc(n.name)}</strong><span>${esc(n.role_title)} at ${esc(n.company)}</span></li>`).join('')}</ul></section>`).join('');
+  const storyBlock = stories.length ? `<section class="mv-sec"><h2>Inside the Boardroom · Saturdays</h2><ul class="mv-stories">${stories.map(st =>
+    `<li><a href="${esc(st.url)}"><time datetime="${esc(st.date)}">${niceDate(st.date + 'T12:00:00Z')}</time><strong>${esc(st.title)}</strong></a></li>`).join('')}</ul><a class="mv-more" href="/inside-the-boardroom">All stories →</a></section>` : '';
+  const getBlock = `<aside class="mv-get"><span class="mv-k">Get Featured</span><h2>Moved into a new leadership role?</h2>
+<p>We announce it on the Boardroom CXO LinkedIn page. With Plus, you also get a page here that shows up when people search your name.</p>
+<p class="mv-price">from <strong>₹1,499</strong> + GST</p><a href="/get-featured" data-door="moves" data-door-at="moves-hub">Get featured</a></aside>`;
   const body = `<div class="mv-wrap">
 <section class="mv-hero"><p class="mv-crumb"><a href="/">Home</a> / Boardroom Moves</p><h1>Boardroom Moves: senior leadership moves in India</h1>
-<p class="lead">Senior leadership appointments in India, with a focus on retail, D2C and consumer brands, announced on the Boardroom CXO LinkedIn page and recorded here. Featured leaders see their write-up before it goes live; the weekly Brief is written from public LinkedIn announcements.</p></section>
-${featured.length ? `<div class="mv-grid">${cards}</div>` : ''}${reportBlock}${weekBlocks}${!featured.length && !shown.length ? '<p class="mv-empty">The first Boardroom Moves features appear here soon.</p>' : ''}
+<p class="lead">Senior leadership appointments in India, announced on the Boardroom CXO LinkedIn page and recorded here. The Brief rounds up the week's moves every Thursday, and Inside the Boardroom tells one leader's story every Saturday. Featured leaders see their write-up before it goes live.</p></section>
+${moves.length ? `<section class="mv-sec" id="latest"><h2>Latest moves</h2><div class="mv-grid">${moves.map(card).join('')}</div></section>` : '<p class="mv-empty">The first Boardroom Moves features appear here soon.</p>'}
+<div class="mv-split">${storyBlock || '<div></div>'}${getBlock}</div>
+${weekBlocks}${reportBlock}
 ${faqBlock}
 ${ctaBlock}</div>`;
   const jsonld = { '@context': 'https://schema.org', '@graph': [
     { '@type': 'CollectionPage', name: 'Boardroom Moves', url: SITE + '/moves',
       isPartOf: { '@type': 'WebSite', name: 'Boardroom CXO', url: SITE + '/' },
-      mainEntity: { '@type': 'ItemList', itemListElement: featured.slice(0, 50).map((o, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/moves/${o.slug}`, name: `${o.name}, ${o.role_title} at ${o.company}` })) } },
+      mainEntity: { '@type': 'ItemList', itemListElement: moves.slice(0, 50).map((o, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/moves/${o.slug}`, name: `${o.name}, ${o.role_title} at ${o.company}` })) } },
     { '@type': 'FAQPage', url: SITE + '/moves', mainEntity: HUB_FAQ.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }] };
   return html(page({ title: 'Boardroom Moves | Senior leadership appointments in India | Boardroom CXO',
-    description: 'Recent senior leadership appointments in India, with a focus on retail, D2C and consumer brands, as featured on the Boardroom CXO LinkedIn page.',
+    description: 'Recent senior leadership appointments in India, as announced on the Boardroom CXO LinkedIn page, with the weekly Brief and Inside the Boardroom stories.',
     canonical: SITE + '/moves', image: SITE + '/images/Homepage-Meta-removebg-preview.png', jsonld, body }));
+}
+
+// For the homepage card: the newest moves, the latest Brief and the latest stories.
+export async function renderLatest(env, request) {
+  const db = env.MOVES_DB;
+  let rows = [], brief = null;
+  if (db) {
+    await ensureSchema(db);
+    rows = ((await db.prepare(`SELECT o.name, o.role_title, o.company, o.tier, o.pack_id, o.slug, o.live_at FROM orders o WHERE ${LIVE} AND ${DEDICATED_SQL} ORDER BY o.live_at DESC LIMIT 6`).all()).results || []).map(fromDb);
+    for (const b of await publishedBriefs(db, 4)) {
+      if ((await briefNames(db, b.d)).length) { brief = { url: `/moves/brief/${b.d}`, title: briefTitle(b.d), date: b.d }; break; }
+    }
+  }
+  const moves = rows.concat(ARCHIVE.map(fromArchive)).sort(newestFirst).slice(0, 6)
+    .map(m => ({ name: m.name, role_title: m.role_title, company: m.company, url: `/moves/${m.slug}`, date: String(m.live_at).slice(0, 10) }));
+  const stories = (await latestStories(env, request, 3)).map(st => ({ title: st.title, url: st.url, date: st.date }));
+  const updated = [moves[0] && moves[0].date, brief && brief.date, stories[0] && stories[0].date].filter(Boolean).sort().pop() || null;
+  return new Response(JSON.stringify({ updated, moves, brief, stories }), { headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=600' } });
 }
 
 export async function renderProfile(env, slug) {
@@ -231,15 +262,15 @@ export async function renderProfile(env, slug) {
   await ensureSchema(db);
   if (!/^[a-z0-9-]{1,90}$/.test(slug)) return notFound();
   const o = await db.prepare(`SELECT * FROM orders WHERE slug = ? AND ${LIVE}`).bind(slug).first();
-  if (!o) return notFound();
+  const archived = ARCHIVE.find(a => a.slug === slug);
+  if (!o) return archived ? renderArchived(db, archived) : notFound();
   if (!isDedicated(o)) return new Response(null, { status: 302, headers: { Location: `/moves#${slug}` } });
   const c = await db.prepare("SELECT text FROM contents WHERE order_id = ? AND platform = 'website'").bind(o.id).first();
   const img = await db.prepare("SELECT 1 FROM images WHERE order_id = ? AND kind = 'website'").bind(o.id).first();
   const d = JSON.parse(o.details || '{}');
   const url = `${SITE}/moves/${slug}`, image = img ? `${SITE}/moves/img/${slug}` : SITE + '/images/Homepage-Meta-removebg-preview.png';
   const site = /^https?:\/\/[^\s]+\.[^\s]+/i.test(d.company_site || '') ? d.company_site : '';
-  const related = (await db.prepare(`SELECT id, name, role_title, company, slug, live_at, (SELECT 1 FROM images i WHERE i.order_id = orders.id AND i.kind = 'website') AS has_img
-    FROM orders WHERE ${LIVE} AND ${DEDICATED_SQL} AND slug <> ? ORDER BY live_at DESC LIMIT 3`).bind(slug).all()).results || [];
+  const related = await relatedDb(db, slug);
   const [fnHref, fnName] = fnPage(o.role_title);
   const title = `${headline(o)} | Boardroom Moves`;
   const description = (firstPara(c && c.text) || `${headline(o)}.`).slice(0, 158);
@@ -255,8 +286,7 @@ export async function renderProfile(env, slug) {
 <a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}" target="_blank" rel="noopener">Share on LinkedIn</a>
 <a href="https://wa.me/?text=${encodeURIComponent(headline(o) + ' ' + url)}" target="_blank" rel="noopener">Share on WhatsApp</a></div></section>`;
   const services = `<p class="mv-services">Boardroom CXO runs executive search for retail, jewellery and D2C brands. ${fnHref ? `See our <a href="${fnHref}">${esc(fnName)}</a>, or <a href="/schedule-a-call">talk to us</a> about a leadership hire.` : `<a href="/schedule-a-call">Talk to us</a> about a leadership hire.`}</p>`;
-  const relatedBlock = related.length ? `<section class="mv-related"><h2>More Boardroom Moves</h2><div class="mv-grid">${related.map(r => `<a class="mv-card" href="/moves/${esc(r.slug)}">${r.has_img ? `<img src="/moves/img/${esc(r.slug)}" alt="${esc(altOf(r))}" loading="lazy" width="1200" height="630">` : ''}
-    <div><time datetime="${esc(String(r.live_at).slice(0, 10))}">${niceDate(r.live_at)}</time><h3>${esc(r.name)}</h3><p>${esc(r.role_title)} at ${esc(r.company)}</p></div></a>`).join('')}</div></section>` : '';
+  const relatedBlock = relatedSection(related.map(fromDb), slug);
   const body = `<div class="mv-wrap">
 <section class="mv-hero"><p class="mv-crumb"><a href="/">Home</a> / <a href="/moves">Boardroom Moves</a></p><p class="mv-meta">Boardroom Moves · Featured placement · ${niceDate(o.live_at)}</p>
 <h1 style="margin-top:14px">${esc(headline(o))}</h1></section>
@@ -271,6 +301,44 @@ ${relatedBlock}${ctaBlock}</div>`;
       about: { '@type': 'Person', name: o.name, jobTitle: o.role_title, worksFor: { '@type': 'Organization', name: o.company, ...(site ? { url: site } : {}) }, ...(d.linkedin ? { sameAs: [d.linkedin] } : {}) },
       isPartOf: { '@type': 'CollectionPage', name: 'Boardroom Moves', url: SITE + '/moves' } },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: 'Boardroom Moves', item: SITE + '/moves' }, { '@type': 'ListItem', position: 3, name: o.name, item: url }] }] };
+  return html(page({ title, description, canonical: url, image, jsonld, body }));
+}
+
+const relatedDb = async (db, slug) => (await db.prepare(`SELECT id, name, role_title, company, slug, live_at, (SELECT 1 FROM images i WHERE i.order_id = orders.id AND i.kind = 'website') AS has_img
+    FROM orders WHERE ${LIVE} AND ${DEDICATED_SQL} AND slug <> ? ORDER BY live_at DESC LIMIT 3`).bind(slug).all()).results || [];
+function relatedSection(fromDesk, slug) {
+  const related = fromDesk.concat(ARCHIVE.filter(a => a.slug !== slug).map(fromArchive)).sort(newestFirst).slice(0, 3);
+  return related.length ? `<section class="mv-related"><h2>More Boardroom Moves</h2><div class="mv-grid">${related.map(card).join('')}</div></section>` : '';
+}
+
+// A move from the LinkedIn archive: the post as it ran, with a link to the original.
+async function renderArchived(db, a) {
+  const url = `${SITE}/moves/${a.slug}`, image = SITE + a.image;
+  const title = `${a.name}: ${a.role_title} at ${a.company} | Boardroom Moves`;
+  const h1 = `${a.name} named ${a.role_title} at ${a.company}`;
+  const description = (String(a.text).split(/\n{2,}/)[0] || h1).replace(/\s+/g, ' ').slice(0, 158);
+  const [fnHref, fnName] = fnPage(a.role_title);
+  const side = [['New role', `${esc(a.role_title)}<br>${esc(a.company)}`], a.prev_role ? ['Previously', esc(a.prev_role)] : null, ['Announced', niceDate(a.published_at)],
+    ['On LinkedIn', `<a class="mv-link" href="${esc(a.post_url)}" target="_blank" rel="noopener">Read the post</a>`],
+    a.profile ? ['Profile', `<a class="mv-link" href="${esc(a.profile)}" target="_blank" rel="noopener nofollow">${esc(a.name)} on LinkedIn</a>`] : null].filter(Boolean)
+    .map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
+  const services = `<p class="mv-services">Boardroom CXO runs executive search for CXO and senior leadership roles in India and the UAE. ${fnHref ? `See our <a href="${fnHref}">${esc(fnName)}</a>, or <a href="/schedule-a-call">talk to us</a> about a leadership hire.` : `<a href="/schedule-a-call">Talk to us</a> about a leadership hire.`}</p>`;
+  const body = `<div class="mv-wrap">
+<section class="mv-hero"><p class="mv-crumb"><a href="/">Home</a> / <a href="/moves">Boardroom Moves</a></p><p class="mv-meta">Boardroom Moves #${a.no} · ${niceDate(a.published_at)}</p>
+<h1 style="margin-top:14px">${esc(h1)}</h1></section>
+<article class="mv-article"><div><img class="mv-figure mv-sq" src="${esc(a.image)}" alt="${esc(altOf(a))}" width="900" height="900">
+<div class="mv-body">${prose(a.text)}</div>
+<p class="mv-source">First published on the <a href="${esc(a.post_url)}" target="_blank" rel="noopener">Boardroom CXO LinkedIn page</a> on ${niceDate(a.published_at)}. To correct or remove it, write to <a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a>.</p>
+${services}</div>
+<aside><dl class="mv-side">${side}</dl></aside></article>
+${relatedSection(db ? (await relatedDb(db, a.slug)).map(fromDb) : [], a.slug)}${ctaBlock}</div>`;
+  const jsonld = { '@context': 'https://schema.org', '@graph': [
+    { '@type': 'NewsArticle', headline: h1.slice(0, 110), url, mainEntityOfPage: { '@type': 'WebPage', '@id': url }, image: [image], description,
+      datePublished: a.published_at, dateModified: a.published_at,
+      author: { '@type': 'Organization', name: 'Boardroom CXO', url: SITE + '/' }, publisher: { '@type': 'Organization', name: 'Boardroom CXO', url: SITE + '/', logo: { '@type': 'ImageObject', url: SITE + '/images/logo-boardroomcxo.png' } },
+      about: { '@type': 'Person', name: a.name, jobTitle: a.role_title, worksFor: { '@type': 'Organization', name: a.company }, ...(a.profile ? { sameAs: [a.profile] } : {}) },
+      isPartOf: { '@type': 'CollectionPage', name: 'Boardroom Moves', url: SITE + '/moves' } },
+    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: 'Boardroom Moves', item: SITE + '/moves' }, { '@type': 'ListItem', position: 3, name: a.name, item: url }] }] };
   return html(page({ title, description, canonical: url, image, jsonld, body }));
 }
 
@@ -409,8 +477,10 @@ export async function renderSitemap(env) {
   const db = env.MOVES_DB;
   await ensureSchema(db);
   const rows = (await db.prepare(`SELECT slug, tier, pack_id, live_at, updated_at FROM orders WHERE ${LIVE} ORDER BY live_at DESC`).all()).results || [];
-  const urls = [`<url><loc>${SITE}/moves</loc>${rows[0] ? `<lastmod>${String(rows[0].live_at).slice(0, 10)}</lastmod>` : ''}</url>`]
+  const newest = [rows[0] && String(rows[0].live_at).slice(0, 10), ARCHIVE[0] && ARCHIVE[0].date].filter(Boolean).sort().pop();
+  const urls = [`<url><loc>${SITE}/moves</loc>${newest ? `<lastmod>${newest}</lastmod>` : ''}</url>`]
     .concat(rows.filter(isDedicated).map(r => `<url><loc>${SITE}/moves/${r.slug}</loc><lastmod>${String(r.updated_at || r.live_at).slice(0, 10)}</lastmod></url>`))
+    .concat(ARCHIVE.map(a => `<url><loc>${SITE}/moves/${a.slug}</loc><lastmod>${a.date}</lastmod></url>`))
     .concat((await publishedBriefs(db, 500)).map(b => `<url><loc>${SITE}/moves/brief/${b.d}</loc><lastmod>${b.d}</lastmod></url>`))
     .concat((await publishedReports(db)).map(x => `<url><loc>${SITE}/moves/report/${x.m}</loc><lastmod>${x.d}</lastmod></url>`));
   return new Response(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`,

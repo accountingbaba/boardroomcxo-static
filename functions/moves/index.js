@@ -1,2 +1,2 @@
 import { renderHub } from '../_moves/public.js';
-export const onRequestGet = ({ env, next }) => (env.MOVES_DB ? renderHub(env) : next());
+export const onRequestGet = ({ env, request, next }) => (env.MOVES_DB ? renderHub(env, request) : next());
