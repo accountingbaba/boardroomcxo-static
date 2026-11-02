@@ -25,7 +25,7 @@ const altOf = o => `${o.name}, ${o.role_title}, ${o.company}`;
 // Moves posted on LinkedIn before the Moves desk existed (tools/archive.py). They are listed with the desk's
 // features, but their pages say where they first ran and make no claim about how they were arranged.
 const fromDb = o => ({ slug: o.slug, name: o.name, role_title: o.role_title, company: o.company, live_at: o.live_at, img: o.has_img ? `/moves/img/${o.slug}` : '' });
-const fromArchive = a => ({ slug: a.slug, name: a.name, role_title: a.role_title, company: a.company, live_at: a.published_at, img: a.image, sq: true });
+const fromArchive = a => ({ slug: a.slug, name: a.name, role_title: a.role_title, company: a.company, live_at: a.published_at, img: a.image, sq: !!a.image });
 const newestFirst = (a, b) => new Date(b.live_at) - new Date(a.live_at);
 const card = m => `<a class="mv-card${m.sq ? ' mv-card--sq' : ''}" href="/moves/${esc(m.slug)}">${m.img ? `<img src="${esc(m.img)}" alt="${esc(altOf(m))}" loading="lazy" width="${m.sq ? 900 : 1200}" height="${m.sq ? 900 : 630}">` : ''}
     <div><time datetime="${esc(String(m.live_at).slice(0, 10))}">${niceDate(m.live_at)}</time><h3>${esc(m.name)}</h3><p>${esc(m.role_title)} at ${esc(m.company)}</p></div></a>`;
@@ -135,6 +135,7 @@ function page({ title, description, canonical, image, jsonld, robots = 'index, f
 .mv-related{margin:0 0 56px}
 .mv-related .mv-grid{margin:16px 0 0}
 .mv-week a{border-bottom:1px solid var(--line)}
+.mv-week li a:hover{border-color:var(--ink)}
 .mv-brief-list{margin:40px 0 0;max-width:820px}
 .mv-brief-list li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px;padding:18px 0;border-bottom:1px solid var(--line)}
 .mv-brief-list strong{font-family:var(--font-display);font-weight:500;font-size:1.25rem}
@@ -201,6 +202,7 @@ const HUB_FAQ = [
 const faqLinks = a => esc(a).replace('the Get Featured page', '<a href="/get-featured">the Get Featured page</a>').replace('hire@boardroomcxo.com', '<a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a>');
 const faqBlock = `<section class="mv-faq"><h2>Questions about Boardroom Moves</h2>${HUB_FAQ.map(([q, a]) => `<div><h3>${esc(q)}</h3><p>${faqLinks(a)}</p></div>`).join('')}</section>`;
 
+const HUB_CARDS = 12;
 export async function renderHub(env, request) {
   const db = env.MOVES_DB;
   await ensureSchema(db);
@@ -224,7 +226,9 @@ export async function renderHub(env, request) {
   const body = `<div class="mv-wrap">
 <section class="mv-hero"><p class="mv-crumb"><a href="/">Home</a> / Boardroom Moves</p><h1>Boardroom Moves: senior leadership moves in India</h1>
 <p class="lead">Senior leadership appointments in India, announced on the Boardroom CXO LinkedIn page and recorded here. The Brief rounds up the week's moves every Thursday, and Inside the Boardroom tells one leader's story every Saturday. Featured leaders see their write-up before it goes live.</p></section>
-${moves.length ? `<section class="mv-sec" id="latest"><h2>Latest moves</h2><div class="mv-grid">${moves.map(card).join('')}</div></section>` : '<p class="mv-empty">The first Boardroom Moves features appear here soon.</p>'}
+${moves.length ? `<section class="mv-sec" id="latest"><h2>Latest moves</h2><div class="mv-grid">${moves.slice(0, HUB_CARDS).map(card).join('')}</div></section>` : '<p class="mv-empty">The first Boardroom Moves features appear here soon.</p>'}
+${moves.length > HUB_CARDS ? `<section class="mv-week" id="earlier"><h2>Earlier moves</h2><ul>${moves.slice(HUB_CARDS).map(m =>
+    `<li><strong><a href="/moves/${esc(m.slug)}">${esc(m.name)}</a></strong><span>${esc(m.role_title)} at ${esc(m.company)} · ${niceDate(m.live_at)}</span></li>`).join('')}</ul></section>` : ''}
 <div class="mv-split">${storyBlock || '<div></div>'}${getBlock}</div>
 ${weekBlocks}${reportBlock}
 ${faqBlock}
@@ -313,7 +317,7 @@ function relatedSection(fromDesk, slug) {
 
 // A move from the LinkedIn archive: the post as it ran, with a link to the original.
 async function renderArchived(db, a) {
-  const url = `${SITE}/moves/${a.slug}`, image = SITE + a.image;
+  const url = `${SITE}/moves/${a.slug}`, image = a.image ? SITE + a.image : SITE + '/images/Homepage-Meta-removebg-preview.png';
   const title = `${a.name}: ${a.role_title} at ${a.company} | Boardroom Moves`;
   const h1 = `${a.name} named ${a.role_title} at ${a.company}`;
   const description = (String(a.text).split(/\n{2,}/)[0] || h1).replace(/\s+/g, ' ').slice(0, 158);
@@ -324,9 +328,9 @@ async function renderArchived(db, a) {
     .map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
   const services = `<p class="mv-services">Boardroom CXO runs executive search for CXO and senior leadership roles in India and the UAE. ${fnHref ? `See our <a href="${fnHref}">${esc(fnName)}</a>, or <a href="/schedule-a-call">talk to us</a> about a leadership hire.` : `<a href="/schedule-a-call">Talk to us</a> about a leadership hire.`}</p>`;
   const body = `<div class="mv-wrap">
-<section class="mv-hero"><p class="mv-crumb"><a href="/">Home</a> / <a href="/moves">Boardroom Moves</a></p><p class="mv-meta">Boardroom Moves #${a.no} · ${niceDate(a.published_at)}</p>
+<section class="mv-hero"><p class="mv-crumb"><a href="/">Home</a> / <a href="/moves">Boardroom Moves</a></p><p class="mv-meta">Boardroom Moves${a.no ? ` #${a.no}` : ''} · ${niceDate(a.published_at)}</p>
 <h1 style="margin-top:14px">${esc(h1)}</h1></section>
-<article class="mv-article"><div><img class="mv-figure mv-sq" src="${esc(a.image)}" alt="${esc(altOf(a))}" width="900" height="900">
+<article class="mv-article"><div>${a.image ? `<img class="mv-figure mv-sq" src="${esc(a.image)}" alt="${esc(altOf(a))}" width="900" height="900">` : ''}
 <div class="mv-body">${prose(a.text)}</div>
 <p class="mv-source">First published on the <a href="${esc(a.post_url)}" target="_blank" rel="noopener">Boardroom CXO LinkedIn page</a> on ${niceDate(a.published_at)}. To correct or remove it, write to <a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a>.</p>
 ${services}</div>
