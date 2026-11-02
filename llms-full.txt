@@ -1,6 +1,6 @@
 # Boardroom CXO: Full Article Archive
 
-> Complete text of every published article from Boardroom CXO, an executive search firm for retail, jewelry and D2C brands in India and the UAE. For summaries, hiring pages and contact details, see https://boardroomcxo.com/llms.txt. Canonical URLs are listed per article below.
+> Complete text of every published article from Boardroom CXO, an executive search firm for CXO and senior leadership roles in India and the UAE, deepest in retail and jewellery. For summaries, hiring pages and contact details, see https://boardroomcxo.com/llms.txt. Canonical URLs are listed per article below.
 
 ================================================================================
 # How to Announce a New CXO Appointment in India

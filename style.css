@@ -1657,3 +1657,10 @@ ul  { list-style: none; }
 @media (max-width: 900px) {
   .proof-grid { grid-template-columns: 1fr; margin-bottom: 48px; }
 }
+
+/* Phone readability: no text under 11px, tap targets at least 44px */
+@media (max-width: 900px) {
+  .hamburger { width: 44px; height: 44px; }
+  .pstep-kpi-label, .case-item .case-family-tag, .testi-attr-rated, .proof-tag, .role-index, .rs-label small { font-size: 11px; letter-spacing: 0.14em; }
+  .ht-track a { display: inline-flex; align-items: center; min-height: 44px; }
+}

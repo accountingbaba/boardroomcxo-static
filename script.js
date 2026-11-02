@@ -131,8 +131,8 @@ const SALARY_DATA = [
   const FAMILY_LABEL = {
     marketing: 'A / Marketing',
     sales:     'B / Sales & Retail',
-    bd:        'C / BD & Franchise',
-    strategy:  'D / Strategy & Ops'
+    bd:        'D / Business & Expansion',
+    strategy:  'D / Business & Expansion'
   };
 
   SALARY_DATA.forEach(group => {

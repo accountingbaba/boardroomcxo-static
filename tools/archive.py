@@ -79,12 +79,23 @@ def import_posts(srcs):
     open(DATA, 'w', encoding='utf-8', newline='\n').write(json.dumps(out, ensure_ascii=False, indent=1) + '\n')
 
 
+def small_images(moves):
+    """480px copies for the /moves cards and phones (the 900px originals stay for the profile pages)."""
+    import os
+    from PIL import Image
+    os.makedirs(f'{IMG_DIR}/sm', exist_ok=True)
+    for m in moves:
+        if m['image'] and not os.path.exists(f"{IMG_DIR}/sm/{m['slug']}.webp"):
+            Image.open(m['image'].lstrip('/')).resize((480, 480), Image.LANCZOS).save(f"{IMG_DIR}/sm/{m['slug']}.webp", 'WEBP', quality=78, method=6)
+
+
 def main():
     import os
     if '--import' in sys.argv:
         os.makedirs(IMG_DIR, exist_ok=True)
         import_posts(sys.argv[sys.argv.index('--import') + 1:])
     moves = json.load(open(DATA, encoding='utf-8'))
+    small_images(moves)
     open('functions/_moves/archive.js', 'w', encoding='utf-8', newline='\n').write(
         '// Written by tools/archive.py from data/moves-archive.json: Boardroom Moves posts from before the Moves desk.\n'
         f'export const ARCHIVE = {json.dumps(moves, ensure_ascii=False, indent=1)};\n')

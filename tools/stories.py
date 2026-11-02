@@ -77,7 +77,7 @@ def page(items):
         head = re.sub(r'(<meta (?:property="og:image"|name="twitter:image") content=")[^"]*"', rf'\g<1>{SITE}{items[0]["image"]}"', head)
     ld = {
         '@context': 'https://schema.org', '@type': 'CollectionPage', 'name': 'Inside the Boardroom',
-        'url': f'{SITE}/inside-the-boardroom', 'isPartOf': {'@type': 'WebSite', 'name': 'Boardroom CXO', 'url': SITE + '/'},
+        'url': f'{SITE}/inside-the-boardroom', 'isPartOf': {'@type': 'WebSite', '@id': SITE + '/#website', 'name': 'Boardroom CXO', 'url': SITE + '/'},
         'breadcrumb': {'@type': 'BreadcrumbList', 'itemListElement': [
             {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE + '/'},
             {'@type': 'ListItem', 'position': 2, 'name': 'Boardroom Moves', 'item': SITE + '/moves'},

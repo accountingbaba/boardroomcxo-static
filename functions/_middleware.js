@@ -3,6 +3,15 @@
 const BLOCKED_DIRS = ['/frontend/', '/backend/', '/memory/', '/tests/', '/test_reports/', '/tools/'];
 const BLOCKED_FILES = new Set(['/README.md', '/test_result.md', '/design_guidelines.json']);
 
+// Same as the /* block in _headers.
+const SECURITY = [
+  ['X-Content-Type-Options', 'nosniff'],
+  ['X-Frame-Options', 'SAMEORIGIN'],
+  ['Referrer-Policy', 'strict-origin-when-cross-origin'],
+  ['Permissions-Policy', 'geolocation=(), camera=(), microphone=()'],
+  ['Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload'],
+];
+
 async function notFound(context, url) {
   const page = await context.env.ASSETS.fetch(new URL('/404', url));
   return new Response(page.body, {
@@ -33,5 +42,16 @@ export async function onRequest(context) {
     return notFound(context, url);
   }
 
-  return context.next();
+  // /moves/ and /moves/<slug>/ answer the same page as without the slash: send them to one address.
+  if (path.startsWith('/moves/') && path.endsWith('/')) {
+    url.pathname = path.slice(0, -1);
+    return Response.redirect(url.toString(), 301);
+  }
+
+  // Pages built by Functions (the /moves pages, sitemap-moves.xml) do not get the _headers file's headers.
+  const res = await context.next();
+  if (SECURITY.every(([k]) => res.headers.has(k))) return res;
+  const out = new Response(res.body, res);
+  for (const [k, v] of SECURITY) if (!out.headers.has(k)) out.headers.set(k, v);
+  return out;
 }

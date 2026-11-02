@@ -28,55 +28,155 @@
   <meta name="twitter:description" content="Executive search for CEO, CFO, CMO, CHRO and sales leaders in India and the UAE, deepest in retail and jewellery. Home of Boardroom Moves." />
   <meta name="twitter:image" content="https://boardroomcxo.com/images/Homepage-Meta-removebg-preview.png" />
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": "https://boardroomcxo.com/#organization",
-    "name": "Boardroom CXO",
-    "description": "Executive search firm for CXO and senior leadership roles in India and the UAE, across retail, consumer, financial services, manufacturing and technology, with the deepest network in retail and jewellery. Publisher of Boardroom Moves, a record of senior leadership moves in India.",
-    "telephone": "+919856755000",
-    "email": "hire@boardroomcxo.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Surat",
-      "addressRegion": "Gujarat",
-      "addressCountry": "IN"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://boardroomcxo.com/#organization",
+      "name": "Boardroom CXO",
+      "description": "Executive search firm for CXO and senior leadership roles in India and the UAE, across retail, consumer, financial services, manufacturing and technology, with the deepest network in retail and jewellery. Publisher of Boardroom Moves, a record of senior leadership moves in India.",
+      "url": "https://boardroomcxo.com/",
+      "telephone": "+919856755000",
+      "email": "hire@boardroomcxo.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://boardroomcxo.com/images/logo-boardroomcxo-transparent.png",
+        "width": 341,
+        "height": 150
+      },
+      "image": "https://boardroomcxo.com/images/logo-boardroomcxo-transparent.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Surat",
+        "addressRegion": "Gujarat",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 21.1702,
+        "longitude": 72.8311
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "10:00",
+        "closes": "18:00"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "India"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+919856755000",
+        "email": "hire@boardroomcxo.com",
+        "areaServed": [
+          "IN",
+          "AE"
+        ],
+        "availableLanguage": "English"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/boardroom-cxo",
+        "https://www.instagram.com/boardroomcxo/"
+      ],
+      "founder": {
+        "@id": "https://boardroomcxo.com/about-us#founder"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Executive Search Practices",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://boardroomcxo.com/marketing-leadership-hiring#service",
+              "name": "Marketing Leadership Search",
+              "url": "https://boardroomcxo.com/marketing-leadership-hiring",
+              "description": "Executive search for CMOs and Heads of Marketing, brand and marketing leads, performance and growth marketing heads, and e-commerce and online marketing heads."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://boardroomcxo.com/sales-leadership-hiring#service",
+              "name": "Sales & Retail Leadership Search",
+              "url": "https://boardroomcxo.com/sales-leadership-hiring",
+              "description": "Executive search for Chief Sales Officers and sales heads, national sales heads, zonal and regional sales managers, and retail operations heads."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://boardroomcxo.com/finance-leadership-hiring#service",
+              "name": "CFO & Finance Leadership Search",
+              "url": "https://boardroomcxo.com/finance-leadership-hiring",
+              "description": "Executive search for CFOs and Group CFOs, finance heads and financial controllers, treasury and strategy finance, and pre-IPO and listed-company finance roles."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://boardroomcxo.com/executive-search#business-heads-expansion",
+              "name": "Business Heads & Expansion Search",
+              "url": "https://boardroomcxo.com/executive-search",
+              "description": "Executive search for business heads and general managers, founder's office and strategy heads, senior BD and expansion heads, and franchise development leads."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://boardroomcxo.com/hr-leadership-hiring#service",
+              "name": "CHRO & HR Leadership Search",
+              "url": "https://boardroomcxo.com/hr-leadership-hiring",
+              "description": "Executive search for Chief Human Resources Officers, Heads of Talent Acquisition, People Operations Heads, and Learning & Culture leaders."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://boardroomcxo.com/uae-consulting-hiring#service",
+              "name": "UAE Consulting and Business-Setup Firm Search",
+              "url": "https://boardroomcxo.com/uae-consulting-hiring",
+              "description": "Executive search for marketing, business development and engineering leadership roles at UAE consulting, company-formation, PRO services and corporate service firms."
+            }
+          }
+        ]
+      }
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 21.1702,
-      "longitude": 72.8311
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "10:00",
-      "closes": "18:00"
-    },
-    "areaServed": ["India", "UAE"],
-    "url": "https://boardroomcxo.com",
-    "image": "https://boardroomcxo.com/images/logo-boardroomcxo-transparent.png",
-    "logo": "https://boardroomcxo.com/images/logo-boardroomcxo-transparent.png",
-    "sameAs": [
-      "https://www.linkedin.com/company/boardroom-cxo",
-      "https://www.instagram.com/boardroomcxo/"
-    ],
-    "founder": {
-      "@type": "Person",
-      "@id": "https://boardroomcxo.com/about-us#founder",
-      "name": "CA Ketul Patel"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Executive Search Practices",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marketing Leadership Search", "description": "Executive search for CMOs and performance marketing leaders at retail, jewellery, and D2C brands." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sales & Retail Leadership Search", "description": "Executive search for sales and retail operations leaders at retail, jewellery, and D2C brands." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Development & Franchise Leadership Search", "description": "Executive search for BD and franchise leaders driving category and channel expansion." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Strategy & Operations Leadership Search", "description": "Executive search for CFOs, COOs, and strategy leaders, including pre-IPO and growth-stage mandates." } }
-      ]
+    {
+      "@type": "WebSite",
+      "@id": "https://boardroomcxo.com/#website",
+      "name": "Boardroom CXO",
+      "url": "https://boardroomcxo.com/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://boardroomcxo.com/#organization"
+      }
     }
-  }
+  ]
+}
   </script>
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -84,7 +184,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" /></noscript>
-  <link rel="stylesheet" href="style.css?v=20261104" />
+  <link rel="stylesheet" href="style.css?v=20261105" />
 </head>
 <body>
 
@@ -422,7 +522,7 @@
         </div>
         <div class="modal-family-strip">
           <span class="modal-family-dot"></span>
-          <span id="salary-family-badge">D / Strategy &amp; Ops</span>
+          <span id="salary-family-badge">D / Business &amp; Expansion</span>
         </div>
         <div class="terminal-form">
           <label>

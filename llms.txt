@@ -1,22 +1,29 @@
 # Boardroom CXO
 
-> Executive search firm for retail, jewelry and D2C brands in India and the UAE. Places marketing, sales and retail, business development, finance, HR and operations leaders, headhunted from competitor companies and benchmarked on real (not CTC-slip) pay data, rather than sourced from job-board databases.
+> Executive search firm for CXO and senior leadership roles in India and the UAE, with the deepest network in retail and jewellery. Places CEOs, CFOs, CMOs, CHROs and sales leaders, headhunted from competitor companies and benchmarked on real pay data, not sourced from job-board databases. Also publishes Boardroom Moves, a record of senior leadership moves in India, and Inside the Boardroom, weekly stories of Indian business leaders.
 
-Boardroom CXO is based in Surat, India, and serves clients across India and the UAE. Retail is the umbrella; jewelry and D2C brands are the deepest specialism. The firm's differentiators: direct headhunting of passive candidates who are not job-hunting, market-mapping compensation before a mandate is priced, and verifying actual take-home pay (bank credit) rather than reported CTC, a known gap at legacy retail and jewelry brands. Boardroom CXO also publishes two leadership series on LinkedIn and this site: Inside the Boardroom (long-form profiles of Indian business leaders) and Boardroom Moves (senior leadership-move announcements).
+Boardroom CXO is based in Surat, India, and serves clients across India and the UAE. It works in five sectors: retail and jewellery (the deepest network), consumer and D2C, financial services, manufacturing, and technology. The firm's differentiators: direct headhunting of passive candidates who are not job-hunting, mapping what a role pays across the category and city before the budget is set, and verifying actual take-home pay (bank credit) rather than reported CTC, a known gap at legacy retail and jewellery brands.
 
 ## Core pages
 
 - [Home](https://boardroomcxo.com/): positioning, roles filled, a live compensation-benchmarking tool by role, store count and city tier, and a static 2025-26 pay table
+- [Executive Search](https://boardroomcxo.com/executive-search): CEO and MD, CFO, CMO, sales, retail and business development, and CHRO searches across the five sectors; how a search works and what it costs
 - [About Us](https://boardroomcxo.com/about-us): firm history, founder CA Ketul Patel, placement track record and team
 - [Case Studies](https://boardroomcxo.com/case-studies): real placement outcomes, including CMO, CFO, sales and operations leadership hires
 - [Resources](https://boardroomcxo.com/resources): field articles on executive hiring, compensation and leadership
 - [Get Featured](https://boardroomcxo.com/get-featured): submit a leadership move for Boardroom Moves or pitch a story for Inside the Boardroom
-- [Boardroom Moves](https://boardroomcxo.com/moves): Boardroom CXO's record of senior leadership appointments in India, with a focus on retail, D2C and consumer brands, with a page for each featured leader (new role, company, previous role, date). Featured pages are paid placements; the leader sees the write-up before it goes live. Machine-readable list: https://boardroomcxo.com/sitemap-moves.xml
 - [Schedule a Call](https://boardroomcxo.com/schedule-a-call): contact and booking
+- [Privacy Policy](https://boardroomcxo.com/privacy-policy): how Boardroom CXO and Boardroom Moves handle personal data
+
+## Boardroom Moves
+
+- [Boardroom Moves](https://boardroomcxo.com/moves): senior leadership appointments in India across sectors, announced on the Boardroom CXO LinkedIn page and recorded here, with a page for each leader (new role, company, previous role, date). The weekly Brief rounds up 5 to 6 leaders who moved that week, every Thursday. Featured placement is arranged with the leader or their company, and the leader sees the write-up before it goes live. The weekly Brief is not paid for
+- [Monthly report, October 2026](https://boardroomcxo.com/moves/report/2026-10): the senior leadership moves tracked that month, by function and sector, with a CSV download
+- [Move pages sitemap](https://boardroomcxo.com/sitemap-moves.xml): machine-readable list of every move page
 
 ## Hiring by function
 
-- [Marketing and CMO search](https://boardroomcxo.com/marketing-leadership-hiring): CMOs, CGOs, performance marketing leads and brand leaders for retail, jewelry and D2C brands
+- [Marketing and CMO search](https://boardroomcxo.com/marketing-leadership-hiring): CMOs, CGOs, performance marketing leads and brand leaders
 - [Sales and retail leadership search](https://boardroomcxo.com/sales-leadership-hiring): store managers through area, regional and national sales heads
 - [Finance and CFO search](https://boardroomcxo.com/finance-leadership-hiring): CFOs, finance heads, treasurers and financial controllers, including pre-IPO and cross-border mandates
 - [HR and people leadership search](https://boardroomcxo.com/hr-leadership-hiring): CHROs, heads of talent acquisition, people operations and learning leaders
@@ -27,10 +34,10 @@ Boardroom CXO is based in Surat, India, and serves clients across India and the 
 
 ## Hiring field notes
 
-- [Solitario's Netflix Moment Exposes a Marketing Hiring Gap](https://boardroomcxo.com/article-solitario-cultural-relevance-marketing-leadership): why a Netflix brand integration that spiked Solitario Diamonds' traffic reveals most jewelry and D2C brands have hired the wrong kind of marketing leader: for paid reach, not cultural relevance
+- [Solitario's Netflix Moment Exposes a Marketing Hiring Gap](https://boardroomcxo.com/article-solitario-cultural-relevance-marketing-leadership): why a Netflix brand integration that spiked Solitario Diamonds' traffic reveals most jewellery and D2C brands have hired the wrong kind of marketing leader: for paid reach, not cultural relevance
 - [Aukera Raised ₹90 Cr: Inside India's Lab-Grown Diamond Race](https://boardroomcxo.com/article-aukera-lab-grown-diamond-category-race): what Aukera's back-to-back funding rounds and a legacy conglomerate's entry signal about the leadership talent lab-grown diamond jewellery brands need to scale
-- [Why the Best Performance Marketers in Jewelry Are Not on Naukri](https://boardroomcxo.com/article-performance-marketer-jewelry): on the thin, non-job-hunting pool of marketers with real ROAS experience in the jewelry price range of ₹5,000–60,000
-- [The Hidden Comp Gap: Why Jewelry Brands Keep Losing Candidates at the Offer Stage](https://boardroomcxo.com/article-hidden-comp-gap): field data on the gap between documented CTC and actual take-home pay at legacy jewelry/retail brands
+- [Why the Best Performance Marketers in Jewelry Are Not on Naukri](https://boardroomcxo.com/article-performance-marketer-jewelry): on the thin, non-job-hunting pool of marketers with real ROAS experience in the jewellery price range of ₹5,000–60,000
+- [The Hidden Comp Gap: Why Jewelry Brands Keep Losing Candidates at the Offer Stage](https://boardroomcxo.com/article-hidden-comp-gap): field data on the gap between documented CTC and actual take-home pay at legacy jewellery/retail brands
 
 ## For leaders: announcing a move and being found
 
@@ -42,6 +49,7 @@ Boardroom CXO is based in Surat, India, and serves clients across India and the 
 
 ## Inside the Boardroom: leadership profiles
 
+- [Inside the Boardroom](https://boardroomcxo.com/inside-the-boardroom): index of every story, newest first
 - [Puneet Chhatwal: He Grew the Taj by Owning Less of It](https://boardroomcxo.com/article-puneet-chhatwal-ihcl-taj): how Puneet Chhatwal took over Taj Hotels after seven straight years of losses, raised ₹4,000 crore mid-pandemic, signed hotels without owning them, and took IHCL's profit past ₹2,000 crore for the first time
 - [Noel Tata: The Job He Didn't Get, and the One He Built Instead](https://boardroomcxo.com/article-noel-tata-trent-zudio): how Noel Tata, passed over for chairman of Tata Sons in 2011, went back to running Westside, built Zudio into 963 of Trent's 1,286 stores, and in 2024 became chairman of Tata Trusts
 - [M P Ahammed: How a Coconut Trader Built India's Largest Jeweller](https://boardroomcxo.com/article-mp-ahammed-malabar-gold): how M P Ahammed sold dried coconut for 12 years, opened a single jewellery shop in Kozhikode in 1993, and grew by selling debentures to investors in the Gulf into Malabar Gold, now 445 stores in 14 countries
@@ -64,12 +72,13 @@ Boardroom CXO is based in Surat, India, and serves clients across India and the 
 
 ## Full text
 
-- [llms-full.txt](https://boardroomcxo.com/llms-full.txt): complete plain text of every article listed above, for direct ingestion without crawling each page
+- [llms-full.txt](https://boardroomcxo.com/llms-full.txt): complete plain text of every article listed above (articles only, not the service pages), for direct ingestion without crawling each page
 
 ## Contact
 
 - Phone (India and UAE): +91 98567 55000
 - Email: hire@boardroomcxo.com
+- Hours: Monday to Saturday, 10:00 to 18:00 IST
 - Location: Surat, Gujarat, India, serving India and the UAE
 - LinkedIn: https://www.linkedin.com/company/boardroom-cxo
 - Instagram: https://www.instagram.com/boardroomcxo/
