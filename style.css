@@ -19,7 +19,7 @@
   --line:          #D1CFCA;
   --line-dark:     #2A2C2A;
 
-  --font-display: 'Bodoni Moda', 'Times New Roman', serif;
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-body:    'Manrope', system-ui, sans-serif;
   --font-mono:    'Space Mono', ui-monospace, monospace;
 
@@ -32,12 +32,7 @@
   --z-modal: 400;
 }
 
-html {
-  scroll-behavior: smooth;
-  /* Bodoni Moda: fixed optical size so hairlines stay visible at large sizes (auto picks the thin poster cut) */
-  font-optical-sizing: none;
-  font-variation-settings: 'opsz' 18;
-}
+html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   font-size: 16px;

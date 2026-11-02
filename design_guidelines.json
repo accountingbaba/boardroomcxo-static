@@ -15,10 +15,10 @@
     "notes": "No gradients anywhere. Colors are matte and solid. The 'Oxidized Emerald' (accent_primary) replaces the old electric blue to provide grounded authority. 'Burnished Clay' (accent_secondary) replaces the gold for a more sophisticated, muted warmth. Backgrounds are soft 'Pearl/Stone' to contrast with the sharp borders."
   },
   "typography": {
-    "display": "Bodoni Moda",
+    "display": "Playfair Display",
     "body": "Manrope",
     "mono": "Space Mono",
-    "notes": "Bodoni Moda provides the high-fashion/jewelry elegance and extreme contrast (thin hairlines, thick stems) needed for hero sections and massive stats. Manrope offers geometric, sterile legibility for body and UI elements, acting as the perfect counterweight. Space Mono is used strictly for data points, tags, and the salary tool."
+    "notes": "Playfair Display provides the high-fashion/jewelry elegance and extreme contrast (thin hairlines, thick stems) needed for hero sections and massive stats. Manrope offers geometric, sterile legibility for body and UI elements, acting as the perfect counterweight. Space Mono is used strictly for data points, tags, and the salary tool."
   },
   "type_scale": {
     "display": "text-[4.5rem] leading-[1.05] tracking-tighter md:text-[6rem] lg:text-[7.5rem]",
@@ -39,19 +39,19 @@
   },
   "section_treatments": {
     "homepage": {
-      "hero": "Asymmetric split. Left: massive Bodoni heading. Right: The 3 stats presented as a strict architectural grid with Space Mono numerals. The businessman photo sits in the bottom right, cropped strictly with a 1px border. No overlays, just raw contrast.",
+      "hero": "Asymmetric split. Left: massive Playfair heading. Right: The 3 stats presented as a strict architectural grid with Space Mono numerals. The businessman photo sits in the bottom right, cropped strictly with a 1px border. No overlays, just raw contrast.",
       "client_marquee": "Minimalist 'Editorial Ribbon'. Solid #EAE8E1 background, 1px top/bottom border. Logos rendered in pure monochrome black, moving at a glacial, luxurious pace.",
       "problem_we_solve": "A 2x2 or 1x4 strict grid layout. Each card is a 1px outlined box. Minimal text, heavy use of SVG line charts showing the 'gap'.",
       "salary_tool": "Designed like a Bloomberg terminal crossed with a high-end catalog. Dark mode override: #0F1110 background, Space Mono green/white text, 1px borders. Dropdowns have sharp edges and absolute precision.",
-      "how_we_work": "Horizontal timeline. A single continuous 1px line traversing the section. Steps marked by massive Bodoni numerals (01, 02) resting on the line. Generous padding.",
+      "how_we_work": "Horizontal timeline. A single continuous 1px line traversing the section. Steps marked by massive Playfair numerals (01, 02) resting on the line. Generous padding.",
       "roles_we_fill": "Architectural grid. Four sharp-edged columns. Hovering over a column dims the others. Bullet points use em-dashes (\u2014) instead of standard bullets.",
       "why_a_specialist": "Large executive image on the left (grayscale with high contrast), wrapped by the 4 feature blocks on the right. 'Trusted by 500+' card overlaps the image boundary with a pure white background and sharp drop shadow.",
-      "testimonials": "Editorial blockquotes. Massive Bodoni hanging quotes (\"). No 'cards'\u2014just text floating in generous negative space, separated by 1px horizontal lines.",
+      "testimonials": "Editorial blockquotes. Massive Playfair hanging quotes (\"). No 'cards'\u2014just text floating in generous negative space, separated by 1px horizontal lines.",
       "blog_previews": "Magazine layout. Images are black and white by default, switching to color on hover. Category tags are uppercase, highly tracked.",
       "cta_footer": "Dark mode block (#0F1110). Massive display text 'LET'S BUILD YOUR BOARD'. Footer links arranged in strict, dense columns."
     },
     "inner_pages": {
-      "about_us": "Inner hero has a massive Bodoni title, pushing content down. Founder card is pure editorial: sharp black/white portrait, minimal bio. Values section uses horizontal accordions or large typography blocks.",
+      "about_us": "Inner hero has a massive Playfair title, pushing content down. Founder card is pure editorial: sharp black/white portrait, minimal bio. Values section uses horizontal accordions or large typography blocks.",
       "resources": "Library aesthetic. Strict grid layout for articles. Featured article takes up 2/3 of the top width. Newsletter opt-in is a brutalist form: 1px border input, pure black submit button.",
       "case_studies": "Dossier style. Lots of tabular data presentation. The 'impact band' uses massive typography with Space Mono metrics.",
       "schedule_a_call": "Split screen. Left: form, completely flat, 1px borders on inputs, no background on inputs. Right: the 'what you'll get' info with large abstract iconography.",
@@ -59,7 +59,7 @@
     }
   },
   "infographic_treatments": {
-    "hero_stats": "Instead of standard floating text, present stats in a 'data table' format. 1px borders separating them. Use Space Mono for the percentages, Bodoni for the descriptor.",
+    "hero_stats": "Instead of standard floating text, present stats in a 'data table' format. 1px borders separating them. Use Space Mono for the percentages, Playfair for the descriptor.",
     "problem_cards": "Visuals: SVG data-viz. E.g., for 'Budget-Reality Gap', show two parallel horizontal lines of different lengths with a dashed line connecting them. 'Fixed by' tag is a solid black rectangle with white monospace text.",
     "process": "A horizontal timeline. Use an SVG line that steps down (like a staircase) at each phase. Replace standard icons with geometric primitives (circle, square, triangle, diamond).",
     "salary_tool": "Terminal aesthetic. When result shows, it doesn't just pop up\u2014it 'decrypts' or types out. Use monospace typography for the \u20b9 amounts, with a subtle pulsing cursor next to the number.",
@@ -74,7 +74,7 @@
     },
     "tags": "Rectangle (0px radius). 1px border. Space Mono font. Uppercase.",
     "inputs": "Flat. border-b-only or full 1px border. No background. Padding 1rem. Focus state: border color darkens, 0 box-shadow.",
-    "navigation": "Sticky, but changes background from transparent to Solid White (#FFFFFF) with a 1px bottom border upon scroll. Logo is text-based Bodoni or the existing logo."
+    "navigation": "Sticky, but changes background from transparent to Solid White (#FFFFFF) with a 1px bottom border upon scroll. Logo is text-based Playfair or the existing logo."
   },
   "motion_and_interaction": {
     "principles": "Deliberate, heavy, cinematic. No bouncy or playful animations.",
