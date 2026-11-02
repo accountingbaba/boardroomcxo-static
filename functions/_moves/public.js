@@ -72,7 +72,7 @@ function page({ title, description, canonical, image, jsonld, robots = 'index, f
 <style>
 .mv-wrap{max-width:1100px;margin:0 auto;padding:0 var(--pad-x)}
 .mv-hero{padding:clamp(120px,14vw,170px) 0 40px;border-bottom:1px solid var(--line)}
-.mv-hero h1{font-family:var(--font-display);font-weight:500;font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.06;letter-spacing:-.02em;text-wrap:balance;max-width:22ch}
+.mv-hero h1{font-family:var(--font-display);font-weight:500;font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.06;letter-spacing:-.01em;text-wrap:balance;max-width:22ch}
 .mv-hero .lead{margin-top:18px}
 .mv-crumb{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);margin-bottom:22px}
 .mv-crumb a{border-bottom:1px solid var(--line)}
