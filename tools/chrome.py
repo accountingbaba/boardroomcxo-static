@@ -14,10 +14,10 @@ import re
 LOGO = '/images/logo-boardroomcxo-transparent.png'
 
 # (label, href, section): section decides which pages mark the link as active.
+# Case Studies lives in the footer only (owner's call, 3 Nov 2026).
 NAV = [
     ('Executive Search', '/executive-search', 'search'),
     ('Boardroom Moves', '/moves', 'moves'),
-    ('Case Studies', '/case-studies', 'cases'),
     ('About', '/about-us', 'about'),
 ]
 MOBILE_EXTRA = [('Inside the Boardroom', '/inside-the-boardroom'), ('Employer Login', 'https://accountingbaba.com/portal/?brand=boardroom')]

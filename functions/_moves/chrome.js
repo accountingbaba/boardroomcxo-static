@@ -5,7 +5,6 @@ export const HEADER = `<header class="site-header" id="site-header" data-testid=
     <nav class="nav-menu" data-testid="nav-menu" aria-label="Main">
       <a href="/executive-search" class="nav-link">Executive Search</a>
       <a href="/moves" class="nav-link active">Boardroom Moves</a>
-      <a href="/case-studies" class="nav-link">Case Studies</a>
       <a href="/about-us" class="nav-link">About</a>
     </nav>
     <div class="nav-ctas">
@@ -18,7 +17,6 @@ export const HEADER = `<header class="site-header" id="site-header" data-testid=
     <a href="/executive-search">Executive Search</a>
     <a href="/moves">Boardroom Moves</a>
     <a href="/inside-the-boardroom">Inside the Boardroom</a>
-    <a href="/case-studies">Case Studies</a>
     <a href="/about-us">About</a>
     <a href="https://accountingbaba.com/portal/?brand=boardroom">Employer Login</a>
     <a href="/schedule-a-call" class="nav-cta-mobile" data-testid="mnav-cta" data-door="search" data-door-at="menu">Hire a Leader →</a>
