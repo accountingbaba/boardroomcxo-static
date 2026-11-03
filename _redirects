@@ -18,6 +18,25 @@
 /the-top-3-leadership-roles-you-need-before-going-public/ /resources 301
 /why-leadership-can-make-or-break-your-ipo/ /resources 301
 
+# Old WordPress paths without the trailing slash, and pages Google found nested under them
+# (relative links from the old theme, e.g. /portfolio/<case>/article-x.html)
+/how-to-identify-leadership-gaps-before-your-ipo /resources 301
+/the-top-3-leadership-roles-you-need-before-going-public /resources 301
+/why-leadership-can-make-or-break-your-ipo /resources 301
+/how-to-identify-leadership-gaps-before-your-ipo/feed/ /resources 301
+/the-top-3-leadership-roles-you-need-before-going-public/feed/ /resources 301
+/why-leadership-can-make-or-break-your-ipo/feed/ /resources 301
+/how-to-identify-leadership-gaps-before-your-ipo/:page /:page 301
+/the-top-3-leadership-roles-you-need-before-going-public/:page /:page 301
+/why-leadership-can-make-or-break-your-ipo/:page /:page 301
+/portfolio/:case/feed/ /case-studies 301
+/portfolio/:case/:page /:page 301
+/portfolio/* /case-studies 301
+
+# Old announcement page -> Boardroom Moves
+/joining-announcement.html /moves 301
+/joining-announcement /moves 301
+
 # WordPress category archive -> Resources hub
 /category/blogs/ /resources 301
 

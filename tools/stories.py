@@ -66,8 +66,8 @@ def page(items):
     tpl = open('resources.html', encoding='utf-8').read().replace('\r\n', '\n')
     head_end = tpl.index('</head>')
     head = tpl[:head_end]
-    head = re.sub(r'<title>.*?</title>', '<title>Inside the Boardroom | Stories of Indian Business Leaders | Boardroom CXO</title>', head, flags=re.S)
-    desc = 'Inside the Boardroom: weekly stories of the Indian leaders behind Taj, Mahindra, Malabar Gold, Airtel and more. How they made the hard calls, and the lesson for anyone running a business.'
+    head = re.sub(r'<title>.*?</title>', '<title>Inside the Boardroom: Indian Business Leaders | Boardroom CXO</title>', head, flags=re.S)
+    desc = 'Weekly stories of the Indian leaders behind Taj, Mahindra, Malabar Gold, Airtel and more: how they made the hard calls, and the lesson for your business.'
     head = re.sub(r'<meta name="description" content="[^"]*"', f'<meta name="description" content="{desc}"', head)
     head = re.sub(r'<meta property="og:description" content="[^"]*"', f'<meta property="og:description" content="{desc}"', head)
     head = re.sub(r'<meta name="twitter:description" content="[^"]*"', f'<meta name="twitter:description" content="{desc}"', head)
