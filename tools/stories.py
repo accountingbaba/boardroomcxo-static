@@ -6,7 +6,8 @@ Run from the repo root after publishing a new story (and listing it on resources
     python tools/stories.py
 
 It writes data/stories.json (read by /moves/latest.json and the /moves page), inside-the-boardroom.html
-(the full list, newest first) and, on index.html, the Boardroom Moves ticker, faces row and band.
+(the full list, newest first), on index.html the Boardroom Moves ticker, faces row and band, and on each
+hiring page the newest stories whose byline links to it, at the top of its Field Notes list.
 """
 import html
 import json
@@ -196,11 +197,48 @@ def home(items):
     open('index.html', 'w', encoding='utf-8', newline='').write(s.replace('\n', nl))
 
 
+HIRING_PAGES = ['marketing-leadership-hiring', 'sales-leadership-hiring', 'finance-leadership-hiring', 'hr-leadership-hiring']
+
+
+def field_notes(items, per_page=4):
+    """On each hiring page, list the newest stories whose byline links to that page above the
+    hand-picked articles already in its Field Notes list, then renumber the rows."""
+    e = html.escape
+    for pg in HIRING_PAGES:
+        tagged = [st for st in items
+                  if f'href="/{pg}"' in re.search(r'<div class="meta">(.*?)</div>', open(st['url'].lstrip('/') + '.html', encoding='utf-8').read(), re.S).group(1)]
+        shown = [st['url'] for st in tagged[:per_page]]
+        rows = ''.join(f'''
+      <a href="{e(st['url'])}" class="article-row reveal">
+        <span class="num">R · 00</span>
+        <span class="cat">Inside the Boardroom · {month(st['date'])}</span>
+        <h3>{e(st['title'])}</h3>
+        <span class="link-under">Read →</span>
+      </a>''' for st in tagged[:per_page])
+        raw = open(pg + '.html', encoding='utf-8', newline='').read()
+        nl = '\r\n' if '\r\n' in raw else '\n'
+        s = raw.replace('\r\n', '\n')
+        s, n = re.subn(r'(<!-- field-notes:start -->).*?(\n<!-- field-notes:end -->)', lambda m: m.group(1) + rows + m.group(2), s, flags=re.S)
+        assert n == 1, pg
+        # drop hand-picked rows that repeat a story now listed above
+        a = s.index('<!-- field-notes:end -->')
+        b = s.index('</section>', a)
+        tail = re.sub(r'\n\s*<a href="(/[^"]+)" class="article-row[^"]*">.*?</a>',
+                      lambda m: '' if m.group(1) in shown else m.group(0), s[a:b], flags=re.S)
+        s = s[:a] + tail + s[b:]
+        i = s.index('<div class="articles-list">')
+        j = s.index('</section>', i)
+        num = iter(range(1, 100))
+        s = s[:i] + re.sub(r'<span class="num">R · \d+</span>', lambda m: f'<span class="num">R · {next(num):02d}</span>', s[i:j]) + s[j:]
+        open(pg + '.html', 'w', encoding='utf-8', newline='').write(s.replace('\n', nl))
+
+
 def main():
     items = stories()
     open('data/stories.json', 'w', encoding='utf-8', newline='\n').write(json.dumps(items, ensure_ascii=False, indent=1) + '\n')
     open('inside-the-boardroom.html', 'w', encoding='utf-8', newline='\n').write(page(items))
     home(items)
+    field_notes(items)
     print(len(items), 'stories; newest', items[0]['date'] if items else '-')
 
 

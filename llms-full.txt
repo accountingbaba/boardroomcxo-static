@@ -87,28 +87,6 @@ This sits alongside the story we told of Saugata Gupta at Marico, who bought fou
 
 A valuation is a verdict on the past. The person who stays writes the next one.
 
-## Frequently Asked Questions
-
-### Who is Albinder Dhindsa?
-
-Albinder Dhindsa is the co-founder of Blinkit, formerly Grofers, and became CEO of Eternal, the parent company of Zomato and Blinkit, on 1 February 2026. He studied at IIT Delhi and Columbia, and worked at Zomato before leaving in 2014 to build Grofers.
-
-### When did Grofers become Blinkit?
-
-Grofers renamed itself Blinkit on 13 December 2021, as it shifted its business to quick commerce and grocery delivery in about 10 minutes.
-
-### When did Zomato acquire Blinkit?
-
-Zomato agreed to acquire Blinkit in an all-stock deal in June 2022, and the acquisition was completed on 10 August 2022. Earlier, in March 2022, Zomato had approved a loan of up to $150 million to Blinkit's parent company.
-
-### Did investors really value Blinkit at zero?
-
-In its shareholder letter for July to September 2022, Zomato's then CEO Deepinder Goyal wrote: "I know that most investors currently ascribe zero value to the Blinkit business, and that's understandable." That quarter, Blinkit's adjusted EBITDA loss was ₹259 crore on gross order value of ₹1,482 crore.
-
-### Is Blinkit profitable now?
-
-Blinkit reported adjusted EBITDA of ₹102 crore in April to June 2026, against a loss of ₹162 crore a year earlier, with 2,443 dark stores. In April to June 2025, its net order value of ₹9,203 crore had overtaken Zomato's food delivery business for the first time.
-
 ## Sources
 
 - Business Today, Grofers rebrands to Blinkit in line with its 10-min grocery delivery plan, December 2021
@@ -209,28 +187,6 @@ This sits alongside the story we told of Shailesh Chandra at Tata Motors, who to
 
 Every leader says they believe in the business. The crisis shows who planned to survive long enough to prove it.
 
-## Frequently Asked Questions
-
-### Who is Ajay Bijli?
-
-Ajay Bijli is the founder and managing director of PVR INOX. He revived his father's Priya Cinema in South Delhi in the early 1990s and, with Village Roadshow, opened PVR Anupam in Saket in 1997, India's first multiplex.
-
-### How badly did the pandemic hit PVR?
-
-PVR began shutting its 845 screens across 71 cities on 11 March 2020. In FY21 its revenue from operations fell about 92% to ₹280 crore, from ₹3,414 crore in FY20, and it reported a net loss of about ₹748 crore.
-
-### How did PVR survive the pandemic?
-
-PVR cut its fixed costs by 63% in FY21 compared with FY20, including a 79% cut in rent, and raised about ₹1,600 crore, ₹1,100 crore in equity and ₹500 crore in debt. It also launched PopMagic microwave popcorn for sale online.
-
-### When did PVR and INOX merge?
-
-PVR and INOX Leisure announced their merger in March 2022, and it was completed in February 2023, creating PVR INOX with Ajay Bijli as managing director.
-
-### How did PVR INOX perform in FY26?
-
-In FY26 PVR INOX welcomed 150 million moviegoers across 1,798 screens and reported a net profit of about ₹333 crore, against a loss of ₹281 crore in FY25. The profit included a one-time gain of about ₹195 crore from selling its popcorn business, 4700BC. Its average ticket price was ₹280.
-
 ## Sources
 
 - Business Standard, PVR adds 4 more screens in Indore, March 2020
@@ -324,28 +280,6 @@ This sits alongside the story we told of Rajiv Bajaj and the Chetak, another old
 
 The past is not always a burden. In the right hands, it is the asset nobody else has.
 
-## Frequently Asked Questions
-
-### Who is Vikram Mehra?
-
-Vikram Mehra is the managing director of Saregama India. He joined in October 2014 from Tata Sky, where he was chief marketing officer and chief commercial officer. He holds an MBA from IIM Lucknow and a B.Tech from IIT Roorkee.
-
-### What was Saregama's position in FY14?
-
-In FY14 Saregama's music revenue fell 18.5% to about ₹114 crore. It had licensed its physical music business to Sony DADC in July 2013, had not bought new film music since the 1990s, and its managing director resigned in February 2014. Consolidated profit was about ₹19 crore.
-
-### What is Saregama Carvaan?
-
-Carvaan is a retro-styled music player Saregama launched in 2017, preloaded with 5,000 classic Hindi songs from the 1950s to the 1980s. It needs no app or internet connection, and it sold a million units in about 16 months.
-
-### Why did Saregama create Carvaan?
-
-A 2015 study across 23 cities found that for listeners above 40, accessing the old songs they loved was a huge hassle. Carvaan put those songs in a simple device that this audience could use without phones or apps.
-
-### How did Saregama perform in FY26?
-
-In FY26 Saregama's music business brought in ₹684 crore, up from ₹625 crore in FY25 and about six times its FY14 level. Consolidated profit was ₹206 crore, compared with ₹19 crore in FY14.
-
 ## Sources
 
 - MediaNama, Saregama will focus on digital music after licensing physical rights to Sony DADC, July 2013
@@ -436,28 +370,6 @@ When we brief boards on a CXO search for a business at the bottom of a cycle, we
 This sits alongside the story we told of Rajiv Bajaj and the Chetak, another leader whose electric bet took years to prove itself. And it is the other side of the story we told of R C Bhargava at Maruti Suzuki, whose market share Tata was among those to take.
 
 The low point is when leaders are most tempted to trade the future for this month's numbers. Boards that hire well find leaders who will not.
-
-## Frequently Asked Questions
-
-### Who is Shailesh Chandra?
-
-Shailesh Chandra is the managing director and CEO of Tata Motors Passenger Vehicles Limited. He first joined Tata Motors in 1995, led its electric vehicle and corporate strategy work, and took charge of its passenger vehicle business on 1 April 2020.
-
-### How many cars did Tata Motors sell in FY20?
-
-Tata Motors sold 1,31,197 passenger vehicles in India in FY20, down 38% from 2,10,143 in FY19. In March 2020 alone it sold 5,676, down 68%. Its share of India's car market was about 5%.
-
-### How many cars did Tata Motors sell in FY26?
-
-Tata Motors sold 6,31,387 passenger vehicles in India in FY26, nearly five times its FY20 volume, including a record 92,120 electric cars. It finished the second half of FY26 as India's No. 2 carmaker by Vahan registrations.
-
-### What is Tata Motors' share of India's electric car market?
-
-Between April and June 2026, Tata Motors accounted for 32,283 of the 82,737 electric cars registered in India, a share of about 39%, well ahead of Mahindra in second place.
-
-### When was the Tata Punch launched?
-
-Tata Motors launched the Punch, a small SUV, in October 2021. It widened Tata's range for first-time SUV buyers and became one of its best-selling models.
 
 ## Sources
 
@@ -553,28 +465,6 @@ This sits alongside the story we told of Marico's war with Hindustan Lever: anot
 
 Knowing what your company is not built for is a strategic advantage. Boards that hire well look for leaders who can say it.
 
-## Frequently Asked Questions
-
-### Who is Saugata Gupta?
-
-Saugata Gupta is the managing director and CEO of Marico, the company behind Parachute and Saffola. An engineer from IIT Kharagpur and an alumnus of IIM Bangalore, he joined Marico in 2004 and has led it since 2014.
-
-### Which digital-first brands has Marico acquired?
-
-Marico's digital-first brands include Beardo, a men's grooming brand in which it took a 45% stake in March 2017 and bought out in 2020; Just Herbs, acquired in 2021; and Plix, a plant-based nutrition brand, from July 2023.
-
-### Why did Marico buy D2C brands instead of building them?
-
-Saugata Gupta's view is that a large FMCG company's appetite for risk and failure is different from what a young digital brand needs. Marico chose to buy founder-led brands and let the founders run them independently, rather than build them with its own teams.
-
-### How big are Marico's digital-first brands?
-
-Marico's digital-first portfolio exited FY26 at an annual revenue run rate of more than ₹1,100 crore. Plix's parent company, Satiya Nutraceuticals, doubled its FY26 revenue to ₹864 crore.
-
-### How much has Marico paid for Plix?
-
-In July 2023, Marico agreed to pay ₹369 crore for 58% of Plix's parent, Satiya Nutraceuticals, in stages. In October 2026 it paid ₹1,012 crore for another 24.09%, taking its holding to 84.09%, and it plans to buy the remaining stake by July 2027.
-
 ## Sources
 
 - Business Standard, Marico buys 45% stake in Zed Lifestyle, March 2017
@@ -664,28 +554,6 @@ When we brief boards on a CXO search for a group restructuring its portfolio, we
 This sits alongside the story we told of Puneet Chhatwal at IHCL, who grew the Taj by owning less of it. Both leaders decided that the best way to grow a hotel business was not to keep putting more of the parent's capital into it.
 
 The hardest portfolio call is the one that gives up something famous. Boards that hire well find leaders who can make it.
-
-## Frequently Asked Questions
-
-### Who is Sanjiv Puri?
-
-Sanjiv Puri is the chairman and managing director of ITC Limited. An alumnus of IIT Kanpur and the Wharton School, he joined ITC in 1986 and became chairman in 2019.
-
-### Why did ITC demerge its hotels business?
-
-Over the decade to 2023, ITC's hotels brought in about 5% of its revenue and profit but took more than 20% of its capital spending. Moving them into a separate company, ITC Hotels, let each business raise and use capital on its own terms.
-
-### How much of ITC Hotels does ITC own?
-
-ITC kept about 40% of ITC Hotels, and the other 60% went directly to ITC's shareholders in proportion to their holdings. The demerger took effect on 1 January 2025.
-
-### How did investors react to the ITC hotels demerger?
-
-ITC's shares fell about 4% on 24 July 2023, the day the plan was announced, and fell again the next day. Many investors had expected ITC to hand over its entire hotels business rather than keep 40%.
-
-### How did ITC and ITC Hotels perform in FY26?
-
-ITC reported a net profit of ₹20,286 crore from continuing operations in FY26, with ₹24,210 crore from FMCG businesses outside cigarettes and ₹37,100 crore from cigarettes. ITC Hotels grew its profit about 29% to ₹821 crore and recommended its first-ever dividend.
 
 ## Sources
 
@@ -780,28 +648,6 @@ This sits alongside the story we told of Siddhartha Lal at Royal Enfield, anothe
 
 Some legacies are protected by keeping them unchanged. The stronger ones survive being rebuilt.
 
-## Frequently Asked Questions
-
-### Who is Rajiv Bajaj?
-
-Rajiv Bajaj is the managing director of Bajaj Auto. He became managing director in 2005 and made the company a motorcycle specialist, taking it out of scooters in 2009.
-
-### When did Bajaj Auto stop making scooters?
-
-On 9 December 2009, Rajiv Bajaj said Bajaj Auto would stop making its last scooter, the Kristal, by the end of that financial year. The Kristal was selling about 300 units a month. The original Chetak had already gone out of production around 2005.
-
-### Did Rahul Bajaj agree with the decision to exit scooters?
-
-No. Rahul Bajaj, then chairman of Bajaj Auto, said publicly in December 2009 that he was not convinced by the decision and was hurt by it.
-
-### When was the electric Bajaj Chetak launched?
-
-Bajaj Auto unveiled the electric Chetak on 16 October 2019 and launched it on 14 January 2020 at ₹1 lakh, selling it first through dealerships in Bengaluru and Pune.
-
-### How many electric Chetaks have been sold?
-
-The electric Chetak crossed 8,00,085 cumulative sales by 27 June 2026, according to Vahan data. Its share of India's electric two-wheeler market was 22.5% in January to June 2026, up from 8.3% in 2023.
-
 ## Sources
 
 - domain-b, Bajaj announces end of the road for its scooters, December 2009
@@ -895,28 +741,6 @@ This is the next chapter of the story we told of Verghese Kurien, who built the 
 
 Before a board decides how to grow, it has to know who the growth is for.
 
-## Frequently Asked Questions
-
-### Who is Jayen Mehta?
-
-Jayen Mehta is the managing director of the Gujarat Cooperative Milk Marketing Federation (GCMMF), which markets the Amul brand. He joined Amul in 1991, rose to chief operating officer, took interim charge as managing director in January 2023 and was confirmed for a five-year term in December 2024.
-
-### What was Amul's turnover in FY26?
-
-The Amul brand's turnover crossed ₹1 lakh crore in FY26. GCMMF's own turnover was ₹73,450 crore, up 11.4% from ₹65,911 crore in FY25. The brand figure also includes sales by the 18 district cooperative unions.
-
-### Will Amul ever launch an IPO?
-
-No. Amul is owned by about 3.6 million dairy farmers in Gujarat through its cooperative structure. At the BT India@100 summit in August 2025, Jayen Mehta said the way to own a part of Amul is to "buy a cow, become a member of the cooperative."
-
-### Does Amul sell milk in the United States?
-
-Yes. Amul announced fresh milk for the US in March 2024 through a partnership with the Michigan Milk Producers Association, and Amul Gold reached Costco stores from October 2024. The milk is collected and processed by MMPA in the US; GCMMF handles the brand and marketing.
-
-### Who owns Amul?
-
-Amul is owned by about 3.6 million milk producers in Gujarat, organised into 18 district cooperative unions that are members of GCMMF, the federation that markets the Amul brand.
-
 ## Sources
 
 - Free Press Journal, Amul Crosses ₹1 Lakh Crore Turnover In FY26, Registers 11% Growth, April 2026
@@ -1009,28 +833,6 @@ This sits alongside the story we told of Gopal Vittal at Airtel, who let million
 
 The share number will always be the first one quoted. Boards that hire well ask what sits underneath it.
 
-## Frequently Asked Questions
-
-### Who is R C Bhargava?
-
-R C Bhargava is the chairman of Maruti Suzuki India. A former IAS officer, he joined the company in 1981, later served as its managing director, and has been chairman since 2007.
-
-### What was Maruti Suzuki's market share in FY26?
-
-Maruti Suzuki's share of India's passenger vehicle market was 39.26% in FY26, according to SIAM data. It was a 13-year low and the third straight year of decline, down from more than 50% in FY19.
-
-### Why is Maruti Suzuki losing market share?
-
-Indian buyers have moved to utility vehicles, which made up about 67% of passenger vehicle sales in FY26. Maruti Suzuki's share of the utility vehicle segment was below 25%, while rivals such as Mahindra and Tata Motors gained ground there.
-
-### How many cars did Maruti Suzuki sell in FY26?
-
-Maruti Suzuki sold a record 24,22,713 vehicles in FY26, up from 22,34,266 in FY25, including close to 4.5 lakh exports. Consolidated revenue from operations was a record ₹1,83,382 crore, up 19.9%, while consolidated net profit rose about 1% to ₹14,680 crore.
-
-### What did R C Bhargava say about market share?
-
-After the FY26 results in April 2026, R C Bhargava said, "So please don't harp on market share." He argued that a car company should make sure its installed capacity is fully used and that it sells those cars at a reasonable profit, and that gaining share would need capacity to be added much faster.
-
 ## Sources
 
 - Outlook Business, Maruti Suzuki Loses Market Grip Amid SUV Shift, Share Slips to 13-year Low in FY26, April 2026
@@ -1119,28 +921,6 @@ This sits alongside the story we told of Suresh Narayanan at Nestlé India: anot
 
 A ban tells you what went wrong before. The leader's answer tells you what happens next.
 
-## Frequently Asked Questions
-
-### Who is Ashok Vaswani?
-
-Ashok Vaswani is the managing director and CEO of Kotak Mahindra Bank. He took over on 1 January 2024 from founder Uday Kotak, after a career that included senior leadership roles at Citi and Barclays.
-
-### Why did the RBI ban Kotak Mahindra Bank in April 2024?
-
-On 24 April 2024 the RBI ordered Kotak Mahindra Bank to stop onboarding new customers through online and mobile channels and to stop issuing new credit cards. It cited serious, unresolved concerns from its IT examinations of the bank for 2022 and 2023, covering IT risk management and information security. Existing customers were not affected.
-
-### How much did Kotak's shares fall after the RBI order?
-
-Kotak Mahindra Bank's shares fell up to 13% on 25 April 2024, the day after the order. Nearly ₹40,000 crore of market value was wiped out in a day, and Axis Bank overtook Kotak as India's fourth most valuable bank.
-
-### When did the RBI lift the restrictions on Kotak Mahindra Bank?
-
-The RBI lifted the restrictions on 12 February 2025, after an external audit and the bank's remedial measures satisfied it. The bank could again onboard customers online and issue new credit cards. It was day 409 of Ashok Vaswani's tenure as CEO.
-
-### Is Ashok Vaswani leaving Kotak Mahindra Bank?
-
-Yes. In June 2026, Ashok Vaswani said he would not seek reappointment when his term ends on 31 December 2026, citing personal reasons. The bank has started the process of appointing a new MD and CEO.
-
 ## Sources
 
 - Business Today, Kotak Mahindra Bank shares in focus as RBI bars onboarding new customers online, fresh credit cards, April 2024
@@ -1224,28 +1004,6 @@ When we brief boards on a CXO search for a newly listed consumer, beauty or D2C 
 This sits alongside the story we told of Varun Alagh at Honasa: another beauty company that listed to big expectations, lost the market's confidence, and won it back with results rather than statements.
 
 The share price will always deliver its verdict first. Boards that hire well wait for the second one.
-
-## Frequently Asked Questions
-
-### Who is Falguni Nayar?
-
-Falguni Nayar is the founder, executive chairperson, managing director and CEO of FSN E-Commerce Ventures, the company behind Nykaa. A former managing director of Kotak Mahindra Capital, she started Nykaa in 2012 at the age of 49.
-
-### How did Nykaa's IPO list?
-
-Nykaa listed on 10 November 2021 at 79% above its issue price of ₹1,125 and crossed ₹1 lakh crore in market value on its first day of trading.
-
-### Why did Nykaa's shares fall in 2022?
-
-In October 2022, ahead of the end of the one-year lock-in for pre-IPO investors, Nykaa's stock fell 24% in a month, came close to its issue price and dropped out of India's 100 most valuable listed companies. It was down more than half from its record high of November 2021.
-
-### How much profit did Nykaa make in FY26?
-
-Nykaa reported a net profit of about ₹204 crore in FY26, up from ₹72 crore in FY25 and ₹21 crore in FY23. Revenue from operations was ₹10,022 crore, up 26%, the first time it crossed ₹10,000 crore.
-
-### Was Falguni Nayar reappointed as Nykaa's CEO?
-
-Yes. In November 2025, Nykaa's board reappointed Falguni Nayar as executive chairperson, managing director and CEO for a further five years, from 12 February 2026 to 11 February 2031, subject to shareholder approval sought by postal ballot.
 
 ## Sources
 
@@ -1333,28 +1091,6 @@ This sits alongside the story we told of Sudhir Sitapati at Godrej Consumer: a c
 
 The market will always test a founder with numbers. The founders worth backing answer with a plan, and with their own money behind it.
 
-## Frequently Asked Questions
-
-### Who is Varun Alagh?
-
-Varun Alagh is the co-founder and chief executive of Honasa Consumer Limited, the parent company of Mamaearth, The Derma Co and other beauty and personal care brands. He founded the company with his wife, Ghazal Alagh, in 2016 and took it public in November 2023.
-
-### Why did Honasa Consumer's shares fall in November 2024?
-
-For the quarter to September 2024, Honasa reported a net loss of about ₹19 crore, its first quarterly loss since listing, after a ₹63 crore inventory correction linked to Project Neev, a change to its distribution model in India's 50 largest cities. The stock fell 20% on 18 November 2024 and kept falling, losing about ₹3,500 crore of market value in two sessions and touching a low of about ₹223 that week.
-
-### How much Honasa stock did Varun Alagh buy?
-
-Varun Alagh bought shares worth about ₹4.5 crore in late 2024, disclosed in December 2024, which took his stake to 31.93%. On 29 December 2025 he bought about 18.5 lakh more shares at ₹270 each, roughly ₹50 crore, from Fireside Ventures, taking his stake to 32.45% and the promoter group's holding to about 35.5%.
-
-### How did Honasa perform after the 2024 loss?
-
-Honasa reported a profit of ₹39 crore for the quarter to September 2025, against a loss a year earlier, and ₹50 crore for the quarter to December 2025, up 93% year on year, on revenue up 16% to about ₹602 crore. By September 2026 the share price was near ₹480.
-
-### How did Mamaearth start?
-
-Mamaearth started in 2016 after Ghazal and Varun Alagh's infant son developed a skin condition and they could not find a toxin-free baby product in India. The brand launched with six baby-care products and later expanded into skin, hair and body care.
-
 ## Sources
 
 - Business Standard, Mamaearth parent loses $415 mn in value as Q2 loss fans demand worries, November 2024
@@ -1441,28 +1177,6 @@ When we brief boards on a CXO search for a store-led jewellery, retail or D2C br
 This sits alongside the pattern we examined in C K Venkataraman's years at Tanishq: a jewellery business whose real progress showed up only after years of fixing unglamorous fundamentals. BlueStone's version played out in public, one quarter after a listing the market had already marked down.
 
 The market will always react to the first day. Boards that hire well look past it, to the leader who can explain where the profit will come from, and then delivers it on the timeline they gave.
-
-## Frequently Asked Questions
-
-### Who is Gaurav Singh Kushwaha?
-
-Gaurav Singh Kushwaha is the founder, managing director and chief executive of BlueStone Jewellery and Lifestyle, which he launched in 2011 as a digital-first, direct-to-consumer jewellery brand. BlueStone listed on the NSE and BSE on 19 August 2025 and ran 340 stores across 134 cities by March 2026.
-
-### How did BlueStone's IPO list?
-
-BlueStone listed on 19 August 2025 at ₹510 a share on the NSE, ₹7 below its issue price of ₹517, a discount of about 1.4%. On the BSE it listed at ₹508.80.
-
-### Did BlueStone make a profit in FY26?
-
-Yes. BlueStone reported its first full year of profit in FY26: a standalone reported profit after tax of ₹26 crore, against a loss of ₹219 crore in FY25. Standalone revenue grew 37.9% to ₹2,441 crore. On a consolidated basis, which includes its subsidiaries, profit was about ₹13 crore against a loss of about ₹222 crore.
-
-### What drove BlueStone's move to profit?
-
-Three things: older stores became more productive as they matured, with fourth-quarter same-store sales up 34%; advertising and promotion fell to 6.6% of sales from 9% a year earlier; and adjusted EBITDA grew from ₹131 crore to ₹493 crore. A sharp rise in gold prices also lifted the value of the inventory BlueStone held, which the company described as a one-off.
-
-### How many stores did BlueStone open in FY26?
-
-BlueStone opened 65 stores in FY26, taking its total to 340 stores across 134 cities by 31 March 2026.
 
 ## Sources
 
@@ -2125,28 +1839,6 @@ This sits alongside the same insider-versus-outsider pattern we examined in Sudh
 
 The market does not reward the leader who spends the most to prop up a struggling brand. It rewards boards that can tell the difference between a turnaround built on more capital and one built on a genuinely different business model.
 
-## Frequently Asked Questions
-
-### Who is Puneet Chhatwal?
-
-Puneet Chhatwal is the managing director and chief executive of the Indian Hotels Company Limited (IHCL), which runs the Taj brand. He took over on 6 November 2017 after close to three decades building hotels outside India, most recently as chief executive of Steigenberger Hotels in Frankfurt.
-
-### What condition was IHCL and Taj Hotels in when Puneet Chhatwal took over?
-
-IHCL had posted a consolidated net loss for seven straight years, with a net loss of ₹63 crore and net debt of ₹3,151 crore at the time Chhatwal took over. The company owned or leased most of its hotels, meaning every new hotel required a large upfront investment before it earned any revenue. The Taj brand alone generated 63% of enterprise revenue, around ₹4,500 crore, with the group's other brands contributing very little.
-
-### What did Puneet Chhatwal do differently to grow IHCL?
-
-During the Covid-19 pandemic, when IHCL lost ₹796 crore in the year to March 2021, Chhatwal raised ₹4,000 crore while the recovery was still uncertain, split between a rights issue and a share sale to institutions. He then signed a record number of new hotels in India for two consecutive years, structured as management contracts where the property owner keeps the building and IHCL runs it for a fee, growing the portfolio without buying real estate. He also repositioned the budget brand Ginger as lean luxury and launched the food delivery brand Qmin during the pandemic.
-
-### How is IHCL performing under Puneet Chhatwal today?
-
-By FY26, IHCL's profit after tax crossed ₹2,000 crore for the first time, at ₹2,084 crore, on revenue of ₹9,971 crore. In the quarter to June 2026, the company reported its seventeenth consecutive record quarter, with 645 hotels in its portfolio and ₹4,439 crore of gross cash.
-
-### What is IHCL's asset-light growth strategy?
-
-Under Puneet Chhatwal, the share of hotels IHCL owns or leases has fallen steadily, as the company shifted toward management contracts that let it grow its hotel count without funding new real estate directly, reducing capital intensity while expanding the portfolio.
-
 ## Sources
 
 - IHCL, IHCL Announces Financial Results For Q1 FY 2027, July 2026
@@ -2219,28 +1911,6 @@ When we brief boards on a CXO search involving a candidate who was previously pa
 This sits alongside the same succession question we raised in Sunil D'Souza's decision to turn down, then later take, the top job at Tata Consumer: the Tata Group has repeatedly tested senior leaders through a role they did not initially want, and the ones who treated that role as real work rather than a waiting room are the ones the group has since trusted with more.
 
 The market does not reward the candidate with the most obvious claim to a title. It rewards boards that can tell the difference between someone who is owed the next job and someone who has already proven, in the job they actually have, that they can be trusted with it.
-
-## Frequently Asked Questions
-
-### Who is Noel Tata?
-
-Noel Tata is the chairman of Tata Trusts, the philanthropic body that owns roughly two-thirds of Tata Sons, a position he took up in October 2024 after Ratan Tata's death. He has led Trent Ltd, the Tata Group's retail arm, since 1999, first as managing director of its Westside chain and later overseeing the growth of Zudio.
-
-### Why was Noel Tata passed over for Tata Sons chairman in 2011?
-
-In November 2011, a five-member panel selecting the next chairman of Tata Sons chose Cyrus Mistry, who was serving on that same selection panel and was also Noel Tata's brother-in-law. Noel Tata, seen inside the group as a leading contender, was not selected and returned to running Trent's Westside business.
-
-### What did Noel Tata do after being passed over at Tata Sons?
-
-Noel Tata continued building Trent Ltd the same way he had since 1999: private labels instead of licensed brands, tight cost control, and steady store additions. He later identified demand for affordable fashion outside India's large cities and put the company behind Zudio, which became Trent's primary growth engine.
-
-### How big is Trent Ltd under Noel Tata?
-
-By March 2026, Trent Ltd operated 1,286 stores across 321 Indian cities, of which 963 were Zudio outlets. The company recorded revenue of ₹20,074 crore for the year and has been in the Nifty 50 since September 2024 and the Sensex since June 2025. Westside's online sales remain about 6% of its total, reflecting a business built predominantly on physical stores.
-
-### What is Noel Tata's role today?
-
-Noel Tata has chaired Tata Trusts since October 2024, giving him influence over Tata Sons through the Trusts' roughly two-thirds ownership stake, thirteen years after he was passed over for the Tata Sons chairmanship itself. At Trent's annual general meeting in June 2026, he told shareholders it would be his last as Trent chairman.
 
 ## Sources
 
@@ -2317,28 +1987,6 @@ This sits alongside the same category story we examined in C K Venkataraman's de
 
 The market does not reward the founder with the most conventional resume. It rewards boards and investors who can tell the difference between a workaround born of desperation and one born of genuine insight into what a business, and its customers, actually needed.
 
-## Frequently Asked Questions
-
-### Who is M P Ahammed?
-
-M P Ahammed is the founder and chairman of Malabar Gold & Diamonds, India's largest jeweller by revenue. He spent twelve years selling dried coconut and spices to shopkeepers across Kerala before opening his first jewellery shop in Kozhikode in 1993 at age 36, after finishing school only up to Class 12.
-
-### How did M P Ahammed start Malabar Gold & Diamonds?
-
-In 1993, M P Ahammed opened a jewellery shop of about 200 square feet on the first floor of a building in Kozhikode. He timed the move to a sharp rupee depreciation, from ₹17.5 to the dollar in 1990 to ₹30 by 1993, which made remittances from Gulf-based Malayali workers worth far more in rupee terms, at a time when gold traded around ₹400 a gram.
-
-### How did M P Ahammed fund Malabar's expansion?
-
-M P Ahammed sold debentures to investors, many of them working in the Gulf, with interest capped at 15%, convertible into shares once the business turned a profit. That money helped pay for new stores: by 2008 Malabar had 20 and had opened its first in the UAE.
-
-### How big is Malabar Gold & Diamonds today?
-
-Malabar Gold & Diamonds runs more than 445 showrooms across 14 countries as of October 2026, having opened its 300th in Dallas, in the United States, in 2023. Provisional revenue for the year to March 2026 was about ₹96,100 crore, up from ₹66,106 crore the year before, and Forbes India has called it India's largest jeweller by revenue. It ranked 19th in Deloitte's Global Powers of Luxury Goods 2023 list.
-
-### What is Malabar Gold's approach to profit and charity?
-
-Malabar Gold & Diamonds directs 5% of its annual profit to charity, a practice M P Ahammed has maintained as the business scaled from a single Kozhikode showroom to a multinational jewellery retailer.
-
 ## Sources
 
 - Forbes India, How MP Ahammed built Malabar Gold & Diamonds: Small shop in Kerala to Rs 51,000 crore behemoth, August 2024
@@ -2412,28 +2060,6 @@ This is the same capital-discipline pattern we examined in Anish Shah's turnarou
 
 The market does not reward the operator who defends the most subscribers. It rewards boards that can tell the difference between a leader managing the headline number and one managing the business underneath it.
 
-## Frequently Asked Questions
-
-### Who is Gopal Vittal?
-
-Gopal Vittal has run Bharti Airtel's India business since 2013, leading it through the price war that followed a new operator's entry into Indian telecom in September 2016 and the subsequent industry-wide financial stress, including a ₹32,183 crore net loss for Airtel in the year to March 2020 following a Supreme Court ruling on licence dues.
-
-### Why did Bharti Airtel's profits collapse in 2016 and 2017?
-
-In September 2016, a new operator entered Indian telecom offering free mobile data. Within twelve months, Airtel's quarterly profit fell 76.5%, from ₹1,461 crore to ₹343 crore, and revenue dropped 11.7%. By September 2018, its revenue per user had sunk to about ₹100, and several rivals subsequently merged or shut down.
-
-### What did Gopal Vittal do differently during the telecom price war?
-
-Instead of chasing every subscriber to hold market share, Gopal Vittal let Airtel shed around 40 million low-spending users, losing subscriber-count headlines in the process, and redirected the freed capital into the network, adding towers and mobile broadband stations quarter after quarter even through years of losses.
-
-### How is Airtel performing under Gopal Vittal today?
-
-By the December 2025 quarter, Airtel's revenue per user reached ₹259, against ₹213.7 at Jio and ₹172 at Vodafone Idea. Its India operating margin reached 60.4% with 368.5 million mobile customers, and FY26 closed with ₹2.1 lakh crore in revenue and ₹26,695 crore in net profit.
-
-### What is Gopal Vittal's approach to capital allocation?
-
-Gopal Vittal treats core telecom as the first call on Airtel's capital. In his own words: "If you're not doing well there, you have no right to do anything else," reflecting a discipline of funding the core network business before any adjacent bet.
-
 ## Sources
 
 - Vodafone Idea, Quarterly Report Mar’26, May 2026
@@ -2506,28 +2132,6 @@ This is the same succession pattern we examined in Noel Tata's thirteen years bu
 
 The market does not reward the executive with the most reassuring background. It rewards boards that can tell the difference between someone who will cut their way to a better-looking balance sheet and someone who will use that same cut to fund the next decade of growth.
 
-## Frequently Asked Questions
-
-### Who is Anish Shah?
-
-Anish Shah is the managing director and chief executive of Mahindra Group, a role he took up in April 2021 as the first person from outside the founding family to lead the group in seventy-five years. He joined Mahindra in 2014 after fourteen years at GE Capital, and was deputy managing director and group chief financial officer before taking the top job.
-
-### Why were Mahindra's overseas businesses struggling before Anish Shah took over?
-
-In the year to March 2020, Mahindra's businesses outside India lost more than ₹5,200 crore, dragging group profit down almost 98%, from ₹5,315 crore to ₹127 crore, and return on equity from 14.9% to 6.4%. Much of the strain traced back to SsangYong, the Korean carmaker Mahindra had acquired roughly a decade earlier, which the group was preparing to hand over by mid-2020.
-
-### What did Anish Shah do as Mahindra Group CEO?
-
-Anish Shah exited fifteen underperforming businesses from the Mahindra portfolio, then redeployed the freed capital into a majority stake in truck maker SML Isuzu, a life insurance joint venture with Canada's Manulife, and expanded investment in electric vehicles and SUVs.
-
-### How fast did Mahindra hit its return-on-equity target under Anish Shah?
-
-In June 2020, Mahindra told analysts it would reach 18% return on equity within five years. Under Anish Shah, the group reached that target in eighteen months instead.
-
-### How is Mahindra performing under Anish Shah today?
-
-By March 2026, Mahindra Group was earning ₹17,099 crore a year on sales of ₹1.98 lakh crore. The group also took second place in the Indian car market from Hyundai, which had held that position for many years.
-
 ## Sources
 
 - Mahindra & Mahindra, M&M Results Q4 F26 and FY26, May 2026
@@ -2582,32 +2186,6 @@ Khetarpal's path to this seat was unconventional by restaurant industry standard
 The lesson for a hiring board is not that outsiders always win. It is that the skill a turnaround actually needs, in this case pricing conviction and last-mile logistics, matters more than a résumé line that says the candidate has run a chain like this one before.
 
 The category on the résumé matters less than the discipline the business actually needs. Boards that screen candidates only by industry background risk passing on the leader who has already solved the real problem, just somewhere else.
-
-## Frequently Asked Questions
-
-### Why was Domino's India losing momentum before Sameer Khetarpal took over?
-
-Demand was softening and revenue was being held up by price increases rather than appetite. Cheese and vegetable costs were rising, total expenses rose more than 18% in a single quarter, and the share price had slumped to a 52-week low in March 2022, when the previous chief executive resigned.
-
-### What was Sameer Khetarpal's background before Jubilant FoodWorks?
-
-He had never run a restaurant company. He worked at Hindustan Unilever and GE Capital, was a partner at McKinsey, and then ran Amazon Fresh, Amazon Food, and Amazon Pharmacy before joining Jubilant FoodWorks in September 2022.
-
-### Why did Sameer Khetarpal cut Domino's prices instead of raising them?
-
-With every input cost rising, the textbook response was to raise menu prices. Khetarpal cut prices instead and held menu pricing broadly flat for the next two years, betting that demand would recover if the product felt worth buying again.
-
-### How did Domino's India's delivery strategy change under Sameer Khetarpal?
-
-He doubled down on Domino's own delivery fleet rather than leaning on aggregators, promising 20-minute delivery and pulling demand back onto the brand's own app, while continuing to open stores in small cities even where margins still hurt.
-
-### What results has Domino's India posted under Sameer Khetarpal?
-
-By the September 2025 quarter, net profit was up 190% to ₹186 crore, helped by a one-time gain, and sales were up 19.7% to ₹2,340 crore, with like-for-like growth for seven quarters in a row. FY26 group revenue closed at ₹9,512.5 crore across 3,636 stores globally.
-
-### What milestone did Domino's India reach under Sameer Khetarpal?
-
-Domino's became the first quick service restaurant brand in India to reach 500 cities, not the biggest cities, the five hundredth one, reflecting the continued push into smaller towns.
 
 ## Sources
 
@@ -2675,32 +2253,6 @@ Boards rarely ask a departing CEO what they would build with a fraction of the c
 
 The market prices the company you currently run. It rarely prices what you would build again from nothing.
 
-## Frequently Asked Questions
-
-### Why did Sudhir Jatia leave VIP Industries?
-
-Sudhir Jatia had been Managing Director of VIP Industries, India's largest luggage maker. He resigned in early 2010, and in April that year the founder's daughter took over the role.
-
-### What did Sudhir Jatia pay for Safari Industries and how much did he own?
-
-In September 2011, Jatia bought 56.55% of Safari Industries India Ltd. using ₹29 crore of his own money. At the time, Safari was doing about ₹70 crore in annual sales with roughly ₹2 crore in profit, valued at around ₹50 crore.
-
-### What operational changes did Sudhir Jatia make at Safari Industries?
-
-He took the operating job himself and cut every product line that was not selling, keeping one brand instead of many so volumes stayed real. He also moved manufacturing almost entirely to outside suppliers in China, Bangladesh, and Vietnam.
-
-### Why did Safari Industries move manufacturing outside India?
-
-Outsourcing to suppliers in China, Bangladesh, and Vietnam let Safari launch new products faster and hold less inventory, without carrying the fixed cost of its own factories.
-
-### How has Safari Industries grown since Sudhir Jatia took over?
-
-Sales reached ₹355 crore by FY17 and crossed ₹2,047 crore in FY26, up 15.5% in a year, with net profit of ₹167.8 crore. Market share went from about 2% to over 23%.
-
-### What challenges is Safari Industries facing now?
-
-The stock has fallen sharply over the past year, margins are tightening, and a wave of new design-led luggage brands is attacking the category Safari built. Jatia still owns about 45% of the company.
-
 ## Sources
 
 - Business Standard, Safari Industries (India) reports flat Q4 profit; revenue rises 12%, May 2026
@@ -2755,32 +2307,6 @@ Most boards wait for a crisis to be visible before they start looking for the le
 Nair's turnaround worked because three things happened at once, not in sequence: costs cut to the bone, the balance sheet repaired through a rights issue and debt repayment, and a real online push built alongside the recovery, not after it. That is a harder hire to make than most boards are prepared for, because the candidate willing to take it looks, on paper, like someone walking away from a stronger job into a weaker one.
 
 The market does not remember who inherited the recovery. It remembers who was in the room before there was one.
-
-## Frequently Asked Questions
-
-### Why did Venu Nair take the top job at Shoppers Stop when nobody else wanted it?
-
-In November 2020, Shoppers Stop, a department store chain that lives inside malls, was in freefall: in the September 2020 quarter its footfall had been about a fifth of the previous year's. Venu Nair took the CEO role anyway, drawing on 27 years across Marks and Spencer Reliance, Madura, Arvind, and Westside.
-
-### How much revenue had Shoppers Stop lost by March 2021?
-
-By March 2021, Shoppers Stop had lost 44% of its revenue in twelve months. Sales fell to ₹1,973 crore and the company posted a loss of ₹267 crore for the year.
-
-### What cost actions did Venu Nair take at Shoppers Stop?
-
-Shoppers Stop had set a cost-savings target of ₹450 crore, and he kept going after it line by line. Nine weeks into the job, he told analysts the company had renegotiated every cost and had already saved ₹390 crore. A rights issue was raised and oversubscribed, ₹125 crore of debt was repaid, and the company turned net cash.
-
-### How did Shoppers Stop's online business grow under Venu Nair?
-
-With more than 50 stores already live on Amazon, he pushed the live catalogue to 61,000 items, and online sales rose from 1.5% of revenue to 6%, while still committing to 10 to 12 new physical stores, most of them in tier 2 cities.
-
-### What happened to Shoppers Stop's financials after the turnaround?
-
-By the December 2021 quarter, Shoppers Stop reported a net profit of ₹77.32 crore against a loss of ₹25.11 crore a year earlier, with zero net debt. A year later, quarterly revenue had reached ₹1,137 crore.
-
-### Why did Shoppers Stop's stock fall when Venu Nair resigned in 2023?
-
-He resigned in August 2023 with the balance sheet clean, and the stock fell 8% in early trade that day. The market tends not to price a turnaround leader while he is fixing the business, it prices him on the day he leaves.
 
 ## Sources
 
@@ -2843,36 +2369,6 @@ The structure Kurien fought for in 1949, farmers owning the business rather than
 A country wins freedom on one date.
 
 It earns independence the day the people who do the work finally own it. Kurien's real decision was made in 1949, before Amul existed and before there was any evidence the co-operative model would work at scale: to spend his career on who owned the outcome, not just on who ran the machines. Every structural choice that followed, the spray dryer, the NDDB chairmanship, Operation Flood, was downstream of that first refusal to leave. The lesson does not stay in dairy. Any leader inheriting a business built on someone else's labour faces the same fork Kurien faced at that train station: fix the operation and move on, or stay long enough to change who it actually belongs to.
-
-## Frequently Asked Questions
-
-### Who was Verghese Kurien?
-
-Verghese Kurien was an Indian engineer sent to Anand, Gujarat in 1949 to work off a government bond after studying dairy engineering in the US. He stayed on to help local farmers build the co-operative that became Amul, later served as founding chairman of the National Dairy Development Board for 33 years, and is widely credited as the architect of India's White Revolution.
-
-### Why did Verghese Kurien almost leave Anand in 1949?
-
-Kurien had studied in the US on a government bond and was assigned to a small creamery in Anand to work off the obligation. He disliked milk, knew nothing about dairy, and packed his bags at the end of 1949 planning to leave the moment his bond period ended. A local farmer asked him to stay and help set up a farmer-owned co-operative instead.
-
-### What problem did Kurien identify in Gujarat's dairy industry?
-
-India had been independent for 21 months, but the farmers who milked their buffaloes still had no say in what their milk was worth; a private dairy controlled procurement and pricing. Kurien concluded the country's dairy sector did not have a milk problem, it had an ownership problem, and stayed on to help farmers build a co-operative they owned outright.
-
-### What was the world's first buffalo milk spray dryer, and why did it matter?
-
-In 1955, Kurien backed an experiment at Anand to adapt spray-drying technology, until then considered workable only with cow's milk, to process buffalo milk into milk powder. It was the world's first commercial plant of its kind and gave the farmer co-operative a way to convert India's dominant milk type into a shelf-stable product, forming the economic base later scaled nationally as Operation Flood.
-
-### What was Kurien's role at the National Dairy Development Board?
-
-Kurien was appointed founding chairman of the National Dairy Development Board in 1965 and ran it for 33 years. Under his leadership, the NDDB replicated the farmer-owned Anand pattern across India through Operation Flood, turning the country into the world's largest milk producer.
-
-### How big is Amul today, and who owns it?
-
-Amul is owned by 3.6 million farmers through the Gujarat Co-operative Milk Marketing Federation. In 2025-26, Amul's brand turnover crossed ₹1 lakh crore, reported as a first for an Indian FMCG company, more than seventy years after Kurien first arrived at Anand's government creamery.
-
-### What is the leadership lesson from Verghese Kurien's fifty years at Anand?
-
-Kurien treated ownership, not just output, as the problem worth solving. Rather than fixing the dairy's machinery and moving on, he spent five decades building an institution structurally owned by the people who did the work, a decision that outlasted him and now underwrites Amul's scale.
 
 ## Sources
 
@@ -3021,36 +2517,6 @@ Reputation is not defended by being right.
 
 It is rebuilt by paying for something you did not break. Puri's sequence, verify personally before defending publicly, fix the visible product even when the audit clears you, disclose the problem by name instead of managing around it, and absorb the cost rather than pass it on, is a harder playbook to run than simply pointing at a clean factory report. It is also the reason Cadbury had a full recovery to point to six months later instead of a legal victory nobody outside the industry remembers.
 
-## Frequently Asked Questions
-
-### What happened to Cadbury India in October 2003?
-
-On 3 October 2003, Maharashtra's Food and Drug Administration seized Cadbury Dairy Milk stock from shops across the state after consumers in Mumbai and Pune complained of worms. Bharat Puri, at a budget meeting in Bangkok, learned of it from a call telling him CNBC was running the story. Festival-season sales fell 30 percent in the run-up to Diwali.
-
-### Who was Bharat Puri and what was his role during the crisis?
-
-Bharat Puri had been Managing Director of Cadbury India for about a year when the crisis broke. He later recalled the rule he gave his team: anybody can fall down, and what matters is how quickly you get up. He led the company's response through the peak Diwali selling season, when Cadbury was supplying about 650,000 retailers across India.
-
-### Did Cadbury's factories cause the worm contamination?
-
-No. The Maharashtra FDA gave Cadbury's two plants in the state a clean chit, and Cadbury traced the problem to storage conditions at the retail end, outside its direct control. Cadbury could have publicized that finding and waited for the news cycle to move on. Bharat Puri chose not to rely on that defense alone.
-
-### What did Bharat Puri do differently in response to the crisis?
-
-Puri sent his own salespeople into the market to buy about a thousand rupees of chocolate each and inspect it themselves; none found worms. He had Cadbury redesign the packaging anyway, spending ₹12 to 15 crore on imported machinery for a sealed double wrap that reached shelves by January 2004. Puri also visited media offices around the country to answer reporters himself, and Cadbury put Amitabh Bachchan on camera inside its factory to vouch for the product.
-
-### How much did the new Cadbury packaging cost, and who paid for it?
-
-The new double packaging was expected to add 12 to 15 percent to production costs. Puri said Cadbury would absorb that cost and not pass it on to consumers.
-
-### How long did it take Cadbury to recover from the worm crisis?
-
-The redesigned packaging launched in January 2004. By May 2004, Cadbury's chocolate value share was climbing back, to 71 percent from 69.4 percent in January, and Puri later said sales recovered within six months, half the time the team had expected.
-
-### What is the leadership lesson from Bharat Puri's handling of the Cadbury worm crisis?
-
-Being factually right was not enough to rebuild trust. Puri treated the crisis as a trust problem, not a factory problem, and paid to fix something the company had not technically broken, new packaging, public disclosure, personal verification, at Cadbury's own cost and without passing it on to consumers. Reputation was rebuilt by visible, costly action, not by winning the argument about fault.
-
 ## Sources
 
 - CNBC-TV18, BACKSTORY: How Cadbury chose Amitabh Bachchan to be its mascot after bar-of-worms crisis, November 2020
@@ -3116,36 +2582,6 @@ Shrinking a business is not the same as giving up on it.
 
 Sometimes it is the only way to save it. The two decisions that actually turned Royal Enfield around, in order, were the least visible ones: four years of factory-floor discipline before any market-facing move, and then a deliberate reduction in scale that read as retreat but was in fact a concentration of resources on the one bet the leader had already proven out. Neither decision would have made a good headline in year one. Both are the reason there is a headline worth writing twenty-five years later.
 
-## Frequently Asked Questions
-
-### Why did Siddhartha Lal take over Royal Enfield in 2000?
-
-At 26, Siddhartha Lal took charge of Royal Enfield when his own family was preparing to shut the motorcycle business down. He asked his father for two years to fix it. He was not the obvious choice, with no turnaround record, but by his own account he was drawn to the job because he could eat, sleep, ride and talk motorcycles.
-
-### What condition was Royal Enfield in when Siddhartha Lal took charge?
-
-Royal Enfield was selling about 2,000 motorcycles a month against a plant built to produce 6,000. Engines leaked oil, dealers had stopped believing in the brand, and a motorcycle sold in India since 1949 was dying quietly out of its Chennai factory.
-
-### Why did Siddhartha Lal spend four years in Chennai before marketing Royal Enfield?
-
-He judged that no marketing campaign could fix a motorcycle that leaked oil and that dealers no longer trusted. He spent four years in Chennai on cost and product, fixing the machine itself, before shifting attention to how the brand was sold or positioned in the market.
-
-### Why did Eicher Motors sell 13 of its businesses between 2005 and 2006?
-
-Eicher Motors was spread across 15 businesses and led none of them well. Between 2005 and 2006, Lal sold or shut 13 of those businesses, leaving only motorcycles and trucks, on the bet that leading one category beats being average across fifteen.
-
-### What happened to Eicher's original tractor business?
-
-Tractors, the business the Eicher Group had been built on, were sold to TAFE as part of the 2005-2006 restructuring. At the time, the market read the sell-offs as the Lal family exiting the business. They were not; they were concentrating it.
-
-### How large is Royal Enfield today?
-
-In FY25, Royal Enfield sold over ten lakh motorcycles, with exports alone crossing one lakh units. Eicher Motors closed FY25 with revenue of ₹18,870 crore and profit after tax of ₹4,734 crore. In FY26, Royal Enfield sold 12.39 lakh motorcycles, with exports of 1.31 lakh. Siddhartha Lal is now chairman of Eicher Motors, twenty-five years after taking charge.
-
-### What is the leadership lesson from Siddhartha Lal's turnaround of Royal Enfield?
-
-Shrinking a business is not the same as giving up on it. Lal deliberately made Eicher Motors smaller, selling 13 of 15 businesses including the family's original tractor line, to concentrate leadership attention on the one category, motorcycles, where the company could actually win.
-
 ## Sources
 
 - ETAuto, Royal Enfield sales surges 34% with 1,01,021 units in March, April 2025
@@ -3206,32 +2642,6 @@ Founders and leadership teams tend to treat a failing strategy as a marketing pr
 Most leaders protect the strategy that made their career. It is the natural instinct, particularly for anyone who joined a business early and rose alongside a founding idea. Admitting that idea was wrong feels like admitting the first decade of your own work was wasted.
 
 The best ones bury it the day it stops being true. Tanishq's early leadership did that before Venkataraman took the jewellery division, and he spent his career proving the correction could scale, not defending the version that came before it. That is the harder discipline: not spotting the mistake, but being willing to let go of it completely, in public, at real cost, and rebuild on what the market was actually telling you.
-
-## Frequently Asked Questions
-
-### Why did Tanishq struggle in its early years?
-
-Tanishq launched in the mid-1990s on the assumption that Indians would buy gold the way Titan had taught them to buy watches, as Western-influenced fashion, mostly in 18 karat because it was cheaper and easier to work with. Indian gold buyers wanted 22 karat, because gold in India functions as savings, security, and a wedding promise, not an accessory. That mismatch produced losses for years.
-
-### What is a karatmeter and why did Tanishq introduce one?
-
-A karatmeter is an X-ray based machine that tests the purity of gold jewellery on the spot, in front of the customer. Tanishq installed them in stores because the real problem holding back Indian jewellery buyers was not design, it was that almost no jeweller in the market could be trusted on purity. The karatmeter turned an invisible trust problem into a visible, verifiable one.
-
-### What was Tanishq's gold exchange offer?
-
-If a customer's old jewellery tested at 19 karat or above, Tanishq exchanged it for new 22 karat Tanishq jewellery at no extra cost for the gold, absorbing the purity gap itself. It was an expensive policy, but it was the most direct way to buy trust in a market where most buyers had been shortchanged on purity for generations.
-
-### Who is C K Venkataraman and what was his role at Tanishq?
-
-C K Venkataraman ran Titan's jewellery division starting in 2005, first as COO and then as CEO until 2019, scaling Tanishq on the corrected 22 karat, trust-first foundation. He went on to become managing director of Titan Company Limited, retiring on 31 December 2025 after 35 years with the company.
-
-### How large is Titan's jewellery business today?
-
-In FY25, Titan's jewellery division, which includes Tanishq, reported total income above ₹46,000 crore, making it the dominant engine of Titan Company's overall revenue and one of the largest organised jewellery businesses in India.
-
-### What is the leadership lesson from Tanishq's turnaround?
-
-Most leaders protect the strategy that made their career. The Tanishq team, and C K Venkataraman after them, did the opposite: they abandoned the founding design philosophy the moment the market proved it wrong, and rebuilt the business around what Indian gold buyers actually valued, purity and trust, ahead of Western design cues.
 
 ## Sources
 
@@ -3401,32 +2811,6 @@ For a candidate evaluating a role like this, the diagnostic question is not "doe
 
 The unclear brief is often the one worth taking, but only after someone has told you, honestly, why it is unclear.
 
-## Frequently Asked Questions
-
-### Why did Sunil D'Souza initially turn down the Tata Consumer Products job?
-
-Sunil D'Souza was running Whirlpool India when Tata approached him about leading its consumer business. He turned the offer down at first because, in his own words, the company looked like it had no clear direction, a tea and salt business that had only just merged its beverages arm with a chemicals food division.
-
-### What changed Sunil D'Souza's mind about joining Tata Consumer Products?
-
-He was told that the very thing putting him off, the lack of direction, was the exact reason N. Chandrasekaran wanted him in the role. Tata did not need a caretaker for an existing business. It needed someone to build a company that did not yet exist, which reframed the ambiguity as opportunity rather than risk.
-
-### What was Tata Consumer Products before Sunil D'Souza took over?
-
-It was primarily a tea business and a salt business, both decades old, sitting inside a group that had merged its beverages arm with a chemicals food division only a year before D'Souza joined. Chandrasekaran's brief to him was direct: he wanted it to become an FMCG company, not remain a two-category legacy business.
-
-### How did Sunil D'Souza expand Tata Consumer Products beyond tea and salt?
-
-He acquired Ching's Secret to enter Desi Chinese and Smith & Jones for Italian-style cooking products, bought Organic India, and pushed into packaged staples, pulses, and ready-to-drink categories. He also built out distribution, reaching close to 290 million households and nearly four million retail outlets across India.
-
-### How much revenue does Tata Consumer Products generate now?
-
-Tata Consumer Products reported ₹20,290 crore in revenue in FY26 and describes itself as among the top 10 food and beverage companies in India, roughly six years after Sunil D'Souza took charge of what had been a narrow tea and salt business.
-
-### What is the leadership lesson in Sunil D'Souza's decision to take the Tata Consumer job?
-
-An unclear mandate is often a build mandate in disguise. When a company looks directionless, it may mean leadership has already decided not to keep doing more of the same and is looking for someone to define the next version of the business, rather than manage the current one. That kind of brief rewards operators who can create structure, not just execute an existing plan.
-
 ## Sources
 
 - Tata Consumer Products, Results for the Quarter and Year ended 31st March 2026, May 2026
@@ -3497,36 +2881,6 @@ Every founder eventually faces a version of Chauhan's 1993 decision, though rare
 Defending Thums Up against Coca-Cola and Pepsi simultaneously would have meant years of price competition funded by a smaller balance sheet, a fight with a predictable, grinding outcome. Building Bisleri meant years of unglamorous infrastructure investment, trucks, route density, retailer relationships, with a payoff that was not guaranteed but was entirely his to define.
 
 The safe move is rarely the one that builds an empire. What is less obvious is that the "safe" move and the "bold" move both require serious operational leadership. Chauhan did not walk away from FMCG discipline when he sold Thums Up. He redeployed it against a problem, distribution economics for a low-margin commodity, that most leadership teams would consider beneath a brand-building mandate. That willingness to run the boring part of the business personally, for decades, is the actual differentiator, not the timing of the water category call.
-
-## Frequently Asked Questions
-
-### Why did Ramesh Chauhan sell Thums Up to Coca-Cola?
-
-Pepsi entered India in 1990, and when Coca-Cola returned in 1993 it went straight after Chauhan's bottling network with offers he could not match. He judged it a price war against balance sheets far deeper than his own and chose to sell rather than fight it, taking Thums Up, Limca, Gold Spot, and Maaza to Coca-Cola in 1993 for around ₹186 crore.
-
-### How big was Thums Up when Ramesh Chauhan sold it?
-
-Thums Up commanded around 80% of the Indian cola market at the time of the sale. Chauhan had built it from scratch in 1977, in the gap Coca-Cola left when it exited India, and it stayed dominant for over a decade before Pepsi and Coca-Cola reopened the market to multinational competition.
-
-### Why did Bisleri take over two decades to scale?
-
-Parle acquired Bisleri in 1969 as a niche glass-bottle product sold mainly through five-star hotels and restaurants. For more than twenty years it stayed a side business because Indian consumers would not pay for something available free from a tap. It only scaled after 1993, when Chauhan committed the capital and distribution investment the category needed.
-
-### Why did Ramesh Chauhan build his own trucking fleet for Bisleri?
-
-Bottled water is heavy relative to its price, which made third-party transporters reluctant to carry it profitably. Chauhan solved this by moving the water himself, a decision that grew to over 2,000 trucks carrying Bisleri by 2008 and became one of Bisleri's structural advantages over later entrants.
-
-### How large is Bisleri today?
-
-Bisleri International Pvt Ltd holds roughly a third of India's organised bottled water market and posted revenue of ₹2,689 crore in FY24. The brand name is used generically by Indians to refer to bottled water regardless of manufacturer, a level of category ownership few Indian consumer brands have achieved.
-
-### Did Ramesh Chauhan sell Bisleri to the Tatas?
-
-No. Chauhan held talks in late 2022 to sell Bisleri to Tata Consumer Products for a reported ₹6,000 to ₹7,000 crore, but in March 2023 Tata Consumer said it had ceased negotiations without any binding agreement. Bisleri stayed under family ownership.
-
-### What is the leadership lesson from Ramesh Chauhan's move from Thums Up to Bisleri?
-
-The lesson is that defending a market position and building a category are different jobs requiring different leadership instincts. Chauhan gave up the safer role of protecting a dominant cola brand and instead spent decades solving the unglamorous operational problem, distribution economics, that was blocking an entire category from existing. Category creation rewards operators willing to own problems competitors consider beneath them.
 
 ## Sources
 
@@ -3605,28 +2959,6 @@ Business schools teach the Maggi crisis as a case study on brand recovery. What 
 
 Good times do not build that kind of CXO. Hard rooms do.
 
-## Frequently Asked Questions
-
-### Who is Suresh Narayanan?
-
-Suresh Narayanan is the former Chairman and Managing Director of Nestle India, who took the role in 2015 in the middle of the Maggi noodles ban. He had previously led Nestle through the 2008 financial downturn in Singapore and run the company's Egypt operations during the Arab Spring. He retired from Nestle India in July 2025.
-
-### What happened during the Maggi crisis in 2015?
-
-In June 2015, Indian food safety regulators ordered a ban on Maggi noodles over lead content concerns, forcing Nestle India to pull and destroy roughly 38,000 tonnes of product. Maggi held around 80% market share and generated about ₹2,000 crore in annual sales before the ban took its sales to zero within weeks.
-
-### How did Suresh Narayanan handle the Maggi ban?
-
-While Nestle India's legal challenge to the ban ran in the Bombay High Court, Suresh Narayanan worked on what a court could not fix: keeping distributors, suppliers and shareholders on side, communicating openly and often instead of relying on aggressive PR, and keeping employee morale intact. No one was laid off, and staff from the five sealed factories were put on a training programme. Maggi returned to Indian shelves five months after the ban, in November 2015.
-
-### How much did Nestle India grow under Suresh Narayanan?
-
-Over the 2015 to 2025 decade, Nestle India grew revenue at a compound rate of more than 10 percent a year. By the time Suresh Narayanan retired in July 2025, the company had crossed ₹20,000 crore in annual revenue, up from roughly ₹2,000 crore contributed by Maggi alone at the time of the 2015 ban.
-
-### How did Nestle India's rural distribution change under Suresh Narayanan?
-
-Nestle India's rural distribution network expanded from roughly 40,000 villages to over 90,000 villages under Suresh Narayanan's leadership, reflecting a deliberate push into tier 2 cities and smaller towns rather than relying solely on metro markets.
-
 ## Sources
 
 - Nestlé India, Mr. Suresh Narayanan, August 2015
@@ -3699,28 +3031,6 @@ This is the same underlying test we wrote about in Sanjiv Mehta's decade running
 
 The market does not reward the most polished résumé or the most prestigious former employer. It rewards boards that can tell the difference between a candidate who thrived inside a great system and one who can build the next one from scratch.
 
-## Frequently Asked Questions
-
-### Who is Sudhir Sitapati?
-
-Sudhir Sitapati was MD and CEO of Godrej Consumer Products (GCPL) from October 2021 until he resigned in August 2026. He spent 22 years at Hindustan Unilever, where he held senior roles in the detergents and foods businesses behind Surf Excel and Brooke Bond, led the merger that brought Horlicks into HUL, and became one of the youngest ever executive directors on HUL's management committee. He also wrote The CEO Factory, a book on how HUL builds senior leaders.
-
-### Why did Sudhir Sitapati leave Hindustan Unilever?
-
-In 2021, Sudhir Sitapati left HUL, where he sat on the management committee, to become MD and CEO of Godrej Consumer Products, a much smaller company whose previous CEO had stepped down in 2020. The move tested whether the leadership lessons he had written about would hold once he was the one accountable for running the company.
-
-### What did Sudhir Sitapati do at Godrej Consumer Products?
-
-At Godrej Consumer Products, Sudhir Sitapati cut back the product range to a sharper portfolio and prioritized category development over short-term wins. He resigned in August 2026, and CFO Aasif Malbari succeeded him as MD and CEO.
-
-### What is The CEO Factory by Sudhir Sitapati about?
-
-The CEO Factory is Sudhir Sitapati's book on how Hindustan Unilever systematically develops senior leaders, examining the specific practices, postings, and disciplines that turn young managers into CEOs across Indian and global consumer companies.
-
-### How did Godrej Consumer perform under Sudhir Sitapati?
-
-For the year ending March 2026, Godrej Consumer Products crossed ₹15,000 crore in revenue under Sudhir Sitapati, up about 8.5% on the year. In May 2026 the board approved a fresh five-year term for him, but he resigned in August 2026, days after shareholders approved it.
-
 ## Sources
 
 - Godrej Consumer Products, Audited Financial Results for the Quarter and Year Ended March 31, 2026, May 2026
@@ -3785,28 +3095,6 @@ When boards brief us on a CXO search, a long single-employer tenure gets three s
 We wrote recently about Sudhir Sitapati's decision to leave HUL's safest seat for a smaller, messier Godrej Consumer, a bet that conviction and judgment travel with the person, not the institution. Jejurikar's story is the mirror image of that same lesson: staying inside one institution for thirty-six years, deliberately choosing its hardest assignments, can build exactly the same range that switching companies is usually assumed to require.
 
 Both stories point to the same hiring problem. The market does not reward the flashiest career path or the most conventional one. It rewards boards that can read what a candidate actually did with the postings they were given, whichever direction that career moved.
-
-## Frequently Asked Questions
-
-### Who is Shailesh Jejurikar?
-
-Shailesh Jejurikar is the CEO of Procter & Gamble, appointed effective January 1, 2026. He joined P&G in 1989 straight out of IIM Lucknow as an assistant brand manager in India and spent his entire 36-year career at the company, rising through roles in India, East Africa, Asia and North America and leading Global Fabric and Home Care before becoming Chief Operating Officer in 2021.
-
-### Why is Shailesh Jejurikar's appointment as P&G CEO significant?
-
-Shailesh Jejurikar is the first person of Indian origin to lead Procter & Gamble in the company's nearly 187-year history. P&G reaches an estimated 5 billion consumers across more than 180 countries, making the appointment one of the most significant leadership milestones for Indian-origin executives in global consumer goods.
-
-### What did Shailesh Jejurikar run before becoming P&G CEO?
-
-Before becoming CEO, Shailesh Jejurikar ran P&G's largest business unit, Global Fabric and Home Care, a sector that makes up about a third of company sales and includes Tide, Ariel, and Downy, as its CEO from 2019. He became P&G's Chief Operating Officer in 2021.
-
-### What markets did Shailesh Jejurikar work in during his career at P&G?
-
-Shailesh Jejurikar started in India, took his first overseas posting in East Africa in 1996, then ran fabric and home care across Southeast Asia, India, Australia and Korea, largely in markets that rarely generate global headlines, and later led Home Care and Fabric Care in North America before being handed P&G's biggest business unit.
-
-### Why did Shailesh Jejurikar stay at one company for 36 years?
-
-Shailesh Jejurikar joined P&G in 1989 and never switched employers, an unusual path in an era when many managers change companies every few years to climb faster. He instead raised his hand for difficult postings and product categories inside the same organization, a pattern that ultimately built the operating range P&G's board chose for the top job.
 
 ## Sources
 
@@ -3883,28 +3171,6 @@ A founder or board weighing a buyout offer faces a different kind of pressure th
 
 Both stories point to the same hiring problem. The market does not reward the biggest budget or the boldest slide. It rewards boards that can identify, and hire, the people who carry a discipline through decades of pressure.
 
-## Frequently Asked Questions
-
-### Who is Sanjiv Mehta?
-
-Sanjiv Mehta is a chartered accountant who joined Union Carbide India in 1983 and later spent over three decades at Unilever, including a decade as CEO of Hindustan Unilever (HUL) from 2013. Under his leadership, HUL's market value grew more than fourfold, from about $17 billion to over $70 billion, and the company remained India's largest FMCG business.
-
-### What was Sanjiv Mehta's connection to the Bhopal gas tragedy?
-
-Sanjiv Mehta was a young accountant on Union Carbide India's crisis response team during the December 1984 Bhopal gas leak, barely a year into his career. He has said the experience taught him that safety is of paramount importance, and that he made a habit of starting every meeting by reviewing the safety agenda.
-
-### How much did Hindustan Unilever grow under Sanjiv Mehta?
-
-Under Sanjiv Mehta's decade as CEO, Hindustan Unilever's market value grew from around $17 billion to over $70 billion, a more than fourfold increase. Revenue crossed ₹50,000 crore, and HUL remained India's largest FMCG company.
-
-### What was the GSK-HUL merger?
-
-In 2020, Hindustan Unilever, under Sanjiv Mehta, completed its merger with GlaxoSmithKline Consumer Healthcare's Indian business, bringing the Horlicks and Boost brands into HUL. It remains one of the largest FMCG deals in Indian corporate history.
-
-### How did women's representation change at HUL under Sanjiv Mehta?
-
-The share of women in Hindustan Unilever's management rose from under 20% to 45% during Sanjiv Mehta's decade as CEO.
-
 ## Sources
 
 - HUL, HUL announces key leadership appointment, March 2023
@@ -3959,28 +3225,6 @@ Every founder who has built something worth defending eventually gets the versio
 What made Marico's answer credible was not conviction alone. It was that the conviction could actually be executed, on four fronts, at the same time, by people who owned each front. Product. Brand. Distribution. Ground sales. A founder cannot run all four personally at scale. That takes a bench.
 
 The market does not remember who had the bigger budget. It remembers who refused to blink, and who had the leadership in place to back that decision up.
-
-## Frequently Asked Questions
-
-### Why did Hindustan Lever try to kill Parachute in 1999?
-
-Hindustan Lever, now Hindustan Unilever, launched its own coconut hair oil, Nihar, to directly attack Parachute, the Marico brand that generated up to 60% of Marico's profits. Weakening Parachute would have crippled Marico as a company.
-
-### Why did Harsh Mariwala refuse to sell Marico to Hindustan Lever?
-
-Hindustan Lever and its bankers approached Harsh Mariwala more than once suggesting he sell the company. He refused because he knew the coconut oil category better than anyone and Marico still held around 50% of the market, so he chose to fight rather than exit.
-
-### What were the four fronts Marico fought on against Hindustan Lever?
-
-Marico improved the product itself, built emotional advertising around coconut oil's role in Indian households, pushed harder into rural distribution, and gave real power to its ground sales staff, fighting on product, brand, distribution, and ground sales simultaneously.
-
-### What happened to Marico after the war with Hindustan Lever?
-
-Marico held its ground and won. Years later, Marico bought the Nihar brand from Hindustan Unilever itself. Today Marico sells in over 25 countries, and in July 2026 its market value passed ₹1 lakh crore.
-
-### What is the boardroom leadership lesson from Marico's fight with Hindustan Lever?
-
-Conviction alone does not win a category war. It has to be executable on every front, product, brand, distribution, and ground sales, at the same time, by leaders who each own their front. A founder cannot run all four personally at scale, which is why the leadership bench matters as much as the decision to fight.
 
 ## Sources
 
