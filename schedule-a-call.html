@@ -48,7 +48,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" /></noscript>
-  <link rel="stylesheet" href="style.css?v=20261105" />
+  <link rel="stylesheet" href="style.css?v=20261106" />
 </head>
 <body>
 
@@ -84,10 +84,10 @@
     <div class="inner-hero-grid">
       <div>
         <div class="inner-hero-crumb">Home / Schedule a Call</div>
-        <h1>Feel Free to Get<br/><em>in Touch.</em></h1>
+        <h1>Brief us on<br/><em>the role.</em></h1>
       </div>
       <div class="inner-hero-side">
-        <p class="lead">Tell us the mandate. We'll map the market before you commit a budget. Book a free consultation today.</p>
+        <p class="lead">Send the brief below or book a free 30-minute call. We reply within one business day and map the market before you commit a budget.</p>
         <div class="inner-hero-facts">
           <div class="inner-hero-fact">
             <span class="inner-hero-fact-num">1 <em>day</em></span>
@@ -107,14 +107,15 @@
   <div class="container">
     <div class="contact-grid">
       <div class="contact-info">
-        <span class="overline" style="color:var(--clay);">§01 · Let's Talk</span>
-        <h2 style="margin-top:16px;">Ready Whenever<br/><em class="italic-serif" style="color:var(--clay);">You Are.</em></h2>
-        <p class="lead">Whether you're hiring your first CMO or replacing a founder-led sales team, we're here to help. Schedule a free, no-obligation call with our executive search team.</p>
+        <span class="overline" style="color:var(--clay-ink);">§01 · Let's Talk</span>
+        <h2 style="margin-top:16px;">Two ways<br/><em class="italic-serif" style="color:var(--clay);">to start.</em></h2>
+        <p class="lead">Send the brief with the form and we come back within one business day. Or pick a time for a free, no-obligation 30-minute call.</p>
         <div class="contact-channels">
           <div class="contact-channel"><span class="k">Phone · IN / UAE</span><span class="v"><a href="tel:+919856755000">+91 98567 55000</a></span><span></span></div>
           <div class="contact-channel"><span class="k">Email</span><span class="v"><a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a></span><span></span></div>
           <div class="contact-channel"><span class="k">Hours</span><span class="v">Mon – Sat · 10am – 6pm IST</span><span></span></div>
           <div class="contact-channel"><span class="k">Locations</span><span class="v">India &amp; UAE</span><span></span></div>
+          <div class="contact-channel"><span class="k">Fees</span><span class="v">₹10,000 starts the search, adjusted against one month's CTC when your hire joins</span><span></span></div>
           <div class="contact-channel"><span class="k">Pick a Time</span><span class="v">Book a free 30-minute call on our calendar</span><a href="#book-call" class="link-under">Book Now →</a></div>
         </div>
       </div>
@@ -122,8 +123,8 @@
       <form class="contact-form" data-testid="contact-form">
         <input type="hidden" name="form_type" value="contact" />
         <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
-        <div class="overline" style="color:var(--clay);">§02 · Message</div>
-        <h3>Send Us a Message.</h3>
+        <div class="overline" style="color:var(--clay-ink);">§02 · The brief</div>
+        <h3>Send the brief.</h3>
         <p style="font-size:14px;color:var(--ink-2);line-height:1.6;">Fill in the form and our team will get back to you within one business day.</p>
         <div class="form-row-2">
           <div class="form-row"><label>First Name *</label><input type="text" name="first_name" required data-testid="form-firstname" /></div>
@@ -138,15 +139,13 @@
           <div class="form-row"><label>Your Role</label><input type="text" name="role" data-testid="form-role" /></div>
         </div>
         <div class="form-row">
-          <label>What Are You Looking For? *</label>
+          <label>What do you need? *</label>
           <select name="service" required data-testid="form-service">
-            <option value="">Select a service</option>
-            <option>Leadership Gap Analysis</option>
-            <option>Strategic CXO Search</option>
-            <option>Executive Screening</option>
-            <option>Interview Coordination</option>
-            <option>Compensation Benchmarking</option>
-            <option>Other / Not Sure Yet</option>
+            <option value="">Select one</option>
+            <option>Hire a CXO or senior leader in India</option>
+            <option>Hire a senior leader in the UAE</option>
+            <option>Pay data for a role before hiring</option>
+            <option>Other / Not sure yet</option>
           </select>
         </div>
         <div class="form-row">
@@ -161,8 +160,8 @@
             <option>Other</option>
           </select>
         </div>
-        <div class="form-row"><label>Tell Us About Your Needs</label><textarea rows="3" name="message" data-testid="form-message"></textarea></div>
-        <button type="submit" class="btn" style="justify-content:center;" data-testid="form-submit">Schedule a Free Consultation</button>
+        <div class="form-row"><label>The role, city and anything else we should know</label><textarea rows="3" name="message" data-testid="form-message"></textarea></div>
+        <button type="submit" class="btn" style="justify-content:center;" data-testid="form-submit">Send the Brief</button>
         <p style="font-size:11px;color:var(--ink-2);line-height:1.5;">By submitting, you agree to our privacy policy. We never share your data.</p>
       </form>
     </div>
@@ -197,7 +196,7 @@
       <div class="what-item">
         <div class="num">i.</div>
         <h3>Leadership Gap Audit</h3>
-        <p>We assess your current leadership team against what scaling retail, jewelry, and D2C brands typically need, and identify the most critical gaps to fill first.</p>
+        <p>We assess your current leadership team against what scaling retail, jewellery and D2C brands typically need, and identify the most critical gaps to fill first.</p>
       </div>
       <div class="what-item">
         <div class="num">ii.</div>
@@ -224,7 +223,7 @@
     <div class="process-track">
       <div class="process-step"><div class="process-step-num">01</div><h3>Discovery Call</h3><p>We learn about your company, growth stage, and the leadership roles you need to fill.</p></div>
       <div class="process-step"><div class="process-step-num">02</div><h3>Strategy Session</h3><p>We map out your leadership gaps and define the exact CXO profiles that fit your goals.</p></div>
-      <div class="process-step"><div class="process-step-num">03</div><h3>Targeted Search</h3><p>We headhunt proven executives directly from competitor retail, jewelry, and D2C brands.</p></div>
+      <div class="process-step"><div class="process-step-num">03</div><h3>Targeted Search</h3><p>We headhunt proven executives directly from competitor retail, jewellery and D2C brands.</p></div>
       <div class="process-step"><div class="process-step-num">04</div><h3>Successful Placement</h3><p>We manage the full process through to onboarding, with post-placement follow-up included.</p></div>
     </div>
   </div>
