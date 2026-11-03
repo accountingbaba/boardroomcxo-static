@@ -1151,42 +1151,49 @@ ul  { list-style: none; }
 }
 
 /* EXECUTIVE SEARCH HERO */
-.es-hero { padding: 150px 0 72px; }
-.es-hero-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(40px, 5vw, 80px); align-items: center; }
-.es-hero h1 { font-size: clamp(2.4rem, 5vw, 4.4rem); max-width: none; margin-bottom: 28px; }
-.es-hero .lead { max-width: 52ch; margin-bottom: 36px; }
-.es-hero-roles { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; }
-.es-hero-roles li {
-  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--ink); border: 1px solid var(--line); padding: 8px 12px;
-}
-.es-hero-card { background: var(--ink); color: var(--bg); padding: clamp(28px, 3vw, 44px); }
-.es-hero-card-h {
+.es-hero { padding: 172px 0 104px; }
+.es-hero-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(48px, 6vw, 112px); align-items: end; }
+.es-hero-over {
   font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.15em;
-  text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+  text-transform: uppercase; color: var(--clay-ink); margin-bottom: 28px;
 }
-.es-hero-steps { list-style: none; counter-reset: es; }
-.es-hero-steps li {
-  counter-increment: es; display: grid; grid-template-columns: 40px 1fr; column-gap: 16px;
-  padding: 20px 0; border-bottom: 1px solid var(--line-dark);
+.es-hero h1 { font-size: clamp(2.6rem, 5.6vw, 5rem); max-width: none; margin-bottom: 28px; }
+.es-hero .lead { max-width: 40ch; margin-bottom: 44px; }
+.es-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; }
+.es-hero-stats { border-left: 1px solid var(--line); padding-left: clamp(32px, 4vw, 56px); }
+.es-stat { display: flex; flex-direction: column; gap: 12px; padding: 28px 0; }
+.es-stat + .es-stat { border-top: 1px solid var(--line); }
+.es-stat-num {
+  font-family: var(--font-display); font-size: clamp(2.8rem, 4.6vw, 4.2rem);
+  font-weight: 500; line-height: 1; letter-spacing: -0.014em; color: var(--ink);
 }
-.es-hero-steps li::before {
-  content: counter(es, decimal-leading-zero); grid-row: span 2;
-  font-family: var(--font-display); font-style: italic; font-size: 1.6rem; line-height: 1; color: var(--gold);
-}
-.es-step-when {
-  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em;
-  text-transform: uppercase; color: rgba(255,255,255,0.62);
-}
-.es-step-what { font-size: 1rem; line-height: 1.45; color: var(--bg); margin-top: 4px; }
-.es-hero-card-foot {
-  margin-top: 20px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--gold);
+.es-stat-num em { font-style: italic; font-weight: 400; color: var(--clay); font-size: 0.6em; margin-left: 4px; }
+.es-stat-label {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--ink-2);
 }
 @media (max-width: 900px) {
-  .es-hero { padding: 128px 0 56px; }
-  .es-hero-grid { grid-template-columns: 1fr; }
+  .es-hero { padding: 132px 0 64px; }
+  .es-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .es-hero-stats { display: flex; gap: 32px; border-left: none; padding-left: 0; border-top: 1px solid var(--line); }
+  .es-stat { flex: 1; padding: 24px 0 0; }
+  .es-stat + .es-stat { border-top: none; }
 }
+@media (max-width: 480px) {
+  .es-hero h1 { font-size: clamp(1.9rem, 9.2vw, 2.25rem); }
+  .es-stat-label { letter-spacing: 0.1em; }
+}
+
+/* QUICK CONTACT: WhatsApp / Email */
+.btn svg, .quick-link svg { width: 18px; height: 18px; flex: none; }
+.btn-icon::after { display: none; }
+.quick-links { display: flex; flex-wrap: wrap; gap: 8px 28px; }
+.quick-link {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--ink); border-bottom: 1px solid var(--line); transition: color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.quick-link:hover { color: var(--emerald); border-color: currentColor; }
 
 /* STATS BAND */
 .stats-band {
