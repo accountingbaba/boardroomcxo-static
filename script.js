@@ -209,39 +209,72 @@ const SALARY_DATA = [
   }
 })();
 
-// Form submission (contact form + newsletter signup) via mail-handler.php
+// Form submission: the contact form, the newsletter signup and the joining announcement order are sent as JSON to the
+// Accounting Baba portal, which emails hire@boardroomcxo.com and sends the person a confirmation (3 Nov 2026).
+// They used to go to /mail-handler.php (Resend), which had stopped sending. A photo is sent as base64, 8 MB at most.
 (function () {
+  var ENDPOINT = 'https://accountingbaba.com/api/portal/public/enquiry/boardroom';
+  var MAX_PHOTO = 8 * 1024 * 1024;
+
+  function readFile(file) {
+    return new Promise(function (resolve, reject) {
+      var reader = new FileReader();
+      reader.onload = function () { resolve(String(reader.result).replace(/^data:[^,]*,/, '')); };
+      reader.onerror = function () { reject(new Error('read')); };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  async function payload(form) {
+    var data = { page: location.pathname };
+    var fd = new FormData(form);
+    for (var pair of fd.entries()) {
+      var key = pair[0], value = pair[1];
+      if (typeof value === 'string') { data[key] = value; continue; }
+      if (!value || !value.size) continue;
+      if (value.size > MAX_PHOTO) throw new Error('The photo is too large (8 MB at most). Please use a smaller file.');
+      data[key] = { name: value.name, type: value.type, content: await readFile(value) };
+    }
+    return data;
+  }
+
   function wireForm(form, successText) {
-    if (!form) return;
-    const btn = form.querySelector('button[type="submit"]');
-    const originalText = btn ? btn.textContent : '';
-    form.addEventListener('submit', async (e) => {
+    if (!form || form.dataset.wired) return;
+    form.dataset.wired = '1';
+    var btn = form.querySelector('button[type="submit"]');
+    var originalText = btn ? btn.textContent : '';
+    var reset = function (text) {
+      if (btn) btn.textContent = text;
+      setTimeout(function () { if (btn) { btn.textContent = originalText; btn.disabled = false; } }, 3500);
+    };
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
       if (btn) { btn.textContent = 'Sending…'; btn.disabled = true; }
+      var body;
+      try { body = await payload(form); } catch (err) { reset(err.message || 'Something went wrong, try again'); return; }
       try {
-        const res = await fetch('/mail-handler.php', {
-          method: 'POST',
-          headers: { Accept: 'application/json' },
-          body: new FormData(form),
-        });
-        const result = await res.json();
-        if (result.success) {
+        var res = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+        var result = await res.json().catch(function () { return {}; });
+        if (res.ok && result.ok) {
           if (btn) btn.textContent = successText;
           form.reset();
+          if (window.gtag) gtag('event', 'form_sent', { form: body.form_type || 'contact', page: location.pathname });
         } else {
-          if (btn) btn.textContent = 'Something went wrong — try again';
-          setTimeout(() => { if (btn) { btn.textContent = originalText; btn.disabled = false; } }, 3000);
+          reset(res.status === 429 ? 'Too many tries, please wait an hour' : 'Something went wrong, try again');
         }
       } catch (err) {
-        if (btn) btn.textContent = 'Network error — try again';
-        setTimeout(() => { if (btn) { btn.textContent = originalText; btn.disabled = false; } }, 3000);
+        reset('Network error, try again');
       }
     });
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', function () {
     wireForm(document.querySelector('[data-testid="contact-form"]'), "Sent ✓, We'll be in touch");
     wireForm(document.querySelector('[data-testid="newsletter-form"]'), 'Subscribed ✓');
+    document.querySelectorAll('form').forEach(function (f) {
+      var type = f.querySelector('input[name="form_type"]');
+      if (type && type.value === 'joining_announcement') wireForm(f, 'Order sent ✓');
+    });
   });
 })();
 

@@ -1,5 +1,9 @@
-const TO = 'hire@boardroomcxo.com';
-const FROM = 'Boardroom CXO Website <no-reply@boardroomcxo.com>';
+// Old form address, kept only as a forwarder (3 Nov 2026).
+// The site's forms now post JSON straight to the Accounting Baba portal (see script.js), which emails
+// hire@boardroomcxo.com through ZeptoMail. This used to send through Resend, which had stopped working, so every
+// submission was lost. A browser holding an older copy of script.js (cached for up to a day) still posts form data
+// here, so it is turned into the same JSON and passed on, instead of being dropped.
+const PORTAL = 'https://accountingbaba.com/api/portal/public/enquiry/boardroom';
 const MAX_ATTACHMENT_BYTES = 8 * 1024 * 1024; // 8MB
 
 function json(data, status = 200) {
@@ -9,16 +13,7 @@ function json(data, status = 200) {
   });
 }
 
-function cleanField(value) {
-  return String(value ?? '').replace(/[\r\n]+/g, ' ').trim();
-}
-
-function isValidEmail(value) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-}
-
-// Workers runtime has no Buffer; encode in chunks to avoid call-stack blowups
-// on large files.
+// Workers runtime has no Buffer; encode in chunks to avoid call-stack blowups on large files.
 async function fileToBase64(file) {
   const bytes = new Uint8Array(await file.arrayBuffer());
   let binary = '';
@@ -30,8 +25,7 @@ async function fileToBase64(file) {
 }
 
 export async function onRequestPost(context) {
-  const { request, env } = context;
-
+  const { request } = context;
   let form;
   try {
     form = await request.formData();
@@ -39,112 +33,28 @@ export async function onRequestPost(context) {
     return json({ success: false, message: 'Invalid form submission' }, 400);
   }
 
-  // Honeypot spam check — silently accept so bots don't learn it's blocked
-  if (form.get('botcheck')) {
-    return json({ success: true });
+  const body = { page: new URL(request.headers.get('Referer') || 'https://boardroomcxo.com/').pathname };
+  for (const [key, value] of form.entries()) {
+    if (typeof value === 'string') { body[key] = value; continue; }
+    if (!value || !value.size) continue;
+    if (value.size > MAX_ATTACHMENT_BYTES) {
+      return json({ success: false, message: 'Photo is too large (max 8MB). Please use a smaller file.' }, 400);
+    }
+    body[key] = { name: value.name || 'photo.jpg', type: value.type || 'image/jpeg', content: await fileToBase64(value) };
   }
 
-  const formType = cleanField(form.get('form_type')) || 'contact';
-
-  let subject, body, replyTo;
-  let attachments;
-
-  if (formType === 'newsletter') {
-    const email = cleanField(form.get('email'));
-    if (!isValidEmail(email)) {
-      return json({ success: false, message: 'Invalid email' }, 400);
-    }
-    subject = 'New Newsletter Signup - Boardroom CXO';
-    body = `New newsletter signup:\n\nEmail: ${email}\n`;
-    replyTo = email;
-  } else if (formType === 'joining_announcement') {
-    const fullName = cleanField(form.get('full_name'));
-    const title = cleanField(form.get('title'));
-    const company = cleanField(form.get('company'));
-    const mobile = cleanField(form.get('mobile'));
-    const email = cleanField(form.get('email'));
-    const paymentRef = cleanField(form.get('payment_ref'));
-    const photo = form.get('photo');
-
-    if (!fullName || !title || !company || !mobile || !isValidEmail(email) || !paymentRef) {
-      return json({ success: false, message: 'Missing required fields' }, 400);
-    }
-
-    subject = 'New Joining Announcement Order - Boardroom CXO';
-    body = 'New Joining Announcement order:\n\n'
-      + `Name: ${fullName}\n`
-      + `New Title: ${title}\n`
-      + `Company: ${company}\n`
-      + `Mobile: ${mobile}\n`
-      + `Email: ${email}\n`
-      + `Payment Reference: ${paymentRef}\n\n`
-      + 'Reminder: verify this payment reference in the Razorpay dashboard before publishing.\n';
-    replyTo = email;
-
-    if (photo && typeof photo === 'object' && photo.size > 0) {
-      if (photo.size > MAX_ATTACHMENT_BYTES) {
-        return json({ success: false, message: 'Photo is too large (max 8MB). Please use a smaller file.' }, 400);
-      }
-      attachments = [{
-        filename: photo.name || 'photo.jpg',
-        content: await fileToBase64(photo),
-      }];
-    }
-  } else {
-    const firstName = cleanField(form.get('first_name'));
-    const lastName = cleanField(form.get('last_name'));
-    const email = cleanField(form.get('email'));
-    const phone = cleanField(form.get('phone'));
-    const company = cleanField(form.get('company'));
-    const role = cleanField(form.get('role'));
-    const service = cleanField(form.get('service'));
-    const message = String(form.get('message') ?? '').trim();
-    const heardFrom = cleanField(form.get('heard_from'));
-
-    if (!firstName || !lastName || !isValidEmail(email) || !company || !service) {
-      return json({ success: false, message: 'Missing required fields' }, 400);
-    }
-
-    subject = 'New Contact Form Submission - Boardroom CXO';
-    body = 'New contact form submission:\n\n'
-      + `Name: ${firstName} ${lastName}\n`
-      + `Email: ${email}\n`
-      + `Phone: ${phone}\n`
-      + `Company: ${company}\n`
-      + `Role: ${role}\n`
-      + `Looking for: ${service}\n`
-      + `Heard about us: ${heardFrom || 'not given'}\n\n`
-      + `Message:\n${message}\n`;
-    replyTo = email;
+  try {
+    const res = await fetch(PORTAL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Origin: 'https://boardroomcxo.com' },
+      body: JSON.stringify(body),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (res.ok && data.ok) return json({ success: true });
+    return json({ success: false, message: data.error || 'Mail could not be sent' }, res.status >= 400 ? res.status : 500);
+  } catch {
+    return json({ success: false, message: 'Mail could not be sent' }, 502);
   }
-
-  if (!env.RESEND_API_KEY) {
-    return json({ success: false, message: 'Mail could not be sent' }, 500);
-  }
-
-  const payload = {
-    from: FROM,
-    to: [TO],
-    reply_to: replyTo,
-    subject,
-    text: body,
-  };
-  if (attachments) payload.attachments = attachments;
-
-  const res = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${env.RESEND_API_KEY}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(payload),
-  });
-
-  if (!res.ok) {
-    return json({ success: false, message: 'Mail could not be sent' }, 500);
-  }
-
-  return json({ success: true });
 }
 
 export async function onRequestGet() {

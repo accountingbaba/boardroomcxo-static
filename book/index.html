@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2405BSX22"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-R2405BSX22');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Call | Boardroom CXO</title>
+  <meta name="description" content="Pick a time for a free 30-minute call with Boardroom CXO about the leadership role you are hiring for. Times are shown in your own time zone." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://boardroomcxo.com/book/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Boardroom CXO" />
+  <meta property="og:title" content="Book a Call | Boardroom CXO" />
+  <meta property="og:description" content="Pick a time for a free 30-minute call about the leadership role you are hiring for." />
+  <meta property="og:url" content="https://boardroomcxo.com/book/" />
+  <meta property="og:image" content="https://boardroomcxo.com/images/Homepage-Meta-removebg-preview.png" />
+  <link rel="icon" href="/images/favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://accountingbaba.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" />
+  <link rel="stylesheet" href="/style.css?v=20261105" />
+  <style>
+    /* The booking card. Every class starts with bk- so nothing here touches the rest of the site. */
+    #book {
+      --bk-acc: #B6883F; --bk-acc-dark: #8A6428; --bk-acc-light: #F4ECDD; --bk-acc-hover: #EADBC0;
+      --bk-ink: #0B1B2E; --bk-body: #2E312E; --bk-muted: #6B6E6B; --bk-line: #E2DFD8; --bk-soft: #FAF9F6; --bk-white: #FFFFFF;
+      --bk-shadow: 0 2px 6px rgba(11,27,46,0.05), 0 12px 32px rgba(11,27,46,0.08);
+      --bk-ease: cubic-bezier(0.23, 1, 0.32, 1);
+      font-family: var(--font-body); color: var(--bk-body);
+    }
+    #book button, #book input, #book select, #book textarea { font: inherit; color: inherit; }
+    .bk-wrap { max-width: 1180px; margin: 0 auto; padding: 0 var(--pad-x) 100px; }
+    .bk-head { padding: 150px 0 48px; }
+    .bk-head .inner-hero-crumb { margin-bottom: 18px; }
+    .bk-head h1 { font-family: var(--font-display); font-weight: 500; font-size: clamp(2.2rem, 4.6vw, 3.8rem); line-height: 1.02; letter-spacing: -0.016em; color: var(--ink); max-width: 18ch; }
+    .bk-head h1 em { font-style: italic; color: var(--clay); font-weight: 400; }
+    .bk-head p { margin-top: 18px; color: var(--ink-2); max-width: 60ch; font-size: 16.5px; }
+
+    .bk-card { background: var(--bk-white); border: 1px solid var(--bk-line); border-radius: 6px; box-shadow: var(--bk-shadow); overflow: hidden; }
+    .bk-steps { display: flex; align-items: center; padding: 0 28px; border-bottom: 1px solid var(--bk-line); overflow: hidden; }
+    .bk-step { display: flex; align-items: center; gap: 10px; padding: 16px 0; margin-right: 28px; font-size: 13.5px; font-weight: 600; color: var(--bk-muted); white-space: nowrap; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+    .bk-step b { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--bk-soft); border: 1px solid var(--bk-line); font-size: 12px; font-weight: 700; color: var(--bk-muted); }
+    .bk-step.on { color: var(--bk-ink); border-bottom-color: var(--bk-acc); }
+    .bk-step.on b { background: var(--bk-ink); border-color: var(--bk-ink); color: var(--bk-white); }
+    .bk-step.done { color: var(--bk-ink); }
+    .bk-step.done b { background: var(--bk-acc-light); border-color: var(--bk-acc-light); color: var(--bk-acc-dark); }
+    .bk-step.done b svg { width: 13px; height: 13px; }
+
+    .bk-pick { display: grid; grid-template-columns: 300px minmax(0, 1fr) 250px; min-height: 560px; }
+    .bk-side { padding: 28px 26px; background: var(--bk-soft); border-right: 1px solid var(--bk-line); display: flex; flex-direction: column; }
+    .bk-host { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .bk-host img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid var(--bk-white); box-shadow: 0 0 0 1px var(--bk-line); }
+    .bk-host strong { display: block; font-size: 14.5px; color: var(--bk-ink); line-height: 1.25; }
+    .bk-host span { font-size: 12.5px; color: var(--bk-muted); }
+    .bk-side h1 { font-family: var(--font-display); font-size: 26px; font-weight: 500; letter-spacing: -0.01em; line-height: 1.15; margin: 0 0 16px; color: var(--bk-ink); }
+    .bk-fact { display: flex; gap: 10px; align-items: flex-start; font-weight: 600; font-size: 13.5px; margin-top: 9px; line-height: 1.5; }
+    .bk-fact svg { width: 18px; height: 18px; flex: none; color: var(--bk-acc); margin-top: 1px; }
+    .bk-desc { margin-top: 18px; font-size: 13.5px; white-space: pre-line; line-height: 1.7; }
+    .bk-when, .bk-old { margin-top: 16px; padding: 14px 16px; background: var(--bk-white); border: 1px solid var(--bk-line); border-left: 4px solid var(--bk-acc); border-radius: 4px; font-size: 14px; color: var(--bk-ink); line-height: 1.5; }
+    .bk-when strong { display: block; font-size: 16px; color: var(--bk-acc-dark); }
+    .bk-when span { color: var(--bk-muted); font-size: 12.5px; }
+    .bk-old { border-left-color: #B45309; background: #FFFBEB; color: #78350F; }
+    .bk-note { margin-top: auto; padding-top: 18px; font-size: 12.5px; color: var(--bk-muted); line-height: 1.65; }
+    .bk-note a { color: var(--bk-acc-dark); font-weight: 600; border-bottom: 1px solid currentColor; }
+
+    .bk-cal { padding: 28px 28px 24px; }
+    .bk-cal h2, .bk-form h2 { font-family: var(--font-display); font-size: 22px; font-weight: 500; margin-bottom: 16px; color: var(--bk-ink); }
+    .bk-month { display: flex; align-items: center; justify-content: space-between; max-width: 400px; margin: 0 auto 10px; color: var(--bk-ink); font-size: 15px; }
+    .bk-nav { width: 40px; height: 40px; border-radius: 4px; border: 1px solid var(--bk-line); background: var(--bk-white); color: var(--bk-ink); cursor: pointer; display: grid; place-items: center; transition: background 0.15s, border-color 0.15s; }
+    .bk-nav svg { width: 18px; height: 18px; }
+    .bk-nav:hover { background: var(--bk-acc-light); border-color: var(--bk-acc-light); }
+    .bk-nav:disabled { color: #C9C6BF; background: var(--bk-white); border-color: var(--bk-line); cursor: default; }
+    .bk-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; max-width: 400px; margin: 0 auto; }
+    .bk-dow { text-align: center; font-family: var(--font-mono); font-size: 10.5px; color: var(--bk-muted); text-transform: uppercase; letter-spacing: 0.08em; padding: 8px 0 6px; }
+    .bk-day { position: relative; aspect-ratio: 1; min-height: 42px; display: grid; place-items: center; border-radius: 4px; border: 0; font-weight: 700; font-size: 14.5px; background: var(--bk-acc-light); color: var(--bk-acc-dark); cursor: pointer; transition: background 0.15s, color 0.15s, transform 0.12s var(--bk-ease); }
+    .bk-day:hover { background: var(--bk-acc-hover); transform: translateY(-1px); }
+    .bk-day.on { background: var(--bk-ink); color: var(--bk-white); box-shadow: 0 6px 16px rgba(11,27,46,0.25); }
+    .bk-day.off { background: transparent; color: #C9C6BF; font-weight: 500; cursor: default; transform: none; }
+    .bk-day.today::after { content: ''; position: absolute; bottom: 6px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: currentColor; }
+    .bk-legend { display: flex; gap: 16px; justify-content: center; margin-top: 14px; font-size: 12px; color: var(--bk-muted); }
+    .bk-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: -1px; margin-right: 6px; background: var(--bk-acc-light); border: 1px solid var(--bk-acc-hover); }
+    .bk-legend i.sel { background: var(--bk-ink); border-color: var(--bk-ink); }
+    .bk-tz { max-width: 400px; margin: 18px auto 0; }
+    .bk-tz-row { display: flex; align-items: center; gap: 10px; }
+    .bk-tz-row svg { width: 18px; height: 18px; color: var(--bk-muted); flex: none; }
+    .bk-tz-row select { flex: 1; min-width: 0; padding: 10px 12px; border: 1px solid var(--bk-line); border-radius: 4px; background: var(--bk-white); font-size: 14px; }
+
+    .bk-times { padding: 28px 24px; border-left: 1px solid var(--bk-line); display: flex; flex-direction: column; scroll-margin-top: 96px; }
+    .bk-times h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; color: var(--bk-ink); }
+    .bk-count { font-size: 12.5px; color: var(--bk-muted); margin-bottom: 14px; }
+    .bk-empty { margin: auto 0; text-align: center; color: var(--bk-muted); font-size: 13.5px; line-height: 1.6; padding: 24px 8px; }
+    .bk-empty svg { width: 40px; height: 40px; color: #C9C6BF; margin: 0 auto 10px; display: block; }
+    .bk-slots { display: grid; gap: 8px; max-height: 420px; overflow-y: auto; padding-right: 4px; scrollbar-width: thin; }
+    .bk-slot-row { display: grid; grid-template-columns: 1fr; gap: 6px; }
+    .bk-slot-row.sel { grid-template-columns: 1fr 1fr; }
+    .bk-slot { min-height: 46px; border: 1.5px solid #E1CFAE; background: var(--bk-white); color: var(--bk-acc-dark); border-radius: 4px; font-weight: 700; font-size: 14px; cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s; }
+    .bk-slot:hover { border-color: var(--bk-acc); background: var(--bk-acc-light); }
+    .bk-slot.sel { background: var(--bk-ink); border-color: var(--bk-ink); color: var(--bk-white); cursor: default; }
+    .bk-next { min-height: 46px; border: 0; border-radius: 4px; background: var(--bk-acc); color: var(--bk-white); font-weight: 700; font-size: 14px; cursor: pointer; transition: background 0.15s; animation: bk-pop 0.2s var(--bk-ease); }
+    .bk-next:hover { background: var(--bk-acc-dark); }
+    @keyframes bk-pop { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: none; } }
+
+    .bk-form { grid-column: 2 / 4; padding: 28px 32px 32px; max-width: 640px; display: grid; gap: 16px; align-content: start; }
+    .bk-back { justify-self: start; display: inline-flex; align-items: center; gap: 6px; background: none; border: 0; color: var(--bk-acc-dark); font-weight: 600; font-size: 13.5px; cursor: pointer; padding: 0; }
+    .bk-back svg { width: 16px; height: 16px; }
+    .bk-back:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .bk-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .bk-field { display: grid; gap: 6px; }
+    .bk-field label { font-size: 13.5px; font-weight: 600; color: var(--bk-ink); }
+    .bk-field label i { color: #B91C1C; font-style: normal; }
+    .bk-field label em { color: var(--bk-muted); font-weight: 500; font-style: normal; }
+    .bk-field input, .bk-field textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--bk-line); border-radius: 4px; background: var(--bk-white); font-size: 15px; transition: border-color 0.15s, box-shadow 0.15s; }
+    .bk-field textarea { resize: vertical; min-height: 84px; }
+    .bk-field input:focus, .bk-field textarea:focus { outline: none; border-color: var(--bk-acc); box-shadow: 0 0 0 3px rgba(182,136,63,0.18); }
+    .bk-hint { font-size: 12.5px; color: var(--bk-muted); line-height: 1.6; }
+    .bk-hint a { color: var(--bk-acc-dark); border-bottom: 1px solid currentColor; }
+    .bk-errmsg { color: #B91C1C; font-size: 14px; font-weight: 600; padding: 10px 14px; background: #FEF2F2; border: 1px solid #FECACA; border-radius: 4px; }
+    .bk-errmsg:empty { display: none; }
+    .bk-notice { padding: 12px 14px; background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 4px; color: #78350F; font-size: 14px; margin-bottom: 16px; }
+    .bk-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 24px; border-radius: 4px; border: 1px solid var(--bk-line); background: var(--bk-white); color: var(--bk-ink); font-size: 15px; font-weight: 600; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+    .bk-btn svg { width: 18px; height: 18px; }
+    .bk-btn:hover { background: var(--bk-soft); }
+    .bk-btn-primary { background: var(--bk-ink); border-color: var(--bk-ink); color: var(--bk-white); }
+    .bk-btn-primary:hover { background: #142B47; border-color: #142B47; }
+    .bk-btn:disabled { opacity: 0.6; cursor: default; }
+    .bk-btn-block { width: 100%; padding: 15px 24px; font-size: 16px; }
+    .bk-btn-danger { color: #B91C1C; }
+    .bk-btn-danger:hover { background: #FEF2F2; border-color: #FECACA; }
+
+    .bk-list, .bk-msg, .bk-done { max-width: 640px; margin: 0 auto; padding: 40px 36px; }
+    .bk-list h1, .bk-msg h1, .bk-done h1 { font-family: var(--font-display); font-size: 30px; font-weight: 500; margin-bottom: 6px; color: var(--bk-ink); }
+    .bk-msg p, .bk-sub { margin: 6px 0 18px; color: var(--bk-muted); font-size: 15px; line-height: 1.6; }
+    .bk-type { display: block; margin-top: 12px; padding: 16px 18px; border: 1px solid var(--bk-line); border-left: 4px solid var(--bk-acc); border-radius: 4px; color: var(--bk-ink); }
+    .bk-type strong { display: block; font-size: 16px; }
+    .bk-type span { color: var(--bk-muted); font-size: 13.5px; }
+    .bk-done { text-align: center; }
+    .bk-tick { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--bk-acc-light); color: var(--bk-acc-dark); margin: 0 auto 16px; animation: bk-pop 0.35s var(--bk-ease); }
+    .bk-tick svg { width: 30px; height: 30px; }
+    .bk-dl { text-align: left; margin: 22px 0; border: 1px solid var(--bk-line); border-radius: 6px; overflow: hidden; }
+    .bk-dl > div { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 14px; padding: 14px 18px; border-top: 1px solid var(--bk-line); font-size: 14.5px; align-items: start; }
+    .bk-dl > div:first-child { border-top: 0; }
+    .bk-dl svg { width: 20px; height: 20px; color: var(--bk-acc); margin-top: 1px; }
+    .bk-dl dt { font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--bk-muted); margin-bottom: 2px; }
+    .bk-dl dd { color: var(--bk-ink); overflow-wrap: anywhere; }
+    .bk-dl a { color: var(--bk-acc-dark); }
+    .bk-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 12px; }
+    #bk-cform { text-align: left; margin-top: 20px; display: grid; gap: 14px; padding: 18px; background: var(--bk-soft); border-radius: 4px; }
+    #bk-cform[hidden] { display: none; }
+    .bk-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+    .bk-sk { display: grid; grid-template-columns: 300px 1fr 250px; min-height: 560px; }
+    .bk-sk > div { padding: 28px; }
+    .bk-sk > div:first-child { background: var(--bk-soft); border-right: 1px solid var(--bk-line); }
+    .bk-sk > div:last-child { border-left: 1px solid var(--bk-line); }
+    .bk-sk b { display: block; height: 14px; border-radius: 4px; background: linear-gradient(90deg, #F1EFEA 25%, #E7E4DD 50%, #F1EFEA 75%); background-size: 200% 100%; animation: bk-shimmer 1.4s infinite; margin-bottom: 12px; }
+    @keyframes bk-shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+    body.bk-loading #book { opacity: 0.7; transition: opacity 0.2s; }
+    .bk-fade { animation: bk-fade 0.25s var(--bk-ease); }
+    @keyframes bk-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    #book :focus-visible { outline: 3px solid var(--bk-acc); outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) { #book *, #book *::before, #book *::after { animation: none !important; transition: none !important; } }
+
+    /* Inside the Schedule a call page (?embed=1): no menu, head or footer, just the card */
+    body.bk-embed { background: transparent; }
+    body.bk-embed .site-header, body.bk-embed .bk-head, body.bk-embed .footer, body.bk-embed .whatsapp-btn { display: none; }
+    body.bk-embed .bk-wrap { padding: 0; max-width: none; }
+    body.bk-embed .bk-card { box-shadow: none; border: 0; border-radius: 0; }
+    body.bk-embed .bk-desc { display: none; }
+
+    @media (max-width: 1024px) {
+      .bk-pick, .bk-sk { grid-template-columns: 260px minmax(0, 1fr); }
+      .bk-times, .bk-sk > div:last-child { grid-column: 1 / 3; border-left: 0; border-top: 1px solid var(--bk-line); }
+      .bk-slots { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); max-height: none; }
+      .bk-form { grid-column: 2 / 3; }
+    }
+    @media (max-width: 760px) {
+      .bk-head { padding: 120px 0 32px; }
+      .bk-wrap { padding: 0 16px 60px; }
+      .bk-pick, .bk-sk { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+      .bk-side { border-right: 0; border-bottom: 1px solid var(--bk-line); padding: 22px 18px; }
+      .bk-side h1 { font-size: 23px; }
+      .bk-cal, .bk-form { padding: 22px 18px; }
+      .bk-form { grid-column: auto; }
+      .bk-row2 { grid-template-columns: 1fr; }
+      .bk-times, .bk-sk > div:last-child { grid-column: auto; padding: 20px 18px 24px; }
+      .bk-slots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .bk-slot-row.sel { grid-column: 1 / 3; }
+      .bk-steps { padding: 0 18px; }
+      .bk-step { margin-right: 18px; }
+      .bk-step span { display: none; }
+      .bk-step.on span { display: inline; }
+      .bk-list, .bk-msg, .bk-done { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+<script>if (new URLSearchParams(location.search).get('embed') === '1') document.body.classList.add('bk-embed');</script>
+
+<header class="site-header" id="site-header" data-testid="site-header">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" data-testid="nav-brand" aria-label="Boardroom CXO"><img width="341" height="150" src="/images/logo-boardroomcxo-transparent.png" alt="Boardroom CXO" /></a>
+    <nav class="nav-menu" data-testid="nav-menu" aria-label="Main">
+      <a href="/executive-search" class="nav-link active">Executive Search</a>
+      <a href="/moves" class="nav-link">Boardroom Moves</a>
+      <a href="/case-studies" class="nav-link">Case Studies</a>
+      <a href="/about-us" class="nav-link">About</a>
+    </nav>
+    <div class="nav-ctas">
+      <a href="/get-featured" class="nav-cta nav-cta-ghost" data-door="moves" data-door-at="header">Get Featured</a>
+      <a href="/schedule-a-call" class="nav-cta" data-testid="nav-cta" data-door="search" data-door-at="header">Hire a Leader</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" data-testid="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-menu-mobile" id="nav-menu-mobile">
+    <a href="/executive-search">Executive Search</a>
+    <a href="/moves">Boardroom Moves</a>
+    <a href="/inside-the-boardroom">Inside the Boardroom</a>
+    <a href="/case-studies">Case Studies</a>
+    <a href="/about-us">About</a>
+    <a href="https://accountingbaba.com/portal/?brand=boardroom">Employer Login</a>
+    <a href="/schedule-a-call" class="nav-cta-mobile" data-testid="mnav-cta" data-door="search" data-door-at="menu">Hire a Leader →</a>
+    <a href="/get-featured" class="nav-cta-mobile nav-cta-mobile-ghost" data-door="moves" data-door-at="menu">Get Featured →</a>
+  </div>
+</header>
+
+<div class="bk-wrap">
+  <section class="bk-head">
+    <div class="inner-hero-crumb">Home / Book a Call</div>
+    <h1>Pick a time <em>that suits you.</em></h1>
+    <p>A free 30-minute call with CA Ketul Patel about the leadership role you are hiring for. Times are shown in your own time zone, and the Microsoft Teams link comes in your confirmation email.</p>
+  </section>
+
+  <main id="book" aria-live="polite" aria-busy="true"><div class="bk-card"><div class="bk-sk" aria-hidden="true"><div><b style="width:60%"></b><b style="width:85%;height:22px"></b><b style="width:40%"></b><b style="width:70%"></b></div><div><b style="width:45%;height:20px"></b><b style="width:100%;height:220px;margin-top:20px"></b></div><div><b style="width:70%"></b><b style="width:100%;height:46px"></b><b style="width:100%;height:46px"></b><b style="width:100%;height:46px"></b></div></div><p class="bk-hp">Loading available times</p></div>
+    <noscript><div class="bk-card bk-msg"><h1>Book a call</h1><p>The calendar needs JavaScript. Please email hire@boardroomcxo.com or call +91 98567 55000 and we will set up a time.</p></div></noscript></main>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-practice">
+      <span class="fp-label">// Executive Search</span>
+      <div class="fp-strip">
+        <a href="/marketing-leadership-hiring" class="fp-item fp-item--marketing"><span class="fp-dot"></span>CMO &amp; Marketing</a>
+        <a href="/finance-leadership-hiring" class="fp-item fp-item--bd"><span class="fp-dot"></span>CFO &amp; Finance</a>
+        <a href="/sales-leadership-hiring" class="fp-item fp-item--sales"><span class="fp-dot"></span>Sales &amp; Retail</a>
+        <a href="/hr-leadership-hiring" class="fp-item fp-item--strategy"><span class="fp-dot"></span>CHRO &amp; HR</a>
+      </div>
+    </div>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img width="341" height="150" src="/images/logo-boardroomcxo-transparent.png" alt="Boardroom CXO" /></div>
+        <p class="footer-tag">Executive search for CXO and senior leadership roles in India and the UAE, deepest in retail and jewellery. Home of Boardroom Moves.</p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/company/boardroom-cxo" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><p class="footer-h5">Executive Search</p><ul><li><a href="/executive-search">How we search</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/uae-consulting-hiring">UAE Search</a></li><li><a href="/resources">Hiring Insights</a></li><li><a href="/schedule-a-call" data-door="search" data-door-at="footer">Hire a Leader</a></li></ul></div>
+      <div class="footer-col"><p class="footer-h5">Boardroom Moves</p><ul><li><a href="/moves">Latest Moves</a></li><li><a href="/inside-the-boardroom">Inside the Boardroom</a></li><li><a href="/get-featured" data-door="moves" data-door-at="footer">Get Featured</a></li><li><a href="/about-us">About Us</a></li><li><a href="https://accountingbaba.com/portal/?brand=boardroom">Employer Login</a></li></ul></div>
+      <div class="footer-col footer-contact"><p class="footer-h5">Contact</p><p><a href="tel:+919856755000">+91 98567 55000</a></p><p><a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a></p><p>Mon–Sat · 10am–6pm IST</p><p>India &amp; <a href="/uae-consulting-hiring" style="color:inherit;border-bottom:1px solid currentColor;">UAE</a></p><p><a href="https://wa.me/919856755000" target="_blank" rel="noopener">WhatsApp</a></p></div>
+    </div>
+    <div class="footer-bottom"><span>© Boardroom CXO · 2026</span><span><a href="/privacy-policy">Privacy Policy</a> · All Rights Reserved</span></div>
+  </div>
+</footer>
+
+<script src="/script.js" defer></script>
+<script src="/book/book.js?v=1" defer></script>
+</body>
+</html>
