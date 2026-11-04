@@ -29,7 +29,7 @@ FUNCTION_PAGES = {
     'uae': ('/uae-consulting-hiring', 'UAE search'),
 }
 
-FEE = ("A Rs 10,000 service fee starts the search, and it is adjusted against the final fee of one month's CTC, "
+FEE = ("A Rs 10,000 service fee (including GST) starts the search, and it is adjusted against the final fee of one month's CTC, "
        "invoiced when your hire joins.")
 
 # slug, question (H1), <title> text, meta description, one-line answer for the hub, direct answer (first paragraph),
@@ -73,15 +73,15 @@ QUESTIONS = [
         slug='cxo-search-cost-india',
         q='How much does a CXO search cost in India?',
         title='How Much Does a CXO Search Cost in India? | Boardroom CXO',
-        desc="What a CXO executive search costs with Boardroom CXO: a Rs 10,000 service fee to start, adjusted against a final fee of one month's CTC.",
-        line="With Boardroom CXO, one month of the hire's CTC: Rs 10,000 to start, adjusted against the final invoice when the hire joins.",
-        answer=("With Boardroom CXO, a CXO search costs one month of the hire's CTC. A Rs 10,000 service fee starts the "
+        desc="CXO executive search cost with Boardroom CXO: Rs 10,000 including GST to start, adjusted against a final fee of one month's CTC.",
+        line="With Boardroom CXO, one month of the hire's CTC: Rs 10,000 (including GST) to start, adjusted against the final invoice when the hire joins.",
+        answer=("With Boardroom CXO, a CXO search costs one month of the hire's CTC. A Rs 10,000 service fee (including GST) starts the "
                 "search, and that amount is adjusted against the final fee, which is invoiced when your hire joins. Other "
                 "firms price searches in other ways, so it is worth comparing what each fee covers and when it is due."),
         body='''
   <h2>How the fee works, step by step</h2>
   <ul>
-    <li><strong>To start:</strong> a Rs 10,000 service fee.</li>
+    <li><strong>To start:</strong> a Rs 10,000 service fee (including GST).</li>
     <li><strong>When your hire joins:</strong> the final fee of one month's CTC is invoiced, with the Rs 10,000 already paid adjusted against it.</li>
   </ul>
   <p>So if the role's CTC works out to Rs 5 lakh a month, the final fee is Rs 5 lakh, and the invoice at joining is for that amount less the Rs 10,000 paid at the start.</p>
@@ -137,10 +137,10 @@ QUESTIONS = [
         q='What is the difference between retained and contingency search?',
         title='Retained vs Contingency Search: The Difference | Boardroom CXO',
         desc='Retained search is paid upfront and exclusive, for senior roles. Contingency recruitment is paid only on a hire. How Boardroom CXO charges.',
-        line='Retained search is paid at the start and exclusive; contingency is paid only on a hire. We charge Rs 10,000 upfront, the rest on joining.',
+        line='Retained search is paid at the start and exclusive; contingency is paid only on a hire. We charge Rs 10,000 (including GST) upfront, the rest on joining.',
         answer=("In retained search, a company pays a search firm a fee at the start and the firm works the role "
                 "exclusively, usually for senior roles. In contingency recruitment, an agency is paid only when its "
-                "candidate is hired, and several agencies can work the same role. Boardroom CXO charges Rs 10,000 at "
+                "candidate is hired, and several agencies can work the same role. Boardroom CXO charges Rs 10,000 (including GST) at "
                 "the start and the rest on joining."),
         body='''
   <h2>Retained search</h2>
@@ -150,7 +150,7 @@ QUESTIONS = [
   <p>The AESC describes contingency recruiters as agencies paid after a candidate has been identified and hired. A company is not tied to one agency and may use several on the same role. Contingency recruiters typically fill entry-level to mid-level positions.</p>
 
   <h2>Where Boardroom CXO sits</h2>
-  <p>We start each search with a Rs 10,000 service fee. It is adjusted against the final fee of one month's CTC, which is invoiced when your hire joins. Most of the fee is therefore tied to a hire, while the search itself works the way executive search does: we map pay, define the role, and headhunt directly from competitor companies rather than sending CVs from a database.</p>
+  <p>We start each search with a Rs 10,000 service fee (including GST). It is adjusted against the final fee of one month's CTC, which is invoiced when your hire joins. Most of the fee is therefore tied to a hire, while the search itself works the way executive search does: we map pay, define the role, and headhunt directly from competitor companies rather than sending CVs from a database.</p>
 
   <h2>Which model fits which hire</h2>
   <p>For a high-volume or junior role, where many qualified people are actively applying, a contingency agency or a job portal can be enough. For a CXO role, the best candidate is usually already doing the job somewhere else and is not looking. Reaching them takes research and a confidential approach, which is the work a search firm is paid to do.</p>
