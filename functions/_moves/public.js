@@ -201,7 +201,7 @@ ${footer(todayIst().slice(0, 4))}
 </html>`;
 }
 
-const ctaBlock = `<section class="mv-cta"><h2>Made a leadership move? Tell us about it.</h2><a href="/get-featured" data-door="moves" data-door-at="moves-cta">Get featured</a></section>`;
+const ctaBlock = `<section class="mv-cta"><div><h2>Made a leadership move? Get a page like this one.</h2><p style="margin-top:12px;max-width:52ch;opacity:.85">Boardroom Moves Plus: a post on the Boardroom CXO LinkedIn page and an article like this on boardroomcxo.com, for ₹3,000 + GST. A LinkedIn feature alone is ₹1,499 + GST, and the weekly Brief is free.</p></div><a href="/get-featured#plans" data-door="moves" data-door-at="moves-cta">See the plans</a></section>`;
 
 // Hub FAQ, approved by Ketul 31 Oct 2026. The plain text goes into FAQPage schema; links are added only on the page.
 const HUB_FAQ = [
