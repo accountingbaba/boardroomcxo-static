@@ -19,6 +19,7 @@ Boardroom CXO is based in Surat, India, and serves clients across India and the 
 
 - [Boardroom Moves](https://boardroomcxo.com/moves): senior leadership appointments in India across sectors, announced on the Boardroom CXO LinkedIn page and recorded here, with a page for each leader (new role, company, previous role, date). The weekly Brief rounds up 5 to 6 leaders who moved that week, every Thursday. Featured placement is arranged with the leader or their company, and the leader sees the write-up before it goes live. The weekly Brief is not paid for
 - [Monthly report, October 2026](https://boardroomcxo.com/moves/report/2026-10): the senior leadership moves tracked that month, by function and sector, with a CSV download
+- [Leadership hiring and moves in India 2026: statistics](https://boardroomcxo.com/leadership-moves-india-statistics-2026): 79 senior leadership moves Boardroom Moves announced from December 2025 to October 2026, counted by function, chief-level title, sector, month and promotion vs outside hire, with a CSV of every move. Covers the moves Boardroom CXO tracked, not all of India
 - [Move pages sitemap](https://boardroomcxo.com/sitemap-moves.xml): machine-readable list of every move page
 
 ## Executive Search FAQ
@@ -97,7 +98,7 @@ Boardroom CXO is based in Surat, India, and serves clients across India and the 
 
 ## Full text
 
-- [llms-full.txt](https://boardroomcxo.com/llms-full.txt): complete plain text of every article listed above and of the Executive Search FAQ answers (not the service pages), for direct ingestion without crawling each page
+- [llms-full.txt](https://boardroomcxo.com/llms-full.txt): complete plain text of every article listed above, the Executive Search FAQ answers and the leadership moves statistics (not the service pages), for direct ingestion without crawling each page
 
 ## Contact
 

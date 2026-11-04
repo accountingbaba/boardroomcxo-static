@@ -244,6 +244,7 @@ ${moves.length > HUB_CARDS ? `<section class="mv-week" id="earlier"><h2>Earlier 
     `<li><strong><a href="/moves/${esc(m.slug)}">${esc(m.name)}</a></strong><span>${esc(m.role_title)} at ${esc(m.company)} · ${niceDate(m.live_at)}</span></li>`).join('')}</ul></section>` : ''}
 <div class="mv-split">${storyBlock || '<div></div>'}${getBlock}</div>
 ${weekBlocks}${reportBlock}
+<p class="mv-brief-src">For counts by function, sector and month, see <a href="/leadership-moves-india-statistics-2026">Leadership hiring and moves in India 2026</a>.</p>
 ${faqBlock}
 ${ctaBlock}</div>`;
   const jsonld = { '@context': 'https://schema.org', '@graph': [

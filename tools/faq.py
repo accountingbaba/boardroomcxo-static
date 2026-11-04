@@ -470,7 +470,7 @@ def hub_page():
         <span class="sec-head-index">§01 · Questions</span>
         <h2 class="h2">{len(QUESTIONS)} questions, <em class="italic-serif" style="color:var(--clay);">one page each.</em></h2>
       </div>
-      <p class="lead">Each answer starts with the short version, then the detail. For the full method, see <a href="/executive-search" style="color:inherit;border-bottom:1px solid currentColor;">how we search</a>.</p>
+      <p class="lead">Each answer starts with the short version, then the detail. For the full method, see <a href="/executive-search" style="color:inherit;border-bottom:1px solid currentColor;">how we search</a>. For who is moving, see our <a href="/leadership-moves-india-statistics-2026" style="color:inherit;border-bottom:1px solid currentColor;">leadership moves statistics for India</a>.</p>
     </div>
     <div class="article-faq" style="margin-top:0;">
 {items}

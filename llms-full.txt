@@ -1,6 +1,6 @@
 # Boardroom CXO: Full Article Archive
 
-> Complete text of every published article and Executive Search FAQ answer from Boardroom CXO, an executive search firm for CXO and senior leadership roles in India and the UAE, deepest in retail and jewellery. For summaries, hiring pages and contact details, see https://boardroomcxo.com/llms.txt. Canonical URLs are listed per article below.
+> Complete text of every published article, Executive Search FAQ answer and the leadership moves statistics from Boardroom CXO, an executive search firm for CXO and senior leadership roles in India and the UAE, deepest in retail and jewellery. For summaries, hiring pages and contact details, see https://boardroomcxo.com/llms.txt. Canonical URLs are listed per article below.
 
 ================================================================================
 # Albinder Dhindsa: Zomato Bought His Struggling Startup. Now He Runs Zomato's Parent.
@@ -3750,3 +3750,101 @@ We run CXO searches for companies in India and the UAE across five sectors: reta
 ## What it costs
 
 A Rs 10,000 service fee (including GST) starts the search, and it is adjusted against the final fee of one month's CTC, invoiced when your hire joins. The first consultation is free. For a worked example, see how much a CXO search costs in India.
+
+================================================================================
+# Leadership hiring and moves in India 2026
+URL: https://boardroomcxo.com/leadership-moves-india-statistics-2026
+Published: 2026-11-04
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+Boardroom Moves announced 79 senior leadership moves in India between 6 December 2025 and 30 October 2026. 63 of the 79 leaders (80%) joined from another organisation and 15 (19%) were promoted inside their company or group. These counts cover the announcements Boardroom CXO tracked on its LinkedIn page, not every leadership move in India. Function and sector groups are read from the job title, the company's business and what the announcement says the role does.
+
+## Moves by function
+
+- Sales and business development: 13 (16%)
+- Business head (CBO, business unit or P&L head): 12 (15%)
+- HR and talent (including CHRO): 12 (15%)
+- CEO, MD and country head: 8 (10%)
+- Operations (including COO): 7 (9%)
+- Marketing, brand and content (including CMO): 5 (6%)
+- Supply chain and procurement: 5 (6%)
+- Technology, data and product: 5 (6%)
+- Consulting and advisory practice: 4 (5%)
+- Finance, investment and credit (including CFO): 3 (4%)
+- Other (strategy, advisory, innovation): 3 (4%)
+- Legal and company secretarial: 2 (3%)
+
+## Chief-level titles (21 of 79)
+
+- Chief Business Officer (CBO): 6
+- Chief Operating Officer (COO): 4
+- Chief Executive Officer (CEO): 2
+- Deputy CEO: 1
+- Chief Financial Officer (CFO): 1
+- Chief Marketing Officer (CMO): 1
+- Chief Human Resources Officer (CHRO): 1
+- Chief Sales Officer (CSO): 1
+- Other chief titles: 4
+- No Chief Technology Officer move was announced in this period.
+
+## Moves by sector
+
+- Technology and IT services: 18 (23%)
+- Banking, financial services and insurance: 8 (10%)
+- Industrial, manufacturing, auto and building materials: 8 (10%)
+- Energy, power and infrastructure: 7 (9%)
+- Media, advertising, entertainment and sport: 7 (9%)
+- Consulting, audit and staffing: 5 (6%)
+- FMCG, food and agri: 5 (6%)
+- Healthcare and pharma: 5 (6%)
+- Real estate: 5 (6%)
+- E-commerce and internet platforms: 4 (5%)
+- Education, research and public bodies: 4 (5%)
+- Hospitality, travel and food service: 2 (3%)
+- Diversified group: 1 (1%)
+
+## Promoted inside or hired from outside
+
+- Joined from another organisation: 63 (80%)
+- Promoted or moved up inside the same company or group: 15 (19%)
+- Not stated in the announcement: 1 (1%)
+- 3 of the outside hires returned to a former employer.
+
+## Moves by month
+
+- December 2025: 12
+- January 2026: 8
+- February 2026: 8
+- March 2026: 3
+- April 2026: 0
+- May 2026: 4
+- June 2026: 6
+- July 2026: 5
+- August 2026: 10
+- September 2026: 10
+- October 2026: 13
+
+Monthly totals follow how often the page posted, not the market.
+
+## Cities
+
+74 of the 79 announcements name no city. Where one is named: Pune (2), Delhi (1), Hyderabad (1), Indore (1).
+
+## October 2026 monthly report
+
+The Boardroom Moves desk tracked 36 senior leadership moves announced between 17 October and 27 October 2026 (https://boardroomcxo.com/moves/report/2026-10). Marketing and brand roles moved most (13) and technology and IT services had the most appointments (9). The report uses its own groups and overlaps with the moves above.
+
+## The wider market
+
+Naukri JobSpeak for October 2026 (Info Edge), which measures new white-collar job postings on Naukri.com, reported 14% year-on-year growth in white-collar hiring, 22% growth in hiring for professionals with more than 16 years of experience, led by auto and FMCG, and 21% growth in gems and jewellery hiring. These are job postings, not appointments.
+
+## Data
+
+CSV of every move: https://boardroomcxo.com/leadership-moves-india-statistics-2026.csv
+
+## Sources
+
+- Boardroom CXO, Boardroom Moves: https://boardroomcxo.com/moves
+- Boardroom CXO, Senior leadership moves in India: October 2026: https://boardroomcxo.com/moves/report/2026-10
+- Info Edge, Naukri JobSpeak report, October 2026: https://www.infoedge.in/pdfs/News_Events_pdfs/Naukri-Jobspeak-October-2026.pdf
