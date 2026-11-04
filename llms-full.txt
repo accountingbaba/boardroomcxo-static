@@ -1,6 +1,6 @@
 # Boardroom CXO: Full Article Archive
 
-> Complete text of every published article from Boardroom CXO, an executive search firm for CXO and senior leadership roles in India and the UAE, deepest in retail and jewellery. For summaries, hiring pages and contact details, see https://boardroomcxo.com/llms.txt. Canonical URLs are listed per article below.
+> Complete text of every published article and Executive Search FAQ answer from Boardroom CXO, an executive search firm for CXO and senior leadership roles in India and the UAE, deepest in retail and jewellery. For summaries, hiring pages and contact details, see https://boardroomcxo.com/llms.txt. Canonical URLs are listed per article below.
 
 ================================================================================
 # Albinder Dhindsa: Zomato Bought His Struggling Startup. Now He Runs Zomato's Parent.
@@ -3469,3 +3469,284 @@ At the Rs. 20-40 LPA level for regional sales, senior BD, and national roles, ca
 - Moneycontrol, Giva raises Rs 530 crore from Creaegis, others; will expand lab-grown diamond offerings, June 2025
 - Entrackr, GIVA to raise $53 Mn led by Creaegis at $465 Mn valuation, June 2025
 - Gallup, This Fixable Problem Costs U.S. Businesses $1 Trillion, March 2019
+
+
+================================================================================
+# Executive Search FAQ
+URL: https://boardroomcxo.com/executive-search-faq
+================================================================================
+
+Answers to common questions about executive search and CXO hiring in India and the UAE. Each answer below is also a page on boardroomcxo.com.
+
+
+================================================================================
+# How does executive search work?
+URL: https://boardroomcxo.com/executive-search-faq/how-executive-search-works
+Published: 2026-11-04
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+Executive search is a way of hiring senior leaders in which a search firm researches the market and approaches people already doing the job, usually at competitors, instead of advertising the role. At Boardroom CXO a search runs in four stages: a pay map, a brief on what the role must deliver, a confidential headhunt and shortlist, and the offer.
+
+## Stage 1: map the market before the mandate
+
+In weeks 1 and 2 we confirm what the role pays across your category and city, before you lock a budget. You get category and city pay data, so the budget is set on what the market actually pays rather than on a guess.
+
+## Stage 2: define what the role must deliver
+
+Next we agree the outcomes, the authority and the KPIs the leader must deliver over the next 12 to 24 months. This comes before any job description is written, because a CFO preparing a company for an IPO and a CFO running a steady business are different hires.
+
+## Stage 3: approach people already doing the job
+
+In weeks 3 to 8 we approach people already working at scale inside competitor companies. The approach is intermediary-led: candidates hear about the role and choose to go further before your company's name is disclosed. The result is a confidential shortlist.
+
+## Stage 4: set an offer that closes
+
+At the offer stage we give you a realistic uplift, usually 25 to 30%, not the 40 to 50% many companies offer. We give you that number upfront, so the offer is neither too low to close nor higher than it needs to be.
+
+## Why search works differently from a job advert
+
+The best hires for a CXO role are usually not applying anywhere. They are already running a function for someone else, and they respond to a confidential, well-researched approach, often before any job description exists. That is the gap executive search fills.
+
+## Roles, sectors and markets
+
+We search for CEOs, MDs and business heads, CFOs, CMOs, sales and retail heads, and CHROs, plus the layer just below the CXO. We work in five sectors: retail and jewellery, where our network is deepest; consumer and D2C; financial services; manufacturing; and technology. Searches run for companies in India and the UAE.
+
+## What it costs
+
+A Rs 10,000 service fee starts the search, and it is adjusted against the final fee of one month's CTC, invoiced when your hire joins. More on this in how much a CXO search costs in India.
+
+
+================================================================================
+# How much does a CXO search cost in India?
+URL: https://boardroomcxo.com/executive-search-faq/cxo-search-cost-india
+Published: 2026-11-04
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+With Boardroom CXO, a CXO search costs one month of the hire's CTC. A Rs 10,000 service fee starts the search, and that amount is adjusted against the final fee, which is invoiced when your hire joins. Other firms price searches in other ways, so it is worth comparing what each fee covers and when it is due.
+
+## How the fee works, step by step
+
+- To start: a Rs 10,000 service fee.
+- When your hire joins: the final fee of one month's CTC is invoiced, with the Rs 10,000 already paid adjusted against it.
+
+So if the role's CTC works out to Rs 5 lakh a month, the final fee is Rs 5 lakh, and the invoice at joining is for that amount less the Rs 10,000 paid at the start.
+
+## What the fee covers
+
+The search includes a map of what the role pays across your category and city before you set the budget, an agreed brief on what the role must deliver over the next 12 to 24 months, direct headhunting from competitor companies, a confidential shortlist, and guidance on a realistic offer.
+
+## The first conversation is free
+
+Before any fee, you can brief us on the role on a free 30-minute call. We use it to understand the business and the role, and we come back with a read of the market before you commit a budget.
+
+## How this compares with other models
+
+Search firms broadly charge in two ways. In retained search, a fee is charged at the start of the engagement. In contingency recruitment, the agency is paid only when its candidate is hired. Our model starts with a small fee and puts most of it at the point your hire joins. We explain the two models in retained vs contingency search.
+
+## Check what the role pays before you set the budget
+
+The fee is the smaller part of the cost of a CXO hire. The bigger number is the package. Our compensation tool on the homepage shows ranges by role, store count and city tier, built from our 2025-26 market mapping, and the pay map at the start of each search confirms it for your category and city.
+
+
+================================================================================
+# How long does it take to hire a CMO, CFO or CHRO?
+URL: https://boardroomcxo.com/executive-search-faq/time-to-hire-cmo-cfo-chro
+Published: 2026-11-04
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+With Boardroom CXO, a CMO, CFO or CHRO search is built to reach a confidential shortlist in about 8 weeks: weeks 1 and 2 map what the role pays in your category and city, and weeks 3 to 8 approach and shortlist people already doing the job. The start date then depends on the leader's notice period.
+
+## The timeline, stage by stage
+
+- Weeks 1 and 2: we map what the role pays across your category and city.
+- Role brief: we agree the outcomes, authority and KPIs for the next 12 to 24 months.
+- Weeks 3 to 8: we approach people already doing the job at competitor companies and build a confidential shortlist.
+- Offer stage: interviews, the offer and acceptance, with a realistic uplift of usually 25 to 30%.
+  
+
+## What our case studies show
+
+For a pre-IPO jewellery brand whose earlier CFO searches had stalled for months, we shortlisted four CFOs from listed retail companies, and the time to placement was 8 weeks. For a Singapore company entering India, a Finance Head was placed in 6 weeks. Every search is different, and both are on our case studies page.
+
+## What changes between a CMO, CFO and CHRO search
+
+The stages are the same. What changes is the profile we screen for. A CMO search for a retail or D2C brand needs the right mix of brand building and ROAS-literate performance marketing. A CFO search often needs pre-IPO, SEBI or cross-border experience. A CHRO search for a brand adding stores needs someone who can scale hiring and culture across a growing network. The narrower the profile, the smaller the pool of people to approach.
+
+## What adds time after the offer
+
+The biggest variable after acceptance is the notice period. A sitting CXO has to serve the notice period in their current contract before they can join. Ask about the notice period at the first conversation with each shortlisted candidate, so the start date is planned, not a surprise.
+
+## How to keep a search moving
+
+Searches slow down when the budget is still open, when the interview panel is not agreed, or when feedback on candidates takes weeks. Agree the budget after the pay map, name the panel at the start, and give feedback within a few days of each interview.
+
+
+================================================================================
+# What is the difference between retained and contingency search?
+URL: https://boardroomcxo.com/executive-search-faq/retained-vs-contingency-search
+Published: 2026-11-04
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+In retained search, a company pays a search firm a fee at the start and the firm works the role exclusively, usually for senior roles. In contingency recruitment, an agency is paid only when its candidate is hired, and several agencies can work the same role. Boardroom CXO charges Rs 10,000 at the start and the rest on joining.
+
+## Retained search
+
+The Association of Executive Search and Leadership Consultants (AESC), the global body for the profession, describes retained executive search as focused on executive and senior-level positions and board directors. A consulting fee or retainer is charged at the beginning of the relationship, and retained firms work on an exclusive basis.
+
+## Contingency recruitment
+
+The AESC describes contingency recruiters as agencies paid after a candidate has been identified and hired. A company is not tied to one agency and may use several on the same role. Contingency recruiters typically fill entry-level to mid-level positions.
+
+## Where Boardroom CXO sits
+
+We start each search with a Rs 10,000 service fee. It is adjusted against the final fee of one month's CTC, which is invoiced when your hire joins. Most of the fee is therefore tied to a hire, while the search itself works the way executive search does: we map pay, define the role, and headhunt directly from competitor companies rather than sending CVs from a database.
+
+## Which model fits which hire
+
+For a high-volume or junior role, where many qualified people are actively applying, a contingency agency or a job portal can be enough. For a CXO role, the best candidate is usually already doing the job somewhere else and is not looking. Reaching them takes research and a confidential approach, which is the work a search firm is paid to do.
+
+## Questions to ask any firm before you sign
+
+- What do I pay before a hire is made, and what do I pay when the hire joins?
+- Is the firm working the role alone, or alongside other agencies?
+- Will candidates come from a database of applicants, or from a direct approach to people in role?
+- How is the client's name kept confidential during the approach?
+- What happens if the hire leaves early? Ask for it in writing.
+
+## Sources
+
+- AESC, Retained Executive Search vs Contingency: What's the Difference?, https://www.aesc.org/insights/blog/retained-executive-search-vs-contingency-whats-difference, accessed November 2026
+
+
+================================================================================
+# Executive search firm vs recruitment agency vs job portal: what is the difference?
+URL: https://boardroomcxo.com/executive-search-faq/executive-search-vs-recruitment-agency
+Published: 2026-11-04
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+A job portal lists your opening and waits for people to apply. A generalist recruitment agency usually sends CVs of people who are already looking. An executive search firm researches the market and confidentially approaches leaders who are not job-hunting, often at competitors. For a CXO role, the best candidate is usually in that last group.
+
+## Job portals: reach people who are looking
+
+A job portal is a listing. You post the role, and the people who see it and are open to a move apply. That works well when many qualified people are actively searching, such as frontline or store roles. It does not reach the leader who is busy running a function and is not reading job listings.
+
+## Generalist recruitment agencies
+
+A generalist agency fills roles across many functions and levels, often from applicants and job-board databases. It can be quick for roles with a large pool of active candidates. For a senior role, the risk is a stack of CVs from people who are available, not a shortlist of the people best suited to the job.
+
+## Executive search firms
+
+An executive search firm starts from the market, not from applicants. At Boardroom CXO we map what the role pays across your category and city, agree what the role must deliver, and then approach people already doing the job at competitor companies. Candidates choose to go further before your name is disclosed, and you see a confidential shortlist.
+
+## Why it matters for CXO roles
+
+The strongest CMOs, CFOs, CHROs and sales heads in a category are not applying anywhere. A CMO who can build brand equity and a performance marketer who is genuinely ROAS-literate are different skill sets, and people with both are already inside a competitor's growth team. The CFOs who have taken a company through an IPO are already CFOs somewhere. Reaching them takes research, timing and a confidential approach, not a job posting.
+
+## Which one to use
+
+- Job portal: high-volume roles with many active applicants.
+- Recruitment agency: mid-level roles where speed matters more than reaching people who are not looking.
+- Executive search: CXO and senior leadership roles, confidential replacements, and roles where the right person is at a competitor.
+
+
+================================================================================
+# How does a confidential executive search work?
+URL: https://boardroomcxo.com/executive-search-faq/confidential-executive-search
+Published: 2026-11-04
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+In a confidential executive search, the search firm approaches candidates without naming your company. Candidates first hear what the role involves, and only those who choose to go further learn who the client is. There is no public job advert, so your team, your competitors and the market do not learn that you are hiring.
+
+## Why companies run a search quietly
+
+Many senior hires cannot be announced while the search is on. A company may be replacing a leader who is still in the role, building a function it has not announced, preparing for an IPO, or entering a new market. A public advert for any of these tells employees, competitors and investors more than the company wants them to know.
+
+## How the approach works
+
+At Boardroom CXO the approach is intermediary-led. We research who is already doing the job at competitor companies and approach them on your behalf. The first conversation is about the role, the scope and what it must deliver. Candidates self-select in before your name is disclosed, so only serious candidates ever learn who the client is.
+
+## What you see, and when
+
+You see the market first: what the role pays across your category and city. Then you see a confidential shortlist of people who have already said they are interested. Interviews start only at that point, so your senior team's time goes to candidates who are genuinely in play.
+
+## Discretion protects candidates too
+
+The people approached for a CXO role are usually in senior jobs already. They are taking a risk by talking to anyone about a move, and a careless approach can reach their current employer. A confidential process lets them explore the role without that risk, which is one reason strong candidates respond to a search firm and not to a job post.
+
+## What we publish about clients
+
+Our case studies describe the role and the outcome, such as a CFO for a pre-IPO jewellery brand, without naming the company, and on our UAE page the client identity is kept confidential.
+
+## Starting a confidential search
+
+You can brief us on a free 30-minute call, by WhatsApp or by email. Tell us the role, the city and any constraints on who may know about the search, and we will plan the approach around them.
+
+
+================================================================================
+# How do you hire a CXO for a UAE company?
+URL: https://boardroomcxo.com/executive-search-faq/hiring-cxo-uae
+Published: 2026-11-04
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+To hire a CXO for a UAE company, first decide whether the leader should be a local UAE hire or sourced from India or elsewhere, then check what the role pays and approach people already doing it. Boardroom CXO runs searches for companies in Dubai and across the UAE, including India-based brands building a Gulf team.
+
+## Local hire or India-sourced?
+
+Most of our UAE placements are local UAE hires already working in the market. International sourcing, from India, the Philippines, Europe, the US or the UK, is available when a client specifically wants it, for example when the role needs experience the local pool does not have.
+
+## India-based brands building a Gulf team
+
+For an India-based brand building a Gulf team, the question is often whether to move a trusted leader from India, hire locally, or do both: a local head with an India-sourced second line. We map both options before you decide.
+
+## Check pay against real placements
+
+Pay varies by seniority and scope, and a generic salary survey is a weak guide. We benchmark against real, current placements, so you see what the role actually costs before you commit a budget. Our UAE search page lists four current placements for a Dubai business-setup client, with monthly pay in AED.
+
+## Roles we search for in the UAE
+
+We search for CEOs, MDs and business heads, CFOs, CMOs, sales leaders and CHROs for UAE companies. For UAE consulting, company-formation and corporate service firms, we also build lean teams: marketing, business development, IT and engineering, and corporate tax and back-office roles.
+
+## How the search runs
+
+The method is the same as in India. We map what the role pays, agree what it must deliver over the next 12 to 24 months, approach people already doing the job at competitor companies, and give you a confidential shortlist and a realistic offer number. Our first consultation is free.
+
+## How to start
+
+Call or WhatsApp +91 98567 55000, which covers India and the UAE, or email hire@boardroomcxo.com with the role and the city. It helps to say at the start whether the leader must already be based in the UAE, and who inside the company may know about the search.
+
+
+================================================================================
+# What is CXO hiring?
+URL: https://boardroomcxo.com/executive-search-faq/what-is-cxo-hiring
+Published: 2026-11-04
+Publisher: Boardroom CXO (https://boardroomcxo.com)
+================================================================================
+
+CXO hiring means recruiting for a company's top roles, the chief officers whose titles take the form "Chief X Officer", such as the CEO, CFO, CMO and CHRO, along with the leaders just below them. Because the best candidates for these roles are rarely job-hunting, CXO hiring is usually done through executive search rather than job adverts.
+
+## Which roles count as CXO
+
+The "X" stands for the function. The roles we search for include the CEO, MD and business heads; the CFO and finance heads; the CMO and Chief Growth Officer; chief sales officers and national sales heads; and the CHRO. Every search we run is for a role that reports to the board, the founder or the CEO, or to someone who does.
+
+## Why CXO hiring is different
+
+A CXO hire shapes the business for years, and the pool of people who have done the job at the right scale is small. Those people are already running a function for someone else. They do not apply to adverts, and they expect a confidential, well-researched approach before they will consider a move. A wrong CXO hire is also hard to undo, so the brief, the pay benchmark and the offer matter as much as finding names.
+
+## How a CXO hire usually runs
+
+With Boardroom CXO, a search starts with a map of what the role pays across your category and city, then an agreed brief on what the role must deliver over the next 12 to 24 months. We then approach people already doing the job at competitor companies and build a confidential shortlist, and at the offer stage we give you a realistic uplift, usually 25 to 30%. See how executive search works for each stage.
+
+## CXO hiring with Boardroom CXO
+
+We run CXO searches for companies in India and the UAE across five sectors: retail and jewellery, where our network is deepest; consumer and D2C; financial services, including banks, NBFCs, insurers and wealth firms; manufacturing; and technology and IT services.
+
+## What it costs
+
+A Rs 10,000 service fee starts the search, and it is adjusted against the final fee of one month's CTC, invoiced when your hire joins. The first consultation is free. For a worked example, see how much a CXO search costs in India.

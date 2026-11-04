@@ -21,6 +21,18 @@ Boardroom CXO is based in Surat, India, and serves clients across India and the 
 - [Monthly report, October 2026](https://boardroomcxo.com/moves/report/2026-10): the senior leadership moves tracked that month, by function and sector, with a CSV download
 - [Move pages sitemap](https://boardroomcxo.com/sitemap-moves.xml): machine-readable list of every move page
 
+## Executive Search FAQ
+
+- [Executive Search FAQ](https://boardroomcxo.com/executive-search-faq): short answers on how a CXO search works, what it costs, how long it takes, retained vs contingency, and confidential and UAE searches
+- [How does executive search work?](https://boardroomcxo.com/executive-search-faq/how-executive-search-works): A search firm maps pay, defines the role, then quietly approaches people already doing the job at competitors.
+- [How much does a CXO search cost in India?](https://boardroomcxo.com/executive-search-faq/cxo-search-cost-india): With Boardroom CXO, one month of the hire's CTC: Rs 10,000 to start, adjusted against the final invoice when the hire joins.
+- [How long does it take to hire a CMO, CFO or CHRO?](https://boardroomcxo.com/executive-search-faq/time-to-hire-cmo-cfo-chro): About 8 weeks to a confidential shortlist with Boardroom CXO; the start date then depends on the notice period.
+- [What is the difference between retained and contingency search?](https://boardroomcxo.com/executive-search-faq/retained-vs-contingency-search): Retained search is paid at the start and exclusive; contingency is paid only on a hire. We charge Rs 10,000 upfront, the rest on joining.
+- [Executive search firm vs recruitment agency vs job portal: what is the difference?](https://boardroomcxo.com/executive-search-faq/executive-search-vs-recruitment-agency): A portal waits for applicants, an agency sends CVs of people looking, a search firm approaches leaders who are not looking.
+- [How does a confidential executive search work?](https://boardroomcxo.com/executive-search-faq/confidential-executive-search): Candidates are approached without your company being named; only those who choose to go further learn who it is.
+- [How do you hire a CXO for a UAE company?](https://boardroomcxo.com/executive-search-faq/hiring-cxo-uae): Decide local or India-sourced, check pay against real placements, then approach people already doing the job.
+- [What is CXO hiring?](https://boardroomcxo.com/executive-search-faq/what-is-cxo-hiring): Recruiting for the top roles, such as CEO, CFO, CMO and CHRO, usually through a confidential direct approach.
+
 ## Hiring by function
 
 - [Marketing and CMO search](https://boardroomcxo.com/marketing-leadership-hiring): CMOs, CGOs, performance marketing leads and brand leaders
@@ -85,7 +97,7 @@ Boardroom CXO is based in Surat, India, and serves clients across India and the 
 
 ## Full text
 
-- [llms-full.txt](https://boardroomcxo.com/llms-full.txt): complete plain text of every article listed above (articles only, not the service pages), for direct ingestion without crawling each page
+- [llms-full.txt](https://boardroomcxo.com/llms-full.txt): complete plain text of every article listed above and of the Executive Search FAQ answers (not the service pages), for direct ingestion without crawling each page
 
 ## Contact
 
