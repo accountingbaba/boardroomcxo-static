@@ -23,3 +23,8 @@
 
 /images/moves-plans/*
   X-Robots-Tag: noindex
+
+# Self-hosted fonts: file names never change (rename to update), so cache for a year
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
