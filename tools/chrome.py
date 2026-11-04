@@ -25,7 +25,7 @@ MOBILE_EXTRA = [('Inside the Boardroom', '/inside-the-boardroom'), ('Employer Lo
 
 SEARCH_PAGES = {'executive-search', 'marketing-leadership-hiring', 'finance-leadership-hiring', 'sales-leadership-hiring',
                 'hr-leadership-hiring', 'uae-consulting-hiring', 'schedule-a-call', 'executive-search-faq'}
-MOVES_PAGES = {'get-featured', 'moves-plans', 'inside-the-boardroom'}
+MOVES_PAGES = {'get-featured', 'moves-plans', 'inside-the-boardroom', 'leadership-moves-india-statistics-2026'}
 
 
 def section_of(page):
