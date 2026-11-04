@@ -263,8 +263,8 @@ def build(rows):
               f"{ext} of the {n} leaders ({pct(ext, n)}) joined from another organisation and {internal} ({pct(internal, n)}) were promoted inside their company or group. "
               f"Sales and business development ({dict(s['fn'])[SALES]}), HR and talent ({dict(s['fn'])[HR]}) and business head roles ({dict(s['fn'])[BIZ]}) moved most, "
               f"and technology and IT services was the busiest sector ({top_sector[1]} moves). These counts cover the announcements Boardroom CXO tracked, not every leadership move in India.")
-    desc = (f'{n} senior leadership moves in India tracked by Boardroom Moves, {span}: counts by function, sector, month and '
-            'promotion vs outside hire, with a CSV download.')
+    desc = (f'{n} senior leadership moves in India tracked by Boardroom Moves, Dec 2025 to Oct 2026: by function, sector, '
+            'month and promotion vs outside hire. CSV download.')
 
     ld = {'@context': 'https://schema.org', '@graph': [
         {'@type': 'Article', '@id': URL + '#article', 'headline': H1, 'description': desc, 'url': URL, 'inLanguage': 'en',
