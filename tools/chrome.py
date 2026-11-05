@@ -19,9 +19,9 @@ LOGO = '/images/logo-boardroomcxo-transparent.png'
 NAV = [
     ('Executive Search', '/executive-search', 'search'),
     ('Boardroom Moves', '/moves', 'moves'),
-    ('About', '/about-us', 'about'),
 ]
-MOBILE_EXTRA = [('Inside the Boardroom', '/inside-the-boardroom'), ('Employer Login', 'https://accountingbaba.com/portal/?brand=boardroom')]
+# About lives in the mobile menu and the footer only, so the desktop header shows just the two doors (owner, 5 Nov 2026).
+MOBILE_EXTRA = [('Inside the Boardroom', '/inside-the-boardroom'), ('About', '/about-us'), ('Employer Login', 'https://accountingbaba.com/portal/?brand=boardroom')]
 
 SEARCH_PAGES = {'executive-search', 'marketing-leadership-hiring', 'finance-leadership-hiring', 'sales-leadership-hiring',
                 'hr-leadership-hiring', 'uae-consulting-hiring', 'schedule-a-call', 'executive-search-faq'}
@@ -43,7 +43,7 @@ def section_of(page):
 def header(active=''):
     links = '\n'.join(
         f'      <a href="{href}" class="nav-link{" active" if sec == active else ""}">{label}</a>' for label, href, sec in NAV)
-    mobile = [(label, href) for label, href, _ in NAV[:2]] + MOBILE_EXTRA[:1] + [(label, href) for label, href, _ in NAV[2:]] + MOBILE_EXTRA[1:]
+    mobile = [(label, href) for label, href, _ in NAV] + MOBILE_EXTRA
     mlinks = '\n'.join(f'    <a href="{href}">{label}</a>' for label, href in mobile)
     return f'''<header class="site-header" id="site-header" data-testid="site-header">
   <div class="nav-inner">
@@ -86,8 +86,8 @@ def footer(year='2026'):
         </div>
       </div>
       <div class="footer-col"><p class="footer-h5">Executive Search</p><ul><li><a href="/executive-search">How we search</a></li><li><a href="/executive-search-faq">Search FAQ</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/uae-consulting-hiring">UAE Search</a></li><li><a href="/resources">Hiring Insights</a></li><li><a href="/schedule-a-call" data-door="search" data-door-at="footer">Hire a Leader</a></li></ul></div>
-      <div class="footer-col"><p class="footer-h5">Boardroom Moves</p><ul><li><a href="/moves">Latest Moves</a></li><li><a href="/inside-the-boardroom">Inside the Boardroom</a></li><li><a href="/get-featured" data-door="moves" data-door-at="footer">Get Featured</a></li><li><a href="/about-us">About Us</a></li><li><a href="https://accountingbaba.com/portal/?brand=boardroom">Employer Login</a></li></ul></div>
-      <div class="footer-col footer-contact"><p class="footer-h5">Contact</p><p><a href="tel:+919856755000">+91 98567 55000</a></p><p><a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a></p><p>Mon–Sat · 10am–6pm IST</p><p>Surat, India &amp; <a href="/uae-consulting-hiring" style="color:inherit;border-bottom:1px solid currentColor;">UAE</a></p><p><a href="https://wa.me/919856755000" target="_blank" rel="noopener">WhatsApp</a></p></div>
+      <div class="footer-col"><p class="footer-h5">Boardroom Moves</p><ul><li><a href="/moves">Latest Moves</a></li><li><a href="/inside-the-boardroom">Inside the Boardroom</a></li><li><a href="/get-featured" data-door="moves" data-door-at="footer">Get Featured</a></li><li><a href="https://accountingbaba.com/portal/?brand=boardroom">Employer Login</a></li></ul></div>
+      <div class="footer-col footer-contact"><p class="footer-h5">Contact</p><p><a href="/about-us">About Boardroom CXO</a></p><p><a href="tel:+919856755000">+91 98567 55000</a></p><p><a href="mailto:hire@boardroomcxo.com">hire@boardroomcxo.com</a></p><p>Mon–Sat · 10am–6pm IST</p><p>Surat, India &amp; <a href="/uae-consulting-hiring" style="color:inherit;border-bottom:1px solid currentColor;">UAE</a></p><p><a href="https://wa.me/919856755000" target="_blank" rel="noopener">WhatsApp</a></p></div>
     </div>
     <div class="footer-bottom"><span>© Boardroom CXO · {year}</span><span><a href="/privacy-policy">Privacy Policy</a> · All Rights Reserved</span></div>
   </div>
