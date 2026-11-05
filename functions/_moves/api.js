@@ -14,6 +14,13 @@ const inGroup = o => o.tier === 'plus' || o.tier === 'pack'; // shared in the Wh
 // Orders made from the 5-message flow (31 Oct 2026): the team sends a payment link by hand, no personal link, no emails.
 const isPlain = o => detailsOf(o).flow === 'plain';
 const FLOW_FROM = '2026-10-31';
+// Security fixes (5 Nov 2026).
+// The leader can change their facts and photo only before the team drafts, or while asking for changes.
+const LEADER_EDITABLE = ['invited', 'details', 'payment', 'ready', 'changes'];
+// A LinkedIn profile link must be https on linkedin.com (no javascript: or other links on the desk or public page).
+export const safeLinkedIn = u => { try { const x = new URL(String(u)); return x.protocol === 'https:' && /(^|\.)linkedin\.com$/i.test(x.hostname); } catch { return false; } };
+// The test-mode "mark paid" shortcut: test mode on, Razorpay not connected, and never on the real site.
+const devPayAllowed = (env, request) => isDev(env) && !razorpayOn(env) && !/(^|\.)boardroomcxo\.com$/i.test(new URL(request.url).hostname);
 export const QUESTIONS = [
   'What drew you to {company}?',
   'What are you building in your first 100 days?',
@@ -197,8 +204,16 @@ async function leader(request, env, token, action, body) {
   if (request.method !== 'POST') return fail('Not found.', 404);
   if (['live', 'removed'].includes(o.status) && action !== 'approve') return fail('This feature is already live.');
 
+  // Security fix (5 Nov 2026): once the team has drafted the feature, the leader's facts and photo are frozen.
+  // Changes after that go through "Ask for changes", so nothing reaches the public page without the team seeing it.
+  if (['details', 'photo'].includes(action) && !LEADER_EDITABLE.includes(o.status)) return fail('Your feature is already being prepared. Use "Ask for changes" or reply to our message to change anything.');
+
   if (action === 'choose') {
     if (o.tier === 'pick' || o.tier === 'pack') return fail('Your feature is already arranged.');
+    // Security fix: only the old free/Plus choice can be switched here, and never after a payment.
+    // A paid Feature cannot become Plus for free, and a team-made plan cannot be switched to free.
+    if (o.paid_at) return fail('Your feature is already paid. Reply to our message to change it.');
+    if (isPlain(o) || !['', 'free', 'plus'].includes(o.tier || '')) return fail('Your feature is already arranged. Reply to our message to change it.');
     const tier = body.tier === 'plus' ? 'plus' : 'free';
     if (tier === 'plus' && todayIst() < settings.price_from) return fail('That option is not available yet.');
     if (o.paid_at && tier !== 'plus') return fail('Your Plus feature is already paid.');
@@ -211,6 +226,8 @@ async function leader(request, env, token, action, body) {
   if (action === 'details') {
     const d = { ...detailsOf(o) };
     for (const k of ['name', 'role_title', 'company', 'start_date', 'prev_role', 'linkedin', 'city']) if (k in body) d[k] = str(body[k], 200);
+    // Security fix: the LinkedIn profile must be a real https://linkedin.com address (it becomes a link on the desk and the public page).
+    if ('linkedin' in body && d.linkedin && !safeLinkedIn(d.linkedin)) return fail('That LinkedIn link does not look right. Paste your profile address, starting with https://www.linkedin.com/');
     if (Array.isArray(body.answers)) d.answers = body.answers.slice(0, 5).map(a => str(a, 1500));
     if ('source_link' in body) {
       const links = String(body.source_link || '').split(/\s+/).filter(u => /^https?:\/\/[^\s]+\.[^\s]+/i.test(u)).slice(0, 3);
@@ -224,6 +241,7 @@ async function leader(request, env, token, action, body) {
     if ('skip_questions' in body) patch.skip_questions = body.skip_questions ? 1 : 0;
     if (body.consent) patch.consent_at = o.consent_at || nowIso();
     await act(patch);
+    if (o.status === 'changes') await logEvent(db, { order_id: o.id, by: 'leader', text: 'Changed their details while asking for changes' });
     return advance(request, env, o.id, 'leader');
   }
   if (action === 'photo') {
@@ -260,7 +278,9 @@ async function leader(request, env, token, action, body) {
   if (action === 'paid') {
     const fresh = await getOrder(db, o.id);
     if (fresh.paid_at) return json(await leaderView(env, fresh));
-    if (isDev(env) && body.dev) return markPaid(request, env, fresh, 'DEV-' + Date.now(), 'dev');
+    // Security fix: the test-mode "paid" button works only in test mode, only while Razorpay is not connected,
+    // and never on the real site, so a wrong MOVES_DEV setting cannot hand out free payments.
+    if (body.dev && devPayAllowed(env, request)) return markPaid(request, env, fresh, 'DEV-' + Date.now(), 'dev');
     if (!(await razorpayVerify(env, fresh.rzp_order_id, str(body.razorpay_payment_id, 60), str(body.razorpay_signature, 200)))) return fail('We could not confirm the payment. If money left your account, our team will check and confirm it.');
     return markPaid(request, env, fresh, str(body.razorpay_payment_id, 60), 'razorpay');
   }
@@ -309,7 +329,12 @@ async function advance(request, env, id, by) {
 }
 async function markPaid(request, env, o, paymentId, method) {
   const db = env.MOVES_DB;
-  await touch(db, o.id, { paid_at: nowIso(), payment_id: paymentId, pay_method: method, last_activity_at: nowIso() });
+  // Security fix: claim the payment in one step. If the checkout reply, the Razorpay webhook or a second click
+  // arrive together, only the first one records the payment, makes the GST invoice and sends the email.
+  const t = nowIso();
+  const won = await db.prepare('UPDATE orders SET paid_at = ?, payment_id = ?, pay_method = ?, last_activity_at = ? WHERE id = ? AND paid_at IS NULL')
+    .bind(t, paymentId, method, t, o.id).run();
+  if (!won.meta || !won.meta.changes) return advance(request, env, o.id, 'system');
   await logEvent(db, { order_id: o.id, by: method === 'manual' ? 'team' : 'leader', text: `Payment received: ${money(o.total)} (${method})` });
   if (o.tier === 'pack' && !o.pack_id) {
     const s = await getSettings(db);
@@ -819,11 +844,16 @@ export async function handleApi(context) {
   const url = new URL(request.url);
   const parts = url.pathname.replace(/^\/api\/moves\/?/, '').split('/').filter(Boolean);
   const method = request.method;
-  const body = method === 'POST' && parts[0] !== 'razorpay' && (request.headers.get('Content-Type') || '').includes('application/json') ? await request.json().catch(() => ({})) : {};
+  // Security fix (5 Nov 2026): read a JSON body only when it is sent as exactly application/json, and refuse
+  // desk and sign-in changes that a browser says came from another website (cross-site request forgery).
+  const mediaType = (request.headers.get('Content-Type') || '').split(';')[0].trim().toLowerCase();
+  const fetchSite = request.headers.get('Sec-Fetch-Site');
+  if (method === 'POST' && ['team', 'auth'].includes(parts[0]) && fetchSite && !['same-origin', 'none'].includes(fetchSite)) return fail('This request was refused. Open the desk and try again.', 403);
+  const body = method === 'POST' && parts[0] !== 'razorpay' && mediaType === 'application/json' ? await request.json().catch(() => ({})) : {};
   try {
     if (parts[0] === 'f' && parts[1]) return await leader(request, env, parts[1], parts.slice(2).join('/'), body);
     if (parts[0] === 'auth') {
-      if (parts[1] === 'code' && method === 'POST') return await requestCode(env, body);
+      if (parts[1] === 'code' && method === 'POST') return await requestCode(env, body, request);
       if (parts[1] === 'verify' && method === 'POST') return await verifyCode(env, body);
       if (parts[1] === 'logout' && method === 'POST') return await logout(request, env);
     }

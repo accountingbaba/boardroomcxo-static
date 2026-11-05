@@ -2,6 +2,8 @@
 // (/moves/<slug>), their website image (/moves/img/<slug>) and the sitemap (/sitemap-moves.xml).
 // Only features that went live and were not removed appear. Prices never appear here.
 import { esc, ensureSchema, todayIst } from './lib.js';
+// Security fix (5 Nov 2026): the leader's LinkedIn link is shown only if it is a real https://linkedin.com address.
+const okLinkedIn = u => { try { const x = new URL(String(u || '')); return x.protocol === 'https:' && /(^|.)linkedin.com$/i.test(x.hostname) ? x.href : ''; } catch { return ''; } };
 
 const SITE = 'https://boardroomcxo.com';
 const LIVE = "status = 'live' AND removed_at IS NULL AND slug IS NOT NULL";
@@ -246,7 +248,7 @@ export async function renderProfile(env, slug) {
   const side = [['New role', `${esc(o.role_title)}<br>${esc(o.company)}`], d.prev_role ? ['Previously', esc(d.prev_role)] : null, ['Featured', niceDate(o.live_at)],
     site ? ['Company', `<a class="mv-link" href="${esc(site)}" target="_blank" rel="${OUT_REL}">${esc(o.company)} website</a>`] : null,
     o.linkedin_url ? ['On LinkedIn', `<a class="mv-link" href="${esc(o.linkedin_url)}" target="_blank" rel="noopener">Read the post</a>`] : null,
-    d.linkedin ? ['Profile', `<a class="mv-link" href="${esc(d.linkedin)}" target="_blank" rel="${OUT_REL}">${esc(o.name)} on LinkedIn</a>`] : null].filter(Boolean)
+    okLinkedIn(d.linkedin) ? ['Profile', `<a class="mv-link" href="${esc(okLinkedIn(d.linkedin))}" target="_blank" rel="${OUT_REL}">${esc(o.name)} on LinkedIn</a>`] : null].filter(Boolean)
     .map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
   const share = `<section class="mv-share"><h2>Link to this announcement</h2>
 <p>Add it to your LinkedIn Featured section, your company newsroom or your website.</p>
@@ -268,7 +270,7 @@ ${relatedBlock}${ctaBlock}</div>`;
     { '@type': 'NewsArticle', headline: headline(o).slice(0, 110), url, mainEntityOfPage: { '@type': 'WebPage', '@id': url }, image: [image], description,
       datePublished: o.live_at, dateModified: o.updated_at || o.live_at,
       author: { '@type': 'Organization', name: 'Boardroom CXO', url: SITE + '/' }, publisher: { '@type': 'Organization', name: 'Boardroom CXO', url: SITE + '/', logo: { '@type': 'ImageObject', url: SITE + '/images/logo-boardroomcxo.png' } },
-      about: { '@type': 'Person', name: o.name, jobTitle: o.role_title, worksFor: { '@type': 'Organization', name: o.company, ...(site ? { url: site } : {}) }, ...(d.linkedin ? { sameAs: [d.linkedin] } : {}) },
+      about: { '@type': 'Person', name: o.name, jobTitle: o.role_title, worksFor: { '@type': 'Organization', name: o.company, ...(site ? { url: site } : {}) }, ...(okLinkedIn(d.linkedin) ? { sameAs: [okLinkedIn(d.linkedin)] } : {}) },
       isPartOf: { '@type': 'CollectionPage', name: 'Boardroom Moves', url: SITE + '/moves' } },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: 'Boardroom Moves', item: SITE + '/moves' }, { '@type': 'ListItem', position: 3, name: o.name, item: url }] }] };
   return html(page({ title, description, canonical: url, image, jsonld, body }));

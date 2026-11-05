@@ -167,7 +167,11 @@ export async function getStaff(request, env) {
   const desks = isAdmin || isManager ? null : String((st && st.desks) || '').split(',').filter(Boolean);
   return { email: s.email, name: (st && st.name) || s.email.split('@')[0], isAdmin, isManager, desks };
 }
-export async function requestCode(env, body) {
+// Security fixes (5 Nov 2026): the test-mode code is shown on screen only on the owner's own computer (localhost),
+// and wrong guesses are counted per email for an hour, so asking for a new code does not reset the count.
+const MAX_GUESSES = 10, GUESS_WINDOW = 3600000;
+const isLocal = request => { try { return /^(localhost|127.0.0.1|[::1])$/.test(new URL(request.url).hostname); } catch { return false; } };
+export async function requestCode(env, body, request) {
   // The team signs in on the team desk (accountingbaba.com/bd) with the Accounting Baba portal login. This sign-in is off.
   if (env.MOVES_OWN_LOGIN !== '1') return fail('Sign in at accountingbaba.com/bd with your Accounting Baba portal login.', 403);
   const db = env.MOVES_DB;
@@ -180,22 +184,23 @@ export async function requestCode(env, body) {
   if (prev && Date.now() - prev.sent_at < 45000) return fail('A code was just sent. Wait a moment before asking again.', 429);
   const code = randomCode();
   await db.prepare(`INSERT INTO login_codes (email, code_hash, expires_at, attempts, sent_at) VALUES (?, ?, ?, 0, ?)
-    ON CONFLICT(email) DO UPDATE SET code_hash = excluded.code_hash, expires_at = excluded.expires_at, attempts = 0, sent_at = excluded.sent_at`)
-    .bind(email, await sha256Hex(email + ':' + code), Date.now() + CODE_MINUTES * 60000, Date.now()).run();
+    ON CONFLICT(email) DO UPDATE SET code_hash = excluded.code_hash, expires_at = excluded.expires_at,
+      attempts = CASE WHEN login_codes.sent_at > ? THEN login_codes.attempts ELSE 0 END, sent_at = excluded.sent_at`)
+    .bind(email, await sha256Hex(email + ':' + code), Date.now() + CODE_MINUTES * 60000, Date.now(), Date.now() - GUESS_WINDOW).run();
   const sent = await sendEmail(env, { to: email, subject: `${code} is your Boardroom Moves desk code`,
     html: shell('Your sign-in code', `<p style="font-size:30px;font-weight:700;letter-spacing:6px;margin:8px 0 14px">${code}</p><p style="color:#4A4D4A;font-size:14px">This code works for ${CODE_MINUTES} minutes.</p>`) });
   if (!sent && !isDev(env)) return fail('The code could not be sent right now. Try again shortly.', 500);
-  return json(isDev(env) ? { ok: true, devCode: code } : { ok: true });
+  return json(isDev(env) && isLocal(request) ? { ok: true, devCode: code } : { ok: true });
 }
 export async function verifyCode(env, body) {
   const db = env.MOVES_DB;
   const email = str(body.email, 160).toLowerCase(), code = str(body.code, 6);
-  const row = await db.prepare('SELECT * FROM login_codes WHERE email = ?').bind(email).first();
-  if (!row || row.expires_at < Date.now() || row.attempts >= 5) return fail('That code has expired. Ask for a new one.');
-  if (row.code_hash !== await sha256Hex(email + ':' + code)) {
-    await db.prepare('UPDATE login_codes SET attempts = attempts + 1 WHERE email = ?').bind(email).run();
-    return fail('That code is not right. Check it and try again.');
-  }
+  if (env.MOVES_OWN_LOGIN !== '1') return fail('Sign in at accountingbaba.com/bd with your Accounting Baba portal login.', 403);
+  // Count this guess first, in one step, so parallel guesses cannot slip past the limit.
+  const row = await db.prepare('UPDATE login_codes SET attempts = attempts + 1 WHERE email = ? AND attempts < ? AND expires_at > ? RETURNING code_hash')
+    .bind(email, MAX_GUESSES, Date.now()).first();
+  if (!row) return fail('That code has expired. Ask for a new one.');
+  if (row.code_hash !== await sha256Hex(email + ':' + code)) return fail('That code is not right. Check it and try again.');
   await db.prepare('DELETE FROM login_codes WHERE email = ?').bind(email).run();
   const token = randomToken(32);
   await db.prepare('INSERT INTO sessions (token_hash, email, expires_at) VALUES (?, ?, ?)').bind(await sha256Hex(token), email, Date.now() + SESSION_DAYS * 86400000).run();
