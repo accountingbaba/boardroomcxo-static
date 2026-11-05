@@ -140,6 +140,54 @@
     @media(max-width:1180px){.plans{grid-template-columns:1fr 1fr}.plan:nth-child(2){border-right:none}.plan:nth-child(-n+2){border-bottom:1px solid var(--line)}.plan.hi{margin:0}.shots,.recent{grid-template-columns:1fr 1fr}}
     @media(max-width:860px){.steps{grid-template-columns:1fr}.itb{grid-template-columns:1fr;gap:24px}.ex-grid{grid-template-columns:1fr}}
     @media(max-width:640px){.plans{grid-template-columns:1fr}.plan{border-right:none;border-bottom:1px solid var(--line);padding:34px 20px}.plan:last-child{border-bottom:none}.plan-desc,.plan-tax{min-height:0}.shots,.recent{gap:14px}.rc h3{font-size:17px}.rc p{font-size:13px}.shot figcaption{font-size:13.5px}.gf-chips li{font-size:13px}}
+    /* Samples viewer */
+    .sv-intro{font-size:16px;color:var(--ink-2);margin:14px 0 0;max-width:60ch}
+    .sv-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:28px;padding:6px;background:var(--bg-alt);border:1px solid var(--line);border-radius:12px;scroll-margin-top:100px}
+    .sv-tabs button{appearance:none;border:0;background:transparent;border-radius:8px;padding:12px 10px;cursor:pointer;font:inherit;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:2px;transition:background .2s,color .2s}
+    .sv-tabs button b{font-family:var(--font-display);font-weight:500;font-size:20px}
+    .sv-tabs button span{font-size:13px;opacity:.7}
+    .sv-tabs button:hover{background:rgba(0,0,0,.04)}
+    .sv-tabs button[aria-selected=true]{background:var(--navy);color:var(--bg)}
+    .sv-tabs button[aria-selected=true] span{color:var(--gold);opacity:1}
+    .sv-panel{padding-top:36px}
+    .sv-body{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:48px;align-items:start}
+    .sv-sum{position:sticky;top:110px}
+    .sv-sum h3{font-family:var(--font-display);font-weight:500;font-size:36px;margin:8px 0 6px}
+    .sv-price{font-family:var(--font-display);font-size:40px;line-height:1;margin:0 0 22px}
+    .sv-price small{display:block;font-family:inherit;font-size:14px;color:var(--ink-2);margin-top:8px;font-family:var(--font-body,inherit)}
+    .sv-list{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:12px}
+    .sv-list li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;line-height:1.45}
+    .sv-list li:not(:has(.sv-n))::before{content:'\2713';flex:none;width:22px;height:22px;border-radius:50%;background:#F1E7C9;color:var(--navy);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+    .sv-n{flex:none;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--gold);color:var(--navy);font-size:12px;font-weight:700;margin-right:8px}
+    .sv-list li .sv-n{margin-right:0}
+    .sv-link{display:inline-block;margin-top:8px;font-weight:600;color:var(--clay);border-bottom:1px solid currentColor;text-decoration:none}
+    .sv-shots{min-width:0}
+    .sv-one{max-width:560px}
+    .sv-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+    .sv-stack{display:flex;flex-direction:column;gap:24px}
+    .sv-fig{margin:0}
+    .sv-fig figcaption{display:flex;align-items:center;font-weight:600;font-size:15px;margin-bottom:10px}
+    .sv-zoom{position:relative;display:block;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;cursor:zoom-in}
+    .sv-zoom img{display:block;width:100%;height:auto}
+    .sv-post .sv-zoom{max-height:640px;overflow-y:auto;overscroll-behavior:contain}
+    .sv-tap{position:absolute;right:10px;top:10px;z-index:2;font-size:12px;font-weight:600;background:rgba(11,27,46,.82);color:#fff;padding:5px 10px;border-radius:999px;opacity:0;transition:opacity .2s}
+    .sv-hint{font-size:13px;color:var(--ink-2);margin:8px 0 0}
+    .sv-zoom:hover .sv-tap,.sv-zoom:focus .sv-tap{opacity:1}
+    .sv-bundle{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .sv-seat{border:1px solid var(--line);border-radius:10px;padding:22px;background:var(--surface,#fff)}
+    .sv-seat-n{font-family:var(--font-display);font-size:22px}
+    .sv-seat ul{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+    .sv-seat li{font-size:14.5px;padding-left:24px;position:relative}
+    .sv-seat li::before{content:'\2713';position:absolute;left:0;top:1px;width:16px;height:16px;border-radius:50%;background:var(--gold);color:var(--navy);font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}
+    .sv-bundle-note{grid-column:1/-1;font-size:15px;color:var(--ink-2);margin:4px 0 0}
+    .sv-box{border:0;padding:0;border-radius:12px;max-width:min(940px,94vw);max-height:92vh;overflow:auto;background:#fff}
+    .sv-box::backdrop{background:rgba(11,27,46,.75)}
+    .sv-box p{position:sticky;top:0;margin:0;padding:14px 56px 14px 18px;background:#fff;border-bottom:1px solid var(--line);font-weight:600;font-size:15px;z-index:1}
+    .sv-box img{display:block;width:100%;height:auto}
+    .sv-close{position:fixed;top:14px;right:14px;z-index:3;width:44px;height:44px;border-radius:50%;border:0;background:var(--navy);color:#fff;font-size:26px;line-height:1;cursor:pointer}
+    @media(max-width:1180px){.sv-body{grid-template-columns:minmax(0,280px) minmax(0,1fr);gap:32px}}
+    @media(max-width:960px){.sv-body{grid-template-columns:1fr}.sv-sum{position:static}.sv-grid{grid-template-columns:1fr}.sv-one{max-width:none}}
+    @media(max-width:640px){.sv-tabs{gap:4px;padding:4px}.sv-tabs button{padding:10px 4px}.sv-tabs button b{font-size:16px}.sv-tabs button span{font-size:11.5px}.sv-sum h3{font-size:30px}.sv-price{font-size:34px}.sv-post .sv-zoom{max-height:520px}.sv-bundle{grid-template-columns:1fr}.sv-tap{opacity:1}}
   </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Boardroom Moves", "serviceType": "Leadership appointment announcement", "description": "Announcement of a new senior leadership role or promotion in India on the Boardroom CXO LinkedIn page, with an article on boardroomcxo.com on the Plus plan.", "provider": {"@type": "Organization", "name": "Boardroom CXO", "url": "https://boardroomcxo.com/"}, "areaServed": "IN", "url": "https://boardroomcxo.com/get-featured#plans", "offers": [{"@type": "Offer", "name": "Brief", "price": "0", "priceCurrency": "INR", "description": "A line in the weekly Moves roundup on the Boardroom CXO LinkedIn page, with 5 to 6 other leaders. Written from your LinkedIn, nothing asked of you.", "priceSpecification": {"@type": "PriceSpecification", "price": "0", "priceCurrency": "INR", "valueAddedTaxIncluded": false}}, {"@type": "Offer", "name": "Feature", "price": "1499", "priceCurrency": "INR", "description": "Your own post on the Boardroom CXO LinkedIn page, with a creative carrying your photo, name, role and company. You and your company are tagged.", "priceSpecification": {"@type": "PriceSpecification", "price": "1499", "priceCurrency": "INR", "valueAddedTaxIncluded": false}}, {"@type": "Offer", "name": "Plus", "price": "3000", "priceCurrency": "INR", "description": "Everything in Feature, plus an article about you on boardroomcxo.com that shows up when people search your name, an Instagram post, and an invite to our CXO WhatsApp group.", "priceSpecification": {"@type": "PriceSpecification", "price": "3000", "priceCurrency": "INR", "valueAddedTaxIncluded": false}}, {"@type": "Offer", "name": "Bundle", "price": "9999", "priceCurrency": "INR", "description": "Four Plus features for leaders from the same company, used within a year. For companies announcing more than one appointment.", "priceSpecification": {"@type": "PriceSpecification", "price": "9999", "priceCurrency": "INR", "valueAddedTaxIncluded": false}}]}</script>
 </head>
@@ -222,7 +270,7 @@
         <div class="plan-price"><span class="plan-was">₹12,000</span>₹9,999</div>
         <p class="plan-tax">+ GST · ₹11,799 total<br />4 Plus features</p>
         <a class="plan-btn dark" href="https://wa.me/919016222107?text=Hi%2C%20I%27d%20like%20to%20know%20about%20the%20Boardroom%20Moves%20Bundle%20%284%20Plus%20features%29%20for%20our%20company." target="_blank" rel="noopener" data-door="moves" data-door-at="plan-bundle">Talk to us</a>
-        <a class="plan-sample" href="#sample-plus">See a sample</a>
+        <a class="plan-sample" href="#sample-bundle">See a sample</a>
         <ul class="plan-feat"><li class="in">Everything in Plus, four times</li><li>Any 4 leaders from your company</li><li>Use within a year</li></ul>
       </div>
     </div>
@@ -246,15 +294,87 @@
 
 <section class="section" id="samples">
   <div class="container">
-    <div class="sec-head"><div class="sec-head-left"><span class="sec-head-index">Samples</span><h2 class="h2">What you get.</h2></div></div>
-    <div class="shots">
-      <figure class="shot" id="sample-brief"><a href="/images/moves-plans/brief.webp" target="_blank" rel="noopener"><img src="/images/moves-plans/brief.webp" width="900" height="882" loading="lazy" alt="Sample Boardroom Moves Brief post on LinkedIn listing five leadership moves" /></a><figcaption><span>Brief · Free</span>A line in the weekly roundup</figcaption></figure>
-      <figure class="shot" id="sample-feature"><a href="/images/moves-plans/feature-post.webp" target="_blank" rel="noopener"><img src="/images/moves-plans/feature-post.webp" width="900" height="2677" loading="lazy" alt="Sample Boardroom Moves LinkedIn post for Dr. Varun Jain, Head Credit Secured, Credit Saison India" /></a><figcaption><span>Feature and Plus</span>Your own LinkedIn post</figcaption></figure>
-      <figure class="shot" id="sample-plus"><a href="/images/moves-plans/plus-website-1.webp" target="_blank" rel="noopener"><img src="/images/moves-plans/plus-website-1.webp" style="object-position:left top" width="1400" height="947" loading="lazy" alt="Sample article on boardroomcxo.com: Dr. Varun Jain joins Credit Saison India as Head Credit Secured" /></a><figcaption><span>Plus</span>An article on boardroomcxo.com</figcaption></figure>
-      <figure class="shot" id="sample-plus-ig"><a href="/images/moves-plans/plus-instagram.webp" target="_blank" rel="noopener"><img src="/images/moves-plans/plus-instagram.webp" style="object-position:left top" width="900" height="511" loading="lazy" alt="Sample Boardroom Moves Instagram post" /></a><figcaption><span>Plus</span>Instagram post and WhatsApp group</figcaption></figure>
+    <div class="sec-head"><div class="sec-head-left"><span class="sec-head-index">Samples</span><h2 class="h2">See what each plan gets.</h2></div></div>
+    <p class="sv-intro">Real samples from one leader's Plus feature. Pick a plan to see its part.</p>
+    <div class="sv-tabs" role="tablist" aria-label="Boardroom Moves plans"><button type="button" role="tab" id="tab-sample-brief" aria-controls="sample-brief" aria-selected="false" tabindex="-1"><b>Brief</b><span>Free</span></button><button type="button" role="tab" id="tab-sample-feature" aria-controls="sample-feature" aria-selected="false" tabindex="-1"><b>Feature</b><span>₹1,499</span></button><button type="button" role="tab" id="tab-sample-plus" aria-controls="sample-plus" aria-selected="true"><b>Plus</b><span>₹3,000</span></button><button type="button" role="tab" id="tab-sample-bundle" aria-controls="sample-bundle" aria-selected="false" tabindex="-1"><b>Bundle</b><span>₹9,999</span></button></div>
+    <div class="sv-panel" role="tabpanel" id="sample-brief" aria-labelledby="tab-sample-brief">
+      <div class="sv-body">
+        <div class="sv-sum">
+          <span class="overline" style="color:var(--clay);">Brief · Free</span>
+          <h3>Brief</h3>
+          <div class="sv-price">Free<small>No cost, no form</small></div>
+          <ul class="sv-list"><li><span class=sv-n>1</span>A line in the weekly roundup post on the Boardroom CXO LinkedIn page</li><li>Listed with 5 to 6 other leaders who moved that week</li><li>Written from your LinkedIn, nothing asked of you</li></ul>
+          <a class="plan-btn " href="https://wa.me/919016222107?text=Hi%2C%20I%27d%20like%20the%20free%20Brief%20mention%20for%20my%20move%20on%20Boardroom%20Moves." target="_blank" rel="noopener" data-door="moves" data-door-at="sample-brief">Get listed</a>
+        </div>
+        <div class="sv-shots sv-one"><figure class="sv-fig "><figcaption><span class="sv-n">1</span>The weekly roundup post</figcaption><a class="sv-zoom" href="/images/moves-plans/brief.webp" data-cap="The weekly roundup post"><img src="/images/moves-plans/brief.webp" width="900" height="882" loading="lazy" alt="Sample Boardroom Moves Brief post on LinkedIn listing five leadership moves" /><span class="sv-tap">Tap to enlarge</span></a></figure></div>
+      </div>
     </div>
+    <div class="sv-panel" role="tabpanel" id="sample-feature" aria-labelledby="tab-sample-feature">
+      <div class="sv-body">
+        <div class="sv-sum">
+          <span class="overline" style="color:var(--clay);">Feature · ₹1,769 with GST</span>
+          <h3>Feature</h3>
+          <div class="sv-price">₹1,499<small>+ GST · ₹1,769 total</small></div>
+          <ul class="sv-list"><li><span class=sv-n>1</span>Your own post on the Boardroom CXO LinkedIn page</li><li>A creative with your photo, name, new role and company, inside the post</li><li>You and your company tagged</li><li>You approve the draft first</li></ul>
+          <a class="plan-btn gold" href="https://wa.me/919016222107?text=Hi%2C%20I%27d%20like%20the%20Feature%20plan%20%28Rs%201%2C769%29%20for%20my%20move%20on%20Boardroom%20Moves." target="_blank" rel="noopener" data-door="moves" data-door-at="sample-feature">Get featured</a>
+        </div>
+        <div class="sv-shots sv-one"><figure class="sv-fig sv-post"><figcaption><span class="sv-n">1</span>Your own LinkedIn post</figcaption><a class="sv-zoom" href="/images/moves-plans/feature-post.webp" data-cap="Your own LinkedIn post"><img src="/images/moves-plans/feature-post.webp" width="900" height="2677" loading="lazy" alt="Sample Boardroom Moves #78 LinkedIn post for Dr. Varun Jain, Head Credit Secured, Credit Saison India, with the creative" /><span class="sv-tap">Tap to enlarge</span></a><p class="sv-hint">Scroll inside the post to read it all, or tap to open it full size.</p></figure></div>
+      </div>
+    </div>
+    <div class="sv-panel" role="tabpanel" id="sample-plus" aria-labelledby="tab-sample-plus">
+      <div class="sv-body">
+        <div class="sv-sum">
+          <span class="overline" style="color:var(--clay);">Plus · ₹3,540 with GST · Most chosen</span>
+          <h3>Plus</h3>
+          <div class="sv-price">₹3,000<small>+ GST · ₹3,540 total</small></div>
+          <ul class="sv-list"><li><span class=sv-n>1</span>The same LinkedIn post as Feature</li><li><span class=sv-n>2</span>An article about you on boardroomcxo.com</li><li><span class=sv-n>3</span>An Instagram post</li><li><span class=sv-n>4</span>Your welcome in our CXO WhatsApp group</li></ul>
+          <a class="plan-btn gold" href="https://wa.me/919016222107?text=Hi%2C%20I%27d%20like%20the%20Plus%20plan%20%28Rs%203%2C540%29%20for%20my%20move%20on%20Boardroom%20Moves." target="_blank" rel="noopener" data-door="moves" data-door-at="sample-plus">Choose Plus</a>
+        </div>
+        <div class="sv-shots sv-grid"><figure class="sv-fig sv-post"><figcaption><span class="sv-n">1</span>Your own LinkedIn post</figcaption><a class="sv-zoom" href="/images/moves-plans/feature-post.webp" data-cap="Your own LinkedIn post"><img src="/images/moves-plans/feature-post.webp" width="900" height="2677" loading="lazy" alt="Sample Boardroom Moves #78 LinkedIn post for Dr. Varun Jain, Head Credit Secured, Credit Saison India, with the creative" /><span class="sv-tap">Tap to enlarge</span></a><p class="sv-hint">Scroll inside the post to read it all, or tap to open it full size.</p></figure><div class="sv-stack"><figure class="sv-fig "><figcaption><span class="sv-n">2</span>An article on boardroomcxo.com</figcaption><a class="sv-zoom" href="/images/moves-plans/plus-website-1.webp" data-cap="An article on boardroomcxo.com"><img src="/images/moves-plans/plus-website-1.webp" width="1400" height="947" loading="lazy" alt="Sample article on boardroomcxo.com: Dr. Varun Jain joins Credit Saison India as Head Credit Secured" /><span class="sv-tap">Tap to enlarge</span></a></figure><figure class="sv-fig "><figcaption><span class="sv-n">3</span>An Instagram post</figcaption><a class="sv-zoom" href="/images/moves-plans/plus-instagram.webp" data-cap="An Instagram post"><img src="/images/moves-plans/plus-instagram.webp" width="900" height="511" loading="lazy" alt="Sample Boardroom Moves Instagram post for Dr. Varun Jain" /><span class="sv-tap">Tap to enlarge</span></a></figure><figure class="sv-fig "><figcaption><span class="sv-n">4</span>Your welcome in the CXO WhatsApp group</figcaption><a class="sv-zoom" href="/images/moves-plans/plus-whatsapp-chat.webp" data-cap="Your welcome in the CXO WhatsApp group"><img src="/images/moves-plans/plus-whatsapp-chat.webp" width="500" height="556" loading="lazy" alt="Sample welcome message for Dr. Varun Jain in the Boardroom CXO Connect WhatsApp group" /><span class="sv-tap">Tap to enlarge</span></a></figure></div></div>
+      </div>
+    </div>
+    <div class="sv-panel" role="tabpanel" id="sample-bundle" aria-labelledby="tab-sample-bundle">
+      <div class="sv-body">
+        <div class="sv-sum">
+          <span class="overline" style="color:var(--clay);">Bundle · ₹11,799 with GST</span>
+          <h3>Bundle</h3>
+          <div class="sv-price">₹9,999<small>+ GST · ₹11,799 total</small></div>
+          <ul class="sv-list"><li>Four Plus features for leaders from the same company</li><li>Use them within a year</li><li>Each leader gets everything in Plus</li></ul>
+          <a class="plan-btn dark" href="https://wa.me/919016222107?text=Hi%2C%20I%27d%20like%20to%20know%20about%20the%20Boardroom%20Moves%20Bundle%20%284%20Plus%20features%29%20for%20our%20company." target="_blank" rel="noopener" data-door="moves" data-door-at="sample-bundle">Talk to us</a>
+          <a class="sv-link" href="#sample-plus" data-show="sample-plus">See what each leader gets</a>
+        </div>
+        <div class="sv-bundle"><div class="sv-seat"><span class="sv-seat-n">Leader 1</span><ul><li>LinkedIn post</li><li>Article on boardroomcxo.com</li><li>Instagram post</li><li>WhatsApp group welcome</li></ul></div><div class="sv-seat"><span class="sv-seat-n">Leader 2</span><ul><li>LinkedIn post</li><li>Article on boardroomcxo.com</li><li>Instagram post</li><li>WhatsApp group welcome</li></ul></div><div class="sv-seat"><span class="sv-seat-n">Leader 3</span><ul><li>LinkedIn post</li><li>Article on boardroomcxo.com</li><li>Instagram post</li><li>WhatsApp group welcome</li></ul></div><div class="sv-seat"><span class="sv-seat-n">Leader 4</span><ul><li>LinkedIn post</li><li>Article on boardroomcxo.com</li><li>Instagram post</li><li>WhatsApp group welcome</li></ul></div><p class="sv-bundle-note">₹9,999 + GST for four, instead of ₹12,000 + GST for four separate Plus features.</p></div>
+      </div>
+    </div>
+    <dialog class="sv-box" id="sv-box" aria-label="Sample, full size"><button type="button" class="sv-close" aria-label="Close">×</button><p></p><img alt="" /></dialog>
   </div>
 </section>
+<script>
+(function(){
+  var root=document.getElementById('samples'); if(!root) return;
+  var tabs=[].slice.call(root.querySelectorAll('[role=tab]'));
+  function show(id,scroll){
+    var hit=false;
+    tabs.forEach(function(t){var on=t.getAttribute('aria-controls')===id; if(on) hit=true;});
+    if(!hit) return;
+    tabs.forEach(function(t){var on=t.getAttribute('aria-controls')===id; t.setAttribute('aria-selected',on?'true':'false'); t.tabIndex=on?0:-1; document.getElementById(t.getAttribute('aria-controls')).hidden=!on;});
+    if(scroll) root.querySelector('.sv-tabs').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  show('sample-plus');
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){show(t.getAttribute('aria-controls'));});
+    t.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0; if(!d) return; var n=tabs[(i+d+tabs.length)%tabs.length]; n.focus(); n.click();});
+  });
+  function fromHash(){var h=location.hash.slice(1); if(h.indexOf('sample-')===0) show(h,true);}
+  window.addEventListener('hashchange',fromHash); fromHash();
+  [].forEach.call(root.querySelectorAll('[data-show]'),function(b){b.addEventListener('click',function(e){e.preventDefault(); show(b.getAttribute('data-show'),true);});});
+  var box=document.getElementById('sv-box'); if(!box||!box.showModal) return;
+  var bimg=box.querySelector('img'), bcap=box.querySelector('p');
+  [].forEach.call(root.querySelectorAll('a.sv-zoom'),function(a){a.addEventListener('click',function(e){e.preventDefault(); bimg.src=a.getAttribute('href'); bimg.alt=a.querySelector('img').alt; bcap.textContent=a.getAttribute('data-cap')||''; box.showModal(); box.scrollTop=0;});});
+  box.addEventListener('click',function(e){if(e.target===box) box.close();});
+  box.querySelector('.sv-close').addEventListener('click',function(){box.close();});
+})();
+</script>
 
 <section class="section section-alt" id="recent">
   <div class="container">
