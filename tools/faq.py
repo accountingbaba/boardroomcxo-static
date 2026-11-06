@@ -47,7 +47,7 @@ TERMS = [
     "One free replacement if the hire leaves within 90 days.",
     "Not exclusive: you are free to use other agencies on the same role.",
     "A CMO or CHRO search typically takes 30 to 45 days to an offer.",
-    "In the UAE: AED 1,000 to start the search, adjusted against a final fee of one month's salary, invoiced when the hire joins.",
+    "In the UAE: AED 1,000 to start the search, not refundable, adjusted against a final fee of one month's salary, invoiced when the hire joins. The same free replacement within 90 days.",
 ]
 
 # slug, question (H1), <title> text, meta description, one-line answer for the hub, direct answer (first paragraph),
@@ -65,16 +65,16 @@ QUESTIONS = [
                 "confidential headhunt and shortlist, and the offer."),
         body='''
   <h2>Stage 1: map the market before the mandate</h2>
-  <p>In weeks 1 and 2 we confirm what the role pays across your category and city, before you lock a budget. You get category and city pay data, so the budget is set on what the market actually pays rather than on a guess.</p>
+  <p>In days 1 to 7 we confirm what the role pays across your category and city, before you lock a budget. You get category and city pay data, so the budget is set on what the market actually pays rather than on a guess.</p>
 
   <h2>Stage 2: define what the role must deliver</h2>
-  <p>Next we agree the outcomes, the authority and the KPIs the leader must deliver over the next 12 to 24 months. This comes before any job description is written, because a CFO preparing a company for an IPO and a CFO running a steady business are different hires.</p>
+  <p>In the same first week we agree the outcomes, the authority and the KPIs the leader must deliver over the next 12 to 24 months. This comes before any job description is written, because a CFO preparing a company for an IPO and a CFO running a steady business are different hires.</p>
 
   <h2>Stage 3: approach people already doing the job</h2>
-  <p>In weeks 3 to 8 we approach people already working at scale inside competitor companies. The approach is intermediary-led: candidates hear about the role and choose to go further before your company's name is disclosed. The result is a confidential shortlist.</p>
+  <p>From day 8 to about day 30 we approach people already working at scale inside competitor companies. The approach is intermediary-led: candidates hear about the role and choose to go further before your company's name is disclosed. The result is a confidential shortlist, and interviews.</p>
 
   <h2>Stage 4: set an offer that closes</h2>
-  <p>At the offer stage we give you a realistic uplift, usually 25 to 30%, not the 40 to 50% many companies offer. We give you that number upfront, so the offer is neither too low to close nor higher than it needs to be.</p>
+  <p>Between day 30 and day 45 we reach the offer. At the offer stage we give you a realistic uplift, usually 25 to 30%, not the 40 to 50% many companies offer. We give you that number upfront, so the offer is neither too low to close nor higher than it needs to be.</p>
 
   <h2>Why search works differently from a job advert</h2>
   <p>The best hires for a CXO role are usually not applying anywhere. They are already running a function for someone else, and they respond to a confidential, well-researched approach, often before any job description exists. That is the gap executive search fills.</p>
@@ -260,7 +260,7 @@ QUESTIONS = [
         q='How do you hire a CXO for a UAE company?',
         title='How to Hire a CXO for a UAE Company | Boardroom CXO',
         desc='Hiring a CXO in the UAE: local hire or India-sourced, pay mapped before the budget, a direct approach to people in role. AED 1,000 to start.',
-        line='Decide local or India-sourced, map what the role pays, then approach people already doing the job. AED 1,000 starts a UAE search.',
+        line='Decide local or India-sourced, map what the role pays, then approach people already doing the job. AED 1,000 (not refundable) starts a UAE search.',
         answer=("To hire a CXO for a UAE company, first decide whether the leader should be a local UAE hire or sourced "
                 "from India or elsewhere, then check what the role pays and approach people already doing it. Boardroom "
                 "CXO runs searches for companies in Dubai and across the UAE, including India-based brands building a "
@@ -279,7 +279,7 @@ QUESTIONS = [
   <p>Senior and CXO roles only: CEOs, MDs and business heads, CFOs and finance heads, CMOs and marketing heads, sales and business development heads, and CHROs. We run them for companies in Dubai and across the UAE, including consulting, business-setup and corporate service firms. See our <a href="/uae-consulting-hiring">UAE search page</a>.</p>
 
   <h2>What a UAE search costs</h2>
-  <p>AED 1,000 starts the search. It is adjusted against the final fee of one month's salary, invoiced when your hire joins.</p>
+  <p>AED 1,000 starts the search. It is not refundable, and it is adjusted against the final fee of one month's salary, invoiced when your hire joins. If the hire leaves within 90 days, we find one replacement free.</p>
 
   <h2>How the search runs</h2>
   <p>The method is the same as in India. We map what the role pays, agree what it must deliver over the next 12 to 24 months, approach people already doing the job at competitor companies, and give you a confidential shortlist and a realistic offer number. Our first consultation is free.</p>
