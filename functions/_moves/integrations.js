@@ -73,12 +73,13 @@ async function taxId(env, inter) {
   if (id) await metaSet(env.MOVES_DB, key, id);
   return id;
 }
+// Security fix (6 Nov 2026): never pick an existing Zoho customer by the name or GSTIN a leader types.
+// The Hopeberry Retail org may hold other businesses' customers. Reuse only a customer this portal created
+// itself for the same GSTIN (same legal entity); otherwise make a new one.
 async function customer(env, order) {
   const name = order.billing_name || order.name;
-  const look = async q => (((await books(env, 'GET', '/contacts?contact_type=customer&' + q)).contacts || [])[0] || {}).contact_id;
-  let id = order.gstin ? await look('gst_no=' + encodeURIComponent(order.gstin)) : null;
-  if (!id) id = await look('contact_name=' + encodeURIComponent(name));
-  if (id) return id;
+  const key = order.gstin ? 'books_contact_gst:' + order.gstin : '';
+  if (key) { const mine = await metaGet(env.MOVES_DB, key); if (mine) return mine; }
   const place = order.billing_state || (order.gstin && GST_STATES[order.gstin.slice(0, 2)]) || HOME_STATE;
   const made = await books(env, 'POST', '/contacts', {
     contact_name: name, company_name: order.payer_type === 'company' ? name : '', contact_type: 'customer',
@@ -87,6 +88,7 @@ async function customer(env, order) {
     contact_persons: [{ first_name: order.name || name, email: order.billing_email || order.email || '', phone: order.phone || '', is_primary_contact: true }],
     notes: 'Created by the Boardroom Moves portal'
   });
+  if (key) await metaSet(env.MOVES_DB, key, made.contact.contact_id);
   return made.contact.contact_id;
 }
 // Invoice plus payment for a paid order. Needs the SAC code in Settings. Never twice; failures are kept and retried by the team.
