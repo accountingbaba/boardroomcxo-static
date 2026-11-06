@@ -235,24 +235,27 @@ QUESTIONS = [
         slug='hiring-cxo-uae',
         q='How do you hire a CXO for a UAE company?',
         title='How to Hire a CXO for a UAE Company | Boardroom CXO',
-        desc='Hiring a CXO in the UAE: local hire or India-sourced, pay checked against real placements, and a direct approach to people already in role.',
-        line='Decide local or India-sourced, check pay against real placements, then approach people already doing the job.',
+        desc='Hiring a CXO in the UAE: local hire or India-sourced, pay mapped before the budget, a direct approach to people in role. AED 1,000 to start.',
+        line='Decide local or India-sourced, map what the role pays, then approach people already doing the job. AED 1,000 starts a UAE search.',
         answer=("To hire a CXO for a UAE company, first decide whether the leader should be a local UAE hire or sourced "
                 "from India or elsewhere, then check what the role pays and approach people already doing it. Boardroom "
                 "CXO runs searches for companies in Dubai and across the UAE, including India-based brands building a "
                 "Gulf team."),
         body='''
   <h2>Local hire or India-sourced?</h2>
-  <p>Most of our UAE placements are local UAE hires already working in the market. International sourcing, from India, the Philippines, Europe, the US or the UK, is available when a client specifically wants it, for example when the role needs experience the local pool does not have.</p>
+  <p>We look at leaders already working in the UAE first. International sourcing, from India, the Philippines, Europe, the US or the UK, is available when a client specifically wants it, for example when the role needs experience the local pool does not have.</p>
 
   <h2>India-based brands building a Gulf team</h2>
   <p>For an India-based brand building a Gulf team, the question is often whether to move a trusted leader from India, hire locally, or do both: a local head with an India-sourced second line. We map both options before you decide.</p>
 
-  <h2>Check pay against real placements</h2>
-  <p>Pay varies by seniority and scope, and a generic salary survey is a weak guide. We benchmark against real, current placements, so you see what the role actually costs before you commit a budget. Our <a href="/uae-consulting-hiring">UAE search page</a> lists four current placements for a Dubai business-setup client, with monthly pay in AED.</p>
+  <h2>Map the pay before you set the budget</h2>
+  <p>Pay varies by seniority and scope, and a generic salary survey is a weak guide. We map what the role pays in the market before you commit a budget, so the offer is neither too low to close nor higher than it needs to be.</p>
 
   <h2>Roles we search for in the UAE</h2>
-  <p>We search for CEOs, MDs and business heads, CFOs, CMOs, sales leaders and CHROs for UAE companies. For UAE consulting, company-formation and corporate service firms, we also build lean teams: marketing, business development, IT and engineering, and corporate tax and back-office roles.</p>
+  <p>Senior and CXO roles only: CEOs, MDs and business heads, CFOs and finance heads, CMOs and marketing heads, sales and business development heads, and CHROs. We run them for companies in Dubai and across the UAE, including consulting, business-setup and corporate service firms. See our <a href="/uae-consulting-hiring">UAE search page</a>.</p>
+
+  <h2>What a UAE search costs</h2>
+  <p>AED 1,000 starts the search. It is adjusted against the final fee of one month's salary, invoiced when your hire joins.</p>
 
   <h2>How the search runs</h2>
   <p>The method is the same as in India. We map what the role pays, agree what it must deliver over the next 12 to 24 months, approach people already doing the job at competitor companies, and give you a confidential shortlist and a realistic offer number. Our first consultation is free.</p>
@@ -500,12 +503,41 @@ def hub_page():
     return head(html.unescape(HUB_TITLE), HUB_DESC, url, 'website', ld) + header('search') + '\n' + main + cta_block() + tail()
 
 
+def to_text(h):
+    """The answer HTML as the plain text used in llms-full.txt."""
+    h = re.sub(r'\s*<h2>(.*?)</h2>', r'\n\n## \1', h, flags=re.S)
+    h = re.sub(r'\s*<p>(.*?)</p>', r'\n\n\1', h, flags=re.S)
+    h = re.sub(r'\s*<li>(.*?)</li>', r'\n- \1', h, flags=re.S)
+    h = re.sub(r'\s*<ul>', '\n', h)
+    h = re.sub(r'\s*</ul>', '', h)
+    h = re.sub(r'<[^>]+>', '', h)
+    return html.unescape(h).strip()
+
+
+def llms_full():
+    """Rewrite the Executive Search FAQ part of llms-full.txt from QUESTIONS, so the plain text matches the pages."""
+    sep = '=' * 80
+    blocks = []
+    for item in QUESTIONS:
+        body = item['answer'] + '\n\n' + to_text(item['body'])
+        if item.get('sources'):
+            body += '\n\n## Sources\n\n' + '\n'.join(f'- {p}, {t}, {u}, {d}' for p, t, u, d in item['sources'])
+        blocks.append(f"{sep}\n# {item['q']}\nURL: {SITE}{HUB}/{item['slug']}\nPublished: {DATE}\n"
+                      f"Publisher: Boardroom CXO (https://boardroomcxo.com)\n{sep}\n\n{body}\n")
+    s = open('llms-full.txt', encoding='utf-8').read()
+    start = s.index(f'{sep}\n# How does executive search work?')
+    end = s.index(f'{sep}\n# Leadership hiring and moves in India')
+    s = s[:start] + '\n\n'.join(blocks) + '\n' + s[end:]
+    open('llms-full.txt', 'w', encoding='utf-8', newline='\n').write(s)
+
+
 def main():
     os.makedirs('executive-search-faq', exist_ok=True)
     for item in QUESTIONS:
         open(f"executive-search-faq/{item['slug']}.html", 'w', encoding='utf-8', newline='\n').write(question_page(item))
     open('executive-search-faq.html', 'w', encoding='utf-8', newline='\n').write(hub_page())
-    print(len(QUESTIONS), 'questions written')
+    llms_full()
+    print(len(QUESTIONS), 'questions written; llms-full.txt FAQ part rewritten')
 
 
 if __name__ == '__main__':
