@@ -3484,6 +3484,7 @@ Answers to common questions about executive search and CXO hiring in India and t
 URL: https://boardroomcxo.com/executive-search-faq/how-executive-search-works
 Published: 2026-11-04
 Publisher: Boardroom CXO (https://boardroomcxo.com)
+Reviewed by: CA Ketul Patel, Founder, Boardroom CXO (https://www.linkedin.com/in/caketul/)
 ================================================================================
 
 Executive search is a way of hiring senior leaders in which a search firm researches the market and approaches people already doing the job, usually at competitors, instead of advertising the role. At Boardroom CXO a search runs in four stages: a pay map, a brief on what the role must deliver, a confidential headhunt and shortlist, and the offer.
@@ -3514,7 +3515,7 @@ We search for CEOs, MDs and business heads, CFOs, CMOs, sales and retail heads, 
 
 ## What it costs
 
-A Rs 10,000 service fee (including GST) starts the search, and it is adjusted against the final fee of one month's CTC, invoiced when your hire joins. More on this in how much a CXO search costs in India.
+A Rs 10,000 service fee (including GST) starts the search. It is not refundable, and it is adjusted against the final fee of one month's CTC, invoiced when your hire joins. More on this in how much a CXO search costs in India.
 
 
 ================================================================================
@@ -3522,20 +3523,26 @@ A Rs 10,000 service fee (including GST) starts the search, and it is adjusted ag
 URL: https://boardroomcxo.com/executive-search-faq/cxo-search-cost-india
 Published: 2026-11-04
 Publisher: Boardroom CXO (https://boardroomcxo.com)
+Reviewed by: CA Ketul Patel, Founder, Boardroom CXO (https://www.linkedin.com/in/caketul/)
 ================================================================================
 
-With Boardroom CXO, a CXO search costs one month of the hire's CTC. A Rs 10,000 service fee (including GST) starts the search, and that amount is adjusted against the final fee, which is invoiced when your hire joins. Other firms price searches in other ways, so it is worth comparing what each fee covers and when it is due.
+With Boardroom CXO, a CXO search costs one month of the hire's CTC. A Rs 10,000 service fee (including GST) starts the search. It is not refundable, and it is adjusted against the final fee, which is invoiced when your hire joins. Other firms price searches in other ways, so it is worth comparing what each fee covers and when it is due.
 
 ## How the fee works, step by step
 
-- To start: a Rs 10,000 service fee (including GST).
-- When your hire joins: the final fee of one month's CTC is invoiced, with the Rs 10,000 already paid adjusted against it.
+- To start: a Rs 10,000 service fee (including GST). It is not refundable.
+- When your hire joins: the final fee of one month's CTC, as defined in our terms of business, is invoiced, with the Rs 10,000 already paid adjusted against it.
+- If the hire leaves within 90 days: we find one replacement, free.
 
 So if the role's CTC works out to Rs 5 lakh a month, the final fee is Rs 5 lakh, and the invoice at joining is for that amount less the Rs 10,000 paid at the start.
 
 ## What the fee covers
 
 The search includes a map of what the role pays across your category and city before you set the budget, an agreed brief on what the role must deliver over the next 12 to 24 months, direct headhunting from competitor companies, a confidential shortlist, and guidance on a realistic offer.
+
+## Searches are not exclusive
+
+You do not have to give us the role on an exclusive basis. You are free to use other agencies on the same role.
 
 ## The first conversation is free
 
@@ -3555,16 +3562,19 @@ The fee is the smaller part of the cost of a CXO hire. The bigger number is the 
 URL: https://boardroomcxo.com/executive-search-faq/time-to-hire-cmo-cfo-chro
 Published: 2026-11-04
 Publisher: Boardroom CXO (https://boardroomcxo.com)
+Reviewed by: CA Ketul Patel, Founder, Boardroom CXO (https://www.linkedin.com/in/caketul/)
 ================================================================================
 
-With Boardroom CXO, a CMO, CFO or CHRO search is built to reach a confidential shortlist in about 8 weeks: weeks 1 and 2 map what the role pays in your category and city, and weeks 3 to 8 approach and shortlist people already doing the job. The start date then depends on the leader's notice period.
+With Boardroom CXO, a CMO or CHRO search typically takes 30 to 45 days to an offer. In that time we map what the role pays in your category and city, agree the brief, approach and shortlist people already doing the job, and take you to an offer. The start date then depends on the leader's notice period.
 
 ## The timeline, stage by stage
 
-- Weeks 1 and 2: we map what the role pays across your category and city.
+- Pay map: we map what the role pays across your category and city.
 - Role brief: we agree the outcomes, authority and KPIs for the next 12 to 24 months.
-- Weeks 3 to 8: we approach people already doing the job at competitor companies and build a confidential shortlist.
+- Search: we approach people already doing the job at competitor companies and build a confidential shortlist.
 - Offer stage: interviews, the offer and acceptance, with a realistic uplift of usually 25 to 30%.
+
+For a CMO or CHRO, these stages typically take 30 to 45 days from the start of the search to an offer.
 
 ## What our case studies show
 
@@ -3588,9 +3598,10 @@ Searches slow down when the budget is still open, when the interview panel is no
 URL: https://boardroomcxo.com/executive-search-faq/retained-vs-contingency-search
 Published: 2026-11-04
 Publisher: Boardroom CXO (https://boardroomcxo.com)
+Reviewed by: CA Ketul Patel, Founder, Boardroom CXO (https://www.linkedin.com/in/caketul/)
 ================================================================================
 
-In retained search, a company pays a search firm a fee at the start and the firm works the role exclusively, usually for senior roles. In contingency recruitment, an agency is paid only when its candidate is hired, and several agencies can work the same role. Boardroom CXO charges Rs 10,000 (including GST) at the start and the rest on joining.
+In retained search, a company pays a search firm a fee at the start and the firm works the role exclusively, usually for senior roles. In contingency recruitment, an agency is paid only when its candidate is hired, and several agencies can work the same role. Boardroom CXO charges Rs 10,000 (including GST) at the start and the rest on joining, and does not ask for exclusivity.
 
 ## Retained search
 
@@ -3602,7 +3613,9 @@ The AESC describes contingency recruiters as agencies paid after a candidate has
 
 ## Where Boardroom CXO sits
 
-We start each search with a Rs 10,000 service fee (including GST). It is adjusted against the final fee of one month's CTC, which is invoiced when your hire joins. Most of the fee is therefore tied to a hire, while the search itself works the way executive search does: we map pay, define the role, and headhunt directly from competitor companies rather than sending CVs from a database.
+We start each search with a Rs 10,000 service fee (including GST), which is not refundable. It is adjusted against the final fee of one month's CTC, which is invoiced when your hire joins. Most of the fee is therefore tied to a hire, while the search itself works the way executive search does: we map pay, define the role, and headhunt directly from competitor companies rather than sending CVs from a database.
+
+Unlike a retained search, our searches are not exclusive: you are free to use other agencies on the same role. If the hire leaves within 90 days, we find one replacement free.
 
 ## Which model fits which hire
 
@@ -3626,6 +3639,7 @@ For a high-volume or junior role, where many qualified people are actively apply
 URL: https://boardroomcxo.com/executive-search-faq/executive-search-vs-recruitment-agency
 Published: 2026-11-04
 Publisher: Boardroom CXO (https://boardroomcxo.com)
+Reviewed by: CA Ketul Patel, Founder, Boardroom CXO (https://www.linkedin.com/in/caketul/)
 ================================================================================
 
 A job portal lists your opening and waits for people to apply. A generalist recruitment agency usually sends CVs of people who are already looking. An executive search firm researches the market and confidentially approaches leaders who are not job-hunting, often at competitors. For a CXO role, the best candidate is usually in that last group.
@@ -3658,6 +3672,7 @@ The strongest CMOs, CFOs, CHROs and sales heads in a category are not applying a
 URL: https://boardroomcxo.com/executive-search-faq/confidential-executive-search
 Published: 2026-11-04
 Publisher: Boardroom CXO (https://boardroomcxo.com)
+Reviewed by: CA Ketul Patel, Founder, Boardroom CXO (https://www.linkedin.com/in/caketul/)
 ================================================================================
 
 In a confidential executive search, the search firm approaches candidates without naming your company. Candidates first hear what the role involves, and only those who choose to go further learn who the client is. There is no public job advert, so your team, your competitors and the market do not learn that you are hiring.
@@ -3692,6 +3707,7 @@ You can brief us on a free 30-minute call, by WhatsApp or by email. Tell us the 
 URL: https://boardroomcxo.com/executive-search-faq/hiring-cxo-uae
 Published: 2026-11-04
 Publisher: Boardroom CXO (https://boardroomcxo.com)
+Reviewed by: CA Ketul Patel, Founder, Boardroom CXO (https://www.linkedin.com/in/caketul/)
 ================================================================================
 
 To hire a CXO for a UAE company, first decide whether the leader should be a local UAE hire or sourced from India or elsewhere, then check what the role pays and approach people already doing it. Boardroom CXO runs searches for companies in Dubai and across the UAE, including India-based brands building a Gulf team.
@@ -3730,6 +3746,7 @@ Call or WhatsApp +91 98567 55000, which covers India and the UAE, or email hire@
 URL: https://boardroomcxo.com/executive-search-faq/what-is-cxo-hiring
 Published: 2026-11-04
 Publisher: Boardroom CXO (https://boardroomcxo.com)
+Reviewed by: CA Ketul Patel, Founder, Boardroom CXO (https://www.linkedin.com/in/caketul/)
 ================================================================================
 
 CXO hiring means recruiting for a company's top roles, the chief officers whose titles take the form "Chief X Officer", such as the CEO, CFO, CMO and CHRO, along with the leaders just below them. Because the best candidates for these roles are rarely job-hunting, CXO hiring is usually done through executive search rather than job adverts.
@@ -3752,7 +3769,7 @@ We run CXO searches for companies in India and the UAE across five sectors: reta
 
 ## What it costs
 
-A Rs 10,000 service fee (including GST) starts the search, and it is adjusted against the final fee of one month's CTC, invoiced when your hire joins. The first consultation is free. For a worked example, see how much a CXO search costs in India.
+A Rs 10,000 service fee (including GST) starts the search. It is not refundable, and it is adjusted against the final fee of one month's CTC, invoiced when your hire joins. The first consultation is free. For a worked example, see how much a CXO search costs in India.
 
 ================================================================================
 # Leadership hiring and moves in India 2026

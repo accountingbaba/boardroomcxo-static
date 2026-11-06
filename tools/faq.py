@@ -18,6 +18,7 @@ from chrome import header, footer
 SITE = 'https://boardroomcxo.com'
 HUB = '/executive-search-faq'
 DATE = '2026-11-04'
+MODIFIED = '2026-11-06'
 CSS = '/style.css?v=20261108'
 OG_IMAGE = SITE + '/images/Homepage-Meta-removebg-preview.png'
 
@@ -29,8 +30,25 @@ FUNCTION_PAGES = {
     'uae': ('/uae-consulting-hiring', 'UAE search'),
 }
 
-FEE = ("A Rs 10,000 service fee (including GST) starts the search, and it is adjusted against the final fee of one month's CTC, "
-       "invoiced when your hire joins.")
+FEE = ("A Rs 10,000 service fee (including GST) starts the search. It is not refundable, and it is adjusted against the final "
+       "fee of one month's CTC, invoiced when your hire joins.")
+
+# Owner, 6 Nov 2026: the answers are reviewed by the founder; shown on every FAQ page and as reviewedBy in the schema.
+REVIEWER_URL = 'https://www.linkedin.com/in/caketul/'
+REVIEWER = {'@type': 'Person', '@id': SITE + '/about-us#founder', 'name': 'CA Ketul Patel', 'jobTitle': 'Founder',
+            'worksFor': {'@id': SITE + '/#organization'}, 'sameAs': [REVIEWER_URL]}
+BYLINE = (f'Answers reviewed by <a href="{REVIEWER_URL}" target="_blank" rel="noopener" '
+          'style="color:inherit;border-bottom:1px solid currentColor;">CA Ketul Patel</a>, Founder, Boardroom CXO')
+
+# Owner, 6 Nov 2026: the terms every fee answer must agree with. Shown on the hub.
+TERMS = [
+    "Rs 10,000 service fee (including GST) to start the search. It is not refundable.",
+    "Final fee: one month's CTC, as defined in our terms of business, invoiced when your hire joins. The Rs 10,000 is adjusted against it.",
+    "One free replacement if the hire leaves within 90 days.",
+    "Not exclusive: you are free to use other agencies on the same role.",
+    "A CMO or CHRO search typically takes 30 to 45 days to an offer.",
+    "In the UAE: AED 1,000 to start the search, adjusted against a final fee of one month's salary, invoiced when the hire joins.",
+]
 
 # slug, question (H1), <title> text, meta description, one-line answer for the hub, direct answer (first paragraph),
 # body HTML (H2 sections), related function pages, sources [(publisher, title, url, date)]
@@ -74,20 +92,24 @@ QUESTIONS = [
         q='How much does a CXO search cost in India?',
         title='How Much Does a CXO Search Cost in India? | Boardroom CXO',
         desc="CXO executive search cost with Boardroom CXO: Rs 10,000 including GST to start, adjusted against a final fee of one month's CTC.",
-        line="With Boardroom CXO, one month of the hire's CTC: Rs 10,000 (including GST) to start, adjusted against the final invoice when the hire joins.",
+        line="With Boardroom CXO, one month of the hire's CTC: Rs 10,000 (including GST, not refundable) to start, adjusted against the final invoice when the hire joins.",
         answer=("With Boardroom CXO, a CXO search costs one month of the hire's CTC. A Rs 10,000 service fee (including GST) starts the "
-                "search, and that amount is adjusted against the final fee, which is invoiced when your hire joins. Other "
-                "firms price searches in other ways, so it is worth comparing what each fee covers and when it is due."),
+                "search. It is not refundable, and it is adjusted against the final fee, which is invoiced when your hire joins. "
+                "Other firms price searches in other ways, so it is worth comparing what each fee covers and when it is due."),
         body='''
   <h2>How the fee works, step by step</h2>
   <ul>
-    <li><strong>To start:</strong> a Rs 10,000 service fee (including GST).</li>
-    <li><strong>When your hire joins:</strong> the final fee of one month's CTC is invoiced, with the Rs 10,000 already paid adjusted against it.</li>
+    <li><strong>To start:</strong> a Rs 10,000 service fee (including GST). It is not refundable.</li>
+    <li><strong>When your hire joins:</strong> the final fee of one month's CTC, as defined in our terms of business, is invoiced, with the Rs 10,000 already paid adjusted against it.</li>
+    <li><strong>If the hire leaves within 90 days:</strong> we find one replacement, free.</li>
   </ul>
   <p>So if the role's CTC works out to Rs 5 lakh a month, the final fee is Rs 5 lakh, and the invoice at joining is for that amount less the Rs 10,000 paid at the start.</p>
 
   <h2>What the fee covers</h2>
   <p>The search includes a map of what the role pays across your category and city before you set the budget, an agreed brief on what the role must deliver over the next 12 to 24 months, direct headhunting from competitor companies, a confidential shortlist, and guidance on a realistic offer.</p>
+
+  <h2>Searches are not exclusive</h2>
+  <p>You do not have to give us the role on an exclusive basis. You are free to use other agencies on the same role.</p>
 
   <h2>The first conversation is free</h2>
   <p>Before any fee, you can brief us on the role on a free 30-minute call. We use it to understand the business and the role, and we come back with a read of the market before you commit a budget.</p>
@@ -104,19 +126,20 @@ QUESTIONS = [
         slug='time-to-hire-cmo-cfo-chro',
         q='How long does it take to hire a CMO, CFO or CHRO?',
         title='How Long Does It Take to Hire a CMO, CFO or CHRO?',
-        desc='How long a CMO, CFO or CHRO search takes: about 8 weeks to a confidential shortlist with Boardroom CXO, then the notice period.',
-        line='About 8 weeks to a confidential shortlist with Boardroom CXO; the start date then depends on the notice period.',
-        answer=("With Boardroom CXO, a CMO, CFO or CHRO search is built to reach a confidential shortlist in about 8 weeks: "
-                "weeks 1 and 2 map what the role pays in your category and city, and weeks 3 to 8 approach and shortlist "
-                "people already doing the job. The start date then depends on the leader's notice period."),
+        desc='How long a CMO, CFO or CHRO search takes: with Boardroom CXO a CMO or CHRO search typically takes 30 to 45 days to an offer.',
+        line='A CMO or CHRO search typically takes 30 to 45 days to an offer with Boardroom CXO; the start date then depends on the notice period.',
+        answer=("With Boardroom CXO, a CMO or CHRO search typically takes 30 to 45 days to an offer. In that time we map what "
+                "the role pays in your category and city, agree the brief, approach and shortlist people already doing the "
+                "job, and take you to an offer. The start date then depends on the leader's notice period."),
         body='''
   <h2>The timeline, stage by stage</h2>
   <ul>
-    <li><strong>Weeks 1 and 2:</strong> we map what the role pays across your category and city.</li>
+    <li><strong>Pay map:</strong> we map what the role pays across your category and city.</li>
     <li><strong>Role brief:</strong> we agree the outcomes, authority and KPIs for the next 12 to 24 months.</li>
-    <li><strong>Weeks 3 to 8:</strong> we approach people already doing the job at competitor companies and build a confidential shortlist.</li>
+    <li><strong>Search:</strong> we approach people already doing the job at competitor companies and build a confidential shortlist.</li>
     <li><strong>Offer stage:</strong> interviews, the offer and acceptance, with a realistic uplift of usually 25 to 30%.</li>
   </ul>
+  <p>For a CMO or CHRO, these stages typically take 30 to 45 days from the start of the search to an offer.</p>
 
   <h2>What our case studies show</h2>
   <p>For a pre-IPO jewellery brand whose earlier CFO searches had stalled for months, we shortlisted four CFOs from listed retail companies, and the time to placement was 8 weeks. For a Singapore company entering India, a Finance Head was placed in 6 weeks. Every search is different, and both are on our <a href="/case-studies">case studies</a> page.</p>
@@ -137,11 +160,11 @@ QUESTIONS = [
         q='What is the difference between retained and contingency search?',
         title='Retained vs Contingency Search: The Difference | Boardroom CXO',
         desc='Retained search is paid upfront and exclusive, for senior roles. Contingency recruitment is paid only on a hire. How Boardroom CXO charges.',
-        line='Retained search is paid at the start and exclusive; contingency is paid only on a hire. We charge Rs 10,000 (including GST) upfront, the rest on joining.',
+        line='Retained search is paid at the start and exclusive; contingency is paid only on a hire. We charge Rs 10,000 (including GST) upfront, the rest on joining, and our searches are not exclusive.',
         answer=("In retained search, a company pays a search firm a fee at the start and the firm works the role "
                 "exclusively, usually for senior roles. In contingency recruitment, an agency is paid only when its "
                 "candidate is hired, and several agencies can work the same role. Boardroom CXO charges Rs 10,000 (including GST) at "
-                "the start and the rest on joining."),
+                "the start and the rest on joining, and does not ask for exclusivity."),
         body='''
   <h2>Retained search</h2>
   <p>The Association of Executive Search and Leadership Consultants (AESC), the global body for the profession, describes retained executive search as focused on executive and senior-level positions and board directors. A consulting fee or retainer is charged at the beginning of the relationship, and retained firms work on an exclusive basis.</p>
@@ -150,7 +173,8 @@ QUESTIONS = [
   <p>The AESC describes contingency recruiters as agencies paid after a candidate has been identified and hired. A company is not tied to one agency and may use several on the same role. Contingency recruiters typically fill entry-level to mid-level positions.</p>
 
   <h2>Where Boardroom CXO sits</h2>
-  <p>We start each search with a Rs 10,000 service fee (including GST). It is adjusted against the final fee of one month's CTC, which is invoiced when your hire joins. Most of the fee is therefore tied to a hire, while the search itself works the way executive search does: we map pay, define the role, and headhunt directly from competitor companies rather than sending CVs from a database.</p>
+  <p>We start each search with a Rs 10,000 service fee (including GST), which is not refundable. It is adjusted against the final fee of one month's CTC, which is invoiced when your hire joins. Most of the fee is therefore tied to a hire, while the search itself works the way executive search does: we map pay, define the role, and headhunt directly from competitor companies rather than sending CVs from a database.</p>
+  <p>Unlike a retained search, our searches are not exclusive: you are free to use other agencies on the same role. If the hire leaves within 90 days, we find one replacement free.</p>
 
   <h2>Which model fits which hire</h2>
   <p>For a high-volume or junior role, where many qualified people are actively applying, a contingency agency or a job portal can be enough. For a CXO role, the best candidate is usually already doing the job somewhere else and is not looking. Reaching them takes research and a confidential approach, which is the work a search firm is paid to do.</p>
@@ -370,7 +394,7 @@ def question_page(item):
     ld = {'@context': 'https://schema.org', '@graph': [
         {'@type': 'FAQPage', '@id': url + '#faq', 'url': url, 'name': item['q'], 'description': item['desc'],
          'inLanguage': 'en', 'isPartOf': {'@id': SITE + '/#website'}, 'publisher': {'@id': SITE + '/#organization'},
-         'datePublished': DATE, 'dateModified': DATE,
+         'datePublished': DATE, 'dateModified': MODIFIED, 'reviewedBy': REVIEWER,
          'mainEntity': [{'@type': 'Question', 'name': item['q'], 'acceptedAnswer': {'@type': 'Answer', 'text': item['answer']}}]},
         crumbs(('Home', '/'), ('Executive Search', '/executive-search'), ('Executive Search FAQ', HUB), (item['q'], path)),
     ]}
@@ -395,7 +419,8 @@ def question_page(item):
       <h1>{e(item['q'])}</h1>
       <div class="meta">
         <span>Executive Search FAQ</span>
-        <time datetime="{DATE}">· Updated November 2026</time>
+        <time datetime="{MODIFIED}">· Updated November 2026</time>
+        <span>· {BYLINE}</span>
       </div>
     </div>
   </div>
@@ -441,7 +466,7 @@ def hub_page():
     ld = {'@context': 'https://schema.org', '@graph': [
         {'@type': 'FAQPage', '@id': url + '#faq', 'url': url, 'name': 'Executive Search FAQ', 'description': HUB_DESC,
          'inLanguage': 'en', 'isPartOf': {'@id': SITE + '/#website'}, 'publisher': {'@id': SITE + '/#organization'},
-         'datePublished': DATE, 'dateModified': DATE,
+         'datePublished': DATE, 'dateModified': MODIFIED, 'reviewedBy': REVIEWER,
          'mainEntity': [{'@type': 'Question', 'name': o['q'], 'url': f"{SITE}{HUB}/{o['slug']}",
                          'acceptedAnswer': {'@type': 'Answer', 'text': o['line']}} for o in QUESTIONS]},
         crumbs(('Home', '/'), ('Executive Search', '/executive-search'), ('Executive Search FAQ', HUB)),
@@ -451,6 +476,7 @@ def hub_page():
         <p>{e(o['line'])}</p>
         <a href="{HUB}/{o['slug']}" class="link-under" style="display:inline-block;margin-top:12px;">Read the answer →</a>
       </div>''' for o in QUESTIONS)
+    terms = '\n'.join(f'      <li style="font-size:15px;">{e(t)}</li>' for t in TERMS)
     main = f'''
 <section class="inner-hero">
   <div class="container">
@@ -461,6 +487,7 @@ def hub_page():
       </div>
       <div class="inner-hero-side">
         <p class="lead">Straight answers to the questions companies ask before hiring a CEO, CFO, CMO, CHRO or sales head in India or the UAE: how a search works, what it costs, how long it takes and how it stays confidential.</p>
+        <p style="margin-top:16px;font-size:14px;opacity:.8;">{BYLINE}.</p>
       </div>
     </div>
   </div>
@@ -485,7 +512,22 @@ def hub_page():
   <div class="container">
     <div class="sec-head">
       <div class="sec-head-left">
-        <span class="sec-head-index">§02 · By Function</span>
+        <span class="sec-head-index">§02 · Fees and Terms</span>
+        <h2 class="h2">The short version.</h2>
+      </div>
+      <p class="lead">What every search with Boardroom CXO comes with. The detail is in <a href="{HUB}/cxo-search-cost-india" style="color:inherit;border-bottom:1px solid currentColor;">how much a CXO search costs</a>.</p>
+    </div>
+    <ul class="role-list" style="max-width:68ch;">
+{terms}
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <span class="sec-head-index">§03 · By Function</span>
         <h2 class="h2">Searching for a specific role?</h2>
       </div>
     </div>
@@ -523,7 +565,7 @@ def llms_full():
         if item.get('sources'):
             body += '\n\n## Sources\n\n' + '\n'.join(f'- {p}, {t}, {u}, {d}' for p, t, u, d in item['sources'])
         blocks.append(f"{sep}\n# {item['q']}\nURL: {SITE}{HUB}/{item['slug']}\nPublished: {DATE}\n"
-                      f"Publisher: Boardroom CXO (https://boardroomcxo.com)\n{sep}\n\n{body}\n")
+                      f"Publisher: Boardroom CXO (https://boardroomcxo.com)\nReviewed by: CA Ketul Patel, Founder, Boardroom CXO ({REVIEWER_URL})\n{sep}\n\n{body}\n")
     s = open('llms-full.txt', encoding='utf-8').read()
     start = s.index(f'{sep}\n# How does executive search work?')
     end = s.index(f'{sep}\n# Leadership hiring and moves in India')
