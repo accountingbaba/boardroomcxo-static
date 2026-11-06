@@ -537,6 +537,7 @@ def hub_page():
       <a href="/sales-leadership-hiring" class="xs-card"><span class="role-index">C / Function</span><h3>Sales, Retail &amp; BD</h3><p>Chief sales officers, national sales heads, retail operations and franchise leaders.</p><span class="link-under">Sales leadership search →</span></a>
       <a href="/hr-leadership-hiring" class="xs-card"><span class="role-index">D / Function</span><h3>CHRO &amp; HR</h3><p>CHROs, HR heads and talent leaders.</p><span class="link-under">HR leadership search →</span></a>
       <a href="/uae-consulting-hiring" class="xs-card"><span class="role-index">E / Market</span><h3>UAE Search</h3><p>Searches for companies in Dubai and across the UAE, including India-based brands building a Gulf team.</p><span class="link-under">UAE search →</span></a>
+      <a href="/jewellery-executive-search" class="xs-card"><span class="role-index">F / Sector</span><h3>Jewellery Brands</h3><p>CMOs, CFOs, CHROs, sales and expansion heads for jewellery brands in India and the UAE.</p><span class="link-under">Jewellery executive search →</span></a>
     </div>
   </div>
 </section>

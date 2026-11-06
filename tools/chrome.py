@@ -25,7 +25,8 @@ NAV = [
 MOBILE_EXTRA = [('Inside the Boardroom', '/inside-the-boardroom'), ('About', '/about-us')]
 
 SEARCH_PAGES = {'executive-search', 'marketing-leadership-hiring', 'finance-leadership-hiring', 'sales-leadership-hiring',
-                'hr-leadership-hiring', 'uae-consulting-hiring', 'schedule-a-call', 'executive-search-faq'}
+                'hr-leadership-hiring', 'uae-consulting-hiring', 'schedule-a-call', 'executive-search-faq',
+                'jewellery-executive-search'}
 MOVES_PAGES = {'get-featured', 'moves-plans', 'inside-the-boardroom', 'leadership-moves-india-statistics-2026'}
 
 
