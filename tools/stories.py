@@ -68,7 +68,7 @@ def page(items):
     head_end = tpl.index('</head>')
     head = tpl[:head_end]
     head = re.sub(r'<title>.*?</title>', '<title>Inside the Boardroom: Indian Business Leaders | Boardroom CXO</title>', head, flags=re.S)
-    desc = 'Weekly stories of the Indian leaders behind Taj, Mahindra, Malabar Gold, Airtel and more: how they made the hard calls, and the lesson for your business.'
+    desc = 'Stories of the Indian leaders behind Taj, Mahindra, Malabar Gold, Airtel and more: how they made the hard calls, and the lesson for your business.'
     head = re.sub(r'<meta name="description" content="[^"]*"', f'<meta name="description" content="{desc}"', head)
     head = re.sub(r'<meta property="og:description" content="[^"]*"', f'<meta property="og:description" content="{desc}"', head)
     head = re.sub(r'<meta name="twitter:description" content="[^"]*"', f'<meta name="twitter:description" content="{desc}"', head)
@@ -102,10 +102,10 @@ def page(items):
         <h1>Inside the<br><em>Boardroom.</em></h1>
       </div>
       <div class="inner-hero-side">
-        <p class="lead">Every Saturday, one story of an Indian business leader: the hard call they made, what it cost, and the lesson for anyone running a business. Part of Boardroom Moves.</p>
+        <p class="lead">Stories of Indian business leaders: the hard call they made, what it cost, and the lesson for anyone running a business. New stories are added regularly. Part of Boardroom Moves.</p>
         <div class="inner-hero-facts">
           <div class="inner-hero-fact"><span class="inner-hero-fact-num">{len(items)}</span><span class="inner-hero-fact-label">Stories published</span></div>
-          <div class="inner-hero-fact"><span class="inner-hero-fact-num">Sat</span><span class="inner-hero-fact-label">New story every week</span></div>
+          <div class="inner-hero-fact"><span class="inner-hero-fact-num">New</span><span class="inner-hero-fact-label">Stories added regularly</span></div>
         </div>
       </div>
     </div>
