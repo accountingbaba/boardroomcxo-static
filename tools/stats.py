@@ -26,7 +26,7 @@ PATH = '/' + SLUG
 URL = SITE + PATH
 CSV_PATH = PATH + '.csv'
 DATE = '2026-11-04'
-TITLE = 'Leadership Hiring and Moves in India 2026: Statistics | Boardroom CXO'
+TITLE = 'India Leadership Hiring & Moves 2026: Statistics | Boardroom CXO'
 H1 = 'Leadership hiring and moves in India 2026'
 
 # Function groups (what the role does, read from the title and the post, not only the title words).
