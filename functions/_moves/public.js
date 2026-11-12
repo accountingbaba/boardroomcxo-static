@@ -20,6 +20,15 @@ const moveTitle = t => (t.length <= 48 ? `${t} | Boardroom Moves` : t);
 const isoSec = d => String(d || '').replace(/T(\d\d:\d\d)(?=[+-]|Z|$)/, 'T$1:00');
 const LIVE = "status = 'live' AND removed_at IS NULL AND slug IS NOT NULL";
 const html = (body, status = 200, extra = {}) => new Response(body, { status, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'public, max-age=600', ...extra } });
+// If the Moves database fails, answer 503 with Retry-After instead of crashing (Cloudflare error 1101, a 500).
+// Search engines treat 503 as temporary and keep the pages; days of 500s get them dropped (11 Nov 2026 outage).
+export const guard = fn => async ctx => {
+  try { return await fn(ctx); } catch (e) {
+    console.error('moves error', ctx && ctx.request && ctx.request.url, (e && e.stack) || e);
+    return new Response('<!doctype html><meta charset="utf-8"><title>Boardroom Moves</title><p>Boardroom Moves is briefly unavailable. Please try again in a few minutes, or go to <a href="/">boardroomcxo.com</a>.</p>',
+      { status: 503, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Retry-After': '600', 'Cache-Control': 'no-store' } });
+  }
+};
 const niceDate = iso => (iso ? new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' }) : '');
 const isDedicated = o => o.tier === 'plus' || o.tier === 'pick' || (o.tier === 'pack' && o.pack_id);
 const DEDICATED_SQL = "(tier IN ('plus', 'pick') OR (tier = 'pack' AND pack_id IS NOT NULL))";
@@ -218,27 +227,31 @@ const faqBlock = `<section class="mv-faq"><h2>Questions about Boardroom Moves</h
 const HUB_CARDS = 12;
 export async function renderHub(env, request) {
   const db = env.MOVES_DB;
+  // The archive and stories still show if the database is down; only desk features, Briefs and reports drop out.
+  let rows = [], briefs = [], reports = [];
+  try {
   await ensureSchema(db);
-  const rows = (await db.prepare(`SELECT o.id, o.name, o.role_title, o.company, o.tier, o.pack_id, o.slug, o.live_at, o.slot_date,
+  rows = (await db.prepare(`SELECT o.id, o.name, o.role_title, o.company, o.tier, o.pack_id, o.slug, o.live_at, o.slot_date,
       (SELECT 1 FROM images i WHERE i.order_id = o.id AND i.kind = 'website') AS has_img
     FROM orders o WHERE ${LIVE} ORDER BY o.live_at DESC LIMIT 400`).all()).results || [];
-  const moves = rows.filter(isDedicated).map(fromDb).concat(ARCHIVE.map(fromArchive)).sort(newestFirst);
-  const briefs = await publishedBriefs(db, 8);
+  briefs = await publishedBriefs(db, 8);
   for (const b of briefs) b.names = await briefNames(db, b.d);
-  const shown = briefs.filter(b => b.names.length);
-  const reports = await publishedReports(db);
+  reports = await publishedReports(db);
+  } catch (e) { console.error('moves hub db', (e && e.stack) || e); rows = []; briefs = []; reports = []; }
+  const moves = rows.filter(isDedicated).map(fromDb).concat(ARCHIVE.map(fromArchive)).sort(newestFirst);
+  const shown = briefs.filter(b => b.names && b.names.length);
   const stories = await latestStories(env, request, 4);
   const reportBlock = reports.length ? `<section class="mv-week"><h2>Monthly reports</h2><ul>${reports.map(x => `<li><strong><a href="/moves/report/${x.m}">Senior leadership moves in India: ${monthName(x.m)}</a></strong></li>`).join('')}</ul></section>` : '';
   const weekBlocks = shown.map(b => `<section class="mv-week" id="brief-${b.d}"><h2><a href="/moves/brief/${b.d}">The Brief · ${niceDate(b.d + 'T12:00:00Z')}</a></h2><ul>${b.names.map(n =>
     `<li><strong>${esc(n.name)}</strong><span>${esc(n.role_title)} at ${esc(n.company)}</span></li>`).join('')}</ul></section>`).join('');
-  const storyBlock = stories.length ? `<section class="mv-sec"><h2>Inside the Boardroom · Saturdays</h2><ul class="mv-stories">${stories.map(st =>
+  const storyBlock = stories.length ? `<section class="mv-sec"><h2>Also from Boardroom CXO: Inside the Boardroom stories</h2><ul class="mv-stories">${stories.map(st =>
     `<li><a href="${esc(st.url)}"><time datetime="${esc(st.date)}">${niceDate(st.date + 'T12:00:00Z')}</time><strong>${esc(st.title)}</strong></a></li>`).join('')}</ul><a class="mv-more" href="/inside-the-boardroom">All stories →</a></section>` : '';
   const getBlock = `<aside class="mv-get"><span class="mv-k">Get Featured</span><h2>Moved into a new leadership role?</h2>
 <p>We announce it on the Boardroom CXO LinkedIn page. With Plus, you also get a page here that shows up when people search your name.</p>
 <p class="mv-price">from <strong>₹1,499</strong> + GST</p><a href="/get-featured" data-door="moves" data-door-at="moves-hub">Get featured</a></aside>`;
   const body = `<div class="mv-wrap">
 <section class="mv-hero"><p class="mv-crumb"><a href="/">Home</a> / Boardroom Moves</p><h1>Boardroom Moves: senior leadership moves in India</h1>
-<p class="lead">Senior leadership appointments in India, announced on the Boardroom CXO LinkedIn page and recorded here. The Brief rounds up the week's moves every Thursday, and Inside the Boardroom tells one leader's story every Saturday. Featured leaders see their write-up before it goes live.</p></section>
+<p class="lead">Boardroom Moves is Boardroom CXO's record of senior leadership appointments in India: who moved, into which role, at which company, and when. Each move is announced on the Boardroom CXO LinkedIn page and kept here, and the Brief rounds up the week's moves every Thursday. Featured leaders see their write-up before it goes live.</p></section>
 ${moves.length ? `<section class="mv-sec" id="latest"><h2>Latest moves</h2><div class="mv-grid">${moves.slice(0, HUB_CARDS).map((m, i) => card(m, i < 2)).join('')}</div></section>` : '<p class="mv-empty">The first Boardroom Moves features appear here soon.</p>'}
 ${moves.length > HUB_CARDS ? `<section class="mv-week" id="earlier"><h2>Earlier moves</h2><ul>${moves.slice(HUB_CARDS).map(m =>
     `<li><strong><a href="/moves/${esc(m.slug)}">${esc(m.name)}</a></strong><span>${esc(m.role_title)} at ${esc(m.company)} · ${niceDate(m.live_at)}</span></li>`).join('')}</ul></section>` : ''}
@@ -253,7 +266,7 @@ ${ctaBlock}</div>`;
       mainEntity: { '@type': 'ItemList', numberOfItems: moves.length, itemListElement: moves.map((o, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/moves/${o.slug}`, name: `${o.name}, ${o.role_title} at ${o.company}` })) } },
     { '@type': 'FAQPage', mainEntity: HUB_FAQ.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }] };
   return html(page({ title: 'Boardroom Moves | Senior leadership appointments in India | Boardroom CXO',
-    description: 'Recent senior leadership appointments in India, as announced on the Boardroom CXO LinkedIn page, with the weekly Brief and Inside the Boardroom stories.',
+    description: 'Boardroom Moves records senior leadership appointments in India: who moved, into which role and company, and when, as announced on Boardroom CXO\'s LinkedIn.',
     canonical: SITE + '/moves', image: SITE + '/images/Homepage-Meta-removebg-preview.png', jsonld, body }));
 }
 
