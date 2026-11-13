@@ -966,6 +966,8 @@ ul  { list-style: none; }
 @media (max-width: 900px) {
   .testi-grid { grid-template-columns: 1fr; }
   .testi-card--lead { grid-row: auto; }
+  .testi-card::before, .testi-card--lead::before { font-size: 72px; top: 10px; right: 16px; }
+  .testi-pull { padding-right: 40px; }
 }
 .testi-list { display: flex; flex-direction: column; }
 .testi-item {
