@@ -158,8 +158,17 @@ def face(m):
     return '/' + out
 
 
+def mv_card(m):
+    """One move as a card: face, month, name, role and company, linking to its Moves page."""
+    e = html.escape
+    img = f'<img src="{e(face(m))}" alt="" width="56" height="56" loading="lazy">' if m['image'] else ''
+    return (f'      <a href="/moves/{e(m["slug"])}" class="mv-card">{img}<span class="mv-body">'
+            f'<span class="mv-tag">New role · {month(m["date"])}</span><strong>{e(m["name"])}</strong>'
+            f'<span class="mv-role">{e(m["role_title"])}</span><span class="mv-co">{e(m["company"])}</span></span></a>')
+
+
 def home(items):
-    """The homepage ticker, faces row and band, as plain HTML so they show without JavaScript.
+    """The homepage ticker, faces row, move cards and band (and the move cards on executive-search.html), as plain HTML so they show without JavaScript.
     script.js adds moves published on the Moves desk since, from /moves/latest.json."""
     import os
     e = html.escape
@@ -190,11 +199,20 @@ def home(items):
     raw = open('index.html', encoding='utf-8', newline='').read()
     nl = '\r\n' if '\r\n' in raw else '\n'
     s = raw.replace('\r\n', '\n')
-    for name, body in (('ticker', ticker), ('faces', faces), ('stories', band)):
+    cards = '\n'.join(mv_card(m) for m in latest[:6])
+    for name, body in (('ticker', ticker), ('faces', faces), ('moves', cards), ('stories', band)):
         s, n = re.subn(rf'<!-- {name}:start -->.*?<!-- {name}:end -->',
                        lambda m: f'<!-- {name}:start -->\n{body}\n<!-- {name}:end -->', s, flags=re.S)
         assert n == 1, name
     open('index.html', 'w', encoding='utf-8', newline='').write(s.replace('\n', nl))
+    # Executive Search shows the same move cards, as proof of reach across industries.
+    raw = open('executive-search.html', encoding='utf-8', newline='').read()
+    nl = '\r\n' if '\r\n' in raw else '\n'
+    s, n = re.subn(r'<!-- es-moves:start -->.*?<!-- es-moves:end -->',
+                   lambda _: '<!-- es-moves:start -->\n' + cards + '\n<!-- es-moves:end -->',
+                   raw.replace('\r\n', '\n'), flags=re.S)
+    assert n == 1, 'es-moves'
+    open('executive-search.html', 'w', encoding='utf-8', newline='').write(s.replace('\n', nl))
 
 
 HIRING_PAGES = ['marketing-leadership-hiring', 'sales-leadership-hiring', 'finance-leadership-hiring', 'hr-leadership-hiring']
