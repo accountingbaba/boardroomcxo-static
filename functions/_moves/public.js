@@ -106,7 +106,7 @@ function page({ title, description, canonical, image, jsonld, robots = 'index, f
 <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/fonts/fonts-v1.css" />
-<link rel="stylesheet" href="/style.css?v=20261113c" />
+<link rel="stylesheet" href="/style.css?v=20261113d" />
 <style>
 .mv-wrap{max-width:1100px;margin:0 auto;padding:0 var(--pad-x)}
 .mv-hero{padding:clamp(120px,14vw,170px) 0 40px;border-bottom:1px solid var(--line)}

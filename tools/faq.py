@@ -19,7 +19,7 @@ SITE = 'https://boardroomcxo.com'
 HUB = '/executive-search-faq'
 DATE = '2026-11-04'
 MODIFIED = '2026-11-06'
-CSS = '/style.css?v=20261113c'
+CSS = '/style.css?v=20261113d'
 OG_IMAGE = SITE + '/images/Homepage-Meta-removebg-preview.png'
 
 FUNCTION_PAGES = {
