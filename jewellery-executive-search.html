@@ -318,7 +318,67 @@
         </tbody>
       </table>
     </div>
-    <a href="/#salary-tool" class="btn" style="margin-top:32px;" data-testid="salary-tool-link">Check Live Compensation Ranges →</a>
+    <a href="#salary-tool" class="btn" style="margin-top:32px;" data-testid="salary-tool-link">Check Live Compensation Ranges →</a>
+  </div>
+</section>
+
+<!-- ============ SALARY BAND (Live Tool) ============ -->
+<section class="salary-band" id="salary-tool" data-testid="salary-band">
+  <div class="container">
+    <div class="salary-band-inner">
+      <div class="salary-band-copy">
+        <span class="overline" style="color:var(--gold);">Live Tool · Retail &amp; Jewellery</span>
+        <h2 style="margin-top:20px;">What other companies are<br/><em style="font-style:italic;color:var(--gold);font-weight:400;">actually paying.</em></h2>
+        <p class="lead" style="color:rgba(255,255,255,0.7);margin-bottom:28px;">Pick a role and your store count. Get a live compensation range from our 2025-26 market mapping across Category A, B, and C jewellery, retail and D2C brands. Play with the tool below.</p>
+        <ul class="salary-band-tags">
+          <li>15 Roles</li>
+          <li>3 Store Tiers</li>
+          <li>2 City Tiers</li>
+          <li>Live Data</li>
+        </ul>
+      </div>
+      <div class="salary-tool-live" data-family="strategy">
+        <div class="salary-terminal-header">
+          <span>Live · BCXO Terminal</span>
+          <span>v.2025-26</span>
+        </div>
+        <div class="modal-family-strip">
+          <span class="modal-family-dot"></span>
+          <span id="salary-family-badge">D / Business &amp; Expansion</span>
+        </div>
+        <div class="terminal-form">
+          <label>
+            Role
+            <select id="salary-role" data-testid="salary-role"></select>
+          </label>
+          <div class="terminal-form-row">
+            <label>
+              Store count
+              <select id="salary-stores" data-testid="salary-stores">
+                <option value="C">Under 20 stores</option>
+                <option value="B" selected>20 to 60 stores</option>
+                <option value="A">60+ stores</option>
+              </select>
+            </label>
+            <label>
+              City tier
+              <select id="salary-tier" data-testid="salary-tier">
+                <option value="1" selected>Tier 1 · Metro</option>
+                <option value="2">Tier 2 · Surat / Pune</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="terminal-result">
+          <span class="terminal-result-label">Typical Annual CTC</span>
+          <div class="terminal-result-line">
+            <span class="terminal-result-range" id="salary-result-range" data-testid="salary-result-range">&#8377;35L to &#8377;60L</span>
+            <span class="terminal-result-cursor"></span>
+          </div>
+        </div>
+        <a href="/schedule-a-call" class="modal-cta" data-testid="salary-tool-cta">Get Pay Data for Your Role /</a>
+      </div>
+    </div>
   </div>
 </section>
 

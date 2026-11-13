@@ -118,7 +118,7 @@ QUESTIONS = [
   <p>Search firms broadly charge in two ways. In retained search, a fee is charged at the start of the engagement. In contingency recruitment, the agency is paid only when its candidate is hired. Our model starts with a small fee and puts most of it at the point your hire joins. We explain the two models in <a href="/executive-search-faq/retained-vs-contingency-search">retained vs contingency search</a>.</p>
 
   <h2>Check what the role pays before you set the budget</h2>
-  <p>The fee is the smaller part of the cost of a CXO hire. The bigger number is the package. Our <a href="/">compensation tool on the homepage</a> shows ranges by role, store count and city tier, built from our 2025-26 market mapping, and the pay map at the start of each search confirms it for your category and city.</p>
+  <p>The fee is the smaller part of the cost of a CXO hire. The bigger number is the package. Our <a href="/jewellery-executive-search#salary-tool">compensation tool</a> shows ranges by role, store count and city tier, built from our 2025-26 market mapping, and the pay map at the start of each search confirms it for your category and city.</p>
 ''',
         related=['finance', 'marketing', 'sales', 'hr'],
     ),
