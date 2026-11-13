@@ -80,7 +80,7 @@ QUESTIONS = [
   <p>The best hires for a CXO role are usually not applying anywhere. They are already running a function for someone else, and they respond to a confidential, well-researched approach, often before any job description exists. That is the gap executive search fills.</p>
 
   <h2>Roles, sectors and markets</h2>
-  <p>We search for CEOs, MDs and business heads, CFOs, CMOs, sales and retail heads, and CHROs, plus the layer just below the CXO. We work in five sectors: retail and jewellery, where our network is deepest; consumer and D2C; financial services; manufacturing; and technology. Searches run for companies in India and the UAE.</p>
+  <p>We search for CEOs, MDs and business heads, CFOs, CMOs, sales and retail heads, and CHROs, plus the layer just below the CXO. We work across industries; our searches today fall in five sectors: financial services; manufacturing; technology; consumer and D2C; and retail and jewellery. Searches run for companies in India and the UAE.</p>
 
   <h2>What it costs</h2>
   <p>''' + FEE + ''' More on this in <a href="/executive-search-faq/cxo-search-cost-india">how much a CXO search costs in India</a>.</p>
@@ -310,7 +310,7 @@ QUESTIONS = [
   <p>With Boardroom CXO, a search starts with a map of what the role pays across your category and city, then an agreed brief on what the role must deliver over the next 12 to 24 months. We then approach people already doing the job at competitor companies and build a confidential shortlist, and at the offer stage we give you a realistic uplift, usually 25 to 30%. See <a href="/executive-search-faq/how-executive-search-works">how executive search works</a> for each stage.</p>
 
   <h2>CXO hiring with Boardroom CXO</h2>
-  <p>We run CXO searches for companies in India and the UAE across five sectors: retail and jewellery, where our network is deepest; consumer and D2C; financial services, including banks, NBFCs, insurers and wealth firms; manufacturing; and technology and IT services.</p>
+  <p>We run CXO searches for companies in India and the UAE across industries. Our searches today fall in five sectors: financial services, including banks, NBFCs, insurers and wealth firms; manufacturing; technology and IT services; consumer and D2C; and retail and jewellery.</p>
 
   <h2>What it costs</h2>
   <p>''' + FEE + ''' The first consultation is free. For a worked example, see <a href="/executive-search-faq/cxo-search-cost-india">how much a CXO search costs in India</a>.</p>

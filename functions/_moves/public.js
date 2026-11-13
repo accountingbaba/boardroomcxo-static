@@ -215,7 +215,7 @@ const ctaBlock = `<section class="mv-cta"><div><h2>Made a leadership move? Get a
 // Hub FAQ, approved by Ketul 31 Oct 2026. The plain text goes into FAQPage schema; links are added only on the page.
 const HUB_FAQ = [
   ['What is Boardroom Moves?', 'Boardroom Moves records senior leadership moves in India, across sectors. Each move is announced on the Boardroom CXO LinkedIn page and kept here, so anyone searching for the leader or the company can find it.'],
-  ['Who runs it?', 'Boardroom CXO, an executive search firm for CXO and senior leadership roles in India and the UAE, with its deepest network in retail and jewellery.'],
+  ['Who runs it?', 'Boardroom CXO, an executive search firm for CXO and senior leadership roles across industries in India and the UAE.'],
   ['How do I get featured?', 'We look for new leadership appointments on LinkedIn and write to the leader directly. You can also tell us about a move on the Get Featured page.'],
   ['What is the weekly Brief?', 'A short roundup of 5 to 6 leaders who moved that week, posted on LinkedIn every Thursday and listed here. It is written from public LinkedIn announcements, and nothing is asked of the leader.'],
   ['Does a featured leader see the write-up before it goes live?', 'Yes. We send the draft first and ask one question: is there anything to highlight or leave out? If we hear nothing within 48 hours, it goes live as drafted.'],
