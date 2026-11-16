@@ -206,7 +206,9 @@ html.td main{padding-top:6px}
 const $ = s => document.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 // Security fix (5 Nov 2026): links built from stored data open only if they are http(s) web addresses.
-const safeUrl = s => /^https?:\/\//i.test(String(s || '').trim()) ? String(s).trim() : '#';
+// LinkedIn links always open on www.linkedin.com: in.linkedin.com shows a cut-down page that never finishes loading (16 Nov).
+const liWww = s => String(s || '').trim().replace(/^https?:\/\/([a-z]{2,3}\.)?linkedin\.com\//i, 'https://www.linkedin.com/');
+const safeUrl = s => /^https?:\/\//i.test(liWww(s)) ? liWww(s) : '#';
 const rs = n => 'Rs ' + Number(n || 0).toLocaleString('en-IN');
 const first = n => String(n || '').trim().split(/\s+/)[0] || '';
 const day = d => d ? new Date(String(d).slice(0, 10) + 'T00:00:00Z').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' }) : '';
@@ -337,7 +339,7 @@ const ini = n => (String(n || '?').replace(/[^A-Za-z ]/g, ' ').trim().split(/\s+
 const tb = (label, attrs, cls) => `<button type="button" class="t-btn ${cls || ''}" ${Object.entries(attrs).map(([k, v]) => `data-${k}="${esc(v)}"`).join(' ')}>${label}</button>`;
 const tcopy = (text, label) => { const k = 'c' + (++copyN); COPY.set(k, [text, label]); return tb('Copy ' + label.toLowerCase(), { copy: k }); };
 const badge = (text, tone) => `<span class="t-badge ${tone || ''}">${esc(text)}</span>`;
-const tli = url => url ? `<a class="t-btn" href="${esc(safeUrl(url))}" target="_blank" rel="noopener">Open profile</a>` + tcopy(url, 'Link') : '';
+const tli = url => url ? `<a class="t-btn" href="${esc(safeUrl(url))}" target="_blank" rel="noopener">Open profile</a>` + tcopy(liWww(url), 'Link') : '';
 const msgBlock = (label, text, count) => `<div class="t-msgwrap"><div class="t-msglabel"><span>${esc(label)}</span>${count ? `<span class="len">${text.length} / 300</span>` : ''}</div><div class="t-msg">${esc(text)}</div></div>`;
 
 async function vToday() {
@@ -441,7 +443,7 @@ async function openLead(id, notice) {
   const d = await api('team/leads/' + id), l = d.lead;
   drawer(`<div class="dh"><div><h1>${esc(l.name)}</h1><p class="sub">${esc(l.role_title || '')}${l.company ? ' at ' + esc(l.company) : ''} · ${esc(STAGES[l.stage] || l.stage)}</p></div><button class="x" data-close aria-label="Close">×</button></div>
   <div class="db">${notice || ''}
-    <div class="sec"><div class="row">${l.linkedin ? `<a class="btn g s" href="${esc(l.linkedin)}" target="_blank" rel="noopener">Open LinkedIn</a>` + copyBtn(l.linkedin, 'Link') : ''}
+    <div class="sec"><div class="row">${l.linkedin ? `<a class="btn g s" href="${esc(safeUrl(l.linkedin))}" target="_blank" rel="noopener">Open LinkedIn</a>` + copyBtn(liWww(l.linkedin), 'Link') : ''}
       ${l.stage === 'ready' ? B('Request sent', { lead: l.id, act: 'sent', stay: 1 }, 's') : ''}
       ${l.stage === 'sent' ? B('They accepted', { lead: l.id, act: 'accepted', stay: 1 }, 's') + B('Not accepted: drop', { lead: l.id, act: 'drop', stay: 1 }, 'g s') : ''}
       ${['sent', 'connected', 'brief', 'later', 'briefed', 'noreply'].includes(l.stage) ? B('They replied', { replybox: 1 }, 'g s') : ''}

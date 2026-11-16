@@ -18,6 +18,8 @@ const FLOW_FROM = '2026-10-31';
 // The leader can change their facts and photo only before the team drafts, or while asking for changes.
 const LEADER_EDITABLE = ['invited', 'details', 'payment', 'ready', 'changes'];
 // A LinkedIn profile link must be https on linkedin.com (no javascript: or other links on the desk or public page).
+// in.linkedin.com (the address Google shows in India) opens a cut-down page that never finishes loading for the team: always use www (16 Nov).
+export const wwwLinkedIn = u => String(u || '').trim().replace(/^https?:\/\/([a-z]{2,3}\.)?linkedin\.com\//i, 'https://www.linkedin.com/').replace(/[?#].*$/, '');
 export const safeLinkedIn = u => { try { const x = new URL(String(u)); return x.protocol === 'https:' && /(^|\.)linkedin\.com$/i.test(x.hostname); } catch { return false; } };
 // The test-mode "mark paid" shortcut: test mode on, Razorpay not connected, and never on the real site.
 const devPayAllowed = (env, request) => isDev(env) && !razorpayOn(env) && !/(^|\.)boardroomcxo\.com$/i.test(new URL(request.url).hostname);
@@ -226,6 +228,7 @@ async function leader(request, env, token, action, body) {
   if (action === 'details') {
     const d = { ...detailsOf(o) };
     for (const k of ['name', 'role_title', 'company', 'start_date', 'prev_role', 'linkedin', 'city']) if (k in body) d[k] = str(body[k], 200);
+    if (d.linkedin) d.linkedin = wwwLinkedIn(d.linkedin);
     // Security fix: the LinkedIn profile must be a real https://linkedin.com address (it becomes a link on the desk and the public page).
     if ('linkedin' in body && d.linkedin && !safeLinkedIn(d.linkedin)) return fail('That LinkedIn link does not look right. Paste your profile address, starting with https://www.linkedin.com/');
     if (Array.isArray(body.answers)) d.answers = body.answers.slice(0, 5).map(a => str(a, 1500));
@@ -474,6 +477,7 @@ const LEAD_FIELDS = ['name', 'role_title', 'company', 'linkedin', 'sector', 'fol
 function cleanLead(b) {
   const l = {};
   for (const k of LEAD_FIELDS) if (k in b) l[k] = k === 'followers' || k === 'score' ? (Number(b[k]) || null) : str(b[k], k === 'flags' || k === 'note' ? 600 : 300);
+  if (l.linkedin) l.linkedin = wwwLinkedIn(l.linkedin);
   if (l.linkedin && !/^https:\/\/([a-z]+\.)?linkedin\.com\//i.test(l.linkedin)) l.linkedin = '';
   return l;
 }
