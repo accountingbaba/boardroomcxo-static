@@ -109,13 +109,13 @@ export const DEFAULTS = {
   moves_next: 88,             // the next "Boardroom Moves #" number for dedicated posts (#87 was the last made in Canva)
   // LinkedIn messages the team sends by hand. Admins edit them on the Settings screen.
   // Filled in: {{First Name}}, {{Company}}, {{Samples Link}}, {{Brief Day}}, {{Brief Link}}, {{Slots}}, {{Pay Link}}, {{Total}}, {{Article Link}}.
-  // note and m2 to m5 are word for word from the plan. The rest were drafted on 31 Oct and approved by Ketul the same day.
+  // note and m2 to m5 are word for word from Ketul's M1 to M5 (16 Nov 2026). The rest were drafted on 31 Oct and approved by Ketul the same day.
   templates: {
-    note: "Congrats on the new role at {{Company}}. Saw the news, well deserved.",
-    m2: "Congrats again on the move. We'd like to feature it on Boardroom CXO. Plans are in the image, samples of each are here: {{Samples Link}}. Most people go for Plus at Rs 3,540. We do 5 a week. Reply with the plan you'd like, or Brief for the free mention.",
+    note: "Hi {{First Name}}, congratulations on your new role at {{Company}}. I'm Sagar, Co-Founder of BoardRoom CXO. We cover senior leadership moves on our LinkedIn page and would love to include yours. Would you be interested?",
+    m2: "Congrats again on the move. We'd like to feature it on Boardroom CXO. Plans are in the image, samples of each are here: {{Samples Link}}. Most people go for Plus at ₹3,540. We do 5 a week. Reply with the plan you'd like, or reply \"Brief\" for the free mention.",
     m3: "Did you get a chance to look? Happy to put you in this week's Brief, or maybe you can go for Plus.",
-    m4: "Putting you in {{Brief Day}} Brief unless you'd like Plus. Just reply either way.",
-    m5: "You're in this week's Brief {{Brief Link}}. If you'd like the full Plus feature, it's Rs 3,540. We take 5 a week and {{Slots}} slots are open for next week.",
+    m4: "Putting you in this week's Brief unless you'd like Plus.",
+    m5: "You're in this week's Brief: {{Brief Link}}. If you'd like the full Plus feature, it's ₹3,540. We take 5 a week and only a few slots are open for next week.",
     pay: "Great, thank you {{First Name}}. Here is the payment link for {{Plan}} (Rs {{Total}} with GST): {{Pay Link}}\nOnce it's done, we'll write it up from your LinkedIn and share the draft.",
     pay_remind: "Hi {{First Name}}, just checking if the payment link came through. Here it is again: {{Pay Link}}",
     question: "Thank you, payment received. Is there anything you'd like us to highlight or leave out?",
