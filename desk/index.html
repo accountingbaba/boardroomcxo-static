@@ -206,7 +206,7 @@ html.td main{padding-top:6px}
 const $ = s => document.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 // Security fix (5 Nov 2026): links built from stored data open only if they are http(s) web addresses.
-const safeUrl = s => /^https?:///i.test(String(s || '').trim()) ? String(s).trim() : '#';
+const safeUrl = s => /^https?:\/\//i.test(String(s || '').trim()) ? String(s).trim() : '#';
 const rs = n => 'Rs ' + Number(n || 0).toLocaleString('en-IN');
 const first = n => String(n || '').trim().split(/\s+/)[0] || '';
 const day = d => d ? new Date(String(d).slice(0, 10) + 'T00:00:00Z').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' }) : '';

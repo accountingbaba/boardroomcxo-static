@@ -361,7 +361,9 @@ async function today(env, staff) {
   const OPEN_STAGES = "('ready','sent','connected','replied','brief','later')";
   const leads = (await db.prepare(`SELECT * FROM leads WHERE stage IN ${OPEN_STAGES}`).all()).results || [];
   const sentToday = leads.filter(l => l.sent_date === t).length + ((await db.prepare(`SELECT COUNT(*) AS n FROM leads WHERE sent_date = ? AND stage NOT IN ${OPEN_STAGES}`).bind(t).first()).n);
-  const ready = leads.filter(l => l.stage === 'ready').sort((a, b) => (b.score || 0) - (a.score || 0) || String(b.move_date || '').localeCompare(String(a.move_date || '')));
+  // Only fresh moves go to Send today, newest first: a request days after the news rarely works (Ketul, 16 Nov).
+  const moved = l => String(l.move_date || l.created_at || '').slice(0, 10), freshFrom = addDays(t, -(Number(s.fresh_days) || 7));
+  const ready = leads.filter(l => l.stage === 'ready' && moved(l) >= freshFrom).sort((a, b) => moved(b).localeCompare(moved(a)) || (b.score || 0) - (a.score || 0));
   const room = Math.max(0, s.daily_requests - sentToday);
   const from = `from ${s.linkedin_account || 'Sagar'}'s LinkedIn`;
   const briefs = await briefLinks(db), slots = await slotsNextWeek(db, s), nextBrief = briefDate(s);

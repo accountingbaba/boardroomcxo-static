@@ -93,6 +93,7 @@ export const DEFAULTS = {
   price_from: '2026-10-27',
   pack: { features: 4, months: 12 },  // Bundle: 4 Plus features for one company, used within a year
   daily_requests: 6,
+  fresh_days: 7,              // Send today shows only moves announced in the last 7 days, newest first (Ketul, 16 Nov)
   slot_days: [2, 4],          // dedicated posts on Tuesday and Thursday
   plus_per_week: 5,           // "We do 5 a week": paid dedicated posts per week, all plans together
   carousel_day: 4,            // Thursday: the free weekly Brief
