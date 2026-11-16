@@ -376,7 +376,7 @@ async function today(env, staff) {
     if (l.stage === 'sent' && l.sent_date && addDays(l.sent_date, 7) <= t)
       add('outreach', { type: 'drop', ...L(l), title: `Not accepted in 7 days: ${l.name}`, sub: 'Sent ' + l.sent_date, due: addDays(l.sent_date, 7) });
     if (l.stage === 'connected') {
-      if (!l.m2_date) add('outreach', { type: 'm2', from, ...L(l), title: `Message 2: ${l.name}`, sub: 'Accepted ' + (l.accepted_date || ''), due: l.accepted_date || t });
+      if (!l.m2_date) add('outreach', { type: 'm2', from, ...L(l), img: l.m2_image_date || '', title: `Message 2: ${l.name}`, sub: 'Accepted ' + (l.accepted_date || ''), due: l.accepted_date || t });
       else if (!l.m3_date && !l.m4_date && after(l.m2_date) <= t) add('outreach', { type: 'm3', from, ...L(l), title: `Message 3: ${l.name}`, sub: 'Message 2 sent ' + l.m2_date, due: after(l.m2_date) });
       else if (l.m3_date && !l.m4_date && after(l.m3_date) <= t) add('outreach', { type: 'm4', from, ...L(l), title: `Message 4: ${l.name}`, sub: 'Message 3 sent ' + l.m3_date, due: after(l.m3_date), vars: { brief_day: briefDayWord(nextBrief) } });
     }
@@ -505,6 +505,8 @@ async function leadAction(request, env, staff, id, body) {
   if (a === 'sent') await set({ stage: 'sent', sent_date: t }, 'Connection request sent with the congrats note (Message 1)');
   else if (a === 'accepted') await set({ stage: 'connected', accepted_date: t }, 'Accepted');
   else if (a === 'drop') await set({ stage: 'dropped', closed_date: t }, 'Dropped: not accepted in 7 days');
+  else if (a === 'm2img') await set({ m2_image_date: t }, 'Plans image sent with Message 2');
+  else if (a === 'm2' && !l.m2_image_date) return fail('Press Image sent first: Message 2 goes with the plans image.');
   else if (['m2', 'm3', 'm5'].includes(a)) await set(a === 'm5' ? { m5_date: t, stage: 'briefed', closed_date: t } : { [a + '_date']: t }, `Message ${a[1]} sent`);
   else if (a === 'm4') { const d = briefDate(s); await set({ m4_date: t, brief_date: d }, `Message 4 sent. In the Brief of ${d}`); }
   else if (a === 'brief') { const d = briefDate(s); await set({ stage: 'brief', brief_date: d }, `In the free Brief of ${d}`); }

@@ -177,7 +177,7 @@ html.td main{padding-top:6px}
 .tdv .t-msg{background:var(--muted);border-radius:8px;padding:12px 16px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:1.6;border-left:3px solid var(--accent-dot)}
 .tdv .t-acts{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .tdv .t-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:0 14px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--ink);font:600 14px var(--body);cursor:pointer;text-decoration:none}
-.tdv .t-btn:hover{background:var(--muted)}.tdv .t-btn:active{opacity:.8}
+.tdv .t-btn:hover{background:var(--muted)}.tdv .t-btn:active{opacity:.8}.tdv .t-btn:disabled{opacity:.5;cursor:not-allowed}
 .tdv .t-btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}.tdv .t-btn.primary:hover{opacity:.92}
 .tdv .t-btn.success{background:var(--success);border-color:var(--success);color:#fff}.tdv .t-btn.success:hover{opacity:.9}
 .tdv .t-btn.ghost{border-color:transparent;background:none;color:var(--mfg)}.tdv .t-btn.ghost:hover{background:var(--muted);color:var(--ink)}
@@ -391,7 +391,13 @@ function taskCard(t) {
   const oMsg = (k, label, oact, done) => { const m = fill(k, p, '', v); body = msgBlock(label, m); acts = tcopy(m, 'Message') + tli(t.linkedin) + tb(done, { order: t.order_id, oact }, 'success') + tb('Open the feature', { openorder: t.order_id }, 'ghost'); };
   if (t.type === 'send') { const m = fill('note', p); body = msgBlock('Message 1: the connection note', m, true); acts = tcopy(m, 'Note') + tli(t.linkedin) + tb('Sent', { lead: t.lead_id, act: 'sent' }, 'success'); }
   else if (t.type === 'drop') acts = tli(t.linkedin) + tb('Withdrawn and dropped', { lead: t.lead_id, act: 'drop' }, 'success') + tb('They accepted', { lead: t.lead_id, act: 'accepted' });
-  else if (t.type === 'm2') send('m2', 'Message 2', 'm2', `<div class="t-acts"><a class="t-btn" href="${esc(S.plans_image || '')}" target="_blank" rel="noopener" download="Boardroom-Moves-Plans.png">Plans image (attach it)</a>${tcopy(S.samples_link || '', 'Samples link')}</div>`);
+  else if (t.type === 'm2') {
+    // Message 2 goes with the plans image: Image sent is logged first, then Message 2 sent (Ketul, 16 Nov).
+    send('m2', 'Message 2', 'm2', `<div class="t-acts"><a class="t-btn" href="${esc(S.plans_image || '')}" target="_blank" rel="noopener" download="Boardroom-Moves-Plans.png">Plans image (attach it)</a>${tcopy(S.samples_link || '', 'Samples link')}</div>`);
+    const img = t.img ? `<button type="button" class="t-btn" disabled>${'✓'} Image sent</button>` : tb('Image sent', { m2img: t.lead_id }, 'primary');
+    acts = acts.replace(/<button type="button" class="t-btn success" data-lead=/, m => img + (t.img ? m : m.replace('<button ', '<button disabled title="Press Image sent first" ')));
+    if (!t.img) body += `<small class="t-sub" style="margin:0">Send the plans image with the message, press Image sent, then Message 2 sent.</small>`;
+  }
   else if (t.type === 'm3') send('m3', 'Message 3', 'm3', `<small class="t-sub" style="margin:0">Big names: attach a mockup with their own photo.</small>`);
   else if (t.type === 'm4') send('m4', 'Message 4', 'm4');
   else if (t.type === 'm5') send('m5', 'Message 5', 'm5');
@@ -794,7 +800,7 @@ function refreshBehind() { const v = (location.hash.slice(1) || 'today').split('
 $('#scrim').onclick = closeDrawer;
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#drawer').hidden) closeDrawer(); });
 document.addEventListener('click', async e => {
-  const el = e.target.closest('[data-rmask],[data-rm],[data-copy],[data-close],[data-leadplan],[data-lead],[data-openlead],[data-openorder],[data-oact],[data-mine],[data-stage],[data-ofilter],[data-addlead],[data-newfeature],[data-newpack],[data-builder],[data-ibsave],[data-staffon]');
+  const el = e.target.closest('[data-m2img],[data-rmask],[data-rm],[data-copy],[data-close],[data-leadplan],[data-lead],[data-openlead],[data-openorder],[data-oact],[data-mine],[data-stage],[data-ofilter],[data-addlead],[data-newfeature],[data-newpack],[data-builder],[data-ibsave],[data-staffon]');
   if (!el) return;
   const ds = el.dataset;
   if (ds.copy) { const [t, l] = COPY.get(ds.copy) || ['', '']; return copy(t, l); }
@@ -804,6 +810,11 @@ document.addEventListener('click', async e => {
   if (ds.leadplan) {
     el.disabled = true;
     try { const r = await api(`team/leads/${ds.leadplan}/action`, { act: 'plan', plan: ds.plan }); toast('Plan logged'); openOrder(r.order_id); refreshBehind(); }
+    catch (x) { el.disabled = false; toast(x.message); } return;
+  }
+  if (ds.m2img) {
+    el.disabled = true;
+    try { await api(`team/leads/${ds.m2img}/action`, { act: 'm2img' }); el.textContent = '✓ Image sent'; el.classList.remove('primary'); const m = el.parentElement?.querySelector('[data-act="m2"]'); if (m) { m.disabled = false; m.removeAttribute('title'); } toast('Image sent logged'); refreshBehind(); }
     catch (x) { el.disabled = false; toast(x.message); } return;
   }
   if (ds.lead) {

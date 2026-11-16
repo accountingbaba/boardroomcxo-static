@@ -30,7 +30,7 @@ export const slugify = s => String(s || '').toLowerCase().normalize('NFKD').repl
 
 // ── Schema ───────────────────────────────────────────────────────────────────
 // Applied on first use; bump SCHEMA_VERSION and add statements to change it. Never ask the owner to run SQL.
-const SCHEMA_VERSION = 4;
+const SCHEMA_VERSION = 5;
 // Changes after the first version, applied once each in order.
 const MIGRATIONS = {
   2: [`ALTER TABLE staff ADD COLUMN desks TEXT`],
@@ -39,7 +39,9 @@ const MIGRATIONS = {
     .concat([`ALTER TABLE orders ADD COLUMN pay_link TEXT`, `ALTER TABLE orders ADD COLUMN pay_sent_at TEXT`, `ALTER TABLE orders ADD COLUMN pay_remind_at TEXT`,
       `ALTER TABLE orders ADD COLUMN thanks_at TEXT`, `ALTER TABLE orders ADD COLUMN featured_at TEXT`]),
   // The newsroom ask (31 Oct 2026): set when the team asked once, or found the company has no press page.
-  4: [`ALTER TABLE orders ADD COLUMN newsroom_at TEXT`]
+  4: [`ALTER TABLE orders ADD COLUMN newsroom_at TEXT`],
+  // Image sent with Message 2 (16 Nov 2026): the plans image is logged before Message 2 can be marked sent.
+  5: [`ALTER TABLE leads ADD COLUMN m2_image_date TEXT`]
 };
 const SCHEMA = [
   `CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT)`,
