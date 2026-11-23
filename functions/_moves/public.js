@@ -210,7 +210,7 @@ ${footer(todayIst().slice(0, 4))}
 </html>`;
 }
 
-const ctaBlock = `<section class="mv-cta"><div><h2>Made a leadership move? Get a page like this one.</h2><p style="margin-top:12px;max-width:52ch;opacity:.85">Boardroom Moves Plus: a post on the Boardroom CXO LinkedIn page and an article like this on boardroomcxo.com, for ₹3,000 + GST. A LinkedIn feature alone is ₹1,499 + GST, and the weekly Brief is free.</p></div><a href="/get-featured#plans" data-door="moves" data-door-at="moves-cta">See the plans</a></section>`;
+const ctaBlock = `<section class="mv-cta"><div><h2>Made a leadership move? Get a page like this one.</h2><p style="margin-top:12px;max-width:52ch;opacity:.85">Boardroom Moves Plus: a post on the Boardroom CXO LinkedIn page and an article like this on boardroomcxo.com. A LinkedIn feature on its own is also available, and the weekly Brief is free.</p></div><a href="/get-featured#plans" data-door="moves" data-door-at="moves-cta">See the plans</a></section>`;
 
 // Hub FAQ, approved by Ketul 31 Oct 2026. The plain text goes into FAQPage schema; links are added only on the page.
 const HUB_FAQ = [
@@ -248,7 +248,7 @@ export async function renderHub(env, request) {
     `<li><a href="${esc(st.url)}"><time datetime="${esc(st.date)}">${niceDate(st.date + 'T12:00:00Z')}</time><strong>${esc(st.title)}</strong></a></li>`).join('')}</ul><a class="mv-more" href="/inside-the-boardroom">All stories →</a></section>` : '';
   const getBlock = `<aside class="mv-get"><span class="mv-k">Get Featured</span><h2>Moved into a new leadership role?</h2>
 <p>We announce it on the Boardroom CXO LinkedIn page. With Plus, you also get a page here that shows up when people search your name.</p>
-<p class="mv-price">from <strong>₹1,499</strong> + GST</p><a href="/get-featured" data-door="moves" data-door-at="moves-hub">Get featured</a></aside>`;
+<a href="/get-featured" data-door="moves" data-door-at="moves-hub">See the plans</a></aside>`;
   const body = `<div class="mv-wrap">
 <section class="mv-hero"><p class="mv-crumb"><a href="/">Home</a> / Boardroom Moves</p><h1>Boardroom Moves: senior leadership moves in India</h1>
 <p class="lead">Boardroom Moves is Boardroom CXO's record of senior leadership appointments in India: who moved, into which role, at which company, and when. Each move is announced on the Boardroom CXO LinkedIn page and kept here, and the Brief rounds up the week's moves every Thursday. Featured leaders see their write-up before it goes live.</p></section>
@@ -265,7 +265,7 @@ ${ctaBlock}</div>`;
       isPartOf: WEBSITE,
       mainEntity: { '@type': 'ItemList', numberOfItems: moves.length, itemListElement: moves.map((o, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/moves/${o.slug}`, name: `${o.name}, ${o.role_title} at ${o.company}` })) } },
     { '@type': 'FAQPage', mainEntity: HUB_FAQ.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }] };
-  return html(page({ title: 'Boardroom Moves | Senior leadership appointments in India | Boardroom CXO',
+  return html(page({ title: 'Boardroom Moves: Senior Leadership Appointments in India',
     description: 'Boardroom Moves records senior leadership appointments in India: who moved, into which role and company, and when, as announced on Boardroom CXO\'s LinkedIn.',
     canonical: SITE + '/moves', image: SITE + '/images/Homepage-Meta-removebg-preview.png', jsonld, body }));
 }
@@ -345,7 +345,8 @@ function relatedSection(fromDesk, slug) {
 // A move from the LinkedIn archive: the post as it ran, with a link to the original.
 async function renderArchived(db, a) {
   const url = `${SITE}/moves/${a.slug}`, image = a.image ? SITE + a.image : SITE + '/images/Homepage-Meta-removebg-preview.png';
-  const title = moveTitle(`${a.name}: ${a.role_title} at ${a.company}`);
+  const fullTitle = `${a.name}: ${a.role_title} at ${a.company}`;
+  const title = fullTitle.length <= 65 ? moveTitle(fullTitle) : `${a.name}, ${a.company} | Boardroom Moves`;
   const h1 = `${a.name} named ${a.role_title} at ${a.company}`;
   const description = clip(String(a.text).split(/\n{2,}/)[0] || h1);
   const [fnHref, fnName] = fnPage(a.role_title);
