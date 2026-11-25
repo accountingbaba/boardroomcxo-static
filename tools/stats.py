@@ -271,7 +271,7 @@ def build(rows):
          'datePublished': DATE, 'dateModified': DATE, 'isPartOf': {'@id': SITE + '/#website'},
          'author': {'@id': SITE + '/#organization'}, 'publisher': {'@id': SITE + '/#organization'},
          'mainEntityOfPage': URL, 'about': ['Executive hiring in India', 'Leadership appointments in India'],
-         'image': SITE + '/images/Homepage-Meta-removebg-preview.png'},
+         'image': SITE + '/images/og-boardroomcxo.png'},
         {'@type': 'Dataset', '@id': URL + '#dataset', 'name': 'Boardroom Moves: senior leadership moves in India, 2025 to 2026',
          'description': (f'{n} senior leadership appointments in India announced on the Boardroom CXO LinkedIn page between {between}, '
                          'one row per move with job title, company, function group, sector group, city where the announcement names one, '

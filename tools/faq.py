@@ -20,7 +20,7 @@ HUB = '/executive-search-faq'
 DATE = '2026-11-04'
 MODIFIED = '2026-11-06'
 CSS = '/style.css?v=20261113d'
-OG_IMAGE = SITE + '/images/Homepage-Meta-removebg-preview.png'
+OG_IMAGE = SITE + '/images/og-boardroomcxo.png'
 
 FUNCTION_PAGES = {
     'marketing': ('/marketing-leadership-hiring', 'Marketing &amp; CMO search'),

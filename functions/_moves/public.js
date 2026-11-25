@@ -267,7 +267,7 @@ ${ctaBlock}</div>`;
     { '@type': 'FAQPage', mainEntity: HUB_FAQ.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }] };
   return html(page({ title: 'Boardroom Moves: Senior Leadership Appointments in India',
     description: 'Boardroom Moves records senior leadership appointments in India: who moved, into which role and company, and when, as announced on Boardroom CXO\'s LinkedIn.',
-    canonical: SITE + '/moves', image: SITE + '/images/Homepage-Meta-removebg-preview.png', jsonld, body }));
+    canonical: SITE + '/moves', image: SITE + '/images/og-boardroomcxo.png', jsonld, body }));
 }
 
 // For the homepage card: the newest moves, the latest Brief and the latest stories.
@@ -299,7 +299,7 @@ export async function renderProfile(env, slug) {
   const c = await db.prepare("SELECT text FROM contents WHERE order_id = ? AND platform = 'website'").bind(o.id).first();
   const img = await db.prepare("SELECT 1 FROM images WHERE order_id = ? AND kind = 'website'").bind(o.id).first();
   const d = JSON.parse(o.details || '{}');
-  const url = `${SITE}/moves/${slug}`, image = img ? `${SITE}/moves/img/${slug}` : SITE + '/images/Homepage-Meta-removebg-preview.png';
+  const url = `${SITE}/moves/${slug}`, image = img ? `${SITE}/moves/img/${slug}` : SITE + '/images/og-boardroomcxo.png';
   const site = /^https?:\/\/[^\s]+\.[^\s]+/i.test(d.company_site || '') ? d.company_site : '';
   const related = await relatedDb(db, slug);
   const [fnHref, fnName] = fnPage(o.role_title);
@@ -344,7 +344,7 @@ function relatedSection(fromDesk, slug) {
 
 // A move from the LinkedIn archive: the post as it ran, with a link to the original.
 async function renderArchived(db, a) {
-  const url = `${SITE}/moves/${a.slug}`, image = a.image ? SITE + a.image : SITE + '/images/Homepage-Meta-removebg-preview.png';
+  const url = `${SITE}/moves/${a.slug}`, image = a.image ? SITE + a.image : SITE + '/images/og-boardroomcxo.png';
   const fullTitle = `${a.name}: ${a.role_title} at ${a.company}`;
   const title = fullTitle.length <= 65 ? moveTitle(fullTitle) : `${a.name}, ${a.company} | Boardroom Moves`;
   const h1 = `${a.name} named ${a.role_title} at ${a.company}`;
@@ -393,12 +393,12 @@ export async function renderBrief(env, d) {
 ${ctaBlock}</div>`;
   const jsonld = { '@context': 'https://schema.org', '@graph': [
     { '@type': 'NewsArticle', headline: title, url, mainEntityOfPage: { '@type': 'WebPage', '@id': url }, description, datePublished: d, dateModified: d,
-      image: [SITE + '/images/Homepage-Meta-removebg-preview.png'],
+      image: [SITE + '/images/og-boardroomcxo.png'],
       author: ORG, publisher: ORG,
       isPartOf: { '@type': 'CollectionPage', '@id': SITE + '/moves#collection', name: 'Boardroom Moves', url: SITE + '/moves' },
       mentions: names.map(n => ({ '@type': 'Person', name: n.name, jobTitle: n.role_title, worksFor: { '@type': 'Organization', name: n.company } })) },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: 'Boardroom Moves', item: SITE + '/moves' }, { '@type': 'ListItem', position: 3, name: 'The Brief, ' + niceDate(d + 'T12:00:00Z'), item: url }] }] };
-  return html(page({ title: `${title} | Boardroom Moves Brief`, description, canonical: url, image: SITE + '/images/Homepage-Meta-removebg-preview.png', jsonld, body }));
+  return html(page({ title: `${title} | Boardroom Moves Brief`, description, canonical: url, image: SITE + '/images/og-boardroomcxo.png', jsonld, body }));
 }
 
 // The monthly report (SEO plan S2.2): every senior move the desk tracked that month, counted by function and sector.
@@ -485,14 +485,14 @@ ${ctaBlock}</div>`;
   const pub = published || todayIst();
   const jsonld = { '@context': 'https://schema.org', '@graph': [
     { '@type': 'Article', headline: title, url, mainEntityOfPage: { '@type': 'WebPage', '@id': url }, description, datePublished: pub, dateModified: pub,
-      image: [SITE + '/images/Homepage-Meta-removebg-preview.png'],
+      image: [SITE + '/images/og-boardroomcxo.png'],
       author: ORG, publisher: ORG,
       isPartOf: { '@type': 'CollectionPage', '@id': SITE + '/moves#collection', name: 'Boardroom Moves', url: SITE + '/moves' } },
     { '@type': 'Dataset', name: `Boardroom Moves: senior leadership moves in India, ${name}`, description: `Counts of senior leadership moves in India tracked by Boardroom Moves in ${name}, by function and by sector.`,
       url, temporalCoverage: m, spatialCoverage: { '@type': 'Place', name: 'India' }, creator: ORG,
       distribution: [{ '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: `${url}.csv` }] },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: 'Boardroom Moves', item: SITE + '/moves' }, { '@type': 'ListItem', position: 3, name: `Monthly report, ${name}`, item: url }] }] };
-  return html(page({ title: `${title} | Boardroom Moves`, description, canonical: url, image: SITE + '/images/Homepage-Meta-removebg-preview.png', jsonld, robots: draft ? 'noindex' : 'index, follow', body }),
+  return html(page({ title: `${title} | Boardroom Moves`, description, canonical: url, image: SITE + '/images/og-boardroomcxo.png', jsonld, robots: draft ? 'noindex' : 'index, follow', body }),
     200, draft ? { 'X-Robots-Tag': 'noindex', 'Cache-Control': 'no-store' } : {});
 }
 
@@ -520,7 +520,7 @@ export async function renderSitemap(env) {
 }
 
 function notFound() {
-  return html(page({ title: 'Not found | Boardroom Moves', description: 'This Boardroom Moves page is not available.', canonical: SITE + '/moves', image: SITE + '/images/Homepage-Meta-removebg-preview.png',
+  return html(page({ title: 'Not found | Boardroom Moves', description: 'This Boardroom Moves page is not available.', canonical: SITE + '/moves', image: SITE + '/images/og-boardroomcxo.png',
     jsonld: { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Not found' }, robots: 'noindex',
     body: `<div class="mv-wrap"><section class="mv-hero"><p class="mv-crumb"><a href="/moves">Boardroom Moves</a></p><h1>This page is not available</h1><p class="lead">It may have been removed at the leader's request. <a href="/moves" style="border-bottom:1px solid">See all Boardroom Moves</a>.</p></section></div>` }), 404);
 }
