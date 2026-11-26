@@ -1,5 +1,82 @@
 [
  {
+  "url": "/article-arnab-banerjee-ceat-tyres",
+  "title": "CEAT's Profit Fell 96% in One Quarter. Arnab Banerjee Refused to Cut Prices.",
+  "date": "2026-11-25",
+  "image": "/images/arnab-banerjee-ceat-tyres.webp",
+  "summary": "CEAT lost ₹20 crore in late 2021 while rivals stayed in profit. Under CEO Arnab Banerjee it went premium, hit a record ₹697 crore profit and held price."
+ },
+ {
+  "url": "/article-mohit-joshi-tech-mahindra",
+  "title": "Tech Mahindra's Margin Hit an All-Time Low. Mohit Joshi Made His Target Public.",
+  "date": "2026-11-24",
+  "image": "/images/mohit-joshi-tech-mahindra.webp",
+  "summary": "Tech Mahindra's margin hit an all-time low of 4.7% in 2023. Mohit Joshi set a public 15% target for FY27, and by September 2026 the margin was 14.8%."
+ },
+ {
+  "url": "/article-kanwaljeet-jawa-daikin-india",
+  "title": "56 of 100 Indians Had Never Heard of Daikin. Kanwaljeet Jawa Changed That.",
+  "date": "2026-11-19",
+  "image": "/images/kanwaljeet-jawa-daikin-india.webp",
+  "summary": "In 2009, 56 of 100 Indians had not heard of Daikin. Kanwaljeet Jawa took it from ₹440 crore to ₹10,361 crore with dealers and local factories. The board lesson."
+ },
+ {
+  "url": "/article-vijay-shekhar-sharma-paytm",
+  "title": "Paytm Lost 36% in Two Days. Vijay Shekhar Sharma Said: We Should Have Done Better.",
+  "date": "2026-11-18",
+  "image": "/images/vijay-shekhar-sharma-paytm.webp",
+  "summary": "Paytm's shares fell 36% in two days after the RBI's 2024 action. Vijay Shekhar Sharma admitted mistakes, kept UPI alive and made ₹552 crore profit in FY26."
+ },
+ {
+  "url": "/article-ashish-hemrajani-bookmyshow",
+  "title": "COVID Took Nearly 90% of BookMyShow's Revenue. Ashish Hemrajani Kept Building.",
+  "date": "2026-11-17",
+  "image": "/images/ashish-hemrajani-bookmyshow.webp",
+  "summary": "COVID cut BookMyShow's revenue from ₹701 crore to ₹74 crore. Ashish Hemrajani cut hard, kept building, and FY25 profit hit ₹192 crore. The lesson for boards."
+ },
+ {
+  "url": "/article-sudarshan-venu-tvs-motor",
+  "title": "Ola Called Old Scooters Boring. Sudarshan Venu's TVS Beat It With Dealers.",
+  "date": "2026-11-12",
+  "image": "/images/sudarshan-venu-tvs-motor.webp",
+  "summary": "Ola Electric won the launch hype in 2021. Sudarshan Venu built TVS's EV business through dealers, and in FY26 TVS sold 3,41,471 e-scooters to Ola's 1,64,294."
+ },
+ {
+  "url": "/article-rajesh-magow-makemytrip",
+  "title": "Rajesh Magow Became MakeMyTrip's CEO 43 Days Before India Stopped Flying. Here Is What He Did.",
+  "date": "2026-11-11",
+  "image": "/images/rajesh-magow-makemytrip.webp",
+  "summary": "Weeks after Rajesh Magow became Group CEO, Covid cut MakeMyTrip's revenue by 95%. He cut his own pay first, kept building, and FY26 bookings topped $10 billion."
+ },
+ {
+  "url": "/article-ts-kalyanaraman-kalyan-jewellers",
+  "title": "Kalyan Jewellers Listed 15% Below Its IPO Price. T S Kalyanaraman Then Grew It Fourfold.",
+  "date": "2026-11-10",
+  "image": "/images/ts-kalyanaraman-kalyan-jewellers.webp",
+  "summary": "Kalyan Jewellers listed 15% below its issue price in 2021. T S Kalyanaraman grew it through franchise showrooms to ₹35,743 crore of revenue in FY26."
+ },
+ {
+  "url": "/article-rajesh-jejurikar-mahindra-suv",
+  "title": "Mahindra Lost Its SUV Spot to Kia by 156 Cars. Rajesh Jejurikar Asked What It Stood For.",
+  "date": "2026-11-05",
+  "image": "/images/rajesh-jejurikar-mahindra-suv.webp",
+  "summary": "In FY21 Mahindra fell to fourth in SUVs, 156 units behind Kia. Rajesh Jejurikar reset the brand, and in FY26 Mahindra sold a record 6,60,276 SUVs."
+ },
+ {
+  "url": "/article-amit-syngle-asian-paints",
+  "title": "Birla Opus Came for Asian Paints With ₹10,000 Crore. Amit Syngle Refused a Price War.",
+  "date": "2026-11-04",
+  "image": "/images/amit-syngle-asian-paints.webp",
+  "summary": "Birla Opus entered paints with ₹10,000 crore and lower prices. Amit Syngle kept spending on the brand, and Asian Paints' volumes grew 12.4% by early 2026."
+ },
+ {
+  "url": "/article-pawan-munjal-hero-motocorp",
+  "title": "Honda Walked Away From Hero in 2010. Pawan Munjal Built His Own Engines and Stayed No. 1.",
+  "date": "2026-11-03",
+  "image": "/images/pawan-munjal-hero-motocorp.webp",
+  "summary": "In 2010 Honda ended its 26-year Hero Honda partnership. Pawan Munjal built Hero's own engineering, and in FY26 Hero still outsold Honda in India."
+ },
+ {
   "url": "/article-albinder-dhindsa-blinkit",
   "title": "Albinder Dhindsa: Zomato Bought His Struggling Startup. Now He Runs Zomato's Parent.",
   "date": "2026-10-31",
@@ -102,7 +179,7 @@
   "title": "Gopal Vittal: He Let 40 Million Customers Leave Airtel on Purpose",
   "date": "2026-09-22",
   "image": "/images/gopal-vittal-airtel-arpu.webp",
-  "summary": "When free mobile data crashed Airtel's profit 76.5% in a year, Gopal Vittal refused to chase every subscriber. He let 40 million low-spenders go and built the network for those who would pay more instead."
+  "summary": "When free mobile data cut Airtel's profit 76.5% in a year, Gopal Vittal let 40 million low-spenders go and built the network for those who would pay more."
  },
  {
   "url": "/article-mp-ahammed-malabar-gold",
@@ -116,7 +193,7 @@
   "title": "Anish Shah: The Outsider Who Fixed Mahindra's ₹5,200 Crore Problem",
   "date": "2026-09-22",
   "image": "/images/anish-shah-mahindra-turnaround.webp",
-  "summary": "Mahindra's profit fell 98% in the year to March 2020. The first non-family group CEO in 75 years hit the group's five-year RoE target in eighteen months, and took second place in Indian cars from Hyundai."
+  "summary": "Mahindra's profit fell 98% in the year to March 2020. Anish Shah, its first non-family group CEO in 75 years, hit the five-year RoE target in eighteen months."
  },
  {
   "url": "/article-noel-tata-trent-zudio",
@@ -130,63 +207,63 @@
   "title": "Costs Were Rising Everywhere. Sameer Khetarpal Cut Domino's Prices Anyway.",
   "date": "2026-09-03",
   "image": "/images/sameer-khetarpal-dominos-india.webp",
-  "summary": "In 2022 Domino's India was losing pull as costs rose. Sameer Khetarpal held prices flat, backed Domino's own delivery fleet, and profit jumped 190% by the September 2025 quarter, helped by a one-time gain."
+  "summary": "Sameer Khetarpal held Domino's India prices flat and backed its own delivery fleet. Profit rose 190% by the September 2025 quarter, helped by a one-time gain."
  },
  {
   "url": "/article-sudhir-jatia-safari-industries",
   "title": "He Ran India's Biggest Luggage Company. Then He Bought the Rival One-Tenth Its Size.",
   "date": "2026-09-02",
   "image": "/images/sudhir-jatia-safari-industries.webp",
-  "summary": "Sudhir Jatia resigned from VIP Industries in 2010 and in 2011 bought 56.55% of Safari Industries for ₹29 crore. Sales have since grown from ₹70 crore to over ₹2,047 crore, and market share from 2% to 23%."
+  "summary": "Sudhir Jatia bought 56.55% of Safari Industries for ₹29 crore in 2011. Sales have grown from ₹70 crore to over ₹2,047 crore, and market share from 2% to 23%."
  },
  {
   "url": "/article-venu-nair-shoppers-stop",
   "title": "Venu Nair Took the Job Nobody Wanted at Shoppers Stop. He Turned It Around in About a Year.",
   "date": "2026-09-01",
   "image": "/images/venu-nair-shoppers-stop.webp",
-  "summary": "In November 2020, malls were half empty and Shoppers Stop was heading for a 44% fall in revenue. Venu Nair took the top job anyway, kept a ₹450 crore cost-savings drive on track, and turned the company net-cash within a year."
+  "summary": "Venu Nair took the top job at Shoppers Stop in 2020 with revenue heading for a 44% fall, kept a ₹450 crore savings drive on track and turned net-cash in a year."
  },
  {
   "url": "/article-bharat-puri-cadbury-worm-crisis",
   "title": "Bharat Puri Heard About the Cadbury Worms From TV News. He Fixed It in Three Months.",
   "date": "2026-08-14",
   "image": "/images/catburry.webp",
-  "summary": "In October 2003, worms found in Dairy Milk bars put Cadbury India on the TV news weeks before Diwali, and festival-season sales fell 30 percent. Managing Director Bharat Puri chose to rebuild trust rather than only defend the factories, and sales recovered within six months."
+  "summary": "Bharat Puri led Cadbury India through the 2003 Dairy Milk worm crisis. Festive sales fell 30 percent. He rebuilt trust and sales recovered within six months."
  },
  {
   "url": "/article-verghese-kurien-amul-cooperative",
   "title": "Verghese Kurien Packed His Bags to Leave Anand. He Stayed Fifty Years and Built Amul.",
   "date": "2026-08-14",
   "image": "/images/amul.webp",
-  "summary": "In 1949, a 27-year-old engineer got off a train at Anand counting the days until his government bond ended. A farmer asked him to stay. Verghese Kurien spent the next fifty years building Amul into a co-operative now owned by 3.6 million farmers, crossing ₹1 lakh crore in turnover in 2025-26."
+  "summary": "Verghese Kurien came to Anand in 1949 planning to leave. He stayed fifty years and built Amul, now owned by 3.6 million farmers and past ₹1 lakh crore."
  },
  {
   "url": "/article-siddhartha-lal-royal-enfield",
   "title": "Everyone Said Royal Enfield Was Finished. Siddhartha Lal Asked for Two Years.",
   "date": "2026-08-07",
   "image": "/images/royal-enfield.webp",
-  "summary": "In 2000, a 26-year-old took charge of a motorcycle business his own family was preparing to shut down. He fixed the machine before touching the market, then made the company smaller on purpose. Royal Enfield sold over 10 lakh motorcycles in FY25."
+  "summary": "Siddhartha Lal took over Royal Enfield at 26, as his family prepared to shut it. He fixed the machine first. It sold over 10 lakh motorcycles in FY25."
  },
  {
   "url": "/article-ck-venkataraman-tanishq-jewelry",
   "title": "C K Venkataraman: How Tanishq Fixed Years of Being Wrong About India",
   "date": "2026-08-07",
   "image": "/images/tanishq.webp",
-  "summary": "Tanishq spent its early years guessing wrong about the Indian gold buyer. C K Venkataraman, who ran the jewellery division from 2005 to 2019 and later became Titan's managing director, helped turn that lesson into India's leading organised jewellery business: over ₹46,000 crore in FY25."
+  "summary": "C K Venkataraman ran Tanishq's jewellery division from 2005 to 2019 and helped build India's leading organised jewellery business: over ₹46,000 crore in FY25."
  },
  {
   "url": "/article-ramesh-chauhan-bisleri-thums-up",
   "title": "Ramesh Chauhan Sold Thums Up to Build Bisleri From Scratch",
   "date": "2026-08-03",
   "image": "/images/ramesh-chauhan-bisleri-thums-up.jpg",
-  "summary": "In 1993, Ramesh Chauhan sold India's No. 1 cola brand to Coca-Cola, then rebuilt his fortune on bottled water nobody wanted to pay for. The boardroom lesson in category creation."
+  "summary": "Ramesh Chauhan sold India's No. 1 cola brand to Coca-Cola in 1993, then rebuilt his fortune on bottled water nobody wanted to pay for. A category lesson."
  },
  {
   "url": "/article-sunil-dsouza-tata-consumer-products",
   "title": "Sunil D'Souza Turned Down Tata's FMCG Job, Then Built It From Tea and Salt",
   "date": "2026-08-03",
   "image": "/images/sunil-dsouza-tata-consumer-products.jpg",
-  "summary": "Sunil D'Souza said no to leading Tata's consumer business because it lacked direction. That was exactly why Chandrasekaran wanted him. The boardroom lesson in taking the unclear brief."
+  "summary": "Sunil D'Souza said no to leading Tata's consumer business because it lacked direction. That was why Chandrasekaran wanted him. A lesson in the unclear brief."
  },
  {
   "url": "/article-suresh-narayanan-maggi-crisis",
@@ -200,14 +277,14 @@
   "title": "Shailesh Jejurikar: P&G's First Indian-Origin CEO in 187 Years",
   "date": "2026-07-28",
   "image": "/images/shailesh-jejurikar-pg-leadership.jpg",
-  "summary": "Shailesh Jejurikar joined P&G in 1989 straight out of IIM Lucknow and never left. On January 1, 2026 he became the first Indian-origin CEO in the company's 187-year history."
+  "summary": "Shailesh Jejurikar joined P&G in 1989 from IIM Lucknow and never left. On January 1, 2026 he became its first Indian-origin CEO in 187 years."
  },
  {
   "url": "/article-sudhir-sitapati-godrej-leadership",
   "title": "Sudhir Sitapati: Why He Left HUL's Safest Seat for Godrej",
   "date": "2026-07-28",
   "image": "/images/sudhir-sitapati-godrej-leadership.jpg",
-  "summary": "Sudhir Sitapati led HUL's Horlicks merger, then left its management committee to run Godrej Consumer. What nearly five years at a smaller, messier company reveal about real leadership."
+  "summary": "Sudhir Sitapati led HUL's Horlicks merger, then left to run Godrej Consumer. What nearly five years at a smaller, messier company reveal about leadership."
  },
  {
   "url": "/article-sanjiv-mehta-crisis-leadership",
@@ -221,6 +298,6 @@
   "title": "Refused to Blink: The Boardroom Lesson Behind Marico's War With Hindustan Lever",
   "date": "2026-07-17",
   "image": "/images/marico-parachute-refused-to-blink.jpg",
-  "summary": "In 1999, Hindustan Lever tried to kill Parachute outright. Marico's founder said no to a buyout and fought on four fronts instead. What the boardroom decision to fight, not sell, actually took."
+  "summary": "In 1999, Hindustan Lever tried to kill Parachute. Marico's founder refused a buyout and fought on four fronts. What the decision to fight actually took."
  }
 ]
