@@ -346,7 +346,15 @@ function relatedSection(fromDesk, slug) {
 async function renderArchived(db, a) {
   const url = `${SITE}/moves/${a.slug}`, image = a.image ? SITE + a.image : SITE + '/images/og-boardroomcxo.png';
   const fullTitle = `${a.name}: ${a.role_title} at ${a.company}`;
-  const title = fullTitle.length <= 65 ? moveTitle(fullTitle) : `${a.name}, ${a.company} | Boardroom Moves`;
+  // Long titles: drop "(MEIL)" and "Ltd"-type endings, keep the brand when it fits in 65 characters.
+  const co = String(a.company).replace(/\s*\([^)]*\)/g, '').replace(/,?\s*(Private Limited|Pvt\.? Ltd\.?|Limited|Ltd\.?|LLC|Inc\.?)$/i, '').trim();
+  const short = `${a.name}, ${co}`;
+  const branded = `${a.name}, ${a.company} | Boardroom Moves`;
+  const title = fullTitle.length <= 65 ? moveTitle(fullTitle)
+    : branded.length <= 65 ? branded
+    : short.length <= 47 ? `${short} | Boardroom Moves`
+    : short.length <= 65 ? short
+    : `${a.name} | Boardroom Moves`;
   const h1 = `${a.name} named ${a.role_title} at ${a.company}`;
   const description = clip(String(a.text).split(/\n{2,}/)[0] || h1);
   const [fnHref, fnName] = fnPage(a.role_title);
